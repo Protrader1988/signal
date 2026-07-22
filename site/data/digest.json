@@ -1,4 +1,40 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (HTTPError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-07-22T15:19:34.744038+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "U.S. stock futures and main indices are facing headwinds as geopolitical tension in the Middle East and oil price volatility weigh on risk appetite. While single-stock earnings wins like 3M offer pockets of strength, broader market momentum remains capped ahead of crucial earnings from Alphabet and Tesla.",
+    "bull": "Resilient earnings beats, upgraded guidance from industrial leaders like 3M, and sustained momentum in AI-linked semiconductor stocks could spark a broader market rally.",
+    "bear": "Escalating Middle East conflicts threatening oil infrastructure combined with weak guidance from transport giants like FedEx could trigger broader margin compression and sell-offs if tech earnings disappoint.",
+    "watch": "Alphabet and Tesla earnings results, along with Middle East geopolitical headlines impacting oil prices."
+  },
+  "takes": [
+    {
+      "topic": "Energy Sector (XOM, CVX, PSX)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Rising Middle East tensions and potential oil supply disruptions are driving top-line outperformance for majors like Exxon Mobil, Chevron, and Phillips 66."
+    },
+    {
+      "topic": "Semiconductors & Big Tech",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "Despite positive deal activity for Qualcomm and momentum in AMD and Micron, the sector's immediate trajectory hinges on upcoming earnings from Alphabet and Tesla."
+    },
+    {
+      "topic": "PayPal (PYPL)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Rejecting a massive $53 billion takeover bid from Stripe highlights board confidence that the market is underappreciating PYPL's standalone value."
+    },
+    {
+      "topic": "3M (MMM)",
+      "lean": "bullish",
+      "confidence": "high",
+      "note": "Shares rallied sharply following a clean Q2 earnings beat and raised guidance, showing operational momentum despite broader market uncertainty."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
