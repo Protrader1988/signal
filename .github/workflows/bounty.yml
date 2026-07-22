@@ -33,6 +33,9 @@ jobs:
       - name: NY suburbs scan (Westchester/Putnam/Dutchess)
         continue-on-error: true
         run: python bounty/engine/nys_scan.py 2>&1 | tee bounty/data/nys_run.log
+      - name: CT scan (Gold Coast + Stamford/New Haven)
+        continue-on-error: true
+        run: python bounty/engine/ct_scan.py 2>&1 | tee bounty/data/ct_run.log
       - name: AI deal briefs
         continue-on-error: true
         env:
