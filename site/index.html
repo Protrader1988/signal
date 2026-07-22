@@ -187,7 +187,7 @@
       <div class="card-head"><span class="code">CURVE</span><span class="t" id="curveLabel">Momentum + vol-target vs benchmarks</span>
         <span class="expo" id="curveRange"></span></div>
       <div class="chart-legend" id="legend"></div>
-      <div class="chartwrap"><div id="chart"><div class="loading">loading equity curve…</div></div></div>
+      <div class="chartwrap"><div id="chartBox"><div class="loading">loading equity curve…</div></div></div>
     </div>
   </section>
 
@@ -208,7 +208,7 @@
     <div class="card">
       <div class="card-head"><span class="code">HIST</span><span class="badge b-sim">Real data · hypothetical trades</span>
         <span class="t mono" id="btPeriod" style="font-weight:400;color:var(--text2)"></span></div>
-      <div id="backtest"></div>
+      <div id="backtestTbl"></div>
     </div>
     <div class="metaline" id="btMethod"></div>
   </section>
@@ -241,7 +241,7 @@ function tbl(rows,cols,em){if(!rows||!rows.length)return `<div class="empty">${e
     return `<td class="${c.num?'num':''} ${c.cls?c.cls(raw):''}">${v}</td>`;}).join('')+'</tr>';}return h+'</tbody></table>';}
 
 function drawChart(cv){
-  if(!cv||!cv.dates||!cv.dates.length){$('chart').innerHTML='<div class="empty">Equity curve will appear after the next engine run publishes it.</div>';return;}
+  if(!cv||!cv.dates||!cv.dates.length){$('chartBox').innerHTML='<div class="empty">Equity curve will appear after the next engine run publishes it.</div>';return;}
   const W=1000,H=300,pl=52,pr=64,pt=16,pb=28;
   const series=[['strategy','Momentum + vol-target','#e6c976'],['spy','SPY buy & hold','#5aa2ff'],['equal_weight','Equal-weight universe','#5b6478']];
   const all=[].concat(...series.map(s=>cv[s[0]]||[]));
@@ -264,7 +264,7 @@ function drawChart(cv){
     const w=s[0]==='strategy'?2.4:1.4;const op=s[0]==='strategy'?1:.8;
     lines+=`<path d="${path(arr)}" fill="none" stroke="${s[2]}" stroke-width="${w}" opacity="${op}" stroke-linejoin="round"/>`;
     const lv=arr[arr.length-1];lines+=`<text x="${W-pr+7}" y="${Y(lv)+3}" font-family="JetBrains Mono" font-size="10.5" font-weight="600" fill="${s[2]}">${Math.round(lv)}</text>`;});
-  $('chart').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+  $('chartBox').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
     <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#c9a227" stop-opacity="0.22"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs>
     ${grid}${xl}<path d="${area}" fill="url(#fill)"/>${lines}</svg>`;
@@ -346,7 +346,7 @@ function render(sig,led,bt,meta,cv){
   let bh='<table><thead><tr><th>Strategy</th><th>Status</th><th class="num">CAGR</th><th class="num">Sharpe</th><th class="num">OOS</th><th class="num">Max DD</th></tr></thead><tbody>';
   for(const st of (bt.strategies||[])){bh+=`<tr><td><div style="font-weight:600">${st.name}</div><div style="color:var(--dim);font-size:11px;margin-top:4px;white-space:normal;max-width:430px">${st.note||''}</div></td>`+
     `<td><span class="mono" style="font-size:11px;color:var(--text2)">${st.status}</span></td><td class="num">${st.cagr_pct}%</td><td class="num">${st.sharpe}</td><td class="num up">${st.out_of_sample_sharpe}</td><td class="num down">${st.max_drawdown_pct}%</td></tr>`;}
-  $('backtest').innerHTML=bh+'</tbody></table>';
+  $('backtestTbl').innerHTML=bh+'</tbody></table>';
   $('btMethod').textContent=bt.method||'';
   $('foot').innerHTML=`<b>How this works.</b> A cross-sectional momentum model — validated on real historical data and survivorship-controlled — runs daily on free infrastructure and publishes the signals above. The <span class="up">Live Track Record</span> is a real forward test with no hindsight; the <span class="warn">Backtest</span> uses real historical prices with hypothetical trades applied in hindsight. Both use real data; the difference is forward vs. hindsight. Crypto is risk-managed beta, not an edge.<br><br>${sig.disclaimer||''} SIGNAL is a research tool, not investment advice, and is not a broker.`;
 }
