@@ -158,8 +158,10 @@
   <div class="fkeys">
     <a class="fkey" href="#playbook"><b>F1</b>PLAYBOOK</a>
     <a class="fkey" href="#signals"><b>F2</b>SIGNALS</a>
-    <a class="fkey" href="#chart"><b>F3</b>PERFORMANCE</a>
-    <a class="fkey" href="#ledger"><b>F4</b>TRACK RECORD</a>
+    <a class="fkey" href="#value"><b>F3</b>VALUE</a>
+    <a class="fkey" href="#watch"><b>F4</b>WATCHLIST</a>
+    <a class="fkey" href="#chart"><b>F5</b>PERFORMANCE</a>
+    <a class="fkey" href="#ledger"><b>F6</b>TRACK RECORD</a>
   </div>
 
   <!-- PLAYBOOK -->
@@ -191,8 +193,25 @@
     </div>
   </section>
 
+  <section id="value">
+    <div class="eyebrow"><span class="no">03</span><h2>Value / Opportunistic</h2>
+      <span class="hint">below-book, profitable names — a research screen, not a backtested signal</span></div>
+    <div class="subnote">These trade near or below book value <em>and</em> are actually profitable. Unlike the momentum signals, this is a <b class="warn">screen for your own due diligence</b>, not a validated edge — free data can't backtest it honestly. Value can stay cheap for a long time, so treat these as ideas to research, not buy-now signals. Lower P/B = cheaper vs. assets; higher ROE = higher quality.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">VALUE</span><span class="badge b-sim">Screen · not backtested</span><span class="t" id="valLabel" style="font-weight:400;color:var(--text2)"></span></div>
+      <div id="valueTbl"><div class="loading">loading screen…</div></div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="eyebrow"><span class="no">04</span><h2>Watchlist</h2>
+      <span class="hint">high-profile & recent IPOs — they flow into signals once they season</span></div>
+    <div class="subnote">Names on the radar. Recent IPOs (like <span class="chip">SPCX</span>) need about a year of trading history before the momentum model can generate a validated signal — the status shows how far along each is.</div>
+    <div class="card"><div id="watchTbl"><div class="loading">loading watchlist…</div></div></div>
+  </section>
+
   <section id="chart">
-    <div class="eyebrow"><span class="no">03</span><h2>Flagship Performance</h2>
+    <div class="eyebrow"><span class="no">05</span><h2>Flagship Performance</h2>
       <span class="hint">real historical prices, hypothetical trades · indexed to 100 · log scale</span></div>
     <div class="card">
       <div class="card-head"><span class="code">CURVE</span><span class="t" id="curveLabel">Momentum + vol-target vs benchmarks</span><span class="expo" id="curveRange"></span></div>
@@ -202,7 +221,7 @@
   </section>
 
   <section id="ledger">
-    <div class="eyebrow"><span class="no">04</span><h2>Live Track Record</h2>
+    <div class="eyebrow"><span class="no">06</span><h2>Live Track Record</h2>
       <span class="hint">real forward outcomes of every signal — no hindsight, nothing hidden</span></div>
     <div class="statusgrid" id="ledgerTiles"></div>
     <div id="ledgerNote" style="margin-top:14px"></div>
@@ -213,7 +232,7 @@
   </section>
 
   <section id="backtest">
-    <div class="eyebrow"><span class="no">05</span><h2>Backtest Validation</h2>
+    <div class="eyebrow"><span class="no">07</span><h2>Backtest Validation</h2>
       <span class="hint">real historical prices · hypothetical trades applied in hindsight</span></div>
     <div class="card">
       <div class="card-head"><span class="code">HIST</span><span class="badge b-sim">Real data · hypothetical trades</span><span class="t mono" id="btPeriod" style="font-weight:400;color:var(--text2)"></span></div>
@@ -356,7 +375,31 @@ function draw(){
   } else ch+='<div class="empty">No coins in confirmed uptrend — the sleeve is in cash. Sitting out <em>is</em> the risk control.</div>';
   $('crypto').innerHTML=ch;
 
-  drawChart(cv);
+  // VALUE screen
+  const val=DATA.val;
+  if(val&&val.candidates){
+    if(val.label)$('valLabel').textContent='';
+    $('valueTbl').innerHTML=tbl(val.candidates,[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Price',k:'price',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
+      {h:'P/B',k:'pb',num:true,tip:'Price-to-book. Below 1.0 = trading under the accounting value of its assets.',f:v=>`<span class="${v<1?'gold':'neu'}">${v}</span>`},
+      {h:'ROE',k:'roe_pct',num:true,tip:'Return on equity — profitability/quality. Higher is better.',cls:v=>v>=12?'up':'neu',f:v=>v==null?'—':v+'%'},
+      {h:'P/E',k:'pe',num:true,f:v=>v==null?'—':v},
+      {h:'Sector',k:'sector',f:v=>`<span class="neu" style="font-size:12px">${v||'—'}</span>`},
+    ],'No names currently pass the below-book + quality screen. That is a valid, honest result — nothing cheap-and-solid right now.');
+  } else { $('valueTbl').innerHTML='<div class="empty">Value screen will appear after the next engine run publishes it.</div>'; }
+
+  // WATCHLIST
+  const watch=DATA.watch;
+  if(watch&&watch.names){
+    $('watchTbl').innerHTML=tbl(watch.names,[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Price',k:'price',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
+      {h:'Day',k:'chg_pct',num:true,cls:sgn,f:v=>v==null?'—':pc(v)},
+      {h:'P/B',k:'pb',num:true,f:v=>v==null?'—':v},
+      {h:'Status',k:'status',f:v=>{const ok=/Eligible/.test(v);return `<span class="${ok?'up':'warn'}" style="font-size:12px">${ok?'● ':'○ '}${v}</span>`;}},
+    ],'Watchlist will appear after the next engine run.');
+  } else { $('watchTbl').innerHTML='<div class="empty">Watchlist will appear after the next engine run.</div>'; }
 
   const tiles=[{k:'Live since',v:sc.live_since||'—',s:'forward test'},{k:'Open',v:openN,s:'tracked now'},{k:'Closed',v:closedN,s:'reached horizon'},
     {k:'Position win rate',v:p.n?p.win_rate_pct+'%':'—',s:p.n?`${p.n} closed · avg ${pc(p.avg_return_pct)}`:'accruing'},
@@ -382,8 +425,8 @@ function draw(){
 
 (async()=>{
   try{
-    const [sig,led,bt,meta,cv]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null)]);
-    DATA={sig,led,bt,meta,cv};draw();
+    const [sig,led,bt,meta,cv,val,watch]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null)]);
+    DATA={sig,led,bt,meta,cv,val,watch};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';
