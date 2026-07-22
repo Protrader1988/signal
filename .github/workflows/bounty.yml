@@ -1,0 +1,41 @@
+name: bounty-daily
+
+# BOUNTY: daily development-site scan on free GitHub Actions.
+# Phase 1: NYC (PLUTO + DOF). Later phases: NYS counties, CT, NJ.
+
+on:
+  schedule:
+    - cron: "30 10 * * 1-5"     # 10:30 UTC weekdays (~6:30am ET)
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "bounty/engine/**"
+      - ".github/workflows/bounty.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bounty
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: NYC scan
+        continue-on-error: true
+        run: python bounty/engine/nyc_scan.py 2>&1 | tee bounty/data/nyc_run.log
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "bounty-actions"
+          git config user.email "actions@github.com"
+          git pull --rebase origin main || true
+          git add bounty/data || true
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "bounty: daily scan [skip ci]"; git push; fi
