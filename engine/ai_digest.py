@@ -78,3 +78,4 @@ if __name__ == "__main__":
     try: main()
     except Exception as e:
         open("site/data/DIGEST_ERROR.txt","w").write(traceback.format_exc()); print("FATAL", e)
+# trigger: c48a590
