@@ -12,6 +12,7 @@ on:
       - "research/experiments.py"
       - "research/experiments_r3.py"
       - "research/value_probe.py"
+      - "research/re_data_probe.py"
       - "research/requirements.txt"
       - ".github/workflows/backtest.yml"
   workflow_dispatch: {}
@@ -53,6 +54,11 @@ jobs:
         continue-on-error: true
         run: |
           python research/value_probe.py 2>&1 | tee research/output/value_probe_log.txt
+
+      - name: Probe real-estate data endpoints
+        continue-on-error: true
+        run: |
+          python research/re_data_probe.py 2>&1 | tee research/output/re_probe_log.txt
 
       - name: Commit results
         if: always()
