@@ -63,17 +63,23 @@ def discover():
                 if p in k: return k
         return None
     F = {
-        "town": find("town"),
-        "use_code": find("state_use", "use_code", "property_class"),
-        "use_desc": find("use_desc", "state_use_desc", "property_use", "class_desc"),
-        "acres": find("acre", "land_acre", "acreage"),
-        "land_val": find("appraised_land", "assessed_land", "land_appr", "land_val", "av_land"),
-        "total_val": find("appraised_total", "assessed_total", "total_appr", "total_val", "av_total"),
-        "market": find("market", "appraised_total"),
+        "town": find("property_city", "municipal", "town_name") or find("town_id"),
+        "use_code": find("state_use") or find("use_code"),
+        "use_desc": find("state_use_description", "use_desc", "property_use"),
+        "zone": find("zone") ,
+        "zone_desc": find("zone_desc", "zone_description"),
+        "acres": find("land_acres", "acre", "acreage"),
+        "land_val": find("appraised_land", "assessed_land"),
+        "total_val": find("appraised_total", "assessed_total"),
         "owner": find("owner"),
-        "addr": find("location", "property_address", "situs", "address"),
-        "mail": find("mailing", "mail"),
+        "addr": find("location", "property_address", "situs"),
+        "mail": find("mailing_address", "mailing"),
+        "sale_price": find("sale_price"),
+        "sale_date": find("sale_date"),
     }
+    # ensure zone != zone_description collision
+    if F["zone"] and F["zone_desc"] and F["zone"] == F["zone_desc"]:
+        F["zone"] = "zone"
     print("field map:", {k: v for k, v in F.items() if v})
     return F, keys
 
@@ -142,6 +148,10 @@ def main():
                 "region": "CT", "town": town.title(),
                 "address": addr or "(unaddressed parcel)",
                 "use_desc": r.get(F["use_desc"]) if F["use_desc"] else None,
+                "zone": r.get(F["zone"]) if F["zone"] else None,
+                "zone_desc": r.get(F["zone_desc"]) if F["zone_desc"] else None,
+                "last_sale_price": int(n(r.get(F["sale_price"]))) if F["sale_price"] and n(r.get(F["sale_price"]))>0 else None,
+                "last_sale_date": (str(r.get(F["sale_date"]))[:10] if F["sale_date"] and r.get(F["sale_date"]) else None),
                 "acres": round(acres, 2), "vacant": vacant,
                 "improvement_ratio": round(imp_ratio, 2),
                 "eight_30g_applies": applies,
