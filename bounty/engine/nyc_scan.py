@@ -15,8 +15,10 @@ v2 upgrades over v1 (honest fixes from first live run):
 
 Outputs: bounty/data/nyc_deals.json, bounty/data/history.json
 """
-import json, os, statistics, urllib.request, urllib.parse, traceback
+import json, os, sys, statistics, urllib.request, urllib.parse, traceback
 from datetime import datetime, timezone, date, timedelta
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from underwrite import underwrite_all_paths, ASSUMPTIONS as UW
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/2.0)"}
 
@@ -148,43 +150,49 @@ def underwrite(p, comps):
     elif comp_est: land = comp_est
     elif assess_est: land = assess_est
     else: return None
-    hard = buildable * A["hard_cost_psf"]; soft = hard * A["soft_cost_pct"]
-    tdc = land + hard + soft
-    net_sf = buildable * A["efficiency"]
-    gpr = net_sf * A["rent_psf_mo"][boro] * 12
-    noi = gpr * (1 - A["vacancy"]) * (1 - A["opex_ratio"])
-    loan = tdc * A["ltc"]; equity = tdc - loan
-    r = A["rate"]/12; nper = A["amort_years"]*12
-    ds = loan * (r*(1+r)**nper)/((1+r)**nper - 1) * 12
-    dscr = noi/ds if ds > 0 else 0
-    cf = noi - ds; coc = cf/equity if equity > 0 else 0
-    # max land you could pay and still hit DSCR 1.20 (real negotiating number)
-    noi_needed_ds = noi / 1.20
-    max_loan = noi_needed_ds / ((r*(1+r)**nper)/((1+r)**nper-1)*12)
-    max_tdc = max_loan / A["ltc"]
-    max_land = max(0, max_tdc - hard - soft)
-    bucket = "solo" if equity <= A["solo_equity_cap"] else ("mid" if equity <= A["mid_equity_cap"] else "jv")
-    # score v2
-    basis = land / comp_est if comp_est else 1.0            # <1 = cheaper than comps
-    s_basis = max(0, min(1, (1.35 - basis)/0.7)) * 30
-    s_use  = (1 - bfar/rfar) * 25
-    s_dscr = max(0, min(1, (dscr - 1.0)/0.4)) * 20
-    s_fit  = (15 if bucket=="solo" else (8 if bucket=="mid" else 3))
-    s_city = 10 if city else 0
-    score = round(s_basis + s_use + s_dscr + s_fit + s_city, 1)
+    # multi-path underwriting (the real institutional layer)
+    uw = underwrite_all_paths(boro, lot, rfar, land)
+    if not uw: return None
+    best = next((pp for pp in uw["paths"] if pp["path"] == uw["best_path"]), None)
+    # walk-away land price: solve land where best-ish path hits feasibility.
+    # Approximate with the 485-x path NOI (most common closer).
+    p485 = next((pp for pp in uw["paths"] if pp["path"].startswith("485x")), uw["paths"][0])
+    k = (UW["conv_rate"]/12*(1+UW["conv_rate"]/12)**(UW["conv_amort"]*12)) / \
+        ((1+UW["conv_rate"]/12)**(UW["conv_amort"]*12)-1) * 12
+    max_loan = (p485["noi"]/UW["conv_min_dscr"])/k if p485["noi"] > 0 else 0
+    hard = buildable*UW["hard_cost_psf"]; soft = hard*UW["soft_cost_pct"]
+    max_tdc_at_35eq = max_loan/0.65 if max_loan > 0 else 0   # equity <=35% feasibility bound
+    walk_away = max(0, min(max_tdc_at_35eq, max_loan/UW["conv_ltc"]) - hard - soft)
+    equity = best["equity"] if best else (p485["equity"])
+    bucket = "solo" if equity <= 1_000_000 else ("mid" if equity <= 3_000_000 else "jv")
+    # score v3 — anchored on best achievable path
+    basis = land / comp_est if comp_est else 1.0
+    s_basis = max(0, min(1, (1.35 - basis)/0.7)) * 25
+    s_use  = (1 - bfar/rfar) * 15
+    if uw["any_feasible"] and best:
+        prof = best.get("coc_pct")
+        s_path = 35 if best["path"]=="485x_small" else 30
+        s_prof = max(0, min(1, ((prof if prof is not None else 8) - 4)/8)) * 10
+    else:
+        s_path = 0
+        s_prof = 0
+    s_fit  = (10 if bucket=="solo" else (6 if bucket=="mid" else 2))
+    s_city = 8 if city else 0
+    score = round(s_basis + s_use + s_path + s_prof + s_fit + s_city, 1)
+    if not uw["any_feasible"]: score = min(score, 39.9)   # hard cap: nothing pencils yet
     return {
         "bbl": p.get("bbl"), "address": (p.get("address") or "").title(),
         "borough": boro, "zip": p.get("zipcode"), "zone": p.get("zonedist1"),
         "lot_sf": int(lot), "built_far": round(bfar,2), "max_far": round(rfar,2),
-        "buildable_sf": int(buildable), "est_units": units,
+        "buildable_sf": int(buildable), "est_units": uw["units_base"],
         "existing_units": int(n(p.get("unitsres"))), "year_built": int(n(p.get("yearbuilt"))) or None,
         "owner": (p.get("ownername") or "").title(), "city_owned": city,
         "assessed_land": int(assess_land), "land_comp_psf": comp_psf,
-        "est_land_cost": int(land), "max_land_at_dscr120": int(max_land),
-        "tdc": int(tdc), "loan": int(loan), "equity_needed": int(equity),
-        "noi": int(noi), "dscr": round(dscr,2), "cash_flow": int(cf),
-        "coc_pct": round(coc*100,1), "dev_fee": int(tdc*A["dev_fee_pct"]),
-        "bucket": bucket, "score": score,
+        "est_land_cost": int(land), "walk_away_land": int(walk_away),
+        "pencils": uw["any_feasible"], "best_path": uw["best_path"],
+        "best_path_label": uw["best_label"],
+        "best": best, "paths": uw["paths"],
+        "equity_needed": int(equity), "bucket": bucket, "score": score,
         "lat": n(p.get("latitude"), None), "lng": n(p.get("longitude"), None),
     }
 
@@ -227,7 +235,9 @@ def main():
                       "mid": sum(1 for d in deals if d["bucket"]=="mid"),
                       "jv": sum(1 for d in deals if d["bucket"]=="jv"),
                       "city_owned": sum(1 for d in deals if d["city_owned"]),
+                      "pencils": sum(1 for d in deals if d["pencils"]),
                       "land_sales_used": n_sales},
+           "program_assumptions": UW,
            "land_comps_psf": comps,
            "assumptions": ASSUMPTIONS,
            "deals": top("solo") + top("mid") + top("jv",40) + [d for d in deals if d["city_owned"]][:40]}
