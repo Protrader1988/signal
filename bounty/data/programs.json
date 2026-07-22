@@ -1,117 +1,324 @@
 {
   "updated": "2026-07-22",
-  "note": "Curated program library — verified against official sources Jul 2026. 'underwritten' = the engine models this path automatically on every deal. 'cataloged' = available tool for deal structuring; verify current terms via the linked source before relying on it.",
+  "note": "Curated program library \u2014 verified against official sources Jul 2026. 'underwritten' = the engine models this path automatically on every deal. 'cataloged' = available tool for deal structuring; verify current terms via the linked source before relying on it. Acquisition & site-control programs added \u2014 these fund GETTING the site, before development financing.",
   "regions": [
     {
       "region": "NYC",
       "programs": [
-        {"name": "485-x (ANNY) tax exemption", "status": "underwritten", "type": "Tax exemption",
-         "terms": "<100 units: 20% affordable @ ≤80% AMI wtd avg → 35-yr exemption (25 full + 10 at affordability %). 6–10 units outside Manhattan ≤12,500 SF: 10-yr full exemption, no affordability, 50% stabilized. 100+ units: 25% @ 80% AMI + wage floors ($35+/hr).",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/tax-incentives-485-x.page"},
-        {"name": "City of Yes — Universal Affordability Preference (UAP)", "status": "underwritten", "type": "Zoning bonus",
-         "terms": "+20% FAR in R6–R10 when bonus floor area is permanently affordable at ~60% AMI average. Stacks with 485-x.",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/uap.page"},
-        {"name": "Section 8 HCV / VPS rents", "status": "underwritten", "type": "Rent support",
-         "terms": "Voucher payment standards can exceed market in BX/parts of QN. Engine models +12% uplift on market units. Verify current VPS by ZIP.",
-         "source": "https://www.nyc.gov/site/nycha/section-8/about-section-8.page"},
-        {"name": "ELLA / 4% LIHTC + tax-exempt bonds", "status": "underwritten", "type": "Affordable stack",
-         "terms": "All-affordable: HDC bonds + 4% LIHTC equity + city subsidy (~$130k/unit modeled). Profit = developer fee (~10% TDC). Competitive award.",
-         "source": "https://www.nychdc.com/developers"},
-        {"name": "HPD Mix & Match (Mixed Income Program)", "status": "cataloged", "type": "Affordable stack",
-         "terms": "50/50-style mixed-income rental: ~40-60% of units low-income (avg ≤60% AMI), rest moderate/middle. HPD subsidy loan + HDC bonds; pairs with 4% LIHTC.",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/mixed-income-program-mix-match.page"},
-        {"name": "HPD SARA (Senior Affordable Rental)", "status": "cataloged", "type": "Affordable stack",
-         "terms": "Senior (62+) housing, ≤60% AMI, subsidy historically ~$75–235k/unit + Section 8 SPRAC/PBV support.",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/loan-program-finder.page"},
-        {"name": "HPD Open Door / NIHOP-NCP (new homeownership)", "status": "cataloged", "type": "Homeownership",
-         "terms": "Subsidized new-construction coops/condos/1-4 family for moderate/middle-income buyers — the exit for small infill lots if rental doesn't pencil.",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/loan-program-finder.page"},
-        {"name": "467-m (office→residential conversion exemption)", "status": "cataloged", "type": "Tax exemption",
-         "terms": "Up to 90% tax exemption for commercial-to-residential conversions with 25% affordable (avg ≤80% AMI); strongest in Manhattan south of 96th.",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/tax-incentives-467-m.page"},
-        {"name": "Article XI (HDFC) tax exemption", "status": "cataloged", "type": "Tax exemption",
-         "terms": "Discretionary full/partial exemption up to 40 yrs for HDFC-owned affordable projects — Council approval; often the lever that closes preservation and infill deals.",
-         "source": "https://www.nyc.gov/site/hpd/services-and-information/tax-incentives-article-xi.page"},
-        {"name": "9% LIHTC (HPD QAP)", "status": "cataloged", "type": "Tax credit",
-         "terms": "Competitive annual allocation, equity ≈ 70% of qualified basis for deeply affordable projects. NYC has its own QAP.",
-         "source": "https://www.nyc.gov/assets/hpd/downloads/pdfs/services/2026-qualified-allocation-plan-draft.pdf"},
-        {"name": "NYS Brownfield Cleanup Program credits", "status": "cataloged", "type": "Tax credit",
-         "terms": "Refundable state credits on cleanup + development costs for enrolled contaminated sites — pairs well with outer-borough industrial-adjacent parcels.",
-         "source": "https://dec.ny.gov/environmental-protection/site-cleanup/brownfield-cleanup-program"}
+        {
+          "name": "485-x (ANNY) tax exemption",
+          "status": "underwritten",
+          "type": "Tax exemption",
+          "terms": "<100 units: 20% affordable @ \u226480% AMI wtd avg \u2192 35-yr exemption (25 full + 10 at affordability %). 6\u201310 units outside Manhattan \u226412,500 SF: 10-yr full exemption, no affordability, 50% stabilized. 100+ units: 25% @ 80% AMI + wage floors ($35+/hr).",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/tax-incentives-485-x.page"
+        },
+        {
+          "name": "City of Yes \u2014 Universal Affordability Preference (UAP)",
+          "status": "underwritten",
+          "type": "Zoning bonus",
+          "terms": "+20% FAR in R6\u2013R10 when bonus floor area is permanently affordable at ~60% AMI average. Stacks with 485-x.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/uap.page"
+        },
+        {
+          "name": "Section 8 HCV / VPS rents",
+          "status": "underwritten",
+          "type": "Rent support",
+          "terms": "Voucher payment standards can exceed market in BX/parts of QN. Engine models +12% uplift on market units. Verify current VPS by ZIP.",
+          "source": "https://www.nyc.gov/site/nycha/section-8/about-section-8.page"
+        },
+        {
+          "name": "ELLA / 4% LIHTC + tax-exempt bonds",
+          "status": "underwritten",
+          "type": "Affordable stack",
+          "terms": "All-affordable: HDC bonds + 4% LIHTC equity + city subsidy (~$130k/unit modeled). Profit = developer fee (~10% TDC). Competitive award.",
+          "source": "https://www.nychdc.com/developers"
+        },
+        {
+          "name": "HPD Mix & Match (Mixed Income Program)",
+          "status": "cataloged",
+          "type": "Affordable stack",
+          "terms": "50/50-style mixed-income rental: ~40-60% of units low-income (avg \u226460% AMI), rest moderate/middle. HPD subsidy loan + HDC bonds; pairs with 4% LIHTC.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/mixed-income-program-mix-match.page"
+        },
+        {
+          "name": "HPD SARA (Senior Affordable Rental)",
+          "status": "cataloged",
+          "type": "Affordable stack",
+          "terms": "Senior (62+) housing, \u226460% AMI, subsidy historically ~$75\u2013235k/unit + Section 8 SPRAC/PBV support.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/loan-program-finder.page"
+        },
+        {
+          "name": "HPD Open Door / NIHOP-NCP (new homeownership)",
+          "status": "cataloged",
+          "type": "Homeownership",
+          "terms": "Subsidized new-construction coops/condos/1-4 family for moderate/middle-income buyers \u2014 the exit for small infill lots if rental doesn't pencil.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/loan-program-finder.page"
+        },
+        {
+          "name": "467-m (office\u2192residential conversion exemption)",
+          "status": "cataloged",
+          "type": "Tax exemption",
+          "terms": "Up to 90% tax exemption for commercial-to-residential conversions with 25% affordable (avg \u226480% AMI); strongest in Manhattan south of 96th.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/tax-incentives-467-m.page"
+        },
+        {
+          "name": "Article XI (HDFC) tax exemption",
+          "status": "cataloged",
+          "type": "Tax exemption",
+          "terms": "Discretionary full/partial exemption up to 40 yrs for HDFC-owned affordable projects \u2014 Council approval; often the lever that closes preservation and infill deals.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/tax-incentives-article-xi.page"
+        },
+        {
+          "name": "9% LIHTC (HPD QAP)",
+          "status": "cataloged",
+          "type": "Tax credit",
+          "terms": "Competitive annual allocation, equity \u2248 70% of qualified basis for deeply affordable projects. NYC has its own QAP.",
+          "source": "https://www.nyc.gov/assets/hpd/downloads/pdfs/services/2026-qualified-allocation-plan-draft.pdf"
+        },
+        {
+          "name": "NYS Brownfield Cleanup Program credits",
+          "status": "cataloged",
+          "type": "Tax credit",
+          "terms": "Refundable state credits on cleanup + development costs for enrolled contaminated sites \u2014 pairs well with outer-borough industrial-adjacent parcels.",
+          "source": "https://dec.ny.gov/environmental-protection/site-cleanup/brownfield-cleanup-program"
+        },
+        {
+          "name": "NYC Acquisition Fund",
+          "status": "cataloged",
+          "type": "Acquisition loan",
+          "terms": "Public-private fund (city + LISC/Enterprise) making acquisition + predevelopment bridge loans for affordable projects \u2014 up to ~90-95% of cost for M/WBE and nonprofit developers, ~3-yr terms. THE standard way small NYC developers control sites before perm financing.",
+          "source": "https://www.nycacquisitionfund.com"
+        },
+        {
+          "name": "HPD Neighborhood Pillars",
+          "status": "cataloged",
+          "type": "Acquisition + preservation",
+          "terms": "HPD subsidy + acquisition financing for buying existing unregulated/distressed rental buildings and converting to regulated affordability \u2014 pairs with the Acquisition Fund.",
+          "source": "https://www.nyc.gov/site/hpd/services-and-information/loan-program-finder.page"
+        },
+        {
+          "name": "HPD/EDC dispositions (city-owned RFPs)",
+          "status": "engine-surfaced",
+          "type": "Site control",
+          "terms": "City land conveyed at nominal cost through competitive RFPs (the engine's CITY tags are your watchlist). Effectively $0 acquisition \u2014 you win with a credible plan + program stack, not a bid price.",
+          "source": "https://www.nyc.gov/site/hpd/developers/request-for-proposals.page"
+        },
+        {
+          "name": "Tax lien / distress channels",
+          "status": "cataloged",
+          "type": "Site control",
+          "terms": "NYC lien-sale lists, foreclosure filings (lis pendens) and ACRIS distress signals \u2014 acquisition entry points ahead of the open market. Engine roadmap: ACRIS lien flags on top targets.",
+          "source": "https://www.nyc.gov/site/finance/property/property-lien-sales.page"
+        }
       ]
     },
     {
-      "region": "NY Suburbs (Westchester · Putnam · Dutchess)",
+      "region": "NY Suburbs (Westchester \u00b7 Putnam \u00b7 Dutchess)",
       "programs": [
-        {"name": "HCR Unified Funding (4%/9% LIHTC, SLIHC, HTF)", "status": "cataloged", "type": "Affordable stack",
-         "terms": "State's main pipeline: annual RFP combining 9% LIHTC, state SLIHC credit, Housing Trust Fund subsidy. ~$270M/yr statewide. 4% bond deals roll year-round via HFA.",
-         "source": "https://hcr.ny.gov/multifamily"},
-        {"name": "Pro-Housing Community designation", "status": "cataloged", "type": "Gate/grant",
-         "terms": "Municipal designation is now a PREREQUISITE for most discretionary state funds ($100M+ pool). Check each town's status — it tells you where the state wants you to build.",
-         "source": "https://hcr.ny.gov/phc"},
-        {"name": "IDA PILOT agreements (county/city IDAs)", "status": "cataloged", "type": "Tax abatement",
-         "terms": "Westchester County IDA, Yonkers IDA, Dutchess & Putnam IDAs negotiate multi-decade PILOTs + sales/mortgage tax exemptions on multifamily — the suburban equivalent of 485-x, deal-by-deal.",
-         "source": "https://westchesterida.com"},
-        {"name": "Westchester County housing funds (HIF / New Homes Land Acquisition)", "status": "cataloged", "type": "Subsidy",
-         "terms": "County capital funds for affordable development and land acquisition in Westchester municipalities.",
-         "source": "https://homes.westchestergov.com"},
-        {"name": "HCR SHOP / supportive pipelines", "status": "cataloged", "type": "Affordable stack",
-         "terms": "Supportive housing capital + operating (ESSHI) — deepest subsidy tier if you incorporate supportive units.",
-         "source": "https://shnny.org/fundingguide/supportive-housing-opportunity-program-shop/"}
+        {
+          "name": "HCR Unified Funding (4%/9% LIHTC, SLIHC, HTF)",
+          "status": "cataloged",
+          "type": "Affordable stack",
+          "terms": "State's main pipeline: annual RFP combining 9% LIHTC, state SLIHC credit, Housing Trust Fund subsidy. ~$270M/yr statewide. 4% bond deals roll year-round via HFA.",
+          "source": "https://hcr.ny.gov/multifamily"
+        },
+        {
+          "name": "Pro-Housing Community designation",
+          "status": "cataloged",
+          "type": "Gate/grant",
+          "terms": "Municipal designation is now a PREREQUISITE for most discretionary state funds ($100M+ pool). Check each town's status \u2014 it tells you where the state wants you to build.",
+          "source": "https://hcr.ny.gov/phc"
+        },
+        {
+          "name": "IDA PILOT agreements (county/city IDAs)",
+          "status": "cataloged",
+          "type": "Tax abatement",
+          "terms": "Westchester County IDA, Yonkers IDA, Dutchess & Putnam IDAs negotiate multi-decade PILOTs + sales/mortgage tax exemptions on multifamily \u2014 the suburban equivalent of 485-x, deal-by-deal.",
+          "source": "https://westchesterida.com"
+        },
+        {
+          "name": "Westchester County housing funds (HIF / New Homes Land Acquisition)",
+          "status": "cataloged",
+          "type": "Subsidy",
+          "terms": "County capital funds for affordable development and land acquisition in Westchester municipalities.",
+          "source": "https://homes.westchestergov.com"
+        },
+        {
+          "name": "HCR SHOP / supportive pipelines",
+          "status": "cataloged",
+          "type": "Affordable stack",
+          "terms": "Supportive housing capital + operating (ESSHI) \u2014 deepest subsidy tier if you incorporate supportive units.",
+          "source": "https://shnny.org/fundingguide/supportive-housing-opportunity-program-shop/"
+        },
+        {
+          "name": "CPC (Community Preservation Corp) acquisition lending",
+          "status": "cataloged",
+          "type": "Acquisition loan",
+          "terms": "Quasi-public lender doing acquisition, predevelopment and construction loans for small multifamily across NYS \u2014 the suburban analog of the Acquisition Fund.",
+          "source": "https://communityp.com"
+        },
+        {
+          "name": "Westchester New Homes Land Acquisition Fund",
+          "status": "cataloged",
+          "type": "Acquisition subsidy",
+          "terms": "County capital funding specifically for ACQUIRING sites for affordable development in Westchester municipalities.",
+          "source": "https://homes.westchestergov.com"
+        },
+        {
+          "name": "NYS land banks & municipal dispositions",
+          "status": "cataloged",
+          "type": "Site control",
+          "terms": "Land banks (e.g., Newburgh, Kingston nearby; check county) and city/county surplus-property sales convey distressed parcels cheaply with development conditions. Also school-district and state OGS surplus lists.",
+          "source": "https://nyslandbanks.org"
+        }
       ]
     },
     {
-      "region": "Connecticut (Greenwich · Westport · Ridgefield · New Canaan · Darien · Stamford · New Haven)",
+      "region": "Connecticut (Greenwich \u00b7 Westport \u00b7 Ridgefield \u00b7 New Canaan \u00b7 Darien \u00b7 Stamford \u00b7 New Haven)",
       "programs": [
-        {"name": "CGS 8-30g — Affordable Housing Appeals Act", "status": "cataloged", "type": "Zoning override",
-         "terms": "THE lever in wealthy CT towns: if <10% of a town's stock is affordable (true for Greenwich, Westport, Ridgefield, New Canaan, Darien), a 30%-affordable set-aside project can OVERRIDE local zoning denial — burden of proof flips to the town. Stamford/New Haven generally exempt (over threshold or moratoria — verify current status).",
-         "source": "https://www.cga.ct.gov/current/pub/chap_126a.htm"},
-        {"name": "CHFA financing + 4%/9% LIHTC", "status": "cataloged", "type": "Affordable stack",
-         "terms": "CT's HFA: tax-exempt bonds, 4%/9% LIHTC allocation, construction-perm loans. Joint CHFA/DOH funding rounds (~10 projects, ~500 units per round in 2026).",
-         "source": "https://chfa.org"},
-        {"name": "DOH FLEX gap funding", "status": "cataloged", "type": "Subsidy",
-         "terms": "State Department of Housing flexible gap subsidy paired with CHFA rounds.",
-         "source": "https://portal.ct.gov/doh"},
-        {"name": "Build For CT (middle-income)", "status": "cataloged", "type": "Subsidy",
-         "terms": "CHFA program funding middle-income ('workforce') rental units — fits the Stamford/New Haven market tier.",
-         "source": "https://chfa.org"},
-        {"name": "Municipal abatements (CGS 8-215) + TOD grants", "status": "cataloged", "type": "Tax abatement",
-         "terms": "Town-option tax abatements for affordable housing; CT Communities Challenge / TOD grants for station-area projects (Stamford, New Haven).",
-         "source": "https://portal.ct.gov/doh"}
+        {
+          "name": "CGS 8-30g \u2014 Affordable Housing Appeals Act",
+          "status": "cataloged",
+          "type": "Zoning override",
+          "terms": "THE lever in wealthy CT towns: if <10% of a town's stock is affordable (true for Greenwich, Westport, Ridgefield, New Canaan, Darien), a 30%-affordable set-aside project can OVERRIDE local zoning denial \u2014 burden of proof flips to the town. Stamford/New Haven generally exempt (over threshold or moratoria \u2014 verify current status).",
+          "source": "https://www.cga.ct.gov/current/pub/chap_126a.htm"
+        },
+        {
+          "name": "CHFA financing + 4%/9% LIHTC",
+          "status": "cataloged",
+          "type": "Affordable stack",
+          "terms": "CT's HFA: tax-exempt bonds, 4%/9% LIHTC allocation, construction-perm loans. Joint CHFA/DOH funding rounds (~10 projects, ~500 units per round in 2026).",
+          "source": "https://chfa.org"
+        },
+        {
+          "name": "DOH FLEX gap funding",
+          "status": "cataloged",
+          "type": "Subsidy",
+          "terms": "State Department of Housing flexible gap subsidy paired with CHFA rounds.",
+          "source": "https://portal.ct.gov/doh"
+        },
+        {
+          "name": "Build For CT (middle-income)",
+          "status": "cataloged",
+          "type": "Subsidy",
+          "terms": "CHFA program funding middle-income ('workforce') rental units \u2014 fits the Stamford/New Haven market tier.",
+          "source": "https://chfa.org"
+        },
+        {
+          "name": "Municipal abatements (CGS 8-215) + TOD grants",
+          "status": "cataloged",
+          "type": "Tax abatement",
+          "terms": "Town-option tax abatements for affordable housing; CT Communities Challenge / TOD grants for station-area projects (Stamford, New Haven).",
+          "source": "https://portal.ct.gov/doh"
+        },
+        {
+          "name": "DOH FLEX / CHFA predevelopment & acquisition",
+          "status": "cataloged",
+          "type": "Acquisition subsidy",
+          "terms": "DOH FLEX and CHFA can fund acquisition within an affordable project budget; predevelopment loans available through CHFA and CDFIs (LISC CT, Capital for Change).",
+          "source": "https://portal.ct.gov/doh"
+        },
+        {
+          "name": "8-30g as site-control leverage",
+          "status": "cataloged",
+          "type": "Site control",
+          "terms": "In sub-10% towns, optioning a site cheaply then filing an 8-30g set-aside application is the acquisition play \u2014 the zoning override IS the value creation. Option/contract control beats outright purchase pre-approval.",
+          "source": "https://www.cga.ct.gov/current/pub/chap_126a.htm"
+        }
       ]
     },
     {
-      "region": "Northern NJ (Fort Lee · Englewood · Edgewater · Bergen)",
+      "region": "Northern NJ (Fort Lee \u00b7 Englewood \u00b7 Edgewater \u00b7 Bergen)",
       "programs": [
-        {"name": "Long-Term Tax Exemption PILOT (N.J.S.A. 40A:20)", "status": "cataloged", "type": "Tax abatement",
-         "terms": "Municipal PILOT up to 30-35 yrs for redevelopment-area projects via urban renewal entity — NJ's workhorse; payment often ~10-15% of gross revenue instead of full taxes. Requires 'Area in Need of Redevelopment' designation.",
-         "source": "https://www.nj.gov/dca/codes/codreg/pdf_regs/40A_20.pdf"},
-        {"name": "5-Year Abatement (N.J.S.A. 40A:21)", "status": "cataloged", "type": "Tax abatement",
-         "terms": "Short-form abatement/exemption for improvements — simpler, town-option, good for smaller infill.",
-         "source": "https://www.nj.gov/dca/"},
-        {"name": "NJEDA Aspire 3.0", "status": "cataloged", "type": "Tax credit",
-         "terms": "Gap-financing tax credits for residential projects in incentive areas (can reach 60%+ of eligible costs in qualified locations; $500M+ annual capacity). Updated program rules in 2026.",
-         "source": "https://www.njeda.gov/aspire/"},
-        {"name": "NJHMFA 4%/9% LIHTC + State Tax Credit Subsidy Program", "status": "cataloged", "type": "Affordable stack",
-         "terms": "Standard LIHTC pipeline plus NJ's new state tax-credit sale program (up to $500M) funding affordable/workforce housing.",
-         "source": "https://www.nj.gov/dca/hmfa/developers/"},
-        {"name": "Mount Laurel / affordable obligations", "status": "cataloged", "type": "Zoning lever",
-         "terms": "Fourth-round municipal affordable obligations (2025-2035) force towns to zone for affordable units — builder's-remedy-style leverage in under-compliant Bergen towns.",
-         "source": "https://www.nj.gov/dca/"}
+        {
+          "name": "Long-Term Tax Exemption PILOT (N.J.S.A. 40A:20)",
+          "status": "cataloged",
+          "type": "Tax abatement",
+          "terms": "Municipal PILOT up to 30-35 yrs for redevelopment-area projects via urban renewal entity \u2014 NJ's workhorse; payment often ~10-15% of gross revenue instead of full taxes. Requires 'Area in Need of Redevelopment' designation.",
+          "source": "https://www.nj.gov/dca/codes/codreg/pdf_regs/40A_20.pdf"
+        },
+        {
+          "name": "5-Year Abatement (N.J.S.A. 40A:21)",
+          "status": "cataloged",
+          "type": "Tax abatement",
+          "terms": "Short-form abatement/exemption for improvements \u2014 simpler, town-option, good for smaller infill.",
+          "source": "https://www.nj.gov/dca/"
+        },
+        {
+          "name": "NJEDA Aspire 3.0",
+          "status": "cataloged",
+          "type": "Tax credit",
+          "terms": "Gap-financing tax credits for residential projects in incentive areas (can reach 60%+ of eligible costs in qualified locations; $500M+ annual capacity). Updated program rules in 2026.",
+          "source": "https://www.njeda.gov/aspire/"
+        },
+        {
+          "name": "NJHMFA 4%/9% LIHTC + State Tax Credit Subsidy Program",
+          "status": "cataloged",
+          "type": "Affordable stack",
+          "terms": "Standard LIHTC pipeline plus NJ's new state tax-credit sale program (up to $500M) funding affordable/workforce housing.",
+          "source": "https://www.nj.gov/dca/hmfa/developers/"
+        },
+        {
+          "name": "Mount Laurel / affordable obligations",
+          "status": "cataloged",
+          "type": "Zoning lever",
+          "terms": "Fourth-round municipal affordable obligations (2025-2035) force towns to zone for affordable units \u2014 builder's-remedy-style leverage in under-compliant Bergen towns.",
+          "source": "https://www.nj.gov/dca/"
+        },
+        {
+          "name": "NJ Community Capital / CDFI acquisition loans",
+          "status": "cataloged",
+          "type": "Acquisition loan",
+          "terms": "CDFI acquisition-predevelopment bridge lending for NJ affordable/mixed-income projects.",
+          "source": "https://www.njclf.com"
+        },
+        {
+          "name": "Redevelopment designation + municipal conveyance",
+          "status": "cataloged",
+          "type": "Site control",
+          "terms": "Once an 'Area in Need of Redevelopment' is designated, municipalities can convey property directly to a designated redeveloper (no public bid) with a PILOT attached \u2014 the NJ site-control path.",
+          "source": "https://www.nj.gov/dca/"
+        }
       ]
     },
     {
       "region": "Federal (all regions)",
       "programs": [
-        {"name": "LIHTC 4% / 9%", "status": "cataloged", "type": "Tax credit",
-         "terms": "The backbone of every affordable stack nationally; allocated via each state agency above.",
-         "source": "https://www.huduser.gov/portal/datasets/lihtc.html"},
-        {"name": "Opportunity Zones (OZ 2.0)", "status": "cataloged", "type": "Capital gains",
-         "terms": "Permanent renewal (2025 law): capital-gains deferral/step-up for equity in designated census tracts — check tract maps for South Bronx, New Haven, Englewood sites.",
-         "source": "https://www.irs.gov/credits-deductions/businesses/opportunity-zones"},
-        {"name": "HUD 221(d)(4) / 223(f)", "status": "cataloged", "type": "Debt",
-         "terms": "FHA-insured construction-perm (up to ~85-87% LTC, 40-yr amortization, non-recourse) — the institutional alternative to bank construction debt once you're at scale.",
-         "source": "https://www.hud.gov/program_offices/housing/mfh"}
+        {
+          "name": "LIHTC 4% / 9%",
+          "status": "cataloged",
+          "type": "Tax credit",
+          "terms": "The backbone of every affordable stack nationally; allocated via each state agency above.",
+          "source": "https://www.huduser.gov/portal/datasets/lihtc.html"
+        },
+        {
+          "name": "Opportunity Zones (OZ 2.0)",
+          "status": "cataloged",
+          "type": "Capital gains",
+          "terms": "Permanent renewal (2025 law): capital-gains deferral/step-up for equity in designated census tracts \u2014 check tract maps for South Bronx, New Haven, Englewood sites.",
+          "source": "https://www.irs.gov/credits-deductions/businesses/opportunity-zones"
+        },
+        {
+          "name": "HUD 221(d)(4) / 223(f)",
+          "status": "cataloged",
+          "type": "Debt",
+          "terms": "FHA-insured construction-perm (up to ~85-87% LTC, 40-yr amortization, non-recourse) \u2014 the institutional alternative to bank construction debt once you're at scale.",
+          "source": "https://www.hud.gov/program_offices/housing/mfh"
+        },
+        {
+          "name": "CDFI acquisition/predev lending (LISC, Enterprise)",
+          "status": "cataloged",
+          "type": "Acquisition loan",
+          "terms": "National intermediaries lend acquisition + predevelopment capital for affordable projects in all your regions.",
+          "source": "https://www.lisc.org"
+        },
+        {
+          "name": "FHLBNY Affordable Housing Program",
+          "status": "cataloged",
+          "type": "Subsidy",
+          "terms": "Competitive grants (~$50-80k/unit range historically) through member banks \u2014 often used to fill acquisition gaps in affordable deals.",
+          "source": "https://www.fhlbny.com/community/affordable-housing-programs/"
+        }
       ]
     }
   ]
