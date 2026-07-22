@@ -164,10 +164,11 @@
   <div class="fkeys">
     <a class="fkey" href="#brief"><b>F1</b>DESK BRIEF</a>
     <a class="fkey" href="#board"><b>F2</b>NYC BOARD</a>
-    <a class="fkey" href="#suburbs"><b>F3</b>SUBURBS</a>
-    <a class="fkey" href="#programs"><b>F4</b>PROGRAMS</a>
-    <a class="fkey" href="#playbook"><b>F5</b>PLAYBOOK</a>
-    <a class="fkey" href="#assumptions"><b>F6</b>ASSUMPTIONS</a>
+    <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
+    <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
+    <a class="fkey" href="#programs"><b>F5</b>PROGRAMS</a>
+    <a class="fkey" href="#playbook"><b>F6</b>PLAYBOOK</a>
+    <a class="fkey" href="#assumptions"><b>F7</b>ASSUMPTIONS</a>
   </div>
   <div class="hero" id="hero"></div>
 
@@ -195,8 +196,18 @@
     </div>
   </section>
 
+  <section id="ct">
+    <div class="eyebrow"><span class="no">04</span><h2>Connecticut · 8-30g Board</h2>
+      <span class="hint">Gold Coast + Stamford/New Haven — real CT CAMA data with zoning-override flagging</span></div>
+    <div class="subnote"><b class="em">The play:</b> in towns under 10% affordable (Greenwich 5.3%, Westport 3.5%, Ridgefield, New Canaan, Darien), <b>CGS 8-30g lets a 30%-affordable set-aside override local zoning denial</b> — so estate-zoned vacant land becomes developable. Unit counts assume ~16/acre WHERE 8-30g applies (~8/acre elsewhere) — verify with an affordability plan. Stamford/New Haven are 8-30g-exempt (over threshold). <b class="warn">Screen tier: confirm zoning, wetlands, and sewer before pursuing.</b></div>
+    <div class="card">
+      <div class="card-head"><span class="code">CT</span><span class="t">Zoning-override development plays</span><span class="expo" id="ctMeta"></span></div>
+      <div id="ctTbl"><div class="loading">loading Connecticut board…</div></div>
+    </div>
+  </section>
+
   <section id="programs">
-    <div class="eyebrow"><span class="no">04</span><h2>Program Library</h2>
+    <div class="eyebrow"><span class="no">05</span><h2>Program Library</h2>
       <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
     <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
     <div class="filters" id="progTabs"></div>
@@ -204,13 +215,13 @@
   </section>
 
   <section id="playbook">
-    <div class="eyebrow"><span class="no">05</span><h2>Emerging Developer Playbook</h2>
+    <div class="eyebrow"><span class="no">06</span><h2>Emerging Developer Playbook</h2>
       <span class="hint">how to actually use the programs — strategy, sequencing, screening habits</span></div>
     <div id="playbookBox"><div class="loading">loading playbook…</div></div>
   </section>
 
   <section id="assumptions">
-    <div class="eyebrow"><span class="no">06</span><h2>Published Assumptions</h2>
+    <div class="eyebrow"><span class="no">07</span><h2>Published Assumptions</h2>
       <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
     <div class="assump" id="assumpBox"></div>
     <div class="banner" style="margin-top:14px" id="assumpNote"></div>
@@ -298,7 +309,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
 
 (async()=>{
   try{
-    const [deals,briefs,progs,subs,pb]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb,ct]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null)]);
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
       $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
@@ -314,6 +325,24 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
       });
       $('subTbl').innerHTML=sh+'</tbody></table>';
     } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
+    // Connecticut 8-30g board
+    if(ct&&ct.deals&&ct.deals.length){
+      $('ctMeta').innerHTML=`<span class="mono">${ct.counts.qualified} qualified · ${ct.counts.in_8_30g_towns} in 8-30g towns</span>`;
+      let ch='<table><thead><tr><th class="num">Score</th><th>Address</th><th>Town</th><th title="Base zoning — 8-30g can override">Zone</th><th>Play</th><th class="num">Acres</th><th class="num" title="At assumed density WITH 8-30g override — verify">Est. units*</th><th class="num">Est. value</th><th class="num">$/unit*</th><th title="Town affordable %; under 10% = override available">8-30g</th><th>Owner (outreach)</th></tr></thead><tbody>';
+      ct.deals.slice(0,80).forEach(x=>{
+        const flag=x.eight_30g_applies?`<span class="badge b-mkt">${x.town_affordable_pct}%</span>`:`<span class="badge b-city">exempt</span>`;
+        ch+=`<tr class="deal"><td class="num"><span class="scorepill ${scoreCls(x.score)}">${x.score}</span></td>
+        <td><span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}</td>
+        <td style="font-size:12px">${x.town}</td>
+        <td style="font-size:11px;color:var(--text2)">${x.zone||'—'}</td>
+        <td style="font-size:11px;color:${x.vacant?'var(--em2)':'var(--muted)'}">${(x.play_type||'').replace(' (occupied)','')}</td>
+        <td class="num">${x.acres}</td><td class="num">${x.est_units}</td>
+        <td class="num">${usd(x.est_value)}</td><td class="num">${usd(x.value_per_est_unit)}</td>
+        <td>${flag}</td>
+        <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,24)}</td></tr>`;
+      });
+      $('ctTbl').innerHTML=ch+'</tbody></table>';
+    } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
     // playbook
     if(pb&&pb.ladder){
       const li=x=>`<div class="tgt" style="margin-top:10px"><div class="row">${x}</div></div>`;
