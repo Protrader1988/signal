@@ -13,6 +13,7 @@ on:
       - "research/experiments_r3.py"
       - "research/value_probe.py"
       - "research/re_data_probe.py"
+      - "research/ctnj_probe.py"
       - "research/requirements.txt"
       - ".github/workflows/backtest.yml"
   workflow_dispatch: {}
@@ -59,6 +60,11 @@ jobs:
         continue-on-error: true
         run: |
           python research/re_data_probe.py 2>&1 | tee research/output/re_probe_log.txt
+
+      - name: Probe CT/NJ parcel services
+        continue-on-error: true
+        run: |
+          python research/ctnj_probe.py 2>&1 | tee research/output/ctnj_log.txt
 
       - name: Commit results
         if: always()

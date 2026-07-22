@@ -163,9 +163,11 @@
 <div class="wrap">
   <div class="fkeys">
     <a class="fkey" href="#brief"><b>F1</b>DESK BRIEF</a>
-    <a class="fkey" href="#board"><b>F2</b>DEAL BOARD</a>
-    <a class="fkey" href="#programs"><b>F3</b>PROGRAMS</a>
-    <a class="fkey" href="#assumptions"><b>F4</b>ASSUMPTIONS</a>
+    <a class="fkey" href="#board"><b>F2</b>NYC BOARD</a>
+    <a class="fkey" href="#suburbs"><b>F3</b>SUBURBS</a>
+    <a class="fkey" href="#programs"><b>F4</b>PROGRAMS</a>
+    <a class="fkey" href="#playbook"><b>F5</b>PLAYBOOK</a>
+    <a class="fkey" href="#assumptions"><b>F6</b>ASSUMPTIONS</a>
   </div>
   <div class="hero" id="hero"></div>
 
@@ -183,16 +185,32 @@
     <div class="card"><div id="dealTbl"><div class="loading">loading deals…</div></div></div>
   </section>
 
+  <section id="suburbs">
+    <div class="eyebrow"><span class="no">03</span><h2>Suburban Screens</h2>
+      <span class="hint">Westchester · Putnam · Dutchess — real NYS parcel data, screen tier</span></div>
+    <div class="subnote"><span class="badge b-prog">Screen tier</span> Real 2025 assessment-roll parcels (vacant developable + underimproved multifamily-class), government/watershed owners excluded, unbuildable-land floor applied. <b class="warn">Unit counts assume ~20/acre IF zoning allows — verify at town hall before underwriting.</b> Owner names come from the roll — this is your outreach list.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span></div>
+      <div id="subTbl"><div class="loading">loading suburban screens…</div></div>
+    </div>
+  </section>
+
   <section id="programs">
-    <div class="eyebrow"><span class="no">03</span><h2>Program Library</h2>
+    <div class="eyebrow"><span class="no">04</span><h2>Program Library</h2>
       <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
     <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
     <div class="filters" id="progTabs"></div>
     <div class="prog-grid" id="progGrid"><div class="loading">loading program library…</div></div>
   </section>
 
+  <section id="playbook">
+    <div class="eyebrow"><span class="no">05</span><h2>Emerging Developer Playbook</h2>
+      <span class="hint">how to actually use the programs — strategy, sequencing, screening habits</span></div>
+    <div id="playbookBox"><div class="loading">loading playbook…</div></div>
+  </section>
+
   <section id="assumptions">
-    <div class="eyebrow"><span class="no">04</span><h2>Published Assumptions</h2>
+    <div class="eyebrow"><span class="no">06</span><h2>Published Assumptions</h2>
       <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
     <div class="assump" id="assumpBox"></div>
     <div class="banner" style="margin-top:14px" id="assumpNote"></div>
@@ -280,7 +298,48 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
 
 (async()=>{
   try{
-    const [deals,briefs,progs]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null)]);
+    // suburban screens
+    if(subs&&subs.deals&&subs.deals.length){
+      $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
+      let sh='<table><thead><tr><th class="num">Score</th><th>Address</th><th>Municipality</th><th>County</th><th>Class</th><th class="num" title="From front×depth — verify survey">Acres</th><th class="num" title="At assumed 20/acre — VERIFY zoning">Est. units*</th><th class="num" title="Full market value per assessment roll">Est. value</th><th class="num">$/unit*</th><th>Owner (outreach)</th></tr></thead><tbody>';
+      subs.deals.slice(0,80).forEach(x=>{
+        sh+=`<tr class="deal"><td class="num"><span class="scorepill ${scoreCls(x.score)}">${x.score}</span></td>
+        <td><span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}</td>
+        <td style="font-size:12px">${x.muni}</td><td class="mono" style="font-size:11px;color:var(--text2)">${x.region.slice(0,4).toUpperCase()}</td>
+        <td style="font-size:11.5px;color:var(--muted)">${(x.class_desc||'').slice(0,26)}</td>
+        <td class="num">${x.acres}</td><td class="num">${x.est_units_at_assumed_density}</td>
+        <td class="num">${usd(x.est_market_value)}</td><td class="num">${usd(x.value_per_est_unit)}</td>
+        <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,26)}</td></tr>`;
+      });
+      $('subTbl').innerHTML=sh+'</tbody></table>';
+    } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
+    // playbook
+    if(pb&&pb.ladder){
+      const li=x=>`<div class="tgt" style="margin-top:10px"><div class="row">${x}</div></div>`;
+      $('playbookBox').innerHTML=`
+        <div class="brief"><div class="lead">${pb.intro}</div></div>
+        <div class="card" style="margin-top:16px"><div class="card-head"><span class="code">EDGE</span><span class="t">${pb.edge.title}</span></div>
+          <div style="padding:6px 20px 16px">${pb.edge.points.map(li).join('')}</div></div>
+        <div class="card"><div class="card-head"><span class="code">LADDER</span><span class="t">${pb.ladder.title}</span></div>
+          <div style="padding:6px 20px 16px">${pb.ladder.stages.map(s=>`<div class="tgt" style="margin-top:12px">
+            <div class="addr">${s.stage}</div>
+            <div class="row"><b>The play:</b> ${s.play}</div>
+            <div class="row"><b>Programs:</b> ${s.programs}</div>
+            <div class="row"><b>Money:</b> ${s.money}</div>
+            <div class="row"><b>Why:</b> ${s.why}</div></div>`).join('')}</div></div>
+        <div class="card"><div class="card-head"><span class="code">SCREEN</span><span class="t">${pb.screen.title}</span></div>
+          <div style="padding:14px 20px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px">
+            <div><div style="font-size:11px;letter-spacing:1px;color:var(--em2);font-weight:700;margin-bottom:6px">◆ LOOK FOR</div>
+              ${pb.screen.look.map(x=>`<div class="row" style="font-size:12.5px;color:var(--text2);margin-top:7px;line-height:1.6">• ${x}</div>`).join('')}</div>
+            <div><div style="font-size:11px;letter-spacing:1px;color:var(--down);font-weight:700;margin-bottom:6px">◆ AVOID</div>
+              ${pb.screen.avoid.map(x=>`<div class="row" style="font-size:12.5px;color:var(--text2);margin-top:7px;line-height:1.6">• ${x}</div>`).join('')}</div></div></div>
+        <div class="card"><div class="card-head"><span class="code">MOVES</span><span class="t">${pb.moves.title}</span></div>
+          <div style="padding:6px 20px 16px" class="prog-grid">${pb.moves.items.map(m=>`<div class="prog" style="margin-top:10px"><h3 style="font-size:13px">${m.m}</h3><div class="terms">${m.d}</div></div>`).join('')}</div></div>
+        <div class="card"><div class="card-head"><span class="code">24MO</span><span class="t">${pb.sequence.title}</span></div>
+          <div style="padding:6px 20px 16px">${pb.sequence.steps.map(li).join('')}</div></div>
+        <div class="dg-note" style="margin-top:12px">${pb.disclaimer}</div>`;
+    } else { $('playbookBox').innerHTML='<div class="empty">Playbook loads after next data publish.</div>'; }
     // program library with region tabs
     if(progs&&progs.regions){
       let PSEL=progs.regions[0].region;
