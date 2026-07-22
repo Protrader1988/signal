@@ -1,6 +1,6 @@
 # Backtest results
 
-_Generated 2026-07-22T05:26:01.285485+00:00_
+_Generated 2026-07-22T05:30:13.195344+00:00_
 
 ## US equities/ETFs
 Universe: 65 names · 2017-01-03 → 2026-07-21
@@ -16,4 +16,4 @@ Universe: 12 names · 2017-01-01 → 2026-07-22
     out-of-sample (since 2023-06-15): CAGR -5.0%, Sharpe 0.25, maxDD -69.1%
 - **swing_strategy** (full): CAGR 13.4%, Sharpe 0.53, maxDD -89.9%
     out-of-sample (since 2023-06-15): CAGR -19.0%, Sharpe -0.14, maxDD -79.7%
-- benchmark: CAGR 111.8%, Sharpe 1.31, maxDD -87.1%
+- benchmark: CAGR 111.7%, Sharpe 1.31, maxDD -87.1%
