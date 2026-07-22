@@ -1,0 +1,62 @@
+{
+  "generated_utc": "2026-07-22T23:10:03.918783+00:00",
+  "region": "Connecticut \u2014 Gold Coast + Stamford/New Haven",
+  "tier_note": "SCREEN tier: real CT CAMA parcel data. Density is a published assumption; the 8-30g flag is the strategic edge, not a zoning determination.",
+  "eight_30g_rule": "A CT town is 8-30g-exempt only if \u226510% of its housing is affordable or it holds a moratorium. Under that, a 30%-affordable set-aside can override local zoning denial.",
+  "towns": {
+    "GREENWICH": {
+      "affordable_pct": 5.3,
+      "8_30g_applies": true
+    },
+    "WESTPORT": {
+      "affordable_pct": 3.5,
+      "8_30g_applies": true
+    },
+    "RIDGEFIELD": {
+      "affordable_pct": 3.4,
+      "8_30g_applies": true
+    },
+    "NEW CANAAN": {
+      "affordable_pct": 3.0,
+      "8_30g_applies": true
+    },
+    "DARIEN": {
+      "affordable_pct": 3.4,
+      "8_30g_applies": true
+    },
+    "STAMFORD": {
+      "affordable_pct": 13.5,
+      "8_30g_applies": false
+    },
+    "NEW HAVEN": {
+      "affordable_pct": 31.0,
+      "8_30g_applies": false
+    }
+  },
+  "counts": {
+    "by_town": {
+      "GREENWICH": 0,
+      "WESTPORT": 0,
+      "RIDGEFIELD": 0,
+      "NEW CANAAN": 0,
+      "DARIEN": 0,
+      "STAMFORD": 0,
+      "NEW HAVEN": 0
+    },
+    "qualified": 0,
+    "new_today": 0,
+    "in_8_30g_towns": 0,
+    "vacant": 0
+  },
+  "assumptions": {
+    "density_8_30g_uac": 16,
+    "density_base_uac": 8,
+    "density_note": "Units assume ~16/acre WHERE 8-30g override is available (set-aside can exceed base zoning), else ~8/acre. Verify with an 8-30g affordability plan / town zoning.",
+    "min_acres": 0.35,
+    "max_acres": 15.0,
+    "min_value_per_acre": 40000,
+    "value_floor_note": "CT Gold Coast land is expensive; parcels under ~$40k/acre are almost certainly unbuildable (wetlands, ledge, no sewer).",
+    "note": "Screen tier on real CT CAMA data. The 8-30g flag is the strategic signal \u2014 not a substitute for a zoning/affordability-plan review."
+  },
+  "deals": []
+}
