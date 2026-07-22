@@ -54,20 +54,32 @@ def fetch_land_comps():
     """Median $/SF of real vacant-land sales per borough, last ~18 months.
     Numeric columns in usep-8jbt are text -> filter numerics client-side."""
     since = (date.today() - timedelta(days=548)).isoformat()
-    variants = [
-        f"building_class_at_time_of_sale like 'V%' and sale_date >= '{since}T00:00:00'",
-        "building_class_at_time_of_sale like 'V%'",
-    ]
+    base = "https://data.cityofnewyork.us/resource/usep-8jbt.json"
+    # discover the dataset's real field names from one raw row
+    probe = get_json(base + "?$limit=1")
+    keys = list(probe[0].keys()) if probe else []
+    print("rolling-sales fields:", keys)
+    def find(*prefixes):
+        for pref in prefixes:
+            for k in keys:
+                if k.startswith(pref): return k
+        return None
+    f_class = find("building_class_at_time")
+    f_price = find("sale_price", "saleprice")
+    f_land  = find("land_square", "land_sq", "landsquare")
+    f_date  = find("sale_date", "saledate")
+    f_boro  = find("borough", "boro")
+    if not all([f_class, f_price, f_boro]):
+        raise RuntimeError(f"could not map fields from {keys}")
     rows = []
-    for w in variants:
-        try:
-            url = ("https://data.cityofnewyork.us/resource/usep-8jbt.json?"
-                   f"$select=borough,sale_price,land_square_feet,sale_date"
-                   f"&$where={urllib.parse.quote(w)}&$limit=20000")
-            rows = get_json(url)
-            if rows: break
-        except Exception as e:
-            print(f"comps variant failed: {e}")
+    try:
+        w = f"{f_class} like 'V%'"
+        rows = get_json(base + f"?$where={urllib.parse.quote(w)}&$limit=20000")
+    except Exception as e:
+        print(f"comps class-filter failed: {e}")
+    # remap to canonical names for the loop below
+    rows = [{"borough": r.get(f_boro), "sale_price": r.get(f_price),
+             "land_square_feet": r.get(f_land), "sale_date": r.get(f_date)} for r in rows]
     def num(x):
         try: return float(str(x).replace(",","").replace("$",""))
         except Exception: return 0.0
