@@ -140,6 +140,34 @@
   .foot{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.75}
   .loading{padding:22px;color:var(--dim);font-family:var(--mono);font-size:12.5px}
   code{font-family:var(--mono);color:var(--text2);font-size:12px}
+  /* digest */
+  .digest{background:linear-gradient(180deg,#0f1119,#0a0c12);border:1px solid var(--goldline);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow)}
+  .dg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .lean{font-family:var(--mono);font-size:12px;font-weight:700;padding:4px 12px;border-radius:7px;text-transform:uppercase;letter-spacing:.6px;border:1px solid}
+  .lean.bull{color:var(--up);border-color:rgba(47,211,154,.4);background:rgba(47,211,154,.07)}
+  .lean.bear{color:var(--down);border-color:rgba(255,93,93,.4);background:rgba(255,93,93,.07)}
+  .lean.neut{color:var(--text2);border-color:var(--line2)}
+  .conf{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+  .dg-sum{font-size:14.5px;line-height:1.7;margin:6px 0 14px}
+  .bbgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.bbgrid{grid-template-columns:1fr}}
+  .bb{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+  .bb .h{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:5px}
+  .bb.bull .h{color:var(--up)}.bb.bear .h{color:var(--down)}
+  .bb p{font-size:13px;color:var(--text2);line-height:1.6}
+  .watch{margin-top:12px;font-size:12.5px;color:var(--text2)}.watch b{color:var(--gold2)}
+  .takes{margin-top:14px;display:grid;gap:8px}
+  .take{border:1px solid var(--line);border-radius:9px;padding:10px 13px;background:var(--surface);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+  .take .tp{font-family:var(--mono);font-weight:700;font-size:12.5px;min-width:110px}
+  .take .nt{font-size:12.5px;color:var(--text2);flex:1;line-height:1.55}
+  .dg-note{margin-top:12px;font-size:11px;color:var(--dim);line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
+  .setup{border:1px dashed var(--line2);border-radius:12px;padding:16px 18px;color:var(--text2);font-size:13px;line-height:1.65;background:var(--surface2)}
+  .setup b{color:var(--gold2)}
+  .newsrow{display:flex;gap:12px;align-items:baseline;padding:11px 20px;border-bottom:1px solid var(--line);transition:background .12s}
+  .newsrow:hover{background:var(--hover)}.newsrow:last-child{border-bottom:none}
+  .newsrow .tk{font-family:var(--mono);font-size:10px;color:var(--gold);min-width:64px;text-transform:uppercase}
+  .newsrow a{font-size:13.5px;color:var(--text);flex:1;line-height:1.5}.newsrow a:hover{color:var(--gold2)}
+  .newsrow .src{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -160,8 +188,9 @@
     <a class="fkey" href="#signals"><b>F2</b>SIGNALS</a>
     <a class="fkey" href="#value"><b>F3</b>VALUE</a>
     <a class="fkey" href="#watch"><b>F4</b>WATCHLIST</a>
-    <a class="fkey" href="#chart"><b>F5</b>PERFORMANCE</a>
-    <a class="fkey" href="#ledger"><b>F6</b>TRACK RECORD</a>
+    <a class="fkey" href="#news"><b>F5</b>MARKET READ</a>
+    <a class="fkey" href="#chart"><b>F6</b>PERFORMANCE</a>
+    <a class="fkey" href="#ledger"><b>F7</b>TRACK RECORD</a>
   </div>
 
   <!-- PLAYBOOK -->
@@ -210,8 +239,18 @@
     <div class="card"><div id="watchTbl"><div class="loading">loading watchlist…</div></div></div>
   </section>
 
+  <section id="news">
+    <div class="eyebrow"><span class="no">05</span><h2>Market Read &amp; News</h2>
+      <span class="hint">an honest AI read of real headlines — interpretation, not a forecast</span></div>
+    <div id="digestBox"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">NEWS</span><span class="t">Real headlines</span><span class="expo" id="newsMeta"></span></div>
+      <div id="newsList"><div class="loading">loading headlines…</div></div>
+    </div>
+  </section>
+
   <section id="chart">
-    <div class="eyebrow"><span class="no">05</span><h2>Flagship Performance</h2>
+    <div class="eyebrow"><span class="no">06</span><h2>Flagship Performance</h2>
       <span class="hint">real historical prices, hypothetical trades · indexed to 100 · log scale</span></div>
     <div class="card">
       <div class="card-head"><span class="code">CURVE</span><span class="t" id="curveLabel">Momentum + vol-target vs benchmarks</span><span class="expo" id="curveRange"></span></div>
@@ -221,7 +260,7 @@
   </section>
 
   <section id="ledger">
-    <div class="eyebrow"><span class="no">06</span><h2>Live Track Record</h2>
+    <div class="eyebrow"><span class="no">07</span><h2>Live Track Record</h2>
       <span class="hint">real forward outcomes of every signal — no hindsight, nothing hidden</span></div>
     <div class="statusgrid" id="ledgerTiles"></div>
     <div id="ledgerNote" style="margin-top:14px"></div>
@@ -232,7 +271,7 @@
   </section>
 
   <section id="backtest">
-    <div class="eyebrow"><span class="no">07</span><h2>Backtest Validation</h2>
+    <div class="eyebrow"><span class="no">08</span><h2>Backtest Validation</h2>
       <span class="hint">real historical prices · hypothetical trades applied in hindsight</span></div>
     <div class="card">
       <div class="card-head"><span class="code">HIST</span><span class="badge b-sim">Real data · hypothetical trades</span><span class="t mono" id="btPeriod" style="font-weight:400;color:var(--text2)"></span></div>
@@ -401,6 +440,36 @@ function draw(){
     ],'Watchlist will appear after the next engine run.');
   } else { $('watchTbl').innerHTML='<div class="empty">Watchlist will appear after the next engine run.</div>'; }
 
+  // MARKET READ (AI digest) + NEWS
+  const leanClass=l=>/bull/i.test(l||'')?'bull':(/bear/i.test(l||'')?'bear':'neut');
+  const dg=DATA.digest;
+  if(dg&&dg.available&&dg.market){
+    const m=dg.market;
+    $('digestBox').innerHTML=`<div class="digest">
+      <div class="dg-head"><span class="lean ${leanClass(m.lean)}">${m.lean||'neutral'}</span>
+        <span class="conf">confidence: ${m.confidence||'—'}</span>
+        <span class="conf" style="margin-left:auto">AI read · ${dg.model||''}</span></div>
+      <div class="dg-sum">${m.summary||''}</div>
+      <div class="bbgrid">
+        <div class="bb bull"><div class="h">▲ Bull case</div><p>${m.bull||''}</p></div>
+        <div class="bb bear"><div class="h">▼ Bear case</div><p>${m.bear||''}</p></div>
+      </div>
+      ${m.watch?`<div class="watch"><b>Watch:</b> ${m.watch}</div>`:''}
+      ${(dg.takes&&dg.takes.length)?`<div class="takes">`+dg.takes.map(t=>`<div class="take"><span class="tp ${leanClass(t.lean)==='bull'?'up':(leanClass(t.lean)==='bear'?'down':'neu')}">${t.topic} · ${t.lean}</span><span class="nt">${t.note} <span class="conf">(${t.confidence})</span></span></div>`).join('')+`</div>`:''}
+      <div class="dg-note">${dg.disclaimer||''}</div>
+    </div>`;
+  } else {
+    const note=(dg&&dg.note)||'Add a free GEMINI_API_KEY repository secret to enable an honest daily market read of the real headlines below.';
+    $('digestBox').innerHTML=`<div class="setup"><b>AI Market Read — not set up yet.</b> ${note}<br><br>To turn it on: create a free key at <span class="mono">aistudio.google.com/apikey</span>, then add it at <span class="mono">Settings → Secrets → Actions</span> in your repo as <span class="mono">GEMINI_API_KEY</span>. The real headlines below work regardless.</div>`;
+  }
+  const nw=DATA.news;
+  if(nw&&nw.items&&nw.items.length){
+    $('newsMeta').innerHTML=`<span class="mono">${nw.count} headlines</span>`;
+    $('newsList').innerHTML=nw.items.map(it=>`<div class="newsrow"><span class="tk">${it.tag||''}</span><a href="${it.link}" target="_blank" rel="noopener">${it.title}</a><span class="src">${it.source||''}</span></div>`).join('');
+  } else { $('newsList').innerHTML='<div class="empty">Headlines will appear after the next engine run publishes them.</div>'; }
+
+  drawChart(cv);
+
   const tiles=[{k:'Live since',v:sc.live_since||'—',s:'forward test'},{k:'Open',v:openN,s:'tracked now'},{k:'Closed',v:closedN,s:'reached horizon'},
     {k:'Position win rate',v:p.n?p.win_rate_pct+'%':'—',s:p.n?`${p.n} closed · avg ${pc(p.avg_return_pct)}`:'accruing'},
     {k:'Swing win rate',v:s.n?s.win_rate_pct+'%':'—',s:s.n?`${s.n} closed · avg ${pc(s.avg_return_pct)}`:'accruing'}];
@@ -425,8 +494,8 @@ function draw(){
 
 (async()=>{
   try{
-    const [sig,led,bt,meta,cv,val,watch]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null)]);
-    DATA={sig,led,bt,meta,cv,val,watch};draw();
+    const [sig,led,bt,meta,cv,val,watch,news,digest]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null)]);
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';

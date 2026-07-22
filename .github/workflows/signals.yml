@@ -14,6 +14,7 @@ on:
       - "engine/curve.py"
       - "engine/fundamentals.py"
       - "engine/news.py"
+      - "engine/ai_digest.py"
       - ".github/workflows/signals.yml"
 
 permissions:
@@ -45,12 +46,17 @@ jobs:
       - name: Market news (real headlines)
         continue-on-error: true
         run: python engine/news.py 2>&1 | tee news_run.log
+      - name: AI market digest (honest read of real news)
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python engine/ai_digest.py 2>&1 | tee digest_run.log
       - name: Commit data
         if: always()
         run: |
           git config user.name "signal-actions"
           git config user.email "actions@github.com"
-          git add site/data engine_run.log || true
+          git add site/data *.log || true
           if git diff --cached --quiet; then
             echo "no changes"
           else
