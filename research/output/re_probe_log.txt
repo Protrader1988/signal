@@ -1,0 +1,18 @@
+OK   NYC PLUTO (Socrata 64uk-42ks): rows/keys=1 sample=['borough', 'block', 'lot', 'cd', 'ct2010', 'cb2010', 'schooldist', 'council', 'zipcode', 'firecomp', 'policeprct', 'healtharea']
+OK   NYC ACRIS master (bnx9-e6tj): rows/keys=1 sample=['document_id', 'record_type', 'crfn', 'recorded_borough', 'doc_type', 'document_date', 'document_amt', 'recorded_datetime', 'modified_date', 'reel_yr', 'reel_nbr', 'reel_pg']
+OK   NYC DOF rolling sales (usep-8jbt): rows/keys=1 sample=['borough', 'neighborhood', 'building_class_category', 'tax_class_at_present', 'block', 'lot', 'building_class_at_present', 'address', 'zip_code', 'residential_units', 'commercial_units', 'total_units']
+OK   NYC DOF assessments (yjxr-fw8i): rows/keys=1 sample=['bble', 'boro', 'block', 'lot', 'owner', 'bldgcl', 'taxclass', 'ltfront', 'ltdepth', 'stories', 'fullval', 'avland']
+FAIL NYC city-owned (caiw-33pf): HTTPError HTTP Error 404: Not Found
+OK   NYS tax parcels (data.ny.gov 7vem-aaz7) Westchester: rows/keys=1 sample=['roll_year', 'county_name', 'municipality_code', 'municipality_name', 'school_district_code', 'school_district_name', 'swis_code', 'roll_section', 'property_class', 'property_class_description', 'print_key_code', 'parcel_address_number']
+OK   NYS tax parcels Putnam: rows/keys=1 sample=['roll_year', 'county_name', 'municipality_code', 'municipality_name', 'school_district_code', 'school_district_name', 'swis_code', 'roll_section', 'property_class', 'property_class_description', 'print_key_code', 'parcel_address_number']
+OK   NYS tax parcels Dutchess: rows/keys=1 sample=['roll_year', 'county_name', 'municipality_code', 'municipality_name', 'school_district_code', 'school_district_name', 'swis_code', 'tax_class', 'roll_section', 'property_class', 'property_class_description', 'print_key_code']
+OK   Westchester GIS parcels (ArcGIS): rows/keys=1 sample=['currentVersion', 'folders', 'services']
+OK   CT open data catalog search 'parcel': rows/keys=1 sample=['results', 'resultSetSize', 'timings', 'warnings']
+OK   CT statewide parcels (ArcGIS CTmaps): rows/keys=1 sample=['currentVersion', 'services']
+OK   CT OPM parcels alt (cteco): rows/keys=1 sample=['currentVersion', 'folders', 'services']
+OK   NJGIN ArcGIS services root: rows/keys=1 sample=['currentVersion', 'services']
+OK   NJ parcels/MOD-IV composite query (Fort Lee test): rows/keys=1 sample=['error']
+FAIL NJGIN open data catalog: HTTPError HTTP Error 404: Not Found
+FAIL National Zoning Atlas API check: HTTPError HTTP Error 404: Not Found
+
+13/16 endpoints OK

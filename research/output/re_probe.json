@@ -1,0 +1,244 @@
+{
+  "generated_utc": "2026-07-22T15:56:36.924376+00:00",
+  "results": [
+    {
+      "name": "NYC PLUTO (Socrata 64uk-42ks)",
+      "ok": true,
+      "note": "parcels+zoning+FAR",
+      "rows": 1,
+      "sample_fields": [
+        "borough",
+        "block",
+        "lot",
+        "cd",
+        "ct2010",
+        "cb2010",
+        "schooldist",
+        "council",
+        "zipcode",
+        "firecomp",
+        "policeprct",
+        "healtharea"
+      ],
+      "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$limit=1"
+    },
+    {
+      "name": "NYC ACRIS master (bnx9-e6tj)",
+      "ok": true,
+      "note": "deeds/mortgages",
+      "rows": 1,
+      "sample_fields": [
+        "document_id",
+        "record_type",
+        "crfn",
+        "recorded_borough",
+        "doc_type",
+        "document_date",
+        "document_amt",
+        "recorded_datetime",
+        "modified_date",
+        "reel_yr",
+        "reel_nbr",
+        "reel_pg"
+      ],
+      "url": "https://data.cityofnewyork.us/resource/bnx9-e6tj.json?$limit=1"
+    },
+    {
+      "name": "NYC DOF rolling sales (usep-8jbt)",
+      "ok": true,
+      "note": "recent sales",
+      "rows": 1,
+      "sample_fields": [
+        "borough",
+        "neighborhood",
+        "building_class_category",
+        "tax_class_at_present",
+        "block",
+        "lot",
+        "building_class_at_present",
+        "address",
+        "zip_code",
+        "residential_units",
+        "commercial_units",
+        "total_units"
+      ],
+      "url": "https://data.cityofnewyork.us/resource/usep-8jbt.json?$limit=1"
+    },
+    {
+      "name": "NYC DOF assessments (yjxr-fw8i)",
+      "ok": true,
+      "note": "assessed values",
+      "rows": 1,
+      "sample_fields": [
+        "bble",
+        "boro",
+        "block",
+        "lot",
+        "owner",
+        "bldgcl",
+        "taxclass",
+        "ltfront",
+        "ltdepth",
+        "stories",
+        "fullval",
+        "avland"
+      ],
+      "url": "https://data.cityofnewyork.us/resource/yjxr-fw8i.json?$limit=1"
+    },
+    {
+      "name": "NYC city-owned (caiw-33pf)",
+      "ok": false,
+      "note": "IPIS city property",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "url": "https://data.cityofnewyork.us/resource/caiw-33pf.json?$limit=1"
+    },
+    {
+      "name": "NYS tax parcels (data.ny.gov 7vem-aaz7) Westchester",
+      "ok": true,
+      "note": "NYS parcel/assessment",
+      "rows": 1,
+      "sample_fields": [
+        "roll_year",
+        "county_name",
+        "municipality_code",
+        "municipality_name",
+        "school_district_code",
+        "school_district_name",
+        "swis_code",
+        "roll_section",
+        "property_class",
+        "property_class_description",
+        "print_key_code",
+        "parcel_address_number"
+      ],
+      "url": "https://data.ny.gov/resource/7vem-aaz7.json?$limit=1&county_name=Westchester"
+    },
+    {
+      "name": "NYS tax parcels Putnam",
+      "ok": true,
+      "note": "Putnam coverage",
+      "rows": 1,
+      "sample_fields": [
+        "roll_year",
+        "county_name",
+        "municipality_code",
+        "municipality_name",
+        "school_district_code",
+        "school_district_name",
+        "swis_code",
+        "roll_section",
+        "property_class",
+        "property_class_description",
+        "print_key_code",
+        "parcel_address_number"
+      ],
+      "url": "https://data.ny.gov/resource/7vem-aaz7.json?$limit=1&county_name=Putnam"
+    },
+    {
+      "name": "NYS tax parcels Dutchess",
+      "ok": true,
+      "note": "Dutchess coverage",
+      "rows": 1,
+      "sample_fields": [
+        "roll_year",
+        "county_name",
+        "municipality_code",
+        "municipality_name",
+        "school_district_code",
+        "school_district_name",
+        "swis_code",
+        "tax_class",
+        "roll_section",
+        "property_class",
+        "property_class_description",
+        "print_key_code"
+      ],
+      "url": "https://data.ny.gov/resource/7vem-aaz7.json?$limit=1&county_name=Dutchess"
+    },
+    {
+      "name": "Westchester GIS parcels (ArcGIS)",
+      "ok": true,
+      "note": "county GIS services",
+      "rows": 1,
+      "sample_fields": [
+        "currentVersion",
+        "folders",
+        "services"
+      ],
+      "url": "https://giswww.westchestergov.com/arcgis/rest/services?f=json"
+    },
+    {
+      "name": "CT open data catalog search 'parcel'",
+      "ok": true,
+      "note": "find CT parcel datasets",
+      "rows": 1,
+      "sample_fields": [
+        "results",
+        "resultSetSize",
+        "timings",
+        "warnings"
+      ],
+      "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.ct.gov&q=parcel&limit=5"
+    },
+    {
+      "name": "CT statewide parcels (ArcGIS CTmaps)",
+      "ok": true,
+      "note": "CT geodata services",
+      "rows": 1,
+      "sample_fields": [
+        "currentVersion",
+        "services"
+      ],
+      "url": "https://services1.arcgis.com/FjPcSmEFuDYlIdKC/arcgis/rest/services?f=json"
+    },
+    {
+      "name": "CT OPM parcels alt (cteco)",
+      "ok": true,
+      "note": "CTECO services",
+      "rows": 1,
+      "sample_fields": [
+        "currentVersion",
+        "folders",
+        "services"
+      ],
+      "url": "https://cteco.uconn.edu/ctmaps/rest/services?f=json"
+    },
+    {
+      "name": "NJGIN ArcGIS services root",
+      "ok": true,
+      "note": "NJ hosted layers",
+      "rows": 1,
+      "sample_fields": [
+        "currentVersion",
+        "services"
+      ],
+      "url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services?f=json"
+    },
+    {
+      "name": "NJ parcels/MOD-IV composite query (Fort Lee test)",
+      "ok": true,
+      "note": "NJ parcels+assessments",
+      "rows": 1,
+      "sample_fields": [
+        "error"
+      ],
+      "url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/NJ_Parcels_and_MOD4_Composite/FeatureServer/0/query?where=MUN_NAME%20LIKE"
+    },
+    {
+      "name": "NJGIN open data catalog",
+      "ok": false,
+      "note": "catalog check",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "url": "https://api.us.socrata.com/api/catalog/v1?domains=njgin.nj.gov&q=parcel&limit=3"
+    },
+    {
+      "name": "National Zoning Atlas API check",
+      "ok": false,
+      "note": "zoning atlas availability",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "url": "https://www.zoningatlas.org/api"
+    }
+  ],
+  "ok_count": 13,
+  "total": 16
+}

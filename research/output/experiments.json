@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-22T06:36:47.574654+00:00",
+  "generated_utc": "2026-07-22T15:55:14.905041+00:00",
   "params": {
     "cost_bps": 10.0,
     "in_sample_frac": 0.65,
@@ -10,24 +10,24 @@
     "sweep": {
       "top_10pct": {
         "full": {
-          "cagr_pct": 36.5,
-          "sharpe": 1.13,
+          "cagr_pct": 36.6,
+          "sharpe": 1.14,
           "vol_pct": 32.0,
           "maxDD_pct": -37.7
         },
         "in_sample": {
-          "cagr_pct": 28.8,
+          "cagr_pct": 28.6,
           "sharpe": 0.92,
           "vol_pct": 33.6,
           "maxDD_pct": -37.7
         },
         "out_sample": {
-          "cagr_pct": 52.4,
-          "sharpe": 1.61,
+          "cagr_pct": 52.7,
+          "sharpe": 1.62,
           "vol_pct": 28.7,
           "maxDD_pct": -29.5
         },
-        "split": "2023-07-21"
+        "split": "2023-07-24"
       },
       "top_20pct": {
         "full": {
@@ -37,39 +37,39 @@
           "maxDD_pct": -31.2
         },
         "in_sample": {
-          "cagr_pct": 22.6,
+          "cagr_pct": 22.5,
           "sharpe": 0.86,
           "vol_pct": 28.4,
           "maxDD_pct": -31.2
         },
         "out_sample": {
-          "cagr_pct": 37.0,
-          "sharpe": 1.5,
-          "vol_pct": 22.6,
+          "cagr_pct": 37.1,
+          "sharpe": 1.51,
+          "vol_pct": 22.7,
           "maxDD_pct": -26.7
         },
-        "split": "2023-07-21"
+        "split": "2023-07-24"
       },
       "top_30pct": {
         "full": {
-          "cagr_pct": 21.8,
-          "sharpe": 0.94,
+          "cagr_pct": 21.9,
+          "sharpe": 0.95,
           "vol_pct": 24.0,
           "maxDD_pct": -32.1
         },
         "in_sample": {
-          "cagr_pct": 18.9,
-          "sharpe": 0.8,
+          "cagr_pct": 18.8,
+          "sharpe": 0.79,
           "vol_pct": 26.0,
           "maxDD_pct": -32.1
         },
         "out_sample": {
-          "cagr_pct": 27.4,
-          "sharpe": 1.34,
+          "cagr_pct": 27.6,
+          "sharpe": 1.35,
           "vol_pct": 19.5,
           "maxDD_pct": -24.1
         },
-        "split": "2023-07-21"
+        "split": "2023-07-24"
       }
     },
     "equal_weight_same_universe": {
@@ -80,7 +80,7 @@
         "maxDD_pct": -35.5
       },
       "in_sample": {
-        "cagr_pct": 13.5,
+        "cagr_pct": 13.6,
         "sharpe": 0.7,
         "vol_pct": 21.7,
         "maxDD_pct": -35.5
@@ -91,7 +91,7 @@
         "vol_pct": 13.8,
         "maxDD_pct": -17.5
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     }
   },
   "exp2_shortterm_variants": {
@@ -103,18 +103,18 @@
         "maxDD_pct": -37.8
       },
       "in_sample": {
-        "cagr_pct": 9.8,
+        "cagr_pct": 9.7,
         "sharpe": 0.51,
         "vol_pct": 23.8,
         "maxDD_pct": -37.8
       },
       "out_sample": {
-        "cagr_pct": 12.8,
-        "sharpe": 0.75,
+        "cagr_pct": 12.6,
+        "sharpe": 0.74,
         "vol_pct": 18.5,
         "maxDD_pct": -31.8
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     },
     "breakout_52w": {
       "full": {
@@ -130,22 +130,22 @@
         "maxDD_pct": -38.6
       },
       "out_sample": {
-        "cagr_pct": 9.2,
-        "sharpe": 0.69,
+        "cagr_pct": 9.0,
+        "sharpe": 0.67,
         "vol_pct": 14.3,
         "maxDD_pct": -15.4
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     },
     "reversal_5d": {
       "full": {
-        "cagr_pct": 0.5,
-        "sharpe": 0.14,
+        "cagr_pct": 0.6,
+        "sharpe": 0.15,
         "vol_pct": 23.5,
         "maxDD_pct": -49.6
       },
       "in_sample": {
-        "cagr_pct": -4.6,
+        "cagr_pct": -4.8,
         "sharpe": -0.05,
         "vol_pct": 26.2,
         "maxDD_pct": -49.6
@@ -156,7 +156,7 @@
         "vol_pct": 17.3,
         "maxDD_pct": -26.9
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     }
   },
   "exp3_crypto_timing": {
@@ -204,7 +204,7 @@
     },
     "buy_hold_basket": {
       "full": {
-        "cagr_pct": 69.9,
+        "cagr_pct": 70.1,
         "sharpe": 1.06,
         "vol_pct": 82.7,
         "maxDD_pct": -87.1
@@ -216,8 +216,8 @@
         "maxDD_pct": -87.1
       },
       "out_sample": {
-        "cagr_pct": 16.1,
-        "sharpe": 0.55,
+        "cagr_pct": 16.6,
+        "sharpe": 0.56,
         "vol_pct": 63.0,
         "maxDD_pct": -71.6
       },

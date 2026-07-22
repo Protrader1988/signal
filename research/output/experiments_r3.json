@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-22T06:37:04.443217+00:00",
+  "generated_utc": "2026-07-22T15:55:45.695481+00:00",
   "params": {
     "cost_bps": 10.0,
     "in_sample_frac": 0.65
@@ -7,56 +7,56 @@
   "expA_equity_risk_overlays": {
     "base": {
       "full": {
-        "cagr_pct": 27.4,
+        "cagr_pct": 27.5,
         "sharpe": 1.05,
         "vol_pct": 26.5,
         "maxDD_pct": -31.2
       },
       "in_sample": {
-        "cagr_pct": 22.6,
+        "cagr_pct": 22.5,
         "sharpe": 0.86,
         "vol_pct": 28.4,
         "maxDD_pct": -31.2
       },
       "out_sample": {
-        "cagr_pct": 37.0,
-        "sharpe": 1.5,
-        "vol_pct": 22.6,
+        "cagr_pct": 37.1,
+        "sharpe": 1.51,
+        "vol_pct": 22.7,
         "maxDD_pct": -26.7
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     },
     "plus_regime": {
       "full": {
-        "cagr_pct": 17.6,
+        "cagr_pct": 17.7,
         "sharpe": 0.95,
         "vol_pct": 19.0,
         "maxDD_pct": -25.3
       },
       "in_sample": {
-        "cagr_pct": 11.7,
+        "cagr_pct": 11.6,
         "sharpe": 0.68,
         "vol_pct": 18.8,
         "maxDD_pct": -25.3
       },
       "out_sample": {
-        "cagr_pct": 29.7,
+        "cagr_pct": 29.8,
         "sharpe": 1.44,
         "vol_pct": 19.4,
         "maxDD_pct": -21.2
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     },
     "plus_voltarget15": {
       "full": {
-        "cagr_pct": 16.4,
+        "cagr_pct": 16.5,
         "sharpe": 1.06,
         "vol_pct": 15.5,
         "maxDD_pct": -19.1
       },
       "in_sample": {
-        "cagr_pct": 11.5,
-        "sharpe": 0.79,
+        "cagr_pct": 11.4,
+        "sharpe": 0.78,
         "vol_pct": 15.4,
         "maxDD_pct": -19.1
       },
@@ -66,7 +66,7 @@
         "vol_pct": 15.6,
         "maxDD_pct": -16.0
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     },
     "plus_both": {
       "full": {
@@ -76,7 +76,7 @@
         "maxDD_pct": -19.2
       },
       "in_sample": {
-        "cagr_pct": 7.4,
+        "cagr_pct": 7.3,
         "sharpe": 0.61,
         "vol_pct": 13.1,
         "maxDD_pct": -19.2
@@ -87,13 +87,13 @@
         "vol_pct": 14.8,
         "maxDD_pct": -13.9
       },
-      "split": "2023-07-21"
+      "split": "2023-07-24"
     }
   },
   "expB_crypto_risk_overlays": {
     "buy_hold": {
       "full": {
-        "cagr_pct": 69.9,
+        "cagr_pct": 70.2,
         "sharpe": 1.06,
         "vol_pct": 82.7,
         "maxDD_pct": -87.1
@@ -105,8 +105,8 @@
         "maxDD_pct": -87.1
       },
       "out_sample": {
-        "cagr_pct": 16.1,
-        "sharpe": 0.55,
+        "cagr_pct": 16.6,
+        "sharpe": 0.56,
         "vol_pct": 63.0,
         "maxDD_pct": -71.6
       },
@@ -114,7 +114,7 @@
     },
     "voltarget40": {
       "full": {
-        "cagr_pct": 37.3,
+        "cagr_pct": 37.5,
         "sharpe": 0.95,
         "vol_pct": 43.7,
         "maxDD_pct": -58.9
@@ -126,8 +126,8 @@
         "maxDD_pct": -58.9
       },
       "out_sample": {
-        "cagr_pct": 24.2,
-        "sharpe": 0.72,
+        "cagr_pct": 24.7,
+        "sharpe": 0.73,
         "vol_pct": 42.9,
         "maxDD_pct": -57.5
       },
