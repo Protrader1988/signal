@@ -1,6 +1,6 @@
 NYS parcel fields: ['roll_year', 'county_name', 'municipality_code', 'municipality_name', 'school_district_code', 'school_district_name', 'swis_code', 'tax_class', 'roll_section', 'property_class', 'property_class_description', 'print_key_code', 'parcel_address_number', 'parcel_address_street', 'parcel_address_suff', 'front', 'depth', 'grid_coordinates_east', 'grid_coordinates_north', 'primary_owner_first_name', 'primary_owner_last_name', 'additional_owner_1_first', 'additional_owner_1_last_name', 'mailing_address_number', 'mailing_address_street', 'mailing_address_suff', 'mailing_address_city', 'mailing_address_state', 'mailing_address_zip', 'full_market_value', 'assessment_land', 'assessment_total', 'county_taxable_value', 'town_taxable_value', 'school_taxable']
 field map: {'county': 'county_name', 'muni': 'municipality_name', 'class': 'property_class', 'class_desc': 'property_class_description', 'addr_no': 'parcel_address_number', 'addr_st': 'parcel_address_street', 'front': 'front', 'depth': 'depth', 'market': 'full_market_value', 'owner': 'primary_owner_first_name', 'owner2': 'primary_owner_last_name', 'mail_addr': 'mailing_address_number', 'roll_year': 'roll_year', 'school': 'school_district_name'}
-Westchester: 8000 candidate parcels (roll 2025)
+Westchester: 40000 candidate parcels (roll 2025)
 Putnam: 5668 candidate parcels (roll 2025)
-Dutchess: 8000 candidate parcels (roll 2025)
-qualified 806 | new 643 | emitted 250
+Dutchess: 14194 candidate parcels (roll 2025)
+qualified 759 | new 143 | emitted 250
