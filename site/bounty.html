@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BOUNTY · Development Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05080a; --bg2:#070b0e;
+    --surface:#0a1014; --surface2:#0d141a; --surface3:#122029;
+    --line:#16232b; --line2:#1f313c; --hover:#0f1a21;
+    --em:#2fd39a; --em2:#7ce8c3; --emline:rgba(47,211,154,.16);
+    --gold:#c9a227; --gold2:#e6c976;
+    --text:#eef4f2; --text2:#9bb0aa; --muted:#5f7570; --dim:#3b4c48;
+    --up:#2fd39a; --down:#ff5d5d; --warn:#f2b23e; --info:#5aa2ff; --purple:#b39bff;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --serif:'Playfair Display',Georgia,serif;
+    --shadow:0 1px 0 rgba(255,255,255,.02) inset,0 14px 40px -20px rgba(0,0,0,.8);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(1000px 520px at 80% -6%,rgba(47,211,154,.05),transparent 60%),
+      radial-gradient(760px 420px at 8% 0%,rgba(90,162,255,.04),transparent 55%);
+    background-attachment:fixed}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 26px 110px}
+  a{color:inherit;text-decoration:none}
+
+  header{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);
+    background:linear-gradient(180deg,rgba(5,8,10,.94),rgba(5,8,10,.7));border-bottom:1px solid var(--emline)}
+  .hbar{max-width:1280px;margin:0 auto;padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:10px;
+    background:radial-gradient(120% 120% at 30% 20%,#0d2a1e,#06110c);border:1px solid #1d5a41;
+    box-shadow:0 0 0 1px rgba(47,211,154,.1),0 8px 22px -10px rgba(47,211,154,.28)}
+  .mark svg{width:22px;height:22px}
+  .wordmark{font-family:var(--serif);font-weight:800;font-size:23px;letter-spacing:5px;
+    background:linear-gradient(180deg,#e9fff6,#2fd39a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand .sub{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+  .hmeta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+  .clock{font-family:var(--mono);font-size:12px;color:var(--text2);text-align:right;line-height:1.6}
+  .clock b{color:var(--em2)}
+  .live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--em);text-transform:uppercase;letter-spacing:1.5px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--em);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,211,154,.5)}70%{box-shadow:0 0 0 7px rgba(47,211,154,0)}100%{box-shadow:0 0 0 0 rgba(47,211,154,0)}}
+
+  .fkeys{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
+  .fkey{font-family:var(--mono);font-size:11px;letter-spacing:.5px;color:var(--text2);border:1px solid var(--line2);
+    border-radius:7px;padding:7px 13px;background:var(--surface2);transition:.15s}
+  .fkey:hover{border-color:var(--em);color:var(--em2);background:var(--surface3)}
+  .fkey b{color:var(--em);margin-right:7px}
+
+  .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:1px;background:var(--emline);
+    border:1px solid var(--emline);border-radius:16px;overflow:hidden;margin:16px 0 0;box-shadow:var(--shadow)}
+  .kpi{background:linear-gradient(180deg,var(--surface2),var(--surface));padding:19px 22px}
+  .kpi .k{font-size:10px;text-transform:uppercase;letter-spacing:1.6px;color:var(--muted);cursor:help}
+  .kpi .v{font-family:var(--mono);font-size:29px;font-weight:700;letter-spacing:-1px;margin-top:9px;line-height:1}
+  .kpi .v.sm{font-size:21px}
+  .kpi .s{font-size:11px;color:var(--dim);margin-top:8px;font-family:var(--mono)}
+  .em{color:var(--em2)} .gold{color:var(--gold2)}
+
+  section{margin-top:46px}
+  .eyebrow{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;border-bottom:1px solid var(--emline);padding-bottom:12px}
+  .eyebrow .no{font-family:var(--mono);font-size:11px;color:var(--em);letter-spacing:2px}
+  .eyebrow h2{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.3px}
+  .eyebrow .hint{color:var(--muted);font-size:12px;margin-left:auto;text-align:right;max-width:50%;font-style:italic}
+
+  .card{background:linear-gradient(180deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;box-shadow:var(--shadow)}
+  .card+.card{margin-top:16px}
+  .card-head{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .code{font-family:var(--mono);font-size:10.5px;color:var(--em);letter-spacing:1px;border:1px solid var(--emline);
+    padding:3px 8px;border-radius:5px;background:rgba(47,211,154,.05)}
+  .card-head .t{font-size:13px;font-weight:600}
+  .card-head .expo{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--text2)}
+
+  /* AI brief */
+  .brief{background:linear-gradient(180deg,#0c1319,#080d11);border:1px solid var(--emline);border-radius:16px;
+    padding:20px 24px;box-shadow:var(--shadow)}
+  .brief .bh{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .brief .lead{font-size:15px;line-height:1.75}
+  .tgt{border:1px solid var(--line);border-radius:11px;background:var(--surface);padding:14px 16px;margin-top:12px}
+  .tgt .addr{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--em2)}
+  .tgt .row{font-size:12.5px;color:var(--text2);margin-top:6px;line-height:1.6}
+  .tgt .row b{color:var(--text);font-weight:600}
+  .dg-note{margin-top:14px;font-size:11px;color:var(--dim);border-top:1px solid var(--line);padding-top:10px;line-height:1.6}
+  .setup{border:1px dashed var(--line2);border-radius:12px;padding:16px 18px;color:var(--text2);font-size:13px;background:var(--surface2)}
+
+  /* filters */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+  .chipbtn{font-family:var(--mono);font-size:11.5px;padding:6px 13px;border-radius:999px;border:1px solid var(--line2);
+    background:var(--surface2);color:var(--text2);cursor:pointer;transition:.15s}
+  .chipbtn:hover{border-color:var(--em)}
+  .chipbtn.on{background:rgba(47,211,154,.12);border-color:var(--em);color:var(--em2)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 16px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  thead th{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;background:var(--bg2)}
+  thead th[title]{cursor:help}
+  tbody tr.deal{transition:background .12s;cursor:pointer}
+  tbody tr.deal:hover{background:var(--hover)}
+  td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .chip{font-family:var(--mono);font-weight:700;font-size:12.5px}
+  .up{color:var(--up)}.down{color:var(--down)}.warn{color:var(--warn)}.neu{color:var(--text2)}
+  .badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9.5px;font-weight:600;
+    padding:3px 9px;border-radius:6px;text-transform:uppercase;letter-spacing:.7px;border:1px solid}
+  .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+  .b-city{color:var(--gold2);border-color:rgba(201,162,39,.35);background:rgba(201,162,39,.06)}
+  .b-mkt{color:var(--em);border-color:rgba(47,211,154,.3)}
+  .b-prog{color:var(--purple);border-color:rgba(179,155,255,.3)}
+  .b-new{color:#0a0c12;background:var(--em);border-color:var(--em)}
+  .scorepill{display:inline-grid;place-items:center;min-width:42px;height:24px;border-radius:7px;font-family:var(--mono);
+    font-size:12px;font-weight:700;padding:0 8px}
+  .s-hi{color:#052e1f;background:var(--em)} .s-md{color:var(--em2);background:rgba(47,211,154,.12);border:1px solid var(--emline)}
+  .s-lo{color:var(--text2);background:var(--surface3);border:1px solid var(--line2)}
+  tr.detail td{background:var(--bg2);padding:14px 20px;white-space:normal}
+  .paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+  .pth{border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:var(--surface)}
+  .pth.ok{border-color:rgba(47,211,154,.35)}
+  .pth .pn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.4px}
+  .pth.ok .pn{color:var(--em2)} .pth:not(.ok) .pn{color:var(--muted)}
+  .pth .pl{font-size:11px;color:var(--muted);margin:3px 0 7px;line-height:1.45}
+  .pth .pv{font-family:var(--mono);font-size:11.5px;color:var(--text2);line-height:1.8}
+  .pth .pv b{color:var(--text)}
+  .empty{padding:20px;color:var(--muted);font-size:13px}
+  .banner{padding:13px 16px;border-radius:10px;font-size:12.5px;color:var(--text2);background:var(--surface2);
+    border:1px solid var(--line);border-left:3px solid var(--warn);line-height:1.65}
+  .subnote{color:var(--muted);font-size:12.5px;margin:0 2px 14px;line-height:1.65}
+  .prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+  .prog{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 18px}
+  .prog h3{font-size:14px;font-weight:700;color:var(--em2);display:flex;align-items:center;gap:8px}
+  .prog .terms{font-size:12.5px;color:var(--text2);margin-top:8px;line-height:1.7}
+  .prog .terms b{color:var(--text)}
+  .assump{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .as{background:var(--surface);padding:12px 16px}
+  .as .k{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+  .as .v{font-family:var(--mono);font-size:14px;margin-top:4px;color:var(--text2)}
+  .sysbar{margin-top:60px;padding:18px 0;border-top:1px solid var(--emline);display:flex;gap:8px 24px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11px;color:var(--dim)}
+  .sysbar b{color:var(--em2);font-weight:500}
+  .foot{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.75}
+  .loading{padding:22px;color:var(--dim);font-family:var(--mono);font-size:12.5px}
+  code{font-family:var(--mono);color:var(--text2);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="hbar">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="#2fd39a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#7ce8c3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="wordmark">BOUNTY</div><div class="sub">Development Terminal</div></div>
+    </div>
+    <div class="hmeta"><span class="live"><span class="dot"></span> Live</span><div class="clock" id="clock">—</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="fkeys">
+    <a class="fkey" href="#brief"><b>F1</b>DESK BRIEF</a>
+    <a class="fkey" href="#board"><b>F2</b>DEAL BOARD</a>
+    <a class="fkey" href="#programs"><b>F3</b>PROGRAMS</a>
+    <a class="fkey" href="#assumptions"><b>F4</b>ASSUMPTIONS</a>
+  </div>
+  <div class="hero" id="hero"></div>
+
+  <section id="brief">
+    <div class="eyebrow"><span class="no">01</span><h2>Acquisitions Desk Brief</h2>
+      <span class="hint">AI read of the engine's real screening output — estimates pending diligence</span></div>
+    <div id="briefBox"><div class="loading">loading brief…</div></div>
+  </section>
+
+  <section id="board">
+    <div class="eyebrow"><span class="no">02</span><h2>Deal Board</h2>
+      <span class="hint">click any row to expand its full financing-path underwriting</span></div>
+    <div class="subnote"><b class="em">Market</b> = self-executing (485-x / UAP / Section 8 paths pencil today). <b style="color:var(--purple)">Program</b> = pencils only via competitive subsidy stack (ELLA/LIHTC — dev-fee play). <b class="gold">City-owned</b> = HPD/EDC disposition targets (RFP process, not private sale). Land costs are comp-anchored estimates; <b>walk-away</b> is the max land price where the deal still pencils.</div>
+    <div class="filters" id="filters"></div>
+    <div class="card"><div id="dealTbl"><div class="loading">loading deals…</div></div></div>
+  </section>
+
+  <section id="programs">
+    <div class="eyebrow"><span class="no">03</span><h2>Program Reference</h2>
+      <span class="hint">current terms encoded in the underwriting engine · verified Jul 2026</span></div>
+    <div class="prog-grid">
+      <div class="prog"><h3>485-x · ANNY</h3><div class="terms">
+        <b>&lt;100 units:</b> 20% affordable @ ≤80% AMI wtd avg → 35-yr exemption (25 yrs full + 10 yrs at affordability %).<br>
+        <b>6–10 units</b> (outside Manhattan, ≤12,500 SF): 10-yr full exemption, <b>no affordability</b>, 50% stabilized.<br>
+        <b>100+ units:</b> 25% @ 80% AMI + construction wage floors ($35+/hr) — modeled with a 12% hard-cost premium.</div></div>
+      <div class="prog"><h3>City of Yes · UAP</h3><div class="terms">
+        <b>+20% FAR</b> in R6–R10 districts when the bonus floor area is permanently affordable at ~<b>60% AMI</b> average. Engine underwrites base + bonus with blended affordable rents.</div></div>
+      <div class="prog"><h3>Section 8 · VPS</h3><div class="terms">
+        Voucher payment standards can exceed market rents in the Bronx and parts of Queens — modeled as a <b>+12% uplift</b> on market units, stacked on 485-x. Verify current VPS by ZIP before underwriting to it.</div></div>
+      <div class="prog"><h3>ELLA / 4% LIHTC stack</h3><div class="terms">
+        All-affordable: tax-exempt bonds (sized at 1.15 DSCR) + LIHTC equity (~30% TDC) + city subsidy (~$130k/unit). Profit = <b>developer fee (~10% TDC)</b>. <b class="warn">Competitive award required</b> — ranked below self-executing deals for that reason.</div></div>
+    </div>
+  </section>
+
+  <section id="assumptions">
+    <div class="eyebrow"><span class="no">04</span><h2>Published Assumptions</h2>
+      <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
+    <div class="assump" id="assumpBox"></div>
+    <div class="banner" style="margin-top:14px" id="assumpNote"></div>
+  </section>
+
+  <div class="sysbar">
+    <span><b>engine</b> github actions · daily 6:30am ET</span><span><b>data</b> PLUTO · ACRIS · DOF sales · assessments</span>
+    <span><b>ai</b> gemini free tier</span><span><b>infra cost</b> $0.00</span><span><b>status</b> <span class="up">operational</span></span>
+  </div>
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const BASE='https://raw.githubusercontent.com/Protrader1988/signal/main/bounty/data/';
+const $=id=>document.getElementById(id);
+const usd=v=>v==null?'—':'$'+Math.round(v).toLocaleString();
+async function j(f){const r=await fetch(BASE+f+'?t='+Date.now());if(!r.ok)throw new Error(f+' '+r.status);return r.json();}
+function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().slice(17,25)}</b> UTC · ${d.toUTCString().slice(5,16)}`;}
+setInterval(tick,1000);tick();
+
+let DEALS=[], FILTER={boro:'ALL', tier:'ALL'};
+
+function scoreCls(s){return s>=80?'s-hi':(s>=55?'s-md':'s-lo');}
+
+function renderFilters(){
+  const boros=['ALL','BX','BK','QN'], tiers=[['ALL','All'],['market','Market'],['program','Program'],['city','City-owned'],['new','New today']];
+  $('filters').innerHTML=
+    boros.map(b=>`<button class="chipbtn ${FILTER.boro===b?'on':''}" onclick="FILTER.boro='${b}';renderFilters();renderTable()">${b==='ALL'?'All boroughs':b}</button>`).join('')+
+    '<span style="width:14px"></span>'+
+    tiers.map(([k,l])=>`<button class="chipbtn ${FILTER.tier===k?'on':''}" onclick="FILTER.tier='${k}';renderFilters();renderTable()">${l}</button>`).join('');
+}
+
+function renderTable(){
+  let rows=DEALS.filter(d=>
+    (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
+    (FILTER.tier==='ALL' || (FILTER.tier==='city'?d.city_owned:(FILTER.tier==='new'?d.is_new:d.tier===FILTER.tier))));
+  rows=rows.slice().sort((a,b)=>b.score-a.score).slice(0,120);
+  if(!rows.length){$('dealTbl').innerHTML='<div class="empty">No deals match this filter.</div>';return;}
+  let h=`<table><thead><tr>
+    <th class="num" title="Composite: land basis vs comps, underuse, best-path returns, size fit, city-owned">Score</th>
+    <th>Address</th><th>Zone</th><th>Tags</th>
+    <th class="num" title="Buildable units at max residential FAR">Units</th>
+    <th class="num" title="Comp-anchored land cost estimate — not an asking price">Est. land</th>
+    <th class="num" title="Max land price where the deal still pencils — your negotiating ceiling">Walk-away</th>
+    <th title="Best financing path that pencils">Best path</th>
+    <th class="num" title="Equity required under the best market path">Equity</th>
+    <th class="num" title="Cash-on-cash under best path (market tiers)">CoC</th>
+  </tr></thead><tbody>`;
+  rows.forEach((d,i)=>{
+    const b=d.best||{};
+    const tags=[d.city_owned?'<span class="badge b-city">City</span>':'',
+                d.tier==='market'?'<span class="badge b-mkt">Market</span>':'<span class="badge b-prog">Program</span>',
+                d.is_new?'<span class="badge b-new">New</span>':''].join(' ');
+    h+=`<tr class="deal" onclick="toggle(${i})" id="r${i}">
+      <td class="num"><span class="scorepill ${scoreCls(d.score)}">${d.score}</span></td>
+      <td><span class="chip">${d.address}</span> <span class="neu" style="font-size:11px">${d.borough}</span></td>
+      <td class="mono" style="font-size:12px">${d.zone}</td><td>${tags}</td>
+      <td class="num">${d.est_units}</td>
+      <td class="num">${usd(d.est_land_cost)}</td>
+      <td class="num em">${usd(d.walk_away_land)}</td>
+      <td style="font-size:12px;color:var(--text2)">${(d.best_path||'—').replace('_',' ')}</td>
+      <td class="num">${d.tier==='program'?'<span class="neu">$0*</span>':usd(d.equity_needed)}</td>
+      <td class="num ${b.coc_pct>=10?'up':'neu'}">${b.coc_pct!=null?b.coc_pct+'%':(d.tier==='program'?'fee':'—')}</td>
+    </tr>
+    <tr class="detail" id="d${i}" style="display:none"><td colspan="10">
+      <div style="margin-bottom:9px;font-size:12px;color:var(--text2)">
+        <b style="color:var(--text)">${d.best_path_label||''}</b> · owner: <span class="mono">${d.owner||'—'}</span>
+        · lot ${d.lot_sf.toLocaleString()} SF · FAR ${d.built_far} → ${d.max_far} (${d.buildable_sf.toLocaleString()} SF buildable)
+        · assessed land ${usd(d.assessed_land)}</div>
+      <div class="paths">${(d.paths||[]).map(p=>`
+        <div class="pth ${p.feasible?'ok':''}">
+          <div class="pn">${p.feasible?'●':'○'} ${p.path.toUpperCase().replace('_',' ')}</div>
+          <div class="pl">${p.label}</div>
+          <div class="pv">TDC <b>${usd(p.tdc)}</b> · loan <b>${usd(p.loan)}</b><br>
+          equity <b>${usd(p.equity)}</b> (${p.equity_pct}%) · DSCR <b>${p.dscr}</b><br>
+          ${p.funding_gap!=null?`gap <b class="${p.funding_gap<=0?'up':'down'}">${usd(p.funding_gap)}</b> · dev fee <b>${usd(p.dev_fee)}</b>`:
+          `cash flow <b>${usd(p.cash_flow)}</b> · CoC <b>${p.coc_pct!=null?p.coc_pct+'%':'—'}</b>`}</div>
+        </div>`).join('')}</div>
+    </td></tr>`;
+  });
+  $('dealTbl').innerHTML=h+'</tbody></table>';
+  window._rows=rows;
+}
+function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?'':'none';}
+
+(async()=>{
+  try{
+    const [deals,briefs]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null)]);
+    DEALS=deals.deals||[];
+    const c=deals.counts||{};
+    // hero
+    const hero=[
+      {k:'Qualified sites',v:c.qualified??'—',s:`${c.scanned??'—'} parcels scanned`},
+      {k:'Pencil today',v:c.pencils??'—',s:'some financing path works',cls:'em'},
+      {k:'City-owned',v:c.city_owned??'—',s:'HPD/EDC disposition targets',cls:'gold'},
+      {k:'New today',v:c.new_today??'—',s:'first seen this scan'},
+      {k:'Land comps',v:deals.land_comps_psf?`${deals.land_comps_psf.BK||'—'}`:'—',s:`BK $/SF · BX ${deals.land_comps_psf?.BX||'—'} · QN ${deals.land_comps_psf?.QN||'—'} (${c.land_sales_used||0} real sales)`,sm:1},
+    ];
+    $('hero').innerHTML=hero.map(t=>`<div class="kpi"><div class="k">${t.k}</div><div class="v ${t.sm?'sm':''} ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+    // brief
+    if(briefs&&briefs.available){
+      $('briefBox').innerHTML=`<div class="brief">
+        <div class="bh"><span class="code">DESK</span><span class="mono" style="font-size:11px;color:var(--muted)">AI read · ${briefs.model} · ${String(briefs.generated_utc).slice(0,10)}</span></div>
+        <div class="lead">${briefs.brief||''}</div>
+        ${(briefs.targets||[]).map(t=>`<div class="tgt"><div class="addr">${t.address}</div>
+          <div class="row"><b>Play:</b> ${t.play}</div>
+          <div class="row"><b>Negotiate:</b> ${t.negotiation}</div>
+          <div class="row"><b>Risk:</b> ${t.risk}</div></div>`).join('')}
+        ${briefs.process_note?`<div class="row" style="margin-top:12px;font-size:12.5px;color:var(--text2)"><b style="color:var(--gold2)">Process:</b> ${briefs.process_note}</div>`:''}
+        <div class="dg-note">${briefs.disclaimer||''}</div></div>`;
+    } else {
+      $('briefBox').innerHTML=`<div class="setup"><b class="em">AI desk brief</b> — ${briefs&&briefs.note?briefs.note:'appears after the next engine run.'} The deal board below is real data regardless.</div>`;
+    }
+    renderFilters(); renderTable();
+    // assumptions
+    const A=deals.program_assumptions||deals.assumptions||{};
+    const rows=[["Hard cost","$"+(A.hard_cost_psf||'—')+"/SF"],["Soft cost",(A.soft_cost_pct*100||'—')+"%"],
+      ["Unit factor",(A.du_factor_sf||'—')+" SF/DU"],["Market rent BX/BK/QN", A.rent_mo?`$${A.rent_mo.market.BX}/${A.rent_mo.market.BK}/${A.rent_mo.market.QN}`:'—'],
+      ["80% AMI rent",A.rent_mo?usd(A.rent_mo.ami80)+"/mo":'—'],["60% AMI rent",A.rent_mo?usd(A.rent_mo.ami60)+"/mo":'—'],
+      ["Taxes unabated/abated",A.tax_psf_unabated?`$${A.tax_psf_unabated} / $${A.tax_psf_abated} psf`:'—'],
+      ["Opex ex-tax","$"+(A.opex_psf_extax||'—')+"/SF"],["Conventional debt",A.conv_rate?`${(A.conv_rate*100).toFixed(2)}% · ${A.conv_amort}yr · ${A.conv_ltc*100}% LTC · ${A.conv_min_dscr} DSCR`:'—'],
+      ["Bond debt",A.bond_rate?`${(A.bond_rate*100).toFixed(1)}% · ${A.bond_amort}yr · ${A.bond_min_dscr} DSCR`:'—'],
+      ["LIHTC equity",(A.lihtc_equity_pct_tdc*100||'—')+"% of TDC"],["City subsidy",usd(A.city_subsidy_per_unit)+"/unit"]];
+    $('assumpBox').innerHTML=rows.map(([k,v])=>`<div class="as"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+    $('assumpNote').textContent=A.note||'';
+    $('foot').innerHTML=`<b>How this works.</b> A daily engine scans every NYC parcel for underutilized development sites (built FAR under half of allowed, dev-friendly zones), anchors land to real vacant-land sale comps, and underwrites each site across every applicable financing path — 485-x tiers, City of Yes UAP, Section 8 overlay, and the ELLA/LIHTC stack. Self-executing deals rank above subsidy-dependent ones; nothing simulated is shown without a label. Estimates are for screening and outreach — verify zoning, site condition, and program terms before acting. Not investment advice.`;
+  }catch(e){
+    $('hero').innerHTML=`<div class="kpi"><div class="k">status</div><div class="v sm warn">awaiting data</div><div class="s">first engine run</div></div>`;
+    $('briefBox').innerHTML=`<div class="banner">Waiting for the engine's first data (<code>${e.message}</code>).</div>`;
+  }
+})();
+</script>
+</body>
+</html>
