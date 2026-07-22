@@ -1,13 +1,13 @@
-[15:55:15] Downloading 106 tickers...
-HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
-$WBA: possibly delisted; no timezone found
+[22:22:32] Downloading 106 tickers...
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PARA"}}}
 $PARA: possibly delisted; no timezone found
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
+$WBA: possibly delisted; no timezone found
 
 2 Failed downloads:
-['WBA', 'PARA']: possibly delisted; no timezone found
-[15:55:32]   usable 104 rows 2400 2017-01-03..2026-07-22
-[15:55:43] Downloading 11 tickers...
-[15:55:45]   usable 11 rows 3490 2017-01-01..2026-07-22
-[15:55:45] wrote experiments.json
-[15:55:45] wrote EXPERIMENTS.md
+['PARA', 'WBA']: possibly delisted; no timezone found
+[22:22:41]   usable 104 rows 2400 2017-01-03..2026-07-22
+[22:22:51] Downloading 11 tickers...
+[22:22:51]   usable 11 rows 3490 2017-01-01..2026-07-22
+[22:22:51] wrote experiments.json
+[22:22:51] wrote EXPERIMENTS.md

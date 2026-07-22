@@ -1,24 +1,23 @@
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PARA"}}}
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
-HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: X"}}}
-coverage: 78/81 ok, 3 missing | candidates: 13
+coverage: 76/81 ok, 5 missing | candidates: 13
   VWAGY P/B 0.21  ROE 3.1%  D/E 137.093  Consumer Cyclical
-  MOS   P/B 0.62  ROE 0.6%  D/E 48.19  Basic Materials
+  MOS   P/B 0.61  ROE 0.6%  D/E 48.19  Basic Materials
   LNC   P/B 0.86  ROE 18.8%  D/E 65.727  Financial Services
-  CMCSA P/B 0.97  ROE 20.9%  D/E 106.858  Communication Services
-  ALLY  P/B 1.03  ROE 9.4%  D/E None  Financial Services
+  CMCSA P/B 0.95  ROE 20.9%  D/E 106.858  Communication Services
   AIG   P/B 1.03  ROE 7.7%  D/E 22.647  Financial Services
-  TFC   P/B 1.08  ROE 9.1%  D/E None  Financial Services
+  ALLY  P/B 1.03  ROE 9.4%  D/E None  Financial Services
+  TFC   P/B 1.09  ROE 9.1%  D/E None  Financial Services
+  C     P/B 1.15  ROE 8.5%  D/E None  Financial Services
   COF   P/B 1.16  ROE 9.0%  D/E None  Financial Services
-  C     P/B 1.16  ROE 8.5%  D/E None  Financial Services
-  GM    P/B 1.22  ROE 4.0%  D/E 199.048  Consumer Cyclical
+  GM    P/B 1.21  ROE 4.0%  D/E 199.048  Consumer Cyclical
   HBAN  P/B 1.25  ROE 8.4%  D/E None  Financial Services
   CFG   P/B 1.28  ROE 8.3%  D/E None  Financial Services
   PRU   P/B 1.29  ROE 10.7%  D/E 158.972  Financial Services
 NOTABLE (fundamentals check):
-  SPCX  price 124.35  P/B 20.878107  P/E None  EPS -0.67  sector Industrials
-  TSLA  price 378.365  P/B 17.279308  P/E 343.96817  EPS 1.1  sector Consumer Cyclical
-  NVDA  price 212.92  P/B 26.386618  P/E 32.609493  EPS 6.53  sector Technology
-  PLTR  price 126.83  P/B 35.98014  P/E 142.50562  EPS 0.89  sector Technology
-  RKLB  price 72.645  P/B 18.470633  P/E None  EPS -0.32  sector Industrials
-  ASTS  price 63.3417  P/B 9.091675  P/E None  EPS -1.8  sector Technology
+  SPCX  price 115.26  P/B 19.351915  P/E None  EPS -0.67  sector Industrials
+  TSLA  price 374.01  P/B 16.69613  P/E 340.0091  EPS 1.1  sector Consumer Cyclical
+  NVDA  price 212.06  P/B 26.277573  P/E 32.47473  EPS 6.53  sector Technology
+  PLTR  price 124.57  P/B 35.339005  P/E 139.9663  EPS 0.89  sector Technology
+  RKLB  price 69.75  P/B 17.734554  P/E None  EPS -0.32  sector Industrials
+  ASTS  price 61.95  P/B 8.891919  P/E None  EPS -1.8  sector Technology
