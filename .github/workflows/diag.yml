@@ -1,0 +1,23 @@
+name: diag
+on:
+  push:
+    paths:
+      - "engine/diagnose.py"
+      - ".github/workflows/diag.yml"
+permissions:
+  contents: write
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r research/requirements.txt
+      - run: mkdir -p site/data && python engine/diagnose.py 2>&1 | tee site/data/diag_log.txt
+        continue-on-error: true
+      - if: always()
+        run: |
+          git config user.name "signal-actions"; git config user.email "actions@github.com"
+          git add site/data || true
+          git diff --cached --quiet || (git commit -m "diag [skip ci]" && git push)
