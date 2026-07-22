@@ -11,6 +11,7 @@ on:
       - "research/backtest.py"
       - "research/experiments.py"
       - "research/experiments_r3.py"
+      - "research/value_probe.py"
       - "research/requirements.txt"
       - ".github/workflows/backtest.yml"
   workflow_dispatch: {}
@@ -47,6 +48,11 @@ jobs:
         continue-on-error: true
         run: |
           python research/experiments_r3.py 2>&1 | tee research/output/experiments_r3_log.txt
+
+      - name: Probe value-screen data
+        continue-on-error: true
+        run: |
+          python research/value_probe.py 2>&1 | tee research/output/value_probe_log.txt
 
       - name: Commit results
         if: always()
