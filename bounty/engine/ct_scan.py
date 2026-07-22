@@ -44,6 +44,10 @@ EXCLUDE_OWNERS = ("TOWN OF","CITY OF","STATE OF","UNITED STATES","USA","U S ","C
                   "BOARD OF ED","SCHOOL","FIRE DISTRICT","WATER","HOUSING AUTHORITY","METRO",
                   "CEMETERY","CHURCH","DIOCESE","CONGREGATION","LAND TRUST","CONSERVAN","PRESERVE",
                   "AUDUBON","NATURE","YMCA","UTILITY","EVERSOURCE","UNITED ILLUM")
+# Undevelopable land uses — excluded regardless of 8-30g (you can't build on a wetland).
+EXCLUDE_USE = ("WETLAND","MARSH","FLOOD","CONSERV","LEDGE","UNDEVELOP","NOT BUILD","OPEN SPACE",
+               "RIGHT OF WAY","ROW","RIGHT-OF-WAY","SLIVER","GORE","WATER","POND","STREAM","UTILITY",
+               "EASEMENT","PARK","CEMETERY","GOLF","BEACH","TIDAL","WOODLAND ASSESS")
 
 def get_json(url, timeout=90):
     return json.loads(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read())
@@ -121,14 +125,15 @@ def main():
             acres = n(r.get(F["acres"])) if F["acres"] else 0
             if not (A["min_acres"] <= acres <= A["max_acres"]): continue
             desc = str(r.get(F["use_desc"], "") or "").upper() if F["use_desc"] else ""
+            zdesc = str(r.get(F["zone_desc"], "") or "").upper() if F["zone_desc"] else ""
+            if any(k in desc for k in EXCLUDE_USE): continue   # wetlands/undevelopable — hard no
             land_val = n(r.get(F["land_val"])) if F["land_val"] else 0
             total_val = n(r.get(F["total_val"])) if F["total_val"] else 0
             val = total_val if total_val > 0 else land_val
             if val <= 0: continue
             imp_ratio = (total_val - land_val)/total_val if total_val > 0 else 0
-            vacant = ("VAC" in desc) or ("VACANT" in desc) or (imp_ratio < 0.1 and land_val > 0)
-            developable = vacant or ("RESID" in desc and imp_ratio <= 0.30) or \
-                          (imp_ratio <= 0.30 and land_val > 0)
+            vacant = ("VAC" in desc) or (imp_ratio < 0.1 and land_val > 0)
+            developable = vacant or (imp_ratio <= 0.30 and land_val > 0)
             if not developable: continue
             per_acre = val/acres if acres > 0 else 0
             if per_acre < A["min_value_per_acre"]: continue
@@ -138,17 +143,21 @@ def main():
             if est_units < 6: continue
             per_unit = val/est_units if est_units else 9e9
             addr = str(r.get(F["addr"], "") or "").title() if F["addr"] else ""
-            # score: 8-30g availability is the dominant signal, then basis, size, vacancy
+            play_type = "vacant land" if vacant else "teardown / assemblage (occupied)"
+            zone_label = (r.get(F["zone_desc"]) if F["zone_desc"] and r.get(F["zone_desc"]) else
+                          (r.get(F["zone"]) if F["zone"] else None))
+            # score: 8-30g availability dominates, then vacant land, basis, size
             s_830 = 40 if applies else 8
-            s_cost = max(0, min(1, (400000 - per_unit)/380000)) * 25
-            s_vac = 15 if vacant else 6
+            s_cost = max(0, min(1, (400000 - per_unit)/380000)) * 22
+            s_vac = 20 if vacant else 4
             s_size = max(0, min(1, est_units/40)) * 12
             score = round(s_830 + s_cost + s_vac + s_size, 1)
             deals.append({
                 "region": "CT", "town": town.title(),
                 "address": addr or "(unaddressed parcel)",
                 "use_desc": r.get(F["use_desc"]) if F["use_desc"] else None,
-                "zone": r.get(F["zone"]) if F["zone"] else None,
+                "play_type": play_type,
+                "zone": zone_label,
                 "zone_desc": r.get(F["zone_desc"]) if F["zone_desc"] else None,
                 "last_sale_price": int(n(r.get(F["sale_price"]))) if F["sale_price"] and n(r.get(F["sale_price"]))>0 else None,
                 "last_sale_date": (str(r.get(F["sale_date"]))[:10] if F["sale_date"] and r.get(F["sale_date"]) else None),
@@ -165,7 +174,13 @@ def main():
                 "owner": owner, "score": score, "tier": "screen",
                 "verify": "Confirm zoning + file an 8-30g affordability plan; density is an assumption.",
             })
-    deals.sort(key=lambda d: d["score"], reverse=True)
+    # dedupe by town+address (CT roll has split-parcel duplicates)
+    seen = set(); dd = []
+    for d in sorted(deals, key=lambda d: d["score"], reverse=True):
+        k = (d["town"], d["address"])
+        if k in seen: continue
+        seen.add(k); dd.append(d)
+    deals = dd
     # history
     hp = "bounty/data/history.json"; hist = {}
     if os.path.exists(hp):
