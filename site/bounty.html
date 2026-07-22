@@ -166,9 +166,10 @@
     <a class="fkey" href="#board"><b>F2</b>NYC BOARD</a>
     <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
-    <a class="fkey" href="#programs"><b>F5</b>PROGRAMS</a>
-    <a class="fkey" href="#playbook"><b>F6</b>PLAYBOOK</a>
-    <a class="fkey" href="#assumptions"><b>F7</b>ASSUMPTIONS</a>
+    <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
+    <a class="fkey" href="#programs"><b>F6</b>PROGRAMS</a>
+    <a class="fkey" href="#playbook"><b>F7</b>PLAYBOOK</a>
+    <a class="fkey" href="#assumptions"><b>F8</b>ASSUMPTIONS</a>
   </div>
   <div class="hero" id="hero"></div>
 
@@ -206,8 +207,18 @@
     </div>
   </section>
 
+  <section id="nj">
+    <div class="eyebrow"><span class="no">05</span><h2>New Jersey · Redevelopment Board</h2>
+      <span class="hint">Bergen/Hudson Gold Coast + GWB corridor — real MOD-IV parcel data</span></div>
+    <div class="subnote"><b class="em">The play:</b> NJ's lever is the <b>40A:20 long-term tax exemption PILOT</b> — once a site is in a municipal "Area in Need of Redevelopment," the town can convey it directly (no bid) with a ~30-year PILOT (~10-15% of revenue vs. full taxes). This board leads with vacant + commercial/industrial (class 4A/4B) parcels — the ones that become redevelopment sites. <b class="warn">Screen tier: assessed values are NOT market (apply town ratio); verify redevelopment designation on the municipal map. Owner data is sparse in the NJ layer.</b></div>
+    <div class="card">
+      <div class="card-head"><span class="code">NJ</span><span class="t">Redevelopment / PILOT candidates</span><span class="expo" id="njMeta"></span></div>
+      <div id="njTbl"><div class="loading">loading New Jersey board…</div></div>
+    </div>
+  </section>
+
   <section id="programs">
-    <div class="eyebrow"><span class="no">05</span><h2>Program Library</h2>
+    <div class="eyebrow"><span class="no">06</span><h2>Program Library</h2>
       <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
     <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
     <div class="filters" id="progTabs"></div>
@@ -215,13 +226,13 @@
   </section>
 
   <section id="playbook">
-    <div class="eyebrow"><span class="no">06</span><h2>Emerging Developer Playbook</h2>
+    <div class="eyebrow"><span class="no">07</span><h2>Emerging Developer Playbook</h2>
       <span class="hint">how to actually use the programs — strategy, sequencing, screening habits</span></div>
     <div id="playbookBox"><div class="loading">loading playbook…</div></div>
   </section>
 
   <section id="assumptions">
-    <div class="eyebrow"><span class="no">07</span><h2>Published Assumptions</h2>
+    <div class="eyebrow"><span class="no">08</span><h2>Published Assumptions</h2>
       <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
     <div class="assump" id="assumpBox"></div>
     <div class="banner" style="margin-top:14px" id="assumpNote"></div>
@@ -309,7 +320,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
 
 (async()=>{
   try{
-    const [deals,briefs,progs,subs,pb,ct]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb,ct,nj]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null)]);
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
       $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
@@ -343,6 +354,23 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
       });
       $('ctTbl').innerHTML=ch+'</tbody></table>';
     } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
+    // New Jersey redevelopment board
+    if(nj&&nj.deals&&nj.deals.length){
+      $('njMeta').innerHTML=`<span class="mono">${nj.counts.qualified} qualified · ${nj.counts.redevelopment} redev · ${nj.counts.vacant} vacant</span>`;
+      let nh='<table><thead><tr><th class="num">Score</th><th>Address</th><th>Town</th><th>County</th><th title="NJ property class: 1=vacant, 4A=commercial, 4B=industrial">Class</th><th>Play</th><th class="num">Acres</th><th class="num" title="At assumed town density — verify zoning">Est. units*</th><th class="num" title="Assessed value — NOT market; apply town ratio">Assessed</th><th class="num">$/unit*</th><th>Owner</th></tr></thead><tbody>';
+      nj.deals.slice(0,80).forEach(x=>{
+        const pc=x.prop_class==='1'?'<span class="badge b-mkt">1 vac</span>':(x.prop_class==='4B'?'<span class="badge b-city">4B ind</span>':'<span class="badge b-prog">4A com</span>');
+        nh+=`<tr class="deal"><td class="num"><span class="scorepill ${scoreCls(x.score)}">${x.score}</span></td>
+        <td><span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}</td>
+        <td style="font-size:12px">${x.town}</td><td class="mono" style="font-size:11px;color:var(--text2)">${x.county}</td>
+        <td>${pc}</td>
+        <td style="font-size:11px;color:${x.vacant?'var(--em2)':'var(--muted)'}">${(x.play_type||'').replace(' redevelopment',' redev')}</td>
+        <td class="num">${x.acres}</td><td class="num">${x.est_units}</td>
+        <td class="num">${usd(x.assessed_net)}</td><td class="num">${usd(x.assessed_per_est_unit)}</td>
+        <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,22)||'—'}</td></tr>`;
+      });
+      $('njTbl').innerHTML=nh+'</tbody></table>';
+    } else { $('njTbl').innerHTML='<div class="empty">New Jersey board appears after the next engine run.</div>'; }
     // playbook
     if(pb&&pb.ladder){
       const li=x=>`<div class="tgt" style="margin-top:10px"><div class="row">${x}</div></div>`;
