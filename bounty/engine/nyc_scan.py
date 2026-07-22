@@ -161,25 +161,35 @@ def underwrite(p, comps):
         ((1+UW["conv_rate"]/12)**(UW["conv_amort"]*12)-1) * 12
     max_loan = (p485["noi"]/UW["conv_min_dscr"])/k if p485["noi"] > 0 else 0
     hard = buildable*UW["hard_cost_psf"]; soft = hard*UW["soft_cost_pct"]
-    max_tdc_at_35eq = max_loan/0.65 if max_loan > 0 else 0   # equity <=35% feasibility bound
-    walk_away = max(0, min(max_tdc_at_35eq, max_loan/UW["conv_ltc"]) - hard - soft)
-    equity = best["equity"] if best else (p485["equity"])
-    bucket = "solo" if equity <= 1_000_000 else ("mid" if equity <= 3_000_000 else "jv")
-    # score v3 — anchored on best achievable path
+    # walk-away land: highest land price where 485-x path stays feasible
+    # (loan can be < 85% LTC; binding constraint is equity <= 35% of TDC)
+    walk_away = max(0, max_loan/0.65 - hard - soft)
+    tier = uw["tier"]
+    mkt_eq = uw.get("market_equity")
+    if tier == "market" and mkt_eq is not None:
+        bucket = "solo" if mkt_eq <= 1_000_000 else ("mid" if mkt_eq <= 3_000_000 else "jv")
+        equity = mkt_eq
+    elif tier == "program":
+        bucket = "program"; equity = 0
+    else:
+        bucket = "none"; equity = p485["equity"]
+    # score v3.1 — market-executable ranks above program-dependent above none
     basis = land / comp_est if comp_est else 1.0
     s_basis = max(0, min(1, (1.35 - basis)/0.7)) * 25
     s_use  = (1 - bfar/rfar) * 15
-    if uw["any_feasible"] and best:
-        prof = best.get("coc_pct")
-        s_path = 35 if best["path"]=="485x_small" else 30
-        s_prof = max(0, min(1, ((prof if prof is not None else 8) - 4)/8)) * 10
+    if tier == "market" and best:
+        prof = best.get("coc_pct") or 0
+        s_path = 30
+        s_prof = max(0, min(1, (prof - 4)/8)) * 12
+    elif tier == "program":
+        s_path = 14; s_prof = 0
     else:
-        s_path = 0
-        s_prof = 0
-    s_fit  = (10 if bucket=="solo" else (6 if bucket=="mid" else 2))
+        s_path = 0; s_prof = 0
+    s_fit  = {"solo": 10, "mid": 6, "jv": 2, "program": 6, "none": 0}[bucket]
     s_city = 8 if city else 0
     score = round(s_basis + s_use + s_path + s_prof + s_fit + s_city, 1)
-    if not uw["any_feasible"]: score = min(score, 39.9)   # hard cap: nothing pencils yet
+    if tier == "none": score = min(score, 39.9)
+    elif tier == "program": score = min(score, 69.9)   # program plays cap below market plays
     return {
         "bbl": p.get("bbl"), "address": (p.get("address") or "").title(),
         "borough": boro, "zip": p.get("zipcode"), "zone": p.get("zonedist1"),
@@ -189,7 +199,7 @@ def underwrite(p, comps):
         "owner": (p.get("ownername") or "").title(), "city_owned": city,
         "assessed_land": int(assess_land), "land_comp_psf": comp_psf,
         "est_land_cost": int(land), "walk_away_land": int(walk_away),
-        "pencils": uw["any_feasible"], "best_path": uw["best_path"],
+        "pencils": uw["any_feasible"], "tier": tier, "best_path": uw["best_path"],
         "best_path_label": uw["best_label"],
         "best": best, "paths": uw["paths"],
         "equity_needed": int(equity), "bucket": bucket, "score": score,
@@ -240,13 +250,15 @@ def main():
            "program_assumptions": UW,
            "land_comps_psf": comps,
            "assumptions": ASSUMPTIONS,
-           "deals": top("solo") + top("mid") + top("jv",40) + [d for d in deals if d["city_owned"]][:40]}
+           "deals": top("solo") + top("mid") + top("jv",40) + top("program",60) + [d for d in deals if d["city_owned"]][:40]}
     # dedupe deals list preserving order
     seen=set(); dd=[]
     for d in out["deals"]:
         if d["bbl"] in seen: continue
         seen.add(d["bbl"]); dd.append(d)
     out["deals"]=dd
+    err="bounty/data/NYC_ERROR.txt"
+    if os.path.exists(err): os.remove(err)
     json.dump(out, open("bounty/data/nyc_deals.json","w"), indent=2)
     print(f"qualified {len(deals)} | solo {out['counts']['solo']} mid {out['counts']['mid']} jv {out['counts']['jv']} | city {out['counts']['city_owned']} | new {new_count} | emitted {len(dd)}")
 

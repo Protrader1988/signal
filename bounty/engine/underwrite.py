@@ -138,18 +138,23 @@ def underwrite_all_paths(boro, lot_sf, resid_far, land_cost, A=ASSUMPTIONS):
     lihtc = tdc_af * A["lihtc_equity_pct_tdc"]
     subsidy = units * A["city_subsidy_per_unit"]
     gap = tdc_af - (bonds + lihtc + subsidy)
-    paths.append({"path": "ella", "label": "ELLA / 4% LIHTC all-affordable stack",
+    paths.append({"path": "ella", "label": "ELLA / 4% LIHTC all-affordable stack (competitive subsidy award required)",
                   "units_market": 0, "units_affordable": units, "tdc": int(tdc_af),
                   "loan": int(bonds), "equity": 0, "equity_pct": 0.0,
                   "noi": int(noi), "dscr": A["bond_min_dscr"] if bonds>0 else 0,
                   "cash_flow": 0, "coc_pct": None, "dev_fee": int(dev_fee),
-                  "funding_gap": int(gap), "feasible": gap <= 0 and noi > 0})
+                  "funding_gap": int(gap), "feasible": gap <= 0 and noi > 0,
+                  "program_dependent": True})
 
-    feas = [p for p in paths if p["feasible"]]
-    def rank(p):
-        if p["path"] == "ella": return (p.get("dev_fee",0) / 3, )   # fee-driven profit, scaled
-        return (p.get("cash_flow",0), )
-    best = max(feas, key=rank) if feas else None
-    return {"units_base": units, "paths": paths, "best_path": best["path"] if best else None,
+    # Institutional honesty: a deal that only works with a competitive subsidy
+    # award is a PROGRAM PLAY, not a self-executing deal. Rank market paths first.
+    market_feas = [p for p in paths if p["feasible"] and not p.get("program_dependent")]
+    ella_feas = [p for p in paths if p["feasible"] and p.get("program_dependent")]
+    best = max(market_feas, key=lambda p: p.get("cash_flow", 0)) if market_feas else \
+           (ella_feas[0] if ella_feas else None)
+    tier = "market" if market_feas else ("program" if ella_feas else "none")
+    return {"units_base": units, "paths": paths,
+            "best_path": best["path"] if best else None,
             "best_label": best["label"] if best else "No path pencils at this land basis — negotiate toward walk-away price",
-            "any_feasible": bool(feas)}
+            "tier": tier, "any_feasible": bool(best),
+            "market_equity": (max(0, min(p["equity"] for p in market_feas)) if market_feas else None)}
