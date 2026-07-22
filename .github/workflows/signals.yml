@@ -1,0 +1,47 @@
+name: daily-signals
+
+# Runs the signal engine daily on GitHub's free runners (which reach market
+# data), updates the live shadow ledger, and commits the JSON the dashboard
+# reads. This IS the free scheduler — no paid backend, no cron server.
+
+on:
+  schedule:
+    - cron: "0 22 * * 1-5"      # 22:00 UTC weekdays (~after US close); crypto daily bar included
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "engine/signal_engine.py"
+      - ".github/workflows/signals.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signals
+  cancel-in-progress: false
+
+jobs:
+  signals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install -r research/requirements.txt
+      - name: Generate signals + update ledger
+        continue-on-error: true
+        run: python engine/signal_engine.py 2>&1 | tee engine_run.log
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "signal-actions"
+          git config user.email "actions@github.com"
+          git add site/data engine_run.log || true
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "signals: daily update [skip ci]"
+            git push
+          fi

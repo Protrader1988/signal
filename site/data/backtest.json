@@ -1,0 +1,43 @@
+{
+  "label": "SIMULATED backtest history — validation only, not live results",
+  "period": "2017-01 to 2026-07",
+  "method": "No look-ahead; signals use only past data. Real 10bps transaction costs. Chronological in-sample (65%) / out-of-sample (35%) split. Equities benchmarked against an equal-weight basket of the SAME (survivorship-biased) universe, so outperformance reflects selection skill, not survivorship.",
+  "strategies": [
+    {
+      "name": "Equity momentum (position, top 20%, monthly + vol-target 15%)",
+      "status": "VALIDATED — survivorship-neutral, robust out-of-sample",
+      "cagr_pct": 16.4,
+      "sharpe": 1.06,
+      "out_of_sample_sharpe": 1.58,
+      "max_drawdown_pct": -19.1,
+      "note": "Vol-targeting cut drawdown from -31% to -19% while improving risk-adjusted return. Vol target is a tunable risk dial."
+    },
+    {
+      "name": "Equity momentum (position, top 20%, monthly, no risk overlay)",
+      "status": "VALIDATED core edge",
+      "cagr_pct": 27.4,
+      "sharpe": 1.05,
+      "out_of_sample_sharpe": 1.5,
+      "max_drawdown_pct": -31.2,
+      "note": "Beats equal-weight-same-universe (Sharpe 0.87). Return scales smoothly with rank concentration — signature of a real signal."
+    },
+    {
+      "name": "Short-term momentum continuation (swing, weekly)",
+      "status": "VIABLE secondary signal",
+      "cagr_pct": 10.8,
+      "sharpe": 0.58,
+      "out_of_sample_sharpe": 0.75,
+      "max_drawdown_pct": -37.8,
+      "note": "Mean-reversion ('buy the dip') was tested and FAILED (Sharpe 0.14); continuation works."
+    },
+    {
+      "name": "Crypto vol-targeted sleeve",
+      "status": "RISK-MANAGED BETA — no alpha edge",
+      "cagr_pct": 37.4,
+      "sharpe": 0.95,
+      "out_of_sample_sharpe": 0.72,
+      "max_drawdown_pct": -58.9,
+      "note": "Vol-targeting cut drawdown from -87% to -59% and improved out-of-sample return. Still very high risk. No selection edge was found in crypto."
+    }
+  ]
+}

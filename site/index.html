@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Signal — Quant Terminal</title>
+<style>
+  :root{
+    --bg:#0b0f1a; --panel:#131a2b; --panel2:#0f1524; --border:#223050;
+    --text:#e6e9f0; --muted:#8b94a7; --dim:#5c6780;
+    --pos:#2dd4a7; --neg:#f87171; --warn:#fbbf24; --accent:#7c9cff; --purple:#a78bfa;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:var(--accent)}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 20px 80px}
+  header{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px}
+  .logo{font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:2px}
+  .logo b{color:var(--pos)}
+  .tag{color:var(--muted);font-size:13px}
+  .updated{font-family:var(--mono);font-size:12px;color:var(--dim);text-align:right}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);
+    margin:36px 0 12px;font-weight:600}
+  h2 .hint{text-transform:none;letter-spacing:0;color:var(--dim);font-size:12px;font-weight:400;margin-left:8px}
+  .panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .tile .k{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+  .tile .v{font-family:var(--mono);font-size:24px;font-weight:700;margin-top:4px}
+  .tile .s{font-size:12px;color:var(--dim);margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600}
+  td.num,th.num{text-align:right;font-family:var(--mono)}
+  tr:last-child td{border-bottom:none}
+  .tk{font-family:var(--mono);font-weight:700}
+  .pos{color:var(--pos)} .neg{color:var(--neg)} .warn{color:var(--warn)}
+  .badge{display:inline-block;font-size:10px;font-family:var(--mono);padding:2px 7px;border-radius:5px;
+    text-transform:uppercase;letter-spacing:.5px;border:1px solid}
+  .badge.live{color:var(--pos);border-color:var(--pos);background:rgba(45,212,167,.08)}
+  .badge.sim{color:var(--warn);border-color:var(--warn);background:rgba(251,191,36,.08)}
+  .badge.risk{color:var(--neg);border-color:var(--neg);background:rgba(248,113,113,.08)}
+  .badge.pos-book{color:var(--pos);border-color:var(--pos)}
+  .badge.swing-book{color:var(--purple);border-color:var(--purple)}
+  .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .expo{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .expo b{color:var(--text)}
+  .note{font-size:12.5px;color:var(--muted);margin:6px 2px 0;line-height:1.6}
+  .banner{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--warn);
+    border-radius:8px;padding:12px 14px;font-size:13px;color:var(--muted);margin-top:10px}
+  .foot{margin-top:48px;padding-top:16px;border-top:1px solid var(--border);color:var(--dim);font-size:12px;line-height:1.7}
+  .loading{color:var(--dim);font-family:var(--mono);padding:20px 0}
+  .pill{font-family:var(--mono);font-size:12px;padding:1px 6px;border-radius:4px;background:var(--panel2);border:1px solid var(--border)}
+  .empty{color:var(--muted);padding:16px;font-size:13.5px}
+  .bar{height:6px;background:var(--panel2);border-radius:3px;overflow:hidden;margin-top:6px}
+  .bar>i{display:block;height:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="logo"><b>◢</b> SIGNAL</div>
+      <div class="tag">Cross-sectional momentum terminal · you read the moves, you trade them</div>
+    </div>
+    <div class="updated" id="updated">loading…</div>
+  </header>
+
+  <!-- TODAY'S SIGNALS -->
+  <h2>Today's Signals <span class="hint">what the validated model flags right now — execute at your discretion</span></h2>
+  <div id="expo" class="row" style="margin-bottom:12px"></div>
+
+  <div style="margin-bottom:8px" class="row">
+    <span class="badge pos-book">Position book</span>
+    <span class="expo">horizon ~1 month · rebalanced monthly</span>
+  </div>
+  <div class="panel"><div id="position"><div class="loading">loading signals…</div></div></div>
+
+  <div style="margin:20px 0 8px" class="row">
+    <span class="badge swing-book">Swing book</span>
+    <span class="expo">horizon ~1 week · short-term momentum continuation</span>
+  </div>
+  <div class="panel"><div id="swing"></div></div>
+
+  <div style="margin:20px 0 8px" class="row">
+    <span class="badge risk">Crypto sleeve</span>
+    <span class="expo">risk-managed beta — <span class="warn">not a signal edge</span></span>
+  </div>
+  <div class="panel"><div id="crypto"></div></div>
+
+  <!-- LIVE TRACK RECORD -->
+  <h2>Live Track Record <span class="hint">real forward outcomes of every signal — no simulation, nothing hidden</span></h2>
+  <div id="ledgerTiles" class="tiles"></div>
+  <div id="ledgerNote"></div>
+  <div class="panel" style="margin-top:14px"><div id="openPositions"></div></div>
+
+  <!-- BACKTEST VALIDATION -->
+  <h2>Backtest Validation <span class="hint">the historical evidence the model is built on</span></h2>
+  <div class="row" style="margin-bottom:10px"><span class="badge sim">Simulated history</span>
+    <span class="expo" id="btPeriod"></span></div>
+  <div class="panel"><div id="backtest"></div></div>
+  <div id="btMethod" class="note"></div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const BASE='https://raw.githubusercontent.com/Protrader1988/signal/main/site/data/';
+const $=id=>document.getElementById(id);
+const sign=v=>v>0?'pos':(v<0?'neg':'');
+const arrow=v=>v>0?'▲':(v<0?'▼':'—');
+const pct=v=>(v>0?'+':'')+v+'%';
+async function j(f){const r=await fetch(BASE+f+'?t='+Date.now());if(!r.ok)throw new Error(f);return r.json();}
+
+function sigTable(rows, cols){
+  if(!rows||!rows.length) return '<div class="empty">No signals flagged right now — the model is in cash for this book (nothing met the criteria). That is a valid, honest output, not an error.</div>';
+  let h='<table><thead><tr>'+cols.map(c=>`<th class="${c.num?'num':''}">${c.h}</th>`).join('')+'</tr></thead><tbody>';
+  for(const r of rows){h+='<tr>'+cols.map(c=>{
+    let v=c.f?c.f(r[c.k],r):r[c.k];
+    return `<td class="${c.num?'num':''} ${c.cls?c.cls(r[c.k]):''}">${v==null?'—':v}</td>`;
+  }).join('')+'</tr>';}
+  return h+'</tbody></table>';
+}
+
+function render(sig,led,bt,meta){
+  // updated
+  $('updated').innerHTML=`equities as of <b>${sig.as_of_equity}</b> · crypto ${sig.as_of_crypto}<br>`+
+    `<span class="pill">vol target ${sig.vol_target_annual_pct}%</span> `+
+    (meta?`<span class="pill">updated ${new Date(meta.updated_utc).toISOString().slice(0,16).replace('T',' ')} UTC</span>`:'');
+
+  // exposure guidance
+  $('expo').innerHTML=
+    `<span class="expo">Suggested gross exposure (vol-targeted): `+
+    `Position <b>${Math.round(sig.position_suggested_exposure*100)}%</b> · `+
+    `Swing <b>${Math.round(sig.swing_suggested_exposure*100)}%</b></span>`;
+
+  // position book
+  $('position').innerHTML=sigTable(sig.position,[
+    {h:'#',k:'rank',num:true},
+    {h:'Ticker',k:'ticker',f:v=>`<span class="tk">${v}</span>`},
+    {h:'Entry ref',k:'entry_ref',num:true,f:v=>'$'+v},
+    {h:'6m mom',k:'mom_6m_pct',num:true,cls:sign,f:v=>pct(v)},
+    {h:'12m mom',k:'mom_12m_pct',num:true,cls:sign,f:v=>pct(v)},
+    {h:'Score',k:'score',num:true},
+    {h:'Sugg. stop',k:'suggested_stop',num:true,f:v=>v?'$'+v:'—'},
+  ]);
+  // swing book
+  $('swing').innerHTML=sigTable(sig.swing,[
+    {h:'#',k:'rank',num:true},
+    {h:'Ticker',k:'ticker',f:v=>`<span class="tk">${v}</span>`},
+    {h:'Entry ref',k:'entry_ref',num:true,f:v=>'$'+v},
+    {h:'10d ret',k:'ret_10d_pct',num:true,cls:sign,f:v=>pct(v)},
+    {h:'Score',k:'score',num:true},
+    {h:'Sugg. stop',k:'suggested_stop',num:true,f:v=>v?'$'+v:'—'},
+  ]);
+  // crypto
+  const c=sig.crypto||{};
+  let ch=`<div class="banner">${c.label||''}</div>`;
+  if(c.coins_in_uptrend&&c.coins_in_uptrend.length){
+    ch+=`<div style="padding:4px 2px 0"><span class="expo">Suggested gross exposure: <b>${Math.round((c.suggested_gross_exposure||0)*100)}%</b> split across coins in uptrend</span></div>`;
+    ch+=sigTable(c.coins_in_uptrend,[
+      {h:'Coin',k:'ticker',f:v=>`<span class="tk">${v}</span>`},
+      {h:'Ref price',k:'entry_ref',num:true,f:v=>'$'+v},
+      {h:'200d mom',k:'mom_200d_pct',num:true,cls:sign,f:v=>pct(v)},
+    ]);
+  } else { ch+='<div class="empty">No coins in confirmed uptrend — sleeve is in cash. Sitting out is the risk control.</div>'; }
+  $('crypto').innerHTML=ch;
+
+  // live ledger
+  const sc=led.scorecard||{}; const p=sc.position||{n:0}; const s=sc.swing||{n:0};
+  const openN=(led.open||[]).length, closedN=(led.closed||[]).length;
+  const tiles=[
+    {k:'Live since',v:sc.live_since||'—',s:'forward test start'},
+    {k:'Open signals',v:openN,s:'currently tracked'},
+    {k:'Closed',v:closedN,s:'reached horizon'},
+    {k:'Position win rate',v:p.n?p.win_rate_pct+'%':'—',s:p.n?`${p.n} closed · avg ${pct(p.avg_return_pct)}`:'accruing'},
+    {k:'Swing win rate',v:s.n?s.win_rate_pct+'%':'—',s:s.n?`${s.n} closed · avg ${pct(s.avg_return_pct)}`:'accruing'},
+  ];
+  $('ledgerTiles').innerHTML=tiles.map(t=>`<div class="tile"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+  if(closedN===0){
+    $('ledgerNote').innerHTML='<div class="banner" style="border-left-color:var(--pos)">The live track record starts empty and fills in honestly as today\'s signals reach their horizon. Win rates appear once positions close — no backfilling, no simulated results shown here. This is the real forward test.</div>';
+  } else { $('ledgerNote').innerHTML=''; }
+  // open positions
+  const open=(led.open||[]).slice().sort((a,b)=>(b.entry_date||'').localeCompare(a.entry_date));
+  $('openPositions').innerHTML=open.length?sigTable(open,[
+    {h:'Ticker',k:'ticker',f:v=>`<span class="tk">${v}</span>`},
+    {h:'Book',k:'book',f:v=>`<span class="badge ${v==='position'?'pos-book':'swing-book'}">${v}</span>`},
+    {h:'Entered',k:'entry_date'},
+    {h:'Entry',k:'entry_price',num:true,f:v=>'$'+v},
+    {h:'Last',k:'last_price',num:true,f:v=>v?'$'+v:'—'},
+    {h:'Return',k:'return_pct',num:true,cls:sign,f:(v)=>`${arrow(v)} ${pct(v)}`},
+    {h:'Days',k:'days_held',num:true},
+  ]):'<div class="empty">No open positions yet — they appear here the moment the engine runs.</div>';
+
+  // backtest
+  $('btPeriod').textContent=bt.period||'';
+  let bh='<table><thead><tr><th>Strategy</th><th>Status</th><th class="num">CAGR</th><th class="num">Sharpe</th><th class="num">OOS Sharpe</th><th class="num">Max DD</th></tr></thead><tbody>';
+  for(const st of bt.strategies){
+    bh+=`<tr><td>${st.name}<div class="s" style="color:var(--dim);font-size:11.5px;margin-top:3px">${st.note||''}</div></td>`+
+      `<td><span class="expo">${st.status}</span></td>`+
+      `<td class="num">${st.cagr_pct}%</td><td class="num">${st.sharpe}</td>`+
+      `<td class="num pos">${st.out_of_sample_sharpe}</td>`+
+      `<td class="num neg">${st.max_drawdown_pct}%</td></tr>`;
+  }
+  $('backtest').innerHTML=bh+'</tbody></table>';
+  $('btMethod').textContent=bt.method||'';
+
+  $('foot').innerHTML=`<b>How this works:</b> A validated cross-sectional momentum model runs daily on free infrastructure and publishes the signals above. `+
+    `The <span class="pos">Live Track Record</span> is a real forward test of those signals; the <span class="warn">Backtest</span> is simulated history shown only as validating evidence and always labelled as such. `+
+    `Crypto is risk-managed beta, not an edge. <br><br>${sig.disclaimer||''} Signal is a research tool, not investment advice, and is not a broker.`;
+}
+
+(async()=>{
+  try{
+    const [sig,led,bt,meta]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null)]);
+    render(sig,led,bt,meta);
+  }catch(e){
+    document.querySelector('.wrap').insertAdjacentHTML('beforeend',
+      `<div class="banner" style="border-left-color:var(--neg);margin-top:20px">Waiting for the first engine run to publish data (<code>${e.message}</code>). Once the daily-signals workflow runs, this dashboard fills in automatically.</div>`);
+    $('updated').textContent='awaiting first run';
+  }
+})();
+</script>
+</body>
+</html>
