@@ -12,6 +12,7 @@ on:
     paths:
       - "engine/signal_engine.py"
       - "engine/curve.py"
+      - "engine/fundamentals.py"
       - ".github/workflows/signals.yml"
 
 permissions:
@@ -37,6 +38,9 @@ jobs:
       - name: Generate equity curve
         continue-on-error: true
         run: python engine/curve.py 2>&1 | tee curve_run.log
+      - name: Value screen + watchlist
+        continue-on-error: true
+        run: python engine/fundamentals.py 2>&1 | tee fundamentals_run.log
       - name: Commit data
         if: always()
         run: |
