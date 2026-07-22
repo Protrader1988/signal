@@ -11,6 +11,7 @@ on:
   push:
     paths:
       - "engine/signal_engine.py"
+      - "engine/curve.py"
       - ".github/workflows/signals.yml"
 
 permissions:
@@ -33,6 +34,9 @@ jobs:
       - name: Generate signals + update ledger
         continue-on-error: true
         run: python engine/signal_engine.py 2>&1 | tee engine_run.log
+      - name: Generate equity curve
+        continue-on-error: true
+        run: python engine/curve.py 2>&1 | tee curve_run.log
       - name: Commit data
         if: always()
         run: |
