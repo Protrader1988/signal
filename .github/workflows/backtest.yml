@@ -1,0 +1,50 @@
+name: backtest
+
+# Runs the honest signal backtest on GitHub's runners (which have full
+# internet access to free market data), then commits the results back to the
+# repo so they can be reviewed. Free tier. Triggered on push to the research
+# code, or manually.
+
+on:
+  push:
+    paths:
+      - "research/backtest.py"
+      - "research/requirements.txt"
+      - ".github/workflows/backtest.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r research/requirements.txt
+
+      - name: Run backtest
+        id: run
+        continue-on-error: true
+        run: |
+          mkdir -p research/output
+          python research/backtest.py 2>&1 | tee research/output/run_log.txt
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "signal-actions"
+          git config user.email "actions@github.com"
+          git add research/output || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "backtest: results [skip ci]"
+            git push
+          fi
