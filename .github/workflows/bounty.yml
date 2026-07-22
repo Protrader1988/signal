@@ -36,6 +36,9 @@ jobs:
       - name: CT scan (Gold Coast + Stamford/New Haven)
         continue-on-error: true
         run: python bounty/engine/ct_scan.py 2>&1 | tee bounty/data/ct_run.log
+      - name: NJ scan (Bergen/Hudson Gold Coast)
+        continue-on-error: true
+        run: python bounty/engine/nj_scan.py 2>&1 | tee bounty/data/nj_run.log
       - name: AI deal briefs
         continue-on-error: true
         env:
