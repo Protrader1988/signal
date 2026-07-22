@@ -99,8 +99,8 @@
   <div class="panel" style="margin-top:14px"><div id="openPositions"></div></div>
 
   <!-- BACKTEST VALIDATION -->
-  <h2>Backtest Validation <span class="hint">the historical evidence the model is built on</span></h2>
-  <div class="row" style="margin-bottom:10px"><span class="badge sim">Simulated history</span>
+  <h2>Backtest Validation <span class="hint">real historical prices · hypothetical trades applied in hindsight</span></h2>
+  <div class="row" style="margin-bottom:10px"><span class="badge sim">Real data · hypothetical trades</span>
     <span class="expo" id="btPeriod"></span></div>
   <div class="panel"><div id="backtest"></div></div>
   <div id="btMethod" class="note"></div>
@@ -210,7 +210,7 @@ function render(sig,led,bt,meta){
   $('btMethod').textContent=bt.method||'';
 
   $('foot').innerHTML=`<b>How this works:</b> A validated cross-sectional momentum model runs daily on free infrastructure and publishes the signals above. `+
-    `The <span class="pos">Live Track Record</span> is a real forward test of those signals; the <span class="warn">Backtest</span> is simulated history shown only as validating evidence and always labelled as such. `+
+    `The <span class="pos">Live Track Record</span> is a real forward test of those signals with no hindsight; the <span class="warn">Backtest</span> uses real historical prices with hypothetical trades applied in hindsight — validating evidence, not live results. Both use real data; the difference is forward vs. hindsight. `+
     `Crypto is risk-managed beta, not an edge. <br><br>${sig.disclaimer||''} Signal is a research tool, not investment advice, and is not a broker.`;
 }
 

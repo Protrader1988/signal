@@ -1,7 +1,7 @@
 {
-  "label": "SIMULATED backtest history — validation only, not live results",
-  "period": "2017-01 to 2026-07",
-  "method": "No look-ahead; signals use only past data. Real 10bps transaction costs. Chronological in-sample (65%) / out-of-sample (35%) split. Equities benchmarked against an equal-weight basket of the SAME (survivorship-biased) universe, so outperformance reflects selection skill, not survivorship.",
+  "label": "Backtested on REAL historical prices (2017–2026). Trades are hypothetical — the strategy is applied retroactively to real history to measure what it would have returned. Validating evidence, not live results.",
+  "period": "2017-01 to 2026-07 · real daily prices, 104 names",
+  "method": "Real historical data throughout. No look-ahead: signals use only data available at each point in time. Real 10bps transaction costs charged on every trade. Chronological in-sample (65%) / out-of-sample (35%) split so recent years are tested on data the model never saw. Equities benchmarked against an equal-weight basket of the SAME universe, so any outperformance reflects selection skill, not survivorship.",
   "strategies": [
     {
       "name": "Equity momentum (position, top 20%, monthly + vol-target 15%)",
