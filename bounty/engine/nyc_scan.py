@@ -51,23 +51,41 @@ def n(x, d=0.0):
     except Exception: return d
 
 def fetch_land_comps():
-    """Median $/SF of real vacant-land sales per borough, last ~18 months."""
+    """Median $/SF of real vacant-land sales per borough, last ~18 months.
+    Numeric columns in usep-8jbt are text -> filter numerics client-side."""
     since = (date.today() - timedelta(days=548)).isoformat()
-    where = (f"sale_date >= '{since}' and sale_price > 100000 "
-             "and building_class_at_time_of_sale like 'V%' "
-             "and land_square_feet > 1000 and borough in('2','3','4')")
-    url = ("https://data.cityofnewyork.us/resource/usep-8jbt.json?"
-           f"$select=borough,sale_price,land_square_feet,sale_date"
-           f"&$where={urllib.parse.quote(where)}&$limit=5000")
-    rows = get_json(url)
+    variants = [
+        f"building_class_at_time_of_sale like 'V%' and sale_date >= '{since}T00:00:00'",
+        "building_class_at_time_of_sale like 'V%'",
+    ]
+    rows = []
+    for w in variants:
+        try:
+            url = ("https://data.cityofnewyork.us/resource/usep-8jbt.json?"
+                   f"$select=borough,sale_price,land_square_feet,sale_date"
+                   f"&$where={urllib.parse.quote(w)}&$limit=20000")
+            rows = get_json(url)
+            if rows: break
+        except Exception as e:
+            print(f"comps variant failed: {e}")
+    def num(x):
+        try: return float(str(x).replace(",","").replace("$",""))
+        except Exception: return 0.0
     psf = {}
+    used = 0
     for b in ("2","3","4"):
-        vals = [n(r["sale_price"])/n(r["land_square_feet"]) for r in rows
-                if str(r.get("borough"))==b and n(r.get("land_square_feet"))>0]
-        vals = [v for v in vals if 10 < v < 2000]   # sanity band
-        psf[SALES_BORO[b]] = round(statistics.median(vals),0) if len(vals)>=5 else None
-    print("land comps $/SF:", psf, f"({len(rows)} sales)")
-    return psf, len(rows)
+        vals = []
+        for r in rows:
+            if str(r.get("borough")).strip() != b: continue
+            sd = str(r.get("sale_date",""))[:10]
+            if sd and sd < since: continue
+            price, sf = num(r.get("sale_price")), num(r.get("land_square_feet"))
+            if price > 100000 and sf > 1000:
+                v = price/sf
+                if 10 < v < 2000: vals.append(v); used += 1
+        psf[SALES_BORO[b]] = round(statistics.median(vals),0) if len(vals) >= 5 else None
+    print("land comps $/SF:", psf, f"({used} usable sales of {len(rows)} fetched)")
+    return psf, used
 
 def fetch_pluto():
     zone_list = ",".join(f"'{z}'" for z in TARGET_ZONES)
@@ -161,7 +179,11 @@ def underwrite(p, comps):
 def main():
     os.makedirs("bounty/data", exist_ok=True)
     today = date.today().isoformat()
-    comps, n_sales = fetch_land_comps()
+    try:
+        comps, n_sales = fetch_land_comps()
+    except Exception as e:
+        print(f"comps failed entirely ({e}); degrading to assessed-only anchor (labeled)")
+        comps, n_sales = {"BX": None, "BK": None, "QN": None}, 0
     raw = fetch_pluto()
     print(f"PLUTO {len(raw)} parcels fetched")
     deals = []
