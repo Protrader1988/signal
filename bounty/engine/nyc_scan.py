@@ -66,7 +66,7 @@ def fetch_pluto():
               "assessland,assesstot,landuse,bbl,latitude,longitude")
     url = ("https://data.cityofnewyork.us/resource/64uk-42ks.json?"
            f"$select={urllib.parse.quote(fields)}&$where={urllib.parse.quote(where)}"
-           "&$order=lotarea DESC&$limit=1200")
+           "&$order=" + urllib.parse.quote("lotarea DESC") + "&$limit=1200")
     return get_json(url)
 
 def n(x, d=0.0):
