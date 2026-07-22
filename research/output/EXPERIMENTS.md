@@ -1,6 +1,6 @@
 # Research round 2 — hardening
 
-_Generated 2026-07-22T05:30:20.422746+00:00_
+_Generated 2026-07-22T05:34:04.506531+00:00_
 
 ## EXP1 Equity momentum — robustness (survivorship-neutral)
 Universe: 104 names

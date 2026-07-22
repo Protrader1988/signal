@@ -1,6 +1,6 @@
 # Backtest results
 
-_Generated 2026-07-22T05:30:13.195344+00:00_
+_Generated 2026-07-22T05:33:57.558110+00:00_
 
 ## US equities/ETFs
 Universe: 65 names · 2017-01-03 → 2026-07-21

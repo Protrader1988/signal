@@ -1,0 +1,158 @@
+{
+  "generated_utc": "2026-07-22T05:34:24.506632+00:00",
+  "params": {
+    "cost_bps": 10.0,
+    "in_sample_frac": 0.65
+  },
+  "expA_equity_risk_overlays": {
+    "base": {
+      "full": {
+        "cagr_pct": 27.4,
+        "sharpe": 1.05,
+        "vol_pct": 26.5,
+        "maxDD_pct": -31.2
+      },
+      "in_sample": {
+        "cagr_pct": 22.6,
+        "sharpe": 0.86,
+        "vol_pct": 28.4,
+        "maxDD_pct": -31.2
+      },
+      "out_sample": {
+        "cagr_pct": 37.0,
+        "sharpe": 1.5,
+        "vol_pct": 22.6,
+        "maxDD_pct": -26.7
+      },
+      "split": "2023-07-21"
+    },
+    "plus_regime": {
+      "full": {
+        "cagr_pct": 17.6,
+        "sharpe": 0.95,
+        "vol_pct": 19.0,
+        "maxDD_pct": -25.3
+      },
+      "in_sample": {
+        "cagr_pct": 11.7,
+        "sharpe": 0.68,
+        "vol_pct": 18.8,
+        "maxDD_pct": -25.3
+      },
+      "out_sample": {
+        "cagr_pct": 29.7,
+        "sharpe": 1.44,
+        "vol_pct": 19.4,
+        "maxDD_pct": -21.2
+      },
+      "split": "2023-07-21"
+    },
+    "plus_voltarget15": {
+      "full": {
+        "cagr_pct": 16.4,
+        "sharpe": 1.06,
+        "vol_pct": 15.5,
+        "maxDD_pct": -19.1
+      },
+      "in_sample": {
+        "cagr_pct": 11.5,
+        "sharpe": 0.79,
+        "vol_pct": 15.4,
+        "maxDD_pct": -19.1
+      },
+      "out_sample": {
+        "cagr_pct": 26.4,
+        "sharpe": 1.58,
+        "vol_pct": 15.6,
+        "maxDD_pct": -16.0
+      },
+      "split": "2023-07-21"
+    },
+    "plus_both": {
+      "full": {
+        "cagr_pct": 12.5,
+        "sharpe": 0.93,
+        "vol_pct": 13.7,
+        "maxDD_pct": -19.2
+      },
+      "in_sample": {
+        "cagr_pct": 7.4,
+        "sharpe": 0.61,
+        "vol_pct": 13.1,
+        "maxDD_pct": -19.2
+      },
+      "out_sample": {
+        "cagr_pct": 22.8,
+        "sharpe": 1.47,
+        "vol_pct": 14.8,
+        "maxDD_pct": -13.9
+      },
+      "split": "2023-07-21"
+    }
+  },
+  "expB_crypto_risk_overlays": {
+    "buy_hold": {
+      "full": {
+        "cagr_pct": 70.0,
+        "sharpe": 1.06,
+        "vol_pct": 82.7,
+        "maxDD_pct": -87.1
+      },
+      "in_sample": {
+        "cagr_pct": 108.5,
+        "sharpe": 1.27,
+        "vol_pct": 91.6,
+        "maxDD_pct": -87.1
+      },
+      "out_sample": {
+        "cagr_pct": 16.2,
+        "sharpe": 0.55,
+        "vol_pct": 63.0,
+        "maxDD_pct": -71.6
+      },
+      "split": "2023-06-15"
+    },
+    "voltarget40": {
+      "full": {
+        "cagr_pct": 37.4,
+        "sharpe": 0.95,
+        "vol_pct": 43.7,
+        "maxDD_pct": -58.9
+      },
+      "in_sample": {
+        "cagr_pct": 44.9,
+        "sharpe": 1.06,
+        "vol_pct": 44.1,
+        "maxDD_pct": -58.9
+      },
+      "out_sample": {
+        "cagr_pct": 24.3,
+        "sharpe": 0.72,
+        "vol_pct": 42.9,
+        "maxDD_pct": -57.5
+      },
+      "split": "2023-06-15"
+    },
+    "trend_plus_voltarget40": {
+      "full": {
+        "cagr_pct": 28.9,
+        "sharpe": 0.82,
+        "vol_pct": 41.8,
+        "maxDD_pct": -65.6
+      },
+      "in_sample": {
+        "cagr_pct": 32.7,
+        "sharpe": 0.88,
+        "vol_pct": 42.9,
+        "maxDD_pct": -64.9
+      },
+      "out_sample": {
+        "cagr_pct": 21.9,
+        "sharpe": 0.7,
+        "vol_pct": 39.7,
+        "maxDD_pct": -45.1
+      },
+      "split": "2023-06-15"
+    }
+  }
+}
