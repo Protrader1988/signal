@@ -9,6 +9,7 @@ on:
   push:
     paths:
       - "research/backtest.py"
+      - "research/experiments.py"
       - "research/requirements.txt"
       - ".github/workflows/backtest.yml"
   workflow_dispatch: {}
@@ -35,6 +36,11 @@ jobs:
         run: |
           mkdir -p research/output
           python research/backtest.py 2>&1 | tee research/output/run_log.txt
+
+      - name: Run experiments (round 2)
+        continue-on-error: true
+        run: |
+          python research/experiments.py 2>&1 | tee research/output/experiments_log.txt
 
       - name: Commit results
         if: always()
