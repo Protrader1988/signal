@@ -1,12 +1,12 @@
-[06:29:21] fetching equities...
-HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PARA"}}}
-$PARA: possibly delisted; no timezone found
+[06:52:53] fetching equities...
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
 $WBA: possibly delisted; no timezone found
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PARA"}}}
+$PARA: possibly delisted; no timezone found
 
 2 Failed downloads:
-['PARA', 'WBA']: possibly delisted; no timezone found
-[06:29:32] fetching crypto...
-[06:29:33] wrote signals.json (15 position, 10 swing)
-[06:29:33] updated ledger: 25 open, 0 closed
-[06:29:33] done
+['WBA', 'PARA']: possibly delisted; no timezone found
+[06:53:10] fetching crypto...
+[06:53:12] wrote signals.json (15 position, 10 swing)
+[06:53:12] updated ledger: 25 open, 0 closed
+[06:53:12] done
