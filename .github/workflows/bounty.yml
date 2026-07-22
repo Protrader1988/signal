@@ -30,6 +30,9 @@ jobs:
       - name: NYC scan
         continue-on-error: true
         run: python bounty/engine/nyc_scan.py 2>&1 | tee bounty/data/nyc_run.log
+      - name: NY suburbs scan (Westchester/Putnam/Dutchess)
+        continue-on-error: true
+        run: python bounty/engine/nys_scan.py 2>&1 | tee bounty/data/nys_run.log
       - name: AI deal briefs
         continue-on-error: true
         env:
