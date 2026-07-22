@@ -13,11 +13,12 @@ instead of erroring. This is interpretation, not a guarantee or a forecast.
 
 Output: site/data/digest.json
 """
-import json, os, urllib.request, traceback
+import json, os, time, urllib.request, urllib.error, traceback
 from datetime import datetime, timezone
 
-MODEL = "gemini-2.0-flash"
-API = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+# Try current free-tier model names in order; retry once on 429.
+MODELS = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-2.0-flash"]
+API_TMPL = "https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
 
 PROMPT = """You are a seasoned, honest markets analyst briefing a personal trader.
 Below are REAL news headlines pulled today from public feeds.
@@ -40,10 +41,30 @@ HEADLINES:
 def gemini(key, prompt):
     body = json.dumps({"contents":[{"parts":[{"text":prompt}]}],
                        "generationConfig":{"temperature":0.4,"responseMimeType":"application/json"}}).encode()
-    req = urllib.request.Request(f"{API}?key={key}", data=body, headers={"Content-Type":"application/json"})
-    raw = urllib.request.urlopen(req, timeout=45).read()
-    resp = json.loads(raw)
-    return resp["candidates"][0]["content"]["parts"][0]["text"]
+    last = None
+    for m in MODELS:
+        for attempt in (1, 2):
+            try:
+                req = urllib.request.Request(API_TMPL.format(m=m) + f"?key={key}",
+                                             data=body, headers={"Content-Type":"application/json"})
+                raw = urllib.request.urlopen(req, timeout=60).read()
+                resp = json.loads(raw)
+                txt = resp["candidates"][0]["content"]["parts"][0]["text"]
+                print(f"model ok: {m}")
+                return txt, m
+            except urllib.error.HTTPError as e:
+                detail = ""
+                try: detail = e.read().decode()[:400]
+                except Exception: pass
+                print(f"model {m} attempt {attempt}: HTTP {e.code} {detail[:160]}")
+                last = RuntimeError(f"{m}: HTTP {e.code} {detail[:200]}")
+                if e.code == 429 and attempt == 1:
+                    time.sleep(35); continue   # brief backoff then retry once
+                break                          # other errors: next model
+            except Exception as e:
+                print(f"model {m} attempt {attempt}: {type(e).__name__} {e}")
+                last = e; break
+    raise last or RuntimeError("no model succeeded")
 
 def main():
     os.makedirs("site/data", exist_ok=True)
@@ -62,9 +83,9 @@ def main():
         json.dump({"available": False, "note": "No headlines available to interpret yet."}, open("site/data/digest.json","w"), indent=2)
         print("no headlines"); return
     try:
-        txt = gemini(key, PROMPT + heads)
+        txt, used_model = gemini(key, PROMPT + heads)
         parsed = json.loads(txt)
-        out = {"available": True, "generated_utc": datetime.now(timezone.utc).isoformat(), "model": MODEL,
+        out = {"available": True, "generated_utc": datetime.now(timezone.utc).isoformat(), "model": used_model,
                "market": parsed.get("market", {}), "takes": parsed.get("takes", []),
                "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice — markets can move against any read. Confidence levels reflect genuine uncertainty."}
         json.dump(out, open("site/data/digest.json","w"), indent=2)
