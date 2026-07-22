@@ -1,6 +1,6 @@
 # Research round 2 — hardening
 
-_Generated 2026-07-22T06:26:17.799086+00:00_
+_Generated 2026-07-22T06:36:47.574654+00:00_
 
 ## EXP1 Equity momentum — robustness (survivorship-neutral)
 Universe: 104 names
@@ -17,4 +17,4 @@ Universe: 104 names
 ## EXP3 Crypto trend timing
 - trend_timed_all: full CAGR 49.4% Sharpe 0.91 maxDD -85.0% | OOS CAGR 13.7% Sharpe 0.51
 - trend_timed_BTC_ETH: full CAGR 26.8% Sharpe 0.71 maxDD -88.5% | OOS CAGR 17.1% Sharpe 0.6
-- buy_hold_basket: full CAGR 69.9% Sharpe 1.06 maxDD -87.1% | OOS CAGR 16.0% Sharpe 0.55
+- buy_hold_basket: full CAGR 69.9% Sharpe 1.06 maxDD -87.1% | OOS CAGR 16.1% Sharpe 0.55
