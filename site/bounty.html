@@ -184,20 +184,11 @@
   </section>
 
   <section id="programs">
-    <div class="eyebrow"><span class="no">03</span><h2>Program Reference</h2>
-      <span class="hint">current terms encoded in the underwriting engine · verified Jul 2026</span></div>
-    <div class="prog-grid">
-      <div class="prog"><h3>485-x · ANNY</h3><div class="terms">
-        <b>&lt;100 units:</b> 20% affordable @ ≤80% AMI wtd avg → 35-yr exemption (25 yrs full + 10 yrs at affordability %).<br>
-        <b>6–10 units</b> (outside Manhattan, ≤12,500 SF): 10-yr full exemption, <b>no affordability</b>, 50% stabilized.<br>
-        <b>100+ units:</b> 25% @ 80% AMI + construction wage floors ($35+/hr) — modeled with a 12% hard-cost premium.</div></div>
-      <div class="prog"><h3>City of Yes · UAP</h3><div class="terms">
-        <b>+20% FAR</b> in R6–R10 districts when the bonus floor area is permanently affordable at ~<b>60% AMI</b> average. Engine underwrites base + bonus with blended affordable rents.</div></div>
-      <div class="prog"><h3>Section 8 · VPS</h3><div class="terms">
-        Voucher payment standards can exceed market rents in the Bronx and parts of Queens — modeled as a <b>+12% uplift</b> on market units, stacked on 485-x. Verify current VPS by ZIP before underwriting to it.</div></div>
-      <div class="prog"><h3>ELLA / 4% LIHTC stack</h3><div class="terms">
-        All-affordable: tax-exempt bonds (sized at 1.15 DSCR) + LIHTC equity (~30% TDC) + city subsidy (~$130k/unit). Profit = <b>developer fee (~10% TDC)</b>. <b class="warn">Competitive award required</b> — ranked below self-executing deals for that reason.</div></div>
-    </div>
+    <div class="eyebrow"><span class="no">03</span><h2>Program Library</h2>
+      <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
+    <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
+    <div class="filters" id="progTabs"></div>
+    <div class="prog-grid" id="progGrid"><div class="loading">loading program library…</div></div>
   </section>
 
   <section id="assumptions">
@@ -289,7 +280,22 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
 
 (async()=>{
   try{
-    const [deals,briefs]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null)]);
+    const [deals,briefs,progs]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null)]);
+    // program library with region tabs
+    if(progs&&progs.regions){
+      let PSEL=progs.regions[0].region;
+      const renderProgs=()=>{
+        $('progTabs').innerHTML=progs.regions.map(r=>
+          `<button class="chipbtn ${PSEL===r.region?'on':''}" data-r="${r.region}">${r.region}</button>`).join('');
+        document.querySelectorAll('#progTabs .chipbtn').forEach(b=>b.onclick=()=>{PSEL=b.dataset.r;renderProgs();});
+        const reg=progs.regions.find(r=>r.region===PSEL);
+        $('progGrid').innerHTML=reg.programs.map(p=>`<div class="prog">
+          <h3>${p.name} <span class="badge ${p.status==='underwritten'?'b-mkt':'b-prog'}" style="margin-left:auto">${p.status}</span></h3>
+          <div class="terms"><span class="mono" style="font-size:10px;color:var(--muted);letter-spacing:.5px">${(p.type||'').toUpperCase()}</span><br>${p.terms}
+          ${p.source?`<br><a href="${p.source}" target="_blank" rel="noopener" style="color:var(--em2);font-size:11.5px">source ↗</a>`:''}</div></div>`).join('');
+      };
+      renderProgs();
+    } else { $('progGrid').innerHTML='<div class="empty">Program library loads after the next data publish.</div>'; }
     DEALS=deals.deals||[];
     const c=deals.counts||{};
     // hero
