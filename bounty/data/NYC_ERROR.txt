@@ -1,39 +1,31 @@
 Traceback (most recent call last):
-  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 177, in <module>
+  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 210, in <module>
     try: main()
          ^^^^^^
-  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 136, in main
-    raw = fetch_pluto()
-          ^^^^^^^^^^^^^
-  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 70, in fetch_pluto
-    return get_json(url)
+  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 164, in main
+    comps, n_sales = fetch_land_comps()
+                     ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 62, in fetch_land_comps
+    rows = get_json(url)
            ^^^^^^^^^^^^^
-  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 50, in get_json
+  File "/home/runner/work/signal/signal/bounty/engine/nyc_scan.py", line 46, in get_json
     return json.loads(urllib.request.urlopen(req, timeout=timeout).read())
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
     return opener.open(url, data, timeout)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
     result = func(*args)
              ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1323, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1334, in _send_request
-    self.putrequest(method, url, **skips)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1168, in putrequest
-    self._validate_path(url)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1268, in _validate_path
-    raise InvalidURL(f"URL can't contain control characters. {url!r} "
-http.client.InvalidURL: URL can't contain control characters. '/resource/64uk-42ks.json?$select=borocode%2Cborough%2Cblock%2Clot%2Caddress%2Czipcode%2Czonedist1%2Coverlay1%2Clotarea%2Clotfront%2Cbldgarea%2Cbuiltfar%2Cresidfar%2Ccommfar%2Cnumfloors%2Cunitsres%2Cunitstotal%2Cyearbuilt%2Cownername%2Cownertype%2Cassessland%2Cassesstot%2Clanduse%2Cbbl%2Clatitude%2Clongitude&$where=borocode%20in%28%272%27%2C%273%27%2C%274%27%29%20and%20zonedist1%20in%28%27R6%27%2C%27R6A%27%2C%27R6B%27%2C%27R7A%27%2C%27R7B%27%2C%27R7D%27%2C%27R7X%27%2C%27R8%27%2C%27R8A%27%2C%27R8B%27%2C%27R8X%27%2C%27R7-1%27%2C%27R7-2%27%2C%27R6-1%27%2C%27C1-4%27%2C%27C2-4%27%2C%27C4-4%27%2C%27C4-5X%27%2C%27M1-4/R6A%27%2C%27M1-4/R7A%27%29%20and%20lotarea%20between%201500%20and%2040000%20and%20residfar%20%3E%200%20and%20builtfar%20%3C%20residfar%2A0.5%20and%20landuse%20not%20in%28%2706%27%2C%2707%27%2C%2708%27%29&$order=lotarea DESC&$limit=1200' (found at least ' ')
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
