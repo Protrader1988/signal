@@ -23,11 +23,20 @@ ASSUMPTIONS = {
     "density_units_per_acre": 20,
     "density_note": "Est. units assume ~20/acre multifamily density IF zoning allows or can be obtained — VERIFY at town hall; this is a screen, not an entitlement analysis.",
     "min_acres": 0.4, "max_acres": 12.0,
+    "min_value_per_acre": 30000,
+    "value_floor_note": "Parcels under ~$30k/acre market value are near-certainly unbuildable (wetlands, slopes, no utilities, conservation) — excluded to keep the screen honest.",
     "target_classes_vacant": ["311","312","314","330","331","340","341"],
     "target_classes_underused": ["411","410","400"],
     "underuse_improvement_ratio_max": 0.35,
     "note": "Suburban tier: parcel + assessment screen on real NYS data. No zoning-grade underwriting is claimed.",
 }
+# Government/institutional owners you cannot buy from on the open market.
+# (NYC owns large WATERSHED tracts in Putnam/Dutchess — never developable.)
+EXCLUDE_OWNERS = ("CITY OF NEW YORK","NEW YORK CITY","NYC ","STATE OF NEW YORK","PEOPLE OF THE STATE",
+                  "COUNTY OF","CITY OF","TOWN OF","VILLAGE OF","UNITED STATES","USA","U S ",
+                  "SCHOOL DISTRICT","BOARD OF ED","FIRE DISTRICT","HOUSING AUTHORITY","MTA",
+                  "METRO-NORTH","METRO NORTH","CENTRAL HUDSON","CON ED","CONSOLIDATED EDISON",
+                  "NYSEG","WATER DISTRICT","CEMETERY","CHURCH OF","DIOCESE","PARKS")
 
 def get_json(url, timeout=90):
     req = urllib.request.Request(url, headers=UA)
@@ -78,9 +87,15 @@ def fetch_county(F, county, classes, roll_year):
     if roll_year and F["roll_year"]:
         where += f" and {F['roll_year']}='{roll_year}'"
     sel_fields = [v for v in F.values() if v]
-    url = (BASE + f"?$select={urllib.parse.quote(','.join(dict.fromkeys(sel_fields)))}"
-           f"&$where={urllib.parse.quote(where)}&$limit=8000")
-    return get_json(url)
+    out, offset = [], 0
+    while offset < 40000:
+        url = (BASE + f"?$select={urllib.parse.quote(','.join(dict.fromkeys(sel_fields)))}"
+               f"&$where={urllib.parse.quote(where)}&$limit=8000&$offset={offset}")
+        page = get_json(url)
+        out += page
+        if len(page) < 8000: break
+        offset += 8000
+    return out
 
 def main():
     os.makedirs("bounty/data", exist_ok=True)
@@ -115,16 +130,19 @@ def main():
             if est_units < 8: continue
             val = market if market > 0 else tot_av * 1.0
             per_acre = val/acres if acres > 0 else 0
+            if per_acre < A["min_value_per_acre"]: continue   # unbuildable-land floor
             addr = " ".join(str(r.get(F[k], "") or "") for k in ("addr_no","addr_st")).strip().title()
             owner = str(r.get(F["owner"], "") or "").title() if F["owner"] else ""
             if F["owner2"] and r.get(F["owner2"]):
                 owner = (owner + " " + str(r.get(F["owner2"])).title()).strip()
-            # score: vacant preferred, cheap per est-unit, sane size
+            if any(k in owner.upper() for k in EXCLUDE_OWNERS): continue
+            # score: vacant preferred, sane land basis per est-unit, size, priority county
             per_unit = val/est_units if est_units else 9e9
-            s_type = 30 if vacant else 18
-            s_cost = max(0, min(1, (120000 - per_unit)/100000)) * 40
-            s_size = max(0, min(1, est_units/40)) * 20
+            s_type = 26 if vacant else 16
+            s_cost = max(0, min(1, (150000 - per_unit)/130000)) * 34
+            s_size = max(0, min(1, est_units/40)) * 18
             s_val  = 10 if val < 2_000_000 else (6 if val < 3_000_000 else 2)
+            s_cty  = {"Westchester": 12, "Putnam": 6, "Dutchess": 6}.get(county, 0)
             deals.append({
                 "region": county, "muni": str(r.get(F["muni"], "") or "").title(),
                 "address": addr or "(unaddressed parcel)",
@@ -135,7 +153,7 @@ def main():
                 "assessed_total": int(tot_av), "est_market_value": int(val),
                 "value_per_acre": int(per_acre), "value_per_est_unit": int(per_unit),
                 "owner": owner, "school_district": r.get(F["school"]),
-                "score": round(s_type + s_cost + s_size + s_val, 1),
+                "score": round(s_type + s_cost + s_size + s_val + s_cty, 1),
                 "tier": "screen",
                 "verify": "Confirm zoning/density with the municipality before underwriting.",
             })
