@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   :root{
     --bg:#05080a; --bg2:#070b0e;
@@ -100,6 +102,18 @@
   .expbtn{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;color:var(--em2);
     border:1px solid var(--emline);border-radius:7px;padding:5px 11px;background:rgba(47,211,154,.06);cursor:pointer;transition:.15s}
   .expbtn:hover{background:rgba(47,211,154,.14);border-color:var(--em)}
+  .viewtog{display:inline-flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden;margin:0 0 12px}
+  .viewtog button{font-family:var(--mono);font-size:11.5px;padding:6px 15px;background:var(--surface2);color:var(--text2);border:none;cursor:pointer;transition:.15s}
+  .viewtog button.on{background:rgba(47,211,154,.14);color:var(--em2)}
+  #mapWrap{display:none}
+  #nycMap{height:540px;width:100%;background:#0a1014}
+  .maplegend{display:flex;gap:16px;flex-wrap:wrap;padding:11px 20px;font-family:var(--mono);font-size:11px;color:var(--text2);border-bottom:1px solid var(--line)}
+  .maplegend i{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle;border:1px solid rgba(255,255,255,.2)}
+  .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface2);color:var(--text);border:1px solid var(--line2)}
+  .leaflet-popup-content{font-family:var(--sans);font-size:12.5px;line-height:1.6}
+  .leaflet-popup-content b{color:var(--em2);font-family:var(--mono)}
+  .leaflet-container{font-family:var(--sans)}
+  .leaflet-control-attribution{background:rgba(10,16,20,.7)!important;color:var(--dim)!important}
 
   table{width:100%;border-collapse:collapse;font-size:13px}
   th,td{padding:11px 16px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
@@ -187,8 +201,20 @@
       <span class="hint">click any row to expand its full financing-path underwriting</span></div>
     <div class="subnote"><b class="em">Market</b> = self-executing (485-x / UAP / Section 8 paths pencil today). <b style="color:var(--purple)">Program</b> = pencils only via competitive subsidy stack (ELLA/LIHTC — dev-fee play). <b class="gold">City-owned</b> = HPD/EDC disposition targets (RFP process, not private sale). Land costs are comp-anchored estimates; <b>walk-away</b> is the max land price where the deal still pencils.</div>
     <div class="filters" id="filters"></div>
-    <div style="margin:-6px 0 14px"><button class="expbtn" style="margin-left:0" onclick="exportBoard('nyc')">⬇ Export NYC outreach CSV</button></div>
-    <div class="card"><div id="dealTbl"><div class="loading">loading deals…</div></div></div>
+    <div style="margin:-6px 0 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+      <div class="viewtog" style="margin:0"><button id="vTable" class="on" onclick="setView('table')">▤ Table</button><button id="vMap" onclick="setView('map')">🗺 Map</button></div>
+      <button class="expbtn" style="margin-left:0" onclick="exportBoard('nyc')">⬇ Export NYC outreach CSV</button>
+    </div>
+    <div class="card" id="tableWrap"><div id="dealTbl"><div class="loading">loading deals…</div></div></div>
+    <div class="card" id="mapWrap">
+      <div class="maplegend">
+        <span><i style="background:#2fd39a"></i>Market (self-executing)</span>
+        <span><i style="background:#b39bff"></i>Program (subsidy)</span>
+        <span><i style="background:#e6c976;border-width:2px"></i>City-owned (gold ring)</span>
+        <span style="margin-left:auto;color:var(--dim)">clusters = assemblage opportunities · click a dot for the deal</span>
+      </div>
+      <div id="nycMap"></div>
+    </div>
   </section>
 
   <section id="suburbs">
@@ -266,6 +292,33 @@ function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().sl
 setInterval(tick,1000);tick();
 
 let DEALS=[], FILTER={boro:'ALL', tier:'ALL'};
+let _map=null;
+function setView(v){
+  const t=document.getElementById('vTable'),m=document.getElementById('vMap');
+  if(t)t.classList.toggle('on',v==='table'); if(m)m.classList.toggle('on',v==='map');
+  const tw=document.getElementById('tableWrap'),mw=document.getElementById('mapWrap');
+  if(tw)tw.style.display=v==='table'?'block':'none'; if(mw)mw.style.display=v==='map'?'block':'none';
+  if(v==='map'){initMap(); if(_map)setTimeout(()=>_map.invalidateSize(),150);}
+}
+function initMap(){
+  if(_map||typeof L==='undefined'){ if(typeof L==='undefined')document.getElementById('nycMap').innerHTML='<div class="empty">Map library blocked by your network — the table view has everything.</div>'; return; }
+  const deals=(window.__D.nyc||[]).filter(d=>d.lat&&d.lng);
+  _map=L.map('nycMap',{scrollWheelZoom:true,attributionControl:true}).setView([40.68,-73.93],11);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    {maxZoom:19,subdomains:'abcd',attribution:'© OpenStreetMap © CARTO'}).addTo(_map);
+  deals.forEach(d=>{
+    const col=d.tier==='program'?'#b39bff':(d.tier==='market'?'#2fd39a':'#5f7570');
+    const b=d.best||{};
+    L.circleMarker([d.lat,d.lng],{radius:6,weight:d.city_owned?2.5:1,
+      color:d.city_owned?'#e6c976':'rgba(255,255,255,.35)',fillColor:col,fillOpacity:.85})
+     .bindPopup(`<b>${d.address}</b> · ${d.borough} ${d.zone||''}<br>`+
+       `Score ${d.score} · ~${d.est_units}u · ${d.tier}${d.city_owned?' · CITY-OWNED':''}<br>`+
+       `Best path: ${(d.best_path||'—')} · CoC ${b.coc_pct!=null?b.coc_pct+'%':'—'}<br>`+
+       `Est land ${usd(d.est_land_cost)} · walk-away <b style="color:var(--em2)">${usd(d.walk_away_land)}</b> · equity ${usd(d.equity_needed)}`)
+     .addTo(_map);
+  });
+  setTimeout(()=>_map.invalidateSize(),120);
+}
 window.__D={};
 function exportBoard(region){
   const D=(window.__D||{})[region]||[];
