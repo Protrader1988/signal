@@ -78,6 +78,9 @@ def discover():
         "owner": find("owner"),
         "addr": find("location", "property_address", "situs"),
         "mail": find("mailing_address", "mailing"),
+        "mail_city": find("mailing_city"),
+        "mail_state": find("mailing_state"),
+        "mail_zip": find("mailing_zip"),
         "sale_price": find("sale_price"),
         "sale_date": find("sale_date"),
     }
@@ -139,6 +142,7 @@ def main():
             if per_acre < A["min_value_per_acre"]: continue
             owner = str(r.get(F["owner"], "") or "").title() if F["owner"] else ""
             if any(k in owner.upper() for k in EXCLUDE_OWNERS): continue
+            mail = " ".join(str(r.get(F[k], "") or "") for k in ("mail","mail_city","mail_state","mail_zip") if F.get(k)).strip().title()
             est_units = int(acres * uac)
             if est_units < 6: continue
             per_unit = val/est_units if est_units else 9e9
@@ -171,7 +175,7 @@ def main():
                 "est_units": est_units,
                 "assessed_total": int(total_val), "est_value": int(val),
                 "value_per_acre": int(per_acre), "value_per_est_unit": int(per_unit),
-                "owner": owner, "score": score, "tier": "screen",
+                "owner": owner, "owner_mailing": mail, "score": score, "tier": "screen",
                 "verify": "Confirm zoning + file an 8-30g affordability plan; density is an assumption.",
             })
     # dedupe by town+address (CT roll has split-parcel duplicates)

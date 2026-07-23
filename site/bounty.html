@@ -97,6 +97,9 @@
     background:var(--surface2);color:var(--text2);cursor:pointer;transition:.15s}
   .chipbtn:hover{border-color:var(--em)}
   .chipbtn.on{background:rgba(47,211,154,.12);border-color:var(--em);color:var(--em2)}
+  .expbtn{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;color:var(--em2);
+    border:1px solid var(--emline);border-radius:7px;padding:5px 11px;background:rgba(47,211,154,.06);cursor:pointer;transition:.15s}
+  .expbtn:hover{background:rgba(47,211,154,.14);border-color:var(--em)}
 
   table{width:100%;border-collapse:collapse;font-size:13px}
   th,td{padding:11px 16px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
@@ -184,6 +187,7 @@
       <span class="hint">click any row to expand its full financing-path underwriting</span></div>
     <div class="subnote"><b class="em">Market</b> = self-executing (485-x / UAP / Section 8 paths pencil today). <b style="color:var(--purple)">Program</b> = pencils only via competitive subsidy stack (ELLA/LIHTC — dev-fee play). <b class="gold">City-owned</b> = HPD/EDC disposition targets (RFP process, not private sale). Land costs are comp-anchored estimates; <b>walk-away</b> is the max land price where the deal still pencils.</div>
     <div class="filters" id="filters"></div>
+    <div style="margin:-6px 0 14px"><button class="expbtn" style="margin-left:0" onclick="exportBoard('nyc')">⬇ Export NYC outreach CSV</button></div>
     <div class="card"><div id="dealTbl"><div class="loading">loading deals…</div></div></div>
   </section>
 
@@ -192,7 +196,7 @@
       <span class="hint">Westchester · Putnam · Dutchess — real NYS parcel data, screen tier</span></div>
     <div class="subnote"><span class="badge b-prog">Screen tier</span> Real 2025 assessment-roll parcels (vacant developable + underimproved multifamily-class), government/watershed owners excluded, unbuildable-land floor applied. <b class="warn">Unit counts assume ~20/acre IF zoning allows — verify at town hall before underwriting.</b> Owner names come from the roll — this is your outreach list.</div>
     <div class="card">
-      <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span></div>
+      <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span><button class="expbtn" onclick="exportBoard('subs')">⬇ Outreach CSV</button></div>
       <div id="subTbl"><div class="loading">loading suburban screens…</div></div>
     </div>
   </section>
@@ -202,7 +206,7 @@
       <span class="hint">Gold Coast + Stamford/New Haven — real CT CAMA data with zoning-override flagging</span></div>
     <div class="subnote"><b class="em">The play:</b> in towns under 10% affordable (Greenwich 5.3%, Westport 3.5%, Ridgefield, New Canaan, Darien), <b>CGS 8-30g lets a 30%-affordable set-aside override local zoning denial</b> — so estate-zoned vacant land becomes developable. Unit counts assume ~16/acre WHERE 8-30g applies (~8/acre elsewhere) — verify with an affordability plan. Stamford/New Haven are 8-30g-exempt (over threshold). <b class="warn">Screen tier: confirm zoning, wetlands, and sewer before pursuing.</b></div>
     <div class="card">
-      <div class="card-head"><span class="code">CT</span><span class="t">Zoning-override development plays</span><span class="expo" id="ctMeta"></span></div>
+      <div class="card-head"><span class="code">CT</span><span class="t">Zoning-override development plays</span><span class="expo" id="ctMeta"></span><button class="expbtn" onclick="exportBoard('ct')">⬇ Outreach CSV</button></div>
       <div id="ctTbl"><div class="loading">loading Connecticut board…</div></div>
     </div>
   </section>
@@ -212,7 +216,7 @@
       <span class="hint">Bergen/Hudson Gold Coast + GWB corridor — real MOD-IV parcel data</span></div>
     <div class="subnote"><b class="em">The play:</b> NJ's lever is the <b>40A:20 long-term tax exemption PILOT</b> — once a site is in a municipal "Area in Need of Redevelopment," the town can convey it directly (no bid) with a ~30-year PILOT (~10-15% of revenue vs. full taxes). This board leads with vacant + commercial/industrial (class 4A/4B) parcels — the ones that become redevelopment sites. <b class="warn">Screen tier: assessed values are NOT market (apply town ratio); verify redevelopment designation on the municipal map. Owner data is sparse in the NJ layer.</b></div>
     <div class="card">
-      <div class="card-head"><span class="code">NJ</span><span class="t">Redevelopment / PILOT candidates</span><span class="expo" id="njMeta"></span></div>
+      <div class="card-head"><span class="code">NJ</span><span class="t">Redevelopment / PILOT candidates</span><span class="expo" id="njMeta"></span><button class="expbtn" onclick="exportBoard('nj')">⬇ Outreach CSV</button></div>
       <div id="njTbl"><div class="loading">loading New Jersey board…</div></div>
     </div>
   </section>
@@ -254,6 +258,28 @@ function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().sl
 setInterval(tick,1000);tick();
 
 let DEALS=[], FILTER={boro:'ALL', tier:'ALL'};
+window.__D={};
+function exportBoard(region){
+  const D=(window.__D||{})[region]||[];
+  if(!D.length){alert('No rows to export yet — wait for data to load.');return;}
+  const pitch={nyc:'Underbuilt lot — 485-x/UAP development interest',
+    subs:'Development-shaped parcel — purchase inquiry',
+    ct:'8-30g affordable set-aside development interest',
+    nj:'Redevelopment-area / PILOT development interest'}[region]||'';
+  const cols=['region','town','address','owner','owner_mailing','zone','acres','est_units','est_value','pitch'];
+  const rows=D.slice(0,200).map(x=>({
+    region:x.region||region.toUpperCase(), town:x.town||x.borough||x.muni||'',
+    address:x.address||'', owner:x.owner||'', owner_mailing:x.owner_mailing||'',
+    zone:x.zone||x.zone_desc||x.prop_class||'', acres:x.acres||'',
+    est_units:x.est_units||x.est_units_at_assumed_density||'',
+    est_value:x.est_value||x.est_market_value||x.assessed_net||x.est_land_cost||'', pitch}));
+  const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
+  const csv=[cols.join(',')].concat(rows.map(r=>cols.map(c=>esc(r[c])).join(','))).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download='bounty_outreach_'+region+'_'+new Date().toISOString().slice(0,10)+'.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+}
 
 function scoreCls(s){return s>=80?'s-hi':(s>=55?'s-md':'s-lo');}
 
@@ -335,7 +361,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
         <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,26)}</td></tr>`;
       });
       $('subTbl').innerHTML=sh+'</tbody></table>';
-    } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
+    window.__D.subs=(subs&&subs.deals)||[]; } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
     // Connecticut 8-30g board
     if(ct&&ct.deals&&ct.deals.length){
       $('ctMeta').innerHTML=`<span class="mono">${ct.counts.qualified} qualified · ${ct.counts.in_8_30g_towns} in 8-30g towns</span>`;
@@ -353,7 +379,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
         <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,24)}</td></tr>`;
       });
       $('ctTbl').innerHTML=ch+'</tbody></table>';
-    } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
+    window.__D.ct=(ct&&ct.deals)||[]; } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
     // New Jersey redevelopment board
     if(nj&&nj.deals&&nj.deals.length){
       $('njMeta').innerHTML=`<span class="mono">${nj.counts.qualified} qualified · ${nj.counts.redevelopment} redev · ${nj.counts.vacant} vacant</span>`;
@@ -370,7 +396,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
         <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,22)||'—'}</td></tr>`;
       });
       $('njTbl').innerHTML=nh+'</tbody></table>';
-    } else { $('njTbl').innerHTML='<div class="empty">New Jersey board appears after the next engine run.</div>'; }
+    window.__D.nj=(nj&&nj.deals)||[]; } else { $('njTbl').innerHTML='<div class="empty">New Jersey board appears after the next engine run.</div>'; }
     // playbook
     if(pb&&pb.ladder){
       const li=x=>`<div class="tgt" style="margin-top:10px"><div class="row">${x}</div></div>`;
@@ -412,7 +438,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
       };
       renderProgs();
     } else { $('progGrid').innerHTML='<div class="empty">Program library loads after the next data publish.</div>'; }
-    DEALS=deals.deals||[];
+    DEALS=deals.deals||[]; window.__D.nyc=DEALS;
     const c=deals.counts||{};
     // hero
     const hero=[
