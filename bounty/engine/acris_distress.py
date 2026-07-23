@@ -18,8 +18,10 @@ This module is ADDITIVE and NON-FATAL: if ACRIS is slow or unreachable, the
 scan proceeds with no flags rather than failing. Every flag is a real recorded
 document — nothing is inferred or simulated.
 """
-import json, urllib.request, urllib.parse
+import json, os, urllib.request, urllib.parse
 from datetime import date
+
+DEBUG = {"stages": {}}
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/2.0)"}
 LEGALS = "https://data.cityofnewyork.us/resource/8h5j-fqxa.json"
@@ -72,19 +74,45 @@ def _chunks(seq, n):
         yield seq[i:i + n]
 
 
-def _fetch_legals_for_boro(borough_code, blocks):
+def _legals_types():
+    """Probe one legals row to learn whether borough/block/lot are numeric or
+    text columns (Socrata returns JSON numbers for numeric columns, strings for
+    text). Quoting an IN() clause wrong makes the whole query fail silently."""
+    try:
+        row = _get(LEGALS + "?$limit=1")
+        r = row[0] if row else {}
+        DEBUG["stages"]["legals_sample"] = {k: [type(v).__name__, v] for k, v in r.items()}
+        return {c: isinstance(r.get(c), (int, float)) for c in ("borough", "block", "lot")}
+    except Exception as e:
+        DEBUG["stages"]["legals_probe_error"] = str(e)
+        return {"borough": True, "block": True, "lot": True}
+
+
+def _lit(v, numeric):
+    """Render a value for a Socrata IN()/= clause per column type."""
+    if numeric:
+        try:
+            return str(int(str(v)))
+        except Exception:
+            return "0"
+    return "'" + str(v).replace("'", "''") + "'"
+
+
+def _fetch_legals_for_boro(borough_code, blocks, types):
     """document_id + block + lot for the given borough & block set."""
     rows = []
     b_list = sorted({str(int(b)) for b in blocks if str(b).strip().isdigit()})
-    for chunk in _chunks(b_list, 200):
-        inb = ",".join(f"'{b}'" for b in chunk)
-        where = f"borough='{borough_code}' and block in({inb})"
+    blit = _lit(borough_code, types.get("borough"))
+    for chunk in _chunks(b_list, 100):
+        inb = ",".join(_lit(b, types.get("block")) for b in chunk)
+        where = f"borough={blit} and block in({inb})"
         try:
             page = _get(LEGALS + f"?$select=document_id,borough,block,lot"
                         f"&$where={urllib.parse.quote(where)}&$limit=50000")
             rows += page
         except Exception as e:
             print(f"  ACRIS legals boro {borough_code} chunk failed: {e}")
+            DEBUG["stages"].setdefault("legals_errors", []).append(str(e)[:200])
     return rows
 
 
@@ -115,13 +143,19 @@ def annotate(deals, boro_map):
     """
     today = date.today()
     cutoff = (today.toordinal() - DISTRESS_LOOKBACK_DAYS)
+    types = _legals_types()
+    DEBUG["stages"]["legals_types"] = types
     try:
         distress_codes, deed_codes = _discover_codes()
+        DEBUG["stages"]["codes"] = {"distress": sorted(distress_codes), "deed": sorted(deed_codes)}
         print(f"  ACRIS codes: {len(distress_codes)} distress, {len(deed_codes)} deed")
     except Exception as e:
         print(f"  ACRIS code discovery failed ({e}); skipping distress layer")
+        DEBUG["stages"]["codes_error"] = str(e)
+        _write_debug()
         return {}
     if not distress_codes and not deed_codes:
+        _write_debug()
         return {}
 
     # group target (block,lot) by borough
@@ -133,10 +167,12 @@ def annotate(deals, boro_map):
     # (boro,block,lot) -> list of document_ids
     parcel_docs = {}
     doc_ids = set()
+    legals_total = 0
     for bc, ds in by_boro.items():
         acris_boro = boro_map.get(bc, bc)
         blocks = {str(d.get("_blk")) for d in ds}
-        legals = _fetch_legals_for_boro(acris_boro, blocks)
+        legals = _fetch_legals_for_boro(acris_boro, blocks, types)
+        legals_total += len(legals)
         want = {(str(int(str(d.get("_blk")))) if str(d.get("_blk")).isdigit() else str(d.get("_blk")),
                  str(int(str(d.get("_lot")))) if str(d.get("_lot")).isdigit() else str(d.get("_lot")))
                 for d in ds}
@@ -152,10 +188,15 @@ def annotate(deals, boro_map):
                 if did:
                     parcel_docs.setdefault(key, []).append(did)
                     doc_ids.add(did)
+    DEBUG["stages"]["legals_rows"] = legals_total
+    DEBUG["stages"]["parcels_matched"] = len(parcel_docs)
+    DEBUG["stages"]["doc_ids"] = len(doc_ids)
     if not doc_ids:
-        print("  ACRIS: no matching recorded documents for target parcels")
+        print(f"  ACRIS: no matching recorded documents (legals_rows={legals_total})")
+        _write_debug()
         return {}
     master = _fetch_master(list(doc_ids))
+    DEBUG["stages"]["master_rows"] = len(master)
 
     def ord_of(s):
         s = str(s or "")[:10]
@@ -202,6 +243,18 @@ def annotate(deals, boro_map):
         if distress or motivated:
             flags[d.get("bbl")] = {"distress": distress, "distress_type": worst_distress,
                                    "tenure_years": tenure, "motivated": motivated}
+    DEBUG["stages"]["distressed"] = sum(1 for d in deals if d.get("distress"))
+    DEBUG["stages"]["motivated"] = sum(1 for d in deals if d.get("motivated"))
+    DEBUG["stages"]["with_tenure"] = sum(1 for d in deals if d.get("owner_tenure_years"))
+    _write_debug()
     print(f"  ACRIS: {sum(1 for d in deals if d.get('distress'))} distressed, "
           f"{sum(1 for d in deals if d.get('motivated'))} motivated (distress or 25y+ hold)")
     return flags
+
+
+def _write_debug():
+    try:
+        os.makedirs("bounty/data", exist_ok=True)
+        json.dump(DEBUG, open("bounty/data/ACRIS_DEBUG.json", "w"), indent=2, default=str)
+    except Exception:
+        pass
