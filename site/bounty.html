@@ -196,9 +196,10 @@
     <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
     <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
-    <a class="fkey" href="#programs"><b>F6</b>PROGRAMS</a>
-    <a class="fkey" href="#playbook"><b>F7</b>PLAYBOOK</a>
-    <a class="fkey" href="#assumptions"><b>F8</b>ASSUMPTIONS</a>
+    <a class="fkey" href="#tsmap"><b>F6</b>TRI-STATE MAP</a>
+    <a class="fkey" href="#programs"><b>F7</b>PROGRAMS</a>
+    <a class="fkey" href="#playbook"><b>F8</b>PLAYBOOK</a>
+    <a class="fkey" href="#assumptions"><b>F9</b>ASSUMPTIONS</a>
   </div>
   <div class="hero" id="hero"></div>
 
@@ -260,8 +261,23 @@
     </div>
   </section>
 
+  <section id="tsmap">
+    <div class="eyebrow"><span class="no">06</span><h2>Tri-State Map</h2>
+      <span class="hint">every suburban · Connecticut · New Jersey deal on one map — where the clusters are</span></div>
+    <div class="subnote">Markers plot NYS parcel coordinates where the roll provides them; otherwise they sit at the <b>town centroid</b> with a small spread, so this shows <b>where opportunity concentrates by town</b>, not exact lot pins — use the boards above for the parcel address. Color = region; brighter = higher score.</div>
+    <div class="card">
+      <div class="maplegend">
+        <span><i style="background:#7ce8c3"></i>NY Suburbs</span>
+        <span><i style="background:#5aa2ff"></i>Connecticut</span>
+        <span><i style="background:#e6a3ff"></i>New Jersey</span>
+        <span style="margin-left:auto;color:var(--dim)">click a dot for the deal · marker size ∝ est. units</span>
+      </div>
+      <div id="triMap" style="height:560px;width:100%;background:#0a1014"></div>
+    </div>
+  </section>
+
   <section id="programs">
-    <div class="eyebrow"><span class="no">06</span><h2>Program Library</h2>
+    <div class="eyebrow"><span class="no">07</span><h2>Program Library</h2>
       <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
     <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
     <div class="filters" id="progTabs"></div>
@@ -269,13 +285,13 @@
   </section>
 
   <section id="playbook">
-    <div class="eyebrow"><span class="no">07</span><h2>Emerging Developer Playbook</h2>
+    <div class="eyebrow"><span class="no">08</span><h2>Emerging Developer Playbook</h2>
       <span class="hint">how to actually use the programs — strategy, sequencing, screening habits</span></div>
     <div id="playbookBox"><div class="loading">loading playbook…</div></div>
   </section>
 
   <section id="assumptions">
-    <div class="eyebrow"><span class="no">08</span><h2>Published Assumptions</h2>
+    <div class="eyebrow"><span class="no">09</span><h2>Published Assumptions</h2>
       <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
     <div class="assump" id="assumpBox"></div>
     <div class="banner" style="margin-top:14px" id="assumpNote"></div>
@@ -361,6 +377,78 @@ function initMap(){
   setTimeout(()=>_map.invalidateSize(),120);
 }
 window.__D={};
+// --- Tri-state map: town centroids (fallback when a parcel has no coords) ---
+const TOWN_CENTROIDS={
+  // Westchester
+  "YONKERS":[40.931,-73.899],"MOUNT VERNON":[40.912,-73.837],"NEW ROCHELLE":[40.911,-73.782],
+  "WHITE PLAINS":[41.034,-73.763],"PEEKSKILL":[41.290,-73.920],"OSSINING":[41.163,-73.861],
+  "MOUNT KISCO":[41.204,-73.727],"PORT CHESTER":[41.001,-73.666],"YORKTOWN":[41.271,-73.812],
+  "CORTLANDT":[41.270,-73.900],"MAMARONECK":[40.948,-73.732],"GREENBURGH":[41.033,-73.842],
+  "HARRISON":[40.969,-73.712],"RYE":[40.981,-73.684],"BEDFORD":[41.204,-73.644],
+  "NORTH CASTLE":[41.134,-73.688],"NEW CASTLE":[41.163,-73.786],"SOMERS":[41.331,-73.702],
+  "CORTLANDT MANOR":[41.283,-73.882],
+  // Putnam
+  "CARMEL":[41.430,-73.680],"KENT":[41.500,-73.680],"PATTERSON":[41.510,-73.600],
+  "SOUTHEAST":[41.400,-73.620],"BREWSTER":[41.397,-73.617],"PHILIPSTOWN":[41.420,-73.950],
+  "PUTNAM VALLEY":[41.410,-73.830],"COLD SPRING":[41.420,-73.955],
+  // Dutchess
+  "POUGHKEEPSIE":[41.700,-73.921],"BEACON":[41.505,-73.969],"FISHKILL":[41.535,-73.899],
+  "WAPPINGER":[41.601,-73.911],"EAST FISHKILL":[41.531,-73.789],"HYDE PARK":[41.784,-73.933],
+  "RHINEBECK":[41.927,-73.912],"PAWLING":[41.563,-73.601],"LAGRANGE":[41.660,-73.790],
+  "PLEASANT VALLEY":[41.742,-73.821],"RED HOOK":[41.996,-73.876],"DOVER":[41.720,-73.560],
+  // Connecticut
+  "GREENWICH":[41.030,-73.629],"WESTPORT":[41.141,-73.358],"RIDGEFIELD":[41.281,-73.498],
+  "NEW CANAAN":[41.147,-73.495],"DARIEN":[41.079,-73.469],"STAMFORD":[41.053,-73.539],
+  "NEW HAVEN":[41.308,-72.928],
+  // New Jersey (Bergen / Hudson)
+  "FORT LEE":[40.851,-73.970],"ENGLEWOOD":[40.893,-73.973],"EDGEWATER":[40.827,-73.974],
+  "HACKENSACK":[40.886,-74.043],"TEANECK":[40.891,-74.016],"FAIRVIEW":[40.818,-74.000],
+  "CLIFFSIDE PARK":[40.821,-73.988],"PALISADES PARK":[40.848,-73.997],"LEONIA":[40.862,-73.988],
+  "BERGENFIELD":[40.927,-73.997],"RIDGEFIELD":[40.834,-74.020],"RIDGEFIELD PARK":[40.858,-74.028],
+  "BOGOTA":[40.874,-74.030],"LITTLE FERRY":[40.849,-74.041],"HACKENSACK CITY":[40.886,-74.043],
+  "HOBOKEN":[40.744,-74.032],"JERSEY CITY":[40.718,-74.045],"WEST NEW YORK":[40.788,-74.014],
+  "UNION CITY":[40.768,-74.026],"WEEHAWKEN":[40.769,-74.020],"NORTH BERGEN":[40.804,-74.019],
+  "GUTTENBERG":[40.792,-74.004],"ENGLEWOOD CLIFFS":[40.885,-73.952],"TENAFLY":[40.919,-73.963],
+};
+const COUNTY_CENTROIDS={"WESTCHESTER":[41.120,-73.790],"PUTNAM":[41.430,-73.750],"DUTCHESS":[41.760,-73.740],
+  "BERGEN":[40.960,-74.070],"HUDSON":[40.740,-74.060],"FAIRFIELD":[41.220,-73.350],"NEW HAVEN":[41.310,-72.930]};
+function _hash(s){let h=0;s=String(s||'');for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))|0;}return h;}
+function _coords(d){
+  if(d.lat&&d.lng&&Math.abs(d.lat)>1&&Math.abs(d.lng)>1) return [d.lat,d.lng,true];
+  const name=String(d.town||d.muni||'').toUpperCase().trim();
+  let c=TOWN_CENTROIDS[name]||COUNTY_CENTROIDS[String(d.county||d.region||'').toUpperCase().trim()];
+  if(!c) return null;
+  const h=_hash((d.address||'')+name);
+  const jl=((h&255)/255-0.5)*0.024, jg=(((h>>8)&255)/255-0.5)*0.030;
+  return [c[0]+jl, c[1]+jg, false];
+}
+let _triMap=null;
+function initTriMap(){
+  if(_triMap||typeof L==='undefined'){ if(typeof L==='undefined'){const el=document.getElementById('triMap'); if(el)el.innerHTML='<div class="empty">Map library blocked by your network — the boards above have every deal.</div>';} return; }
+  _triMap=L.map('triMap',{scrollWheelZoom:true,attributionControl:true}).setView([41.15,-73.55],9);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    {maxZoom:19,subdomains:'abcd',attribution:'© OpenStreetMap © CARTO'}).addTo(_triMap);
+  const groups=[['subs','#7ce8c3','NY Suburbs'],['ct','#5aa2ff','Connecticut'],['nj','#e6a3ff','New Jersey']];
+  let plotted=0, approx=0;
+  groups.forEach(([key,col,label])=>{
+    (window.__D[key]||[]).forEach(d=>{
+      const cc=_coords(d); if(!cc) return;
+      const [la,lo,exact]=cc; if(!exact)approx++;
+      const units=d.est_units||d.est_units_at_assumed_density||0;
+      const rad=Math.max(4,Math.min(11,4+Math.sqrt(units)/2));
+      const op=Math.max(.45,Math.min(.95,(d.score||40)/100));
+      const val=d.est_value||d.est_market_value||d.assessed_net||0;
+      L.circleMarker([la,lo],{radius:rad,weight:1,color:'rgba(255,255,255,.3)',fillColor:col,fillOpacity:op})
+       .bindPopup(`<b>${d.address||'(parcel)'}</b> · ${d.town||d.muni||''}<br>`+
+         `${label} · Score ${d.score} · ~${units}u${exact?'':' · town-approx'}<br>`+
+         `Est ${usd(val)}${d.zone?(' · '+d.zone):''}${d.owner?('<br>Owner: '+d.owner):''}`)
+       .addTo(_triMap); plotted++;
+    });
+  });
+  const el=document.getElementById('triMap');
+  if(!plotted&&el){el.innerHTML='<div class="empty">Regional deals appear here after the next engine run.</div>';}
+  setTimeout(()=>{try{_triMap.invalidateSize();}catch(e){}},200);
+}
 function exportBoard(region){
   const D=(window.__D||{})[region]||[];
   if(!D.length){alert('No rows to export yet — wait for data to load.');return;}
@@ -680,6 +768,12 @@ function onePager(i){
       $('briefBox').innerHTML=`<div class="setup"><b class="em">AI desk brief</b> — ${briefs&&briefs.note?briefs.note:'appears after the next engine run.'} The deal board below is real data regardless.</div>`;
     }
     renderFilters(); renderTable();
+    // tri-state map: build lazily when scrolled into view (tiles only load if visited)
+    const tsEl=document.getElementById('tsmap');
+    if(tsEl&&'IntersectionObserver' in window){
+      const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){initTriMap();obs.disconnect();}}),{rootMargin:'250px'});
+      obs.observe(tsEl);
+    } else { initTriMap(); }
     // assumptions
     const A=deals.program_assumptions||deals.assumptions||{};
     const rows=[["Hard cost","$"+(A.hard_cost_psf||'—')+"/SF"],["Soft cost",(A.soft_cost_pct*100||'—')+"%"],

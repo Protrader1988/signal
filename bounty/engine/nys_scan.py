@@ -159,6 +159,8 @@ def main():
                 "owner": owner,
                 "owner_mailing": " ".join(str(r.get(F[k], "") or "") for k in ("mail_addr","mail_st","mail_city","mail_state","mail_zip") if F.get(k)).strip().title(),
                 "school_district": r.get(F["school"]),
+                "lat": (n(r.get(F["lat"]), None) if F.get("lat") else None),
+                "lng": (n(r.get(F["lng"]), None) if F.get("lng") else None),
                 "score": round(s_type + s_cost + s_size + s_val + s_cty, 1),
                 "tier": "screen",
                 "verify": "Confirm zoning/density with the municipality before underwriting.",
