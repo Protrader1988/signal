@@ -119,6 +119,16 @@
   th,td{padding:11px 16px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
   thead th{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;background:var(--bg2)}
   thead th[title]{cursor:help}
+  thead th.sortable{cursor:pointer;user-select:none;transition:color .12s}
+  thead th.sortable:hover{color:var(--text2)}
+  thead th.sorted{color:var(--em2)}
+  .searchbox{font-family:var(--mono);font-size:11.5px;color:var(--text);background:var(--surface2);
+    border:1px solid var(--line2);border-radius:8px;padding:6px 12px;min-width:210px;transition:.15s;outline:none}
+  .searchbox::placeholder{color:var(--muted)}
+  .searchbox:focus{border-color:var(--em);background:var(--surface3)}
+  .onepager{font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;color:var(--gold2);
+    border:1px solid rgba(201,162,39,.3);border-radius:7px;padding:5px 11px;background:rgba(201,162,39,.06);cursor:pointer;transition:.15s}
+  .onepager:hover{background:rgba(201,162,39,.14);border-color:var(--gold)}
   tbody tr.deal{transition:background .12s;cursor:pointer}
   tbody tr.deal:hover{background:var(--hover)}
   td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
@@ -203,7 +213,8 @@
     <div class="filters" id="filters"></div>
     <div style="margin:-6px 0 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
       <div class="viewtog" style="margin:0"><button id="vTable" class="on" onclick="setView('table')">▤ Table</button><button id="vMap" onclick="setView('map')">🗺 Map</button></div>
-      <button class="expbtn" style="margin-left:0" onclick="exportBoard('nyc')">⬇ Export NYC outreach CSV</button>
+      <input id="dealSearch" class="searchbox" placeholder="⌕ address · owner · zone · path" oninput="FILTER.q=this.value;renderTable()">
+      <button class="expbtn" style="margin-left:auto" onclick="exportBoard('nyc')">⬇ Export NYC outreach CSV</button>
     </div>
     <div class="card" id="tableWrap"><div id="dealTbl"><div class="loading">loading deals…</div></div></div>
     <div class="card" id="mapWrap">
@@ -222,7 +233,7 @@
       <span class="hint">Westchester · Putnam · Dutchess — real NYS parcel data, screen tier</span></div>
     <div class="subnote"><span class="badge b-prog">Screen tier</span> Real 2025 assessment-roll parcels (vacant developable + underimproved multifamily-class), government/watershed owners excluded, unbuildable-land floor applied. <b class="warn">Unit counts assume ~20/acre IF zoning allows — verify at town hall before underwriting.</b> Owner names come from the roll — this is your outreach list.</div>
     <div class="card">
-      <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span><button class="expbtn" onclick="exportBoard('subs')">⬇ Outreach CSV</button></div>
+      <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('subTbl',this.value)"><button class="expbtn" onclick="exportBoard('subs')">⬇ Outreach CSV</button></div>
       <div id="subTbl"><div class="loading">loading suburban screens…</div></div>
     </div>
   </section>
@@ -232,7 +243,7 @@
       <span class="hint">Gold Coast + Stamford/New Haven — real CT CAMA data with zoning-override flagging</span></div>
     <div class="subnote"><b class="em">The play:</b> in towns under 10% affordable (Greenwich 5.3%, Westport 3.5%, Ridgefield, New Canaan, Darien), <b>CGS 8-30g lets a 30%-affordable set-aside override local zoning denial</b> — so estate-zoned vacant land becomes developable. Unit counts assume ~16/acre WHERE 8-30g applies (~8/acre elsewhere) — verify with an affordability plan. Stamford/New Haven are 8-30g-exempt (over threshold). <b class="warn">Screen tier: confirm zoning, wetlands, and sewer before pursuing.</b></div>
     <div class="card">
-      <div class="card-head"><span class="code">CT</span><span class="t">Zoning-override development plays</span><span class="expo" id="ctMeta"></span><button class="expbtn" onclick="exportBoard('ct')">⬇ Outreach CSV</button></div>
+      <div class="card-head"><span class="code">CT</span><span class="t">Zoning-override development plays</span><span class="expo" id="ctMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('ctTbl',this.value)"><button class="expbtn" onclick="exportBoard('ct')">⬇ Outreach CSV</button></div>
       <div id="ctTbl"><div class="loading">loading Connecticut board…</div></div>
     </div>
   </section>
@@ -242,7 +253,7 @@
       <span class="hint">Bergen/Hudson Gold Coast + GWB corridor — real MOD-IV parcel data</span></div>
     <div class="subnote"><b class="em">The play:</b> NJ's lever is the <b>40A:20 long-term tax exemption PILOT</b> — once a site is in a municipal "Area in Need of Redevelopment," the town can convey it directly (no bid) with a ~30-year PILOT (~10-15% of revenue vs. full taxes). This board leads with vacant + commercial/industrial (class 4A/4B) parcels — the ones that become redevelopment sites. <b class="warn">Screen tier: assessed values are NOT market (apply town ratio); verify redevelopment designation on the municipal map. Owner data is sparse in the NJ layer.</b></div>
     <div class="card">
-      <div class="card-head"><span class="code">NJ</span><span class="t">Redevelopment / PILOT candidates</span><span class="expo" id="njMeta"></span><button class="expbtn" onclick="exportBoard('nj')">⬇ Outreach CSV</button></div>
+      <div class="card-head"><span class="code">NJ</span><span class="t">Redevelopment / PILOT candidates</span><span class="expo" id="njMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('njTbl',this.value)"><button class="expbtn" onclick="exportBoard('nj')">⬇ Outreach CSV</button></div>
       <div id="njTbl"><div class="loading">loading New Jersey board…</div></div>
     </div>
   </section>
@@ -291,8 +302,36 @@ async function j(f,retries){retries=(retries==null)?3:retries;
 function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().slice(17,25)}</b> UTC · ${d.toUTCString().slice(5,16)}`;}
 setInterval(tick,1000);tick();
 
-let DEALS=[], FILTER={boro:'ALL', tier:'ALL'};
+let DEALS=[], FILTER={boro:'ALL', tier:'ALL', q:''};
+let SORT={key:'score', dir:-1};
 let _map=null;
+// ---- generic sortable/searchable board (subs · CT · NJ) ----
+window.__BOARDS={};
+function __bq(id,v){const B=window.__BOARDS[id];if(B){B.st.q=v;B.render();}}
+function __bsort(id,key){const B=window.__BOARDS[id];if(!B)return;
+  if(B.st.key===key)B.st.dir*=-1;
+  else{B.st.key=key;B.st.dir=['address','owner','town','muni','county','play','class','zone'].includes(key)?1:-1;}
+  B.render();}
+function buildBoard(mountId, deals, cols, st){
+  function render(){
+    let rows=deals.slice();
+    const q=(st.q||'').trim().toLowerCase();
+    if(q) rows=rows.filter(x=>String(x.owner||'').toLowerCase().includes(q)
+      || cols.some(c=>{const g=c.get(x);return g!=null&&String(g).toLowerCase().includes(q);}));
+    const col=cols.find(c=>c.key===st.key)||cols[0];
+    const sv=col.sort||col.get;
+    rows.sort((a,b)=>{let av=sv(a),bv=sv(b);
+      if(col.num){av=+av||0;bv=+bv||0;return (av-bv)*st.dir;}
+      return String(av==null?'':av).localeCompare(String(bv==null?'':bv))*st.dir;});
+    const shown=rows.slice(0,120);
+    const head='<tr>'+cols.map(c=>`<th class="${c.num?'num ':''}sortable${st.key===c.key?' sorted':''}" title="${c.title||''}" onclick="__bsort('${mountId}','${c.key}')">${c.label}${st.key===c.key?(st.dir<0?' ▾':' ▴'):''}</th>`).join('')+'</tr>';
+    const body=shown.length?shown.map(x=>'<tr class="deal">'+cols.map(c=>`<td class="${c.num?'num ':''}${c.cls||''}" style="${c.style||''}">${c.html?c.html(x):(c.get(x)==null?'—':c.get(x))}</td>`).join('')+'</tr>').join('')
+      :'<tr><td class="empty" colspan="'+cols.length+'">No matches.</td></tr>';
+    $(mountId).innerHTML=`<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+  }
+  window.__BOARDS[mountId]={st,render};
+  return render;
+}
 function setView(v){
   const t=document.getElementById('vTable'),m=document.getElementById('vMap');
   if(t)t.classList.toggle('on',v==='table'); if(m)m.classList.toggle('on',v==='map');
@@ -343,6 +382,8 @@ function exportBoard(region){
 }
 
 function scoreCls(s){return s>=80?'s-hi':(s>=55?'s-md':'s-lo');}
+const spill=x=>`<span class="scorepill ${scoreCls(x.score)}">${x.score}</span>`;
+const addrCell=x=>`<span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}`;
 
 function renderFilters(){
   const boros=['ALL','BX','BK','QN'], tiers=[['ALL','All'],['market','Market'],['program','Program'],['city','City-owned'],['new','New today']];
@@ -352,21 +393,32 @@ function renderFilters(){
     tiers.map(([k,l])=>`<button class="chipbtn ${FILTER.tier===k?'on':''}" onclick="FILTER.tier='${k}';renderFilters();renderTable()">${l}</button>`).join('');
 }
 
+const NYCVAL={score:d=>d.score, address:d=>d.address, zone:d=>d.zone, units:d=>d.est_units,
+  land:d=>d.est_land_cost, walk:d=>d.walk_away_land, path:d=>d.best_path||'',
+  equity:d=>d.equity_needed, coc:d=>(d.best||{}).coc_pct};
+const NYCNUM=['score','units','land','walk','equity','coc'];
+function nycSort(key){if(SORT.key===key)SORT.dir*=-1;else{SORT.key=key;SORT.dir=['address','zone','path'].includes(key)?1:-1;}renderTable();}
+function nth(key,label,num,title){return `<th class="${num?'num ':''}sortable${SORT.key===key?' sorted':''}" title="${title}" onclick="nycSort('${key}')">${label}${SORT.key===key?(SORT.dir<0?' ▾':' ▴'):''}</th>`;}
 function renderTable(){
+  const q=(FILTER.q||'').trim().toLowerCase();
   let rows=DEALS.filter(d=>
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
-    (FILTER.tier==='ALL' || (FILTER.tier==='city'?d.city_owned:(FILTER.tier==='new'?d.is_new:d.tier===FILTER.tier))));
-  rows=rows.slice().sort((a,b)=>b.score-a.score).slice(0,120);
-  if(!rows.length){$('dealTbl').innerHTML='<div class="empty">No deals match this filter.</div>';return;}
+    (FILTER.tier==='ALL' || (FILTER.tier==='city'?d.city_owned:(FILTER.tier==='new'?d.is_new:d.tier===FILTER.tier))) &&
+    (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')).toLowerCase().includes(q)));
+  const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
+  rows=rows.slice().sort((a,b)=>{let av=sv(a),bv=sv(b);
+    if(num){av=+av||0;bv=+bv||0;return (av-bv)*SORT.dir || (b.score-a.score);}
+    return String(av==null?'':av).localeCompare(String(bv==null?'':bv))*SORT.dir || (b.score-a.score);}).slice(0,120);
+  if(!rows.length){$('dealTbl').innerHTML='<div class="empty">No deals match this filter'+(q?' / search':'')+'.</div>';window._rows=[];return;}
   let h=`<table><thead><tr>
-    <th class="num" title="Composite: land basis vs comps, underuse, best-path returns, size fit, city-owned">Score</th>
-    <th>Address</th><th>Zone</th><th>Tags</th>
-    <th class="num" title="Buildable units at max residential FAR">Units</th>
-    <th class="num" title="Comp-anchored land cost estimate — not an asking price">Est. land</th>
-    <th class="num" title="Max land price where the deal still pencils — your negotiating ceiling">Walk-away</th>
-    <th title="Best financing path that pencils">Best path</th>
-    <th class="num" title="Equity required under the best market path">Equity</th>
-    <th class="num" title="Cash-on-cash under best path (market tiers)">CoC</th>
+    ${nth('score','Score',1,'Composite: land basis vs comps, underuse, best-path returns, size fit, city-owned')}
+    ${nth('address','Address',0,'Lot address · click row to expand')}${nth('zone','Zone',0,'Zoning district')}<th>Tags</th>
+    ${nth('units','Units',1,'Buildable units at max residential FAR')}
+    ${nth('land','Est. land',1,'Comp-anchored land cost estimate — not an asking price')}
+    ${nth('walk','Walk-away',1,'Max land price where the deal still pencils — your negotiating ceiling')}
+    ${nth('path','Best path',0,'Best financing path that pencils')}
+    ${nth('equity','Equity',1,'Equity required under the best market path')}
+    ${nth('coc','CoC',1,'Cash-on-cash under best path (market tiers)')}
   </tr></thead><tbody>`;
   rows.forEach((d,i)=>{
     const b=d.best||{};
@@ -398,12 +450,104 @@ function renderTable(){
           ${p.funding_gap!=null?`gap <b class="${p.funding_gap<=0?'up':'down'}">${usd(p.funding_gap)}</b> · dev fee <b>${usd(p.dev_fee)}</b>`:
           `cash flow <b>${usd(p.cash_flow)}</b> · CoC <b>${p.coc_pct!=null?p.coc_pct+'%':'—'}</b>`}</div>
         </div>`).join('')}</div>
+      <div style="margin-top:13px"><button class="onepager" onclick="event.stopPropagation();onePager(${i})">⎙ Lender / JV one-pager</button></div>
     </td></tr>`;
   });
   $('dealTbl').innerHTML=h+'</tbody></table>';
   window._rows=rows;
 }
 function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?'':'none';}
+
+function onePager(i){
+  const d=(window._rows||[])[i]; if(!d)return;
+  const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const tierName=d.city_owned?'City-owned (HPD/EDC disposition)':(d.tier==='market'?'Market — self-executing':'Program — subsidy-dependent');
+  const b=d.best||{};
+  const pRow=p=>`<tr class="${p.feasible?'ok':'no'}">
+    <td>${p.feasible?'●':'○'} ${esc(p.path.toUpperCase().replace(/_/g,' '))}</td>
+    <td>${esc(p.label)}</td>
+    <td class="n">${usd(p.tdc)}</td><td class="n">${usd(p.loan)}</td>
+    <td class="n">${usd(p.equity)}${p.equity_pct!=null?` (${p.equity_pct}%)`:''}</td>
+    <td class="n">${p.dscr!=null?p.dscr:'—'}</td>
+    <td class="n">${p.coc_pct!=null?p.coc_pct+'%':(p.funding_gap!=null?'gap '+usd(p.funding_gap):'—')}</td></tr>`;
+  const fact=(k,v)=>`<div class="f"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+  const today=new Date().toISOString().slice(0,10);
+  const html=`<!doctype html><html><head><meta charset="utf-8"><title>${esc(d.address)} — Development One-Pager</title>
+  <style>
+    @page{margin:16mm}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font:13px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#12201b;background:#fff;padding:26px 30px;max-width:900px;margin:0 auto}
+    .top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #12201b;padding-bottom:12px}
+    .bx{font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:3px;color:#1a7a54}
+    h1{font-size:23px;font-weight:800;margin:4px 0 2px;letter-spacing:.2px}
+    .sub{color:#5a6b64;font-size:12.5px}
+    .tierline{margin-top:9px;display:inline-block;font:600 11px/1 ui-monospace,monospace;letter-spacing:.6px;
+      padding:6px 11px;border-radius:6px;border:1px solid #cdddd6;background:#f2f8f5;color:#1a7a54}
+    .scorebox{text-align:right}
+    .scorebox .n{font:800 34px/1 ui-monospace,monospace;color:#12201b}
+    .scorebox .l{font-size:10px;letter-spacing:1.5px;color:#8a978f;text-transform:uppercase}
+    h2{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#8a978f;margin:22px 0 10px;border-bottom:1px solid #e3ece8;padding-bottom:5px}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e3ece8;border:1px solid #e3ece8;border-radius:8px;overflow:hidden}
+    .f{background:#fff;padding:10px 13px}
+    .f .k{font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:#8a978f}
+    .f .v{font:700 15px/1.2 ui-monospace,monospace;margin-top:5px;color:#12201b}
+    .hl{color:#1a7a54}
+    table{width:100%;border-collapse:collapse;font-size:11.5px;margin-top:2px}
+    th,td{padding:7px 9px;border-bottom:1px solid #eef3f0;text-align:left}
+    th{font-size:9px;letter-spacing:.7px;text-transform:uppercase;color:#8a978f;background:#f7faf9}
+    td.n,th.n{text-align:right;font-family:ui-monospace,monospace}
+    tr.ok td{background:#f2fbf7} tr.ok td:first-child{font-weight:700;color:#1a7a54}
+    tr.no td{color:#9aa7a1}
+    .disc{margin-top:22px;font-size:10.5px;color:#7a877f;line-height:1.6;border-top:1px solid #e3ece8;padding-top:11px}
+    .foot{margin-top:9px;font-size:10px;color:#aab4ae;display:flex;justify-content:space-between}
+    .pbtn{position:fixed;top:14px;right:16px;font:600 12px/1 ui-monospace,monospace;padding:9px 15px;border-radius:8px;
+      border:1px solid #1a7a54;background:#1a7a54;color:#fff;cursor:pointer}
+    @media print{.pbtn{display:none}}
+  </style></head><body>
+  <button class="pbtn" onclick="window.print()">⎙ Print / Save PDF</button>
+  <div class="top">
+    <div><div class="bx">BOUNTY · DEVELOPMENT ONE-PAGER</div>
+      <h1>${esc(d.address)}</h1>
+      <div class="sub">${esc(d.borough)} · Zone ${esc(d.zone||'—')} · ${esc(d.owner||'owner on record')}</div>
+      <div class="tierline">${tierName}</div></div>
+    <div class="scorebox"><div class="n">${d.score}</div><div class="l">Composite score</div></div>
+  </div>
+
+  <h2>Site &amp; capacity</h2>
+  <div class="facts">
+    ${fact('Lot size', (d.lot_sf!=null?d.lot_sf.toLocaleString():'—')+' SF')}
+    ${fact('FAR (built → max)', (d.built_far!=null?d.built_far:'—')+' → '+(d.max_far!=null?d.max_far:'—'))}
+    ${fact('Buildable', (d.buildable_sf!=null?d.buildable_sf.toLocaleString():'—')+' SF')}
+    ${fact('Est. units', d.est_units!=null?d.est_units:'—')}
+  </div>
+
+  <h2>Acquisition economics</h2>
+  <div class="facts">
+    ${fact('Est. land cost', usd(d.est_land_cost))}
+    ${fact('Walk-away land', '<span class="hl">'+usd(d.walk_away_land)+'</span>')}
+    ${fact('Assessed land', usd(d.assessed_land))}
+    ${fact('Equity (best path)', d.tier==='program'?'dev-fee play':usd(d.equity_needed))}
+  </div>
+
+  <h2>Best path — ${esc((d.best_path||'—').replace(/_/g,' '))}</h2>
+  <div class="sub" style="margin-bottom:8px">${esc(d.best_path_label||'')}${b.coc_pct!=null?` · projected cash-on-cash <b>${b.coc_pct}%</b>`:''}</div>
+
+  <h2>All financing paths modeled</h2>
+  <table><thead><tr><th>Path</th><th>Structure</th><th class="n">TDC</th><th class="n">Loan</th><th class="n">Equity</th><th class="n">DSCR</th><th class="n">CoC / gap</th></tr></thead>
+  <tbody>${(d.paths||[]).map(pRow).join('')}</tbody></table>
+
+  <div class="disc">Screening estimate for outreach and diligence prioritization — <b>not</b> an appraisal, offer, or investment advice. Land cost is comp-anchored, not an asking price. Buildable capacity assumes as-of-right residential FAR; confirm zoning, overlays, site condition, environmental, and current program terms before acting. ${esc(d.city_owned?'City-owned parcels transfer via public RFP, not private sale.':'')}</div>
+  <div class="foot"><span>BOUNTY Development Terminal · real public data · $0 infra</span><span>Generated ${today}</span></div>
+  </body></html>`;
+  const w=window.open('','_blank');
+  if(w&&w.document){w.document.open();w.document.write(html);w.document.close();}
+  else{ // popup blocked — download instead
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download='bounty_onepager_'+String(d.address||'site').replace(/[^a-z0-9]+/gi,'_').toLowerCase()+'.html';
+    document.body.appendChild(a);a.click();a.remove();
+  }
+}
 
 (async()=>{
   try{
@@ -412,53 +556,58 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
       $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
-      let sh='<table><thead><tr><th class="num">Score</th><th>Address</th><th>Municipality</th><th>County</th><th>Class</th><th class="num" title="From front×depth — verify survey">Acres</th><th class="num" title="At assumed 20/acre — VERIFY zoning">Est. units*</th><th class="num" title="Full market value per assessment roll">Est. value</th><th class="num">$/unit*</th><th>Owner (outreach)</th></tr></thead><tbody>';
-      subs.deals.slice(0,80).forEach(x=>{
-        sh+=`<tr class="deal"><td class="num"><span class="scorepill ${scoreCls(x.score)}">${x.score}</span></td>
-        <td><span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}</td>
-        <td style="font-size:12px">${x.muni}</td><td class="mono" style="font-size:11px;color:var(--text2)">${x.region.slice(0,4).toUpperCase()}</td>
-        <td style="font-size:11.5px;color:var(--muted)">${(x.class_desc||'').slice(0,26)}</td>
-        <td class="num">${x.acres}</td><td class="num">${x.est_units_at_assumed_density}</td>
-        <td class="num">${usd(x.est_market_value)}</td><td class="num">${usd(x.value_per_est_unit)}</td>
-        <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,26)}</td></tr>`;
-      });
-      $('subTbl').innerHTML=sh+'</tbody></table>';
-    window.__D.subs=(subs&&subs.deals)||[]; } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
+      window.__D.subs=subs.deals;
+      buildBoard('subTbl', subs.deals, [
+        {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill,title:'Screen composite'},
+        {key:'address',label:'Address',get:x=>x.address,html:addrCell},
+        {key:'muni',label:'Municipality',get:x=>x.muni,style:'font-size:12px'},
+        {key:'county',label:'County',sort:x=>x.region,get:x=>x.region,html:x=>x.region,cls:'mono',style:'font-size:11px;color:var(--text2)'},
+        {key:'class',label:'Class',sort:x=>x.class_desc||'',get:x=>x.class_desc,html:x=>(x.class_desc||'').slice(0,26),style:'font-size:11.5px;color:var(--muted)'},
+        {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres,title:'From front×depth — verify survey'},
+        {key:'units',label:'Est. units*',num:1,sort:x=>x.est_units_at_assumed_density,get:x=>x.est_units_at_assumed_density,title:'At assumed 20/acre — VERIFY zoning'},
+        {key:'value',label:'Est. value',num:1,sort:x=>x.est_market_value,get:x=>x.est_market_value,html:x=>usd(x.est_market_value),title:'Full market value per assessment roll'},
+        {key:'perunit',label:'$/unit*',num:1,sort:x=>x.value_per_est_unit,get:x=>x.value_per_est_unit,html:x=>usd(x.value_per_est_unit)},
+        {key:'owner',label:'Owner (outreach)',get:x=>x.owner,html:x=>(x.owner||'—').slice(0,26),style:'font-size:12px;color:var(--text2)'},
+      ], {q:'',key:'score',dir:-1})();
+    } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
     // Connecticut 8-30g board
     if(ct&&ct.deals&&ct.deals.length){
       $('ctMeta').innerHTML=`<span class="mono">${ct.counts.qualified} qualified · ${ct.counts.in_8_30g_towns} in 8-30g towns</span>`;
-      let ch='<table><thead><tr><th class="num">Score</th><th>Address</th><th>Town</th><th title="Base zoning — 8-30g can override">Zone</th><th>Play</th><th class="num">Acres</th><th class="num" title="At assumed density WITH 8-30g override — verify">Est. units*</th><th class="num">Est. value</th><th class="num">$/unit*</th><th title="Town affordable %; under 10% = override available">8-30g</th><th>Owner (outreach)</th></tr></thead><tbody>';
-      ct.deals.slice(0,80).forEach(x=>{
-        const flag=x.eight_30g_applies?`<span class="badge b-mkt">${x.town_affordable_pct}%</span>`:`<span class="badge b-city">exempt</span>`;
-        ch+=`<tr class="deal"><td class="num"><span class="scorepill ${scoreCls(x.score)}">${x.score}</span></td>
-        <td><span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}</td>
-        <td style="font-size:12px">${x.town}</td>
-        <td style="font-size:11px;color:var(--text2)">${x.zone||'—'}</td>
-        <td style="font-size:11px;color:${x.vacant?'var(--em2)':'var(--muted)'}">${(x.play_type||'').replace(' (occupied)','')}</td>
-        <td class="num">${x.acres}</td><td class="num">${x.est_units}</td>
-        <td class="num">${usd(x.est_value)}</td><td class="num">${usd(x.value_per_est_unit)}</td>
-        <td>${flag}</td>
-        <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,24)}</td></tr>`;
-      });
-      $('ctTbl').innerHTML=ch+'</tbody></table>';
-    window.__D.ct=(ct&&ct.deals)||[]; } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
+      window.__D.ct=ct.deals;
+      const ctflag=x=>x.eight_30g_applies?`<span class="badge b-mkt">${x.town_affordable_pct}%</span>`:`<span class="badge b-city">exempt</span>`;
+      buildBoard('ctTbl', ct.deals, [
+        {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill},
+        {key:'address',label:'Address',get:x=>x.address,html:addrCell},
+        {key:'town',label:'Town',get:x=>x.town,style:'font-size:12px'},
+        {key:'zone',label:'Zone',sort:x=>x.zone||'',get:x=>x.zone,html:x=>x.zone||'—',style:'font-size:11px;color:var(--text2)',title:'Base zoning — 8-30g can override'},
+        {key:'play',label:'Play',sort:x=>x.play_type||'',get:x=>x.play_type,html:x=>(x.play_type||'').replace(' (occupied)',''),style:'font-size:11px'},
+        {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres},
+        {key:'units',label:'Est. units*',num:1,sort:x=>x.est_units,get:x=>x.est_units,title:'At assumed density WITH 8-30g override — verify'},
+        {key:'value',label:'Est. value',num:1,sort:x=>x.est_value,get:x=>x.est_value,html:x=>usd(x.est_value)},
+        {key:'perunit',label:'$/unit*',num:1,sort:x=>x.value_per_est_unit,get:x=>x.value_per_est_unit,html:x=>usd(x.value_per_est_unit)},
+        {key:'flag',label:'8-30g',sort:x=>x.town_affordable_pct||99,get:x=>x.town_affordable_pct,html:ctflag,title:'Town affordable %; under 10% = override available'},
+        {key:'owner',label:'Owner (outreach)',get:x=>x.owner,html:x=>(x.owner||'—').slice(0,24),style:'font-size:12px;color:var(--text2)'},
+      ], {q:'',key:'score',dir:-1})();
+    } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
     // New Jersey redevelopment board
     if(nj&&nj.deals&&nj.deals.length){
       $('njMeta').innerHTML=`<span class="mono">${nj.counts.qualified} qualified · ${nj.counts.redevelopment} redev · ${nj.counts.vacant} vacant</span>`;
-      let nh='<table><thead><tr><th class="num">Score</th><th>Address</th><th>Town</th><th>County</th><th title="NJ property class: 1=vacant, 4A=commercial, 4B=industrial">Class</th><th>Play</th><th class="num">Acres</th><th class="num" title="At assumed town density — verify zoning">Est. units*</th><th class="num" title="Assessed value — NOT market; apply town ratio">Assessed</th><th class="num">$/unit*</th><th>Owner</th></tr></thead><tbody>';
-      nj.deals.slice(0,80).forEach(x=>{
-        const pc=x.prop_class==='1'?'<span class="badge b-mkt">1 vac</span>':(x.prop_class==='4B'?'<span class="badge b-city">4B ind</span>':'<span class="badge b-prog">4A com</span>');
-        nh+=`<tr class="deal"><td class="num"><span class="scorepill ${scoreCls(x.score)}">${x.score}</span></td>
-        <td><span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}</td>
-        <td style="font-size:12px">${x.town}</td><td class="mono" style="font-size:11px;color:var(--text2)">${x.county}</td>
-        <td>${pc}</td>
-        <td style="font-size:11px;color:${x.vacant?'var(--em2)':'var(--muted)'}">${(x.play_type||'').replace(' redevelopment',' redev')}</td>
-        <td class="num">${x.acres}</td><td class="num">${x.est_units}</td>
-        <td class="num">${usd(x.assessed_net)}</td><td class="num">${usd(x.assessed_per_est_unit)}</td>
-        <td style="font-size:12px;color:var(--text2)">${(x.owner||'—').slice(0,22)||'—'}</td></tr>`;
-      });
-      $('njTbl').innerHTML=nh+'</tbody></table>';
-    window.__D.nj=(nj&&nj.deals)||[]; } else { $('njTbl').innerHTML='<div class="empty">New Jersey board appears after the next engine run.</div>'; }
+      window.__D.nj=nj.deals;
+      const njpc=x=>x.prop_class==='1'?'<span class="badge b-mkt">1 vac</span>':(x.prop_class==='4B'?'<span class="badge b-city">4B ind</span>':'<span class="badge b-prog">4A com</span>');
+      buildBoard('njTbl', nj.deals, [
+        {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill},
+        {key:'address',label:'Address',get:x=>x.address,html:addrCell},
+        {key:'town',label:'Town',get:x=>x.town,style:'font-size:12px'},
+        {key:'county',label:'County',get:x=>x.county,cls:'mono',style:'font-size:11px;color:var(--text2)'},
+        {key:'class',label:'Class',sort:x=>x.prop_class||'',get:x=>x.prop_class,html:njpc,title:'NJ property class: 1=vacant, 4A=commercial, 4B=industrial'},
+        {key:'play',label:'Play',sort:x=>x.play_type||'',get:x=>x.play_type,html:x=>(x.play_type||'').replace(' redevelopment',' redev'),style:'font-size:11px'},
+        {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres},
+        {key:'units',label:'Est. units*',num:1,sort:x=>x.est_units,get:x=>x.est_units,title:'At assumed town density — verify zoning'},
+        {key:'assessed',label:'Assessed',num:1,sort:x=>x.assessed_net,get:x=>x.assessed_net,html:x=>usd(x.assessed_net),title:'Assessed value — NOT market; apply town ratio'},
+        {key:'perunit',label:'$/unit*',num:1,sort:x=>x.assessed_per_est_unit,get:x=>x.assessed_per_est_unit,html:x=>usd(x.assessed_per_est_unit)},
+        {key:'owner',label:'Owner',get:x=>x.owner,html:x=>(x.owner||'—').slice(0,22)||'—',style:'font-size:12px;color:var(--text2)'},
+      ], {q:'',key:'score',dir:-1})();
+    } else { $('njTbl').innerHTML='<div class="empty">New Jersey board appears after the next engine run.</div>'; }
     // playbook
     if(pb&&pb.ladder){
       const li=x=>`<div class="tgt" style="margin-top:10px"><div class="row">${x}</div></div>`;
