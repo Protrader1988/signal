@@ -1,22 +1,33 @@
 """
-BOUNTY — ACRIS distress / motivated-seller signal (NYC only).
+BOUNTY — ACRIS motivated-seller signal (NYC only).
 
-Real data, no key. Joins two public ACRIS datasets:
-  - Real Property Legals  (8h5j-fqxa): document_id <-> borough/block/lot
-  - Real Property Master  (bnx9-e6tj): document_id -> doc_type, dates, amount
-  - Document Control Codes (7isb-wh4c): doc_type -> human description
-    (used to DISCOVER which doc-type codes mean distress — no code guessing)
+Real data, no key. Joins two public ACRIS Real Property datasets:
+  - Real Property Legals (8h5j-fqxa): document_id <-> borough/block/lot
+  - Real Property Master (bnx9-e6tj): document_id -> doc_type, dates, amount
 
-Two honest signals per parcel:
-  1. distress: a foreclosure filing / lis pendens / tax or mechanic's lien was
-     recorded against the lot in the last ~4 years (a genuine motivated-seller
-     tell — the owner is under legal/financial pressure).
-  2. tenure: years since the most recent DEED was recorded. Long tenure (25y+)
-     flags estate / long-hold owners who are statistically likelier to sell.
+What this dataset actually contains — and what it does NOT:
+  ACRIS Real Property records DEEDS, MORTGAGES, SATISFACTIONS, ASSIGNMENTS, etc.
+  It does NOT reliably carry lis-pendens / foreclosure / tax-lien filings (those
+  live in a separate personal-property/court system). So rather than fake a
+  "distress lien" flag off data that can't support it, we derive the two honest
+  motivated-seller signals this data DOES support:
 
-This module is ADDITIVE and NON-FATAL: if ACRIS is slow or unreachable, the
-scan proceeds with no flags rather than failing. Every flag is a real recorded
-document — nothing is inferred or simulated.
+  1. owner tenure  — years since the most recent DEED was recorded. Long tenure
+     (25y+) flags estate / long-hold owners, who are statistically likelier to
+     sell and to have a low cost basis.
+  2. free & clear  — no mortgage (MTGE) recorded after the current owner's deed.
+     A long-held, unmortgaged lot is the cleanest possible acquisition: no payoff
+     to clear, owner keeps the whole price, faster close.
+
+  motivated = 25y+ tenure, OR (free-and-clear AND 15y+ tenure).
+
+Doc-type codes are the ACRIS Real Property codes themselves (verified against
+the live dataset — DEED/DEEDO/CONDEED/… and MTGE), so there is no dependency on
+the portal's broken control-codes lookup table.
+
+ADDITIVE and NON-FATAL: if ACRIS is slow or unreachable, the scan proceeds with
+no flags rather than failing. Every flag is a real recorded document — nothing
+is inferred or simulated.
 """
 import json, os, urllib.request, urllib.parse
 from datetime import date
@@ -26,47 +37,17 @@ DEBUG = {"stages": {}}
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/2.0)"}
 LEGALS = "https://data.cityofnewyork.us/resource/8h5j-fqxa.json"
 MASTER = "https://data.cityofnewyork.us/resource/bnx9-e6tj.json"
-CODES  = "https://data.cityofnewyork.us/resource/7isb-wh4c.json"
 
-DISTRESS_KW = ("LIS PENDENS", "FORECLOS", "TAX LIEN", "FEDERAL LIEN", "STATE LIEN",
-               "MECHANIC", "LIEN -", "NOTICE OF LIEN", "SEIZURE", "MARSHAL",
-               "SHERIFF", "DEED IN LIEU", "REFEREE")
-DEED_KW = ("DEED",)
-DISTRESS_LOOKBACK_DAYS = 365 * 4
+MORTGAGE_CODES = {"MTGE"}  # a recorded mortgage = the lot is encumbered
+
+def _is_deed(dt):
+    dt = (dt or "").upper().strip()
+    return dt.startswith("DEED") or dt == "CONDEED"
 
 
 def _get(url, timeout=90):
     req = urllib.request.Request(url, headers=UA)
     return json.loads(urllib.request.urlopen(req, timeout=timeout).read())
-
-
-def _discover_codes():
-    """Return (distress_codes:set, deed_codes:set) discovered from descriptions."""
-    rows = _get(CODES + "?$limit=1000")
-    if not rows:
-        return set(), set()
-    keys = list(rows[0].keys())
-    def find(*pref):
-        for p in pref:
-            for k in keys:
-                if k.startswith(p):
-                    return k
-        return None
-    f_code = find("doc__type", "doc_type")
-    f_desc = find("doc__type_description", "doc_type_description", "description")
-    if not f_code or not f_desc:
-        return set(), set()
-    distress, deed = set(), set()
-    for r in rows:
-        desc = str(r.get(f_desc, "")).upper()
-        code = str(r.get(f_code, "")).strip()
-        if not code:
-            continue
-        if any(kw in desc for kw in DISTRESS_KW):
-            distress.add(code)
-        if any(kw in desc for kw in DEED_KW) and "DEED" in desc:
-            deed.add(code)
-    return distress, deed
 
 
 def _chunks(seq, n):
@@ -139,24 +120,12 @@ def annotate(deals, boro_map):
            (we read them off the raw parcel — caller must attach _bc/_blk/_lot).
     boro_map: PLUTO borocode -> ACRIS borough code (same 1..5 numbering).
     Returns dict bbl -> flag dict; also mutates deals in place with keys:
-       distress(bool), distress_type, distress_year, owner_tenure_years, motivated(bool)
+       owner_tenure_years, free_and_clear(bool), motivated(bool)
+       (distress/distress_type kept False/None — see module docstring.)
     """
     today = date.today()
-    cutoff = (today.toordinal() - DISTRESS_LOOKBACK_DAYS)
     types = _legals_types()
     DEBUG["stages"]["legals_types"] = types
-    try:
-        distress_codes, deed_codes = _discover_codes()
-        DEBUG["stages"]["codes"] = {"distress": sorted(distress_codes), "deed": sorted(deed_codes)}
-        print(f"  ACRIS codes: {len(distress_codes)} distress, {len(deed_codes)} deed")
-    except Exception as e:
-        print(f"  ACRIS code discovery failed ({e}); skipping distress layer")
-        DEBUG["stages"]["codes_error"] = str(e)
-        _write_debug()
-        return {}
-    if not distress_codes and not deed_codes:
-        _write_debug()
-        return {}
 
     # group target (block,lot) by borough
     by_boro = {}
@@ -215,9 +184,8 @@ def annotate(deals, boro_map):
         except Exception:
             continue
         docs = parcel_docs.get((acris_boro, blk, lot), [])
-        worst_distress = None
-        worst_ord = 0
         latest_deed_ord = 0
+        latest_mtge_ord = 0
         for did in docs:
             m = master.get(did)
             if not m:
@@ -225,30 +193,33 @@ def annotate(deals, boro_map):
             dt = str(m.get("doc_type", "")).strip()
             rec = m.get("recorded_datetime") or m.get("document_date")
             o = ord_of(rec)
-            if dt in distress_codes and o >= cutoff and o > worst_ord:
-                worst_ord = o
-                worst_distress = dt
-            if dt in deed_codes and o > latest_deed_ord:
+            if _is_deed(dt) and o > latest_deed_ord:
                 latest_deed_ord = o
-        distress = worst_distress is not None
+            elif dt.upper() in MORTGAGE_CODES and o > latest_mtge_ord:
+                latest_mtge_ord = o
         tenure = None
         if latest_deed_ord:
             tenure = round((today.toordinal() - latest_deed_ord) / 365.25, 1)
-        motivated = distress or (tenure is not None and tenure >= 25)
-        d["distress"] = distress
-        d["distress_type"] = worst_distress
-        d["distress_year"] = date.fromordinal(worst_ord).year if worst_ord else None
+        # free & clear: no mortgage recorded at/after the current owner's deed
+        free_and_clear = bool(latest_deed_ord) and (latest_mtge_ord < latest_deed_ord)
+        motivated = (tenure is not None and tenure >= 25) or \
+                    (free_and_clear and tenure is not None and tenure >= 15)
+        d["distress"] = False
+        d["distress_type"] = None
+        d["distress_year"] = None
         d["owner_tenure_years"] = tenure
+        d["free_and_clear"] = free_and_clear
         d["motivated"] = motivated
-        if distress or motivated:
-            flags[d.get("bbl")] = {"distress": distress, "distress_type": worst_distress,
-                                   "tenure_years": tenure, "motivated": motivated}
-    DEBUG["stages"]["distressed"] = sum(1 for d in deals if d.get("distress"))
+        if motivated:
+            flags[d.get("bbl")] = {"tenure_years": tenure,
+                                   "free_and_clear": free_and_clear, "motivated": motivated}
     DEBUG["stages"]["motivated"] = sum(1 for d in deals if d.get("motivated"))
+    DEBUG["stages"]["free_and_clear"] = sum(1 for d in deals if d.get("free_and_clear"))
     DEBUG["stages"]["with_tenure"] = sum(1 for d in deals if d.get("owner_tenure_years"))
     _write_debug()
-    print(f"  ACRIS: {sum(1 for d in deals if d.get('distress'))} distressed, "
-          f"{sum(1 for d in deals if d.get('motivated'))} motivated (distress or 25y+ hold)")
+    print(f"  ACRIS: {sum(1 for d in deals if d.get('motivated'))} motivated "
+          f"({sum(1 for d in deals if d.get('free_and_clear'))} free-and-clear), "
+          f"{sum(1 for d in deals if d.get('owner_tenure_years'))} with tenure")
     return flags
 
 

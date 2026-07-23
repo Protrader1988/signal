@@ -32,7 +32,7 @@ ASSUMPTIONS = {
     "land_blend": "60% real vacant-land sale comps ($/SF by borough, last 18mo) + 40% assessed x2",
     "solo_equity_cap": 1_000_000, "mid_equity_cap": 3_000_000,
     "neighborhood_rent": "Market rents are borough baseline x a published ZIP factor (LIC 1.5x, Williamsburg 1.35x, East NY 0.8x, etc.); unlisted ZIPs = 1.0. Tunes which deals pencil to the actual submarket.",
-    "acris_distress": "Motivated-seller flag = a real foreclosure/lis-pendens/lien recorded against the lot in ACRIS within ~4 years, OR a 25-year-plus owner tenure (latest recorded deed). Additive score bonus; nothing simulated.",
+    "acris_motivated": "Motivated-seller flag from real ACRIS records: owner tenure = years since the latest recorded deed (25y+ = long-hold/estate, low basis); free-and-clear = no mortgage recorded after that deed (no payoff, cleaner close). Motivated = 25y+ tenure OR (free-and-clear AND 15y+). Additive score bonus; nothing simulated. (ACRIS Real Property does not carry lis-pendens/tax-lien filings, so no 'distress lien' flag is claimed.)",
     "note": "Screening estimates for outreach, not appraisals. Every number derived from public data + these published assumptions.",
 }
 
@@ -238,7 +238,7 @@ def underwrite(p, comps):
         "equity_needed": int(equity), "bucket": bucket, "score": score,
         "rent_market_used": rent_market, "neighborhood_factor": rfac,
         "distress": False, "distress_type": None, "distress_year": None,
-        "owner_tenure_years": None, "motivated": False,
+        "owner_tenure_years": None, "free_and_clear": False, "motivated": False,
         "lat": n(p.get("latitude"), None), "lng": n(p.get("longitude"), None),
         "_bc": str(p.get("borocode","")), "_blk": p.get("block"), "_lot": p.get("lot"),
     }
@@ -266,7 +266,7 @@ def main():
         cand = deals[:320]
         acris_distress.annotate(cand, {"2":"2","3":"3","4":"4"})
         for d in cand:
-            bump = (10 if d.get("distress") else 0) + (5 if (d.get("owner_tenure_years") or 0) >= 25 else 0)
+            bump = (8 if (d.get("owner_tenure_years") or 0) >= 25 else 0) + (5 if d.get("free_and_clear") else 0)
             if bump:
                 d["score"] = round(d["score"] + bump, 1)
                 if d["tier"] == "none": d["score"] = min(d["score"], 49.9)
@@ -298,8 +298,8 @@ def main():
                       "jv": sum(1 for d in deals if d["bucket"]=="jv"),
                       "city_owned": sum(1 for d in deals if d["city_owned"]),
                       "pencils": sum(1 for d in deals if d["pencils"]),
-                      "distressed": sum(1 for d in deals if d.get("distress")),
                       "motivated": sum(1 for d in deals if d.get("motivated")),
+                      "free_and_clear": sum(1 for d in deals if d.get("free_and_clear")),
                       "land_sales_used": n_sales},
            "program_assumptions": UW,
            "land_comps_psf": comps,

@@ -494,7 +494,7 @@ function renderTable(){
   let rows=DEALS.filter(d=>
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
     (FILTER.tier==='ALL' || (FILTER.tier==='city'?d.city_owned:(FILTER.tier==='new'?d.is_new:(FILTER.tier==='motivated'?d.motivated:d.tier===FILTER.tier)))) &&
-    (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+' '+(d.distress_type||'')+(d.motivated?' motivated distress':'')).toLowerCase().includes(q)));
+    (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+(d.motivated?' motivated':'')+(d.free_and_clear?' free clear':'')).toLowerCase().includes(q)));
   const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
   rows=rows.slice().sort((a,b)=>{let av=sv(a),bv=sv(b);
     if(num){av=+av||0;bv=+bv||0;return (av-bv)*SORT.dir || (b.score-a.score);}
@@ -514,7 +514,7 @@ function renderTable(){
     const b=d.best||{};
     const tags=[d.city_owned?'<span class="badge b-city">City</span>':'',
                 d.tier==='market'?'<span class="badge b-mkt">Market</span>':'<span class="badge b-prog">Program</span>',
-                d.distress?'<span class="badge b-hot" title="Recorded lien/foreclosure in ACRIS ~last 4y">Distress</span>':(d.motivated?'<span class="badge b-hold" title="25y+ owner tenure (latest recorded deed)">Long-hold</span>':''),
+                d.motivated?`<span class="badge b-hold" title="${d.free_and_clear?'Free & clear (no mortgage after deed)':'Long-held owner'}${d.owner_tenure_years?' · '+d.owner_tenure_years+'y tenure':''}">${d.free_and_clear?'Free&clear':'Long-hold'}</span>`:'',
                 d.is_new?'<span class="badge b-new">New</span>':''].join(' ');
     h+=`<tr class="deal" onclick="toggle(${i})" id="r${i}">
       <td class="num"><span class="scorepill ${scoreCls(d.score)}">${d.score}</span></td>
@@ -532,7 +532,7 @@ function renderTable(){
         <b style="color:var(--text)">${d.best_path_label||''}</b> · owner: <span class="mono">${d.owner||'—'}</span>
         · lot ${d.lot_sf.toLocaleString()} SF · FAR ${d.built_far} → ${d.max_far} (${d.buildable_sf.toLocaleString()} SF buildable)
         · assessed land ${usd(d.assessed_land)}${d.rent_market_used?` · nbhd rent ${usd(d.rent_market_used)}/mo${d.neighborhood_factor&&d.neighborhood_factor!==1?` (${d.neighborhood_factor}× boro)`:''}`:''}</div>
-      ${(d.distress||d.motivated)?`<div style="margin-bottom:10px;font-size:12px;color:${d.distress?'#ff8a8a':'var(--warn)'}">◆ <b>${d.distress?'Distress signal':'Long-hold owner'}:</b> ${d.distress?`${(d.distress_type||'lien/foreclosure')} recorded${d.distress_year?' '+d.distress_year:''} in ACRIS — motivated seller`:`latest recorded deed ~${d.owner_tenure_years}y ago — estate/long-hold, statistically likelier to sell`}</div>`:''}
+      ${d.motivated?`<div style="margin-bottom:10px;font-size:12px;color:var(--warn)">◆ <b>Motivated-seller signal:</b> ${[d.free_and_clear?'free &amp; clear (no mortgage recorded after the deed — no payoff, cleaner close)':'',d.owner_tenure_years?`~${d.owner_tenure_years}y since last recorded deed (long-hold / low basis)`:''].filter(Boolean).join(' · ')} — statistically likelier to sell</div>`:''}
       <div class="paths">${(d.paths||[]).map(p=>`
         <div class="pth ${p.feasible?'ok':''}">
           <div class="pn">${p.feasible?'●':'○'} ${p.path.toUpperCase().replace('_',' ')}</div>
@@ -602,7 +602,7 @@ function onePager(i){
       <h1>${esc(d.address)}</h1>
       <div class="sub">${esc(d.borough)} · Zone ${esc(d.zone||'—')} · ${esc(d.owner||'owner on record')}</div>
       <div class="tierline">${tierName}</div>
-      ${(d.distress||d.motivated)?`<div style="margin-top:8px;font:600 11px/1.3 ui-monospace,monospace;padding:7px 11px;border-radius:6px;display:inline-block;border:1px solid ${d.distress?'#f0c2c2':'#e8d6a8'};background:${d.distress?'#fdf2f2':'#fbf7ea'};color:${d.distress?'#b23b3b':'#8a6d1a'}">${d.distress?`◆ DISTRESS SIGNAL · ${esc(d.distress_type||'lien/foreclosure')}${d.distress_year?' '+d.distress_year:''} recorded in ACRIS`:`◆ LONG-HOLD OWNER · ~${d.owner_tenure_years}y since last recorded deed`}</div>`:''}</div>
+      ${d.motivated?`<div style="margin-top:8px;font:600 11px/1.3 ui-monospace,monospace;padding:7px 11px;border-radius:6px;display:inline-block;border:1px solid #e8d6a8;background:#fbf7ea;color:#8a6d1a">◆ MOTIVATED SELLER · ${[d.free_and_clear?'FREE &amp; CLEAR (no mortgage)':'',d.owner_tenure_years?`~${d.owner_tenure_years}y OWNER TENURE`:''].filter(Boolean).join(' · ')}</div>`:''}</div>
     <div class="scorebox"><div class="n">${d.score}</div><div class="l">Composite score</div></div>
   </div>
 
