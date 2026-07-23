@@ -271,6 +271,7 @@ def main():
                 d["score"] = round(d["score"] + bump, 1)
                 if d["tier"] == "none": d["score"] = min(d["score"], 49.9)
                 elif d["tier"] == "program": d["score"] = min(d["score"], 74.9)
+                else: d["score"] = min(d["score"], 100.0)
         deals.sort(key=lambda d: d["score"], reverse=True)
     except Exception as e:
         print(f"ACRIS layer skipped: {e}")
