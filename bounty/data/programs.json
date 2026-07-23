@@ -1,6 +1,6 @@
 {
   "updated": "2026-07-22",
-  "note": "Curated program library \u2014 verified against official sources Jul 2026. 'underwritten' = the engine models this path automatically on every deal. 'cataloged' = available tool for deal structuring; verify current terms via the linked source before relying on it. Acquisition & site-control programs added \u2014 these fund GETTING the site, before development financing.",
+  "note": "Curated program library \u2014 verified against official sources Jul 2026. 'underwritten' = the engine models this path automatically on every deal. 'cataloged' = available tool for deal structuring; verify current terms via the linked source before relying on it. Acquisition & site-control programs added \u2014 these fund GETTING the site, before development financing. Land-acquisition programs made explicit per region (NHLA, HDF, county HOME consortia, state/municipal trust funds).",
   "regions": [
     {
       "region": "NYC",
@@ -137,13 +137,6 @@
           "source": "https://westchesterida.com"
         },
         {
-          "name": "Westchester County housing funds (HIF / New Homes Land Acquisition)",
-          "status": "cataloged",
-          "type": "Subsidy",
-          "terms": "County capital funds for affordable development and land acquisition in Westchester municipalities.",
-          "source": "https://homes.westchestergov.com"
-        },
-        {
           "name": "HCR SHOP / supportive pipelines",
           "status": "cataloged",
           "type": "Affordable stack",
@@ -158,18 +151,32 @@
           "source": "https://communityp.com"
         },
         {
-          "name": "Westchester New Homes Land Acquisition Fund",
-          "status": "cataloged",
-          "type": "Acquisition subsidy",
-          "terms": "County capital funding specifically for ACQUIRING sites for affordable development in Westchester municipalities.",
-          "source": "https://homes.westchestergov.com"
-        },
-        {
           "name": "NYS land banks & municipal dispositions",
           "status": "cataloged",
           "type": "Site control",
           "terms": "Land banks (e.g., Newburgh, Kingston nearby; check county) and city/county surplus-property sales convey distressed parcels cheaply with development conditions. Also school-district and state OGS surplus lists.",
           "source": "https://nyslandbanks.org"
+        },
+        {
+          "name": "Westchester New Homes Land Acquisition (NHLA)",
+          "status": "cataloged",
+          "type": "Land acquisition subsidy",
+          "terms": "County capital fund created specifically to ACQUIRE land/sites for affordable housing development in Westchester municipalities. Term-sheet driven; pairs with the Housing Implementation Fund for construction gap. This is the county-level answer to 'how do I fund the land' \u2014 unusually strong vs. most counties.",
+          "source": "https://homes.westchestercountyny.gov/developers/funding-sources"
+        },
+        {
+          "name": "Westchester Housing Implementation Fund (HIF) + Flex Fund",
+          "status": "cataloged",
+          "type": "Gap subsidy",
+          "terms": "County construction/gap subsidy that stacks on NHLA land funding; Housing Flex Fund II adds flexible per-unit subsidy. Westchester's fair-housing settlement left it with deeper county housing capital than Putnam/Dutchess.",
+          "source": "https://homes.westchestercountyny.gov/developers/funding-sources"
+        },
+        {
+          "name": "Dutchess County HOME Consortium (HUD HOME)",
+          "status": "cataloged",
+          "type": "Acquisition/HOME funds",
+          "terms": "For Putnam/Dutchess (which lack Westchester's dedicated land fund): HUD HOME dollars via the county consortium can fund ACQUISITION + construction of affordable units. Pair with CPC/CDFI acquisition lending and HCR.",
+          "source": "https://www.dutchessny.gov/Departments/Planning/HOME-Program.htm"
         }
       ]
     },
@@ -224,6 +231,27 @@
           "type": "Site control",
           "terms": "In sub-10% towns, optioning a site cheaply then filing an 8-30g set-aside application is the acquisition play \u2014 the zoning override IS the value creation. Option/contract control beats outright purchase pre-approval.",
           "source": "https://www.cga.ct.gov/current/pub/chap_126a.htm"
+        },
+        {
+          "name": "Housing Development Fund (HDF)",
+          "status": "cataloged",
+          "type": "Acquisition/predev loan",
+          "terms": "Stamford-based CDFI lending ACQUISITION + predevelopment capital for affordable/mixed-income projects across Fairfield County and lower Hudson Valley \u2014 i.e., exactly Greenwich, Stamford, New Canaan, Darien, Westport. The private-side answer to controlling a CT site before you've won state money.",
+          "source": "https://hdfconnects.org"
+        },
+        {
+          "name": "Municipal Affordable Housing Trust Funds",
+          "status": "cataloged",
+          "type": "Local acquisition/gap",
+          "terms": "Several CT towns (e.g., Stamford's AHTF) hold local trust funds that can fund acquisition or fill gaps on affordable projects \u2014 town-by-town, often the fastest local dollars.",
+          "source": "https://www.stamfordct.gov/government/boards-commissions/affordable-housing-trust-fund"
+        },
+        {
+          "name": "CHFA/DOH predevelopment + Capital for Change",
+          "status": "cataloged",
+          "type": "Acquisition/predev loan",
+          "terms": "CHFA and the CDFI Capital for Change provide predevelopment and acquisition financing that rolls into a CHFA/DOH construction round \u2014 the public-side site-control path.",
+          "source": "https://www.capitalforchange.org"
         }
       ]
     },
@@ -278,6 +306,27 @@
           "type": "Site control",
           "terms": "Once an 'Area in Need of Redevelopment' is designated, municipalities can convey property directly to a designated redeveloper (no public bid) with a PILOT attached \u2014 the NJ site-control path.",
           "source": "https://www.nj.gov/dca/"
+        },
+        {
+          "name": "Bergen County HOME Consortium",
+          "status": "cataloged",
+          "type": "Acquisition/HOME funds",
+          "terms": "HUD HOME dollars administered county-wide (incl. Fort Lee/Englewood/Edgewater's county) that can fund ACQUISITION + construction of affordable units for qualified developers.",
+          "source": "https://www.co.bergen.nj.us/community-development"
+        },
+        {
+          "name": "NJ Affordable Housing Trust Fund (Balanced Housing)",
+          "status": "cataloged",
+          "type": "Acquisition/construction subsidy",
+          "terms": "State DCA subsidy (Balanced Housing / AHTF) for acquisition and construction of affordable units statewide.",
+          "source": "https://www.nj.gov/dca/dhcr/offices/ahtf.shtml"
+        },
+        {
+          "name": "Municipal Affordable Housing Trust Funds (Mount Laurel fees)",
+          "status": "cataloged",
+          "type": "Local acquisition/gap",
+          "terms": "NJ towns collect developer 'growth-share' fees into local trust funds earmarked for affordable housing \u2014 many Bergen/Hudson towns hold balances that can fund site acquisition or gap. Ask the municipal housing liaison.",
+          "source": "https://www.nj.gov/dca/dhcr/"
         }
       ]
     },
@@ -318,6 +367,13 @@
           "type": "Subsidy",
           "terms": "Competitive grants (~$50-80k/unit range historically) through member banks \u2014 often used to fill acquisition gaps in affordable deals.",
           "source": "https://www.fhlbny.com/community/affordable-housing-programs/"
+        },
+        {
+          "name": "HUD HOME + National Housing Trust Fund (NHTF)",
+          "status": "cataloged",
+          "type": "Acquisition/subsidy",
+          "terms": "HOME (via county consortia) and NHTF (via the state HFA) both explicitly permit ACQUISITION as an eligible cost \u2014 the federal backbone under most local land-acquisition programs above.",
+          "source": "https://www.hudexchange.info/programs/home/"
         }
       ]
     }

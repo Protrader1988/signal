@@ -253,7 +253,11 @@
 const BASE='https://raw.githubusercontent.com/Protrader1988/signal/main/bounty/data/';
 const $=id=>document.getElementById(id);
 const usd=v=>v==null?'—':'$'+Math.round(v).toLocaleString();
-async function j(f){const r=await fetch(BASE+f+'?t='+Date.now());if(!r.ok)throw new Error(f+' '+r.status);return r.json();}
+async function j(f,retries){retries=(retries==null)?3:retries;
+  for(let i=0;i<=retries;i++){
+    try{const r=await fetch(BASE+f+'?t='+Date.now()+'_'+i,{cache:'no-store'});if(!r.ok)throw new Error(f+' '+r.status);return await r.json();}
+    catch(e){if(i===retries)throw e;await new Promise(res=>setTimeout(res,700*(i+1)));}
+  }}
 function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().slice(17,25)}</b> UTC · ${d.toUTCString().slice(5,16)}`;}
 setInterval(tick,1000);tick();
 
@@ -346,7 +350,8 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
 
 (async()=>{
   try{
-    const [deals,briefs,progs,subs,pb,ct,nj]=await Promise.all([j('nyc_deals.json'),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb,ct,nj]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null)]);
+    if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
       $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
@@ -477,8 +482,9 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
     $('assumpNote').textContent=A.note||'';
     $('foot').innerHTML=`<b>How this works.</b> A daily engine scans every NYC parcel for underutilized development sites (built FAR under half of allowed, dev-friendly zones), anchors land to real vacant-land sale comps, and underwrites each site across every applicable financing path — 485-x tiers, City of Yes UAP, Section 8 overlay, and the ELLA/LIHTC stack. Self-executing deals rank above subsidy-dependent ones; nothing simulated is shown without a label. Estimates are for screening and outreach — verify zoning, site condition, and program terms before acting. Not investment advice.`;
   }catch(e){
-    $('hero').innerHTML=`<div class="kpi"><div class="k">status</div><div class="v sm warn">awaiting data</div><div class="s">first engine run</div></div>`;
-    $('briefBox').innerHTML=`<div class="banner">Waiting for the engine's first data (<code>${e.message}</code>).</div>`;
+    $('hero').innerHTML=`<div class="kpi"><div class="k">status</div><div class="v sm warn">reconnecting</div><div class="s">auto-retrying…</div></div>`;
+    $('briefBox').innerHTML=`<div class="banner">Data source is briefly unreachable (<code>${e.message}</code>). This is usually a temporary GitHub rate-limit on the raw feed — retrying automatically. If it persists, enabling GitHub Pages (a proper CDN) fixes it permanently.</div>`;
+    if(!window.__retried){window.__retried=1; setTimeout(()=>location.reload(),4000);}
   }
 })();
 </script>
