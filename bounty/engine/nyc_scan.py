@@ -19,6 +19,7 @@ import json, os, sys, statistics, urllib.request, urllib.parse, traceback
 from datetime import datetime, timezone, date, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from underwrite import underwrite_all_paths, ASSUMPTIONS as UW
+import acris_distress
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/2.0)"}
 
@@ -30,7 +31,35 @@ ASSUMPTIONS = {
     "ltc": 0.85, "rate": 0.0675, "amort_years": 30, "dev_fee_pct": 0.07,
     "land_blend": "60% real vacant-land sale comps ($/SF by borough, last 18mo) + 40% assessed x2",
     "solo_equity_cap": 1_000_000, "mid_equity_cap": 3_000_000,
+    "neighborhood_rent": "Market rents are borough baseline x a published ZIP factor (LIC 1.5x, Williamsburg 1.35x, East NY 0.8x, etc.); unlisted ZIPs = 1.0. Tunes which deals pencil to the actual submarket.",
+    "acris_distress": "Motivated-seller flag = a real foreclosure/lis-pendens/lien recorded against the lot in ACRIS within ~4 years, OR a 25-year-plus owner tenure (latest recorded deed). Additive score bonus; nothing simulated.",
     "note": "Screening estimates for outreach, not appraisals. Every number derived from public data + these published assumptions.",
+}
+
+# Neighborhood market-rent factors vs borough baseline, keyed by ZIP.
+# Rents vary 2x+ within a borough (LIC vs Jamaica; Williamsburg vs Brownsville);
+# a flat borough rent overstates weak submarkets and understates strong ones,
+# which changes which deals actually pencil. Editable, published assumption;
+# any ZIP not listed defaults to 1.00 (borough baseline).
+NEIGHBORHOOD_RENT_FACTOR = {
+    # --- Brooklyn strong ---
+    "11201":1.40,"11205":1.20,"11215":1.30,"11217":1.32,"11231":1.35,"11211":1.35,
+    "11249":1.38,"11222":1.30,"11238":1.22,"11216":1.15,"11221":1.12,"11233":1.05,
+    "11206":1.10,"11237":1.12,"11213":1.08,"11225":1.10,"11226":1.02,"11218":1.10,
+    # --- Brooklyn weak ---
+    "11207":0.82,"11208":0.80,"11239":0.78,"11212":0.78,"11236":0.85,"11224":0.82,
+    "11223":0.90,"11229":0.92,"11214":0.92,"11235":0.90,
+    # --- Bronx strong ---
+    "10463":1.20,"10471":1.25,"10454":1.12,"10455":1.08,"10451":1.05,"10474":0.88,
+    # --- Bronx weak / baseline ---
+    "10456":0.92,"10457":0.92,"10459":0.90,"10460":0.92,"10453":0.95,"10458":0.98,
+    "10466":0.90,"10467":0.95,"10468":0.98,"10469":1.00,"10473":0.90,
+    # --- Queens strong ---
+    "11101":1.50,"11109":1.55,"11102":1.28,"11103":1.25,"11106":1.28,"11104":1.22,
+    "11105":1.18,"11375":1.20,"11377":1.05,"11385":1.10,"11354":1.02,"11355":0.98,
+    # --- Queens weak ---
+    "11433":0.85,"11434":0.85,"11435":0.88,"11436":0.85,"11691":0.80,"11692":0.82,
+    "11412":0.88,"11413":0.88,"11420":0.90,"11421":0.95,
 }
 
 TARGET_ZONES = ["R6","R6A","R6B","R7A","R7B","R7D","R7X","R8","R8A","R8B","R8X",
@@ -150,8 +179,12 @@ def underwrite(p, comps):
     elif comp_est: land = comp_est
     elif assess_est: land = assess_est
     else: return None
+    # neighborhood rent tuning: borough baseline x ZIP factor
+    zipc = str(p.get("zipcode") or "")[:5]
+    rfac = NEIGHBORHOOD_RENT_FACTOR.get(zipc, 1.00)
+    rent_market = round(UW["rent_mo"]["market"][boro] * rfac)
     # multi-path underwriting (the real institutional layer)
-    uw = underwrite_all_paths(boro, lot, rfar, land)
+    uw = underwrite_all_paths(boro, lot, rfar, land, rent_market=rent_market)
     if not uw: return None
     best = next((pp for pp in uw["paths"] if pp["path"] == uw["best_path"]), None)
     # walk-away land price: solve land where best-ish path hits feasibility.
@@ -203,7 +236,11 @@ def underwrite(p, comps):
         "best_path_label": uw["best_label"],
         "best": best, "paths": uw["paths"],
         "equity_needed": int(equity), "bucket": bucket, "score": score,
+        "rent_market_used": rent_market, "neighborhood_factor": rfac,
+        "distress": False, "distress_type": None, "distress_year": None,
+        "owner_tenure_years": None, "motivated": False,
         "lat": n(p.get("latitude"), None), "lng": n(p.get("longitude"), None),
+        "_bc": str(p.get("borocode","")), "_blk": p.get("block"), "_lot": p.get("lot"),
     }
 
 def main():
@@ -222,6 +259,21 @@ def main():
         d = underwrite(p, comps)
         if d: deals.append(d)
     deals.sort(key=lambda d: d["score"], reverse=True)
+
+    # ACRIS motivated-seller layer: real recorded liens/foreclosures + owner tenure.
+    # Bounded to the top candidates (by score) to keep the join cheap; non-fatal.
+    try:
+        cand = deals[:320]
+        acris_distress.annotate(cand, {"2":"2","3":"3","4":"4"})
+        for d in cand:
+            bump = (10 if d.get("distress") else 0) + (5 if (d.get("owner_tenure_years") or 0) >= 25 else 0)
+            if bump:
+                d["score"] = round(d["score"] + bump, 1)
+                if d["tier"] == "none": d["score"] = min(d["score"], 49.9)
+                elif d["tier"] == "program": d["score"] = min(d["score"], 74.9)
+        deals.sort(key=lambda d: d["score"], reverse=True)
+    except Exception as e:
+        print(f"ACRIS layer skipped: {e}")
 
     hist_path = "bounty/data/history.json"
     hist = {}
@@ -246,6 +298,8 @@ def main():
                       "jv": sum(1 for d in deals if d["bucket"]=="jv"),
                       "city_owned": sum(1 for d in deals if d["city_owned"]),
                       "pencils": sum(1 for d in deals if d["pencils"]),
+                      "distressed": sum(1 for d in deals if d.get("distress")),
+                      "motivated": sum(1 for d in deals if d.get("motivated")),
                       "land_sales_used": n_sales},
            "program_assumptions": UW,
            "land_comps_psf": comps,
@@ -256,6 +310,9 @@ def main():
     for d in out["deals"]:
         if d["bbl"] in seen: continue
         seen.add(d["bbl"]); dd.append(d)
+    # strip internal-only join keys
+    for d in dd:
+        d.pop("_bc",None); d.pop("_blk",None); d.pop("_lot",None)
     out["deals"]=dd
     err="bounty/data/NYC_ERROR.txt"
     if os.path.exists(err): os.remove(err)

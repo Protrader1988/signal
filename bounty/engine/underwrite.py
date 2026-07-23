@@ -80,11 +80,13 @@ def _path(name, label, units_m, rent_m, units_a, rent_a, gross_sf, land, A,
             "equity_pct": round(eq_ratio*100,1), "noi": int(noi), "dscr": round(dscr,2),
             "cash_flow": int(cf), "coc_pct": round(coc*100,1), "feasible": feasible}
 
-def underwrite_all_paths(boro, lot_sf, resid_far, land_cost, A=ASSUMPTIONS):
-    """Return all applicable paths + best, for a parcel."""
+def underwrite_all_paths(boro, lot_sf, resid_far, land_cost, A=ASSUMPTIONS, rent_market=None):
+    """Return all applicable paths + best, for a parcel.
+    rent_market: optional per-parcel market monthly rent (neighborhood-tuned).
+    Falls back to the borough baseline when not supplied."""
     base_sf = lot_sf * resid_far
     units = int(base_sf / A["du_factor_sf"])
-    rm = A["rent_mo"]["market"][boro]
+    rm = rent_market if rent_market else A["rent_mo"]["market"][boro]
     paths = []
     if units < 6: return None
 
