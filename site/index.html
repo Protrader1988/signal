@@ -287,7 +287,9 @@
 </div>
 
 <script>
-const BASE='https://raw.githubusercontent.com/Protrader1988/signal/main/site/data/';
+const BASE=(location.hostname.endsWith('.github.io'))
+  ? new URL('data/', location.href).href
+  : 'https://raw.githubusercontent.com/Protrader1988/signal/main/site/data/';
 const $=id=>document.getElementById(id);
 const sgn=v=>v>0?'up':(v<0?'down':'neu');
 const arw=v=>v>0?'▲':(v<0?'▼':'▪');

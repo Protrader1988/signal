@@ -250,7 +250,11 @@
 </div>
 
 <script>
-const BASE='https://raw.githubusercontent.com/Protrader1988/signal/main/bounty/data/';
+// On GitHub Pages, fetch data same-origin from the Pages CDN (fast, no rate limit);
+// when opened as a delivered file, fall back to the raw GitHub feed.
+const BASE=(location.hostname.endsWith('.github.io'))
+  ? new URL('../bounty/data/', location.href).href
+  : 'https://raw.githubusercontent.com/Protrader1988/signal/main/bounty/data/';
 const $=id=>document.getElementById(id);
 const usd=v=>v==null?'—':'$'+Math.round(v).toLocaleString();
 async function j(f,retries){retries=(retries==null)?3:retries;
