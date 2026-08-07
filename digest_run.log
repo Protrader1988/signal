@@ -2,5 +2,20 @@ model gemini-2.5-flash attempt 1: HTTP 404 {
   "error": {
     "code": 404,
     "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer m
-model ok: gemini-flash-latest
-digest written: leaning bearish medium
+model gemini-flash-latest attempt 1: TimeoutError The read operation timed out
+model gemini-2.5-flash-lite attempt 1: HTTP 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a ne
+model gemini-2.0-flash attempt 1: HTTP 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+model gemini-2.0-flash attempt 2: HTTP 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+digest err gemini-2.0-flash: HTTP 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a
