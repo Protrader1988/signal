@@ -1,4 +1,40 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-08-10T22:26:49.406179+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "neutral",
+    "confidence": "medium",
+    "summary": "Major indexes and futures face pressure from geopolitical chatter and persistent inflation fears that could keep interest rates higher for longer. However, mega-cap tech strength and strong individual earnings reports are preventing a broader market sell-off.",
+    "bull": "Big tech resilience\u2014highlighted by Microsoft hitting year-highs on AI chip demand and Amazon reaching a $3 trillion market cap\u2014provides strong structural support alongside solid beats from healthcare names like UnitedHealth.",
+    "bear": "Shedding job numbers, persistent inflation, higher-for-longer rate prospects, and geopolitical tensions surrounding Iran are keeping broad futures mixed to lower.",
+    "watch": "Upcoming major earnings reports, economic data on job losses and inflation, and further developments in Federal Rate policy expectations."
+  },
+  "takes": [
+    {
+      "topic": "Big Tech & AI (MSFT, AMZN)",
+      "lean": "bullish",
+      "confidence": "high",
+      "note": "Microsoft touched its highest level this year on plans to hike AI chip production, while Amazon rode cloud momentum to a $3 trillion milestone."
+    },
+    {
+      "topic": "U.S. Macro & Fed Policy",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "Job loss reports coupled with sticky inflation have renewed concerns that interest rates will remain higher for longer, dragging on major stock futures."
+    },
+    {
+      "topic": "Valero Energy (VLO)",
+      "lean": "leaning bullish",
+      "confidence": "low",
+      "note": "Valero saw a sharp single-day jump above 5% to $314.95, though reports flag a stark contrast against its cited GF Value benchmark of $166.65."
+    },
+    {
+      "topic": "Micron Technology (MU)",
+      "lean": "neutral",
+      "confidence": "low",
+      "note": "Micron trades under conflicting pressure as headlines report both gains and slips linked to potential Apple China supplier threats."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
