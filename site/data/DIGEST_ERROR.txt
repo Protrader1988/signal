@@ -4,7 +4,7 @@ Traceback (most recent call last):
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/signal/signal/engine/ai_digest.py", line 67, in gemini
     raise last or RuntimeError("no model succeeded")
-RuntimeError: gemini-2.0-flash: HTTP 429 {
+RuntimeError: gemini-2.0-flash: HTTP 404 {
   "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
