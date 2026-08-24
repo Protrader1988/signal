@@ -1,11 +1,10 @@
-[22:12:38] fetching equities...
+[22:14:40] fetching equities...
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
 $WBA: possibly delisted; no timezone found
 
-2 Failed downloads:
-['INTC']: OperationalError('database is locked')
+1 Failed download:
 ['WBA']: possibly delisted; no timezone found
-[22:12:51] fetching crypto...
-[22:12:53] wrote signals.json (16 position, 10 swing)
-[22:12:53] updated ledger: 50 open, 59 closed
-[22:12:53] done
+[22:14:48] fetching crypto...
+[22:14:49] wrote signals.json (17 position, 10 swing)
+[22:14:49] updated ledger: 43 open, 83 closed
+[22:14:49] done
