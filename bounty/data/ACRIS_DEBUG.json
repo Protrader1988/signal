@@ -3,7 +3,7 @@
     "legals_sample": {
       "document_id": [
         "str",
-        "2026062901171001"
+        "2026070100768003"
       ],
       "record_type": [
         "str",
@@ -15,11 +15,11 @@
       ],
       "block": [
         "str",
-        "1710"
+        "1174"
       ],
       "lot": [
         "str",
-        "50"
+        "1305"
       ],
       "easement": [
         "str",
@@ -39,15 +39,19 @@
       ],
       "property_type": [
         "str",
-        "CR"
+        "SC"
       ],
       "street_number": [
         "str",
-        "52"
+        "755"
       ],
       "street_name": [
         "str",
-        "BUFFALO AVENUE"
+        "WASHINGTON AVENUE"
+      ],
+      "unit": [
+        "str",
+        "3B"
       ],
       "good_through_date": [
         "str",
@@ -59,12 +63,15 @@
       "block": false,
       "lot": false
     },
-    "legals_rows": 147401,
-    "parcels_matched": 224,
-    "doc_ids": 1716,
-    "master_rows": 1716,
-    "motivated": 122,
-    "free_and_clear": 136,
-    "with_tenure": 176
+    "legals_errors": [
+      "The read operation timed out"
+    ],
+    "legals_rows": 97401,
+    "parcels_matched": 157,
+    "doc_ids": 982,
+    "master_rows": 982,
+    "motivated": 84,
+    "free_and_clear": 92,
+    "with_tenure": 118
   }
 }
