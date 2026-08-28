@@ -2,10 +2,7 @@ model gemini-2.5-flash attempt 1: HTTP 404 {
   "error": {
     "code": 404,
     "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-model gemini-flash-latest attempt 1: HTTP 503 {
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+model gemini-flash-latest attempt 1: TimeoutError The read operation timed out
 model gemini-2.5-flash-lite attempt 1: HTTP 404 {
   "error": {
     "code": 404,
