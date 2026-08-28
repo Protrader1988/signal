@@ -1,74 +1,17 @@
 {
   "stages": {
-    "legals_sample": {
-      "document_id": [
-        "str",
-        "2026070100768003"
-      ],
-      "record_type": [
-        "str",
-        "L"
-      ],
-      "borough": [
-        "str",
-        "3"
-      ],
-      "block": [
-        "str",
-        "1174"
-      ],
-      "lot": [
-        "str",
-        "1305"
-      ],
-      "easement": [
-        "str",
-        "N"
-      ],
-      "partial_lot": [
-        "str",
-        "E"
-      ],
-      "air_rights": [
-        "str",
-        "N"
-      ],
-      "subterranean_rights": [
-        "str",
-        "N"
-      ],
-      "property_type": [
-        "str",
-        "SC"
-      ],
-      "street_number": [
-        "str",
-        "755"
-      ],
-      "street_name": [
-        "str",
-        "WASHINGTON AVENUE"
-      ],
-      "unit": [
-        "str",
-        "3B"
-      ],
-      "good_through_date": [
-        "str",
-        "2026-07-31T00:00:00.000"
-      ]
-    },
+    "legals_probe_error": "The read operation timed out",
     "legals_types": {
-      "borough": false,
-      "block": false,
-      "lot": false
+      "borough": true,
+      "block": true,
+      "lot": true
     },
-    "legals_rows": 146710,
-    "parcels_matched": 222,
-    "doc_ids": 1748,
-    "master_rows": 1748,
-    "motivated": 114,
-    "free_and_clear": 133,
-    "with_tenure": 181
+    "legals_rows": 145964,
+    "parcels_matched": 221,
+    "doc_ids": 1648,
+    "master_rows": 1648,
+    "motivated": 112,
+    "free_and_clear": 131,
+    "with_tenure": 168
   }
 }
