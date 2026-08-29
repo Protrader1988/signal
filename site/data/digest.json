@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-08-29T03:26:50.990054+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "Equities are pulling back as hawkish commentary from Fed Chair Warsh reintroduced the threat of rate hikes to combat stubborn inflation. With the September policy decision now seen as a coin flip and labor data softening, macro headwinds are dominating broader sentiment.",
+    "bull": "Resilience in energy names like Valero and SLB, corporate insider buying at Intel, and isolated 52-week highs in names like Merck and Target demonstrate that underlying stock picking opportunities remain active.",
+    "bear": "The prospect of resumed Fed rate hikes in a slowing labor market pressures equity multiples and increases the likelihood of further broad-market pullbacks.",
+    "watch": "Incoming inflation data and evolving odds surrounding the September Fed interest rate decision."
+  },
+  "takes": [
+    {
+      "topic": "Federal Reserve & Interest Rates",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "Fed Chair Warsh's Jackson Hole warnings that inflation remains too high have reignited rate hike fears, elevating policy uncertainty across major indices."
+    },
+    {
+      "topic": "Energy Sector (VLO, SLB)",
+      "lean": "bullish",
+      "confidence": "medium",
+      "note": "Energy players are showing strong relative strength, with Valero gaining despite broader market dips on an earnings beat and SLB outperforming peers."
+    },
+    {
+      "topic": "Healthcare & Pharma (MRK, UNH, CVS)",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "While Merck reached fresh 52-week highs and UnitedHealth posted a 19% rise in operating earnings, concerns linger regarding valuation limits and institutional selling in peers like CVS."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
