@@ -1,4 +1,40 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-09-03T23:40:45.402750+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "leaning bullish",
+    "confidence": "medium",
+    "summary": "Equities are riding solid momentum after the Dow and S&P 500 notched their best day in a month, propelled by retreating Treasury yields and easing rate-hike fears following dovish commentary from Fed officials. However, that upward push is hitting a short-term pause as futures flatten out ahead of key employment data.",
+    "bull": "Treasury yields are easing as Fed officials signal support for holding rates and letting disinflation work, providing breathing room for broad market valuations.",
+    "bear": "Near-term gains could stall if the upcoming August jobs report surprises to the upside or re-ignites policy tightening anxieties.",
+    "watch": "The release of the August jobs report and further Fed speaker commentary on interest rates."
+  },
+  "takes": [
+    {
+      "topic": "Interest Rates & Fed Policy",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Treasury yields are dropping as Fed Governor Waller calls to give disinflation a chance, significantly calming market fears of further rate hikes."
+    },
+    {
+      "topic": "Micron Technology (MU)",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "Micron faces negative sentiment as Barron's highlights market share losses to China and commentators suggest rotating capital out of MU in favor of peers like Nvidia."
+    },
+    {
+      "topic": "Valero Energy (VLO)",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "While VLO continues to outpace the broader market, analysis cautions that the stock is trading at rich multiples following an extended multi-bagger run."
+    },
+    {
+      "topic": "UnitedHealth Group (UNH)",
+      "lean": "neutral",
+      "confidence": "low",
+      "note": "Shares have staged a recovery following a difficult backdrop, but reports flag that valuation and price have rebounded ahead of actual underlying margin improvement."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
