@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-09-11T23:41:46.343751+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "leaning bullish",
+    "confidence": "medium",
+    "summary": "Major indexes including the Dow, S&P 500, and Nasdaq are pushing higher today, buoyed in part by falling oil prices. However, this rally is occurring alongside hotter-than-expected CPI inflation that sharply raises odds of an impending Fed rate hike.",
+    "bull": "Equities are showing resilience by rallying across the board despite inflation headwinds, supported by strength in select tech names and falling oil prices.",
+    "bear": "Stubborn inflation makes a September Fed rate hike appear all but guaranteed, bringing risks that tighter policy and the Fed rarely stopping at one hike will eventually pressure valuations.",
+    "watch": "Fed policy moves and communications following the latest inflation numbers, along with crude oil price stability."
+  },
+  "takes": [
+    {
+      "topic": "Interest Rates and the Fed",
+      "lean": "leaning bearish",
+      "confidence": "high",
+      "note": "Stubborn CPI inflation has economists calling a September Fed rate hike all but guaranteed, raising pressure on leadership with warnings that rate hike cycles rarely stop at one."
+    },
+    {
+      "topic": "Oil Refining (VLO, PSX)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Reports of the Trump Administration weighing the Defense Production Act to boost refining capacity bring renewed focus to refiners alongside rising earnings estimates for Valero and momentum in Phillips 66."
+    },
+    {
+      "topic": "Semiconductors (TXN, MU, INTC)",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "The chip space shows clear divergence, with Texas Instruments surging 3.8% while Micron shares sink, highlighting mixed near-term conditions across individual names."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
