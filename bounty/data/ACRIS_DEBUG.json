@@ -1,20 +1,74 @@
 {
   "stages": {
-    "legals_probe_error": "The read operation timed out",
-    "legals_types": {
-      "borough": true,
-      "block": true,
-      "lot": true
+    "legals_sample": {
+      "document_id": [
+        "str",
+        "2026072900178002"
+      ],
+      "record_type": [
+        "str",
+        "L"
+      ],
+      "borough": [
+        "str",
+        "4"
+      ],
+      "block": [
+        "str",
+        "4970"
+      ],
+      "lot": [
+        "str",
+        "1309"
+      ],
+      "easement": [
+        "str",
+        "N"
+      ],
+      "partial_lot": [
+        "str",
+        "E"
+      ],
+      "air_rights": [
+        "str",
+        "N"
+      ],
+      "subterranean_rights": [
+        "str",
+        "N"
+      ],
+      "property_type": [
+        "str",
+        "SC"
+      ],
+      "street_number": [
+        "str",
+        "133-25"
+      ],
+      "street_name": [
+        "str",
+        "37TH AVENUE"
+      ],
+      "unit": [
+        "str",
+        "16E"
+      ],
+      "good_through_date": [
+        "str",
+        "2026-08-31T00:00:00.000"
+      ]
     },
-    "legals_errors": [
-      "HTTP Error 500: Server Error"
-    ],
-    "legals_rows": 123693,
-    "parcels_matched": 196,
-    "doc_ids": 1398,
-    "master_rows": 1320,
-    "motivated": 96,
-    "free_and_clear": 114,
-    "with_tenure": 145
+    "legals_types": {
+      "borough": false,
+      "block": false,
+      "lot": false
+    },
+    "legals_rows": 145995,
+    "parcels_matched": 239,
+    "doc_ids": 1725,
+    "master_rows": 1725,
+    "motivated": 133,
+    "free_and_clear": 148,
+    "with_tenure": 197
   }
 }
