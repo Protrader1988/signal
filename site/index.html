@@ -175,7 +175,8 @@
   .cismall{display:block;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:3px;font-weight:400}
   #policyTbl tbody td,#policyRadar tbody td{vertical-align:top;padding-top:14px}
   .dealname{font-weight:600}.dealname .sub{display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
-  td.deal{white-space:normal;max-width:430px;vertical-align:top;padding-top:14px}
+  td.deal{white-space:normal;min-width:330px;max-width:460px;vertical-align:top;padding-top:14px}
+  #policyTbl table{min-width:1080px}
   .struct{display:block;margin-top:7px;color:var(--muted);font-size:11.5px;line-height:1.6}
   .verdict{margin:0 0 16px;padding:14px 17px;border-radius:11px;background:linear-gradient(180deg,#0f1119,#0a0c12);
     border:1px solid var(--goldline);border-left:3px solid var(--gold);font-size:13.5px;line-height:1.7;color:var(--text2)}
@@ -289,7 +290,7 @@
       <div id="policyCohorts"></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">DEALS</span><span class="badge b-sim">Event study · not a signal</span><span class="t">Every tracked federal position</span><span class="expo" id="policyMeta"></span></div>
+      <div class="card-head"><span class="code">DEALS</span><span class="badge b-sim">Event study · not a signal</span><span class="t">Every tracked federal position · buy-and-hold abnormal return</span><span class="expo" id="policyMeta"></span></div>
       <div id="policyTbl"><div class="loading">loading deals…</div></div>
     </div>
     <div class="card">
@@ -433,28 +434,47 @@ function drawPolicy(p){
   const ci=w=>(w&&w.median!=null)?`<span class="${sgn(w.median)}">${pc(w.median)}</span><span class="cismall">${pc(w.lo)} to ${pc(w.hi)}</span>`:'—';
   const pooled=p.pooled||{},co=p.cohorts||{};
 
-  // verdict — assembled from the statistics, not asserted
+  // verdict — assembled from the statistics, and only claims what they support
   const m1=pooled.m1||{},q1=pooled.q1||{},d0=pooled.day0||{};
-  const cmp=(a,b,key)=>{const A=co[a]&&co[a].windows[key],B=co[b]&&co[b].windows[key];
-    return (A&&B&&A.median!=null&&B.median!=null)?[A,B]:null;};
-  const struct=cmp('contracted','equity','q1');
+  const WL={day0:'the announcement day',w1:'the week after',m1:'the month after',q1:'the quarter after',h1:'the six months after'};
+  // pick the latest window where BOTH structures have published a median, so the
+  // comparison is like-for-like instead of quietly mixing horizons
+  let cmpKey=null;
+  ['q1','m1','w1','day0'].forEach(k=>{if(cmpKey)return;
+    const A=co.contracted&&co.contracted.windows[k],B=co.equity&&co.equity.windows[k];
+    if(A&&B&&A.median!=null&&B.median!=null)cmpKey=k;});
   let structLine='';
-  if(struct){
-    const [c,e]=struct;
-    structLine=`Split by structure, deals with <b>contracted economics</b> (price floors, offtake, procurement) run a median
-      <span class="hl ${sgn(c.median)}">${pc(c.median)}</span> at one quarter on n=${c.n}, against
-      <span class="hl ${sgn(e.median)}">${pc(e.median)}</span> for <b>equity stakes with nothing attached</b> on n=${e.n}.
-      That is the distinction to trade on, if any of it is tradeable at all — and at these sample sizes neither interval excludes zero by much.`;
+  if(cmpKey){
+    const A=co.contracted.windows[cmpKey],B=co.equity.windows[cmpKey];
+    const gap=Math.abs(A.median-B.median);
+    structLine=`Split by structure over ${WL[cmpKey]}, deals with <b>contracted economics</b> — price floors, offtake, procurement — run a median
+      <span class="hl ${sgn(A.median)}">${pc(A.median)}</span> on n=${A.n}, against
+      <span class="hl ${sgn(B.median)}">${pc(B.median)}</span> for <b>equity stakes with nothing attached</b> on n=${B.n}.
+      ${gap<3?'That gap is too small to mean anything at these sample sizes.':'Both intervals are wide enough that the gap is suggestive, not established.'}`;
+  } else if((co.contracted&&co.contracted.reportable)||(co.equity&&co.equity.reportable)){
+    structLine=`The structural comparison is not published yet: the two structures do not yet have a window both have completed,
+      and comparing a one-month median against a one-quarter one would be a fabricated contrast.`;
   } else {
-    structLine=`No cohort yet has the three testable events needed to report a median, so the structural comparison is not published rather than estimated.`;
+    structLine=`No structure yet has the three testable deals needed to report a median, so nothing is published rather than estimated.`;
+  }
+  let concLine='';
+  if(d0.median!=null&&m1.median!=null){
+    concLine=(Math.abs(d0.median)>=Math.abs(m1.median))
+      ? `Most of the move sits in the announcement session, which gaps and is therefore the part you cannot buy.`
+      : `The announcement session is <em>not</em> where the return is concentrated here — the month after it carries more, which is the opposite of the usual event-study result and deserves suspicion at n=${m1.n} rather than a victory lap.`;
+  }
+  let eqLine='';
+  const eqd=co.equity&&co.equity.windows.day0,eqq=co.equity&&co.equity.windows.q1;
+  if(eqd&&eqq&&eqd.median!=null&&eqq.median!=null&&eqq.median<eqd.median){
+    eqLine=` Bare equity stakes give back most of it: median <span class="hl ${sgn(eqd.median)}">${pc(eqd.median)}</span> on day 0 decaying to <span class="hl ${sgn(eqq.median)}">${pc(eqq.median)}</span> by one quarter.`;
   }
   $('policyVerdict').innerHTML=`<div class="verdict"><b>What the study actually says.</b>
     Across <span class="hl">${m1.n||0}</span> testable deals the median abnormal return is
     <span class="hl ${sgn(d0.median)}">${pc(d0.median)}</span> on the announcement day itself and
     <span class="hl ${sgn(m1.median)}">${pc(m1.median)}</span> over the month after it
-    ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?' — indistinguishable from noise':''})`:''}.
+    ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?', indistinguishable from noise':''})`:''}.
     ${m1.pos!=null?`<span class="hl">${m1.pos}</span> of <span class="hl">${m1.n}</span> were positive at one month.`:''}
-    Day 0 is where the move lives and day 0 is the part you cannot buy. ${structLine}</div>`;
+    ${concLine}${eqLine} ${structLine}</div>`;
 
   const fwd=(p.ledger&&p.ledger.forward)||{};
   const tiles=[
@@ -472,7 +492,7 @@ function drawPolicy(p){
   const wins=p.windows||[];
   const cohorts=Object.values(co).sort((a,b)=>b.n-a.n);
   let ch='<div class="scrollx"><table><thead><tr><th>Deal structure</th><th class="num">n</th>'+
-    wins.map(w=>`<th class="num" title="Median cumulative abnormal return over sessions ${w.from} to ${w.to} relative to the announcement">${w.label}</th>`).join('')+
+    wins.map(w=>`<th class="num" title="Median buy-and-hold abnormal return over sessions ${w.from} to ${w.to} relative to the announcement">${w.label}</th>`).join('')+
     '<th class="num" title="Two-sided sign test on the +1m window against a zero median">p (+1m)</th></tr></thead><tbody>';
   for(const c of cohorts){
     if(!c.reportable){
@@ -491,7 +511,7 @@ function drawPolicy(p){
   $('policyTbl').innerHTML='<div class="scrollx">'+tbl(p.events,[
     {h:'Company',k:'name',cls:()=>'deal',f:(v,r)=>`<span class="dealname">${r.source_url?`<a href="${r.source_url}" target="_blank" rel="noopener" style="border-bottom:1px dotted var(--line2)">${v} ↗</a>`:v}<span class="sub">${r.ticker} · ${r.agency} · ${r.date}</span></span><span class="struct">${r.structure||''}</span>`},
     {h:'Structure',k:'cohort',f:v=>{const t=cohortMeta[v]||['—','b-radar'];return `<span class="badge ${t[1]}">${t[0]}</span>`;}},
-    {h:'Day 0',k:'car',num:true,tip:'Abnormal return on the announcement session. Gapped — treat as unbuyable.',f:v=>carCell(v&&v.day0)},
+    {h:'Day 0',k:'car',num:true,tip:'Buy-and-hold abnormal return on the announcement session itself. Gapped — treat as unbuyable.',f:v=>carCell(v&&v.day0)},
     {h:'+1w',k:'car',num:true,f:v=>carCell(v&&v.w1)},
     {h:'+1m',k:'car',num:true,f:v=>carCell(v&&v.m1)},
     {h:'+1q',k:'car',num:true,f:v=>carCell(v&&v.q1)},

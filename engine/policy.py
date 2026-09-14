@@ -11,7 +11,12 @@ THE METHOD (market model event study)
 For every dated deal, a market model is fitted on the estimation window
 t0-250..t0-21 by OLS of the stock's daily return on SPY's. Abnormal return is
 AR_t = r_t - (alpha + beta*r_spy,t): what the stock did beyond what its own market
-sensitivity already explained. CARs are then cumulated over event windows:
+sensitivity already explained. The tables report BUY-AND-HOLD abnormal return over
+each window — the compounded stock return minus the compounded expected return —
+because that is what a holder actually experiences, and because summed daily ARs
+can print below -100% over long windows, which cannot happen to a share. The event-
+time chart still shows cumulative daily ARs, the standard way to read the path.
+Windows:
 
     [0,0]    the announcement session itself — mostly gapped, mostly unbuyable
     [1,5]    the week after you could actually buy at the day-0 close
@@ -23,8 +28,8 @@ Deals are grouped into cohorts because the interesting hypothesis is not "does
 policy pay" but "which STRUCTURE pays": contracted cash economics (price floors,
 offtake, multi-year procurement) versus a headline equity stake with no attached
 revenue, versus a non-binding LOI, versus extraction, where the government takes
-a cut and is a cost. Each cohort reports median CAR, a bootstrap 95% confidence
-interval and a sign-test p-value, and the site prints the sample size next to
+a cut and is a cost. Each cohort reports a median abnormal return, a bootstrap 95%
+confidence interval and a sign-test p-value, and the site prints the sample size next to
 every one of them, because with n in the teens most of these are anecdotes with
 error bars and saying so is the whole point.
 
@@ -239,13 +244,20 @@ def event_study(close, spy, date_str):
     aligned_m = r_m.reindex(r_s.index).fillna(0.0)
     ar = r_s.values - (alpha + beta * aligned_m.values)
 
-    def car(a, b):
+    def bhar(a, b):
+        """Buy-and-hold abnormal return: what a holder actually experienced, minus what
+        the fitted market exposure would have returned over the same days. Summed daily
+        ARs (the textbook CAR) drift from the holding experience over long windows and
+        can print below -100%, which is not a thing that can happen to a share."""
         lo, hi = t0 + a, t0 + b
         if lo < 0 or hi >= len(ar) or hi < lo:
             return None
-        return round(float(np.sum(ar[lo:hi + 1]) * 100), 1)
+        r_actual = float(np.prod(1.0 + r_s.values[lo:hi + 1]) - 1.0)
+        expected = alpha + beta * aligned_m.values[lo:hi + 1]
+        r_expected = float(np.prod(1.0 + expected) - 1.0)
+        return round((r_actual - r_expected) * 100, 1)
 
-    windows = {k: car(a, b) for k, a, b in WINDOWS}
+    windows = {k: bhar(a, b) for k, a, b in WINDOWS}
     path = {}
     run = 0.0
     for d in range(PATH_FROM, PATH_TO + 1):
@@ -484,8 +496,9 @@ def main():
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "method": ("Market model event study. Alpha and beta are fitted by OLS on the 250 sessions "
                    "ending 21 before each announcement; abnormal return is the stock's return minus "
-                   "what that fitted market sensitivity predicts, and CARs cumulate it over the "
-                   "windows shown. Day 0 is the announcement session, which is mostly gapped and "
+                   "what that fitted market sensitivity predicts. Window figures are buy-and-hold "
+                   "abnormal returns — compounded, the way a holder experiences them — while the "
+                   "event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and "
                    "therefore mostly unbuyable; every other window starts at the day-0 close, the "
                    "first price a retail account could actually pay. Deals with under 60 estimation "
                    "observations fall back to a plain market adjustment and are labelled."),
