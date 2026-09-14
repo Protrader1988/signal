@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-14T21:49:03.044023+00:00",
+  "generated_utc": "2026-09-14T21:54:50.833899+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. Fifteen events across five structures is not a dataset, it is a set of anecdotes with error bars, and the bootstrap intervals and sign-test p-values are printed so that is visible rather than hidden. The registry is also curated, which means selection bias: deals that made headlines are over-represented against quiet ones. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "windows": [
@@ -1039,7 +1039,7 @@
         "15": 0.72,
         "16": 2.95,
         "17": 1.69,
-        "18": 23.71,
+        "18": 23.72,
         "19": 19.69,
         "20": 16.16,
         "21": 19.05,
@@ -1133,7 +1133,7 @@
         "10": -4.27,
         "11": -4.09,
         "12": -4.72,
-        "13": -6.29,
+        "13": -6.28,
         "14": -8.53,
         "15": -9.12,
         "16": -10.36,
@@ -1239,7 +1239,7 @@
         "18": -17.47,
         "19": -17.69,
         "20": -15.14,
-        "21": -13.24,
+        "21": -13.23,
         "22": -17.21,
         "23": -15.19,
         "24": -14.52,
@@ -2016,7 +2016,7 @@
         93.32,
         91.84,
         87.25,
-        90.99,
+        91.0,
         81.31,
         78.48,
         79.64,
@@ -2514,6 +2514,48 @@
       "status": "in registry"
     },
     {
+      "company": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+      "amount": 41519790021.9,
+      "date": "2026-09-11 14:48:13",
+      "agency": "Department of Energy",
+      "desc": "TAS::89 0240::TAS THIS PERFORMANCE-BASED MANAGEMENT CONTRACT (PBMC) IS FOR THE MANAGEMENT AND OPERATION OF THE LAWRENCE LIVERMORE NATIONAL LABORATORY (LLNL). TH",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "SAVANNAH RIVER MISSION COMPLETION, LLC",
+      "amount": 2594633227.72,
+      "date": "2026-09-11 13:25:15",
+      "agency": "Department of Energy",
+      "desc": "THIS AWARD IS FOR THE SAVANNAH RIVER INTEGRATED MISSION COMPLETION CONTRACT - TASK ORDER 6 (LIQUID WASTE OPERATIONS).",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89303723FEM400292_8900_89303322DEM000068_8900",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "FLUOR FEDERAL PETROLEUM OPERATIONS, LLC",
+      "amount": 2112195603.19,
+      "date": "2026-09-11 11:12:04",
+      "agency": "Department of Energy",
+      "desc": "IGF::OT::IGF  MANAGEMENT AND OPERATION OF THE STRATEGIC PETROLEUM RESERVE FACILITIES.",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEFE0011020_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
       "company": "Exclusive-White House weighs how to use Defense Production Act to expand US oil refining capacity, sources say - Investing.com",
       "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQZFdGbTA2X1ppMUVudG5IdGFoTmdyVXhhamJyN3g0b0o0Q1J1NUhuZm1SUnc3Y1BUU0lWNU1EaTRwejRkQ21WQ0RvTzRXNUNOb05hc0tJeUlEenp2SjZPNVRxdTJ2SGlXMURfYUo2MW9renljU1pCMWJEd3o0MmZRUmVRc3RQVG5Jc045b2xqeGI1anQxdW9XUFJfWnR6S3BpblhkTF80MUFjSUtvR1dqdURRVlFsZFRkVURuNUljNkRqSGwxTVVJUlR0QnQ3akY5QXgtN3EtWFVpeHRodUtVUndMckNxYkJBTGdQblY1NzRWdlR6NE56WA?oc=5",
       "date": "2026-09-11",
@@ -2536,47 +2578,255 @@
       "status": "in registry"
     },
     {
-      "company": "Government Ownership Stakes in Companies Becoming Routine Under Trump - cato.org",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRzE1M3paUFY5Wi10bDB3TjNGNkdSMDlZUVFmLTZPdWlFdEYxQkViU3gwYmV2NHc4UmVOTGNQa2JtRmRndktiR3g5SjM3SDhDR3o5MkxyY3RiSW5iTXQwWW5UNjlVZzBidXU1MC1mb0ozcW96Qm96ZFdCd2M0TE03Y0lvWlFGYkh2NUFzNFJSbl91Y0FnVXNV?oc=5",
-      "date": "2026-07-30",
-      "source": "cato.org",
-      "matched": "equity stake",
-      "form": "headline",
+      "company": "ALLIANCE FOR ENERGY INNOVATION, LLC",
+      "amount": 11030452829.7,
+      "date": "2026-09-09 18:24:18",
+      "agency": "Department of Energy",
+      "desc": "AWARD OF CONTRACT TO MANAGE AND OPERATE THE NATIONAL RENEWABLE ENERGY LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC3608GO28308_8900_-NONE-_-NONE-",
       "ticker": null,
-      "quality": "headline",
+      "quality": "award record",
       "status": "unverified"
     },
     {
-      "company": "Commerce Department quietly announces 7 new equity stakes in private companies - The Hill",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1IcFFHQ0x2bDFFcHhDLVVudlhZd3phemNtMExMQUkzUWZNSXV5c09pck0xSkUyM09RR1c3VGoxMkdhbzhlaHdQNEtjTDNud1g3Y1NaQkZYdVBlZWlKX0JqaUhZQmtCNXdGTGVqV2VaN3Q0TVVMM1ViVGhXa9IBgAFBVV95cUxNWVNzY2J0Q0FvcXF5Q3I2VGd0UXdQb3djTHlXNHJfZmdvT3lidktmT0ljTXM5SjZmalB2SVhUbkxiTUgxT0cxaFp2bjYtdGkwalZNZWI5d0E3bE5YRFJFQXBtWXN1R1NaMDVZejZ5V1NsRHBlSUo3Zlk0ai1HQmNzWg?oc=5",
-      "date": "2026-07-30",
-      "source": "The Hill",
-      "matched": "equity stake",
-      "form": "headline",
+      "company": "LOCKHEED MARTIN SERVICES, LLC",
+      "amount": 20646113720.09,
+      "date": "2026-09-09 13:40:38",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATION OF Y-12 PLANT AND OTHER PROGRAMS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-",
       "ticker": null,
-      "quality": "headline",
+      "quality": "award record",
       "status": "unverified"
     },
     {
-      "company": "The Shareholder State: Washington\u2019s Improvised Bet on Critical Minerals - Council on Foreign Relations",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVUJmZ3MtRzBLWHpIaGU0WHd5LWFjdFQtUEYyU0VvZzBGZWMza1h4Q1NCT24yeTJrcXh4WFluUHloMjAtSmR6cDFLc2staE4tRnBSU0xNWldVWWJBSTI0NEJBcUxqcFRYMHRzSnI0SUFsS0pzb1k1dWZ2a1ZTMDFRQ3BGYjJrNGVnU2lwQzlLM3pHZ0FJWk5Mb1NqVF9fd28?oc=5",
-      "date": "2026-07-30",
-      "source": "Council on Foreign Relations",
-      "matched": "offtake",
-      "form": "headline",
+      "company": "BROOKHAVEN SCIENCE ASSOCIATES LLC",
+      "amount": 8629200535.17,
+      "date": "2026-09-09 10:24:02",
+      "agency": "Department of Energy",
+      "desc": "IGF::OT::IGF TAS::89 0222::TAS M&O CONTRACT FOR BNL",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DESC0012704_8900_-NONE-_-NONE-",
       "ticker": null,
-      "quality": "headline",
+      "quality": "award record",
       "status": "unverified"
     },
     {
-      "company": "Pentagon Dangles $400,000 Salaries to Recruit Wall Street Bankers - WSJ",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdm5RQW5HemxYaEJ3ZEFqWnVzOHEwaEhRTnUzZy1SZG9HVXdsdll2VGwySlZTYXBGeFNUNnVwRXZEbURMRVZxbC0wVVBLMFNHNXBCMkhNZDJCVDdNbk91VjZfbjJEd3doSlVyblFlbmR0YjJkbWkwT0kxVUpfaXd0anhLb05vWXltV2cwYUxPOGUtS1IxQkttWlRIZnltN0I5d2k5M0hFaUZPUEM4dVJTSVZOQUhnNFVteEFpTQ?oc=5",
-      "date": "2026-07-17",
-      "source": "WSJ",
-      "matched": "federal investment",
-      "form": "headline",
+      "company": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+      "amount": 43198566451.99,
+      "date": "2026-09-08 14:16:37",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF CONTRACT AWARD DE-NA0003525 TO THE NATIONAL TECHNOLOGY&ENGINEERING SOLUTIONS OF SANDIA, LLC (NTESS) FOR THE MANAGEMENT AND OPERATION OF THE DEPA",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-",
       "ticker": null,
-      "quality": "headline",
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "LEIDOS, INC.",
+      "amount": 1063606916.0,
+      "date": "2026-09-08 10:50:32",
+      "agency": "Department of Energy",
+      "desc": "RESEARCH SUPPORT SERVICES (RSS)",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89243318CFE000003_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+      "amount": 34654023638.7,
+      "date": "2026-09-02 16:10:13",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF MANAGEMENT AND OPERATING CONTRACT FOR Y-12 NATIONAL SECURITY COMPLEX, PANTEX PLANT, WITH AN OPTION FOR SAVANNAH RIVER TRITIUM OPERATIONS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "TRIAD NATIONAL SECURITY, LLC",
+      "amount": 35199796916.66,
+      "date": "2026-09-01 22:30:07",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL::IGF COMPETITION FOR MANAGEMENT AND OPERATION OF LOS ALAMOS NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+      "amount": 1611506000.72,
+      "date": "2026-09-01 13:30:28",
+      "agency": "Department of Energy",
+      "desc": "SAVANNAH RIVER NATIONAL LABORATORY MANAGEMENT AND OPERATING (M&O) CONTRACT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89303321CEM000080_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "MISSION SUPPORT & TEST SERVICES LLC",
+      "amount": 7704787148.51,
+      "date": "2026-09-01 13:25:53",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF CONTRACT AWARD DE-NA0003624 TO THE MISSION SUPPORT AND TEST SERVICES LLC (MSTS) FOR THE MANAGEMENT AND OPERATION OF THE DEPARTMENT OF ENERGY NAT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "IDAHO ENVIRONMENTAL COALITION LLC",
+      "amount": 1635128064.97,
+      "date": "2026-09-01 10:30:03",
+      "agency": "Department of Energy",
+      "desc": "THE PURPOSE OF THIS ACTION IS TO AWARD THE ICP TEN YEAR PLAN HYBRID TASK ORDER UNDER SINGLE AWARD MASTER IDIQ CONTRACT 89303321DEM000061.  CLIN 05 S1W D&D IS IN",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89304223FEM400000_8900_89303321DEM000061_8900",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+      "amount": 27613237659.31,
+      "date": "2026-08-31 18:11:18",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+      "amount": 19926468209.5,
+      "date": "2026-08-31 14:08:33",
+      "agency": "Department of Energy",
+      "desc": "THIS PERFORMANCE-BASED MANAGEMENT CONTRACT (PBMC) IS FOR THE MANAGEMENT AND OPERATION OF THE ERNEST ORLANDO LAWRENCE BERKELEY NATIONAL LABORATORY (LBNL).  THE C",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0205CH11231_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "FLUOR MARINE PROPULSION, LLC",
+      "amount": 14753060287.21,
+      "date": "2026-08-31 11:30:20",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATION OF THE NAVAL NUCLEAR LABORATORY AND NAVAL NUCLEAR PROPULSION PROGRAM SUPPORT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "PANTEXAS DETERRENCE, LLC",
+      "amount": 3572209101.57,
+      "date": "2026-08-31 11:26:40",
+      "agency": "Department of Energy",
+      "desc": "CONTRACT 89233224CNA000004 FOR THE MANAGEMENT AND OPERATION OF THE PANTEX PLANT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "THE LELAND STANFORD JUNIOR UNIVERSITY",
+      "amount": 14945793492.77,
+      "date": "2026-08-31 10:21:57",
+      "agency": "Department of Energy",
+      "desc": "OPERATION AND MAINTENANCE                                   LINEAR ACCELLERATOR",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "UNITED CLEANUP OAK RIDGE LLC",
+      "amount": 2540845400.0,
+      "date": "2026-08-28 10:28:03",
+      "agency": "Department of Energy",
+      "desc": "OAK RIDGE RESERVATION CLEANUP CONTRACT TASK ORDERS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89303523FEM400032_8900_89303322DEM000067_8900",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+      "amount": 17654763333.19,
+      "date": "2026-08-28 10:03:38",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF MANAGEMENT AND OPERATION OF THE NATIONAL SECURITY CAMPUS -- CONTRACT NO. DE-NA0002839",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "BATTELLE ENERGY ALLIANCE, LLC",
+      "amount": 26444741719.86,
+      "date": "2026-08-27 14:30:32",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATIONS OF THE INL",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
       "status": "unverified"
     }
   ],
@@ -2592,22 +2842,6 @@
     {
       "title": "Modifying the Scope of Products of Canada Subject to the Additional Duties Imposed To Offset Canadian Discrimination Against the Commerce of the United States With Respect to Alcoholic Beverages",
       "link": "https://www.federalregister.gov/documents/2026/09/14/2026-18838/modifying-the-scope-of-products-of-canada-subject-to-the-additional-duties-imposed-to-offset",
-      "date": "2026-09-14",
-      "source": "Executive Office of the President",
-      "kind": "Presidential Document",
-      "matched": "tariff"
-    },
-    {
-      "title": "Excluding Certain Canadian Products From Importation Into the United States in Response to Continued Discrimination Against the Commerce of the United States With Respect to Motor Vehicles",
-      "link": "https://www.federalregister.gov/documents/2026/09/14/2026-18837/excluding-certain-canadian-products-from-importation-into-the-united-states-in-response-to-continued",
-      "date": "2026-09-14",
-      "source": "Executive Office of the President",
-      "kind": "Presidential Document",
-      "matched": "tariff"
-    },
-    {
-      "title": "Excluding Certain Canadian Products From Importation Into the United States in Response to Continued Discrimination Against the Commerce of the United States With Respect to Dairy",
-      "link": "https://www.federalregister.gov/documents/2026/09/14/2026-18836/excluding-certain-canadian-products-from-importation-into-the-united-states-in-response-to-continued",
       "date": "2026-09-14",
       "source": "Executive Office of the President",
       "kind": "Presidential Document",
@@ -2705,6 +2939,14 @@
       "title": "Readout of Secretary of War Pete Hegseth's Meeting With Australia Deputy Prime Minister and Minister for Defence Richard Marles",
       "link": "https://www.war.gov/News/Releases/Release/Article/4589553/readout-of-secretary-of-war-pete-hegseths-meeting-with-australia-deputy-prime-m/",
       "date": "2026-09-02",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Department of War Invests $11.4 Million to Enhance Manufacturing of W-Band Traveling-Wave Tube Amplifiers and Modernized Space Traveling-Wave Tube Amplifiers",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4587424/department-of-war-invests-114-million-to-enhance-manufacturing-of-w-band-travel/",
+      "date": "2026-09-01",
       "source": "Dept. of War",
       "kind": "release",
       "matched": "defense"
@@ -2867,49 +3109,54 @@
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-14T21:44:39+00:00"
+      "checked_utc": "2026-09-14T21:52:10+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-14T21:45:09+00:00"
-    },
-    "dow_contracts": {
-      "ok": true,
-      "note": "0 matching announcements",
-      "checked_utc": "2026-09-14T21:45:32+00:00"
+      "checked_utc": "2026-09-14T21:52:40+00:00"
     },
     "usaspending_recent": {
       "ok": true,
-      "note": "32 of 80 awards over $50M in scope agencies",
-      "checked_utc": "2026-09-14T21:46:04+00:00"
+      "note": "32 of 80 awards over $50M in scope agencies [Award Amount,Awarding Agency,Description,Last Modified Date,Recipient ]",
+      "checked_utc": "2026-09-14T21:52:41+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-09-14T21:46:07+00:00"
+      "checked_utc": "2026-09-14T21:52:43+00:00"
     },
     "federal_register": {
       "ok": true,
-      "note": "7 documents",
-      "checked_utc": "2026-09-14T21:46:10+00:00"
+      "note": "5 documents",
+      "checked_utc": "2026-09-14T21:52:47+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "10 releases",
-      "checked_utc": "2026-09-14T21:46:10+00:00"
+      "checked_utc": "2026-09-14T21:52:47+00:00"
+    },
+    "dow_contracts": {
+      "ok": false,
+      "note": "The read operation timed out",
+      "checked_utc": "2026-09-14T21:53:12+00:00"
+    },
+    "usaspending_agg": {
+      "ok": false,
+      "note": "HTTP Error 404: Not Found",
+      "checked_utc": "2026-09-14T21:54:50+00:00"
     },
     "usaspending": {
       "ok": true,
-      "note": "queried",
-      "checked_utc": "2026-09-14T21:49:03+00:00"
+      "note": "queried [Action Date,Award Amount,Awarding Agency,Recipient Name,agency_slug,aw]",
+      "checked_utc": "2026-09-14T21:54:50+00:00"
     }
   },
   "counts": {
     "events": 15,
     "testable": 15,
     "radar": 12,
-    "detection": 7,
-    "documents": 17
+    "detection": 24,
+    "documents": 15
   }
 }
