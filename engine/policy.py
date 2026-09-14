@@ -355,21 +355,41 @@ def build_exposure(entries):
     return out
 
 
-def build_detection(cik_map, known_tickers):
-    filings = src.edgar_fulltext()
+def build_detection(cik_map, known_tickers, name_map):
+    """Four independent detectors, deliberately. EDGAR is the best evidence and the
+    least reliable to reach — the SEC returns 403 to most datacenter IPs — so the desk
+    does not depend on it: DoW contract announcements and USAspending awards are filed
+    whether or not anyone writes a press release, and news is the backstop. Everything
+    here is machine-found and stays unverified until a human puts it in the registry."""
     items = []
-    for f in filings:
+    for f in src.edgar_fulltext():
         tk = cik_map.get(f.get("cik")) if f.get("cik") else None
-        items.append({**f, "ticker": tk,
-                      "status": "in registry" if tk and tk in known_tickers else "unverified"})
+        items.append({**f, "ticker": tk, "source": "SEC EDGAR", "quality": "filing"})
+    for f in src.dow_contracts():
+        items.append({**f, "ticker": None, "quality": "announcement"})
+    for f in src.usaspending_recent():
+        items.append({**f, "ticker": None, "quality": "award record"})
+    for f in src.news_detect():
+        items.append({**f, "ticker": None, "quality": "headline"})
+
+    for it in items:
+        if not it.get("ticker"):
+            hay = (it.get("company") or "").upper()
+            for rec, tk in name_map.items():
+                if rec and rec in hay:
+                    it["ticker"] = tk
+                    break
+        it["status"] = ("in registry" if it.get("ticker") in known_tickers and it.get("ticker")
+                        else "unverified")
     seen, dedup = set(), []
-    for it in sorted(items, key=lambda x: x.get("date") or "", reverse=True):
-        k = (it.get("cik"), it.get("date"), it.get("matched"))
+    for it in sorted(items, key=lambda x: (x.get("date") or "", x.get("quality") == "filing"),
+                     reverse=True):
+        k = ((it.get("company") or "")[:60].upper(), it.get("date"), it.get("matched"))
         if k in seen:
             continue
         seen.add(k)
         dedup.append(it)
-    return dedup[:18]
+    return dedup[:24]
 
 
 LEDGER_PATH = "site/data/policy_ledger.json"
@@ -452,7 +472,9 @@ def main():
 
     cik_map = src.company_tickers()
     known = {d["ticker"] for d in REGISTRY}
-    detection = build_detection(cik_map, known)
+    name_map = {(d.get("recipient") or "").upper(): d["ticker"]
+                for d in REGISTRY + RADAR if d.get("recipient")}
+    detection = build_detection(cik_map, known, name_map)
     documents = (src.federal_register() + src.dow_releases())
     documents.sort(key=lambda d: d.get("date") or "", reverse=True)
     exposure = build_exposure(REGISTRY + RADAR)

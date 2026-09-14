@@ -15,13 +15,19 @@ Sources
   USAspending API             api.usaspending.gov  actual federal obligations by recipient
 """
 import json
+import os
 import time
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-# SEC asks automated clients to identify themselves and provide a contact.
-UA = {"User-Agent": "SignalTerminal/1.0 (+https://github.com/protrader1988/signal)",
+# SEC requires automated clients to identify themselves with a contact address and
+# rejects everything else with a 403 — including, in practice, most datacenter IPs.
+# Set a SEC_CONTACT repository secret (an email) to improve the odds; the desk works
+# without EDGAR because the other detectors below do not depend on it.
+SEC_CONTACT = os.environ.get("SEC_CONTACT", "").strip()
+UA = {"User-Agent": (f"SignalTerminal/1.0 ({SEC_CONTACT})" if SEC_CONTACT
+                     else "SignalTerminal/1.0 (+https://github.com/protrader1988/signal)"),
       "Accept-Encoding": "gzip, deflate", "Accept": "application/json"}
 
 HEALTH = {}
@@ -199,6 +205,121 @@ def dow_releases(cap=10):
 # ---------------------------------------------------------------------------
 # USAspending — real federal money, by recipient
 # ---------------------------------------------------------------------------
+DEAL_WORDS = ("equity", "warrant", "stake", "investment", "offtake", "price floor",
+              "strategic capital", "critical mineral", "stockpile", "preferred stock",
+              "public-private", "partnership")
+
+
+def dow_contracts(cap=40):
+    """Daily DoW contract announcements. These post around 5pm ET and are the first
+    public record of a lot of this money — often the same day as the company's 8-K."""
+    import feedparser
+    url = "https://www.war.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=400&Site=945&max=40"
+    try:
+        f = feedparser.parse(_get(url, timeout=25))
+        out = []
+        for e in f.entries[:cap]:
+            title = getattr(e, "title", "").strip()
+            body = (getattr(e, "summary", "") or "")[:4000]
+            hay = (title + " " + body).lower()
+            hit = [w for w in DEAL_WORDS if w in hay]
+            if not hit:
+                continue
+            t = getattr(e, "published_parsed", None)
+            out.append({"company": title[:120], "link": getattr(e, "link", ""),
+                        "date": datetime(*t[:6]).date().isoformat() if t else None,
+                        "source": "DoW contracts", "matched": hit[0], "form": "contract"})
+        _mark("dow_contracts", True, f"{len(out)} matching announcements")
+        return out
+    except Exception as e:
+        _mark("dow_contracts", False, str(e)[:120])
+        return []
+
+
+def usaspending_recent(days=45, min_amount=50_000_000, limit=60):
+    """Large recent federal awards, any recipient. This is the detector that does not
+    depend on anyone writing a press release: the money is filed whether or not it is
+    announced, and a new nine-figure recipient in these agencies is worth a look."""
+    end = datetime.now(timezone.utc).date()
+    start = end - timedelta(days=days)
+    payload = {
+        "filters": {
+            "time_period": [{"start_date": start.isoformat(), "end_date": end.isoformat()}],
+            "award_type_codes": ["A", "B", "C", "D"],
+            "award_amounts": [{"lower_bound": min_amount}],
+            "agencies": [
+                {"type": "awarding", "tier": "toptier", "name": "Department of Defense"},
+                {"type": "awarding", "tier": "toptier", "name": "Department of Energy"},
+                {"type": "awarding", "tier": "toptier", "name": "Department of Commerce"},
+            ],
+        },
+        "fields": ["Award Amount", "Recipient Name", "Action Date", "Awarding Agency",
+                   "Description", "generated_internal_id"],
+        "sort": "Award Amount", "order": "desc", "limit": limit, "page": 1, "subawards": False,
+    }
+    try:
+        data = post_json("https://api.usaspending.gov/api/v2/search/spending_by_award/", payload)
+        rows = (data or {}).get("results", []) or []
+        out = []
+        for r in rows:
+            name = (r.get("Recipient Name") or "").strip()
+            if not name:
+                continue
+            gid = r.get("generated_internal_id")
+            out.append({
+                "company": name,
+                "amount": r.get("Award Amount"),
+                "date": r.get("Action Date"),
+                "agency": r.get("Awarding Agency"),
+                "desc": (r.get("Description") or "")[:160],
+                "source": "USAspending",
+                "matched": "award >= $%dM" % (min_amount // 1_000_000),
+                "form": "award",
+                "link": (f"https://www.usaspending.gov/award/{gid}" if gid else
+                         "https://www.usaspending.gov/search?keywords=" + urllib.parse.quote(name)),
+            })
+        _mark("usaspending_recent", True, f"{len(out)} awards over ${min_amount/1e6:.0f}M")
+        return out
+    except Exception as e:
+        _mark("usaspending_recent", False, str(e)[:120])
+        return []
+
+
+NEWS_DETECT = [
+    ("equity stake", '"equity stake" ("Department of War" OR "Commerce Department") company'),
+    ("federal investment", '("Office of Strategic Capital" OR "Defense Production Act") investment company'),
+    ("offtake", '"offtake agreement" government critical minerals company'),
+]
+
+
+def news_detect(cap=5):
+    """Backstop detector over free news RSS. Lowest evidentiary quality of the three,
+    and labelled as such wherever it surfaces."""
+    import feedparser
+    out = []
+    try:
+        for label, q in NEWS_DETECT:
+            url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q) +
+                   "&hl=en-US&gl=US&ceid=US:en")
+            f = feedparser.parse(_get(url, timeout=20))
+            for e in f.entries[:cap]:
+                title = getattr(e, "title", "").strip()
+                srcname = ""
+                if getattr(e, "source", None) and getattr(e.source, "title", None):
+                    srcname = e.source.title
+                if not srcname and " - " in title:
+                    title, srcname = title.rsplit(" - ", 1)
+                t = getattr(e, "published_parsed", None)
+                out.append({"company": title[:140], "link": getattr(e, "link", ""),
+                            "date": datetime(*t[:6]).date().isoformat() if t else None,
+                            "source": srcname or "news", "matched": label, "form": "headline"})
+            time.sleep(0.3)
+        _mark("news_detect", True, f"{len(out)} headlines")
+    except Exception as e:
+        _mark("news_detect", False, str(e)[:120])
+    return out
+
+
 def usaspending_awards(recipient, years=2, limit=100):
     """Prime contract + grant awards whose recipient name matches. Returns total
     obligations, count, most recent action date and a verification link.

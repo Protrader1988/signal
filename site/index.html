@@ -297,7 +297,7 @@
       <div id="policyExposure"></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">EDGAR full-text scan for deal language in fresh 8-Ks</span><span class="expo" id="policyDetectMeta"></span></div>
+      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">EDGAR filings, DoW contracts, $50M+ federal awards, policy headlines</span><span class="expo" id="policyDetectMeta"></span></div>
       <div id="policyDetect"></div>
     </div>
     <div class="card">
@@ -483,7 +483,8 @@ function drawPolicy(p){
       wins.map(w=>`<td class="num">${ci(c.windows[w.key])}</td>`).join('')+
       `<td class="num"><span class="${(c.windows.m1&&c.windows.m1.p!=null&&c.windows.m1.p<0.1)?'gold':'neu'}">${(c.windows.m1&&c.windows.m1.p!=null)?c.windows.m1.p:'—'}</span></td></tr>`;
   }
-  $('policyCohorts').innerHTML=ch+'</tbody></table></div>';
+  $('policyCohorts').innerHTML=ch+'</tbody></table></div>'+
+    '<div class="metaline" style="padding:0 20px 16px">A dash means fewer than three deals in that structure have lived long enough to complete the window \u2014 the cell stays empty rather than showing an average of one or two. Ranges under each median are bootstrap 95% confidence intervals; where they straddle zero, the median is not evidence of anything.</div>';
 
   // deals
   $('policyMeta').innerHTML=`<span class="mono">${(p.counts&&p.counts.events)||0} deals</span>`;
@@ -517,9 +518,10 @@ function drawPolicy(p){
   // detection
   const det=p.detection||[];
   $('policyDetectMeta').innerHTML=`<span class="mono">${det.length} filings</span>`;
-  $('policyDetect').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Machine-found, human-unverified. Each run searches EDGAR full text for the language these deals produce — Office of Strategic Capital, CHIPS equity, DPA purchase commitments, government preferred stock — and lists what it finds. A hit is a filing to read, not a deal, and nothing here enters the study above until it is confirmed and added by hand.</div></div>'+
-    (det.length?det.map(d=>`<div class="newsrow"><span class="tk">${d.ticker||(d.form||'8-K')}</span><a href="${d.link}" target="_blank" rel="noopener">${d.company} — matched “${d.matched}”</a><span class="src">${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`).join('')
-      :'<div class="empty">No filings matched the deal-language queries in the last 45 days. That is a real answer, not an error.</div>');
+  const amt=v=>v==null?'':(v>=1e9?' · $'+(v/1e9).toFixed(1)+'B':(v>=1e6?' · $'+Math.round(v/1e6)+'M':''));
+  $('policyDetect').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Machine-found, human-unverified, from four independent detectors: EDGAR full text for the language these deals produce, Department of War contract announcements, federal awards over $50M filed to USAspending, and policy headlines as a backstop. The award and contract feeds matter most, because that money is filed whether or not anyone issues a press release. A hit is something to read, not a deal — nothing enters the study above until it is verified and added by hand.</div></div>'+
+    (det.length?det.map(d=>`<div class="newsrow"><span class="tk">${d.ticker||(d.quality==='award record'?'AWARD':(d.quality==='announcement'?'DoW':(d.quality==='filing'?'8-K':'NEWS')))}</span><a href="${d.link}" target="_blank" rel="noopener">${d.company}${amt(d.amount)}</a><span class="src">${d.matched||''} · ${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`).join('')
+      :'<div class="empty">Nothing matched in the detection window. That is a real answer, not an error — check the source health strip below to be sure the feeds actually ran.</div>');
 
   // documents
   const docs=p.documents||[];
@@ -529,7 +531,7 @@ function drawPolicy(p){
   $('policyMethod').textContent=(p.method||'')+' '+(p.limits||'');
 
   const h=p.health||{};
-  const names={sec_edgar:'edgar',sec_tickers:'cik map',federal_register:'fed register',dow_rss:'dow',usaspending:'usaspending'};
+  const names={sec_edgar:'edgar',sec_tickers:'cik map',dow_contracts:'dow contracts',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',usaspending:'usaspending'};
   $('policyHealth').innerHTML=Object.keys(names).map(k=>{const s=h[k];
     return `<span><b>${names[k]}</b> <span class="${s?(s.ok?'up':'down'):'neu'}">${s?(s.ok?'ok':'failed'):'not run'}</span></span>`;}).join('')+
     `<span><b>generated</b> ${(p.generated_utc||'').slice(0,16).replace('T',' ')} UTC</span>`;
