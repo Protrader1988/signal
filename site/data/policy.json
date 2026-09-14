@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-14T21:40:26.718132+00:00",
+  "generated_utc": "2026-09-14T21:49:03.044023+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. Fifteen events across five structures is not a dataset, it is a set of anecdotes with error bars, and the bootstrap intervals and sign-test p-values are printed so that is visible rather than hidden. The registry is also curated, which means selection bias: deals that made headlines are over-represented against quiet ones. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "windows": [
@@ -1039,7 +1039,7 @@
         "15": 0.72,
         "16": 2.95,
         "17": 1.69,
-        "18": 23.72,
+        "18": 23.71,
         "19": 19.69,
         "20": 16.16,
         "21": 19.05,
@@ -2016,7 +2016,7 @@
         93.32,
         91.84,
         87.25,
-        91.0,
+        90.99,
         81.31,
         78.48,
         79.64,
@@ -2080,6 +2080,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=HUNTINGTON%20INGALLS"
       }
     },
@@ -2095,6 +2096,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=GENERAL%20DYNAMICS"
       }
     },
@@ -2110,6 +2112,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=L3HARRIS"
       }
     },
@@ -2125,6 +2128,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=INTERNATIONAL%20BUSINESS%20MACHINES"
       }
     },
@@ -2140,6 +2144,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=AEROVIRONMENT"
       }
     },
@@ -2155,6 +2160,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=KRATOS"
       }
     },
@@ -2170,6 +2176,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": true,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=INTEL"
       }
     },
@@ -2185,6 +2192,7 @@
         "last_action": null,
         "top_agency": "Department of Energy",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=CENTRUS"
       }
     },
@@ -2200,6 +2208,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=GLOBALFOUNDRIES"
       }
     },
@@ -2215,6 +2224,7 @@
         "last_action": null,
         "top_agency": "Department of State",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=RAMACO"
       }
     },
@@ -2230,6 +2240,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=ENERGY%20FUELS"
       }
     },
@@ -2245,6 +2256,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=PERPETUA"
       }
     },
@@ -2260,6 +2272,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=MP%20MATERIALS"
       }
     },
@@ -2275,6 +2288,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=RIGETTI"
       }
     },
@@ -2290,6 +2304,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=ALCOA"
       }
     },
@@ -2305,6 +2320,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=ELMET"
       }
     },
@@ -2320,6 +2336,7 @@
         "last_action": null,
         "top_agency": "Department of Energy",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=BWX%20TECHNOLOGIES"
       }
     },
@@ -2335,6 +2352,7 @@
         "last_action": null,
         "top_agency": "Department of Defense",
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=USA%20RARE%20EARTH"
       }
     },
@@ -2350,6 +2368,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=NVIDIA"
       }
     },
@@ -2365,6 +2384,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=ADVANCED%20MICRO%20DEVICES"
       }
     },
@@ -2380,6 +2400,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=LITHIUM%20AMERICAS"
       }
     },
@@ -2395,6 +2416,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=TRILOGY%20METALS"
       }
     },
@@ -2410,6 +2432,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=CAMECO"
       }
     },
@@ -2425,6 +2448,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=D-WAVE"
       }
     },
@@ -2440,6 +2464,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=NIOCORP"
       }
     },
@@ -2455,6 +2480,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=CRITICAL%20METALS"
       }
     },
@@ -2470,6 +2496,7 @@
         "last_action": null,
         "top_agency": null,
         "truncated": false,
+        "basis": "sum of top 100 awards",
         "link": "https://www.usaspending.gov/search?keywords=OKLO"
       }
     }
@@ -2509,10 +2536,10 @@
       "status": "in registry"
     },
     {
-      "company": "Government Ownership Stakes in Companies Becoming Routine Under Trump - Cato Institute",
+      "company": "Government Ownership Stakes in Companies Becoming Routine Under Trump - cato.org",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRzE1M3paUFY5Wi10bDB3TjNGNkdSMDlZUVFmLTZPdWlFdEYxQkViU3gwYmV2NHc4UmVOTGNQa2JtRmRndktiR3g5SjM3SDhDR3o5MkxyY3RiSW5iTXQwWW5UNjlVZzBidXU1MC1mb0ozcW96Qm96ZFdCd2M0TE03Y0lvWlFGYkh2NUFzNFJSbl91Y0FnVXNV?oc=5",
       "date": "2026-07-30",
-      "source": "Cato Institute",
+      "source": "cato.org",
       "matched": "equity stake",
       "form": "headline",
       "ticker": null,
@@ -2551,239 +2578,9 @@
       "ticker": null,
       "quality": "headline",
       "status": "unverified"
-    },
-    {
-      "company": "The Department of War's Office of Strategic Capital Introduces National Security Fund Finance Program - war.gov",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcDdHdEJXcmRZOEI4dU9jM2ppdVQ3RGVZeGprY0J1R3JVMGIxU3pUVC0zVTk4Q29lYzZ6Y3VtT2J5dWQzVFZQT0xad2swWU5QV3lENkZBMF9qb25nallWa0g2WjBLOEV3WTBXWEZWbF9Qa0gtU0VXd2lqUEpQRzJlaGpjd0UzU2Z5X0dLOVRlUWhHcXpJQlk4ZzROYUpTaEZ3d1hhdUVTMDQxbnIxTXV4LTlhY2xvSmhIblktU0l6VE9vcl9LZDhhLWlrcklSd3BwVU83bA?oc=5",
-      "date": "2026-07-14",
-      "source": "war.gov",
-      "matched": "federal investment",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "Canada agrees on a potential C$400 million Teck investment for strategic metals production - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa0czdno5amNEUEdVVnJyZmZyYkZJSW95clc2dTFJNFRtdzVEN0tqRGRWb1VkLVc5elpld0Q3djNjNUR1WmJxRmUtdEFTLWJxczE3UHd0ZWI1X2FCMlROOWhYekMwRUczZEhNdkxvcWV0MGFCN0E4dURLZURuX1VaWVFTVUZHSVVZVkVBV1pFNzR2VDRWNWlqWTdtdE5QUmlfcVU1YmFfS2lkNUtDQndUXzdwOEZQcHJfV1phQkU0NVo1X00?oc=5",
-      "date": "2026-07-07",
-      "source": "Reuters",
-      "matched": "offtake",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "The Department of War's Office of Strategic Capital Signs $725 Million Conditional Loan Co - war.gov",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYkRZWGwzb3RET2JianZmSW5lX1BwZXJDN1dWbzJzSTBSQU9SV0lFWVpPbjVPcTB6MWM3RnBpN0xHbWdIQjRlazVYMjE0Wi0wNl9yeF9ieTNDNFBLNWtUY1Z2MlJ2UkVadFJXcXg5UTAwNkh4ZGpRTmxDcFpqNUNPeUJtYVUzOTNHWlBLREVTclp1SEFKTUlWcW5TOUlmLWZYT0Qzc2UwNF9uZ0dvem9hMjZTdm4xTkY5WHgyblNWdkRrOWhIZ3VDN1BkVm1EQ0x6U0NCVA?oc=5",
-      "date": "2026-06-18",
-      "source": "war.gov",
-      "matched": "federal investment",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "Critical Metals Corp. Secures 15-Year Offtake Agreement with REalloys Inc. for Rare Earth Concentrate from Tanbreez Project | CRML Stock New",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNSUNxRmZRdTBocENQNlFGM2VaandYRlZMUTBlclhWRFJrQThLMVBFMmF1aGttR3IyZ3JXaW1VY0ZNcGttR2xoM0VaZTRlUkNvQ2RmUFlYc21lVlBnQUplVjlsVjUzUXVDN2NBR01hZFZzcmhpSWdPUlBnU3pEMXl0alVfd1JaLXVRZkExT19QWWtyNk9DMUJiYjFsOXkxVmk3NUlzWThRRUY5MHk3QTJ5alY0WDZKWnBzd3oxYlRiZmZseXV1emZINGNGZFVsN0JlZXhRTFB1QzNTM19HUnRjU1kxWmo5TE1VSXFiMg?oc=5",
-      "date": "2026-05-21",
-      "source": "Quiver Quantitative",
-      "matched": "offtake",
-      "form": "headline",
-      "ticker": "CRML",
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "Greenland rare earth mine signs 15-year supply deal for U.S. defense - Stock Titan",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdnZRN3hNS3RQZ0lCU00zVzEyMmt1TU04QkQwaXFjdXhFd0VkRnhxWlpCbG1Zc0lMOElTNTNnVlMzSGtFY0RBcDRBT2tySzQ2Um9qbGxHcWJOWXBxaDlzTUdkOU5pMFV5VkItSnVyaU9PSzBiUzY1TnUwNWVRaWx0ZTJ5N1RNNDUxNzFJTGQzRXphckR6UnZmajl1bnQ1cWV5YWJFOTVlR1ItZDcxb3BkTmk1UmFQQ2Y3QlFtVw?oc=5",
-      "date": "2026-05-21",
-      "source": "Stock Titan",
-      "matched": "offtake",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "Ranking Member Lofgren Raises Alarm Over Terms of Commerce Department Equity Stake in USA Rare Earth, Condemns Lutnick Conflict of Interest ",
-      "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQbld3Vl9Gam1CeGZ3UGFJYmwwUkk2cVJ3TFd0aktrX3VndFVVSkx2d3c0QVVjdURZWS1raXlHZ0taMDFOTG0wQmZzVUFBNWQ0LU9ud0tUdUJxeWZ2UWdLcktFUGVobmpZbXBneTFwNVlJMzF6S2tXR29xc3pmakJ3RzdWUDU2cURHSGFFdVIwREJfaHhHSVNFeWI2ZnppZUE4RnViM1MtbElraWkwREZzRk5KZ0hsdGNIaXRmRVlNMW5NazluRTVnXzN2ck43WTlWa1BZeUdmbVZjTGZRY21qQ3hESDJoNDltWVFGVm1jLU9JSG9DNWc2dVZ0T2JpTkc0QzltU1JGNzVoY3oxNHhmYW9qT0hfcW1HS3pRU1RuSQ?oc=5",
-      "date": "2026-03-20",
-      "source": "democrats-science.house.gov",
-      "matched": "equity stake",
-      "form": "headline",
-      "ticker": "USAR",
-      "quality": "headline",
-      "status": "in registry"
-    },
-    {
-      "company": "A Pentagon Sovereign Wealth Fund? - Cato Institute",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAyMnVRZ0JqcXlaQnNhZURHeVlTQjRnZE4xUEQ2M25obHlJem5RMm5lcDl3ekJSR0RneEVEMUs2aG1MRVJ2Z0d0QnNfSndmdkZuQ2V3QnpvSTlIUDhOa19RbXhqMDJjbGM?oc=5",
-      "date": "2026-03-16",
-      "source": "Cato Institute",
-      "matched": "federal investment",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "Follow the Money: The U.S. Government Funding Hit List for Critical Minerals Companies (2023\u20132026) - InvestorNews",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWGl4VEFUNUtLVnRScjd6SUg4MW92ZklIbFFlTE5QSXhHVDJhT2psOFpGenRuNGh3b0xEWTQxYmdreEZvWTZMeTBrQlBFbkh1LUgwb0lwZVBGeUxlbi16b2FzRHZiMDZXWmdodkFReUo4SUNVeGxNQ2VCclNnYkJKNjB3ZHBBUkR5NmVWcFVBR2pxQWRaUDhDQmpkTjEzb0FXclE4YTQ3RGJ3R1I1TktLVDN1NlhMdEZGSEZ5SVBSUQ?oc=5",
-      "date": "2026-02-11",
-      "source": "InvestorNews",
-      "matched": "offtake",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "status": "unverified"
-    },
-    {
-      "company": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
-      "amount": 43198566451.99,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "IGF::CL,CT::IGF CONTRACT AWARD DE-NA0003525 TO THE NATIONAL TECHNOLOGY&ENGINEERING SOLUTIONS OF SANDIA, LLC (NTESS) FOR THE MANAGEMENT AND OPERATION OF THE DEPA",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "UT-BATTELLE LLC",
-      "amount": 42436211927.7,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "MANAGEMENT AND OPERATION OF THE OAK RIDGE NATIONAL LABORATORY",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
-      "amount": 41519790021.9,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "TAS::89 0240::TAS THIS PERFORMANCE-BASED MANAGEMENT CONTRACT (PBMC) IS FOR THE MANAGEMENT AND OPERATION OF THE LAWRENCE LIVERMORE NATIONAL LABORATORY (LLNL). TH",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "TRIAD NATIONAL SECURITY, LLC",
-      "amount": 35199796916.66,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "IGF::CL::IGF COMPETITION FOR MANAGEMENT AND OPERATION OF LOS ALAMOS NATIONAL LABORATORY",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "CONSOLIDATED NUCLEAR SECURITY, LLC",
-      "amount": 34654023638.7,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "IGF::CL,CT::IGF MANAGEMENT AND OPERATING CONTRACT FOR Y-12 NATIONAL SECURITY COMPLEX, PANTEX PLANT, WITH AN OPTION FOR SAVANNAH RIVER TRITIUM OPERATIONS",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "BATTELLE MEMORIAL INSTITUTE",
-      "amount": 30853836006.83,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "BATTELLE MEMORIAL INSTITUTE/PACIFIC NORTHWEST               LABORATORY OPERATING AND MANAGING CONTRACT",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0576RL01830_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
-      "amount": 27613237659.31,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "BATTELLE ENERGY ALLIANCE, LLC",
-      "amount": 26444741719.86,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "MANAGEMENT AND OPERATIONS OF THE INL",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
-    },
-    {
-      "company": "LOCKHEED MARTIN SERVICES, LLC",
-      "amount": 20646113720.09,
-      "date": null,
-      "agency": "Department of Energy",
-      "desc": "MANAGEMENT AND OPERATION OF Y-12 PLANT AND OTHER PROGRAMS",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "status": "unverified"
     }
   ],
   "documents": [
-    {
-      "title": "Sunshine Act Meetings",
-      "link": "https://www.federalregister.gov/documents/2026/09/14/2026-18767/sunshine-act-meetings",
-      "date": "2026-09-14",
-      "source": "Nuclear Regulatory Commission",
-      "kind": "Notice",
-      "matched": "nuclear"
-    },
-    {
-      "title": "Expanded Examination Cycle for Certain Small Insured Depository Institutions and U.S. Branches and Agencies of Foreign Banks",
-      "link": "https://www.federalregister.gov/documents/2026/09/14/2026-18766/expanded-examination-cycle-for-certain-small-insured-depository-institutions-and-us-branches-and",
-      "date": "2026-09-14",
-      "source": "Treasury Department, Comptroller of the Currency",
-      "kind": "Rule",
-      "matched": "export control"
-    },
     {
       "title": "Modifying the Scope of Products of Canada Subject to the Additional Duties Imposed To Offset Canadian Discrimination Against the Commerce of the United States With Respect to Motor Vehicles",
       "link": "https://www.federalregister.gov/documents/2026/09/14/2026-18839/modifying-the-scope-of-products-of-canada-subject-to-the-additional-duties-imposed-to-offset",
@@ -2833,54 +2630,6 @@
       "matched": "defense"
     },
     {
-      "title": "Information Collection: NRC Form 212, Qualifications Investigation Professional, Technical, and Administrative Positions",
-      "link": "https://www.federalregister.gov/documents/2026/09/11/2026-18550/information-collection-nrc-form-212-qualifications-investigation-professional-technical-and",
-      "date": "2026-09-11",
-      "source": "Nuclear Regulatory Commission",
-      "kind": "Notice",
-      "matched": "nuclear"
-    },
-    {
-      "title": "Information Collection: NRC Form 366, Licensee Event Report",
-      "link": "https://www.federalregister.gov/documents/2026/09/11/2026-18544/information-collection-nrc-form-366-licensee-event-report",
-      "date": "2026-09-11",
-      "source": "Nuclear Regulatory Commission",
-      "kind": "Notice",
-      "matched": "nuclear"
-    },
-    {
-      "title": "Information Collection: IAEA Design Information Questionnaire Forms",
-      "link": "https://www.federalregister.gov/documents/2026/09/11/2026-18543/information-collection-iaea-design-information-questionnaire-forms",
-      "date": "2026-09-11",
-      "source": "Nuclear Regulatory Commission",
-      "kind": "Notice",
-      "matched": "nuclear"
-    },
-    {
-      "title": "Amendment to the International Traffic in Arms Regulations: Prohibited Exports, Imports, and Sales to or From Certain Countries-Cyprus",
-      "link": "https://www.federalregister.gov/documents/2026/09/11/2026-18630/amendment-to-the-international-traffic-in-arms-regulations-prohibited-exports-imports-and-sales-to",
-      "date": "2026-09-11",
-      "source": "State Department",
-      "kind": "Rule",
-      "matched": "export control"
-    },
-    {
-      "title": "Publication of Venezuela Sanctions Regulations Web General Licenses 50A and 51A",
-      "link": "https://www.federalregister.gov/documents/2026/09/11/2026-18572/publication-of-venezuela-sanctions-regulations-web-general-licenses-50a-and-51a",
-      "date": "2026-09-11",
-      "source": "Treasury Department, Foreign Assets Control Office",
-      "kind": "Rule",
-      "matched": "export control"
-    },
-    {
-      "title": "Publication of Venezuela Sanctions Regulations Web General Licenses 30B and 51.",
-      "link": "https://www.federalregister.gov/documents/2026/09/11/2026-18569/publication-of-venezuela-sanctions-regulations-web-general-licenses-30b-and-51",
-      "date": "2026-09-11",
-      "source": "Treasury Department, Foreign Assets Control Office",
-      "kind": "Rule",
-      "matched": "export control"
-    },
-    {
       "title": "Foreign-Trade Zone (FTZ) 183, Notification of Proposed Production Activity; Dongjin Semichem Texas, Inc.; (Semiconductor-Grade Photoresist Thinner); Killeen, Texas",
       "link": "https://www.federalregister.gov/documents/2026/09/10/2026-18490/foreign-trade-zone-ftz-183-notification-of-proposed-production-activity-dongjin-semichem-texas-inc",
       "date": "2026-09-10",
@@ -2892,6 +2641,70 @@
       "title": "National 9/11 Pentagon Memorial Temporary Closure",
       "link": "https://www.war.gov/News/Releases/Release/Article/4595549/national-911-pentagon-memorial-temporary-closure/",
       "date": "2026-09-10",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Department of War Announces Navy's First Advanced Nuclear Microreactor Deployment at Naval Weapons Station Crane, Indiana",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4593065/department-of-war-announces-navys-first-advanced-nuclear-microreactor-deploymen/",
+      "date": "2026-09-09",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Certain Foreign-Fabricated Semiconductor Devices, Products Containing the Same, and Components Thereof; Notice of a Commission Determination Not To Review an Initial Determination Granting a Joint Motion To Terminate the Investigation",
+      "link": "https://www.federalregister.gov/documents/2026/09/08/2026-18260/certain-foreign-fabricated-semiconductor-devices-products-containing-the-same-and-components-thereof",
+      "date": "2026-09-08",
+      "source": "International Trade Commission",
+      "kind": "Notice",
+      "matched": "semiconductor"
+    },
+    {
+      "title": "United States Department of War and Mongolia's Ministry of Defense Conduct Bilateral Defense Framework",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4593737/united-states-department-of-war-and-mongolias-ministry-of-defense-conduct-bilat/",
+      "date": "2026-09-08",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Department of War Secures Unmodified SOC-1 Type 2 Opinion for War Data Platform, Accelerating Path to 2028 Clean Audit",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4591015/department-of-war-secures-unmodified-soc-1-type-2-opinion-for-war-data-platform/",
+      "date": "2026-09-03",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Department of War Launches Secure Space Network to Break Down Barriers to Classified Defense Work",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4590688/department-of-war-launches-secure-space-network-to-break-down-barriers-to-class/",
+      "date": "2026-09-03",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Honoring the American History of the Great Lakes and Renaming Lake Ontario as Lake America",
+      "link": "https://www.federalregister.gov/documents/2026/09/02/2026-18020/honoring-the-american-history-of-the-great-lakes-and-renaming-lake-ontario-as-lake-america",
+      "date": "2026-09-02",
+      "source": "Executive Office of the President",
+      "kind": "Presidential Document",
+      "matched": "shipbuilding"
+    },
+    {
+      "title": "One Year In, U.S. Space Command Headquarters Relocation Moving Expeditiously to 'Rocket City, USA'",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4589725/one-year-in-us-space-command-headquarters-relocation-moving-expeditiously-to-ro/",
+      "date": "2026-09-02",
+      "source": "Dept. of War",
+      "kind": "release",
+      "matched": "defense"
+    },
+    {
+      "title": "Readout of Secretary of War Pete Hegseth's Meeting With Australia Deputy Prime Minister and Minister for Defence Richard Marles",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4589553/readout-of-secretary-of-war-pete-hegseths-meeting-with-australia-deputy-prime-m/",
+      "date": "2026-09-02",
       "source": "Dept. of War",
       "kind": "release",
       "matched": "defense"
@@ -3054,49 +2867,49 @@
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-14T21:37:55+00:00"
+      "checked_utc": "2026-09-14T21:44:39+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-14T21:38:25+00:00"
+      "checked_utc": "2026-09-14T21:45:09+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "0 matching announcements",
-      "checked_utc": "2026-09-14T21:38:26+00:00"
+      "checked_utc": "2026-09-14T21:45:32+00:00"
     },
     "usaspending_recent": {
       "ok": true,
-      "note": "60 awards over $50M",
-      "checked_utc": "2026-09-14T21:38:36+00:00"
+      "note": "32 of 80 awards over $50M in scope agencies",
+      "checked_utc": "2026-09-14T21:46:04+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-09-14T21:38:38+00:00"
+      "checked_utc": "2026-09-14T21:46:07+00:00"
     },
     "federal_register": {
       "ok": true,
-      "note": "24 documents",
-      "checked_utc": "2026-09-14T21:38:41+00:00"
+      "note": "7 documents",
+      "checked_utc": "2026-09-14T21:46:10+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "10 releases",
-      "checked_utc": "2026-09-14T21:38:41+00:00"
+      "checked_utc": "2026-09-14T21:46:10+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried",
-      "checked_utc": "2026-09-14T21:40:26+00:00"
+      "checked_utc": "2026-09-14T21:49:03+00:00"
     }
   },
   "counts": {
     "events": 15,
     "testable": 15,
     "radar": 12,
-    "detection": 24,
-    "documents": 34
+    "detection": 7,
+    "documents": 17
   }
 }
