@@ -231,7 +231,7 @@ def dow_contracts(cap=40, as_documents=True):
     import feedparser
     url = "https://www.war.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=400&Site=945&max=40"
     try:
-        f = feedparser.parse(_get(url, timeout=25))
+        f = feedparser.parse(_get(url, timeout=40))
         out = []
         for e in f.entries[:cap]:
             title = getattr(e, "title", "").strip()
@@ -260,7 +260,35 @@ def _first(row, *keys):
     return None
 
 
+def _any_date(row):
+    """USAspending returns different date fields per award type and drops the ones it
+    does not recognise from the request, so scan for whatever date came back rather
+    than betting on one spelling."""
+    best = None
+    for k, v in (row or {}).items():
+        if "date" in k.lower() and v:
+            sv = str(v)[:10]
+            if len(sv) == 10 and (best is None or sv > best):
+                best = sv
+    return best
+
+
 AGENCY_HINTS = ("defense", "war", "energy", "commerce", "interior")
+
+# Management-and-operating contractors for national labs and cleanup sites take the
+# largest awards in the system by an order of magnitude. They are consortia that run
+# government facilities, not companies anyone can buy, and left in they crowd out
+# every actual deal.
+OPERATOR_PATTERNS = ("NATIONAL SECURITY", "MISSION COMPLETION", "SCIENCE ASSOCIATES",
+                     "ENGINEERING SOLUTIONS", "BATTELLE", "ALLIANCE FOR", "FEDERAL PETROLEUM",
+                     "LABORATOR", "UNIVERSIT", "RESEARCH CORPORATION", "UT-BATTELLE",
+                     "NATIONAL TECHNOLOGY", "FEDERAL SERVICES", "SITE SERVICES",
+                     "ENVIRONMENTAL MANAGEMENT", "LEGACY MANAGEMENT")
+
+
+def is_facility_operator(name):
+    n = (name or "").upper()
+    return any(pat in n for pat in OPERATOR_PATTERNS)
 
 
 def usaspending_recent(days=45, min_amount=50_000_000, limit=80):
@@ -286,16 +314,20 @@ def usaspending_recent(days=45, min_amount=50_000_000, limit=80):
         data = post_json("https://api.usaspending.gov/api/v2/search/spending_by_award/", payload)
         rows = (data or {}).get("results", []) or []
         out = []
+        dropped_ops = 0
         for r in rows:
             name = (r.get("Recipient Name") or "").strip()
             agency = r.get("Awarding Agency") or ""
             if not name or not any(h in agency.lower() for h in AGENCY_HINTS):
                 continue
+            if is_facility_operator(name):
+                dropped_ops += 1
+                continue
             gid = r.get("generated_internal_id")
             out.append({
                 "company": name,
                 "amount": r.get("Award Amount"),
-                "date": _first(r, "Last Modified Date", "Action Date", "Start Date"),
+                "date": _any_date(r),
                 "agency": agency,
                 "desc": (r.get("Description") or "")[:160],
                 "source": "USAspending",
@@ -304,9 +336,10 @@ def usaspending_recent(days=45, min_amount=50_000_000, limit=80):
                 "link": (f"https://www.usaspending.gov/award/{gid}" if gid else
                          "https://www.usaspending.gov/search?keywords=" + urllib.parse.quote(name)),
             })
-        keys = ",".join(sorted((rows[0] or {}).keys()))[:70] if rows else "no rows"
+        out.sort(key=lambda r: r.get("date") or "", reverse=True)
         _mark("usaspending_recent", True,
-              f"{len(out)} of {len(rows)} awards over ${min_amount/1e6:.0f}M in scope agencies [{keys}]")
+              f"{len(out)} of {len(rows)} awards over ${min_amount/1e6:.0f}M kept "
+              f"({dropped_ops} facility operators dropped)")
         return out
     except Exception as e:
         _mark("usaspending_recent", False, str(e)[:120])
@@ -379,9 +412,9 @@ def usaspending_awards(recipient, years=2, limit=100):
                 total += float(amt)
             except Exception:
                 pass
-            d = _first(r, "Start Date", "Last Modified Date", "Action Date", "End Date")
-            if d and (last is None or str(d) > str(last)):
-                last = str(d)[:10]
+            d = _any_date(r)
+            if d and (last is None or d > last):
+                last = d
             ag = r.get("Awarding Agency")
             if ag:
                 agencies[ag] = agencies.get(ag, 0) + 1
@@ -392,9 +425,19 @@ def usaspending_awards(recipient, years=2, limit=100):
         # saying on the page which of the two the number came from.
         agg, basis = None, "sum of top %d awards" % limit
         try:
-            cat = post_json("https://api.usaspending.gov/api/v2/search/spending_by_category/",
-                            {"category": "recipient", "filters": payload["filters"],
-                             "limit": 5, "page": 1})
+            cat = None
+            for url, body in (
+                ("https://api.usaspending.gov/api/v2/search/spending_by_category/",
+                 {"category": "recipient", "filters": payload["filters"], "limit": 5, "page": 1}),
+                ("https://api.usaspending.gov/api/v2/search/spending_by_category/recipient/",
+                 {"filters": payload["filters"], "limit": 5, "page": 1}),
+            ):
+                try:
+                    cat = post_json(url, body, retries=0)
+                    if cat:
+                        break
+                except Exception:
+                    continue
             best = None
             for c in (cat or {}).get("results", []) or []:
                 nm = (c.get("name") or "").upper()
