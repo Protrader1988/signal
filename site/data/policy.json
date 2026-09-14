@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-09-14T21:29:15.156912+00:00",
-  "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts, and CARs cumulate it over the windows shown. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
+  "generated_utc": "2026-09-14T21:40:26.718132+00:00",
+  "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. Fifteen events across five structures is not a dataset, it is a set of anecdotes with error bars, and the bootstrap intervals and sign-test p-values are printed so that is visible rather than hidden. The registry is also curated, which means selection bias: deals that made headlines are over-represented against quiet ones. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "windows": [
     {
@@ -126,9 +126,9 @@
       "price": 249.09,
       "car": {
         "day0": 12.3,
-        "w1": 15.6,
-        "m1": 9.0,
-        "q1": 1.4,
+        "w1": 16.2,
+        "m1": 7.3,
+        "q1": -5.0,
         "h1": null
       },
       "path": {
@@ -224,9 +224,9 @@
       "price": 15.27,
       "car": {
         "day0": 29.8,
-        "w1": 10.4,
-        "m1": 2.8,
-        "q1": -28.4,
+        "w1": 8.8,
+        "m1": -2.0,
+        "q1": -37.9,
         "h1": null
       },
       "path": {
@@ -322,9 +322,9 @@
       "price": 16.83,
       "car": {
         "day0": 32.6,
-        "w1": 10.3,
-        "m1": 5.5,
-        "q1": -23.7,
+        "w1": 10.1,
+        "m1": 1.8,
+        "q1": -31.4,
         "h1": null
       },
       "path": {
@@ -420,9 +420,9 @@
       "price": 43.54,
       "car": {
         "day0": 14.5,
-        "w1": -4.7,
-        "m1": 5.1,
-        "q1": -57.2,
+        "w1": -5.5,
+        "m1": 2.9,
+        "q1": -51.9,
         "h1": null
       },
       "path": {
@@ -518,10 +518,10 @@
       "price": 15.71,
       "car": {
         "day0": 7.2,
-        "w1": -20.8,
-        "m1": -34.0,
-        "q1": -33.6,
-        "h1": -108.4
+        "w1": -20.1,
+        "m1": -37.2,
+        "q1": -54.5,
+        "h1": -150.4
       },
       "path": {
         "-5": 4.82,
@@ -617,9 +617,9 @@
       "car": {
         "day0": 0.1,
         "w1": 1.8,
-        "m1": -1.7,
-        "q1": -2.0,
-        "h1": -33.0
+        "m1": -2.1,
+        "q1": -3.2,
+        "h1": -35.1
       },
       "path": {
         "-5": 0.65,
@@ -714,10 +714,10 @@
       "price": 93.26,
       "car": {
         "day0": -3.2,
-        "w1": 17.1,
-        "m1": 2.3,
-        "q1": 35.9,
-        "h1": 10.1
+        "w1": 15.9,
+        "m1": -1.1,
+        "q1": 41.5,
+        "h1": 1.9
       },
       "path": {
         "-5": -2.15,
@@ -812,10 +812,10 @@
       "price": 3.22,
       "car": {
         "day0": -0.7,
-        "w1": 211.1,
-        "m1": 169.6,
-        "q1": 163.2,
-        "h1": 109.3
+        "w1": 212.1,
+        "m1": 74.2,
+        "q1": 78.2,
+        "h1": -56.0
       },
       "path": {
         "-5": 2.28,
@@ -911,10 +911,10 @@
       "price": 2.89,
       "car": {
         "day0": -1.0,
-        "w1": 43.0,
-        "m1": 9.4,
-        "q1": -16.7,
-        "h1": -19.9
+        "w1": 44.0,
+        "m1": -4.4,
+        "q1": -31.0,
+        "h1": -37.7
       },
       "path": {
         "-5": -6.39,
@@ -1011,9 +1011,9 @@
       "car": {
         "day0": 3.1,
         "w1": -1.7,
-        "m1": 14.5,
-        "q1": 32.9,
-        "h1": 62.6
+        "m1": 13.4,
+        "q1": 33.5,
+        "h1": 74.7
       },
       "path": {
         "-5": 3.31,
@@ -1039,7 +1039,7 @@
         "15": 0.72,
         "16": 2.95,
         "17": 1.69,
-        "18": 23.71,
+        "18": 23.72,
         "19": 19.69,
         "20": 16.16,
         "21": 19.05,
@@ -1110,9 +1110,9 @@
       "car": {
         "day0": -0.1,
         "w1": -2.7,
-        "m1": -9.2,
-        "q1": -12.2,
-        "h1": -22.8
+        "m1": -9.5,
+        "q1": -14.3,
+        "h1": -28.8
       },
       "path": {
         "-5": 0.55,
@@ -1207,10 +1207,10 @@
       "price": 493.41,
       "car": {
         "day0": 0.2,
-        "w1": 0.6,
-        "m1": -10.0,
-        "q1": 30.5,
-        "h1": 25.5
+        "w1": 0.4,
+        "m1": -10.5,
+        "q1": 30.3,
+        "h1": 18.0
       },
       "path": {
         "-5": 0.04,
@@ -1305,10 +1305,10 @@
       "price": 50.68,
       "car": {
         "day0": 50.0,
-        "w1": 28.8,
-        "m1": 44.3,
-        "q1": 22.4,
-        "h1": -4.8
+        "w1": 31.3,
+        "m1": 55.5,
+        "q1": 24.1,
+        "h1": -29.9
       },
       "path": {
         "-5": 1.97,
@@ -1405,35 +1405,35 @@
     },
     "w1": {
       "n": 14,
-      "median": 6.9,
+      "median": 6.1,
       "lo": -1.7,
-      "hi": 17.1,
+      "hi": 16.2,
       "p": 0.18,
       "pos": 10
     },
     "m1": {
       "n": 13,
-      "median": 5.1,
-      "lo": -1.7,
-      "hi": 9.4,
-      "p": 0.267,
-      "pos": 9
-    },
-    "q1": {
-      "n": 13,
-      "median": -2.0,
-      "lo": -23.7,
-      "hi": 30.5,
+      "median": -1.1,
+      "lo": -4.4,
+      "hi": 7.3,
       "p": 1.0,
       "pos": 6
     },
+    "q1": {
+      "n": 13,
+      "median": -5.0,
+      "lo": -31.4,
+      "hi": 30.3,
+      "p": 0.581,
+      "pos": 5
+    },
     "h1": {
       "n": 9,
-      "median": -4.8,
-      "lo": -33.0,
-      "hi": 62.6,
-      "p": 1.0,
-      "pos": 4
+      "median": -29.9,
+      "lo": -56.0,
+      "hi": 18.0,
+      "p": 0.508,
+      "pos": 3
     }
   },
   "cohorts": {
@@ -1460,7 +1460,7 @@
           "n": 3,
           "median": 3.4,
           "lo": 1.8,
-          "hi": 28.8,
+          "hi": 31.3,
           "p": 0.25,
           "pos": 3
         },
@@ -1514,35 +1514,35 @@
         },
         "w1": {
           "n": 6,
-          "median": 10.4,
-          "lo": -3.2,
-          "hi": 127.0,
+          "median": 9.4,
+          "lo": -3.6,
+          "hi": 128.1,
           "p": 0.688,
           "pos": 4
         },
         "m1": {
           "n": 6,
-          "median": 7.5,
-          "lo": 3.9,
-          "hi": 92.0,
-          "p": 0.031,
-          "pos": 6
+          "median": 2.4,
+          "lo": -3.2,
+          "hi": 43.8,
+          "p": 0.688,
+          "pos": 4
         },
         "q1": {
           "n": 6,
-          "median": -20.2,
-          "lo": -42.8,
-          "hi": 98.0,
+          "median": -31.2,
+          "lo": -44.9,
+          "hi": 55.9,
           "p": 0.688,
           "pos": 2
         },
         "h1": {
           "n": 3,
-          "median": 62.6,
-          "lo": -19.9,
-          "hi": 109.3,
+          "median": -37.7,
+          "lo": -56.0,
+          "hi": 74.7,
           "p": 1.0,
-          "pos": 2
+          "pos": 1
         }
       },
       "reportable": true
@@ -1638,7 +1638,7 @@
           "lo": null,
           "hi": null,
           "p": null,
-          "pos": 1
+          "pos": 0
         },
         "h1": {
           "n": 1,
@@ -1681,7 +1681,7 @@
           "lo": null,
           "hi": null,
           "p": null,
-          "pos": 1
+          "pos": 0
         },
         "q1": {
           "n": 1,
@@ -2016,7 +2016,7 @@
         93.32,
         91.84,
         87.25,
-        90.99,
+        91.0,
         81.31,
         78.48,
         79.64,
@@ -2474,7 +2474,299 @@
       }
     }
   ],
-  "detection": [],
+  "detection": [
+    {
+      "company": "U.S. Department of War takes $450 million equity stake in Elmet to secure tungsten for F-35, Patriot, THAAD and submarines - Defence Industr",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPWURYZXpSS0lJT2k0aDVrd0pST1VaMjBOdVRsZ1FWQ0x3YkhFbG5kcEc3OTJTZVl2dUxzYll3NEg4VjhTcGpsd0Fid2ZjQ3ktR1dpTE9PUW9McTYzSnFScjA1Z3hiQUFYY180TDNRUlZZUTRoNmRobzZyZm5hQ2czSURDdTRpVHI2VzZ0dmRJVmVFYzJ6Vnp5RGoybzFaYlFYdk9IX2FrWFRURURJT3JyUnY1TkFpUDdMWjFST2ViUngtdXlvdDhDV002YlVCb1lJUzRXQjg4WmpvNTZhaG5xYg?oc=5",
+      "date": "2026-09-14",
+      "source": "Defence Industry Europe",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": "ELMT",
+      "quality": "headline",
+      "status": "in registry"
+    },
+    {
+      "company": "Exclusive-White House weighs how to use Defense Production Act to expand US oil refining capacity, sources say - Investing.com",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQZFdGbTA2X1ppMUVudG5IdGFoTmdyVXhhamJyN3g0b0o0Q1J1NUhuZm1SUnc3Y1BUU0lWNU1EaTRwejRkQ21WQ0RvTzRXNUNOb05hc0tJeUlEenp2SjZPNVRxdTJ2SGlXMURfYUo2MW9renljU1pCMWJEd3o0MmZRUmVRc3RQVG5Jc045b2xqeGI1anQxdW9XUFJfWnR6S3BpblhkTF80MUFjSUtvR1dqdURRVlFsZFRkVURuNUljNkRqSGwxTVVJUlR0QnQ3akY5QXgtN3EtWFVpeHRodUtVUndMckNxYkJBTGdQblY1NzRWdlR6NE56WA?oc=5",
+      "date": "2026-09-11",
+      "source": "Investing.com",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Commerce Department Takes Equity Stakes in Rigetti, D-Wave and Quantinuum - Startup Fortune",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMmlCLWljX1kzTnJoaXFmS203Y2R2dlA5RDVxTV9aS01NMUJFY01SSlJLb0V5NzVMVDFwTjBxY00tV09udG8tTWt4WmZjSEliZ1JxQ1lRUDZTSnNHWnZhamtOM21ab0VIbU1xNEpFOV9RblhsZjFBeWduV0U1VEJSWmRQeHRuaGRrUXpmOXlRTFM5ZUo1VXY1TUxwMlN6d3NWUkE?oc=5",
+      "date": "2026-09-10",
+      "source": "Startup Fortune",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": "RGTI",
+      "quality": "headline",
+      "status": "in registry"
+    },
+    {
+      "company": "Government Ownership Stakes in Companies Becoming Routine Under Trump - Cato Institute",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRzE1M3paUFY5Wi10bDB3TjNGNkdSMDlZUVFmLTZPdWlFdEYxQkViU3gwYmV2NHc4UmVOTGNQa2JtRmRndktiR3g5SjM3SDhDR3o5MkxyY3RiSW5iTXQwWW5UNjlVZzBidXU1MC1mb0ozcW96Qm96ZFdCd2M0TE03Y0lvWlFGYkh2NUFzNFJSbl91Y0FnVXNV?oc=5",
+      "date": "2026-07-30",
+      "source": "Cato Institute",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Commerce Department quietly announces 7 new equity stakes in private companies - The Hill",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1IcFFHQ0x2bDFFcHhDLVVudlhZd3phemNtMExMQUkzUWZNSXV5c09pck0xSkUyM09RR1c3VGoxMkdhbzhlaHdQNEtjTDNud1g3Y1NaQkZYdVBlZWlKX0JqaUhZQmtCNXdGTGVqV2VaN3Q0TVVMM1ViVGhXa9IBgAFBVV95cUxNWVNzY2J0Q0FvcXF5Q3I2VGd0UXdQb3djTHlXNHJfZmdvT3lidktmT0ljTXM5SjZmalB2SVhUbkxiTUgxT0cxaFp2bjYtdGkwalZNZWI5d0E3bE5YRFJFQXBtWXN1R1NaMDVZejZ5V1NsRHBlSUo3Zlk0ai1HQmNzWg?oc=5",
+      "date": "2026-07-30",
+      "source": "The Hill",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "The Shareholder State: Washington\u2019s Improvised Bet on Critical Minerals - Council on Foreign Relations",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVUJmZ3MtRzBLWHpIaGU0WHd5LWFjdFQtUEYyU0VvZzBGZWMza1h4Q1NCT24yeTJrcXh4WFluUHloMjAtSmR6cDFLc2staE4tRnBSU0xNWldVWWJBSTI0NEJBcUxqcFRYMHRzSnI0SUFsS0pzb1k1dWZ2a1ZTMDFRQ3BGYjJrNGVnU2lwQzlLM3pHZ0FJWk5Mb1NqVF9fd28?oc=5",
+      "date": "2026-07-30",
+      "source": "Council on Foreign Relations",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Pentagon Dangles $400,000 Salaries to Recruit Wall Street Bankers - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdm5RQW5HemxYaEJ3ZEFqWnVzOHEwaEhRTnUzZy1SZG9HVXdsdll2VGwySlZTYXBGeFNUNnVwRXZEbURMRVZxbC0wVVBLMFNHNXBCMkhNZDJCVDdNbk91VjZfbjJEd3doSlVyblFlbmR0YjJkbWkwT0kxVUpfaXd0anhLb05vWXltV2cwYUxPOGUtS1IxQkttWlRIZnltN0I5d2k5M0hFaUZPUEM4dVJTSVZOQUhnNFVteEFpTQ?oc=5",
+      "date": "2026-07-17",
+      "source": "WSJ",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "The Department of War's Office of Strategic Capital Introduces National Security Fund Finance Program - war.gov",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcDdHdEJXcmRZOEI4dU9jM2ppdVQ3RGVZeGprY0J1R3JVMGIxU3pUVC0zVTk4Q29lYzZ6Y3VtT2J5dWQzVFZQT0xad2swWU5QV3lENkZBMF9qb25nallWa0g2WjBLOEV3WTBXWEZWbF9Qa0gtU0VXd2lqUEpQRzJlaGpjd0UzU2Z5X0dLOVRlUWhHcXpJQlk4ZzROYUpTaEZ3d1hhdUVTMDQxbnIxTXV4LTlhY2xvSmhIblktU0l6VE9vcl9LZDhhLWlrcklSd3BwVU83bA?oc=5",
+      "date": "2026-07-14",
+      "source": "war.gov",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Canada agrees on a potential C$400 million Teck investment for strategic metals production - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa0czdno5amNEUEdVVnJyZmZyYkZJSW95clc2dTFJNFRtdzVEN0tqRGRWb1VkLVc5elpld0Q3djNjNUR1WmJxRmUtdEFTLWJxczE3UHd0ZWI1X2FCMlROOWhYekMwRUczZEhNdkxvcWV0MGFCN0E4dURLZURuX1VaWVFTVUZHSVVZVkVBV1pFNzR2VDRWNWlqWTdtdE5QUmlfcVU1YmFfS2lkNUtDQndUXzdwOEZQcHJfV1phQkU0NVo1X00?oc=5",
+      "date": "2026-07-07",
+      "source": "Reuters",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "The Department of War's Office of Strategic Capital Signs $725 Million Conditional Loan Co - war.gov",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYkRZWGwzb3RET2JianZmSW5lX1BwZXJDN1dWbzJzSTBSQU9SV0lFWVpPbjVPcTB6MWM3RnBpN0xHbWdIQjRlazVYMjE0Wi0wNl9yeF9ieTNDNFBLNWtUY1Z2MlJ2UkVadFJXcXg5UTAwNkh4ZGpRTmxDcFpqNUNPeUJtYVUzOTNHWlBLREVTclp1SEFKTUlWcW5TOUlmLWZYT0Qzc2UwNF9uZ0dvem9hMjZTdm4xTkY5WHgyblNWdkRrOWhIZ3VDN1BkVm1EQ0x6U0NCVA?oc=5",
+      "date": "2026-06-18",
+      "source": "war.gov",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Critical Metals Corp. Secures 15-Year Offtake Agreement with REalloys Inc. for Rare Earth Concentrate from Tanbreez Project | CRML Stock New",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNSUNxRmZRdTBocENQNlFGM2VaandYRlZMUTBlclhWRFJrQThLMVBFMmF1aGttR3IyZ3JXaW1VY0ZNcGttR2xoM0VaZTRlUkNvQ2RmUFlYc21lVlBnQUplVjlsVjUzUXVDN2NBR01hZFZzcmhpSWdPUlBnU3pEMXl0alVfd1JaLXVRZkExT19QWWtyNk9DMUJiYjFsOXkxVmk3NUlzWThRRUY5MHk3QTJ5alY0WDZKWnBzd3oxYlRiZmZseXV1emZINGNGZFVsN0JlZXhRTFB1QzNTM19HUnRjU1kxWmo5TE1VSXFiMg?oc=5",
+      "date": "2026-05-21",
+      "source": "Quiver Quantitative",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": "CRML",
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Greenland rare earth mine signs 15-year supply deal for U.S. defense - Stock Titan",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdnZRN3hNS3RQZ0lCU00zVzEyMmt1TU04QkQwaXFjdXhFd0VkRnhxWlpCbG1Zc0lMOElTNTNnVlMzSGtFY0RBcDRBT2tySzQ2Um9qbGxHcWJOWXBxaDlzTUdkOU5pMFV5VkItSnVyaU9PSzBiUzY1TnUwNWVRaWx0ZTJ5N1RNNDUxNzFJTGQzRXphckR6UnZmajl1bnQ1cWV5YWJFOTVlR1ItZDcxb3BkTmk1UmFQQ2Y3QlFtVw?oc=5",
+      "date": "2026-05-21",
+      "source": "Stock Titan",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Ranking Member Lofgren Raises Alarm Over Terms of Commerce Department Equity Stake in USA Rare Earth, Condemns Lutnick Conflict of Interest ",
+      "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQbld3Vl9Gam1CeGZ3UGFJYmwwUkk2cVJ3TFd0aktrX3VndFVVSkx2d3c0QVVjdURZWS1raXlHZ0taMDFOTG0wQmZzVUFBNWQ0LU9ud0tUdUJxeWZ2UWdLcktFUGVobmpZbXBneTFwNVlJMzF6S2tXR29xc3pmakJ3RzdWUDU2cURHSGFFdVIwREJfaHhHSVNFeWI2ZnppZUE4RnViM1MtbElraWkwREZzRk5KZ0hsdGNIaXRmRVlNMW5NazluRTVnXzN2ck43WTlWa1BZeUdmbVZjTGZRY21qQ3hESDJoNDltWVFGVm1jLU9JSG9DNWc2dVZ0T2JpTkc0QzltU1JGNzVoY3oxNHhmYW9qT0hfcW1HS3pRU1RuSQ?oc=5",
+      "date": "2026-03-20",
+      "source": "democrats-science.house.gov",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": "USAR",
+      "quality": "headline",
+      "status": "in registry"
+    },
+    {
+      "company": "A Pentagon Sovereign Wealth Fund? - Cato Institute",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAyMnVRZ0JqcXlaQnNhZURHeVlTQjRnZE4xUEQ2M25obHlJem5RMm5lcDl3ekJSR0RneEVEMUs2aG1MRVJ2Z0d0QnNfSndmdkZuQ2V3QnpvSTlIUDhOa19RbXhqMDJjbGM?oc=5",
+      "date": "2026-03-16",
+      "source": "Cato Institute",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "Follow the Money: The U.S. Government Funding Hit List for Critical Minerals Companies (2023\u20132026) - InvestorNews",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWGl4VEFUNUtLVnRScjd6SUg4MW92ZklIbFFlTE5QSXhHVDJhT2psOFpGenRuNGh3b0xEWTQxYmdreEZvWTZMeTBrQlBFbkh1LUgwb0lwZVBGeUxlbi16b2FzRHZiMDZXWmdodkFReUo4SUNVeGxNQ2VCclNnYkJKNjB3ZHBBUkR5NmVWcFVBR2pxQWRaUDhDQmpkTjEzb0FXclE4YTQ3RGJ3R1I1TktLVDN1NlhMdEZGSEZ5SVBSUQ?oc=5",
+      "date": "2026-02-11",
+      "source": "InvestorNews",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "status": "unverified"
+    },
+    {
+      "company": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+      "amount": 43198566451.99,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF CONTRACT AWARD DE-NA0003525 TO THE NATIONAL TECHNOLOGY&ENGINEERING SOLUTIONS OF SANDIA, LLC (NTESS) FOR THE MANAGEMENT AND OPERATION OF THE DEPA",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "UT-BATTELLE LLC",
+      "amount": 42436211927.7,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATION OF THE OAK RIDGE NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+      "amount": 41519790021.9,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "TAS::89 0240::TAS THIS PERFORMANCE-BASED MANAGEMENT CONTRACT (PBMC) IS FOR THE MANAGEMENT AND OPERATION OF THE LAWRENCE LIVERMORE NATIONAL LABORATORY (LLNL). TH",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "TRIAD NATIONAL SECURITY, LLC",
+      "amount": 35199796916.66,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "IGF::CL::IGF COMPETITION FOR MANAGEMENT AND OPERATION OF LOS ALAMOS NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+      "amount": 34654023638.7,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF MANAGEMENT AND OPERATING CONTRACT FOR Y-12 NATIONAL SECURITY COMPLEX, PANTEX PLANT, WITH AN OPTION FOR SAVANNAH RIVER TRITIUM OPERATIONS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "BATTELLE MEMORIAL INSTITUTE",
+      "amount": 30853836006.83,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "BATTELLE MEMORIAL INSTITUTE/PACIFIC NORTHWEST               LABORATORY OPERATING AND MANAGING CONTRACT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0576RL01830_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+      "amount": 27613237659.31,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "BATTELLE ENERGY ALLIANCE, LLC",
+      "amount": 26444741719.86,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATIONS OF THE INL",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    },
+    {
+      "company": "LOCKHEED MARTIN SERVICES, LLC",
+      "amount": 20646113720.09,
+      "date": null,
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATION OF Y-12 PLANT AND OTHER PROGRAMS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "status": "unverified"
+    }
+  ],
   "documents": [
     {
       "title": "Sunshine Act Meetings",
@@ -2762,34 +3054,49 @@
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-14T21:24:55+00:00"
+      "checked_utc": "2026-09-14T21:37:55+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-14T21:25:25+00:00"
+      "checked_utc": "2026-09-14T21:38:25+00:00"
+    },
+    "dow_contracts": {
+      "ok": true,
+      "note": "0 matching announcements",
+      "checked_utc": "2026-09-14T21:38:26+00:00"
+    },
+    "usaspending_recent": {
+      "ok": true,
+      "note": "60 awards over $50M",
+      "checked_utc": "2026-09-14T21:38:36+00:00"
+    },
+    "news_detect": {
+      "ok": true,
+      "note": "15 headlines",
+      "checked_utc": "2026-09-14T21:38:38+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "24 documents",
-      "checked_utc": "2026-09-14T21:25:28+00:00"
+      "checked_utc": "2026-09-14T21:38:41+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "10 releases",
-      "checked_utc": "2026-09-14T21:25:29+00:00"
+      "checked_utc": "2026-09-14T21:38:41+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried",
-      "checked_utc": "2026-09-14T21:29:15+00:00"
+      "checked_utc": "2026-09-14T21:40:26+00:00"
     }
   },
   "counts": {
     "events": 15,
     "testable": 15,
     "radar": 12,
-    "detection": 0,
+    "detection": 24,
     "documents": 34
   }
 }
