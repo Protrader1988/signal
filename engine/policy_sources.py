@@ -157,7 +157,9 @@ FR_TERMS = ["critical minerals", "semiconductor", "shipbuilding", "nuclear",
 def federal_register(days=30, per_term=4):
     since = (datetime.now(timezone.utc) - timedelta(days=days)).date().isoformat()
     out, ok_any = [], False
+    per_term_kept = 2
     for term in FR_TERMS:
+        kept = 0
         url = ("https://www.federalregister.gov/api/v1/documents.json"
                f"?per_page={per_term}&order=newest"
                "&fields[]=title&fields[]=html_url&fields[]=publication_date"
@@ -176,6 +178,9 @@ def federal_register(days=30, per_term=4):
                 presidential = "presidential" in (d.get("type", "") or "").lower()
                 if not presidential and term.lower() not in title.lower():
                     continue
+                if kept >= per_term_kept:
+                    continue
+                kept += 1
                 out.append({"title": title, "link": d.get("html_url", ""),
                             "date": d.get("publication_date"), "source": ag or "Federal Register",
                             "kind": d.get("type", ""), "matched": term})
@@ -217,9 +222,12 @@ DEAL_WORDS = ("equity", "warrant", "stake", "investment", "offtake", "price floo
               "public-private", "partnership")
 
 
-def dow_contracts(cap=40):
+def dow_contracts(cap=40, as_documents=True):
     """Daily DoW contract announcements. These post around 5pm ET and are the first
-    public record of a lot of this money — often the same day as the company's 8-K."""
+    public record of a lot of this money — but the feed publishes one digest per day
+    with the detail behind the link, so keyword-matching the entry text finds nothing.
+    Returned as documents to read rather than as per-company detections; USAspending
+    is the detector that actually resolves to a recipient."""
     import feedparser
     url = "https://www.war.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=400&Site=945&max=40"
     try:
@@ -230,13 +238,14 @@ def dow_contracts(cap=40):
             body = (getattr(e, "summary", "") or "")[:4000]
             hay = (title + " " + body).lower()
             hit = [w for w in DEAL_WORDS if w in hay]
-            if not hit:
-                continue
             t = getattr(e, "published_parsed", None)
-            out.append({"company": title[:120], "link": getattr(e, "link", ""),
+            out.append({"title": title[:140], "company": title[:140],
+                        "link": getattr(e, "link", ""),
                         "date": datetime(*t[:6]).date().isoformat() if t else None,
-                        "source": "DoW contracts", "matched": hit[0], "form": "contract"})
-        _mark("dow_contracts", True, f"{len(out)} matching announcements")
+                        "source": "DoW contracts", "kind": "contracts digest",
+                        "matched": hit[0] if hit else "daily contracts",
+                        "form": "contract"})
+        _mark("dow_contracts", True, f"{len(out)} daily digests")
         return out
     except Exception as e:
         _mark("dow_contracts", False, str(e)[:120])
@@ -286,7 +295,7 @@ def usaspending_recent(days=45, min_amount=50_000_000, limit=80):
             out.append({
                 "company": name,
                 "amount": r.get("Award Amount"),
-                "date": _first(r, "Start Date", "Last Modified Date", "Action Date"),
+                "date": _first(r, "Last Modified Date", "Action Date", "Start Date"),
                 "agency": agency,
                 "desc": (r.get("Description") or "")[:160],
                 "source": "USAspending",
@@ -295,8 +304,9 @@ def usaspending_recent(days=45, min_amount=50_000_000, limit=80):
                 "link": (f"https://www.usaspending.gov/award/{gid}" if gid else
                          "https://www.usaspending.gov/search?keywords=" + urllib.parse.quote(name)),
             })
+        keys = ",".join(sorted((rows[0] or {}).keys()))[:70] if rows else "no rows"
         _mark("usaspending_recent", True,
-              f"{len(out)} of {len(rows)} awards over ${min_amount/1e6:.0f}M in scope agencies")
+              f"{len(out)} of {len(rows)} awards over ${min_amount/1e6:.0f}M in scope agencies [{keys}]")
         return out
     except Exception as e:
         _mark("usaspending_recent", False, str(e)[:120])
@@ -394,10 +404,14 @@ def usaspending_awards(recipient, years=2, limit=100):
             if best and best.get("amount"):
                 agg = float(best["amount"])
                 basis = "aggregated by recipient"
-        except Exception:
-            pass
+            _mark("usaspending_agg", bool(agg is not None),
+                  ("matched " + (best or {}).get("name", "")[:40]) if agg is not None
+                  else "no recipient match in aggregate response")
+        except Exception as e:
+            _mark("usaspending_agg", False, str(e)[:110])
 
-        _mark("usaspending", True, "queried")
+        keys = ",".join(sorted((rows[0] or {}).keys()))[:70] if rows else "no rows"
+        _mark("usaspending", True, f"queried [{keys}]")
         return {"total": round(agg if agg is not None else total, 0), "count": len(rows),
                 "last_action": last, "top_agency": top_agency,
                 "truncated": agg is None and len(rows) >= limit, "basis": basis,

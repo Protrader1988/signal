@@ -35,11 +35,12 @@ error bars and saying so is the whole point.
 
 DETECTION
 A curated list goes stale the day after it is written, so the registry is not the
-only input. Every run reads four independent detectors: EDGAR full text for the
+only input. Every run reads three independent detectors: EDGAR full text for the
 phrases these deals produce in 8-Ks (best evidence, and the SEC blocks most
-datacenter IPs, so it cannot be relied on alone), Department of War contract
-announcements, every federal award over $50M filed to USAspending, and policy
-headlines as a backstop. Recipient names are matched back to tracked tickers, and
+datacenter IPs, so it cannot be relied on alone), every federal award over $50M
+filed to USAspending, and policy headlines as a backstop. The DoW contracts feed
+publishes one digest a day rather than one entry per deal, so it is carried as a
+document to read rather than as a per-company detection. Recipient names are matched back to tracked tickers, and
 anything outside the registry is published as an UNVERIFIED candidate with a link
 to the underlying record. The desk therefore surfaces the next deal without
 waiting for a human to notice it, while never promoting a machine guess into the
@@ -380,8 +381,6 @@ def build_detection(cik_map, known_tickers, name_map):
     for f in src.edgar_fulltext():
         tk = cik_map.get(f.get("cik")) if f.get("cik") else None
         items.append({**f, "ticker": tk, "source": "SEC EDGAR", "quality": "filing"})
-    for f in src.dow_contracts():
-        items.append({**f, "ticker": None, "quality": "announcement"})
     for f in src.usaspending_recent():
         items.append({**f, "ticker": None, "quality": "award record"})
     for f in src.news_detect():
@@ -396,10 +395,13 @@ def build_detection(cik_map, known_tickers, name_map):
                     break
         it["status"] = ("in registry" if it.get("ticker") in known_tickers and it.get("ticker")
                         else "unverified")
-    # a detection feed is about what is happening now; news RSS happily returns
-    # six-month-old commentary, which would turn this card into an archive
+    # A detection feed is about what is happening now; news RSS happily returns
+    # six-month-old commentary, which would turn this card into an archive. Award
+    # records are exempt: the query already constrains them to recent obligations,
+    # while the date they carry is the contract's own start, often years back.
     cutoff = (datetime.now(timezone.utc).date() - timedelta(days=60)).isoformat()
-    items = [i for i in items if (i.get("date") or "9999") >= cutoff]
+    items = [i for i in items
+             if i.get("quality") == "award record" or (i.get("date") or "9999") >= cutoff]
 
     seen, dedup = set(), []
     for it in sorted(items, key=lambda x: (x.get("date") or "", x.get("quality") == "filing"),
@@ -495,7 +497,7 @@ def main():
     name_map = {(d.get("recipient") or "").upper(): d["ticker"]
                 for d in REGISTRY + RADAR if d.get("recipient")}
     detection = build_detection(cik_map, known, name_map)
-    documents = (src.federal_register() + src.dow_releases())
+    documents = (src.federal_register() + src.dow_releases() + src.dow_contracts())
     documents.sort(key=lambda d: d.get("date") or "", reverse=True)
     exposure = build_exposure(REGISTRY + RADAR)
     ledger = update_ledger(events, first_run_date)
