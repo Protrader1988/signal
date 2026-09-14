@@ -2,5 +2,19 @@ model gemini-2.5-flash attempt 1: HTTP 404 {
   "error": {
     "code": 404,
     "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-model ok: gemini-flash-latest
-digest written: leaning bullish medium
+model gemini-flash-latest attempt 1: HTTP 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+model gemini-2.5-flash-lite attempt 1: HTTP 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use mode
+model gemini-2.0-flash attempt 1: HTTP 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flas
+digest err gemini-2.0-flash: HTTP 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
