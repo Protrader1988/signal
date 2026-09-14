@@ -14,6 +14,7 @@ on:
       - "engine/curve.py"
       - "engine/fundamentals.py"
       - "engine/news.py"
+      - "engine/policy.py"
       - "engine/ai_digest.py"
       - ".github/workflows/signals.yml"
 
@@ -46,6 +47,9 @@ jobs:
       - name: Market news (real headlines)
         continue-on-error: true
         run: python engine/news.py 2>&1 | tee news_run.log
+      - name: Policy desk (federal deals scored against SPY)
+        continue-on-error: true
+        run: python engine/policy.py 2>&1 | tee policy_run.log
       - name: AI market digest (honest read of real news)
         continue-on-error: true
         env:

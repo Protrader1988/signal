@@ -163,6 +163,28 @@
   .dg-note{margin-top:12px;font-size:11px;color:var(--dim);line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
   .setup{border:1px dashed var(--line2);border-radius:12px;padding:16px 18px;color:var(--text2);font-size:13px;line-height:1.65;background:var(--surface2)}
   .setup b{color:var(--gold2)}
+  /* policy desk */
+  .b-stake{color:var(--gold2);border-color:var(--goldline);background:rgba(201,162,39,.06)}
+  .b-loi{color:var(--warn);border-color:rgba(242,178,62,.35)}
+  .b-contract{color:var(--info);border-color:rgba(90,162,255,.35)}
+  .b-extraction{color:var(--down);border-color:rgba(255,93,93,.32)}
+  .b-partner{color:var(--purple);border-color:rgba(179,155,255,.32)}
+  .b-radar{color:var(--muted);border-color:var(--line2)}
+  td.wrap{white-space:normal;max-width:420px;color:var(--muted);font-size:11.5px;line-height:1.6;vertical-align:middle}
+  .scrollx{overflow-x:auto}
+  #policyTbl tbody td,#policyRadar tbody td{vertical-align:top;padding-top:14px}
+  .dealname{font-weight:600}.dealname .sub{display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
+  td.deal{white-space:normal;max-width:430px;vertical-align:top;padding-top:14px}
+  .struct{display:block;margin-top:7px;color:var(--muted);font-size:11.5px;line-height:1.6}
+  .verdict{margin:0 0 16px;padding:14px 17px;border-radius:11px;background:linear-gradient(180deg,#0f1119,#0a0c12);
+    border:1px solid var(--goldline);border-left:3px solid var(--gold);font-size:13.5px;line-height:1.7;color:var(--text2)}
+  .verdict b{color:var(--gold2)}.verdict .hl{color:var(--text);font-weight:600}
+  .chanlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .chan{background:var(--surface);padding:13px 16px}
+  .chan a{font-family:var(--mono);font-size:12px;color:var(--gold2);font-weight:600}.chan a:hover{text-decoration:underline}
+  .chan p{font-size:11.5px;color:var(--dim);line-height:1.55;margin-top:5px}
+  .heat{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:5px;border:1px solid var(--line2);color:var(--muted)}
+  .heat.on{color:var(--gold2);border-color:var(--goldline);background:rgba(201,162,39,.07)}
   .newsrow{display:flex;gap:12px;align-items:baseline;padding:11px 20px;border-bottom:1px solid var(--line);transition:background .12s}
   .newsrow:hover{background:var(--hover)}.newsrow:last-child{border-bottom:none}
   .newsrow .tk{font-family:var(--mono);font-size:10px;color:var(--gold);min-width:64px;text-transform:uppercase}
@@ -189,8 +211,9 @@
     <a class="fkey" href="#value"><b>F3</b>VALUE</a>
     <a class="fkey" href="#watch"><b>F4</b>WATCHLIST</a>
     <a class="fkey" href="#news"><b>F5</b>MARKET READ</a>
-    <a class="fkey" href="#chart"><b>F6</b>PERFORMANCE</a>
-    <a class="fkey" href="#ledger"><b>F7</b>TRACK RECORD</a>
+    <a class="fkey" href="#policy"><b>F6</b>POLICY DESK</a>
+    <a class="fkey" href="#chart"><b>F7</b>PERFORMANCE</a>
+    <a class="fkey" href="#ledger"><b>F8</b>TRACK RECORD</a>
   </div>
 
   <!-- PLAYBOOK -->
@@ -249,8 +272,30 @@
     </div>
   </section>
 
+  <section id="policy">
+    <div class="eyebrow"><span class="no">06</span><h2>Policy Desk</h2>
+      <span class="hint">where the federal government is actually putting money — scored against SPY, not against the hype</span></div>
+    <div class="subnote">Since 2025 Washington has taken equity, warrants, price floors and offtake contracts in listed companies. Those announcements move stocks hard on day one. This desk tracks every confirmed deal and asks one question with real prices: <b class="gold">would buying it on the announcement have beaten simply owning SPY?</b> Returns are measured from the close of the announcement session — the first price you could actually pay — never from the government's own basis, which is lower and not available to you.</div>
+    <div id="policyVerdict"></div>
+    <div class="statusgrid" id="policyTiles"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">DEALS</span><span class="badge b-sim">Tracked · not a signal</span><span class="t">Confirmed federal positions</span><span class="expo" id="policyMeta"></span></div>
+      <div id="policyTbl"><div class="loading">loading policy desk…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">RADAR</span><span class="badge b-radar">Speculation</span><span class="t">Named as candidates — <span class="warn">no deal exists</span></span></div>
+      <div id="policyRadar"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">TAPE</span><span class="t">Primary sources — orders, contracts, policy headlines</span><span class="expo" id="policyTapeMeta"></span></div>
+      <div id="policyTape"></div>
+    </div>
+    <div class="metaline" id="policyMethod"></div>
+    <div style="margin-top:16px" id="policyChannels"></div>
+  </section>
+
   <section id="chart">
-    <div class="eyebrow"><span class="no">06</span><h2>Flagship Performance</h2>
+    <div class="eyebrow"><span class="no">07</span><h2>Flagship Performance</h2>
       <span class="hint">real historical prices, hypothetical trades · indexed to 100 · log scale</span></div>
     <div class="card">
       <div class="card-head"><span class="code">CURVE</span><span class="t" id="curveLabel">Momentum + vol-target vs benchmarks</span><span class="expo" id="curveRange"></span></div>
@@ -260,7 +305,7 @@
   </section>
 
   <section id="ledger">
-    <div class="eyebrow"><span class="no">07</span><h2>Live Track Record</h2>
+    <div class="eyebrow"><span class="no">08</span><h2>Live Track Record</h2>
       <span class="hint">real forward outcomes of every signal — no hindsight, nothing hidden</span></div>
     <div class="statusgrid" id="ledgerTiles"></div>
     <div id="ledgerNote" style="margin-top:14px"></div>
@@ -271,7 +316,7 @@
   </section>
 
   <section id="backtest">
-    <div class="eyebrow"><span class="no">08</span><h2>Backtest Validation</h2>
+    <div class="eyebrow"><span class="no">09</span><h2>Backtest Validation</h2>
       <span class="hint">real historical prices · hypothetical trades applied in hindsight</span></div>
     <div class="card">
       <div class="card-head"><span class="code">HIST</span><span class="badge b-sim">Real data · hypothetical trades</span><span class="t mono" id="btPeriod" style="font-weight:400;color:var(--text2)"></span></div>
@@ -325,6 +370,69 @@ function drawChart(cv){
   $('chartBox').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a227" stop-opacity="0.22"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs>${grid}${xl}<path d="${area}" fill="url(#fill)"/>${lines}</svg>`;
   $('legend').innerHTML=series.map(s=>`<span class="lg"><i style="background:${s[2]}"></i>${s[1]}</span>`).join('');
   $('curveRange').innerHTML=`<span class="mono">${cv.start} → ${cv.end}</span>`;
+}
+
+function drawPolicy(p){
+  if(!p||!p.positions){
+    $('policyTbl').innerHTML='<div class="empty">Policy desk appears after the next engine run publishes it.</div>';
+    return;
+  }
+  const sc=p.scorecard||{};
+  const tiers={stake:['Equity stake','b-stake'],loi:['Announced · LOI','b-loi'],contract:['Contract only','b-contract'],
+               extraction:['Govt takes a cut','b-extraction'],partner:['Partner read-through','b-partner']};
+
+  // the honest read, generated from the numbers rather than asserted
+  if(sc.n){
+    const missRate=sc.n-sc.beat_spy;
+    const have=n=>n===1?'has':'have';
+    $('policyVerdict').innerHTML=`<div class="verdict"><b>Read this before you act on any of it.</b>
+      Of <span class="hl">${sc.n}</span> deals tracked, <span class="hl">${sc.beat_spy}</span> ${have(sc.beat_spy)} beaten SPY since the announcement and
+      <span class="hl">${missRate}</span> ${have(missRate)} not. Median excess return versus SPY: <span class="hl ${sgn(sc.median_excess_pct)}">${pc(sc.median_excess_pct)}</span>.
+      <span class="hl">${sc.below_entry}</span> now trade${sc.below_entry===1?'s':''} <em>below</em> the price you could have paid on announcement day.
+      The median announcement-day move was <span class="hl">${pc(sc.median_day1_pct)}</span> — and most of that printed pre-market, before you could act,
+      which is the whole problem with trading the headline. The distribution is one big winner (<span class="mono">${sc.best}</span>) carrying a
+      long tail of round-trips (<span class="mono">${sc.worst}</span>). Read this desk for <b>policy risk and direction</b>, not for entries.</div>`;
+  }
+  const tiles=[
+    {k:'Deals tracked',v:(p.counts&&p.counts.positions)||0,s:'confirmed announcements'},
+    {k:'Beat SPY since',v:sc.n?`${sc.beat_spy}/${sc.n}`:'—',s:sc.n?`${sc.beat_spy_pct}% hit rate`:'accruing'},
+    {k:'Median vs SPY',v:sc.median_excess_pct==null?'—':pc(sc.median_excess_pct),s:'excess return, same window',cls:sgn(sc.median_excess_pct)},
+    {k:'Median day 1',v:sc.median_day1_pct==null?'—':pc(sc.median_day1_pct),s:'mostly unbuyable'},
+    {k:'Below entry now',v:sc.below_entry==null?'—':sc.below_entry,s:'under announcement-day close',cls:sc.below_entry?'down':''},
+  ];
+  $('policyTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+
+  $('policyMeta').innerHTML=`<span class="mono">${(p.counts&&p.counts.positions)||0} deals</span>`;
+  $('policyTbl').innerHTML='<div class="scrollx">'+tbl(p.positions,[
+    {h:'Company',k:'name',cls:()=>'deal',f:(v,r)=>`<span class="dealname">${v}<span class="sub">${r.ticker} · ${r.agency} · ${r.date}</span></span><span class="struct">${r.structure||''}</span>`},
+    {h:'Type',k:'tier',f:v=>{const t=tiers[v]||['—','b-radar'];return `<span class="badge ${t[1]}">${t[0]}</span>`;}},
+    {h:'Day 1',k:'day1_pct',num:true,tip:'Move on the announcement session itself. Usually gapped at the open — this is the part you could not buy.',cls:sgn,f:v=>v==null?'—':pc(v)},
+    {h:'Since',k:'since_pct',num:true,tip:'Return from the announcement-day CLOSE — the first price you could actually pay.',cls:sgn,f:v=>v==null?'—':pc(v)},
+    {h:'vs SPY',k:'excess_pct',num:true,tip:'The only column that matters: the same money in SPY over the identical window, subtracted out.',cls:sgn,f:v=>v==null?'—':`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`},
+    {h:'Off high',k:'off_high_pct',num:true,tip:'Drop from the 52-week high. Large negatives are the round-trips.',cls:sgn,f:v=>v==null?'—':pc(v)},
+    {h:'Last',k:'price',num:true,f:v=>v==null?'—':'$'+v.toLocaleString()},
+  ],'No deals tracked yet.')+'</div>';
+
+  const rad=p.radar||[];
+  $('policyRadar').innerHTML=`<div style="padding:13px 20px 0"><div class="banner">Nothing here has a deal. These are names repeatedly floated as candidates in the sectors the administration is funding. Ranked by how often they show up in the policy tape below — an attention count, not a forecast, and a poor reason on its own to buy anything.</div></div><div class="scrollx">`+
+    tbl(rad,[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Sector',k:'sector',f:v=>`<span class="neu" style="font-size:12px">${v}</span>`},
+      {h:'Why it gets named',k:'thesis',f:v=>v||'',cls:()=>'wrap'},
+      {h:'Tape hits',k:'heat',num:true,tip:'Mentions across the policy documents and headlines in the tape below.',f:v=>`<span class="heat ${v?'on':''}">${v||0}</span>`},
+      {h:'20D',k:'chg_20d_pct',num:true,cls:sgn,f:v=>v==null?'—':pc(v)},
+      {h:'Last',k:'price',num:true,f:v=>v==null?'—':'$'+v.toLocaleString()},
+    ],'Radar appears after the next engine run.')+'</div>';
+
+  const tape=p.tape||[];
+  $('policyTapeMeta').innerHTML=`<span class="mono">${tape.length} documents</span>`;
+  $('policyTape').innerHTML=tape.length
+    ? tape.map(it=>`<div class="newsrow"><span class="tk">${it.tag||''}</span><a href="${it.link}" target="_blank" rel="noopener">${it.title}</a><span class="src">${it.source||''}</span></div>`).join('')
+    : '<div class="empty">Tape fills in on the next engine run.</div>';
+
+  $('policyMethod').textContent=(p.method||'')+' '+(p.disclaimer||'');
+  $('policyChannels').innerHTML=`<div class="subnote" style="margin-bottom:10px">Where these land first. The stock move happens in minutes, so the edge — if there is one — is in reading the channel, not the headline.</div>
+    <div class="chanlist">`+(p.channels||[]).map(c=>`<div class="chan"><a href="${c.url}" target="_blank" rel="noopener">${c.name} ↗</a><p>${c.note}</p></div>`).join('')+`</div>`;
 }
 
 function draw(){
@@ -470,6 +578,8 @@ function draw(){
     $('newsList').innerHTML=nw.items.map(it=>`<div class="newsrow"><span class="tk">${it.tag||''}</span><a href="${it.link}" target="_blank" rel="noopener">${it.title}</a><span class="src">${it.source||''}</span></div>`).join('');
   } else { $('newsList').innerHTML='<div class="empty">Headlines will appear after the next engine run publishes them.</div>'; }
 
+  drawPolicy(DATA.policy);
+
   drawChart(cv);
 
   const tiles=[{k:'Live since',v:sc.live_since||'—',s:'forward test'},{k:'Open',v:openN,s:'tracked now'},{k:'Closed',v:closedN,s:'reached horizon'},
@@ -491,13 +601,13 @@ function draw(){
   for(const st of (bt.strategies||[])) bh+=`<tr><td><div style="font-weight:600">${st.name}</div><div style="color:var(--dim);font-size:11px;margin-top:4px;white-space:normal;max-width:430px">${st.note||''}</div></td><td><span class="mono" style="font-size:11px;color:var(--text2)">${st.status}</span></td><td class="num">${st.cagr_pct}%</td><td class="num">${st.sharpe}</td><td class="num up">${st.out_of_sample_sharpe}</td><td class="num down">${st.max_drawdown_pct}%</td></tr>`;
   $('backtestTbl').innerHTML=bh+'</tbody></table>';
   $('btMethod').textContent=bt.method||'';
-  $('foot').innerHTML=`<b>How this works.</b> A cross-sectional momentum model — validated on real historical data and survivorship-controlled — runs daily on free infrastructure and publishes the playbook above. The <span class="up">Live Track Record</span> is a real forward test with no hindsight; the <span class="warn">Backtest</span> uses real historical prices with hypothetical trades applied in hindsight. Crypto is risk-managed beta, not an edge.<br><br>${sig.disclaimer||''} SIGNAL is a research tool, not investment advice, and is not a broker.`;
+  $('foot').innerHTML=`<b>How this works.</b> A cross-sectional momentum model — validated on real historical data and survivorship-controlled — runs daily on free infrastructure and publishes the playbook above. The <span class="up">Live Track Record</span> is a real forward test with no hindsight; the <span class="warn">Backtest</span> uses real historical prices with hypothetical trades applied in hindsight. Crypto is risk-managed beta, not an edge. The <span class="gold">Policy Desk</span> tracks federal equity, warrants and contracts in listed companies and scores each one against SPY from the announcement close — it is a research desk for policy risk, not a signal, and it publishes the losers alongside the winners.<br><br>${sig.disclaimer||''} SIGNAL is a research tool, not investment advice, and is not a broker.`;
 }
 
 (async()=>{
   try{
-    const [sig,led,bt,meta,cv,val,watch,news,digest]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null)]);
-    DATA={sig,led,bt,meta,cv,val,watch,news,digest};draw();
+    const [sig,led,bt,meta,cv,val,watch,news,digest,policy]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null)]);
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';
