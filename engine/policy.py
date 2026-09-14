@@ -35,12 +35,15 @@ error bars and saying so is the whole point.
 
 DETECTION
 A curated list goes stale the day after it is written, so the registry is not the
-only input. Every run searches EDGAR full text for the phrases these deals
-actually produce in 8-K filings, resolves filer CIKs to tickers, and publishes
-anything that is not already in the registry as an UNVERIFIED candidate with a
-link to the filing. The desk therefore surfaces the next deal without waiting for
-a human to notice it, while never silently promoting a machine guess into the
-scored table.
+only input. Every run reads four independent detectors: EDGAR full text for the
+phrases these deals produce in 8-Ks (best evidence, and the SEC blocks most
+datacenter IPs, so it cannot be relied on alone), Department of War contract
+announcements, every federal award over $50M filed to USAspending, and policy
+headlines as a backstop. Recipient names are matched back to tracked tickers, and
+anything outside the registry is published as an UNVERIFIED candidate with a link
+to the underlying record. The desk therefore surfaces the next deal without
+waiting for a human to notice it, while never promoting a machine guess into the
+scored table on its own.
 
 EXPOSURE
 Instead of a vibes list, each name carries its actual federal obligations from
@@ -61,7 +64,7 @@ import json
 import math
 import os
 import traceback
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import numpy as np
 import pandas as pd
@@ -393,6 +396,11 @@ def build_detection(cik_map, known_tickers, name_map):
                     break
         it["status"] = ("in registry" if it.get("ticker") in known_tickers and it.get("ticker")
                         else "unverified")
+    # a detection feed is about what is happening now; news RSS happily returns
+    # six-month-old commentary, which would turn this card into an archive
+    cutoff = (datetime.now(timezone.utc).date() - timedelta(days=60)).isoformat()
+    items = [i for i in items if (i.get("date") or "9999") >= cutoff]
+
     seen, dedup = set(), []
     for it in sorted(items, key=lambda x: (x.get("date") or "", x.get("quality") == "filing"),
                      reverse=True):

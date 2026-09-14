@@ -169,7 +169,14 @@ def federal_register(days=30, per_term=4):
             ok_any = True
             for d in (data or {}).get("results", []):
                 ag = ", ".join(a.get("name", "") for a in (d.get("agencies") or [])[:2])
-                out.append({"title": d.get("title", ""), "link": d.get("html_url", ""),
+                title = d.get("title", "")
+                # a full-text hit on "nuclear" inside a Sunshine Act meeting notice is not
+                # policy news; keep presidential documents, or documents whose own title
+                # carries the term
+                presidential = "presidential" in (d.get("type", "") or "").lower()
+                if not presidential and term.lower() not in title.lower():
+                    continue
+                out.append({"title": title, "link": d.get("html_url", ""),
                             "date": d.get("publication_date"), "source": ag or "Federal Register",
                             "kind": d.get("type", ""), "matched": term})
         except Exception as e:
@@ -236,25 +243,34 @@ def dow_contracts(cap=40):
         return []
 
 
-def usaspending_recent(days=45, min_amount=50_000_000, limit=60):
+def _first(row, *keys):
+    for k in keys:
+        v = row.get(k)
+        if v:
+            return v
+    return None
+
+
+AGENCY_HINTS = ("defense", "war", "energy", "commerce", "interior")
+
+
+def usaspending_recent(days=45, min_amount=50_000_000, limit=80):
     """Large recent federal awards, any recipient. This is the detector that does not
     depend on anyone writing a press release: the money is filed whether or not it is
     announced, and a new nine-figure recipient in these agencies is worth a look."""
     end = datetime.now(timezone.utc).date()
     start = end - timedelta(days=days)
+    # No agency filter in the request: USAspending matches toptier agency names exactly
+    # and the spellings shift ("Department of Defense" vs "Department of Defense (DOD)"),
+    # which silently returns nothing. Ask broadly, filter the agency string here.
     payload = {
         "filters": {
             "time_period": [{"start_date": start.isoformat(), "end_date": end.isoformat()}],
             "award_type_codes": ["A", "B", "C", "D"],
             "award_amounts": [{"lower_bound": min_amount}],
-            "agencies": [
-                {"type": "awarding", "tier": "toptier", "name": "Department of Defense"},
-                {"type": "awarding", "tier": "toptier", "name": "Department of Energy"},
-                {"type": "awarding", "tier": "toptier", "name": "Department of Commerce"},
-            ],
         },
-        "fields": ["Award Amount", "Recipient Name", "Action Date", "Awarding Agency",
-                   "Description", "generated_internal_id"],
+        "fields": ["Award Amount", "Recipient Name", "Awarding Agency", "Description",
+                   "Start Date", "Last Modified Date", "generated_internal_id"],
         "sort": "Award Amount", "order": "desc", "limit": limit, "page": 1, "subawards": False,
     }
     try:
@@ -263,14 +279,15 @@ def usaspending_recent(days=45, min_amount=50_000_000, limit=60):
         out = []
         for r in rows:
             name = (r.get("Recipient Name") or "").strip()
-            if not name:
+            agency = r.get("Awarding Agency") or ""
+            if not name or not any(h in agency.lower() for h in AGENCY_HINTS):
                 continue
             gid = r.get("generated_internal_id")
             out.append({
                 "company": name,
                 "amount": r.get("Award Amount"),
-                "date": r.get("Action Date"),
-                "agency": r.get("Awarding Agency"),
+                "date": _first(r, "Start Date", "Last Modified Date", "Action Date"),
+                "agency": agency,
                 "desc": (r.get("Description") or "")[:160],
                 "source": "USAspending",
                 "matched": "award >= $%dM" % (min_amount // 1_000_000),
@@ -278,7 +295,8 @@ def usaspending_recent(days=45, min_amount=50_000_000, limit=60):
                 "link": (f"https://www.usaspending.gov/award/{gid}" if gid else
                          "https://www.usaspending.gov/search?keywords=" + urllib.parse.quote(name)),
             })
-        _mark("usaspending_recent", True, f"{len(out)} awards over ${min_amount/1e6:.0f}M")
+        _mark("usaspending_recent", True,
+              f"{len(out)} of {len(rows)} awards over ${min_amount/1e6:.0f}M in scope agencies")
         return out
     except Exception as e:
         _mark("usaspending_recent", False, str(e)[:120])
@@ -351,16 +369,38 @@ def usaspending_awards(recipient, years=2, limit=100):
                 total += float(amt)
             except Exception:
                 pass
-            d = r.get("Action Date")
-            if d and (last is None or d > last):
-                last = d
+            d = _first(r, "Start Date", "Last Modified Date", "Action Date", "End Date")
+            if d and (last is None or str(d) > str(last)):
+                last = str(d)[:10]
             ag = r.get("Awarding Agency")
             if ag:
                 agencies[ag] = agencies.get(ag, 0) + 1
         top_agency = max(agencies, key=agencies.get) if agencies else None
+
+        # The award list is capped, so its sum understates any large recipient. The
+        # category endpoint aggregates server-side; prefer it and fall back to the sum,
+        # saying on the page which of the two the number came from.
+        agg, basis = None, "sum of top %d awards" % limit
+        try:
+            cat = post_json("https://api.usaspending.gov/api/v2/search/spending_by_category/",
+                            {"category": "recipient", "filters": payload["filters"],
+                             "limit": 5, "page": 1})
+            best = None
+            for c in (cat or {}).get("results", []) or []:
+                nm = (c.get("name") or "").upper()
+                if recipient.upper().split()[0] in nm:
+                    best = c
+                    break
+            if best and best.get("amount"):
+                agg = float(best["amount"])
+                basis = "aggregated by recipient"
+        except Exception:
+            pass
+
         _mark("usaspending", True, "queried")
-        return {"total": round(total, 0), "count": len(rows), "last_action": last,
-                "top_agency": top_agency, "truncated": len(rows) >= limit,
+        return {"total": round(agg if agg is not None else total, 0), "count": len(rows),
+                "last_action": last, "top_agency": top_agency,
+                "truncated": agg is None and len(rows) >= limit, "basis": basis,
                 "link": "https://www.usaspending.gov/search?keywords=" + urllib.parse.quote(recipient)}
     except Exception as e:
         _mark("usaspending", False, str(e)[:120])

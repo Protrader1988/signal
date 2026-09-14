@@ -528,7 +528,7 @@ function drawPolicy(p){
     tbl(ex,[
       {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
       {h:'Name',k:'name',f:(v,r)=>`<span style="font-weight:600">${v}</span>${r.sector?`<span class="sub" style="display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px">${r.sector} · no deal, candidate only</span>`:''}`},
-      {h:'Federal awards 2y',k:'federal',num:true,tip:'Sum of matched prime awards over the last two years.',f:v=>v?`<span class="gold">${usd0(v.total)}</span>${v.truncated?'<span class="cismall">top 100 awards</span>':''}`:'—'},
+      {h:'Federal awards 2y',k:'federal',num:true,tip:'Prime award obligations over the last two years, matched on recipient name.',f:v=>v?`<span class="gold">${usd0(v.total)}</span><span class="cismall">${v.truncated?'floor: top 100 awards only':(v.basis||'')}</span>`:'—'},
       {h:'Awards',k:'federal',num:true,f:v=>v?v.count:'—'},
       {h:'Last action',k:'federal',num:true,f:v=>v&&v.last_action?`<span class="mono neu">${v.last_action}</span>`:'—'},
       {h:'Top agency',k:'federal',f:v=>v&&v.top_agency?`<span style="font-size:12px;color:var(--text2)">${v.top_agency}</span>`:'—'},
