@@ -172,6 +172,7 @@
   .b-radar{color:var(--muted);border-color:var(--line2)}
   td.wrap{white-space:normal;max-width:420px;color:var(--muted);font-size:11.5px;line-height:1.6;vertical-align:middle}
   .scrollx{overflow-x:auto}
+  .cismall{display:block;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:3px;font-weight:400}
   #policyTbl tbody td,#policyRadar tbody td{vertical-align:top;padding-top:14px}
   .dealname{font-weight:600}.dealname .sub{display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
   td.deal{white-space:normal;max-width:430px;vertical-align:top;padding-top:14px}
@@ -275,23 +276,36 @@
   <section id="policy">
     <div class="eyebrow"><span class="no">06</span><h2>Policy Desk</h2>
       <span class="hint">where the federal government is actually putting money — scored against SPY, not against the hype</span></div>
-    <div class="subnote">Since 2025 Washington has taken equity, warrants, price floors and offtake contracts in listed companies. Those announcements move stocks hard on day one. This desk tracks every confirmed deal and asks one question with real prices: <b class="gold">would buying it on the announcement have beaten simply owning SPY?</b> Returns are measured from the close of the announcement session — the first price you could actually pay — never from the government's own basis, which is lower and not available to you.</div>
+    <div class="subnote">Washington now takes equity, penny warrants, price floors, offtake and revenue shares in listed companies. Rather than list the announcements, this desk runs a <b class="gold">market model event study</b> on them: alpha and beta fitted on the 250 sessions before each deal, abnormal return cumulated over the windows after it. Day 0 is the announcement session — gapped, and mostly unbuyable. Every other window starts at the day-0 close, the first price you could actually pay. The deals are grouped by <em>structure</em>, because the question worth answering is not whether policy pays but which kind of deal pays.</div>
     <div id="policyVerdict"></div>
     <div class="statusgrid" id="policyTiles"></div>
     <div class="card" style="margin-top:16px">
-      <div class="card-head"><span class="code">DEALS</span><span class="badge b-sim">Tracked · not a signal</span><span class="t">Confirmed federal positions</span><span class="expo" id="policyMeta"></span></div>
-      <div id="policyTbl"><div class="loading">loading policy desk…</div></div>
+      <div class="card-head"><span class="code">CAR</span><span class="t">Median abnormal return in event time · day 0 = announcement</span><span class="expo" id="policyPathMeta"></span></div>
+      <div class="chart-legend" id="policyLegend"></div>
+      <div class="chartwrap"><div id="policyChart"><div class="loading">loading event study…</div></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">RADAR</span><span class="badge b-radar">Speculation</span><span class="t">Named as candidates — <span class="warn">no deal exists</span></span></div>
-      <div id="policyRadar"></div>
+      <div class="card-head"><span class="code">COHORT</span><span class="t">Median CAR by deal structure — with sample size, bootstrap CI and sign test</span></div>
+      <div id="policyCohorts"></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">TAPE</span><span class="t">Primary sources — orders, contracts, policy headlines</span><span class="expo" id="policyTapeMeta"></span></div>
-      <div id="policyTape"></div>
+      <div class="card-head"><span class="code">DEALS</span><span class="badge b-sim">Event study · not a signal</span><span class="t">Every tracked federal position</span><span class="expo" id="policyMeta"></span></div>
+      <div id="policyTbl"><div class="loading">loading deals…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">EXPOSURE</span><span class="t">Actual federal obligations — USAspending, not narrative</span><span class="expo" id="policyExpoMeta"></span></div>
+      <div id="policyExposure"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">EDGAR full-text scan for deal language in fresh 8-Ks</span><span class="expo" id="policyDetectMeta"></span></div>
+      <div id="policyDetect"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">DOCS</span><span class="t">Federal Register and Department of War, straight from the source</span></div>
+      <div id="policyDocs"></div>
     </div>
     <div class="metaline" id="policyMethod"></div>
-    <div style="margin-top:16px" id="policyChannels"></div>
+    <div class="sysbar" id="policyHealth" style="margin-top:18px"></div>
   </section>
 
   <section id="chart">
@@ -372,67 +386,153 @@ function drawChart(cv){
   $('curveRange').innerHTML=`<span class="mono">${cv.start} → ${cv.end}</span>`;
 }
 
+function policyChart(paths){
+  const keys=Object.keys(paths||{});
+  if(!keys.length){$('policyChart').innerHTML='<div class="empty">Not enough deals in any single structure to average a path honestly. The chart appears once a cohort has at least three testable events.</div>';return;}
+  const colors={contracted:'#2fd39a',equity:'#e6c976',loi:'#f2b23e',extraction:'#ff5d5d',partner:'#b39bff'};
+  const W=1000,H=300,pl=54,pr=58,pt=16,pb=30;
+  let lo=0,hi=0,dmin=0,dmax=0;
+  keys.forEach(k=>{const p=paths[k];lo=Math.min(lo,...p.median,...(p.q25||[]));hi=Math.max(hi,...p.median,...(p.q75||[]));dmin=Math.min(dmin,p.days[0]);dmax=Math.max(dmax,p.days[p.days.length-1]);});
+  const pad=Math.max(2,(hi-lo)*0.12);lo-=pad;hi+=pad;
+  const X=d=>pl+(W-pl-pr)*(d-dmin)/Math.max(1,dmax-dmin);
+  const Y=v=>pt+(H-pt-pb)*(1-(v-lo)/Math.max(.001,hi-lo));
+  let grid='';
+  const step=Math.max(1,Math.round((hi-lo)/5));
+  for(let v=Math.ceil(lo/step)*step;v<=hi;v+=step){const y=Y(v);
+    grid+=`<line x1="${pl}" y1="${y}" x2="${W-pr}" y2="${y}" stroke="${v===0?'#2a3345':'#1a2130'}"/><text x="${pl-8}" y="${y+3}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#616a7d">${v>0?'+':''}${v}%</text>`;}
+  [0,21,42,63].filter(d=>d>=dmin&&d<=dmax).forEach(d=>{const x=X(d);
+    grid+=`<line x1="${x}" y1="${pt}" x2="${x}" y2="${H-pb}" stroke="#121826"/>`;});
+  grid+=`<line x1="${X(0)}" y1="${pt}" x2="${X(0)}" y2="${H-pb}" stroke="#4a3c16" stroke-dasharray="3 3"/>`;
+  let xl='';[dmin,0,21,42,63].filter((d,i,a)=>d>=dmin&&d<=dmax&&a.indexOf(d)===i).forEach(d=>{
+    xl+=`<text x="${X(d)}" y="${H-10}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#616a7d">${d===0?'day 0':(d>0?'+'+d:d)}</text>`;});
+  let lines='';
+  keys.forEach(k=>{const p=paths[k],c=colors[k]||'#5aa2ff';
+    if(p.q25&&p.q75){
+      const up=p.days.map((x,i)=>`${i?'L':'M'}${X(x).toFixed(1)} ${Y(p.q75[i]).toFixed(1)}`).join(' ');
+      const dn=p.days.slice().reverse().map((x,i)=>`L${X(x).toFixed(1)} ${Y(p.q25[p.q25.length-1-i]).toFixed(1)}`).join(' ');
+      lines+=`<path d="${up} ${dn} Z" fill="${c}" opacity=".07"/>`;
+    }
+    const d=p.days.map((x,i)=>`${i?'L':'M'}${X(x).toFixed(1)} ${Y(p.median[i]).toFixed(1)}`).join(' ');
+    lines+=`<path d="${d}" fill="none" stroke="${c}" stroke-width="2.2" stroke-linejoin="round" opacity=".95"/>`;
+    const last=p.median[p.median.length-1];
+    lines+=`<text x="${W-pr+7}" y="${Y(last)+3}" font-family="JetBrains Mono" font-size="10.5" font-weight="600" fill="${c}">${last>0?'+':''}${Math.round(last)}%</text>`;});
+  $('policyChart').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${xl}${lines}</svg>`;
+  $('policyLegend').innerHTML=keys.map(k=>`<span class="lg"><i style="background:${colors[k]||'#5aa2ff'}"></i>${paths[k].label} <span class="mono" style="color:var(--dim)">n=${paths[k].n}</span></span>`).join('');
+  $('policyPathMeta').innerHTML=`<span class="mono">median · shaded band = interquartile range</span>`;
+}
+
 function drawPolicy(p){
-  if(!p||!p.positions){
-    $('policyTbl').innerHTML='<div class="empty">Policy desk appears after the next engine run publishes it.</div>';
+  if(!p||!p.events){
+    $('policyTbl').innerHTML='<div class="empty">Policy desk appears after the next engine run.</div>';
+    $('policyChart').innerHTML='';
     return;
   }
-  const sc=p.scorecard||{};
-  const tiers={stake:['Equity stake','b-stake'],loi:['Announced · LOI','b-loi'],contract:['Contract only','b-contract'],
-               extraction:['Govt takes a cut','b-extraction'],partner:['Partner read-through','b-partner']};
+  const cohortMeta={contracted:['Contracted economics','b-stake'],equity:['Equity stake only','b-loi'],
+    loi:['Non-binding LOI','b-contract'],extraction:['Govt takes a cut','b-extraction'],partner:['Partner read-through','b-partner']};
+  const carCell=v=>v==null?'—':`<span class="${sgn(v)}">${pc(v)}</span>`;
+  const ci=w=>(w&&w.median!=null)?`<span class="${sgn(w.median)}">${pc(w.median)}</span><span class="cismall">${pc(w.lo)} to ${pc(w.hi)}</span>`:'—';
+  const pooled=p.pooled||{},co=p.cohorts||{};
 
-  // the honest read, generated from the numbers rather than asserted
-  if(sc.n){
-    const missRate=sc.n-sc.beat_spy;
-    const have=n=>n===1?'has':'have';
-    $('policyVerdict').innerHTML=`<div class="verdict"><b>Read this before you act on any of it.</b>
-      Of <span class="hl">${sc.n}</span> deals tracked, <span class="hl">${sc.beat_spy}</span> ${have(sc.beat_spy)} beaten SPY since the announcement and
-      <span class="hl">${missRate}</span> ${have(missRate)} not. Median excess return versus SPY: <span class="hl ${sgn(sc.median_excess_pct)}">${pc(sc.median_excess_pct)}</span>.
-      <span class="hl">${sc.below_entry}</span> now trade${sc.below_entry===1?'s':''} <em>below</em> the price you could have paid on announcement day.
-      The median announcement-day move was <span class="hl">${pc(sc.median_day1_pct)}</span> — and most of that printed pre-market, before you could act,
-      which is the whole problem with trading the headline. The distribution is one big winner (<span class="mono">${sc.best}</span>) carrying a
-      long tail of round-trips (<span class="mono">${sc.worst}</span>). Read this desk for <b>policy risk and direction</b>, not for entries.</div>`;
+  // verdict — assembled from the statistics, not asserted
+  const m1=pooled.m1||{},q1=pooled.q1||{},d0=pooled.day0||{};
+  const cmp=(a,b,key)=>{const A=co[a]&&co[a].windows[key],B=co[b]&&co[b].windows[key];
+    return (A&&B&&A.median!=null&&B.median!=null)?[A,B]:null;};
+  const struct=cmp('contracted','equity','q1');
+  let structLine='';
+  if(struct){
+    const [c,e]=struct;
+    structLine=`Split by structure, deals with <b>contracted economics</b> (price floors, offtake, procurement) run a median
+      <span class="hl ${sgn(c.median)}">${pc(c.median)}</span> at one quarter on n=${c.n}, against
+      <span class="hl ${sgn(e.median)}">${pc(e.median)}</span> for <b>equity stakes with nothing attached</b> on n=${e.n}.
+      That is the distinction to trade on, if any of it is tradeable at all — and at these sample sizes neither interval excludes zero by much.`;
+  } else {
+    structLine=`No cohort yet has the three testable events needed to report a median, so the structural comparison is not published rather than estimated.`;
   }
+  $('policyVerdict').innerHTML=`<div class="verdict"><b>What the study actually says.</b>
+    Across <span class="hl">${m1.n||0}</span> testable deals the median abnormal return is
+    <span class="hl ${sgn(d0.median)}">${pc(d0.median)}</span> on the announcement day itself and
+    <span class="hl ${sgn(m1.median)}">${pc(m1.median)}</span> over the month after it
+    ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?' — indistinguishable from noise':''})`:''}.
+    ${m1.pos!=null?`<span class="hl">${m1.pos}</span> of <span class="hl">${m1.n}</span> were positive at one month.`:''}
+    Day 0 is where the move lives and day 0 is the part you cannot buy. ${structLine}</div>`;
+
+  const fwd=(p.ledger&&p.ledger.forward)||{};
   const tiles=[
-    {k:'Deals tracked',v:(p.counts&&p.counts.positions)||0,s:'confirmed announcements'},
-    {k:'Beat SPY since',v:sc.n?`${sc.beat_spy}/${sc.n}`:'—',s:sc.n?`${sc.beat_spy_pct}% hit rate`:'accruing'},
-    {k:'Median vs SPY',v:sc.median_excess_pct==null?'—':pc(sc.median_excess_pct),s:'excess return, same window',cls:sgn(sc.median_excess_pct)},
-    {k:'Median day 1',v:sc.median_day1_pct==null?'—':pc(sc.median_day1_pct),s:'mostly unbuyable'},
-    {k:'Below entry now',v:sc.below_entry==null?'—':sc.below_entry,s:'under announcement-day close',cls:sc.below_entry?'down':''},
+    {k:'Deals studied',v:`${(p.counts&&p.counts.testable)||0}/${(p.counts&&p.counts.events)||0}`,s:'testable / tracked'},
+    {k:'Median day 0',v:d0.median==null?'—':pc(d0.median),s:'abnormal, gapped',cls:sgn(d0.median)},
+    {k:'Median +1m',v:m1.median==null?'—':pc(m1.median),s:m1.p!=null?`sign test p=${m1.p}`:'accruing',cls:sgn(m1.median)},
+    {k:'Median +1q',v:q1.median==null?'—':pc(q1.median),s:q1.n?`n=${q1.n} · ${q1.pos} positive`:'accruing',cls:sgn(q1.median)},
+    {k:'Forward record',v:fwd.n||0,s:fwd.since?`live since ${fwd.since}`:'starts at first detection'},
   ];
   $('policyTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
 
-  $('policyMeta').innerHTML=`<span class="mono">${(p.counts&&p.counts.positions)||0} deals</span>`;
-  $('policyTbl').innerHTML='<div class="scrollx">'+tbl(p.positions,[
-    {h:'Company',k:'name',cls:()=>'deal',f:(v,r)=>`<span class="dealname">${v}<span class="sub">${r.ticker} · ${r.agency} · ${r.date}</span></span><span class="struct">${r.structure||''}</span>`},
-    {h:'Type',k:'tier',f:v=>{const t=tiers[v]||['—','b-radar'];return `<span class="badge ${t[1]}">${t[0]}</span>`;}},
-    {h:'Day 1',k:'day1_pct',num:true,tip:'Move on the announcement session itself. Usually gapped at the open — this is the part you could not buy.',cls:sgn,f:v=>v==null?'—':pc(v)},
-    {h:'Since',k:'since_pct',num:true,tip:'Return from the announcement-day CLOSE — the first price you could actually pay.',cls:sgn,f:v=>v==null?'—':pc(v)},
-    {h:'vs SPY',k:'excess_pct',num:true,tip:'The only column that matters: the same money in SPY over the identical window, subtracted out.',cls:sgn,f:v=>v==null?'—':`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`},
-    {h:'Off high',k:'off_high_pct',num:true,tip:'Drop from the 52-week high. Large negatives are the round-trips.',cls:sgn,f:v=>v==null?'—':pc(v)},
-    {h:'Last',k:'price',num:true,f:v=>v==null?'—':'$'+v.toLocaleString()},
+  policyChart(p.paths);
+
+  // cohort table
+  const wins=p.windows||[];
+  const cohorts=Object.values(co).sort((a,b)=>b.n-a.n);
+  let ch='<div class="scrollx"><table><thead><tr><th>Deal structure</th><th class="num">n</th>'+
+    wins.map(w=>`<th class="num" title="Median cumulative abnormal return over sessions ${w.from} to ${w.to} relative to the announcement">${w.label}</th>`).join('')+
+    '<th class="num" title="Two-sided sign test on the +1m window against a zero median">p (+1m)</th></tr></thead><tbody>';
+  for(const c of cohorts){
+    if(!c.reportable){
+      ch+=`<tr><td><div style="font-weight:600">${c.label}</div><div style="color:var(--dim);font-size:11px;margin-top:3px">${c.tickers.join(' · ')}</div></td><td class="num">${c.n}</td><td class="num" colspan="${wins.length+1}" style="color:var(--muted);text-align:left;white-space:normal">Below the three-event minimum. No median published — an average of two things is not a finding.</td></tr>`;
+      continue;
+    }
+    ch+=`<tr><td><div style="font-weight:600">${c.label}</div><div style="color:var(--dim);font-size:11px;margin-top:3px">${c.tickers.join(' · ')}</div></td><td class="num">${c.n}</td>`+
+      wins.map(w=>`<td class="num">${ci(c.windows[w.key])}</td>`).join('')+
+      `<td class="num"><span class="${(c.windows.m1&&c.windows.m1.p!=null&&c.windows.m1.p<0.1)?'gold':'neu'}">${(c.windows.m1&&c.windows.m1.p!=null)?c.windows.m1.p:'—'}</span></td></tr>`;
+  }
+  $('policyCohorts').innerHTML=ch+'</tbody></table></div>';
+
+  // deals
+  $('policyMeta').innerHTML=`<span class="mono">${(p.counts&&p.counts.events)||0} deals</span>`;
+  $('policyTbl').innerHTML='<div class="scrollx">'+tbl(p.events,[
+    {h:'Company',k:'name',cls:()=>'deal',f:(v,r)=>`<span class="dealname">${r.source_url?`<a href="${r.source_url}" target="_blank" rel="noopener" style="border-bottom:1px dotted var(--line2)">${v} ↗</a>`:v}<span class="sub">${r.ticker} · ${r.agency} · ${r.date}</span></span><span class="struct">${r.structure||''}</span>`},
+    {h:'Structure',k:'cohort',f:v=>{const t=cohortMeta[v]||['—','b-radar'];return `<span class="badge ${t[1]}">${t[0]}</span>`;}},
+    {h:'Day 0',k:'car',num:true,tip:'Abnormal return on the announcement session. Gapped — treat as unbuyable.',f:v=>carCell(v&&v.day0)},
+    {h:'+1w',k:'car',num:true,f:v=>carCell(v&&v.w1)},
+    {h:'+1m',k:'car',num:true,f:v=>carCell(v&&v.m1)},
+    {h:'+1q',k:'car',num:true,f:v=>carCell(v&&v.q1)},
+    {h:'+6m',k:'car',num:true,f:v=>carCell(v&&v.h1)},
+    {h:'Raw',k:'meta',num:true,tip:'Plain price return since the day-0 close, before any market adjustment.',f:v=>v&&v.raw_since_pct!=null?`<span class="${sgn(v.raw_since_pct)}">${pc(v.raw_since_pct)}</span>`:'—'},
+    {h:'Model',k:'meta',f:v=>v?`<span class="mono" style="font-size:10.5px;color:var(--dim)">β ${v.beta}<br>${v.model}</span>`:'<span class="warn" style="font-size:11px">no data yet</span>'},
   ],'No deals tracked yet.')+'</div>';
 
-  const rad=p.radar||[];
-  $('policyRadar').innerHTML=`<div style="padding:13px 20px 0"><div class="banner">Nothing here has a deal. These are names repeatedly floated as candidates in the sectors the administration is funding. Ranked by how often they show up in the policy tape below — an attention count, not a forecast, and a poor reason on its own to buy anything.</div></div><div class="scrollx">`+
-    tbl(rad,[
+  // exposure
+  const ex=p.exposure||[];
+  const usd0=v=>v==null?'—':(v>=1e9?'$'+(v/1e9).toFixed(1)+'B':(v>=1e6?'$'+(v/1e6).toFixed(0)+'M':'$'+Math.round(v).toLocaleString()));
+  $('policyExpoMeta').innerHTML=`<span class="mono">${ex.length} names</span>`;
+  $('policyExposure').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Prime contract and grant obligations over the last two years, matched on recipient name. Subsidiaries filed under another name are missed and same-name entities can double-count, so this is an order-of-magnitude exposure read, not accounting. Every row links to the underlying USAspending search.</div></div><div class="scrollx">'+
+    tbl(ex,[
       {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
-      {h:'Sector',k:'sector',f:v=>`<span class="neu" style="font-size:12px">${v}</span>`},
-      {h:'Why it gets named',k:'thesis',f:v=>v||'',cls:()=>'wrap'},
-      {h:'Tape hits',k:'heat',num:true,tip:'Mentions across the policy documents and headlines in the tape below.',f:v=>`<span class="heat ${v?'on':''}">${v||0}</span>`},
-      {h:'20D',k:'chg_20d_pct',num:true,cls:sgn,f:v=>v==null?'—':pc(v)},
-      {h:'Last',k:'price',num:true,f:v=>v==null?'—':'$'+v.toLocaleString()},
-    ],'Radar appears after the next engine run.')+'</div>';
+      {h:'Name',k:'name',f:(v,r)=>`<span style="font-weight:600">${v}</span>${r.sector?`<span class="sub" style="display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px">${r.sector} · no deal, candidate only</span>`:''}`},
+      {h:'Federal awards 2y',k:'federal',num:true,tip:'Sum of matched prime awards over the last two years.',f:v=>v?`<span class="gold">${usd0(v.total)}</span>${v.truncated?'<span class="cismall">top 100 awards</span>':''}`:'—'},
+      {h:'Awards',k:'federal',num:true,f:v=>v?v.count:'—'},
+      {h:'Last action',k:'federal',num:true,f:v=>v&&v.last_action?`<span class="mono neu">${v.last_action}</span>`:'—'},
+      {h:'Top agency',k:'federal',f:v=>v&&v.top_agency?`<span style="font-size:12px;color:var(--text2)">${v.top_agency}</span>`:'—'},
+      {h:'',k:'federal',f:v=>v&&v.link?`<a href="${v.link}" target="_blank" rel="noopener" class="mono" style="font-size:11px;color:var(--gold2)">verify ↗</a>`:''},
+    ],'Exposure appears once USAspending responds.')+'</div>';
 
-  const tape=p.tape||[];
-  $('policyTapeMeta').innerHTML=`<span class="mono">${tape.length} documents</span>`;
-  $('policyTape').innerHTML=tape.length
-    ? tape.map(it=>`<div class="newsrow"><span class="tk">${it.tag||''}</span><a href="${it.link}" target="_blank" rel="noopener">${it.title}</a><span class="src">${it.source||''}</span></div>`).join('')
-    : '<div class="empty">Tape fills in on the next engine run.</div>';
+  // detection
+  const det=p.detection||[];
+  $('policyDetectMeta').innerHTML=`<span class="mono">${det.length} filings</span>`;
+  $('policyDetect').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Machine-found, human-unverified. Each run searches EDGAR full text for the language these deals produce — Office of Strategic Capital, CHIPS equity, DPA purchase commitments, government preferred stock — and lists what it finds. A hit is a filing to read, not a deal, and nothing here enters the study above until it is confirmed and added by hand.</div></div>'+
+    (det.length?det.map(d=>`<div class="newsrow"><span class="tk">${d.ticker||(d.form||'8-K')}</span><a href="${d.link}" target="_blank" rel="noopener">${d.company} — matched “${d.matched}”</a><span class="src">${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`).join('')
+      :'<div class="empty">No filings matched the deal-language queries in the last 45 days. That is a real answer, not an error.</div>');
 
-  $('policyMethod').textContent=(p.method||'')+' '+(p.disclaimer||'');
-  $('policyChannels').innerHTML=`<div class="subnote" style="margin-bottom:10px">Where these land first. The stock move happens in minutes, so the edge — if there is one — is in reading the channel, not the headline.</div>
-    <div class="chanlist">`+(p.channels||[]).map(c=>`<div class="chan"><a href="${c.url}" target="_blank" rel="noopener">${c.name} ↗</a><p>${c.note}</p></div>`).join('')+`</div>`;
+  // documents
+  const docs=p.documents||[];
+  $('policyDocs').innerHTML=docs.length?docs.map(d=>`<div class="newsrow"><span class="tk">${d.matched||''}</span><a href="${d.link}" target="_blank" rel="noopener">${d.title}</a><span class="src">${d.source||''} · ${d.date||''}</span></div>`).join('')
+    :'<div class="empty">No matching documents published in the window.</div>';
+
+  $('policyMethod').textContent=(p.method||'')+' '+(p.limits||'');
+
+  const h=p.health||{};
+  const names={sec_edgar:'edgar',sec_tickers:'cik map',federal_register:'fed register',dow_rss:'dow',usaspending:'usaspending'};
+  $('policyHealth').innerHTML=Object.keys(names).map(k=>{const s=h[k];
+    return `<span><b>${names[k]}</b> <span class="${s?(s.ok?'up':'down'):'neu'}">${s?(s.ok?'ok':'failed'):'not run'}</span></span>`;}).join('')+
+    `<span><b>generated</b> ${(p.generated_utc||'').slice(0,16).replace('T',' ')} UTC</span>`;
 }
 
 function draw(){
