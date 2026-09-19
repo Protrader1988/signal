@@ -311,9 +311,10 @@ def wh_evidence(text):
     money = [m.group(0).strip() for m in money]
     names = tickers.resolve(text)
     # Money alone is not evidence: every fact sheet cites a dollar figure somewhere.
-    # A post has to name an industry this desk tracks, or an instrument that moves
-    # value, before anything else counts.
-    qualifies = bool(industry or instrument)
+    # A post has to name an industry this desk tracks, an instrument that moves value,
+    # or a company that resolves to a ticker — "Signs Framework Agreement With Lockheed
+    # Martin" is a federal deal with a listed counterparty and no industry word in it.
+    qualifies = bool(industry or instrument or names)
     score = ((2 if industry else 0) + (2 if instrument else 0) +
              (1 if money else 0) + (2 if names else 0)) if qualifies else 0
     return {"industry": industry, "instrument": instrument, "money": money,

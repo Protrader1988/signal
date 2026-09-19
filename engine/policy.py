@@ -513,10 +513,20 @@ def build_detection(cik_map, known_tickers, name_map):
     items = []
     for f in src.whitehouse():
         items.append({**f, "ticker": None, "quality": "white house"})
-    for f in src.dow_releases(cap=12):
-        items.append({"company": f.get("title", ""), "title": f.get("title", ""),
-                      "link": f.get("link"), "date": f.get("date"), "source": "Dept. of War",
-                      "matched": "agency release", "ticker": None, "quality": "agency release"})
+    # The DoW release feed carries flag-officer announcements and press readouts
+    # alongside the deals, so it gets the same evidence bar as the White House: an
+    # industry, an instrument, a dollar figure or a company that resolves.
+    for f in src.dow_releases(cap=14):
+        title = f.get("title", "")
+        ev = src.wh_evidence(title)
+        if ev["score"] < 2:
+            continue
+        reason = " · ".join(filter(None, [", ".join(ev["industry"]),
+                                          ", ".join(ev["instrument"]),
+                                          ", ".join(ev["money"])])) or "named company"
+        items.append({"company": title, "title": title, "link": f.get("link"),
+                      "date": f.get("date"), "source": "Dept. of War", "evidence": ev,
+                      "matched": reason, "ticker": None, "quality": "agency release"})
     for f in src.edgar_fulltext():
         t = cik_map.get(f.get("cik")) if f.get("cik") else None
         items.append({**f, "ticker": t, "source": "SEC EDGAR", "quality": "filing"})
