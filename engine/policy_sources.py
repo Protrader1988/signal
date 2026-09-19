@@ -211,12 +211,22 @@ WH_SECTIONS = ["https://www.whitehouse.gov/news/",
                "https://www.whitehouse.gov/presidential-actions/",
                "https://www.whitehouse.gov/briefings-statements/"]
 
-# A White House post matters to this desk when it moves money or names an industry.
-WH_WORDS = ("investment", "invest", "equity", "stake", "warrant", "offtake", "price floor",
-            "partnership", "joint venture", "procurement", "stockpile", "tariff",
-            "critical mineral", "rare earth", "semiconductor", "chips", "shipbuilding",
-            "nuclear", "drone", "onshoring", "reshoring", "section 232", "billion",
-            "supply chain", "defense industrial", "quantum", "export")
+# Matching a single word like "invest" or "partnership" catches every fact sheet the
+# White House publishes — those words are in the boilerplate of a saltwater angling
+# announcement. A post earns its place here on evidence: an industry this desk tracks,
+# an instrument that moves value, a dollar figure, or a company that resolves to a
+# ticker. One generic word is not evidence.
+WH_INDUSTRY = ("critical mineral", "rare earth", "semiconductor", "chips act", "chip",
+               "shipbuilding", "shipyard", "nuclear", "reactor", "uranium", "drone",
+               "unmanned", "quantum", "defense industrial", "munitions", "steel",
+               "aluminum", "gallium", "tungsten", "lithium", "graphite", "magnet",
+               "pharmaceutical", "onshoring", "reshoring", "supply chain")
+WH_INSTRUMENT = ("equity stake", "equity investment", "warrant", "offtake", "price floor",
+                 "stockpile", "section 232", "tariff", "export control", "procurement award",
+                 "public-private partnership", "loan guarantee", "defense production act",
+                 "strategic capital", "joint venture", "most favored nation",
+                 "most-favored-nation", "drug pricing", "price cap", "buy american")
+WH_MONEY = re.compile(r"\$\s?\d[\d,.]*\s?(?:billion|million|trillion)?", re.I)
 
 _WH_LINK = re.compile(
     r'href="(https://www\.whitehouse\.gov/(?:fact-sheets|presidential-actions|'
@@ -289,14 +299,31 @@ def _wh_article(url, cache={}):
     return date, text
 
 
-def whitehouse(days=30, cap=30, fetch_bodies=24):
-    """Presidential actions, fact sheets, briefings and articles, filtered to the ones
-    that move money or name an industry. For a sector directive this is the first
-    public record — ahead of the Federal Register, which publishes the legal text days
-    later, and ahead of the wires often enough to matter.
+def wh_evidence(text):
+    """What in this post makes it market-relevant, and how strongly."""
+    import tickers
+    low = (text or "").lower()
+    industry = [w for w in WH_INDUSTRY if w in low][:3]
+    instrument = [w for w in WH_INSTRUMENT if w in low][:3]
+    money = [m.strip() for m in WH_MONEY.findall(text or "")][:2] if text else []
+    money = [m for m in WH_MONEY.finditer(text or "")][:2]
+    money = [m.group(0).strip() for m in money]
+    names = tickers.resolve(text)
+    score = (2 if industry else 0) + (2 if instrument else 0) + \
+            (1 if money else 0) + (2 if names else 0)
+    return {"industry": industry, "instrument": instrument, "money": money,
+            "tickers": names[:4], "score": score}
 
-    Titles are matched first, then the body of each recent post, because the headline
-    of a fact sheet rarely names the company the money is going to."""
+
+def whitehouse(days=30, cap=30, fetch_bodies=24, min_score=3):
+    """Presidential actions, fact sheets, briefings and articles, kept only when the
+    post itself carries evidence: an industry this desk tracks, an instrument that
+    moves value, a dollar figure, or a company that resolves to a ticker. For a sector
+    directive this is the first public record — ahead of the Federal Register, which
+    publishes the legal text days later.
+
+    Bodies are fetched rather than headlines matched, because the headline of a fact
+    sheet rarely names the company the money is going to."""
     seen, links = set(), []
     ok_any = False
     for page in WH_SECTIONS:
@@ -319,30 +346,32 @@ def whitehouse(days=30, cap=30, fetch_bodies=24):
     links.sort(key=lambda x: x["month"], reverse=True)
     links = links[:cap]
     cutoff = (datetime.now(timezone.utc).date() - timedelta(days=days)).isoformat()
-    out, bodies = [], 0
+    out, bodies, scanned = [], 0, 0
     for it in links:
-        title_hit = next((w for w in WH_WORDS if w in it["title"].lower()), None)
         date, text = (None, "")
         if bodies < fetch_bodies:
             date, text = _wh_article(it["link"])
             bodies += 1
             time.sleep(0.25)
-        body_hit = next((w for w in WH_WORDS if w in text.lower()), None) if text else None
-        hit = title_hit or body_hit
-        if not hit:
+        ev = wh_evidence((it["title"] + " ") + (text or ""))
+        scanned += 1
+        if ev["score"] < min_score:
             continue
         precision = "day"
         if not date:
             date, precision = it["month"] + "-01", "month"
         if date < cutoff:
             continue
+        reason = " · ".join(filter(None, [
+            ", ".join(ev["industry"]), ", ".join(ev["instrument"]), ", ".join(ev["money"])]))
         out.append({"title": it["title"], "company": it["title"], "link": it["link"],
                     "date": date, "date_precision": precision, "source": "White House",
-                    "kind": it["section"].replace("-", " "), "matched": hit,
-                    "desc": text[:1200], "form": "white house"})
+                    "kind": it["section"].replace("-", " "),
+                    "matched": reason or "policy", "evidence": ev,
+                    "desc": (text or "")[:1200], "form": "white house"})
     if ok_any:
         _mark("whitehouse", True,
-              f"{len(out)} of {len(seen)} posts matched, {bodies} bodies read")
+              f"{len(out)} of {scanned} posts cleared the evidence bar ({bodies} bodies read)")
     return out
 
 
