@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-19T12:32:13.676744+00:00",
+  "generated_utc": "2026-09-19T12:38:53.741296+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -4707,7 +4707,7 @@
       "federal": {
         "total": 48822433170.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2100-12-31",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4724,7 +4724,7 @@
       "federal": {
         "total": 11865636395.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2030-11-26",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4741,7 +4741,7 @@
       "federal": {
         "total": 9384825482.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2036-01-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4758,7 +4758,7 @@
       "federal": {
         "total": 8541790833.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2036-06-02",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4775,7 +4775,7 @@
       "federal": {
         "total": 4191333356.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2034-07-31",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4792,7 +4792,7 @@
       "federal": {
         "total": 2841459150.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2050-06-30",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4809,7 +4809,7 @@
       "federal": {
         "total": 1653400849.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2035-11-30",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4826,7 +4826,7 @@
       "federal": {
         "total": 1007096137.0,
         "count": 114,
-        "last_action": null,
+        "last_action": "2035-12-28",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4843,7 +4843,7 @@
       "federal": {
         "total": 292020992.0,
         "count": 181,
-        "last_action": null,
+        "last_action": "2035-12-28",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4860,7 +4860,7 @@
       "federal": {
         "total": 189367752.0,
         "count": 8,
-        "last_action": null,
+        "last_action": "2027-03-31",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4877,7 +4877,7 @@
       "federal": {
         "total": 141272758.0,
         "count": 300,
-        "last_action": null,
+        "last_action": "2038-06-21",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4894,7 +4894,7 @@
       "federal": {
         "total": 51164819.0,
         "count": 14,
-        "last_action": null,
+        "last_action": "2027-07-08",
         "top_agency": "Department of State",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4911,7 +4911,7 @@
       "federal": {
         "total": 28757316.0,
         "count": 1,
-        "last_action": null,
+        "last_action": "2027-08-31",
         "top_agency": "Department of Energy",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4928,7 +4928,7 @@
       "federal": {
         "total": 6812479.0,
         "count": 3,
-        "last_action": null,
+        "last_action": "2027-03-31",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4945,7 +4945,7 @@
       "federal": {
         "total": 5181868.0,
         "count": 16,
-        "last_action": null,
+        "last_action": "2027-09-29",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4962,7 +4962,7 @@
       "federal": {
         "total": 1579930.0,
         "count": 3,
-        "last_action": null,
+        "last_action": "2028-10-12",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4979,7 +4979,7 @@
       "federal": {
         "total": 938520.0,
         "count": 3,
-        "last_action": null,
+        "last_action": "2027-03-31",
         "top_agency": "Department of Agriculture",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -4996,7 +4996,7 @@
       "federal": {
         "total": 197016.0,
         "count": 5,
-        "last_action": null,
+        "last_action": "2037-10-30",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5013,7 +5013,7 @@
       "federal": {
         "total": 99448.0,
         "count": 1,
-        "last_action": null,
+        "last_action": "2025-08-30",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "sum of all 1 matched awards",
@@ -5030,7 +5030,7 @@
       "federal": {
         "total": 95663.0,
         "count": 2,
-        "last_action": null,
+        "last_action": "2026-09-30",
         "top_agency": "Department of Commerce",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5047,7 +5047,7 @@
       "federal": {
         "total": 68221.0,
         "count": 7,
-        "last_action": null,
+        "last_action": "2026-11-30",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5064,7 +5064,7 @@
       "federal": {
         "total": 10156.0,
         "count": 1,
-        "last_action": null,
+        "last_action": "2025-06-18",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5081,7 +5081,7 @@
       "federal": {
         "total": 500.0,
         "count": 2,
-        "last_action": null,
+        "last_action": "2035-12-28",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5285,7 +5285,7 @@
       "federal": {
         "total": -19012.0,
         "count": 5,
-        "last_action": null,
+        "last_action": "2036-07-05",
         "top_agency": "Department of Energy",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5302,7 +5302,7 @@
       "federal": {
         "total": -325488.0,
         "count": 2,
-        "last_action": null,
+        "last_action": "2026-06-30",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5911,47 +5911,47 @@
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-19T12:28:47+00:00"
+      "checked_utc": "2026-09-19T12:36:13+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-09-19T12:29:18+00:00"
+      "checked_utc": "2026-09-19T12:36:46+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "16 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-09-19T12:29:20+00:00"
+      "checked_utc": "2026-09-19T12:36:47+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-09-19T12:29:22+00:00"
+      "checked_utc": "2026-09-19T12:36:50+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "3 documents",
-      "checked_utc": "2026-09-19T12:29:25+00:00"
+      "checked_utc": "2026-09-19T12:36:54+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "10 releases",
-      "checked_utc": "2026-09-19T12:29:25+00:00"
+      "checked_utc": "2026-09-19T12:36:54+00:00"
     },
     "dow_contracts": {
       "ok": true,
-      "note": "40 daily digests",
-      "checked_utc": "2026-09-19T12:29:27+00:00"
+      "note": "6 daily digests",
+      "checked_utc": "2026-09-19T12:36:55+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-09-19T12:32:13+00:00"
+      "checked_utc": "2026-09-19T12:38:53+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-09-19T12:32:13+00:00"
+      "checked_utc": "2026-09-19T12:38:53+00:00"
     }
   },
   "counts": {
@@ -5959,6 +5959,6 @@
     "testable": 34,
     "radar": 9,
     "detection": 23,
-    "documents": 53
+    "documents": 19
   }
 }
