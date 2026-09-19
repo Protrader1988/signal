@@ -470,9 +470,15 @@ function drawPolicy(p){
   }
   let concLine='';
   if(d0.median!=null&&m1.median!=null){
-    concLine=(Math.abs(d0.median)>=Math.abs(m1.median))
-      ? `Most of the move sits in the announcement session, which gaps and is therefore the part you cannot buy.`
-      : `The announcement session is <em>not</em> where the return is concentrated here — the month after it carries more, which is the opposite of the usual event-study result and deserves suspicion at n=${m1.n} rather than a victory lap.`;
+    if(d0.median>0&&m1.median<0){
+      concLine=`So the pattern is a pop you cannot buy followed by a give-back you can: day 0 gaps at the open, and the month after it runs negative.`;
+    } else if(m1.median>0&&m1.median>d0.median){
+      concLine=`Unusually, the drift after the announcement carries more than the announcement itself — the opposite of the standard event-study result, which at n=${m1.n} deserves suspicion rather than a victory lap.`;
+    } else if(Math.abs(d0.median)>=Math.abs(m1.median)){
+      concLine=`Most of the move sits in the announcement session, which gaps and is therefore the part you cannot buy.`;
+    } else {
+      concLine=`Neither window dominates: the announcement session and the month after it are both small relative to how far apart individual deals land.`;
+    }
   }
   let eqLine='';
   const eqd=co.equity&&co.equity.windows.day0,eqq=co.equity&&co.equity.windows.q1;
