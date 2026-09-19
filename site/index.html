@@ -306,7 +306,7 @@
       <div id="policyExposure"></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">White House actions, EDGAR filings, $50M+ federal awards, headlines</span><span class="expo" id="policyDetectMeta"></span></div>
+      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">White House actions, DoW releases, EDGAR filings, $50M+ awards, headlines</span><span class="expo" id="policyDetectMeta"></span></div>
       <div id="policyDetect"></div>
     </div>
     <div class="card">
@@ -571,7 +571,7 @@ function drawPolicy(p){
   const amt=v=>v==null?'':(v>=1e9?' · $'+(v/1e9).toFixed(1)+'B':(v>=1e6?' · $'+Math.round(v/1e6)+'M':''));
   $('policyDetect').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Machine-found, human-unverified, from four independent detectors: EDGAR full text for the language these deals produce, Department of War contract announcements, federal awards over $50M filed to USAspending (operators of national labs and cleanup sites filtered out, since a consortium that runs a federal facility is not something you can buy), and policy headlines as a backstop. The award and contract feeds matter most, because that money is filed whether or not anyone issues a press release. A hit is something to read, not a deal — nothing enters the study above until it is verified and added by hand.</div></div>'+
     (det.length?det.map(d=>{
-      const tag=d.ticker||(d.quality==='white house'?'WH':(d.quality==='award record'?'AWARD':(d.quality==='filing'?'8-K':'NEWS')));
+      const tag=d.ticker||(d.quality==='white house'?'WH':(d.quality==='agency release'?'DoW':(d.quality==='award record'?'AWARD':(d.quality==='filing'?'8-K':'NEWS'))));
       const extra=(d.named&&d.named.length)?` <span class="mono" style="color:var(--gold2);font-size:11px">also ${d.named.join(' ')}</span>`:'';
       const cand=(d.candidates&&d.candidates.length)?` <span class="mono" style="color:var(--dim);font-size:11px">unmapped: ${d.candidates.join('; ')}</span>`:'';
       return `<div class="newsrow"><span class="tk">${tag}</span><a href="${d.link}" target="_blank" rel="noopener">${d.title||d.company}${amt(d.amount)}</a>${extra}${cand}<span class="src">${d.source||''} · ${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`;}).join('')

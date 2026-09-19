@@ -513,6 +513,10 @@ def build_detection(cik_map, known_tickers, name_map):
     items = []
     for f in src.whitehouse():
         items.append({**f, "ticker": None, "quality": "white house"})
+    for f in src.dow_releases(cap=12):
+        items.append({"company": f.get("title", ""), "title": f.get("title", ""),
+                      "link": f.get("link"), "date": f.get("date"), "source": "Dept. of War",
+                      "matched": "agency release", "ticker": None, "quality": "agency release"})
     for f in src.edgar_fulltext():
         t = cik_map.get(f.get("cik")) if f.get("cik") else None
         items.append({**f, "ticker": t, "source": "SEC EDGAR", "quality": "filing"})
@@ -548,7 +552,7 @@ def build_detection(cik_map, known_tickers, name_map):
     items = [i for i in items if i.get("quality") != "white house" or i.get("title")]
 
     seen, dedup = set(), []
-    rank = {"white house": 3, "filing": 2, "award record": 1, "headline": 0}
+    rank = {"white house": 4, "agency release": 3, "filing": 2, "award record": 1, "headline": 0}
     for it in sorted(items, key=lambda x: (x.get("date") or "", rank.get(x.get("quality"), 0)),
                      reverse=True):
         k = ((it.get("company") or "")[:60].upper(), it.get("date"), it.get("matched"))
@@ -642,7 +646,7 @@ def main():
     name_map = {(d.get("recipient") or "").upper(): d["ticker"]
                 for d in REGISTRY + RADAR if d.get("recipient")}
     detection = build_detection(cik_map, known, name_map)
-    documents = (src.federal_register() + src.dow_releases() + src.dow_contracts(cap=6))
+    documents = (src.federal_register() + src.dow_contracts(cap=6))
     documents.sort(key=lambda d: d.get("date") or "", reverse=True)
     exposure = build_exposure(REGISTRY + RADAR)
     ledger = update_ledger(events, first_run_date)
