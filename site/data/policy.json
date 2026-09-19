@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-19T13:20:30.421161+00:00",
+  "generated_utc": "2026-09-19T13:26:33.154254+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -5350,77 +5350,21 @@
       "status": "unverified"
     },
     {
-      "company": "Joint Press Statement for the 29th Korea-U.S. Integrated Defense Dialogue",
-      "title": "Joint Press Statement for the 29th Korea-U.S. Integrated Defense Dialogue",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4606604/joint-press-statement-for-the-29th-korea-us-integrated-defense-dialogue/",
-      "date": "2026-09-18",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Secretary of War Flag Officer Announcements for Sept. 17, 2026",
-      "title": "Secretary of War Flag Officer Announcements for Sept. 17, 2026",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4604906/secretary-of-war-flag-officer-announcements-for-sept-17-2026/",
-      "date": "2026-09-18",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Secretary of War General Officer Announcements for Sept. 17, 2026",
-      "title": "Secretary of War General Officer Announcements for Sept. 17, 2026",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4604892/secretary-of-war-general-officer-announcements-for-sept-17-2026/",
-      "date": "2026-09-18",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Department of War Publishes Sixth Release of Unidentified Anomalous Phenomena Files on WAR.GOV/UFO",
-      "title": "Department of War Publishes Sixth Release of Unidentified Anomalous Phenomena Files on WAR.GOV/UFO",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4604795/department-of-war-publishes-sixth-release-of-unidentified-anomalous-phenomena-f/",
-      "date": "2026-09-18",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Statement by Chief Pentagon Spokesman, Sean Parnell, on the Clinical Guidance for Testosterone Deficiency in the Male Service Member",
-      "title": "Statement by Chief Pentagon Spokesman, Sean Parnell, on the Clinical Guidance for Testosterone Deficiency in the Male Service Member",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4604584/statement-by-chief-pentagon-spokesman-sean-parnell-on-the-clinical-guidance-for/",
-      "date": "2026-09-17",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
       "company": "Department of War Signs Framework Agreement With Lockheed Martin to Increase Production of AIM-260 JATM, Boost FMS Sales",
       "title": "Department of War Signs Framework Agreement With Lockheed Martin to Increase Production of AIM-260 JATM, Boost FMS Sales",
       "link": "https://www.war.gov/News/Releases/Release/Article/4603380/department-of-war-signs-framework-agreement-with-lockheed-martin-to-increase-pr/",
       "date": "2026-09-17",
       "source": "Dept. of War",
-      "matched": "agency release",
+      "evidence": {
+        "industry": [],
+        "instrument": [],
+        "money": [],
+        "tickers": [
+          "LMT"
+        ],
+        "score": 2
+      },
+      "matched": "named company",
       "ticker": "LMT",
       "quality": "agency release",
       "named": [],
@@ -5457,6 +5401,35 @@
       "status": "unverified"
     },
     {
+      "title": "Fact sheet president donald j trump provides meaningful water quality improvements through collaboration and oversight of federal support",
+      "company": "Fact sheet president donald j trump provides meaningful water quality improvements through collaboration and oversight of federal support",
+      "link": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-provides-meaningful-water-quality-improvements-through-collaboration-and-oversight-of-federal-support/",
+      "date": "2026-09-16",
+      "date_precision": "day",
+      "source": "White House",
+      "kind": "fact sheets",
+      "matched": "$1 million, $2.7 million",
+      "evidence": {
+        "industry": [],
+        "instrument": [],
+        "money": [
+          "$1 million",
+          "$2.7 million"
+        ],
+        "tickers": [
+          "F"
+        ],
+        "score": 3
+      },
+      "desc": "Fact Sheet: President Donald J. Trump Provides Meaningful Water Quality Improvements Through Collaboration and Oversight of Federal Support &#8211; The White House Skip to content Fact Sheets Fact Sheet: President Donald J. Trump Provides Meaningful Water Quality Improvements Through Collaboration and Oversight of Federal Support The White House September 16, 2026 IMPROVING WATER QUALITY OF THE CHESAPEAKE BAY: Today, President Donald J. Trump signed an Executive Order to remove unnecessary administrative costs and direct federal resources for the Chesapeake Bay toward projects that improve water quality, promoting a more efficient, accountable, and results-driven effort to improve the Chesapeake Bay. The Order rescinds the outdated and misguided Obama Administration 2009 Executive Order 13508, withdrawing its vague and confusing federal requirements that have been leveraged in support of stormwater management fees, or \u201crain taxes,\u201d imposed by States or localities that unnecessarily raise costs for American households. The Order directs the Secretary of Agriculture, the Secretary of Commerce, the Secretary of Homeland Security, the Secretary of the Interior, the Secretary of War, an",
+      "form": "white house",
+      "ticker": null,
+      "quality": "white house",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
       "title": "Restoring reciprocity in government procurement",
       "company": "Restoring reciprocity in government procurement",
       "link": "https://www.whitehouse.gov/presidential-actions/2026/09/restoring-reciprocity-in-government-procurement/",
@@ -5485,32 +5458,6 @@
       "status": "unverified"
     },
     {
-      "company": "Readout of Secretary of War Pete Hegseth's Meeting With the Federal Minister of Defense of Germany, Boris Pistorius",
-      "title": "Readout of Secretary of War Pete Hegseth's Meeting With the Federal Minister of Defense of Germany, Boris Pistorius",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4602863/readout-of-secretary-of-war-pete-hegseths-meeting-with-the-federal-minister-of/",
-      "date": "2026-09-15",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Deputy Secretary of War Directs Actions to Foster One Strong Industrial Base",
-      "title": "Deputy Secretary of War Directs Actions to Foster One Strong Industrial Base",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4601142/deputy-secretary-of-war-directs-actions-to-foster-one-strong-industrial-base/",
-      "date": "2026-09-15",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
       "company": "IDAHO ENVIRONMENTAL COALITION LLC",
       "amount": 1635128064.97,
       "date": "2026-09-15",
@@ -5529,25 +5476,26 @@
       "status": "unverified"
     },
     {
-      "company": "Department of War Issues Legal Waiver to Authorize Unidentified Anomalous Phenomena (UAP) Disclosures to PURSUE",
-      "title": "Department of War Issues Legal Waiver to Authorize Unidentified Anomalous Phenomena (UAP) Disclosures to PURSUE",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4600020/department-of-war-issues-legal-waiver-to-authorize-unidentified-anomalous-pheno/",
-      "date": "2026-09-14",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
       "company": "Department of War Announces a $450 Million Investment in The Elmet Group to Secure America's Tungsten Supply Chain",
       "title": "Department of War Announces a $450 Million Investment in The Elmet Group to Secure America's Tungsten Supply Chain",
       "link": "https://www.war.gov/News/Releases/Release/Article/4599882/department-of-war-announces-a-450-million-investment-in-the-elmet-group-to-secu/",
       "date": "2026-09-14",
       "source": "Dept. of War",
-      "matched": "agency release",
+      "evidence": {
+        "industry": [
+          "tungsten",
+          "supply chain"
+        ],
+        "instrument": [],
+        "money": [
+          "$450 Million"
+        ],
+        "tickers": [
+          "ELMT"
+        ],
+        "score": 5
+      },
+      "matched": "tungsten, supply chain \u00b7 $450 Million",
       "ticker": "ELMT",
       "quality": "agency release",
       "named": [],
@@ -5626,25 +5574,22 @@
       "status": "unverified"
     },
     {
-      "company": "National 9/11 Pentagon Memorial Temporary Closure",
-      "title": "National 9/11 Pentagon Memorial Temporary Closure",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4595549/national-911-pentagon-memorial-temporary-closure/",
-      "date": "2026-09-10",
-      "source": "Dept. of War",
-      "matched": "agency release",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
       "company": "Department of War Announces Navy's First Advanced Nuclear Microreactor Deployment at Naval Weapons Station Crane, Indiana",
       "title": "Department of War Announces Navy's First Advanced Nuclear Microreactor Deployment at Naval Weapons Station Crane, Indiana",
       "link": "https://www.war.gov/News/Releases/Release/Article/4593065/department-of-war-announces-navys-first-advanced-nuclear-microreactor-deploymen/",
       "date": "2026-09-09",
       "source": "Dept. of War",
-      "matched": "agency release",
+      "evidence": {
+        "industry": [
+          "nuclear",
+          "reactor"
+        ],
+        "instrument": [],
+        "money": [],
+        "tickers": [],
+        "score": 2
+      },
+      "matched": "nuclear, reactor",
       "ticker": null,
       "quality": "agency release",
       "named": [],
@@ -5733,6 +5678,135 @@
         "SUPPORT AND TEST SERVICES LLC"
       ],
       "status": "unverified"
+    },
+    {
+      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+      "amount": 27613237659.31,
+      "date": "2026-08-31",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [
+        "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC"
+      ],
+      "status": "unverified"
+    },
+    {
+      "company": "FLUOR MARINE PROPULSION, LLC",
+      "amount": 14753060287.21,
+      "date": "2026-08-31",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATION OF THE NAVAL NUCLEAR LABORATORY AND NAVAL NUCLEAR PROPULSION PROGRAM SUPPORT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-",
+      "ticker": "FLR",
+      "quality": "award record",
+      "named": [],
+      "status": "unverified"
+    },
+    {
+      "company": "PANTEXAS DETERRENCE, LLC",
+      "amount": 3572209101.57,
+      "date": "2026-08-31",
+      "agency": "Department of Energy",
+      "desc": "CONTRACT 89233224CNA000004 FOR THE MANAGEMENT AND OPERATION OF THE PANTEX PLANT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
+      "company": "White House Details Venezuela Oil Deal Giving Pentagon 35% Stake In New Company - i24NEWS",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaVJwMUQzS1pPNzNrTmRaQmZ2RmtWMmdJVnVrVGlHenZ0TXQ3MVgyLWFTT3VpX3JhcnEtdlduREFoQjBWamdUVXJISlRtR0Y0N1RVeFlZRFJNQ3BYUEZ2OG85VG9mX1d2WHkwbWIzNDdYdXZ6NnBreFRoOUN6akdPVjBFNlV6S2k5UHhMLV9KODVkLVFCMEw4SldQNHdxbk82RS1YTldnaDBSTUhiaGl0ZVBvSmlscGlrLUJPRktoMkw5aDdidDItQjZMbjE1djFVUmtGN1NFeHR5QQ?oc=5",
+      "date": "2026-08-31",
+      "source": "i24NEWS",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "named": [],
+      "candidates": [
+        "Stake In New Company"
+      ],
+      "status": "unverified"
+    },
+    {
+      "company": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+      "amount": 17654763333.19,
+      "date": "2026-08-28",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF MANAGEMENT AND OPERATION OF THE NATIONAL SECURITY CAMPUS -- CONTRACT NO. DE-NA0002839",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-",
+      "ticker": "HON",
+      "quality": "award record",
+      "named": [],
+      "status": "unverified"
+    },
+    {
+      "company": "UNITED CLEANUP OAK RIDGE LLC",
+      "amount": 2540845400.0,
+      "date": "2026-08-28",
+      "agency": "Department of Energy",
+      "desc": "OAK RIDGE RESERVATION CLEANUP CONTRACT TASK ORDERS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89303523FEM400032_8900_89303322DEM000067_8900",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [
+        "UNITED CLEANUP OAK RIDGE LLC"
+      ],
+      "status": "unverified"
+    },
+    {
+      "company": "FERMI FORWARD DISCOVERY GROUP, LLC",
+      "amount": 2504130702.99,
+      "date": "2026-08-27",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE FERMI NATIONAL ACCELERATOR LABORATORY (FNAL)",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89243024CSC000002_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
+      "company": "UCHICAGO ARGONNE, LLC",
+      "amount": 17482971699.99,
+      "date": "2026-08-26",
+      "agency": "Department of Energy",
+      "desc": "PERFORMANCE-BASED CONTRACT FOR MANAGEMENT AND OPERATION OF ARGONNE NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
     }
   ],
   "documents": [
@@ -5743,6 +5817,66 @@
       "source": "Executive Office of the President",
       "kind": "Presidential Document",
       "matched": "export control"
+    },
+    {
+      "title": "Contracts for Sept. 18, 2026",
+      "company": "Contracts for Sept. 18, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4605498/contracts-for-sept-18-2026/",
+      "date": "2026-09-18",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 17, 2026",
+      "company": "Contracts for Sept. 17, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4604536/contracts-for-sept-17-2026/",
+      "date": "2026-09-17",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 16, 2026",
+      "company": "Contracts for Sept. 16, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4603312/contracts-for-sept-16-2026/",
+      "date": "2026-09-16",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 15, 2026",
+      "company": "Contracts for Sept. 15, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4602178/contracts-for-sept-15-2026/",
+      "date": "2026-09-15",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 14, 2026",
+      "company": "Contracts for Sept. 14, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4600826/contracts-for-sept-14-2026/",
+      "date": "2026-09-14",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 11, 2026",
+      "company": "Contracts for Sept. 11, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4599224/contracts-for-sept-11-2026/",
+      "date": "2026-09-11",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
     },
     {
       "title": "Foreign-Trade Zone (FTZ) 183, Notification of Proposed Production Activity; Dongjin Semichem Texas, Inc.; (Semiconductor-Grade Photoresist Thinner); Killeen, Texas",
@@ -5918,52 +6052,52 @@
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-19T13:19:19+00:00"
+      "checked_utc": "2026-09-19T13:24:59+00:00"
     },
     "whitehouse": {
       "ok": true,
-      "note": "5 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-09-19T13:19:34+00:00"
+      "note": "6 of 30 posts cleared the evidence bar (24 bodies read)",
+      "checked_utc": "2026-09-19T13:25:09+00:00"
     },
     "dow_rss": {
       "ok": true,
-      "note": "12 releases",
-      "checked_utc": "2026-09-19T13:19:34+00:00"
+      "note": "14 releases",
+      "checked_utc": "2026-09-19T13:25:09+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-09-19T13:20:06+00:00"
+      "checked_utc": "2026-09-19T13:25:42+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "16 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-09-19T13:20:07+00:00"
+      "checked_utc": "2026-09-19T13:25:43+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-09-19T13:20:09+00:00"
+      "checked_utc": "2026-09-19T13:25:45+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "3 documents",
-      "checked_utc": "2026-09-19T13:20:12+00:00"
+      "checked_utc": "2026-09-19T13:25:48+00:00"
     },
     "dow_contracts": {
-      "ok": false,
-      "note": "HTTP Error 404: Not Found",
-      "checked_utc": "2026-09-19T13:20:13+00:00"
+      "ok": true,
+      "note": "6 daily digests",
+      "checked_utc": "2026-09-19T13:25:48+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-09-19T13:20:30+00:00"
+      "checked_utc": "2026-09-19T13:26:33+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-09-19T13:20:30+00:00"
+      "checked_utc": "2026-09-19T13:26:33+00:00"
     }
   },
   "counts": {
@@ -5971,6 +6105,6 @@
     "testable": 34,
     "radar": 9,
     "detection": 24,
-    "documents": 3
+    "documents": 9
   }
 }
