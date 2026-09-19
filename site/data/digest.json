@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-09-19T15:08:58.377210+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "Surging 10-year Treasury yields reaching 5% and crude oil holding at $100 a barrel are creating significant macro headwinds for equities. While technology and semiconductor stocks show resilience, broader indices face pressure, evidenced by the Dow recording its worst weekly performance since March amidst persistent Fed rate hike concerns.",
+    "bull": "Resilient tech megacaps and semiconductor momentum (AMD, INTC, MU) could help equities weather rising rates and drive selective sector rallies.",
+    "bear": "Elevated bond yields at 5%, persistent $100 oil prices, and hawkish Fed rate hike speculation threaten broader market valuations and investor sentiment.",
+    "watch": "10-year Treasury yield trajectory, crude oil price action, and further Fed commentary regarding future interest rate hikes."
+  },
+  "takes": [
+    {
+      "topic": "U.S. Interest Rates & Treasury Yields",
+      "lean": "leaning bearish",
+      "confidence": "high",
+      "note": "The 10-year Treasury yield hitting 5% combined with hawkish Fed rate hike chatter is dragging down broader indices like the Dow."
+    },
+    {
+      "topic": "Semiconductors (AMD, INTC, MU)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Chip stocks are outperforming behind strong momentum grades, Intel partnership headlines, and AMD leading a sector rebound."
+    },
+    {
+      "topic": "Apple (AAPL)",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "Although trading near record highs, a price target cut from Bank of America following the latest iPhone launch creates a balanced risk/reward picture."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }

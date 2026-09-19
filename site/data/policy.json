@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-19T15:04:29.969964+00:00",
+  "generated_utc": "2026-09-19T15:08:50.916404+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -648,7 +648,7 @@
         "56": -2.81,
         "57": 0.46,
         "58": 3.46,
-        "59": 3.79,
+        "59": 3.8,
         "60": 0.02,
         "61": -0.84,
         "62": -4.25
@@ -1224,7 +1224,7 @@
         "49": 0.0,
         "50": 2.61,
         "51": 1.33,
-        "52": -7.36,
+        "52": -7.37,
         "53": -2.64,
         "54": -5.28,
         "55": -3.91,
@@ -2564,7 +2564,7 @@
         "15": 0.72,
         "16": 2.95,
         "17": 1.69,
-        "18": 23.72,
+        "18": 23.71,
         "19": 19.69,
         "20": 16.16,
         "21": 19.05,
@@ -3960,7 +3960,7 @@
         0.0,
         2.61,
         1.33,
-        -7.36,
+        -7.37,
         -2.64,
         -5.28,
         -3.91,
@@ -4068,7 +4068,7 @@
         20.18,
         23.43,
         16.79,
-        23.72,
+        23.71,
         21.01,
         21.28,
         28.91,
@@ -5716,9 +5716,12 @@
   "pipeline": [],
   "reading": {
     "ok": true,
-    "model": "gemini-3.6-flash",
-    "note": "0 records from 12 documents (12 dropped as irrelevant or unverifiable)",
-    "generated_utc": "2026-09-19T15:03:46+00:00"
+    "model": "gemini-flash-latest",
+    "stats": {
+      "unknown_id": 12
+    },
+    "note": "0 records from 12 documents \u2014 unknown id 12",
+    "generated_utc": "2026-09-19T15:08:31+00:00"
   },
   "detection": [
     {
@@ -5926,10 +5929,10 @@
       "status": "unverified"
     },
     {
-      "company": "U.S. Department of War takes $450 million equity stake in Elmet to secure tungsten for F-35, Patriot, THAAD and submarines - defence-industr",
+      "company": "U.S. Department of War takes $450 million equity stake in Elmet to secure tungsten for F-35, Patriot, THAAD and submarines - Defence Industr",
       "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPWURYZXpSS0lJT2k0aDVrd0pST1VaMjBOdVRsZ1FWQ0x3YkhFbG5kcEc3OTJTZVl2dUxzYll3NEg4VjhTcGpsd0Fid2ZjQ3ktR1dpTE9PUW9McTYzSnFScjA1Z3hiQUFYY180TDNRUlZZUTRoNmRobzZyZm5hQ2czSURDdTRpVHI2VzZ0dmRJVmVFYzJ6Vnp5RGoybzFaYlFYdk9IX2FrWFRURURJT3JyUnY1TkFpUDdMWjFST2ViUngtdXlvdDhDV002YlVCb1lJUzRXQjg4WmpvNTZhaG5xYg?oc=5",
       "date": "2026-09-14",
-      "source": "defence-industry.eu",
+      "source": "Defence Industry Europe",
       "matched": "equity stake",
       "form": "headline",
       "ticker": "ELMT",
@@ -6228,56 +6231,6 @@
       "matched": "export control"
     },
     {
-      "title": "Contracts for Sept. 18, 2026",
-      "company": "Contracts for Sept. 18, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4605498/contracts-for-sept-18-2026/",
-      "date": "2026-09-18",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
-      "title": "Contracts for Sept. 17, 2026",
-      "company": "Contracts for Sept. 17, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4604536/contracts-for-sept-17-2026/",
-      "date": "2026-09-17",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
-      "title": "Contracts for Sept. 16, 2026",
-      "company": "Contracts for Sept. 16, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4603312/contracts-for-sept-16-2026/",
-      "date": "2026-09-16",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
-      "title": "Contracts for Sept. 15, 2026",
-      "company": "Contracts for Sept. 15, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4602178/contracts-for-sept-15-2026/",
-      "date": "2026-09-15",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
-      "title": "Contracts for Sept. 14, 2026",
-      "company": "Contracts for Sept. 14, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4600826/contracts-for-sept-14-2026/",
-      "date": "2026-09-14",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
       "title": "Contracts for Sept. 11, 2026",
       "company": "Contracts for Sept. 11, 2026",
       "link": "https://www.war.gov/News/Contracts/Contract/Article/4599224/contracts-for-sept-11-2026/",
@@ -6294,6 +6247,56 @@
       "source": "Commerce Department, Foreign-Trade Zones Board",
       "kind": "Notice",
       "matched": "semiconductor"
+    },
+    {
+      "title": "Contracts for Sept. 10, 2026",
+      "company": "Contracts for Sept. 10, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4596373/contracts-for-sept-10-2026/",
+      "date": "2026-09-10",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 9, 2026",
+      "company": "Contracts for Sept. 9, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4594054/contracts-for-sept-9-2026/",
+      "date": "2026-09-09",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 8, 2026",
+      "company": "Contracts for Sept. 8, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4592905/contracts-for-sept-8-2026/",
+      "date": "2026-09-08",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 4, 2026",
+      "company": "Contracts for Sept. 4, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4591558/contracts-for-sept-4-2026/",
+      "date": "2026-09-04",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
+      "title": "Contracts for Sept. 3, 2026",
+      "company": "Contracts for Sept. 3, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4590748/contracts-for-sept-3-2026/",
+      "date": "2026-09-03",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
     },
     {
       "title": "Honoring the American History of the Great Lakes and Renaming Lake Ontario as Lake America",
@@ -6461,62 +6464,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-09-19T15:02:12+00:00"
+      "checked_utc": "2026-09-19T15:07:18+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-19T15:02:22+00:00"
+      "checked_utc": "2026-09-19T15:07:27+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "6 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-09-19T15:02:32+00:00"
+      "checked_utc": "2026-09-19T15:07:37+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-09-19T15:02:32+00:00"
+      "checked_utc": "2026-09-19T15:07:37+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-09-19T15:03:04+00:00"
+      "checked_utc": "2026-09-19T15:08:09+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "16 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-09-19T15:03:06+00:00"
+      "checked_utc": "2026-09-19T15:08:10+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-09-19T15:03:08+00:00"
+      "checked_utc": "2026-09-19T15:08:12+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "3 documents",
-      "checked_utc": "2026-09-19T15:03:12+00:00"
+      "checked_utc": "2026-09-19T15:08:16+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-09-19T15:03:12+00:00"
+      "checked_utc": "2026-09-19T15:08:16+00:00"
     },
     "reading": {
       "ok": true,
-      "note": "0 records from 12 documents (12 dropped as irrelevant or unverifiable)",
-      "checked_utc": "2026-09-19T15:03:46+00:00"
+      "note": "0 records from 12 documents \u2014 unknown id 12",
+      "checked_utc": "2026-09-19T15:08:31+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-09-19T15:04:29+00:00"
+      "checked_utc": "2026-09-19T15:08:50+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-09-19T15:04:29+00:00"
+      "checked_utc": "2026-09-19T15:08:50+00:00"
     }
   },
   "counts": {
