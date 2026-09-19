@@ -16,6 +16,8 @@ on:
       - "engine/news.py"
       - "engine/policy.py"
       - "engine/policy_sources.py"
+      - "engine/policy_llm.py"
+      - "engine/tickers.py"
       - "engine/ai_digest.py"
       - ".github/workflows/signals.yml"
 
@@ -50,6 +52,9 @@ jobs:
         run: python engine/news.py 2>&1 | tee news_run.log
       - name: Policy desk (federal deals scored against SPY)
         continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
         run: python engine/policy.py 2>&1 | tee policy_run.log
       - name: AI market digest (honest read of real news)
         continue-on-error: true
