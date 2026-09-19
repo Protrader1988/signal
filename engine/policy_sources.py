@@ -670,3 +670,66 @@ def usaspending_awards(recipient, years=2, limit=100, max_pages=3):
     except Exception as e:
         _mark("usaspending", False, str(e)[:120])
         return None
+
+# ---------------------------------------------------------------------------
+# Sector money flow — where obligations are actually accelerating
+# ---------------------------------------------------------------------------
+# Announcements tell you where attention is. Obligations tell you where the money
+# went, and they are filed whether or not anyone held a press conference. This is
+# the leading indicator the headline feed cannot give you.
+FLOW_SECTORS = [
+    ("Critical minerals", ["rare earth", "critical minerals", "tungsten", "gallium", "graphite"]),
+    ("Semiconductors", ["semiconductor", "microelectronics", "wafer fabrication"]),
+    ("Quantum", ["quantum computing", "quantum information"]),
+    ("Nuclear", ["nuclear reactor", "small modular reactor", "uranium enrichment"]),
+    ("Shipbuilding", ["shipbuilding", "shipyard", "submarine industrial base"]),
+    ("Drones / UAS", ["unmanned aircraft", "counter-uas", "small unmanned"]),
+    ("Munitions", ["solid rocket motor", "munitions production", "artillery ammunition"]),
+    ("Pharma onshoring", ["active pharmaceutical ingredient", "pharmaceutical manufacturing"]),
+]
+
+
+def sector_flow(quarters=8):
+    """Federal obligations per sector per quarter, from USAspending's aggregation
+    endpoint. Keyword matching against award descriptions is coarse — it is a trend
+    line, not an accounting of a programme — and the site says so."""
+    end = datetime.now(timezone.utc).date()
+    start = end - timedelta(days=int(quarters * 91.5))
+    out, ok_any = [], False
+    for label, keywords in FLOW_SECTORS:
+        payload = {"group": "quarter",
+                   "filters": {"keywords": keywords,
+                               "time_period": [{"start_date": start.isoformat(),
+                                                "end_date": end.isoformat()}],
+                               "award_type_codes": ["A", "B", "C", "D"]},
+                   "subawards": False}
+        try:
+            data = post_json("https://api.usaspending.gov/api/v2/search/spending_over_time/",
+                             payload, retries=0)
+            rows = (data or {}).get("results", []) or []
+            series = []
+            for r in rows:
+                tp = r.get("time_period") or {}
+                amt = r.get("aggregated_amount")
+                if amt is None:
+                    continue
+                series.append({"period": f"FY{tp.get('fiscal_year')} Q{tp.get('quarter')}",
+                               "amount": float(amt)})
+            if not series:
+                continue
+            ok_any = True
+            recent = sum(x["amount"] for x in series[-4:])
+            prior = sum(x["amount"] for x in series[-8:-4]) if len(series) >= 8 else None
+            out.append({"sector": label, "keywords": keywords, "series": series,
+                        "last4": recent, "prior4": prior,
+                        "yoy_pct": (round((recent / prior - 1) * 100, 1)
+                                    if prior and prior > 0 else None),
+                        "link": "https://www.usaspending.gov/search?keywords=" +
+                                urllib.parse.quote(keywords[0])})
+        except Exception as e:
+            _mark("sector_flow", False, str(e)[:110])
+        time.sleep(0.4)
+    out.sort(key=lambda r: -(r.get("last4") or 0))
+    if ok_any:
+        _mark("sector_flow", True, f"{len(out)} of {len(FLOW_SECTORS)} sectors returned quarterly data")
+    return out

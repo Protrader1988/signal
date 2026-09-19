@@ -180,6 +180,21 @@
   .coverage li{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:5px}
   td.wrap{white-space:normal;max-width:420px;color:var(--muted);font-size:11.5px;line-height:1.6;vertical-align:middle}
   .scrollx{overflow-x:auto}
+  .flowrow{display:grid;grid-template-columns:150px 1fr 96px 74px;gap:14px;align-items:center;padding:11px 20px;border-bottom:1px solid var(--line)}
+  .flowrow:last-child{border-bottom:none}
+  .flowrow .s{font-size:13px;font-weight:600}
+  .flowrow .k{font-size:10.5px;color:var(--dim);font-family:var(--mono);margin-top:3px;display:block}
+  .spark{display:block;width:100%;height:34px}
+  .flowamt{font-family:var(--mono);font-size:13px;text-align:right;color:var(--gold2)}
+  .flowyoy{font-family:var(--mono);font-size:12.5px;text-align:right}
+  @media(max-width:700px){.flowrow{grid-template-columns:1fr 84px;gap:8px}.flowrow .sparkwrap{display:none}}
+  .prec{border-bottom:1px solid var(--line);padding:13px 20px}
+  .prec:last-child{border-bottom:none}
+  .prec .h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .prec .sum{font-size:13.5px;color:var(--text);line-height:1.6;margin-top:6px}
+  .prec .q{font-size:12px;color:var(--muted);line-height:1.6;margin-top:7px;border-left:2px solid var(--line2);padding-left:11px;font-style:italic}
+  .prec .m{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:7px}
+  .conf-high{color:var(--up)}.conf-medium{color:var(--warn)}.conf-low{color:var(--muted)}
   .cismall{display:block;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:3px;font-weight:400}
   #policyTbl tbody td,#policyRadar tbody td{vertical-align:top;padding-top:14px}
   .dealname{font-weight:600}.dealname .sub{display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
@@ -304,6 +319,14 @@
     <div class="card">
       <div class="card-head"><span class="code">EXPOSURE</span><span class="t">Actual federal obligations — USAspending, not narrative</span><span class="expo" id="policyExpoMeta"></span></div>
       <div id="policyExposure"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">FLOW</span><span class="t">Where federal money is actually going — obligations by sector, by quarter</span><span class="expo" id="policyFlowMeta"></span></div>
+      <div id="policyFlow"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">READ</span><span class="badge b-loi">Machine-read · proposals</span><span class="t">Documents parsed into deal records</span><span class="expo" id="policyReadMeta"></span></div>
+      <div id="policyPipeline"></div>
     </div>
     <div class="card">
       <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">White House actions, DoW releases, EDGAR filings, $50M+ awards, headlines</span><span class="expo" id="policyDetectMeta"></span></div>
@@ -431,6 +454,55 @@ function policyChart(paths){
   $('policyPathMeta').innerHTML=`<span class="mono">median · shaded band = interquartile range</span>`;
 }
 
+function policyFlow(flow){
+  if(!flow||!flow.length){$('policyFlow').innerHTML='<div class="empty">Sector flow appears once USAspending returns quarterly aggregates. Check the source health strip below.</div>';return;}
+  const usd=v=>v==null?'\u2014':(v>=1e9?'$'+(v/1e9).toFixed(1)+'B':(v>=1e6?'$'+Math.round(v/1e6)+'M':'$'+Math.round(v).toLocaleString()));
+  const spark=(series)=>{
+    const v=series.map(x=>x.amount);if(!v.length)return '';
+    const mx=Math.max(...v),mn=Math.min(...v,0),W=240,H=34;
+    const X=i=>v.length<2?W:(W*i/(v.length-1)), Y=x=>H-2-(H-6)*((x-mn)/Math.max(1,(mx-mn)));
+    const d=v.map((x,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(x).toFixed(1)}`).join(' ');
+    const area=`${d} L${W} ${H} L0 ${H} Z`;
+    // fewer than two full years is not a trend, so it is drawn neutral rather than
+    // coloured green or red on half the evidence
+    const c=v.length<8?'#c9a227':(v.slice(-4).reduce((a,b)=>a+b,0)>=v.slice(0,4).reduce((a,b)=>a+b,0)?'#2fd39a':'#ff5d5d');
+    return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${area}" fill="${c}" opacity=".10"/><path d="${d}" fill="none" stroke="${c}" stroke-width="1.6"/></svg>`;
+  };
+  $('policyFlowMeta').innerHTML=`<span class="mono">${flow.length} sectors · 8 quarters</span>`;
+  $('policyFlow').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Prime award obligations matching each sector\u2019s keywords, straight from USAspending, by fiscal quarter. Announcements tell you where attention is; this is where the money actually went, filed whether or not anyone held a press conference. Keyword matching against award descriptions is coarse \u2014 read it as a trend line, not as an accounting of a programme.</div></div>'+
+    flow.map(f=>`<div class="flowrow">
+      <div><div class="s">${f.sector}</div><span class="k">${(f.keywords||[]).slice(0,2).join(', ')}</span></div>
+      <div class="sparkwrap">${spark(f.series||[])}</div>
+      <div class="flowamt">${usd(f.last4)}<span class="k" style="text-align:right">last 4 quarters</span></div>
+      <div class="flowyoy ${sgn(f.yoy_pct)}">${f.yoy_pct==null?'\u2014':pc(f.yoy_pct)}<span class="k" style="text-align:right">vs prior yr</span></div>
+    </div>`).join('');
+}
+
+function policyPipeline(p){
+  const recs=p.pipeline||[], rd=p.reading||{};
+  $('policyReadMeta').innerHTML=`<span class="mono">${rd.model?rd.model:'not run'}</span>`;
+  if(!rd.ok){
+    $('policyPipeline').innerHTML=`<div class="setup"><b>Reading layer is off.</b> ${rd.note||'No model configured.'} Detection still runs on keywords; what is missing is the structured read \u2014 counterparty, instrument, amount, stage \u2014 pulled out of each document.</div>`;
+    return;
+  }
+  const usd=v=>v==null?'':' · '+(v>=1e9?'$'+(v/1e9).toFixed(2)+'B':(v>=1e6?'$'+Math.round(v/1e6)+'M':'$'+Math.round(v).toLocaleString()));
+  $('policyPipeline').innerHTML='<div style="padding:13px 20px 0"><div class="banner">A model reads each document detection finds and returns the counterparty, the instrument, the amount and the stage \u2014 with the verbatim sentence it took them from. Every quote is checked against the source text here and anything that fails is dropped. These are <b>proposals</b>: none of it enters the event study until it is verified and added to the registry by hand.</div></div>'+
+    (recs.length?recs.map(r=>`<div class="prec">
+      <div class="h">
+        <span class="chip">${(r.tickers&&r.tickers.length)?r.tickers.join(' '):'\u2014'}</span>
+        <span class="badge ${r.instrument==='equity'||r.instrument==='warrant'?'b-stake':(r.instrument==='tariff'||r.instrument==='export control'?'b-directive':'b-contract')}">${r.instrument}</span>
+        <span class="badge ${r.stage==='definitive'||r.stage==='closed'?'b-confirm':'b-loi'}">${r.stage}</span>
+        <span class="conf conf-${r.confidence}">confidence ${r.confidence}</span>
+        ${r.already_tracked?'<span class="badge b-radar">already tracked</span>':'<span class="badge b-loi">new</span>'}
+        <span class="src" style="margin-left:auto">${r.date||''}${usd(r.amount_usd)}</span>
+      </div>
+      <div class="sum">${r.summary||''}</div>
+      <div class="q">\u201c${r.quote||''}\u201d</div>
+      <div class="m">${(r.companies||[]).join(' · ')}${r.agency?' · '+r.agency:''}${r.sector?' · '+r.sector:''} · <a href="${r.link}" target="_blank" rel="noopener" style="color:var(--gold2)">source ↗</a></div>
+    </div>`).join('')
+     :'<div class="empty">Nothing in today\u2019s documents parsed into a deal record. That is a real answer \u2014 most days the government does not take a position in a listed company.</div>');
+}
+
 function drawPolicy(p){
   if(!p||!p.events){
     $('policyTbl').innerHTML='<div class="empty">Policy desk appears after the next engine run.</div>';
@@ -517,6 +589,8 @@ function drawPolicy(p){
   $('policyTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
 
   policyChart(p.paths);
+  policyFlow(p.flow);
+  policyPipeline(p);
 
   // cohort table
   const wins=p.windows||[];
@@ -590,7 +664,7 @@ function drawPolicy(p){
     <p style="margin-top:10px"><b style="color:var(--warn)">Known bias:</b> ${cov.bias}</p></div>`:'');
 
   const h=p.health||{};
-  const names={whitehouse:'white house',sec_edgar:'edgar',sec_tickers:'cik map',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',dow_contracts:'dow contracts',usaspending:'usaspending'};
+  const names={whitehouse:'white house',reading:'reading',sector_flow:'sector flow',sec_edgar:'edgar',sec_tickers:'cik map',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',dow_contracts:'dow contracts',usaspending:'usaspending'};
   $('policyHealth').innerHTML=Object.keys(names).map(k=>{const s=h[k];
     return `<span><b>${names[k]}</b> <span class="${s?(s.ok?'up':'down'):'neu'}">${s?(s.ok?'ok':'failed'):'not run'}</span></span>`;}).join('')+
     `<span><b>generated</b> ${(p.generated_utc||'').slice(0,16).replace('T',' ')} UTC</span>`;

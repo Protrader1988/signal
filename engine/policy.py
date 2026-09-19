@@ -53,6 +53,21 @@ candidate with a link to the underlying record: the desk surfaces the next deal
 without waiting for a human to notice it, and never promotes a machine guess into
 the scored table on its own.
 
+READING
+Keyword scoring can tell you a post mentions tungsten. It cannot tell you who the
+counterparty is, what instrument the government took, how much, or whether this is
+a signed agreement or an intention — so a model reads the documents detection finds
+and returns structured records, each carrying the verbatim sentence it was taken
+from and a confidence. Quotes are checked against the source text here, and anything
+that fails validation is dropped. Nothing it produces enters the scored study: the
+output is a proposal queue that a human promotes into the registry.
+
+FLOW
+Announcements say where attention is; obligations say where the money went. Federal
+spending per sector per quarter comes straight from USAspending's aggregation
+endpoint, so the desk can show which sectors are accelerating regardless of whether
+anyone held a press conference.
+
 EXPOSURE
 Instead of a vibes list, each name carries its actual federal obligations from
 USAspending — prime contract dollars, award count, most recent action date,
@@ -71,6 +86,7 @@ Free sources only. Output: site/data/policy.json, site/data/policy_ledger.json
 import json
 import math
 import os
+import re
 import traceback
 from datetime import datetime, timedelta, timezone
 
@@ -78,6 +94,7 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
+import policy_llm
 import policy_sources as src
 import tickers as tk
 
@@ -497,7 +514,10 @@ def build_exposure(entries):
     for e in entries:
         rec = e.get("recipient")
         spend = src.usaspending_awards(rec) if rec else None
-        out.append({"ticker": e["ticker"], "name": e.get("name") or e["ticker"],
+        # registry names carry the event in parentheses ("Kratos (drone tariffs)"),
+        # which reads as nonsense in a table of companies
+        clean = re.sub(r"\s*\(.*?\)\s*$", "", e.get("name") or e["ticker"]).strip()
+        out.append({"ticker": e["ticker"], "name": clean or e["ticker"],
                     "sector": e.get("sector"), "thesis": e.get("thesis"),
                     "recipient": rec, "federal": spend})
     out.sort(key=lambda r: -((r["federal"] or {}).get("total") or 0))
@@ -651,6 +671,7 @@ def main():
         pooled[key] = {"n": len(vals), "median": med, "lo": lo, "hi": hi,
                        "p": sign_test_p(vals), "pos": sum(1 for v in vals if v > 0)}
 
+    flow = src.sector_flow()
     cik_map = src.company_tickers()
     known = {d["ticker"] for d in REGISTRY}
     name_map = {(d.get("recipient") or "").upper(): d["ticker"]
@@ -658,6 +679,21 @@ def main():
     detection = build_detection(cik_map, known, name_map)
     documents = (src.federal_register() + src.dow_contracts(cap=6))
     documents.sort(key=lambda d: d.get("date") or "", reverse=True)
+    # the reading layer: a model reads the documents detection found and returns
+    # structured proposals, which stay proposals until a human moves them across
+    docs = [{"id": i, "title": d.get("title") or d.get("company"),
+             "text": (d.get("desc") or d.get("title") or d.get("company") or ""),
+             "date": d.get("date"), "link": d.get("link"), "source": d.get("source")}
+            for i, d in enumerate(detection)
+            if d.get("quality") in ("white house", "agency release", "filing", "headline")]
+    pipeline, llm_health = policy_llm.extract(docs, tk)
+    src.HEALTH["reading"] = {"ok": llm_health.get("ok"), "note": llm_health.get("note", ""),
+                             "checked_utc": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    known_pairs = {(e["ticker"], e["date"]) for e in events}
+    for r in pipeline:
+        r["already_tracked"] = any((t, r.get("date")) in known_pairs for t in r.get("tickers", [])) \
+            or any(t in known for t in r.get("tickers", []))
+
     exposure = build_exposure(REGISTRY + RADAR)
     ledger = update_ledger(events, first_run_date)
 
@@ -686,16 +722,21 @@ def main():
         "cohorts": stats,
         "paths": paths,
         "exposure": exposure,
+        "flow": flow,
+        "pipeline": pipeline,
+        "reading": llm_health,
         "detection": detection,
         "documents": documents[:16],
         "ledger": {"forward": ledger.get("forward"), "entries": ledger.get("entries", [])[:12]},
         "health": src.HEALTH,
         "counts": {"events": len(events), "testable": len(testable), "radar": len(RADAR),
-                   "detection": len(detection), "documents": len(documents)},
+                   "detection": len(detection), "documents": len(documents),
+                   "pipeline": len(pipeline), "flow": len(flow)},
     }
     json.dump(out, open("site/data/policy.json", "w"), indent=2)
     m1 = pooled.get("m1", {})
-    print(f"policy: {len(testable)}/{len(events)} testable · pooled +1m median "
+    print(f"policy: {len(testable)}/{len(events)} testable · {len(pipeline)} read · "
+          f"{len(flow)} sectors · pooled +1m median "
           f"{m1.get('median')}% (n={m1.get('n')}, p={m1.get('p')}) · "
           f"{len(detection)} filings · health={ {k: v['ok'] for k, v in src.HEALTH.items()} }")
 

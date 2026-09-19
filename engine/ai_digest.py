@@ -17,7 +17,7 @@ import json, os, time, urllib.request, urllib.error, traceback
 from datetime import datetime, timezone
 
 # Try current free-tier model names in order; retry once on 429.
-MODELS = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-2.0-flash"]
+MODELS = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3.6-pro", "gemini-2.5-flash"]
 API_TMPL = "https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
 
 PROMPT = """You are a seasoned, honest markets analyst briefing a personal trader.
