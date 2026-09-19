@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-19T13:11:02.428156+00:00",
+  "generated_utc": "2026-09-19T13:15:17.384347+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -2564,7 +2564,7 @@
         "15": 0.72,
         "16": 2.95,
         "17": 1.69,
-        "18": 23.72,
+        "18": 23.71,
         "19": 19.69,
         "20": 16.16,
         "21": 19.05,
@@ -4068,7 +4068,7 @@
         20.18,
         23.43,
         16.79,
-        23.72,
+        23.71,
         21.01,
         21.28,
         28.91,
@@ -5380,35 +5380,6 @@
       "status": "unverified"
     },
     {
-      "title": "Fact sheet president donald j trump provides meaningful water quality improvements through collaboration and oversight of federal support",
-      "company": "Fact sheet president donald j trump provides meaningful water quality improvements through collaboration and oversight of federal support",
-      "link": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-provides-meaningful-water-quality-improvements-through-collaboration-and-oversight-of-federal-support/",
-      "date": "2026-09-16",
-      "date_precision": "day",
-      "source": "White House",
-      "kind": "fact sheets",
-      "matched": "$1 million, $2.7 million",
-      "evidence": {
-        "industry": [],
-        "instrument": [],
-        "money": [
-          "$1 million",
-          "$2.7 million"
-        ],
-        "tickers": [
-          "F"
-        ],
-        "score": 3
-      },
-      "desc": "Fact Sheet: President Donald J. Trump Provides Meaningful Water Quality Improvements Through Collaboration and Oversight of Federal Support &#8211; The White House Skip to content Fact Sheets Fact Sheet: President Donald J. Trump Provides Meaningful Water Quality Improvements Through Collaboration and Oversight of Federal Support The White House September 16, 2026 IMPROVING WATER QUALITY OF THE CHESAPEAKE BAY: Today, President Donald J. Trump signed an Executive Order to remove unnecessary administrative costs and direct federal resources for the Chesapeake Bay toward projects that improve water quality, promoting a more efficient, accountable, and results-driven effort to improve the Chesapeake Bay. The Order rescinds the outdated and misguided Obama Administration 2009 Executive Order 13508, withdrawing its vague and confusing federal requirements that have been leveraged in support of stormwater management fees, or \u201crain taxes,\u201d imposed by States or localities that unnecessarily raise costs for American households. The Order directs the Secretary of Agriculture, the Secretary of Commerce, the Secretary of Homeland Security, the Secretary of the Interior, the Secretary of War, an",
-      "form": "white house",
-      "ticker": null,
-      "quality": "white house",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
       "title": "Restoring reciprocity in government procurement",
       "company": "Restoring reciprocity in government procurement",
       "link": "https://www.whitehouse.gov/presidential-actions/2026/09/restoring-reciprocity-in-government-procurement/",
@@ -5416,11 +5387,10 @@
       "date_precision": "day",
       "source": "White House",
       "kind": "presidential actions",
-      "matched": "warrant, tariff \u00b7 $280 billion",
+      "matched": "tariff \u00b7 $280 billion",
       "evidence": {
         "industry": [],
         "instrument": [
-          "warrant",
           "tariff"
         ],
         "money": [
@@ -5784,6 +5754,21 @@
       "quality": "award record",
       "named": [],
       "status": "unverified"
+    },
+    {
+      "company": "WASHINGTON RIVER PROTECTION SOLUTIONS LLC",
+      "amount": 10560504771.54,
+      "date": "2026-08-07",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT OF THE HANFORD SITE TANK FARMS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC2708RV14800_8900_-NONE-_-NONE-",
+      "ticker": "F",
+      "quality": "award record",
+      "named": [],
+      "status": "unverified"
     }
   ],
   "documents": [
@@ -6083,52 +6068,52 @@
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-09-19T13:09:21+00:00"
+      "checked_utc": "2026-09-19T13:13:43+00:00"
     },
     "whitehouse": {
       "ok": true,
-      "note": "6 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-09-19T13:09:39+00:00"
+      "note": "5 of 30 posts cleared the evidence bar (24 bodies read)",
+      "checked_utc": "2026-09-19T13:13:54+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-09-19T13:10:12+00:00"
+      "checked_utc": "2026-09-19T13:14:26+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "16 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-09-19T13:10:13+00:00"
+      "checked_utc": "2026-09-19T13:14:27+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-09-19T13:10:16+00:00"
+      "checked_utc": "2026-09-19T13:14:29+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "3 documents",
-      "checked_utc": "2026-09-19T13:10:18+00:00"
+      "checked_utc": "2026-09-19T13:14:32+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "10 releases",
-      "checked_utc": "2026-09-19T13:10:18+00:00"
+      "checked_utc": "2026-09-19T13:14:32+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-09-19T13:10:19+00:00"
+      "checked_utc": "2026-09-19T13:14:32+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-09-19T13:11:02+00:00"
+      "checked_utc": "2026-09-19T13:15:17+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-09-19T13:11:02+00:00"
+      "checked_utc": "2026-09-19T13:15:17+00:00"
     }
   },
   "counts": {
