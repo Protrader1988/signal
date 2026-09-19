@@ -269,13 +269,20 @@ def _first(row, *keys):
 def _any_date(row):
     """USAspending returns different date fields per award type and drops the ones it
     does not recognise from the request, so scan for whatever date came back rather
-    than betting on one spelling."""
+    than betting on one spelling — but only fields describing when something HAPPENED.
+    A contract's End Date is a performance deadline and can sit in 2100, which is how
+    "last action" first came back reading like a prophecy."""
     best = None
     for k, v in (row or {}).items():
-        if "date" in k.lower() and v:
-            sv = str(v)[:10]
-            if len(sv) == 10 and (best is None or sv > best):
-                best = sv
+        kl = k.lower()
+        if "date" not in kl or not v:
+            continue
+        if "end" in kl or "expir" in kl or "completion" in kl:
+            continue
+        sv = str(v)[:10]
+        if len(sv) == 10 and sv <= datetime.now(timezone.utc).date().isoformat() \
+                and (best is None or sv > best):
+            best = sv
     return best
 
 
