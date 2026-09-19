@@ -96,13 +96,22 @@ def _call(key, prompt, timeout=90):
     raise last or RuntimeError("no model answered")
 
 
-def _clean(rec, by_id, tickers, stats=None):
+def _norm_id(raw, index):
+    """Models echo the id in their own style — 1, "1", "DOCUMENT 1", "doc-1". Take the
+    first integer in whatever comes back, and fall back to position, since records are
+    returned in the order the documents were given."""
+    m = re.search(r"\d+", str(raw if raw is not None else ""))
+    return m.group(0) if m else str(index + 1)
+
+
+def _clean(rec, by_id, tickers, stats=None, index=0):
     """Validate one record. Anything that fails a check is dropped, not repaired —
     a half-parsed deal record is worse than no record. stats records WHY, because
     "no deals today" and "every record failed validation" look identical on the page
     and mean opposite things."""
     bump = (lambda k: stats.__setitem__(k, stats.get(k, 0) + 1)) if stats is not None else (lambda k: None)
-    doc = by_id.get(str(rec.get("id")))
+    key = _norm_id(rec.get("id"), index)
+    doc = by_id.get(key) or by_id.get(str(index + 1))
     if not doc:
         bump("unknown_id")
         return None
@@ -136,7 +145,7 @@ def _clean(rec, by_id, tickers, stats=None):
     if not resolved:
         resolved = tickers.resolve(" ".join(companies) + " " + (rec.get("summary") or ""))
     return {
-        "id": str(rec.get("id")), "companies": companies, "tickers": resolved[:4],
+        "id": key, "companies": companies, "tickers": resolved[:4],
         "sector": (rec.get("sector") or None), "instrument": instrument, "stage": stage,
         "amount_usd": amount, "agency": rec.get("agency") or doc.get("source"),
         "summary": (rec.get("summary") or "")[:300], "quote": quote[:220],
@@ -181,8 +190,8 @@ def extract(documents, tickers, cap=14, chars=2600):
             return [], {"ok": False, "note": "model returned unparseable output"}
 
     out, stats = [], {}
-    for rec in (payload.get("records") or []):
-        cleaned = _clean(rec, by_id, tickers, stats)
+    for i, rec in enumerate(payload.get("records") or []):
+        cleaned = _clean(rec, by_id, tickers, stats, i)
         if cleaned:
             out.append(cleaned)
     order = {"high": 0, "medium": 1, "low": 2}
