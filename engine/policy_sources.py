@@ -221,7 +221,8 @@ WH_INDUSTRY = ("critical mineral", "rare earth", "semiconductor", "chips act", "
                "unmanned", "quantum", "defense industrial", "munitions", "steel",
                "aluminum", "gallium", "tungsten", "lithium", "graphite", "magnet",
                "pharmaceutical", "onshoring", "reshoring", "supply chain")
-WH_INSTRUMENT = ("equity stake", "equity investment", "warrant", "offtake", "price floor",
+WH_INSTRUMENT = ("equity stake", "equity investment", "warrants for", "warrants to purchase",
+                 "penny warrant", "warrants exercisable", "offtake", "price floor",
                  "stockpile", "section 232", "tariff", "export control", "procurement award",
                  "public-private partnership", "loan guarantee", "defense production act",
                  "strategic capital", "joint venture", "most favored nation",
@@ -309,8 +310,12 @@ def wh_evidence(text):
     money = [m for m in WH_MONEY.finditer(text or "")][:2]
     money = [m.group(0).strip() for m in money]
     names = tickers.resolve(text)
-    score = (2 if industry else 0) + (2 if instrument else 0) + \
-            (1 if money else 0) + (2 if names else 0)
+    # Money alone is not evidence: every fact sheet cites a dollar figure somewhere.
+    # A post has to name an industry this desk tracks, or an instrument that moves
+    # value, before anything else counts.
+    qualifies = bool(industry or instrument)
+    score = ((2 if industry else 0) + (2 if instrument else 0) +
+             (1 if money else 0) + (2 if names else 0)) if qualifies else 0
     return {"industry": industry, "instrument": instrument, "money": money,
             "tickers": names[:4], "score": score}
 
