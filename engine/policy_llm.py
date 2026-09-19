@@ -96,23 +96,33 @@ def _call(key, prompt, timeout=90):
     raise last or RuntimeError("no model answered")
 
 
-def _clean(rec, by_id, tickers):
+def _clean(rec, by_id, tickers, stats=None):
     """Validate one record. Anything that fails a check is dropped, not repaired —
-    a half-parsed deal record is worse than no record."""
+    a half-parsed deal record is worse than no record. stats records WHY, because
+    "no deals today" and "every record failed validation" look identical on the page
+    and mean opposite things."""
+    bump = (lambda k: stats.__setitem__(k, stats.get(k, 0) + 1)) if stats is not None else (lambda k: None)
     doc = by_id.get(str(rec.get("id")))
-    if not doc or not rec.get("relevant"):
+    if not doc:
+        bump("unknown_id")
+        return None
+    if not rec.get("relevant"):
+        bump("not_a_deal")
         return None
     quote = (rec.get("quote") or "").strip()
     text = doc.get("text") or ""
     # the quote has to actually be in the document, allowing for whitespace differences
     norm = lambda s: re.sub(r"\s+", " ", s or "").lower()
     if not quote or (norm(quote)[:120] not in norm(text) and norm(quote)[:60] not in norm(text)):
+        bump("quote_not_in_document")
         return None
     instrument = (rec.get("instrument") or "none").lower()
     stage = (rec.get("stage") or "none").lower()
     if instrument not in INSTRUMENTS or stage not in STAGES:
+        bump("bad_enum")
         return None
     if instrument == "none" and stage == "none":
+        bump("no_instrument_or_stage")
         return None
     amount = rec.get("amount_usd")
     try:
@@ -170,16 +180,15 @@ def extract(documents, tickers, cap=14, chars=2600):
         except Exception:
             return [], {"ok": False, "note": "model returned unparseable output"}
 
-    out, dropped = [], 0
+    out, stats = [], {}
     for rec in (payload.get("records") or []):
-        cleaned = _clean(rec, by_id, tickers)
+        cleaned = _clean(rec, by_id, tickers, stats)
         if cleaned:
             out.append(cleaned)
-        else:
-            dropped += 1
     order = {"high": 0, "medium": 1, "low": 2}
     out.sort(key=lambda r: (order.get(r["confidence"], 3), r.get("date") or ""), reverse=False)
-    return out, {"ok": True, "model": model,
-                 "note": f"{len(out)} records from {len(docs)} documents "
-                         f"({dropped} dropped as irrelevant or unverifiable)",
+    reasons = ", ".join(f"{k.replace('_', ' ')} {v}" for k, v in sorted(stats.items()))
+    return out, {"ok": True, "model": model, "stats": stats,
+                 "note": (f"{len(out)} records from {len(docs)} documents"
+                          + (f" — {reasons}" if reasons else "")),
                  "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds")}

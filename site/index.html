@@ -500,7 +500,7 @@ function policyPipeline(p){
       <div class="q">\u201c${r.quote||''}\u201d</div>
       <div class="m">${(r.companies||[]).join(' · ')}${r.agency?' · '+r.agency:''}${r.sector?' · '+r.sector:''} · <a href="${r.link}" target="_blank" rel="noopener" style="color:var(--gold2)">source ↗</a></div>
     </div>`).join('')
-     :'<div class="empty">Nothing in today\u2019s documents parsed into a deal record. That is a real answer \u2014 most days the government does not take a position in a listed company.</div>');
+     :`<div class="empty">Nothing in today\u2019s documents parsed into a deal record. That is usually the real answer \u2014 most days the government does not take a position in a listed company. <span class="mono" style="color:var(--dim);display:block;margin-top:8px">${rd.note||''}</span></div>`);
 }
 
 function drawPolicy(p){
