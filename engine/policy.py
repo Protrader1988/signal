@@ -27,8 +27,10 @@ Windows:
 Deals are grouped into cohorts because the interesting hypothesis is not "does
 policy pay" but "which STRUCTURE pays": contracted cash economics (price floors,
 offtake, multi-year procurement) versus a headline equity stake with no attached
-revenue, versus a non-binding LOI, versus extraction, where the government takes
-a cut and is a cost. Each cohort reports a median abnormal return, a bootstrap 95%
+revenue, versus a non-binding LOI, versus the definitive agreement that follows it
+months later, versus a sector directive carrying no money at all, versus a
+restriction on capital returns, versus extraction, where the government takes a cut
+and is a cost. Each cohort reports a median abnormal return, a bootstrap 95%
 confidence interval and a sign-test p-value, and the site prints the sample size next to
 every one of them, because with n in the teens most of these are anecdotes with
 error bars and saying so is the whole point.
@@ -77,25 +79,35 @@ import policy_sources as src
 # REGISTRY
 # Every entry is a dated, publicly announced event with a source link. Cohort is
 # the structural claim being tested, not a rating.
-#   contracted : contracted cash economics attached (price floor, offtake, procurement)
-#   equity     : equity or warrants, no attached revenue commitment
-#   loi        : announced, non-binding, terms can still move
-#   extraction : government takes a share of the company's revenue
-#   partner    : listed read-through to a deal with a private counterparty
+#   contracted   : contracted cash economics attached (price floor, offtake, procurement)
+#   equity       : equity or warrants, no attached revenue commitment
+#   loi          : announced, non-binding, terms can still move
+#   confirmation : the definitive agreement, months after the announcement
+#   directive    : sector policy with no company-specific money
+#   restriction  : the government constrains the company (capital returns)
+#   extraction   : government takes a share of the company's revenue
+#   partner      : listed read-through to a deal with a private counterparty
 # ---------------------------------------------------------------------------
 REGISTRY = [
+    # ---- contracted economics: a price floor, offtake or procurement commitment ----
     {"ticker": "MP", "name": "MP Materials", "date": "2025-07-10", "agency": "DoD",
      "cohort": "contracted", "basis": 30.03, "recipient": "MP MATERIALS",
      "structure": "$400M convertible preferred at $30.03 plus warrants, ~15% as-converted. The economics that matter are contractual: a 10-year $110/kg NdPr price floor and 100% magnet offtake from the 10X facility.",
      "source_url": "https://mpmaterials.com/news/mp-materials-announces-transformational-public-private-partnership-with-the-department-of-defense-to-accelerate-u-s-rare-earth-magnet-independence/"},
-    {"ticker": "NVDA", "name": "Nvidia", "date": "2025-08-11", "agency": "Commerce / BIS",
-     "cohort": "extraction", "basis": None, "recipient": "NVIDIA",
-     "structure": "15% of China H20 revenue paid to the government for export licences, later 25% on H200. Value flows out of the company, not in. Both chip names fell on the report.",
-     "source_url": "https://www.cbsnews.com/news/nvidia-amd-chip-sales-china-15-percent-h20-mi308/"},
-    {"ticker": "AMD", "name": "AMD", "date": "2025-08-11", "agency": "Commerce / BIS",
-     "cohort": "extraction", "basis": None, "recipient": "ADVANCED MICRO DEVICES",
-     "structure": "15% of China MI308 revenue to the government in exchange for export licences. Same structure as Nvidia: a levy presented as a partnership.",
-     "source_url": "https://www.pbs.org/newshour/politics/under-new-unusual-agreement-u-s-will-get-a-15-cut-of-nvidia-and-amd-chip-sales-to-china"},
+    {"ticker": "LHX", "name": "L3Harris", "date": "2026-01-13", "agency": "DoD",
+     "cohort": "contracted", "basis": None, "recipient": "L3HARRIS",
+     "structure": "$1B convertible preferred in the Missile Solutions unit, auto-converting at its spin-off IPO, tied to multi-year solid rocket motor procurement. Conversion is subject to appropriations.",
+     "source_url": "https://www.cato.org/blog/trump-administration-takes-equity-stake-defense-contractor"},
+    {"ticker": "AA", "name": "Alcoa", "date": "2026-08-31", "agency": "DoW",
+     "cohort": "contracted", "basis": None, "recipient": "ALCOA",
+     "structure": "~$174M of equity in the project vehicle for the Wagerup gallium refinery, with offtake attached. The stake is in the project, not the parent.",
+     "source_url": "https://www.war.gov/News/Releases/Release/Article/4587183/department-of-war-announces-174-million-investment-to-secure-gallium-supply-cha/"},
+    {"ticker": "ELMT", "name": "The Elmet Group", "date": "2026-09-14", "agency": "DoW",
+     "cohort": "contracted", "basis": None, "recipient": "ELMET",
+     "structure": "$450M committed: redeemable preferred plus warrants for up to 19.9%, $200M drawn at closing, one DoW director and one observer. Separately a DLA stockpile IDIQ for tungsten with a $2B ceiling and $150M funded.",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/14/3360841/0/en/department-of-war-makes-landmark-450-million-committed-investment-in-the-elmet-group-to-secure-america-s-tungsten-supply-chain.html"},
+
+    # ---- equity or warrants, with no revenue commitment attached ----
     {"ticker": "INTC", "name": "Intel", "date": "2025-08-22", "agency": "Commerce",
      "cohort": "equity", "basis": 20.47, "recipient": "INTEL",
      "structure": "9.9% of common (433M shares) at $20.47, converting $8.9B of unpaid CHIPS and Secure Enclave money. Additional 5% warrant only if Intel sells majority control of Foundry. No board seat, no stated exit.",
@@ -104,50 +116,158 @@ REGISTRY = [
      "cohort": "equity", "basis": 3.30, "recipient": "LITHIUM AMERICAS",
      "structure": "Penny warrants for 5% of the company plus 5% of the Thacker Pass JV, tied to restructuring the $2.23B DOE loan. No cash outlay by the government and no revenue commitment attached.",
      "source_url": "https://www.pbs.org/newshour/nation/u-s-government-taking-stake-in-company-operating-massive-lithium-mine-in-nevada"},
+    {"ticker": "AREC", "name": "American Resources", "date": "2025-11-03", "agency": "DoW / OSC",
+     "cohort": "equity", "basis": None, "recipient": "AMERICAN RESOURCES",
+     "structure": "$80M Office of Strategic Capital loan to subsidiary ReElement, matched by private capital, with the Department of War taking warrants. Part of the $1.4B Vulcan Elements magnet package; the warrants sit in the subsidiary, not the listed parent.",
+     "source_url": "https://www.prnewswire.com/news-releases/vulcan-elements-forges-1-4-billion-partnership-with-the-united-states-government-and-reelement-technologies-to-expand-100-vertically-integrated-domestic-magnet-supply-chain-302602878.html"},
+    {"ticker": "RGTI", "name": "Rigetti Computing", "date": "2026-05-21", "agency": "Commerce",
+     "cohort": "equity", "basis": None, "recipient": "RIGETTI",
+     "structure": "Up to $100M for a minority non-controlling stake, reported at roughly 2.3% and struck at a discount. Part of the ~$2B nine-company quantum package.",
+     "source_url": "https://www.cnbc.com/2026/05/21/quantum-stocks--us-taking-equity-stakes.html"},
+    {"ticker": "QBTS", "name": "D-Wave Quantum", "date": "2026-05-21", "agency": "Commerce",
+     "cohort": "equity", "basis": None, "recipient": "D-WAVE",
+     "structure": "$100M CHIPS award for a minority stake of roughly 1.9%, in the same quantum tranche.",
+     "source_url": "https://www.cnbc.com/2026/05/21/quantum-stocks--us-taking-equity-stakes.html"},
+
+    # ---- announced but non-binding: a letter of intent is not a contract ----
     {"ticker": "TMQ", "name": "Trilogy Metals", "date": "2025-10-06", "agency": "DoW / OSC",
-     "cohort": "equity", "basis": 2.17, "recipient": "TRILOGY METALS",
-     "structure": "$35.6M for 10% of common plus 7.5% in penny warrants, tied to the Ambler Road access decision in Alaska. Pre-production, so the stake is the whole story.",
-     "source_url": "https://www.cato.org/blog/government-ownership-stakes-companies-becoming-routine-under-trump"},
-    {"ticker": "CCJ", "name": "Cameco", "date": "2025-10-27", "agency": "DOE",
-     "cohort": "partner", "basis": None, "recipient": "CAMECO",
-     "structure": "Listed read-through to the $80B Westinghouse AP1000 partnership. The government's warrants sit in Westinghouse, which is private — holders own the partner, not the instrument.",
-     "source_url": "https://www.cameco.com/media/news/united-states-government-brookfield-and-cameco-announce-transformational-partnership"},
-    {"ticker": "LHX", "name": "L3Harris", "date": "2026-01-13", "agency": "DoD",
-     "cohort": "contracted", "basis": None, "recipient": "L3HARRIS",
-     "structure": "$1B convertible preferred in the Missile Solutions unit, auto-converting at its spin-off IPO, tied to multi-year solid rocket motor procurement. Conversion is subject to appropriations.",
-     "source_url": "https://www.cato.org/blog/trump-administration-takes-equity-stake-defense-contractor"},
+     "cohort": "loi", "basis": 2.17, "recipient": "TRILOGY METALS",
+     "structure": "Letter of intent for $35.6M — 10% of common plus 7.5% in penny warrants — tied to the Ambler Road access decision. It stayed an LOI for eleven months, with the closing deadline extended more than once.",
+     "source_url": "https://trilogymetals.com/news-and-media/news/trilogy-metals-provides-an-update-on-the-strategic-equity-investment-by-the-u-s-department-of-war/"},
     {"ticker": "USAR", "name": "USA Rare Earth", "date": "2026-01-26", "agency": "Commerce",
      "cohort": "loi", "basis": None, "recipient": "USA RARE EARTH",
      "structure": "Letter of intent for access to up to $1.6B with an equity stake plus warrants. Non-binding: the terms in the headline are not yet the terms of a contract.",
      "source_url": "https://www.nist.gov/news-events/news/2026/01/department-commerces-chips-program-announces-letter-intent-usa-rare-earth"},
     {"ticker": "IBM", "name": "IBM", "date": "2026-05-21", "agency": "Commerce",
      "cohort": "loi", "basis": None, "recipient": "INTERNATIONAL BUSINESS MACHINES",
-     "structure": "$1B toward a 300mm quantum wafer foundry venture for a minority non-controlling stake. Reported at LOI stage.",
+     "structure": "$1B toward a 300mm quantum wafer foundry venture for a minority non-controlling stake, reported at letter-of-intent stage.",
      "source_url": "https://www.datacenterdynamics.com/en/news/us-dept-of-commerce-awards-nine-quantum-computing-companies-2bn-in-exchange-for-non-controlling-equity-stakes/"},
-    {"ticker": "RGTI", "name": "Rigetti Computing", "date": "2026-05-21", "agency": "Commerce",
-     "cohort": "equity", "basis": None, "recipient": "RIGETTI",
-     "structure": "Up to $100M for a minority non-controlling stake, announced 21 May 2026 and definitive 8 Sep 2026. The definitive agreement moved the stock roughly a quarter as much as the announcement did.",
+    {"ticker": "GFS", "name": "GlobalFoundries (quantum)", "date": "2026-05-21", "agency": "Commerce",
+     "cohort": "loi", "basis": None, "recipient": "GLOBALFOUNDRIES",
+     "structure": "Letter of intent for a $375M quantum manufacturing award, with Commerce taking strategic equity of about 1%.",
+     "source_url": "https://gf.com/news-and-events/news/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/"},
+    {"ticker": "GFS", "name": "GlobalFoundries (photonics)", "date": "2026-07-29", "agency": "Commerce",
+     "cohort": "loi", "basis": None, "recipient": "GLOBALFOUNDRIES",
+     "structure": "Second letter of intent, $300M for silicon photonics, with Commerce taking a further ~1%. The stock fell about 6.6% on the day — a federal cheque is not automatically good news.",
+     "source_url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300"},
+
+    # ---- confirmation: the definitive agreement, months after the announcement ----
+    {"ticker": "RGTI", "name": "Rigetti (definitive)", "date": "2026-09-08", "agency": "Commerce",
+     "cohort": "confirmation", "basis": None, "recipient": "RIGETTI",
+     "structure": "The May announcement becomes a signed agreement. Tests directly whether confirmation is worth anything once the headline is old.",
      "source_url": "https://247wallst.com/investing/2026/09/08/quantum-stocks-rally-as-commerce-department-takes-equity-stakes-rigetti-surges-6-d-wave-climbs-5/"},
-    {"ticker": "QBTS", "name": "D-Wave Quantum", "date": "2026-05-21", "agency": "Commerce",
-     "cohort": "equity", "basis": None, "recipient": "D-WAVE",
-     "structure": "$100M CHIPS award for a minority stake of roughly 1.9%, part of a nine-company, ~$2B quantum tranche.",
-     "source_url": "https://www.cnbc.com/2026/05/21/quantum-stocks--us-taking-equity-stakes.html"},
-    {"ticker": "GFS", "name": "GlobalFoundries", "date": "2026-05-21", "agency": "Commerce",
-     "cohort": "equity", "basis": None, "recipient": "GLOBALFOUNDRIES",
-     "structure": "Two CHIPS awards totalling roughly $675M — quantum foundry and silicon photonics — for about 1.8% combined.",
-     "source_url": "https://www.timesunion.com/business/article/commerce-finalizes-375-million-grant-22423918.php"},
-    {"ticker": "AA", "name": "Alcoa", "date": "2026-08-31", "agency": "DoW",
-     "cohort": "contracted", "basis": None, "recipient": "ALCOA",
-     "structure": "~$174M of equity in the project vehicle for the Wagerup gallium refinery, with offtake attached. The stake is in the project, not the parent.",
-     "source_url": "https://www.war.gov/News/Releases/Release/Article/4587183/department-of-war-announces-174-million-investment-to-secure-gallium-supply-cha/"},
-    {"ticker": "ELMT", "name": "The Elmet Group", "date": "2026-09-14", "agency": "DoW",
-     "cohort": "contracted", "basis": None, "recipient": "ELMET",
-     "structure": "$450M committed — redeemable preferred plus warrants for up to 19.9% — funding tungsten and molybdenum capacity. Newest deal on the board.",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/14/3360841/0/en/department-of-war-makes-landmark-450-million-committed-investment-in-the-elmet-group-to-secure-america-s-tungsten-supply-chain.html"},
+    {"ticker": "QBTS", "name": "D-Wave (definitive)", "date": "2026-09-08", "agency": "Commerce",
+     "cohort": "confirmation", "basis": None, "recipient": "D-WAVE",
+     "structure": "Same package finalised; the stock moved roughly a fifth as much as it did on the announcement.",
+     "source_url": "https://247wallst.com/investing/2026/09/08/quantum-stocks-rally-as-commerce-department-takes-equity-stakes-rigetti-surges-6-d-wave-climbs-5/"},
+    {"ticker": "TMQ", "name": "Trilogy (closed)", "date": "2026-09-11", "agency": "DoW / OSC",
+     "cohort": "confirmation", "basis": None, "recipient": "TRILOGY METALS",
+     "structure": "The eleven-month-old LOI actually closes: $35.6M funded, the government becomes a holder.",
+     "source_url": "https://www.prnewswire.com/news-releases/trilogy-metals-closes-us35-6-million-strategic-equity-investment-by-the-us-department-of-war-302876686.html"},
+
+    # ---- directive: sector policy with no company-specific money ----
+    {"ticker": "IBM", "name": "IBM (quantum EOs)", "date": "2026-06-22", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "INTERNATIONAL BUSINESS MACHINES",
+     "structure": "Two executive orders on quantum innovation and post-quantum cryptography. No money, no equity — pure policy signal.",
+     "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/"},
+    {"ticker": "QBTS", "name": "D-Wave (quantum EOs)", "date": "2026-06-22", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "D-WAVE",
+     "structure": "Same executive orders, no company-specific commitment.",
+     "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/"},
+    {"ticker": "RGTI", "name": "Rigetti (quantum EOs)", "date": "2026-06-22", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "RIGETTI",
+     "structure": "Same executive orders, no company-specific commitment.",
+     "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/"},
+    {"ticker": "IONQ", "name": "IonQ (quantum EOs)", "date": "2026-06-22", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "IONQ",
+     "structure": "Rallied on the orders despite taking no federal equity in the May package.",
+     "source_url": "https://www.lawfaremedia.org/article/white-house-releases-executive-orders-on-quantum-computing"},
+    {"ticker": "QUBT", "name": "Quantum Computing Inc (quantum EOs)", "date": "2026-06-22", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "QUANTUM COMPUTING",
+     "structure": "Also outside the equity package; moved on the policy signal alone.",
+     "source_url": "https://www.lawfaremedia.org/article/white-house-releases-executive-orders-on-quantum-computing"},
+    {"ticker": "KTOS", "name": "Kratos (drone tariffs)", "date": "2026-08-14", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "KRATOS",
+     "structure": "Section 232 drone tariffs — 100% on large drones and critical components — signed the evening of 13 August, so day 0 is the first session that could trade it.",
+     "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-drones-and-their-parts-and-components/"},
+    {"ticker": "AVAV", "name": "AeroVironment (drone tariffs)", "date": "2026-08-14", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "AEROVIRONMENT",
+     "structure": "Same proclamation; protection of domestic small-UAS production.",
+     "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-drones-and-their-parts-and-components/"},
+    {"ticker": "RCAT", "name": "Red Cat (drone tariffs)", "date": "2026-08-14", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "RED CAT",
+     "structure": "Same proclamation; small-cap beneficiary.",
+     "source_url": "https://finance.yahoo.com/economy/policy/articles/umac-rcat-onds-avav-ktos-012719145.html"},
+    {"ticker": "ONDS", "name": "Ondas (drone tariffs)", "date": "2026-08-14", "agency": "White House",
+     "cohort": "directive", "basis": None, "recipient": "ONDAS",
+     "structure": "Same proclamation; small-cap beneficiary.",
+     "source_url": "https://finance.yahoo.com/economy/policy/articles/umac-rcat-onds-avav-ktos-012719145.html"},
+
+    # ---- restriction: the government constrains the company ----
+    {"ticker": "HII", "name": "Huntington Ingalls (buyback EO)", "date": "2026-01-07", "agency": "White House",
+     "cohort": "restriction", "basis": None, "recipient": "HUNTINGTON INGALLS",
+     "structure": "EO 14372 lets the Secretary of War restrict buybacks, dividends and executive pay at contractors judged to be underperforming on critical programmes. HII halted buybacks.",
+     "source_url": "https://www.whitehouse.gov/presidential-actions/2026/01/prioritizing-the-warfighter-in-defense-contracting/"},
+    {"ticker": "GD", "name": "General Dynamics (buyback EO)", "date": "2026-01-07", "agency": "White House",
+     "cohort": "restriction", "basis": None, "recipient": "GENERAL DYNAMICS",
+     "structure": "Same order; capital returns become conditional on delivery performance.",
+     "source_url": "https://www.cnbc.com/2026/01/07/trump-dividends-stock-buybacks-defense-companies.html"},
+    {"ticker": "LMT", "name": "Lockheed Martin (buyback EO)", "date": "2026-01-07", "agency": "White House",
+     "cohort": "restriction", "basis": None, "recipient": "LOCKHEED MARTIN",
+     "structure": "Same order. No company is named in the text; the names came from the President's remarks that day.",
+     "source_url": "https://www.cnbc.com/2026/01/07/trump-dividends-stock-buybacks-defense-companies.html"},
+    {"ticker": "RTX", "name": "RTX (buyback EO)", "date": "2026-01-07", "agency": "White House",
+     "cohort": "restriction", "basis": None, "recipient": "RTX",
+     "structure": "Same order; defence primes sold off that session.",
+     "source_url": "https://news.usni.org/2026/01/08/trump-executive-order-puts-pressure-on-defense-companies-seeks-to-halt-stock-buybacks"},
+    {"ticker": "NOC", "name": "Northrop Grumman (buyback EO)", "date": "2026-01-07", "agency": "White House",
+     "cohort": "restriction", "basis": None, "recipient": "NORTHROP GRUMMAN",
+     "structure": "Same order.",
+     "source_url": "https://news.usni.org/2026/01/08/trump-executive-order-puts-pressure-on-defense-companies-seeks-to-halt-stock-buybacks"},
+
+    # ---- extraction: the government takes a share of revenue ----
+    {"ticker": "NVDA", "name": "Nvidia", "date": "2025-08-11", "agency": "Commerce / BIS",
+     "cohort": "extraction", "basis": None, "recipient": "NVIDIA",
+     "structure": "15% of China H20 revenue paid to the government for export licences, later 25% on H200. Value flows out of the company, not in.",
+     "source_url": "https://www.cbsnews.com/news/nvidia-amd-chip-sales-china-15-percent-h20-mi308/"},
+    {"ticker": "AMD", "name": "AMD", "date": "2025-08-11", "agency": "Commerce / BIS",
+     "cohort": "extraction", "basis": None, "recipient": "ADVANCED MICRO DEVICES",
+     "structure": "15% of China MI308 revenue in exchange for export licences. Same structure as Nvidia: a levy presented as a partnership.",
+     "source_url": "https://www.pbs.org/newshour/politics/under-new-unusual-agreement-u-s-will-get-a-15-cut-of-nvidia-and-amd-chip-sales-to-china"},
+
+    # ---- partner: the listed read-through to a private counterparty ----
+    {"ticker": "CCJ", "name": "Cameco", "date": "2025-10-27", "agency": "DOE",
+     "cohort": "partner", "basis": None, "recipient": "CAMECO",
+     "structure": "Read-through to the $80B Westinghouse AP1000 partnership. The government's warrants sit in Westinghouse, which is private — holders own the partner, not the instrument.",
+     "source_url": "https://www.cameco.com/media/news/united-states-government-brookfield-and-cameco-announce-transformational-partnership"},
 ]
 
-# Names repeatedly floated as candidates. No deal exists for any of them; they are
-# carried only so their real federal exposure can be measured rather than asserted.
+# What this registry does and does not cover, published on the page so the selection
+# is auditable rather than implied.
+COVERAGE = {
+    "reviewed_through": "2026-09-19",
+    "includes": ("Every federal equity stake, warrant, price floor, offtake, procurement "
+                 "commitment, revenue share, sector directive and capital-return restriction "
+                 "since July 2025 that attaches to a company listed on a US exchange."),
+    "excludes": [
+        "Deals whose counterparty is private (Westinghouse, Vulcan Elements, Korea Zinc, "
+        "the July 2026 CHIPS tranche) — no ticker, no price, nothing to measure. Where a "
+        "listed parent or partner exists it is carried instead, labelled as such.",
+        "Foreign listings such as Syrah on the ASX, where the SPY market model does not apply.",
+        "US Steel, delisted in June 2025 five days after the golden share was approved, so no "
+        "post-event window exists.",
+        "Private offtakes that read as federal but are not: Critical Metals' 15-year REalloys "
+        "agreement has no government party, and is deliberately kept out.",
+    ],
+    "bias": ("Curation is the weak point. Deals that made headlines are easier to find than "
+             "quiet ones, which biases the sample toward larger reactions. The detection feed "
+             "below is the mechanism for closing that gap over time."),
+}
+
+# Names repeatedly floated as candidates. No federal transaction exists for any of
+# them; they are carried only so their real federal exposure can be measured rather
+# than asserted, and so the difference between "gets talked about" and "got a deal"
+# stays visible.
 RADAR = [
     {"ticker": "PPTA", "sector": "Critical minerals", "recipient": "PERPETUA",
      "thesis": "Antimony and gold at Stibnite. Antimony is on every stockpile list and has no US production."},
@@ -158,27 +278,24 @@ RADAR = [
     {"ticker": "METC", "sector": "Critical minerals", "recipient": "RAMACO",
      "thesis": "Rare earth build-out attached to an existing coal cash flow."},
     {"ticker": "CRML", "sector": "Critical minerals", "recipient": "CRITICAL METALS",
-     "thesis": "Tanbreez in Greenland. Administration interest has been reported; nothing is signed."},
+     "thesis": "Tanbreez in Greenland. Its 15-year REalloys offtake reads federal in the headlines and is not — no government party, no price floor — which is why it stays here and out of the study."},
     {"ticker": "BWXT", "sector": "Nuclear", "recipient": "BWX TECHNOLOGIES",
      "thesis": "Naval reactors and microreactors — a direct line into the SMR programmes."},
     {"ticker": "LEU", "sector": "Nuclear", "recipient": "CENTRUS",
      "thesis": "Domestic HALEU enrichment, the bottleneck in every advanced-reactor timeline."},
     {"ticker": "OKLO", "sector": "Nuclear", "recipient": "OKLO",
      "thesis": "Named in DOE fast-track lists. Pre-revenue, so entirely a policy-narrative position."},
-    {"ticker": "KTOS", "sector": "Defense / drones", "recipient": "KRATOS",
-     "thesis": "Drone tariffs and the Pentagon fly-off programmes point at it."},
-    {"ticker": "AVAV", "sector": "Defense / drones", "recipient": "AEROVIRONMENT",
-     "thesis": "Largest listed pure-play in small UAS as procurement dollars concentrate."},
-    {"ticker": "HII", "sector": "Shipbuilding", "recipient": "HUNTINGTON INGALLS",
-     "thesis": "Maritime Action Plan and the Navy overhaul. The buyback restrictions cut the other way."},
-    {"ticker": "GD", "sector": "Shipbuilding", "recipient": "GENERAL DYNAMICS",
-     "thesis": "Submarine industrial base funding, with the same capital-return constraint attached."},
+    {"ticker": "UMAC", "sector": "Defense / drones", "recipient": "UNUSUAL MACHINES",
+     "thesis": "Drone-component onshoring; moved on the August tariffs without any federal transaction of its own."},
 ]
 
 COHORT_LABEL = {
     "contracted": "Contracted economics",
     "equity": "Equity stake only",
     "loi": "Non-binding LOI",
+    "confirmation": "Definitive agreement",
+    "directive": "Sector directive, no money",
+    "restriction": "Capital returns restricted",
     "extraction": "Government takes a cut",
     "partner": "Partner read-through",
 }
@@ -360,6 +477,16 @@ def cohort_paths(events):
 # exposure, detection, ledger
 # ---------------------------------------------------------------------------
 def build_exposure(entries):
+    # one row per ticker: the registry holds several events for some names (GlobalFoundries
+    # twice, Rigetti three times) and querying the same recipient repeatedly would be both
+    # slower and misleading in the table
+    seen, uniq = set(), []
+    for e in entries:
+        if e["ticker"] in seen:
+            continue
+        seen.add(e["ticker"])
+        uniq.append(e)
+    entries = uniq
     out = []
     for e in entries:
         rec = e.get("recipient")
@@ -512,13 +639,14 @@ def main():
                    "therefore mostly unbuyable; every other window starts at the day-0 close, the "
                    "first price a retail account could actually pay. Deals with under 60 estimation "
                    "observations fall back to a plain market adjustment and are labelled."),
-        "limits": ("Read the sample sizes before the medians. Fifteen events across five structures "
-                   "is not a dataset, it is a set of anecdotes with error bars, and the bootstrap "
-                   "intervals and sign-test p-values are printed so that is visible rather than "
-                   "hidden. The registry is also curated, which means selection bias: deals that "
-                   "made headlines are over-represented against quiet ones. Nothing here is a "
-                   "backtest, none of it is advice, and the forward ledger below is the only part "
-                   "that will ever be genuinely out of sample."),
+        "limits": (f"Read the sample sizes before the medians. {len(testable)} events across "
+                   f"{len(stats)} structures, with {sum(1 for c in stats.values() if c['reportable'])} "
+                   "of those structures large enough to report a median at all, is a small sample: "
+                   "the bootstrap intervals and sign-test p-values are printed so that stays visible "
+                   "rather than hidden, and a median whose interval straddles zero is not evidence. "
+                   "Nothing here is a backtest, none of it is advice, and the forward ledger below "
+                   "is the only part that will ever be genuinely out of sample."),
+        "coverage": COVERAGE,
         "windows": [{"key": k, "label": WINDOW_LABEL[k], "from": a, "to": b} for k, a, b in WINDOWS],
         "events": events,
         "untestable": untestable,

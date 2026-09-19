@@ -170,6 +170,14 @@
   .b-extraction{color:var(--down);border-color:rgba(255,93,93,.32)}
   .b-partner{color:var(--purple);border-color:rgba(179,155,255,.32)}
   .b-radar{color:var(--muted);border-color:var(--line2)}
+  .b-confirm{color:var(--purple);border-color:rgba(179,155,255,.32)}
+  .b-directive{color:var(--info);border-color:rgba(90,162,255,.32)}
+  .b-restrict{color:#ff8fa3;border-color:rgba(255,143,163,.32)}
+  .coverage{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface2);padding:15px 18px}
+  .coverage h4{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold2);font-weight:600;margin-bottom:8px}
+  .coverage p{font-size:12.5px;color:var(--text2);line-height:1.65}
+  .coverage ul{margin:8px 0 0 16px}
+  .coverage li{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:5px}
   td.wrap{white-space:normal;max-width:420px;color:var(--muted);font-size:11.5px;line-height:1.6;vertical-align:middle}
   .scrollx{overflow-x:auto}
   .cismall{display:block;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:3px;font-weight:400}
@@ -286,7 +294,7 @@
       <div class="chartwrap"><div id="policyChart"><div class="loading">loading event study…</div></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">COHORT</span><span class="t">Median CAR by deal structure — with sample size, bootstrap CI and sign test</span></div>
+      <div class="card-head"><span class="code">COHORT</span><span class="t">Median abnormal return by deal structure — with sample size, bootstrap CI and sign test</span></div>
       <div id="policyCohorts"></div>
     </div>
     <div class="card">
@@ -390,7 +398,8 @@ function drawChart(cv){
 function policyChart(paths){
   const keys=Object.keys(paths||{});
   if(!keys.length){$('policyChart').innerHTML='<div class="empty">Not enough deals in any single structure to average a path honestly. The chart appears once a cohort has at least three testable events.</div>';return;}
-  const colors={contracted:'#2fd39a',equity:'#e6c976',loi:'#f2b23e',extraction:'#ff5d5d',partner:'#b39bff'};
+  const colors={contracted:'#2fd39a',equity:'#e6c976',loi:'#f2b23e',confirmation:'#b39bff',
+    directive:'#5aa2ff',restriction:'#ff8fa3',extraction:'#ff5d5d',partner:'#8892a6'};
   const W=1000,H=300,pl=54,pr=58,pt=16,pb=30;
   let lo=0,hi=0,dmin=0,dmax=0;
   keys.forEach(k=>{const p=paths[k];lo=Math.min(lo,...p.median,...(p.q25||[]));hi=Math.max(hi,...p.median,...(p.q75||[]));dmin=Math.min(dmin,p.days[0]);dmax=Math.max(dmax,p.days[p.days.length-1]);});
@@ -429,7 +438,9 @@ function drawPolicy(p){
     return;
   }
   const cohortMeta={contracted:['Contracted economics','b-stake'],equity:['Equity stake only','b-loi'],
-    loi:['Non-binding LOI','b-contract'],extraction:['Govt takes a cut','b-extraction'],partner:['Partner read-through','b-partner']};
+    loi:['Non-binding LOI','b-contract'],confirmation:['Definitive agreement','b-confirm'],
+    directive:['Sector directive','b-directive'],restriction:['Capital returns cut','b-restrict'],
+    extraction:['Govt takes a cut','b-extraction'],partner:['Partner read-through','b-partner']};
   const carCell=v=>v==null?'—':`<span class="${sgn(v)}">${pc(v)}</span>`;
   const ci=w=>(w&&w.median!=null)?`<span class="${sgn(w.median)}">${pc(w.median)}</span><span class="cismall">${pc(w.lo)} to ${pc(w.hi)}</span>`:'—';
   const pooled=p.pooled||{},co=p.cohorts||{};
@@ -548,7 +559,12 @@ function drawPolicy(p){
   $('policyDocs').innerHTML=docs.length?docs.map(d=>`<div class="newsrow"><span class="tk">${d.matched||''}</span><a href="${d.link}" target="_blank" rel="noopener">${d.title}</a><span class="src">${d.source||''} · ${d.date||''}</span></div>`).join('')
     :'<div class="empty">No matching documents published in the window.</div>';
 
-  $('policyMethod').textContent=(p.method||'')+' '+(p.limits||'');
+  const cov=p.coverage;
+  $('policyMethod').innerHTML=`<div>${(p.method||'')+' '+(p.limits||'')}</div>`+(cov?`<div class="coverage">
+    <h4>What this registry covers · reviewed through ${cov.reviewed_through}</h4>
+    <p>${cov.includes}</p>
+    <ul>${(cov.excludes||[]).map(x=>`<li><b style="color:var(--text2)">Excluded:</b> ${x}</li>`).join('')}</ul>
+    <p style="margin-top:10px"><b style="color:var(--warn)">Known bias:</b> ${cov.bias}</p></div>`:'');
 
   const h=p.health||{};
   const names={sec_edgar:'edgar',sec_tickers:'cik map',dow_contracts:'dow contracts',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',usaspending:'usaspending'};

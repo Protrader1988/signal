@@ -21,14 +21,16 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-# SEC requires automated clients to identify themselves with a contact address and
-# rejects everything else with a 403 — including, in practice, most datacenter IPs.
-# Set a SEC_CONTACT repository secret (an email) to improve the odds; the desk works
-# without EDGAR because the other detectors below do not depend on it.
 SEC_CONTACT = os.environ.get("SEC_CONTACT", "").strip()
-UA = {"User-Agent": (f"SignalTerminal/1.0 ({SEC_CONTACT})" if SEC_CONTACT
-                     else "SignalTerminal/1.0 (+https://github.com/protrader1988/signal)"),
-      "Accept-Encoding": "gzip, deflate", "Accept": "application/json"}
+# The SEC's access policy asks for "Company Name contact@domain"; anything else is
+# refused outright, and datacenter ranges are refused on top of that. Set a
+# SEC_CONTACT secret to an email to use it; otherwise a GitHub noreply address, which
+# is a real deliverable contact for this repository.
+SEC_UA = f"Signal Terminal {SEC_CONTACT or 'protrader1988@users.noreply.github.com'}"
+UA = {"User-Agent": SEC_UA, "Accept-Encoding": "gzip, deflate", "Accept": "application/json"}
+SEC_HEADERS = {"User-Agent": SEC_UA, "Accept": "application/json",
+               "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US,en;q=0.9",
+               "Host": "www.sec.gov", "Connection": "keep-alive"}
 
 HEALTH = {}
 
@@ -80,7 +82,8 @@ def post_json(url, payload, timeout=30, retries=1):
 def company_tickers():
     """{cik_int: TICKER}. Used to turn an EDGAR hit into something tradeable."""
     try:
-        data = get_json("https://www.sec.gov/files/company_tickers.json")
+        data = get_json("https://www.sec.gov/files/company_tickers.json",
+                        headers=SEC_HEADERS, retries=3)
         out = {}
         for row in (data or {}).values():
             try:
@@ -118,7 +121,9 @@ def edgar_fulltext(days=45, forms="8-K", cap_per_query=10):
                f"&forms={urllib.parse.quote(forms)}&dateRange=custom"
                f"&startdt={since}&enddt={until}")
         try:
-            data = get_json(url, headers={"Referer": "https://www.sec.gov/edgar/search/"})
+            data = get_json(url, retries=2, headers={**SEC_HEADERS, "Host": "efts.sec.gov",
+                                                     "Referer": "https://www.sec.gov/edgar/search/",
+                                                     "Origin": "https://www.sec.gov"})
             ok_any = True
             for h in ((data or {}).get("hits", {}).get("hits", []) or [])[:cap_per_query]:
                 src = h.get("_source", {}) or {}
@@ -140,8 +145,9 @@ def edgar_fulltext(days=45, forms="8-K", cap_per_query=10):
                     "matched": label,
                 })
         except Exception as e:
-            _mark("sec_edgar", False, str(e)[:120])
-        time.sleep(0.4)
+            _mark("sec_edgar", False,
+                  f"{str(e)[:90]} — detection continues on the award and news feeds")
+        time.sleep(0.8)
     if ok_any:
         _mark("sec_edgar", True, f"{len(hits)} filings across {len(EDGAR_QUERIES)} queries")
     return hits
@@ -381,7 +387,7 @@ def news_detect(cap=5):
     return out
 
 
-def usaspending_awards(recipient, years=2, limit=100):
+def usaspending_awards(recipient, years=2, limit=100, max_pages=3):
     """Prime contract + grant awards whose recipient name matches. Returns total
     obligations, count, most recent action date and a verification link.
 
@@ -401,8 +407,17 @@ def usaspending_awards(recipient, years=2, limit=100):
         "subawards": False,
     }
     try:
-        data = post_json("https://api.usaspending.gov/api/v2/search/spending_by_award/", payload)
-        rows = (data or {}).get("results", []) or []
+        rows, page, exhausted = [], 1, False
+        while page <= max_pages:               # 3 x 100 awards; enough for every name here
+            payload["page"] = page
+            data = post_json("https://api.usaspending.gov/api/v2/search/spending_by_award/", payload)
+            batch = (data or {}).get("results", []) or []
+            rows += batch
+            meta = (data or {}).get("page_metadata") or {}
+            if len(batch) < limit or not meta.get("hasNext", len(batch) == limit):
+                exhausted = True
+                break
+            page += 1
         total = 0.0
         last = None
         agencies = {}
@@ -423,7 +438,8 @@ def usaspending_awards(recipient, years=2, limit=100):
         # The award list is capped, so its sum understates any large recipient. The
         # category endpoint aggregates server-side; prefer it and fall back to the sum,
         # saying on the page which of the two the number came from.
-        agg, basis = None, "sum of top %d awards" % limit
+        agg, basis = None, ("sum of all %d matched awards" % len(rows) if exhausted
+                            else "floor: first %d awards, more exist" % len(rows))
         try:
             cat = None
             for url, body in (
@@ -457,7 +473,7 @@ def usaspending_awards(recipient, years=2, limit=100):
         _mark("usaspending", True, f"queried [{keys}]")
         return {"total": round(agg if agg is not None else total, 0), "count": len(rows),
                 "last_action": last, "top_agency": top_agency,
-                "truncated": agg is None and len(rows) >= limit, "basis": basis,
+                "truncated": agg is None and not exhausted, "basis": basis, "pages": page,
                 "link": "https://www.usaspending.gov/search?keywords=" + urllib.parse.quote(recipient)}
     except Exception as e:
         _mark("usaspending", False, str(e)[:120])
