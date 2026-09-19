@@ -402,7 +402,8 @@ def usaspending_awards(recipient, years=2, limit=100, max_pages=3):
             "time_period": [{"start_date": start.isoformat(), "end_date": end.isoformat()}],
             "award_type_codes": ["A", "B", "C", "D"],
         },
-        "fields": ["Award Amount", "Recipient Name", "Action Date", "Awarding Agency"],
+        "fields": ["Award Amount", "Recipient Name", "Action Date", "Awarding Agency",
+                   "Start Date", "End Date", "Last Modified Date"],
         "sort": "Award Amount", "order": "desc", "limit": limit, "page": 1,
         "subawards": False,
     }

@@ -624,7 +624,7 @@ def main():
     name_map = {(d.get("recipient") or "").upper(): d["ticker"]
                 for d in REGISTRY + RADAR if d.get("recipient")}
     detection = build_detection(cik_map, known, name_map)
-    documents = (src.federal_register() + src.dow_releases() + src.dow_contracts())
+    documents = (src.federal_register() + src.dow_releases() + src.dow_contracts(cap=6))
     documents.sort(key=lambda d: d.get("date") or "", reverse=True)
     exposure = build_exposure(REGISTRY + RADAR)
     ledger = update_ledger(events, first_run_date)

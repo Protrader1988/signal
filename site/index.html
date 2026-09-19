@@ -479,13 +479,26 @@ function drawPolicy(p){
   if(eqd&&eqq&&eqd.median!=null&&eqq.median!=null&&eqq.median<eqd.median){
     eqLine=` Bare equity stakes give back most of it: median <span class="hl ${sgn(eqd.median)}">${pc(eqd.median)}</span> on day 0 decaying to <span class="hl ${sgn(eqq.median)}">${pc(eqq.median)}</span> by one quarter.`;
   }
+  // the strongest result on the board, found rather than asserted
+  let sig=null;
+  Object.values(co).forEach(c=>{if(!c.reportable)return;
+    (p.windows||[]).forEach(w=>{const x=c.windows[w.key];
+      if(x&&x.p!=null&&x.n>=4&&(!sig||x.p<sig.p))sig={p:x.p,n:x.n,median:x.median,label:c.label,win:w.label,key:w.key};});});
+  let sigLine='';
+  if(sig&&sig.p<0.05){
+    sigLine=` The one result that clears a conventional significance bar is <b>${sig.label.toLowerCase()}</b> at ${sig.win}:
+      median <span class="hl ${sgn(sig.median)}">${pc(sig.median)}</span> on n=${sig.n}, sign test p=${sig.p}.
+      ${sig.median<0?'It is negative, which is worth sitting with — the clearest thing in this data is a way to lose money, not make it.':'Treat one significant cell among dozens tested as a lead, not a law: run enough windows and one will clear 0.05 by luck.'}`;
+  } else if(sig){
+    sigLine=` Nothing clears a conventional significance bar; the closest is ${sig.label.toLowerCase()} at ${sig.win} (p=${sig.p}, n=${sig.n}).`;
+  }
   $('policyVerdict').innerHTML=`<div class="verdict"><b>What the study actually says.</b>
     Across <span class="hl">${m1.n||0}</span> testable deals the median abnormal return is
     <span class="hl ${sgn(d0.median)}">${pc(d0.median)}</span> on the announcement day itself and
     <span class="hl ${sgn(m1.median)}">${pc(m1.median)}</span> over the month after it
     ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?', indistinguishable from noise':''})`:''}.
     ${m1.pos!=null?`<span class="hl">${m1.pos}</span> of <span class="hl">${m1.n}</span> were positive at one month.`:''}
-    ${concLine}${eqLine} ${structLine}</div>`;
+    ${concLine}${eqLine}${sigLine} ${structLine}</div>`;
 
   const fwd=(p.ledger&&p.ledger.forward)||{};
   const tiles=[
