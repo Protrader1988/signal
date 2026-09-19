@@ -11,11 +11,15 @@ Sources
                                                 a federal deal first appears with terms
   SEC company_tickers.json    sec.gov           CIK -> ticker resolution
   Federal Register API        federalregister.gov  EOs, proclamations, agency notices
+  White House                 whitehouse.gov    presidential actions, fact sheets,
+                                                statements — the first public record of
+                                                a directive, ahead of everything else
   DoW releases RSS            war.gov           daily defense announcements
   USAspending API             api.usaspending.gov  actual federal obligations by recipient
 """
 import json
 import os
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -197,6 +201,108 @@ def federal_register(days=30, per_term=4):
         _mark("federal_register", True, f"{len(out)} documents")
     return out
 
+
+
+# ---------------------------------------------------------------------------
+# The White House — where a directive is public before it is anything else
+# ---------------------------------------------------------------------------
+WH_SECTIONS = ["https://www.whitehouse.gov/news/",
+               "https://www.whitehouse.gov/fact-sheets/",
+               "https://www.whitehouse.gov/presidential-actions/",
+               "https://www.whitehouse.gov/briefings-statements/"]
+
+# A White House post matters to this desk when it moves money or names an industry.
+WH_WORDS = ("investment", "invest", "equity", "stake", "warrant", "offtake", "price floor",
+            "partnership", "joint venture", "procurement", "stockpile", "tariff",
+            "critical mineral", "rare earth", "semiconductor", "chips", "shipbuilding",
+            "nuclear", "drone", "onshoring", "reshoring", "section 232", "billion",
+            "supply chain", "defense industrial", "quantum", "export")
+
+_WH_LINK = re.compile(
+    r'href="(https://www\.whitehouse\.gov/(?:fact-sheets|presidential-actions|'
+    r'briefings-statements|articles|remarks)/(\d{4})/(\d{2})/([a-z0-9\-]+)/)"',
+    re.I)
+_WH_DATE = re.compile(r'datetime="(\d{4}-\d{2}-\d{2})')
+_WH_DATE_TEXT = re.compile(
+    r'\b(January|February|March|April|May|June|July|August|September|October|'
+    r'November|December)\s+(\d{1,2}),\s+(20\d\d)\b')
+_MONTHS = {m: i + 1 for i, m in enumerate(
+    ["January", "February", "March", "April", "May", "June", "July", "August",
+     "September", "October", "November", "December"])}
+
+
+def _slug_title(slug):
+    t = slug.replace("-", " ").strip()
+    return (t[:1].upper() + t[1:]) if t else slug
+
+
+def _wh_article_date(url, cache={}):
+    """Day-precision date, read from the article itself. The listing pages only carry
+    year and month in the URL, and 'this happened sometime in September' is not a
+    detection feed."""
+    if url in cache:
+        return cache[url]
+    day = None
+    try:
+        html = _get(url, timeout=25).decode("utf-8", "ignore")
+        m = _WH_DATE.search(html) or None
+        if m:
+            day = m.group(1)
+        else:
+            m2 = _WH_DATE_TEXT.search(html)
+            if m2:
+                day = f"{m2.group(3)}-{_MONTHS[m2.group(1)]:02d}-{int(m2.group(2)):02d}"
+    except Exception:
+        pass
+    cache[url] = day
+    return day
+
+
+def whitehouse(days=30, cap=14, fetch_dates=10):
+    """Presidential actions, fact sheets and statements, filtered to the ones that move
+    money or name an industry. For a sector directive this is the first public record —
+    ahead of the Federal Register, which publishes the legal text days later."""
+    seen, items = set(), []
+    ok_any = False
+    for page in WH_SECTIONS:
+        try:
+            html = _get(page, timeout=30).decode("utf-8", "ignore")
+            ok_any = True
+        except Exception as e:
+            _mark("whitehouse", False, str(e)[:110])
+            continue
+        for m in _WH_LINK.finditer(html):
+            url, yr, mo, slug = m.group(1), m.group(2), m.group(3), m.group(4)
+            if url in seen:
+                continue
+            seen.add(url)
+            title = _slug_title(slug)
+            if not any(w in title.lower() for w in WH_WORDS):
+                continue
+            items.append({"title": title, "link": url, "month": f"{yr}-{mo}",
+                          "section": page.rstrip("/").rsplit("/", 1)[-1], "slug": slug})
+        time.sleep(0.4)
+
+    # newest months first, then confirm exact dates for the handful that survive
+    items.sort(key=lambda x: x["month"], reverse=True)
+    items = items[:cap]
+    cutoff = (datetime.now(timezone.utc).date() - timedelta(days=days)).isoformat()
+    out = []
+    for i, it in enumerate(items):
+        date = _wh_article_date(it["link"]) if i < fetch_dates else None
+        if date is None:
+            date = it["month"] + "-01"
+            it["date_precision"] = "month"
+        if date < cutoff:
+            continue
+        out.append({"title": it["title"], "company": it["title"], "link": it["link"],
+                    "date": date, "source": "White House",
+                    "kind": it["section"].replace("-", " "),
+                    "matched": next((w for w in WH_WORDS if w in it["title"].lower()), "policy"),
+                    "form": "white house"})
+    if ok_any:
+        _mark("whitehouse", True, f"{len(out)} of {len(seen)} posts matched money or industry language")
+    return out
 
 # ---------------------------------------------------------------------------
 # Department of War releases

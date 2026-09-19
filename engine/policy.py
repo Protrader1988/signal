@@ -37,16 +37,21 @@ error bars and saying so is the whole point.
 
 DETECTION
 A curated list goes stale the day after it is written, so the registry is not the
-only input. Every run reads three independent detectors: EDGAR full text for the
-phrases these deals produce in 8-Ks (best evidence, and the SEC blocks most
-datacenter IPs, so it cannot be relied on alone), every federal award over $50M
-filed to USAspending, and policy headlines as a backstop. The DoW contracts feed
-publishes one digest a day rather than one entry per deal, so it is carried as a
-document to read rather than as a per-company detection. Recipient names are matched back to tracked tickers, and
-anything outside the registry is published as an UNVERIFIED candidate with a link
-to the underlying record. The desk therefore surfaces the next deal without
-waiting for a human to notice it, while never promoting a machine guess into the
-scored table on its own.
+only input. Every run reads four independent detectors, in the order the news
+actually breaks: the White House itself — presidential actions, fact sheets and
+statements, filtered to posts that move money or name an industry, which is where a
+sector directive is public before it is anywhere else; EDGAR full text for the
+phrases a company deal produces in its 8-K (best evidence for company-specific
+deals, and the SEC blocks most datacenter IPs, so it cannot be relied on alone);
+every federal award over $50M filed to USAspending; and policy headlines as a
+backstop. Company names are resolved to tickers through a curated map of the
+policy-relevant universe, and names outside it are published as unresolved leads
+rather than dropped. The DoW contracts feed publishes one digest a day rather than
+one entry per deal, so it is carried as a document to read rather than as a
+per-company detection. Everything outside the registry is published as an UNVERIFIED
+candidate with a link to the underlying record: the desk surfaces the next deal
+without waiting for a human to notice it, and never promotes a machine guess into
+the scored table on its own.
 
 EXPOSURE
 Instead of a vibes list, each name carries its actual federal obligations from
@@ -74,6 +79,7 @@ import pandas as pd
 import yfinance as yf
 
 import policy_sources as src
+import tickers as tk
 
 # ---------------------------------------------------------------------------
 # REGISTRY
@@ -505,21 +511,31 @@ def build_detection(cik_map, known_tickers, name_map):
     whether or not anyone writes a press release, and news is the backstop. Everything
     here is machine-found and stays unverified until a human puts it in the registry."""
     items = []
+    for f in src.whitehouse():
+        items.append({**f, "ticker": None, "quality": "white house"})
     for f in src.edgar_fulltext():
-        tk = cik_map.get(f.get("cik")) if f.get("cik") else None
-        items.append({**f, "ticker": tk, "source": "SEC EDGAR", "quality": "filing"})
+        t = cik_map.get(f.get("cik")) if f.get("cik") else None
+        items.append({**f, "ticker": t, "source": "SEC EDGAR", "quality": "filing"})
     for f in src.usaspending_recent():
         items.append({**f, "ticker": None, "quality": "award record"})
     for f in src.news_detect():
         items.append({**f, "ticker": None, "quality": "headline"})
 
     for it in items:
+        text = " ".join(str(it.get(k) or "") for k in ("company", "title", "desc"))
         if not it.get("ticker"):
-            hay = (it.get("company") or "").upper()
-            for rec, tk in name_map.items():
+            # the registry's own recipient names first, then the curated map
+            hay = text.upper()
+            for rec, t in name_map.items():
                 if rec and rec in hay:
-                    it["ticker"] = tk
+                    it["ticker"] = t
                     break
+        named = tk.resolve(text)
+        if not it.get("ticker") and named:
+            it["ticker"] = named[0]
+        it["named"] = [x for x in named if x != it.get("ticker")][:4]
+        if not it.get("ticker"):
+            it["candidates"] = tk.candidate_companies(text)
         it["status"] = ("in registry" if it.get("ticker") in known_tickers and it.get("ticker")
                         else "unverified")
     # A detection feed is about what is happening now; news RSS happily returns
@@ -529,9 +545,11 @@ def build_detection(cik_map, known_tickers, name_map):
     cutoff = (datetime.now(timezone.utc).date() - timedelta(days=60)).isoformat()
     items = [i for i in items
              if i.get("quality") == "award record" or (i.get("date") or "9999") >= cutoff]
+    items = [i for i in items if i.get("quality") != "white house" or i.get("title")]
 
     seen, dedup = set(), []
-    for it in sorted(items, key=lambda x: (x.get("date") or "", x.get("quality") == "filing"),
+    rank = {"white house": 3, "filing": 2, "award record": 1, "headline": 0}
+    for it in sorted(items, key=lambda x: (x.get("date") or "", rank.get(x.get("quality"), 0)),
                      reverse=True):
         k = ((it.get("company") or "")[:60].upper(), it.get("date"), it.get("matched"))
         if k in seen:

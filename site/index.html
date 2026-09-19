@@ -306,7 +306,7 @@
       <div id="policyExposure"></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">EDGAR filings, DoW contracts, $50M+ federal awards, policy headlines</span><span class="expo" id="policyDetectMeta"></span></div>
+      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">White House actions, EDGAR filings, $50M+ federal awards, headlines</span><span class="expo" id="policyDetectMeta"></span></div>
       <div id="policyDetect"></div>
     </div>
     <div class="card">
@@ -570,7 +570,11 @@ function drawPolicy(p){
   $('policyDetectMeta').innerHTML=`<span class="mono">${det.length} filings</span>`;
   const amt=v=>v==null?'':(v>=1e9?' · $'+(v/1e9).toFixed(1)+'B':(v>=1e6?' · $'+Math.round(v/1e6)+'M':''));
   $('policyDetect').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Machine-found, human-unverified, from four independent detectors: EDGAR full text for the language these deals produce, Department of War contract announcements, federal awards over $50M filed to USAspending (operators of national labs and cleanup sites filtered out, since a consortium that runs a federal facility is not something you can buy), and policy headlines as a backstop. The award and contract feeds matter most, because that money is filed whether or not anyone issues a press release. A hit is something to read, not a deal — nothing enters the study above until it is verified and added by hand.</div></div>'+
-    (det.length?det.map(d=>`<div class="newsrow"><span class="tk">${d.ticker||(d.quality==='award record'?'AWARD':(d.quality==='announcement'?'DoW':(d.quality==='filing'?'8-K':'NEWS')))}</span><a href="${d.link}" target="_blank" rel="noopener">${d.company}${amt(d.amount)}</a><span class="src">${d.matched||''} · ${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`).join('')
+    (det.length?det.map(d=>{
+      const tag=d.ticker||(d.quality==='white house'?'WH':(d.quality==='award record'?'AWARD':(d.quality==='filing'?'8-K':'NEWS')));
+      const extra=(d.named&&d.named.length)?` <span class="mono" style="color:var(--gold2);font-size:11px">also ${d.named.join(' ')}</span>`:'';
+      const cand=(d.candidates&&d.candidates.length)?` <span class="mono" style="color:var(--dim);font-size:11px">unmapped: ${d.candidates.join('; ')}</span>`:'';
+      return `<div class="newsrow"><span class="tk">${tag}</span><a href="${d.link}" target="_blank" rel="noopener">${d.title||d.company}${amt(d.amount)}</a>${extra}${cand}<span class="src">${d.source||''} · ${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`;}).join('')
       :'<div class="empty">Nothing matched in the detection window. That is a real answer, not an error — check the source health strip below to be sure the feeds actually ran.</div>');
 
   // documents
@@ -586,7 +590,7 @@ function drawPolicy(p){
     <p style="margin-top:10px"><b style="color:var(--warn)">Known bias:</b> ${cov.bias}</p></div>`:'');
 
   const h=p.health||{};
-  const names={sec_edgar:'edgar',sec_tickers:'cik map',dow_contracts:'dow contracts',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',usaspending:'usaspending'};
+  const names={whitehouse:'white house',sec_edgar:'edgar',sec_tickers:'cik map',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',dow_contracts:'dow contracts',usaspending:'usaspending'};
   $('policyHealth').innerHTML=Object.keys(names).map(k=>{const s=h[k];
     return `<span><b>${names[k]}</b> <span class="${s?(s.ok?'up':'down'):'neu'}">${s?(s.ok?'ok':'failed'):'not run'}</span></span>`;}).join('')+
     `<span><b>generated</b> ${(p.generated_utc||'').slice(0,16).replace('T',' ')} UTC</span>`;
