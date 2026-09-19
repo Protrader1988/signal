@@ -258,11 +258,46 @@ def _wh_article_date(url, cache={}):
     return day
 
 
-def whitehouse(days=30, cap=14, fetch_dates=10):
-    """Presidential actions, fact sheets and statements, filtered to the ones that move
-    money or name an industry. For a sector directive this is the first public record —
-    ahead of the Federal Register, which publishes the legal text days later."""
-    seen, items = set(), []
+def _strip_html(html):
+    html = re.sub(r"(?is)<(script|style|nav|footer|header)[^>]*>.*?</\1>", " ", html)
+    html = re.sub(r"(?s)<[^>]+>", " ", html)
+    html = (html.replace("&nbsp;", " ").replace("&amp;", "&").replace("&#8217;", "'")
+                .replace("&#8220;", '"').replace("&#8221;", '"').replace("&#039;", "'"))
+    return re.sub(r"\s+", " ", html).strip()
+
+
+def _wh_article(url, cache={}):
+    """(date, text) for one White House post. The listing pages carry only year and
+    month, and the companies are in the body rather than the headline, so the post
+    itself is where both actually live."""
+    if url in cache:
+        return cache[url]
+    date, text = None, ""
+    try:
+        html = _get(url, timeout=25).decode("utf-8", "ignore")
+        m = _WH_DATE.search(html)
+        if m:
+            date = m.group(1)
+        else:
+            m2 = _WH_DATE_TEXT.search(html)
+            if m2:
+                date = f"{m2.group(3)}-{_MONTHS[m2.group(1)]:02d}-{int(m2.group(2)):02d}"
+        text = _strip_html(html)[:6000]
+    except Exception:
+        pass
+    cache[url] = (date, text)
+    return date, text
+
+
+def whitehouse(days=30, cap=30, fetch_bodies=24):
+    """Presidential actions, fact sheets, briefings and articles, filtered to the ones
+    that move money or name an industry. For a sector directive this is the first
+    public record — ahead of the Federal Register, which publishes the legal text days
+    later, and ahead of the wires often enough to matter.
+
+    Titles are matched first, then the body of each recent post, because the headline
+    of a fact sheet rarely names the company the money is going to."""
+    seen, links = set(), []
     ok_any = False
     for page in WH_SECTIONS:
         try:
@@ -276,33 +311,41 @@ def whitehouse(days=30, cap=14, fetch_dates=10):
             if url in seen:
                 continue
             seen.add(url)
-            title = _slug_title(slug)
-            if not any(w in title.lower() for w in WH_WORDS):
-                continue
-            items.append({"title": title, "link": url, "month": f"{yr}-{mo}",
-                          "section": page.rstrip("/").rsplit("/", 1)[-1], "slug": slug})
+            links.append({"link": url, "month": f"{yr}-{mo}", "slug": slug,
+                          "section": page.rstrip("/").rsplit("/", 1)[-1],
+                          "title": _slug_title(slug)})
         time.sleep(0.4)
 
-    # newest months first, then confirm exact dates for the handful that survive
-    items.sort(key=lambda x: x["month"], reverse=True)
-    items = items[:cap]
+    links.sort(key=lambda x: x["month"], reverse=True)
+    links = links[:cap]
     cutoff = (datetime.now(timezone.utc).date() - timedelta(days=days)).isoformat()
-    out = []
-    for i, it in enumerate(items):
-        date = _wh_article_date(it["link"]) if i < fetch_dates else None
-        if date is None:
-            date = it["month"] + "-01"
-            it["date_precision"] = "month"
+    out, bodies = [], 0
+    for it in links:
+        title_hit = next((w for w in WH_WORDS if w in it["title"].lower()), None)
+        date, text = (None, "")
+        if bodies < fetch_bodies:
+            date, text = _wh_article(it["link"])
+            bodies += 1
+            time.sleep(0.25)
+        body_hit = next((w for w in WH_WORDS if w in text.lower()), None) if text else None
+        hit = title_hit or body_hit
+        if not hit:
+            continue
+        precision = "day"
+        if not date:
+            date, precision = it["month"] + "-01", "month"
         if date < cutoff:
             continue
         out.append({"title": it["title"], "company": it["title"], "link": it["link"],
-                    "date": date, "source": "White House",
-                    "kind": it["section"].replace("-", " "),
-                    "matched": next((w for w in WH_WORDS if w in it["title"].lower()), "policy"),
-                    "form": "white house"})
+                    "date": date, "date_precision": precision, "source": "White House",
+                    "kind": it["section"].replace("-", " "), "matched": hit,
+                    "desc": text[:1200], "form": "white house"})
     if ok_any:
-        _mark("whitehouse", True, f"{len(out)} of {len(seen)} posts matched money or industry language")
+        _mark("whitehouse", True,
+              f"{len(out)} of {len(seen)} posts matched, {bodies} bodies read")
     return out
+
+
 
 # ---------------------------------------------------------------------------
 # Department of War releases
@@ -343,7 +386,7 @@ def dow_contracts(cap=40, as_documents=True):
     import feedparser
     url = "https://www.war.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=400&Site=945&max=40"
     try:
-        f = feedparser.parse(_get(url, timeout=40))
+        f = feedparser.parse(_get(url, timeout=55))
         out = []
         for e in f.entries[:cap]:
             title = getattr(e, "title", "").strip()
