@@ -309,7 +309,7 @@
       <div class="chartwrap"><div id="policyChart"><div class="loading">loading event study…</div></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="code">COHORT</span><span class="t">Median abnormal return by deal structure — with sample size, bootstrap CI and sign test</span></div>
+      <div class="card-head"><span class="code">COHORT</span><span class="t">Median return by deal structure \u2014 abnormal, with what a holder made — with sample size, bootstrap CI and sign test</span></div>
       <div id="policyCohorts"></div>
     </div>
     <div class="card">
@@ -554,8 +554,8 @@ function drawPolicy(p){
   }
   let eqLine='';
   const eqd=co.equity&&co.equity.windows.day0,eqq=co.equity&&co.equity.windows.q1;
-  if(eqd&&eqq&&eqd.median!=null&&eqq.median!=null&&eqq.median<eqd.median){
-    eqLine=` Bare equity stakes give back most of it: median <span class="hl ${sgn(eqd.median)}">${pc(eqd.median)}</span> on day 0 decaying to <span class="hl ${sgn(eqq.median)}">${pc(eqq.median)}</span> by one quarter.`;
+  if(eqd&&eqq&&eqd.raw_median!=null&&eqq.raw_median!=null&&eqq.raw_median<eqd.raw_median){
+    eqLine=` Bare equity stakes hand it back: a holder was up <span class="hl ${sgn(eqd.raw_median)}">${pc(eqd.raw_median)}</span> on day 0 and <span class="hl ${sgn(eqq.raw_median)}">${pc(eqq.raw_median)}</span> by one quarter.`;
   }
   // the strongest result on the board, found rather than asserted
   let sig=null;
@@ -570,12 +570,16 @@ function drawPolicy(p){
   } else if(sig){
     sigLine=` Nothing clears a conventional significance bar; the closest is ${sig.label.toLowerCase()} at ${sig.win} (p=${sig.p}, n=${sig.n}).`;
   }
+  const held=(w)=>w&&w.raw_median!=null?`<span class="hl ${sgn(w.raw_median)}">${pc(w.raw_median)}</span>`:'\u2014';
   $('policyVerdict').innerHTML=`<div class="verdict"><b>What the study actually says.</b>
-    Across <span class="hl">${m1.n||0}</span> testable deals the median abnormal return is
-    <span class="hl ${sgn(d0.median)}">${pc(d0.median)}</span> on the announcement day itself and
-    <span class="hl ${sgn(m1.median)}">${pc(m1.median)}</span> over the month after it
-    ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?', indistinguishable from noise':''})`:''}.
-    ${m1.pos!=null?`<span class="hl">${m1.pos}</span> of <span class="hl">${m1.n}</span> were positive at one month.`:''}
+    Two numbers, and they answer different questions. <b>What a holder made:</b> buying each of these
+    at the announcement close returned a median ${held(d0)} on day 0, ${held(m1)} over the month after
+    and ${held(q1)} over the quarter${(q1&&q1.raw_n)?` (${q1.raw_pos} of ${q1.raw_n} positive)`:''}.
+    <b>Against the market:</b> subtracting the market exposure each stock carried anyway leaves a median
+    <span class="hl ${sgn(m1.median)}">${pc(m1.median)}</span> at one month
+    ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?', indistinguishable from noise':''})`:''} and
+    <span class="hl ${sgn(q1.median)}">${pc(q1.median)}</span> at one quarter \u2014 these are high-beta
+    names in a rising market, so owning them was not the same as beating what owning them risked.
     ${concLine}${eqLine}${sigLine} ${structLine}</div>`;
 
   const fwd=(p.ledger&&p.ledger.forward)||{};

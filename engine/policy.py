@@ -8,10 +8,23 @@ worth knowing is whether acting on one pays, and that is an empirical question
 with a standard method, so this file uses the standard method.
 
 THE METHOD (market model event study)
-For every dated deal, a market model is fitted on the estimation window
-t0-250..t0-21 by OLS of the stock's daily return on SPY's. Abnormal return is
-AR_t = r_t - (alpha + beta*r_spy,t): what the stock did beyond what its own market
-sensitivity already explained. The tables report BUY-AND-HOLD abnormal return over
+Every window is reported TWICE, because two different questions get confused with
+each other. The HOLDER return is what someone who bought at the announcement close
+actually made. The ABNORMAL return subtracts the market exposure that the stock
+carried anyway, and answers whether the deal beat simply owning the market with the
+same risk. A number can be strongly positive on the first and negative on the
+second, and reporting only the second reads as "this lost money" when it did not.
+
+Beta is fitted on t0-250..t0-21 and then shrunk toward 1 and capped at 2.5, and the
+fitted alpha is deliberately NOT extrapolated into the expected return. Both
+departures exist because the textbook version manufactured losses on this sample:
+these deals land on stocks that have just run, so the fitted alpha reached 72-83
+basis points a DAY for Trilogy and American Resources, which compounds to an
+expected +148% and +183% over a six-month window and turned ordinary gains into
+catastrophic-looking underperformance — American Resources printed -248%, which
+cannot happen to a share. Raw betas of 3.4 to 4.3 on the quantum and drone names
+did the same thing in the other direction. Alpha and the unshrunk beta are both
+still published per deal as diagnostics. The tables report BUY-AND-HOLD abnormal return over
 each window — the compounded stock return minus the compounded expected return —
 because that is what a holder actually experiences, and because summed daily ARs
 can print below -100% over long windows, which cannot happen to a share. The event-
@@ -327,6 +340,7 @@ WINDOWS = [("day0", 0, 0), ("w1", 1, 5), ("m1", 1, 21), ("q1", 1, 63), ("h1", 1,
 WINDOW_LABEL = {"day0": "Day 0", "w1": "+1w", "m1": "+1m", "q1": "+1q", "h1": "+6m"}
 PATH_FROM, PATH_TO = -5, 63
 MIN_EST_OBS = 60          # minimum estimation-window observations for a fitted beta
+BETA_CAP = 2.5            # betas above this are estimation artifacts, not exposure
 MIN_COHORT_N = 3          # below this, no cohort aggregate is published at all
 
 
@@ -359,24 +373,43 @@ def rets(s):
 # event study
 # ---------------------------------------------------------------------------
 def market_model(r_stock, r_mkt, end_idx):
-    """OLS alpha/beta on the estimation window ending 21 sessions before the event.
-    Falls back to a plain market adjustment (alpha 0, beta 1) when history is short —
-    and says which one it used, because a fitted beta on 12 observations is worse
-    than no beta at all."""
+    """Beta on the estimation window ending 21 sessions before the event.
+
+    TWO DELIBERATE DEPARTURES from the textbook market model, both because the
+    textbook version manufactures losses on exactly this sample:
+
+    1. The fitted alpha is NOT used in the expected return. These deals land on
+       stocks that have just run: Trilogy's pre-event alpha was 72 basis points a
+       DAY, American Resources' 83. Extrapolated across a 126-session window that
+       is an expected return of +148% and +183%, so a stock that merely went up
+       looked like a catastrophic underperformance — American Resources printed a
+       -248% abnormal return, which cannot happen to a share. Alpha is kept as a
+       diagnostic and reported, but the benchmark is the market exposure alone.
+
+    2. Beta is shrunk toward 1 (Blume) and capped. Raw betas came back at 3.4 to
+       4.3 for the quantum and drone names, which is not exposure, it is a
+       momentum stock fitted over its own run-up. A beta of 4 means the benchmark
+       expects four times the market's return, and anything less reads as a loss.
+
+    Returns (beta_used, beta_raw, alpha_daily, model_label, residual vol)."""
     lo = max(0, end_idx - 250)
     hi = max(0, end_idx - 21)
     x = r_mkt.iloc[lo:hi]
     y = r_stock.reindex(x.index).dropna()
     x = x.reindex(y.index)
     if len(y) >= MIN_EST_OBS:
-        beta, alpha = np.polyfit(x.values, y.values, 1)
-        resid = y.values - (alpha + beta * x.values)
-        return float(alpha), float(beta), "market model", float(np.std(resid, ddof=2))
-    return 0.0, 1.0, "market-adjusted (short history)", float(np.std(y.values)) if len(y) > 2 else None
+        beta_raw, alpha = np.polyfit(x.values, y.values, 1)
+        resid = y.values - (alpha + beta_raw * x.values)
+        beta_used = min(BETA_CAP, 0.67 * float(beta_raw) + 0.33)
+        label = "market model (beta shrunk)" if abs(beta_used - beta_raw) > 0.05 else "market model"
+        return (float(beta_used), float(beta_raw), float(alpha), label,
+                float(np.std(resid, ddof=2)))
+    return (1.0, None, 0.0, "market-adjusted (short history)",
+            float(np.std(y.values)) if len(y) > 2 else None)
 
 
 def event_study(close, spy, date_str):
-    """Returns (windows dict, path dict, meta) or None when the event is untestable."""
+    """Returns (abnormal windows, raw windows, path, meta) or None when untestable."""
     if close is None or spy is None:
         return None
     r_s, r_m = rets(close), rets(spy)
@@ -384,24 +417,27 @@ def event_study(close, spy, date_str):
     if not len(idx):
         return None                      # announced today, or after the last close
     t0 = r_s.index.get_loc(idx[0])
-    alpha, beta, model, sigma = market_model(r_s, r_m, t0)
+    beta, beta_raw, alpha, model, sigma = market_model(r_s, r_m, t0)
     aligned_m = r_m.reindex(r_s.index).fillna(0.0)
-    ar = r_s.values - (alpha + beta * aligned_m.values)
+    # expected return is the market exposure only — see market_model on why alpha
+    # is excluded rather than extrapolated
+    expected_daily = beta * aligned_m.values
+    ar = r_s.values - expected_daily
 
-    def bhar(a, b):
-        """Buy-and-hold abnormal return: what a holder actually experienced, minus what
-        the fitted market exposure would have returned over the same days. Summed daily
-        ARs (the textbook CAR) drift from the holding experience over long windows and
-        can print below -100%, which is not a thing that can happen to a share."""
+    def window(a, b):
+        """(abnormal, raw) buy-and-hold over the window, or (None, None)."""
         lo, hi = t0 + a, t0 + b
         if lo < 0 or hi >= len(ar) or hi < lo:
-            return None
+            return None, None
         r_actual = float(np.prod(1.0 + r_s.values[lo:hi + 1]) - 1.0)
-        expected = alpha + beta * aligned_m.values[lo:hi + 1]
-        r_expected = float(np.prod(1.0 + expected) - 1.0)
-        return round((r_actual - r_expected) * 100, 1)
+        r_expected = float(np.prod(1.0 + expected_daily[lo:hi + 1]) - 1.0)
+        return round((r_actual - r_expected) * 100, 1), round(r_actual * 100, 1)
 
-    windows = {k: bhar(a, b) for k, a, b in WINDOWS}
+    windows, raw_windows = {}, {}
+    for k, a, b in WINDOWS:
+        ab, rw = window(a, b)
+        windows[k], raw_windows[k] = ab, rw
+
     path = {}
     run = 0.0
     for d in range(PATH_FROM, PATH_TO + 1):
@@ -409,16 +445,18 @@ def event_study(close, spy, date_str):
         if 0 <= p < len(ar):
             run += float(ar[p])
             path[d] = round(run * 100, 2)
-    raw = None
+    raw_since = None
     try:
         entry = float(close.iloc[close.index.get_loc(idx[0])])
-        raw = round((float(close.iloc[-1]) / entry - 1) * 100, 1)
+        raw_since = round((float(close.iloc[-1]) / entry - 1) * 100, 1)
     except Exception:
         pass
-    sessions_since = len(ar) - t0 - 1
-    return windows, path, {"model": model, "beta": round(beta, 2), "alpha_bp": round(alpha * 1e4, 1),
-                           "sessions_since": int(sessions_since), "raw_since_pct": raw,
-                           "resid_vol_pct": round(sigma * 100, 2) if sigma else None}
+    return windows, raw_windows, path, {
+        "model": model, "beta": round(beta, 2),
+        "beta_raw": round(beta_raw, 2) if beta_raw is not None else None,
+        "alpha_bp": round(alpha * 1e4, 1),
+        "sessions_since": int(len(ar) - t0 - 1), "raw_since_pct": raw_since,
+        "resid_vol_pct": round(sigma * 100, 2) if sigma else None}
 
 
 # ---------------------------------------------------------------------------
@@ -457,10 +495,16 @@ def cohort_stats(events):
         for key, _, _ in WINDOWS:
             vals = [r["car"].get(key) for r in rows if r.get("car")]
             vals = [v for v in vals if v is not None]
+            raws = [r.get("raw", {}).get(key) for r in rows if r.get("raw")]
+            raws = [v for v in raws if v is not None]
             med, lo, hi = median_ci(vals)
+            rmed, rlo, rhi = median_ci(raws)
             entry["windows"][key] = {"n": len(vals), "median": med, "lo": lo, "hi": hi,
                                      "p": sign_test_p(vals),
-                                     "pos": sum(1 for v in vals if v > 0)}
+                                     "pos": sum(1 for v in vals if v > 0),
+                                     "raw_median": rmed, "raw_lo": rlo, "raw_hi": rhi,
+                                     "raw_pos": sum(1 for v in raws if v > 0),
+                                     "raw_n": len(raws)}
         entry["reportable"] = len(rows) >= MIN_COHORT_N
         out[cohort] = entry
     return out
@@ -647,11 +691,11 @@ def main():
         row["price"] = round(float(s.iloc[-1]), 2) if s is not None and len(s) else None
         res = event_study(s, spy, d["date"]) if s is not None else None
         if not res:
-            row.update({"car": {}, "path": {}, "meta": None, "testable": False})
+            row.update({"car": {}, "raw": {}, "path": {}, "meta": None, "testable": False})
             untestable.append(d["ticker"])
         else:
-            w, path, meta = res
-            row.update({"car": w, "path": {str(k): v for k, v in path.items()},
+            w, rawin, path, meta = res
+            row.update({"car": w, "raw": rawin, "path": {str(k): v for k, v in path.items()},
                         "meta": meta, "testable": True})
             if d["basis"] and row["price"]:
                 row["vs_basis_pct"] = round((row["price"] / d["basis"] - 1) * 100, 1)
@@ -667,9 +711,14 @@ def main():
     for key, _, _ in WINDOWS:
         vals = [e["car"].get(key) for e in testable if e.get("car")]
         vals = [v for v in vals if v is not None]
+        raws = [e.get("raw", {}).get(key) for e in testable if e.get("raw")]
+        raws = [v for v in raws if v is not None]
         med, lo, hi = median_ci(vals)
+        rmed, rlo, rhi = median_ci(raws)
         pooled[key] = {"n": len(vals), "median": med, "lo": lo, "hi": hi,
-                       "p": sign_test_p(vals), "pos": sum(1 for v in vals if v > 0)}
+                       "p": sign_test_p(vals), "pos": sum(1 for v in vals if v > 0),
+                       "raw_median": rmed, "raw_lo": rlo, "raw_hi": rhi,
+                       "raw_n": len(raws), "raw_pos": sum(1 for v in raws if v > 0)}
 
     flow = src.sector_flow()
     cik_map = src.company_tickers()
