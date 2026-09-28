@@ -3,7 +3,7 @@
     "legals_sample": {
       "document_id": [
         "str",
-        "2026082400975002"
+        "2026080601013001"
       ],
       "record_type": [
         "str",
@@ -15,11 +15,11 @@
       ],
       "block": [
         "str",
-        "5122"
+        "6597"
       ],
       "lot": [
         "str",
-        "1243"
+        "62"
       ],
       "easement": [
         "str",
@@ -39,19 +39,15 @@
       ],
       "property_type": [
         "str",
-        "SC"
+        "D1"
       ],
       "street_number": [
         "str",
-        "134-11"
+        "13762"
       ],
       "street_name": [
         "str",
-        "FRANKLIN AVENUE"
-      ],
-      "unit": [
-        "str",
-        "7C"
+        "70TH ROAD"
       ],
       "good_through_date": [
         "str",
@@ -63,12 +59,15 @@
       "block": false,
       "lot": false
     },
-    "legals_rows": 145995,
-    "parcels_matched": 221,
-    "doc_ids": 1657,
-    "master_rows": 1657,
-    "motivated": 114,
-    "free_and_clear": 132,
-    "with_tenure": 169
+    "legals_errors": [
+      "The read operation timed out"
+    ],
+    "legals_rows": 123693,
+    "parcels_matched": 196,
+    "doc_ids": 1408,
+    "master_rows": 1408,
+    "motivated": 99,
+    "free_and_clear": 117,
+    "with_tenure": 148
   }
 }
