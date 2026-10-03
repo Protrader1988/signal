@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-03T00:53:44.324629+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bullish",
+    "confidence": "medium",
+    "summary": "Equities are rallying across major indices as a soft labor report showing just 29,000 jobs added and 4.2% unemployment eases market fears of upcoming Fed rate hikes. Strong momentum in tech, highlighted by Nvidia powering the Nasdaq to an intraday record, is driving broader index gains. However, deteriorating employment fundamentals and lingering hawkish Fed commentary keep overall macroeconomic uncertainty alive.",
+    "bull": "Weakening labor growth signals cooling inflation, squashing market expectations for near-term Fed rate hikes and sparking a risk-on rally led by mega-cap tech.",
+    "bear": "A sharp deceleration in hiring to just 29,000 jobs and rising unemployment point toward deeper economic softening, while dissenting Fed hawkishness could re-ignite policy fears.",
+    "watch": "Upcoming Fed official speeches and inflation updates to verify whether rate hikes are fully off the table for October."
+  },
+  "takes": [
+    {
+      "topic": "Fed Policy & Labor Market",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Dismal hiring numbers (29k added, unemployment at 4.2%) have driven down market expectations for an October rate hike, treating weak macro news as positive for stocks."
+    },
+    {
+      "topic": "Semiconductor Sector (NVDA, AMD)",
+      "lean": "bullish",
+      "confidence": "high",
+      "note": "Nvidia pushed the Nasdaq to an intraday record while AMD surged, demonstrating that chipmakers and broader tech remain the primary engine of market gains."
+    },
+    {
+      "topic": "Target (TGT)",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "Target is cutting prices on thousands of products ahead of the holidays to wage a 'value war,' which could squeeze corporate margins despite driving volume."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
