@@ -239,6 +239,7 @@
     <a class="fkey" href="#policy"><b>F6</b>POLICY DESK</a>
     <a class="fkey" href="#chart"><b>F7</b>PERFORMANCE</a>
     <a class="fkey" href="#ledger"><b>F8</b>TRACK RECORD</a>
+    <a class="fkey" href="#paper"><b>F9</b>PAPER ACCOUNT</a>
   </div>
 
   <!-- PLAYBOOK -->
@@ -358,6 +359,21 @@
     <div class="card" style="margin-top:16px">
       <div class="card-head"><span class="code">LEDGER</span><span class="t">Open positions</span><span class="expo" id="openCount"></span></div>
       <div id="openPositions"></div>
+    </div>
+  </section>
+
+  <section id="paper">
+    <div class="eyebrow"><span class="no">P</span><h2>Paper Account</h2>
+      <span class="hint">real fills in an Alpaca paper account · simulated money · mirrors the open position book</span></div>
+    <div class="statusgrid" id="paperTiles"></div>
+    <div id="paperNote" style="margin-top:14px"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">PAPER</span><span class="t">Positions held</span><span class="expo" id="paperCount"></span></div>
+      <div id="paperPositions"></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">ORDERS</span><span class="t">Recent orders</span></div>
+      <div id="paperOrders"></div>
     </div>
   </section>
 
@@ -847,6 +863,37 @@ function draw(){
     {h:'Return',k:'return_pct',num:true,cls:sgn,f:v=>`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`},{h:'Days',k:'days_held',num:true}],
     'No open positions yet — they appear the moment the engine runs.');
 
+  // PAPER ACCOUNT (Alpaca paper) - real fills, simulated money
+  (function(){
+    const pa=DATA.paper;
+    if(!pa||pa.status!=='ok'){
+      $('paperTiles').innerHTML='';$('paperPositions').innerHTML='<div class="empty">No paper positions yet.</div>';$('paperOrders').innerHTML='<div class="empty">No orders yet.</div>';
+      const why=!pa?'The paper account has not reported yet. It updates on the next engine run.':((pa.errors||[]).join(' ')||'The paper account is not connected.');
+      $('paperNote').innerHTML=`<div class="banner err">${why}</div>`;return;
+    }
+    const a=pa.account||{};const money=v=>'$'+(+v||0).toLocaleString(undefined,{maximumFractionDigits:0});
+    const tiles=[{k:'Equity',v:money(a.equity),s:'started at '+money(pa.start_equity)+' · '+(pa.started||'')},
+      {k:'Return since start',v:pc(a.return_since_start_pct||0),s:'paper account, after real fills'},
+      {k:'Invested',v:money(a.invested),s:money(a.cash)+' cash'},
+      {k:'Positions',v:(pa.positions||[]).length,s:`target ${((pa.sizing||{}).names)||0} names · ~${money((pa.sizing||{}).dollars_per_name)} each`}];
+    $('paperTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+    const failed=(pa.orders_this_run||[]).filter(o=>!o.ok);
+    $('paperNote').innerHTML=`<div class="banner ${failed.length?'':'ok'}">${pa.note||''}${failed.length?' <b>Orders not placed this run:</b> '+failed.map(o=>`${o.symbol} (${o.error})`).join('; '):''}${pa.last_error?' <b>Last run failed:</b> '+((pa.last_error.errors||[]).join(' ')):''}</div>`;
+    $('paperCount').innerHTML=(pa.positions||[]).length?`<span class="mono" style="color:var(--text2)">${pa.positions.length} held</span>`:'';
+    $('paperPositions').innerHTML=tbl(pa.positions||[],[
+      {h:'Ticker',k:'symbol',f:v=>`<span class="chip">${v}</span>`},{h:'Shares',k:'qty',num:true},
+      {h:'Avg entry',k:'avg_entry',num:true,f:v=>'$'+v.toLocaleString()},{h:'Price',k:'price',num:true,f:v=>'$'+v.toLocaleString()},
+      {h:'Value',k:'value',num:true,f:v=>money(v)},
+      {h:'P/L',k:'pl_pct',num:true,cls:sgn,f:v=>`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`}],
+      'No positions yet. Orders placed after the close fill at the next market open.');
+    $('paperOrders').innerHTML=tbl(pa.recent_orders||[],[
+      {h:'Submitted',k:'submitted',f:v=>`<span class="mono neu">${v}</span>`},{h:'Ticker',k:'symbol',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Side',k:'side',f:v=>`<span class="${v==='buy'?'up':'down'}">${(v||'').toUpperCase()}</span>`},{h:'Shares',k:'qty',num:true},
+      {h:'Status',k:'status',f:v=>`<span class="mono" style="color:var(--text2)">${v}</span>`},
+      {h:'Fill price',k:'fill_price',num:true,f:v=>v?'$'+v.toLocaleString():'—'}],
+      'No orders yet.');
+  })();
+
   $('btPeriod').textContent=bt.period||'';
   let bh='<table><thead><tr><th>Strategy</th><th>Status</th><th class="num" title="Compound annual growth rate">CAGR</th><th class="num" title="Risk-adjusted return; >1 good, >2 excellent">Sharpe</th><th class="num" title="Sharpe on recent data the model was never fit to">OOS</th><th class="num" title="Worst peak-to-trough drop">Max DD</th></tr></thead><tbody>';
   for(const st of (bt.strategies||[])) bh+=`<tr><td><div style="font-weight:600">${st.name}</div><div style="color:var(--dim);font-size:11px;margin-top:4px;white-space:normal;max-width:430px">${st.note||''}</div></td><td><span class="mono" style="font-size:11px;color:var(--text2)">${st.status}</span></td><td class="num">${st.cagr_pct}%</td><td class="num">${st.sharpe}</td><td class="num up">${st.out_of_sample_sharpe}</td><td class="num down">${st.max_drawdown_pct}%</td></tr>`;
@@ -858,7 +905,8 @@ function draw(){
 (async()=>{
   try{
     const [sig,led,bt,meta,cv,val,watch,news,digest,policy]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null)]);
-    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy};draw();
+    const paper=await j('paper.json').catch(()=>null);
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,paper};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';
