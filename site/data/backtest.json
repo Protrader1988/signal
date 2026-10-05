@@ -38,6 +38,15 @@
       "out_of_sample_sharpe": 0.72,
       "max_drawdown_pct": -58.9,
       "note": "Vol-targeting cut drawdown from -87% to -59% and improved out-of-sample return. Still very high risk. No selection edge was found in crypto."
+    },
+    {
+      "name": "Bitcoin trend filter (hold above the 150-day average, else cash)",
+      "status": "PASSED a pre-set bar - paper trading in a 10% sleeve",
+      "cagr_pct": 76.0,
+      "sharpe": 1.36,
+      "out_of_sample_sharpe": 1.04,
+      "max_drawdown_pct": -61.8,
+      "note": "2015 to 2026, 25 bps per trade. Holding Bitcoin: 66% a year, Sharpe 1.11, worst drop -83%. The edge is smaller crashes, not more return: since mid-2022 it made 35% a year against 40% for holding, with a worst drop of -28% against -53%. Three of 14 Bitcoin rules passed, so part of this may be luck. Past Bitcoin returns are unlikely to repeat."
     }
   ]
 }
