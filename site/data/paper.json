@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T02:07:23.287068+00:00",
+  "updated_utc": "2026-10-05T02:11:35.768271+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -22,33 +22,7 @@
     "XLK"
   ],
   "cleanup_20261005": true,
-  "cancelled_this_run": [
-    {
-      "symbol": "TSLA",
-      "qty": 0.2244,
-      "ok": true
-    },
-    {
-      "symbol": "SPY",
-      "qty": 0.1456,
-      "ok": true
-    },
-    {
-      "symbol": "NVDA",
-      "qty": 0.25,
-      "ok": true
-    },
-    {
-      "symbol": "MSFT",
-      "qty": 0.4202,
-      "ok": true
-    },
-    {
-      "symbol": "AMZN",
-      "qty": 11.286,
-      "ok": true
-    }
-  ],
+  "cancelled_this_run": [],
   "other_positions": [
     "AMZN",
     "MSFT",
@@ -57,16 +31,16 @@
     "TSLA"
   ],
   "account": {
-    "equity": 100190.47,
+    "equity": 100190.3,
     "cash": 96868.58,
     "invested": 0,
-    "other_holdings_value": 3321.89,
+    "other_holdings_value": 3321.72,
     "return_since_start_pct": -0.0
   },
   "sizing": {
     "exposure": 0.92,
     "names": 13,
-    "dollars_per_name": 7090.4
+    "dollars_per_name": 7090.39
   },
   "positions": [],
   "orders_this_run": [],
@@ -210,7 +184,7 @@
       "symbol": "NVDA",
       "side": "sell",
       "qty": 0.25,
-      "status": "accepted",
+      "status": "canceled",
       "submitted": "2026-10-05",
       "filled_qty": 0.0,
       "fill_price": null
@@ -219,7 +193,7 @@
       "symbol": "MSFT",
       "side": "sell",
       "qty": 0.4202,
-      "status": "accepted",
+      "status": "canceled",
       "submitted": "2026-10-05",
       "filled_qty": 0.0,
       "fill_price": null
@@ -228,7 +202,7 @@
       "symbol": "AMZN",
       "side": "sell",
       "qty": 11.286,
-      "status": "accepted",
+      "status": "canceled",
       "submitted": "2026-10-05",
       "filled_qty": 0.0,
       "fill_price": null

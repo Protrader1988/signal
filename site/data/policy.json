@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-05T02:09:52.959115+00:00",
+  "generated_utc": "2026-10-05T02:14:23.891138+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -1882,7 +1882,7 @@
         "43": 19.68,
         "44": 20.37,
         "45": 19.25,
-        "46": 17.1,
+        "46": 17.11,
         "47": 14.4,
         "48": 16.32,
         "49": 16.16,
@@ -7155,62 +7155,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-10-05T02:08:22+00:00"
+      "checked_utc": "2026-10-05T02:12:34+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-10-05T02:08:32+00:00"
+      "checked_utc": "2026-10-05T02:12:43+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "7 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-10-05T02:08:41+00:00"
+      "checked_utc": "2026-10-05T02:12:53+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-10-05T02:08:42+00:00"
+      "checked_utc": "2026-10-05T02:12:53+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-10-05T02:09:13+00:00"
+      "checked_utc": "2026-10-05T02:13:25+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-10-05T02:09:15+00:00"
+      "checked_utc": "2026-10-05T02:13:26+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-10-05T02:09:17+00:00"
+      "checked_utc": "2026-10-05T02:13:28+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "3 documents",
-      "checked_utc": "2026-10-05T02:09:20+00:00"
+      "checked_utc": "2026-10-05T02:13:31+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-10-05T02:09:20+00:00"
+      "checked_utc": "2026-10-05T02:13:31+00:00"
     },
     "reading": {
       "ok": false,
       "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash ",
-      "checked_utc": "2026-10-05T02:09:28+00:00"
+      "checked_utc": "2026-10-05T02:13:51+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-10-05T02:09:52+00:00"
+      "checked_utc": "2026-10-05T02:14:23+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-10-05T02:09:52+00:00"
+      "checked_utc": "2026-10-05T02:14:23+00:00"
     }
   },
   "counts": {
