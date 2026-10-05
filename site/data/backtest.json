@@ -47,6 +47,15 @@
       "out_of_sample_sharpe": 1.04,
       "max_drawdown_pct": -61.8,
       "note": "2015 to 2026, 25 bps per trade. Holding Bitcoin: 66% a year, Sharpe 1.11, worst drop -83%. The edge is smaller crashes, not more return: since mid-2022 it made 35% a year against 40% for holding, with a worst drop of -28% against -53%. Three of 14 Bitcoin rules passed, so part of this may be luck. Past Bitcoin returns are unlikely to repeat."
+    },
+    {
+      "name": "Aggressive mix (70% top-10% momentum + 30% Bitcoin trend, monthly rebalance)",
+      "status": "QUALIFIED a pre-set bar - tracked on real prices, not traded",
+      "cagr_pct": 40.6,
+      "sharpe": 1.39,
+      "out_of_sample_sharpe": 1.81,
+      "max_drawdown_pct": -31.4,
+      "note": "2018 to 2026. Beat the S&P 500 in 6 of 8 years; lost 14% in 2018 and spent more than two years below a prior peak. 2020 alone was +159%, which will not repeat. Upper bound, not a forecast: the stock list was chosen with hindsight and the period was a strong one for both technology stocks and Bitcoin."
     }
   ]
 }
