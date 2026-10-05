@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T02:11:35.768271+00:00",
+  "updated_utc": "2026-10-05T03:01:29.537120+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -9,6 +9,7 @@
   "managed": [
     "AMD",
     "AMGN",
+    "BTCUSD",
     "CSCO",
     "INTC",
     "LLY",
@@ -22,6 +23,27 @@
     "XLK"
   ],
   "cleanup_20261005": true,
+  "lots": {
+    "BTCUSD": {
+      "qty": 0.073556166,
+      "entry": 86551.3591,
+      "since": "2026-10-05"
+    }
+  },
+  "realized": 0.0,
+  "closed_trades": [],
+  "first_fill": "2026-10-05",
+  "spy_start": 769.72,
+  "signal": {
+    "unrealized": -4.72,
+    "realized": 0.0,
+    "total_pl": -4.72,
+    "return_pct": -0.0,
+    "spy_return_pct": 0.0,
+    "closed_trades": 0,
+    "wins": 0,
+    "basis": "Profit and loss on positions Signal opened, as a share of the starting account. Other holdings in the account are excluded."
+  },
   "cancelled_this_run": [],
   "other_positions": [
     "AMZN",
@@ -31,20 +53,56 @@
     "TSLA"
   ],
   "account": {
-    "equity": 100190.3,
+    "equity": 100183.81,
     "cash": 96868.58,
-    "invested": 0,
-    "other_holdings_value": 3321.72,
-    "return_since_start_pct": -0.0
+    "invested": 6361.67,
+    "other_holdings_value": 3315.23,
+    "return_since_start_pct": -0.01
   },
   "sizing": {
     "exposure": 0.92,
     "names": 13,
-    "dollars_per_name": 7090.39
+    "dollars_per_name": 6380.94,
+    "stock_share": 0.9,
+    "btc_share": 0.1
   },
-  "positions": [],
-  "orders_this_run": [],
+  "btc_rule": {
+    "on": true,
+    "price": 86512.52,
+    "sma_150": 70923.48
+  },
+  "positions": [
+    {
+      "symbol": "BTCUSD",
+      "qty": 0.073556166,
+      "avg_entry": 86551.36,
+      "price": 86487.2,
+      "value": 6361.67,
+      "pl": -4.72,
+      "pl_pct": -0.07
+    }
+  ],
+  "orders_this_run": [
+    {
+      "symbol": "BTC",
+      "side": "buy",
+      "qty": null,
+      "ok": true,
+      "reason": "Bitcoin trend rule ON",
+      "est_dollars": 6508.03,
+      "error": null
+    }
+  ],
   "recent_orders": [
+    {
+      "symbol": "BTC/USD",
+      "side": "buy",
+      "qty": 0.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.073740518,
+      "fill_price": 86551.36
+    },
     {
       "symbol": "UNH",
       "side": "buy",
@@ -305,15 +363,6 @@
       "submitted": "2026-01-30",
       "filled_qty": 0.1178,
       "fill_price": 429.39
-    },
-    {
-      "symbol": "TSLA",
-      "side": "buy",
-      "qty": 0.1178,
-      "status": "filled",
-      "submitted": "2026-01-30",
-      "filled_qty": 0.1178,
-      "fill_price": 424.47
     }
   ],
   "equity_history": [

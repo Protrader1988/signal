@@ -176,46 +176,57 @@
     "coins_in_uptrend": [
       {
         "ticker": "BNB-USD",
-        "entry_ref": 804.86,
-        "mom_200d_pct": 23.4
+        "entry_ref": 800.36,
+        "mom_200d_pct": 22.7
       },
       {
         "ticker": "BTC-USD",
-        "entry_ref": 86702.41,
-        "mom_200d_pct": 21.7
+        "entry_ref": 86512.52,
+        "mom_200d_pct": 21.4
       },
       {
         "ticker": "DOGE-USD",
         "entry_ref": 0.1,
-        "mom_200d_pct": 1.5
+        "mom_200d_pct": 1.0
       },
       {
         "ticker": "ETH-USD",
-        "entry_ref": 2729.76,
+        "entry_ref": 2729.99,
         "mom_200d_pct": 23.9
       },
       {
         "ticker": "LINK-USD",
-        "entry_ref": 14.22,
-        "mom_200d_pct": 54.1
+        "entry_ref": 14.15,
+        "mom_200d_pct": 53.3
       },
       {
         "ticker": "LTC-USD",
-        "entry_ref": 70.44,
+        "entry_ref": 70.46,
         "mom_200d_pct": 25.7
       },
       {
         "ticker": "SOL-USD",
-        "entry_ref": 121.49,
-        "mom_200d_pct": 34.9
+        "entry_ref": 121.13,
+        "mom_200d_pct": 34.5
       },
       {
         "ticker": "XRP-USD",
-        "entry_ref": 1.53,
-        "mom_200d_pct": 4.2
+        "entry_ref": 1.52,
+        "mom_200d_pct": 3.7
       }
     ],
     "suggested_gross_exposure": 0.3,
+    "btc_trend": {
+      "available": true,
+      "on": true,
+      "price": 86512.52,
+      "sma_150": 70923.48,
+      "gap_pct": 22.0,
+      "since": "2026-08-19",
+      "as_of": "2026-10-05",
+      "rule": "Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
+      "evidence": "2015 to 2026 backtest: 76% a year vs 66% for holding, worst drop -62% vs -83%. Since mid-2022 (data it was not fitted to): 35% a year vs 40%, worst drop -28% vs -53%."
+    },
     "label": "RISK-MANAGED BETA \u2014 not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
     "as_of": "2026-10-05"
   },
