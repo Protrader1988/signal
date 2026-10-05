@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T03:01:29.537120+00:00",
+  "updated_utc": "2026-10-05T03:15:54.490758+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -35,10 +35,10 @@
   "first_fill": "2026-10-05",
   "spy_start": 769.72,
   "signal": {
-    "unrealized": -4.72,
+    "unrealized": -8.97,
     "realized": 0.0,
-    "total_pl": -4.72,
-    "return_pct": -0.0,
+    "total_pl": -8.97,
+    "return_pct": -0.01,
     "spy_return_pct": 0.0,
     "closed_trades": 0,
     "wins": 0,
@@ -53,46 +53,36 @@
     "TSLA"
   ],
   "account": {
-    "equity": 100183.81,
-    "cash": 96868.58,
-    "invested": 6361.67,
-    "other_holdings_value": 3315.23,
-    "return_since_start_pct": -0.01
+    "equity": 100156.31,
+    "cash": 90486.24,
+    "invested": 6357.41,
+    "other_holdings_value": 3312.66,
+    "return_since_start_pct": -0.04
   },
   "sizing": {
     "exposure": 0.92,
     "names": 13,
-    "dollars_per_name": 6380.94,
+    "dollars_per_name": 6379.19,
     "stock_share": 0.9,
     "btc_share": 0.1
   },
   "btc_rule": {
     "on": true,
-    "price": 86512.52,
-    "sma_150": 70923.48
+    "price": 86424.96,
+    "sma_150": 70922.9
   },
   "positions": [
     {
       "symbol": "BTCUSD",
       "qty": 0.073556166,
       "avg_entry": 86551.36,
-      "price": 86487.2,
-      "value": 6361.67,
-      "pl": -4.72,
-      "pl_pct": -0.07
+      "price": 86429.37,
+      "value": 6357.41,
+      "pl": -8.97,
+      "pl_pct": -0.14
     }
   ],
-  "orders_this_run": [
-    {
-      "symbol": "BTC",
-      "side": "buy",
-      "qty": null,
-      "ok": true,
-      "reason": "Bitcoin trend rule ON",
-      "est_dollars": 6508.03,
-      "error": null
-    }
-  ],
+  "orders_this_run": [],
   "recent_orders": [
     {
       "symbol": "BTC/USD",

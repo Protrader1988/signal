@@ -1,0 +1,101 @@
+{
+  "started": "2026-10-02",
+  "cash": -0.0,
+  "shares": {
+    "MU": 10.838085609912623,
+    "AMD": 18.377609587385148,
+    "INTC": 97.62632884639952,
+    "VLO": 28.672779596380792,
+    "PSX": 44.03110813832498,
+    "TGT": 74.67788461538461
+  },
+  "btc_qty": 0.3466186119732662,
+  "month": "2026-10",
+  "history": [
+    {
+      "date": "2026-10-02",
+      "value": 99855.0,
+      "spy": 100000.0
+    }
+  ],
+  "trades": [
+    {
+      "date": "2026-10-02",
+      "type": "monthly rebalance",
+      "added": [
+        "AMD",
+        "INTC",
+        "MU",
+        "PSX",
+        "TGT",
+        "VLO"
+      ],
+      "dropped": [],
+      "bitcoin": "held",
+      "cost": 145.0
+    }
+  ],
+  "spy_start": 769.6400146484375,
+  "start_value": 100000.0,
+  "updated": "2026-10-02",
+  "value": 99855.0,
+  "return_pct": -0.14,
+  "spy_return_pct": 0.0,
+  "max_drawdown_pct": 0.0,
+  "days_tracked": 1,
+  "holdings": [
+    {
+      "ticker": "MU",
+      "shares": 10.8381,
+      "price": 1074.89,
+      "value": 11649.75,
+      "weight_pct": 11.7
+    },
+    {
+      "ticker": "AMD",
+      "shares": 18.3776,
+      "price": 633.91,
+      "value": 11649.75,
+      "weight_pct": 11.7
+    },
+    {
+      "ticker": "INTC",
+      "shares": 97.6263,
+      "price": 119.33,
+      "value": 11649.75,
+      "weight_pct": 11.7
+    },
+    {
+      "ticker": "VLO",
+      "shares": 28.6728,
+      "price": 406.3,
+      "value": 11649.75,
+      "weight_pct": 11.7
+    },
+    {
+      "ticker": "PSX",
+      "shares": 44.0311,
+      "price": 264.58,
+      "value": 11649.75,
+      "weight_pct": 11.7
+    },
+    {
+      "ticker": "TGT",
+      "shares": 74.6779,
+      "price": 156.0,
+      "value": 11649.75,
+      "weight_pct": 11.7
+    },
+    {
+      "ticker": "BTC",
+      "shares": 0.346619,
+      "price": 86424.96,
+      "value": 29956.5,
+      "weight_pct": 30.0
+    }
+  ],
+  "cash_pct": -0.0,
+  "label": "TRACKED, NOT TRADED. A calculation on real closing prices with trading costs charged; no orders are placed.",
+  "rule": "70% in the top 10% of momentum stocks, 30% in Bitcoin while it is above its 150-day average (cash otherwise). Rebalanced monthly.",
+  "backtest": "2018 to 2026 backtest: 41% a year, worst drop -31%, more than two years underwater at one point; lost 14% in 2018. Treat as an upper bound: the stock list was picked with hindsight."
+}
