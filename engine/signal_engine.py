@@ -28,9 +28,16 @@ Honesty rules:
 Ledger rules v2 (stricter, closer to what a real account would get):
   - ENTRY at the NEXT trading day's open after the signal (a signal is computed
     after the close, so the signal-day close is not a price anyone could trade).
-  - STOPS ENFORCED: each trade stores the stop published with its signal. The
-    first daily close at or below the stop closes the trade at THAT close (so a
-    gap through the stop is booked at the real, worse price - never at the stop).
+  - STOPS ENFORCED, sized by evidence (research round 4, EXP A):
+    a tight 2-ATR stop cut the average position trade from +1.77% to +0.64%
+    by cutting off winners, so it was removed. The position book now uses a
+    WIDE 15% TRAILING stop (15% below the highest close since entry), which
+    kept most of the return (+1.53%) and cut the worst trade from -34% to -21%.
+    A stop is booked at the real close that breached it, never at the stop price.
+  - SWING BOOK RETIRED (Oct 2026): +0.05% per signal before costs in live
+    tracking. No new swing signals; open swing trades run off under their rules.
+  - MARKET CONDITIONS are a READOUT ONLY. Sizing by the conditions score did
+    not beat a constant smaller position (EXP F), so it no longer sets size.
   - COSTS: 10 bps charged on entry and again on exit.
   - BENCHMARK: every trade records SPY's return over the same window and the
     excess. Beating zero is not the test; beating SPY is.
@@ -52,6 +59,8 @@ N_SWING = 10
 COST_BPS_PER_SIDE = 10      # charged on entry and on exit of every ledger trade
 BENCH = "SPY"
 RULES = "v2"                # v2 = next-open entry, stops enforced, costs, SPY-relative
+TRAIL_STOP_POSITION = 0.15  # position book: exit on a close 15% below the highest close since entry
+SWING_ENABLED = False       # swing book retired Oct 2026 (flat before costs, negative after, in live tracking)
 
 EQUITY_UNIVERSE=[
     "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","AVGO","AMD","NFLX","ADBE","CRM","ORCL","INTC","QCOM","TXN","CSCO","IBM","MU","PYPL",
@@ -155,30 +164,22 @@ def build_conditions(px, ctx=None):
     """Today's conditions + a one-line directive for the playbook."""
     f=conditions_frame(px, ctx)
     if f.empty or not np.isfinite(f["score"].iloc[-1]):
-        return {"available":False,"exposure":1.0,"stance":"NORMAL SIZE",
-                "directive":"Market conditions could not be read today. Use normal size and honor every stop."}
-    row=f.iloc[-1]; score=int(row["score"]); exp=float(row["exposure"])
+        return {"available":False,"sizing":False,"directive":"Market conditions could not be read today."}
+    row=f.iloc[-1]; score=int(row["score"])
     checks=[]
     for k,(name,good,bad) in CHECK_TEXT.items():
         if k in f.columns and pd.notna(row[k]):
             ok=bool(row[k]); checks.append({"key":k,"name":name,"pass":ok,"text":good if ok else bad})
-    stance=STANCE_BY_SCORE.get(score,"NORMAL SIZE")
-    if exp<=0.25 and score>=2 and not bool(row.get("trend",True)): stance="DEFENSIVE"
     n_pass=sum(c["pass"] for c in checks)
-    if exp>=1.0:   what="Take every new signal at full size."
-    elif exp>=0.75: what="Take new signals at three-quarter size."
-    elif exp>=0.50: what="Take new signals at half size and keep the rest in cash."
-    elif exp>0:    what="Quarter size only. Protect capital; most of the account stays in cash."
-    else:          what="No new buys today. Hold cash and manage what is already open."
-    # how long this stance has held
-    same=(f["exposure"]==row["exposure"]).iloc[::-1]
+    same=(f["score"]==row["score"]).iloc[::-1]
     days=int(same.cumprod().sum())
     return {"available":True,"as_of":str(f.index[-1].date()),"score":score,"checks_passed":n_pass,
-            "checks_total":len(checks),"exposure":round(exp,2),"stance":stance,
-            "directive":f"{stance}: {n_pass} of {len(checks)} market conditions are favorable. {what}",
-            "checks":checks,"days_in_stance":days,
-            "note":"Rule-based reading of price data. It measures conditions; it does not predict. "
-                   "Whether sizing by this score beats constant size is tested in research round 4 (EXP F)."}
+            "checks_total":len(checks),"sizing":False,
+            "directive":f"{n_pass} of {len(checks)} market conditions are favorable.",
+            "checks":checks,"days_at_score":days,
+            "note":"Readout only: it does not set position size. In testing (2017 to now), sizing by this score "
+                   "did no better than holding a constant smaller position, and low scores were not followed "
+                   "by worse months. Size comes from the volatility target."}
 
 def build_equity_signals(px):
     t = px.index[-1]
@@ -204,13 +205,14 @@ def build_equity_signals(px):
             "ticker":tk,"rank":rank,"score":round(float(sc),2),
             "entry_ref":round(p,2),
             "mom_6m_pct":round(float(m6[tk])*100,1),"mom_12m_pct":round(float(m12[tk])*100,1),
-            "suggested_stop":round(p-2*a,2) if np.isfinite(a) else None,
+            "suggested_stop":round(p*(1-TRAIL_STOP_POSITION),2),
+            "stop_rule":f"{int(TRAIL_STOP_POSITION*100)}% trailing, from the highest close since entry",
             "horizon":"~1 month (position)",
         })
 
     # SWING book (short-term momentum continuation)
     elig = (price>sma100) & (m3>0)
-    sw_score = z(st10)[elig].dropna().sort_values(ascending=False).head(N_SWING)
+    sw_score = z(st10)[elig].dropna().sort_values(ascending=False).head(N_SWING if SWING_ENABLED else 0)
     sw_prices = px[sw_score.index]
     sw_exp = suggested_exposure(realized_vol(sw_prices, 252, lookback=20))
     swing=[]
@@ -331,11 +333,20 @@ def update_ledger(ledger, signals, eq_px, cr_px, eq_op=None):
         d0=datetime.fromisoformat(s["entry_date"]).date()
         start=s.get("last_checked", s["entry_date"])
         stop=s.get("stop")
+        trailing = s["book"]=="position"
+        if trailing and "peak" not in s:
+            # highest close from entry up to the last day already checked (no hindsight beyond it)
+            hist=ser.loc[pd.Timestamp(s["entry_date"]):pd.Timestamp(start)].dropna()
+            s["peak"]=round(float(max([s["entry_price"]]+list(hist.values))),2)
+            s["stop_rule"]="trail15"
         done=False
         for d in [x for x in dates if x>=s["entry_date"] and x>=start]:
             p=_px_on(ser.to_frame(s["ticker"]), s["ticker"], d)
             if p is None: continue
             held=(datetime.fromisoformat(d).date()-d0).days
+            if trailing:
+                s["peak"]=round(max(s["peak"],p),2)
+                stop=round(s["peak"]*(1-TRAIL_STOP_POSITION),2); s["stop"]=stop
             if stop is not None and p<=stop:
                 close_out(s, d, p, "stop"); done=True; break
             if held>=horizon_cal:
@@ -358,6 +369,7 @@ def update_ledger(ledger, signals, eq_px, cr_px, eq_op=None):
                                "signal_date":today,"signal_price":it["entry_ref"],
                                "entry_price":it["entry_ref"],"last_price":it["entry_ref"],
                                "stop":it.get("suggested_stop"),
+                               "stop_rule":"trail15" if book=="position" else "atr1.5",
                                "return_pct":0.0,"days_held":0,"pending":True,"rules":RULES})
     add("position", signals["position"])
     add("swing", signals["swing"])
@@ -411,14 +423,14 @@ def main():
     try: conditions = build_conditions(eq, ctx)
     except Exception as e:
         log(f"conditions failed: {e}")
-        conditions = {"available":False,"exposure":1.0,"stance":"NORMAL SIZE",
-                      "directive":"Market conditions could not be read today. Use normal size and honor every stop."}
+        conditions = {"available":False,"sizing":False,"directive":"Market conditions could not be read today."}
 
     signals={
         "as_of_equity":as_of,"as_of_crypto":crypto["as_of"],
         "conditions":conditions,
         "position":position,"swing":swing,
-        "position_suggested_exposure":pos_exp,"swing_suggested_exposure":sw_exp,
+        "position_suggested_exposure":pos_exp,"swing_suggested_exposure":sw_exp if SWING_ENABLED else 0.0,
+        "swing_retired":(not SWING_ENABLED),
         "vol_target_annual_pct":int(VOL_TARGET*100),
         "crypto":crypto,
         "disclaimer":"Educational signals from a validated momentum model. Not investment advice. "
