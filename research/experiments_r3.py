@@ -174,7 +174,7 @@ def run_round4():
     log to research/output/. A later round failing never fails round 3."""
     import subprocess, os
     here=os.path.dirname(os.path.abspath(__file__))
-    for name in ("experiments_r4","experiments_r5"):
+    for name in ("experiments_r4","experiments_r5","experiments_r6"):
         script=os.path.join(here,name+".py")
         if not os.path.exists(script): continue
         try:
