@@ -241,6 +241,7 @@
     <a class="fkey" href="#ledger"><b>F8</b>TRACK RECORD</a>
     <a class="fkey" href="#paper"><b>F9</b>PAPER ACCOUNT</a>
     <a class="fkey" href="#aggressive"><b>F10</b>AGGRESSIVE MIX</a>
+    <a class="fkey" href="#themes"><b>F11</b>THEME BASKET</a>
   </div>
 
   <!-- PLAYBOOK -->
@@ -386,6 +387,17 @@
     <div class="card" style="margin-top:16px">
       <div class="card-head"><span class="code">MIX</span><span class="t">Holdings</span><span class="expo" id="aggCount"></span></div>
       <div id="aggHoldings"></div>
+    </div>
+  </section>
+
+  <section id="themes">
+    <div class="eyebrow"><span class="no">T</span><h2>Theme Basket</h2>
+      <span class="hint">tracked on real prices · not traded · space, defense, mining, energy, AI and chips, magnets</span></div>
+    <div class="statusgrid" id="thTiles"></div>
+    <div id="thNote" style="margin-top:14px"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">THEMES</span><span class="t">By theme, since tracking began</span></div>
+      <div id="thTable"></div>
     </div>
   </section>
 
@@ -877,6 +889,23 @@ function draw(){
     {h:'Return',k:'return_pct',num:true,cls:sgn,f:v=>`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`},{h:'Days',k:'days_held',num:true}],
     'No open positions yet — they appear the moment the engine runs.');
 
+  // THEME BASKET - tracked, not traded
+  (function(){
+    const th=DATA.themes;
+    if(!th||!th.started){$('thTiles').innerHTML='';$('thTable').innerHTML='<div class="empty">Tracking starts on the next engine run.</div>';$('thNote').innerHTML='';return;}
+    const money=v=>'$'+(+v||0).toLocaleString(undefined,{maximumFractionDigits:0});
+    const tiles=[{k:'Value',v:money(th.value),s:'started at '+money(th.start_value)+' · '+th.started},
+      {k:'Return since start',v:pc(th.return_pct||0),s:`${th.days_tracked} day${th.days_tracked===1?'':'s'} tracked`},
+      {k:'S&P 500 over the same days',v:th.spy_return_pct!=null?pc(th.spy_return_pct):'—',s:'the number to beat'},
+      {k:'Worst drop so far',v:pc(th.max_drawdown_pct||0),s:'backtest worst was -37%'}];
+    $('thTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+    $('thNote').innerHTML=`<div class="banner"><b>${th.label||''}</b> ${th.rule||''} ${th.backtest||''}</div>`;
+    $('thTable').innerHTML=tbl(th.themes||[],[
+      {h:'Theme',k:'theme',f:v=>`<span style="font-weight:600">${v}</span>`},{h:'Stocks',k:'names',num:true},
+      {h:'Value',k:'value',num:true,f:v=>money(v)},{h:'Weight',k:'weight_pct',num:true,f:v=>v+'%'},
+      {h:'Return',k:'return_pct',num:true,cls:sgn,f:v=>`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`}],'No holdings yet.');
+  })();
+
   // AGGRESSIVE MIX - tracked, not traded
   (function(){
     const ag=DATA.agg;
@@ -940,7 +969,8 @@ function draw(){
     const [sig,led,bt,meta,cv,val,watch,news,digest,policy]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null)]);
     const paper=await j('paper.json').catch(()=>null);
     const agg=await j('aggressive.json').catch(()=>null);
-    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,paper,agg};draw();
+    const themes=await j('themes.json').catch(()=>null);
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,paper,agg,themes};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';
