@@ -1,6 +1,6 @@
 # Research round 3 — drawdown control
 
-_Generated 2026-10-05T01:23:51.667043+00:00_
+_Generated 2026-10-05T02:56:19.844132+00:00_
 
 ## EXP A Equity momentum + risk overlays (goal: cut -33% maxDD, keep Sharpe)
 - **base**: full CAGR 27.1% Sharpe 1.04 maxDD -31.2% | OOS CAGR 36.6% Sharpe 1.49 maxDD -26.7%

@@ -1,0 +1,1005 @@
+{
+  "generated_utc": "2026-10-05T02:56:41.930013+00:00",
+  "params": {
+    "cost_bps": 25.0,
+    "in_sample_frac": 0.65,
+    "vol_target": 0.4
+  },
+  "pass_bar": "OOS Sharpe above buy-and-hold AND OOS max drawdown no deeper than 60% of buy-and-hold's AND full-history Sharpe above buy-and-hold",
+  "BTC-USD": {
+    "asset": "BTC-USD",
+    "first_day": "2015-04-05",
+    "last_day": "2026-10-05",
+    "out_sample_from": "2022-07-17",
+    "rules": {
+      "buy_hold": {
+        "full": {
+          "cagr_pct": 66.0,
+          "sharpe": 1.11,
+          "vol_pct": 65.3,
+          "maxDD_pct": -83.4
+        },
+        "in_sample": {
+          "cagr_pct": 83.0,
+          "sharpe": 1.19,
+          "vol_pct": 73.6,
+          "maxDD_pct": -83.4
+        },
+        "out_sample": {
+          "cagr_pct": 39.6,
+          "sharpe": 0.94,
+          "vol_pct": 47.7,
+          "maxDD_pct": -53.1
+        },
+        "time_in_market_pct": 100.0,
+        "avg_exposure_pct": 100.0,
+        "position_changes_per_year": 0.0,
+        "yearly_pct": {
+          "2016": 123.8,
+          "2017": 1368.9,
+          "2018": -73.6,
+          "2019": 92.2,
+          "2020": 303.2,
+          "2021": 59.7,
+          "2022": -64.3,
+          "2023": 155.4,
+          "2024": 121.1,
+          "2025": -6.3
+        },
+        "passes": null
+      },
+      "buy_hold_vt40": {
+        "full": {
+          "cagr_pct": 46.4,
+          "sharpe": 1.1,
+          "vol_pct": 42.9,
+          "maxDD_pct": -65.2
+        },
+        "in_sample": {
+          "cagr_pct": 54.6,
+          "sharpe": 1.21,
+          "vol_pct": 44.5,
+          "maxDD_pct": -59.5
+        },
+        "out_sample": {
+          "cagr_pct": 32.7,
+          "sharpe": 0.91,
+          "vol_pct": 40.0,
+          "maxDD_pct": -52.5
+        },
+        "time_in_market_pct": 100.0,
+        "avg_exposure_pct": 73.5,
+        "position_changes_per_year": 26.8,
+        "yearly_pct": {
+          "2016": 110.5,
+          "2017": 342.2,
+          "2018": -52.7,
+          "2019": 91.8,
+          "2020": 144.9,
+          "2021": 27.3,
+          "2022": -53.9,
+          "2023": 120.8,
+          "2024": 108.9,
+          "2025": -8.4
+        },
+        "passes": false
+      },
+      "sma_100": {
+        "full": {
+          "cagr_pct": 65.0,
+          "sharpe": 1.25,
+          "vol_pct": 50.2,
+          "maxDD_pct": -62.4
+        },
+        "in_sample": {
+          "cagr_pct": 90.5,
+          "sharpe": 1.41,
+          "vol_pct": 57.5,
+          "maxDD_pct": -62.4
+        },
+        "out_sample": {
+          "cagr_pct": 28.7,
+          "sharpe": 0.91,
+          "vol_pct": 33.8,
+          "maxDD_pct": -38.1
+        },
+        "time_in_market_pct": 58.4,
+        "avg_exposure_pct": 58.4,
+        "position_changes_per_year": 12.4,
+        "yearly_pct": {
+          "2016": 58.3,
+          "2017": 843.4,
+          "2018": -45.5,
+          "2019": 136.9,
+          "2020": 175.2,
+          "2021": 67.9,
+          "2022": -21.1,
+          "2023": 78.1,
+          "2024": 59.7,
+          "2025": 2.3
+        },
+        "passes": false
+      },
+      "sma_100_vt40": {
+        "full": {
+          "cagr_pct": 44.7,
+          "sharpe": 1.28,
+          "vol_pct": 33.0,
+          "maxDD_pct": -35.4
+        },
+        "in_sample": {
+          "cagr_pct": 57.5,
+          "sharpe": 1.47,
+          "vol_pct": 35.2,
+          "maxDD_pct": -31.5
+        },
+        "out_sample": {
+          "cagr_pct": 24.8,
+          "sharpe": 0.91,
+          "vol_pct": 28.8,
+          "maxDD_pct": -30.9
+        },
+        "time_in_market_pct": 58.4,
+        "avg_exposure_pct": 43.1,
+        "position_changes_per_year": 27.5,
+        "yearly_pct": {
+          "2016": 61.6,
+          "2017": 253.2,
+          "2018": -22.0,
+          "2019": 111.7,
+          "2020": 110.5,
+          "2021": 18.2,
+          "2022": -18.6,
+          "2023": 56.6,
+          "2024": 57.9,
+          "2025": -0.0
+        },
+        "passes": false
+      },
+      "sma_150": {
+        "full": {
+          "cagr_pct": 76.0,
+          "sharpe": 1.36,
+          "vol_pct": 51.2,
+          "maxDD_pct": -61.8
+        },
+        "in_sample": {
+          "cagr_pct": 105.1,
+          "sharpe": 1.52,
+          "vol_pct": 58.8,
+          "maxDD_pct": -61.8
+        },
+        "out_sample": {
+          "cagr_pct": 35.1,
+          "sharpe": 1.04,
+          "vol_pct": 34.5,
+          "maxDD_pct": -27.6
+        },
+        "time_in_market_pct": 60.5,
+        "avg_exposure_pct": 60.5,
+        "position_changes_per_year": 6.7,
+        "yearly_pct": {
+          "2016": 123.8,
+          "2017": 1368.9,
+          "2018": -47.3,
+          "2019": 108.9,
+          "2020": 192.3,
+          "2021": 33.6,
+          "2022": -7.6,
+          "2023": 89.8,
+          "2024": 86.0,
+          "2025": -11.1
+        },
+        "passes": true
+      },
+      "sma_150_vt40": {
+        "full": {
+          "cagr_pct": 51.4,
+          "sharpe": 1.4,
+          "vol_pct": 33.5,
+          "maxDD_pct": -33.9
+        },
+        "in_sample": {
+          "cagr_pct": 66.1,
+          "sharpe": 1.6,
+          "vol_pct": 35.6,
+          "maxDD_pct": -32.9
+        },
+        "out_sample": {
+          "cagr_pct": 28.9,
+          "sharpe": 1.01,
+          "vol_pct": 29.5,
+          "maxDD_pct": -26.2
+        },
+        "time_in_market_pct": 60.5,
+        "avg_exposure_pct": 44.8,
+        "position_changes_per_year": 22.9,
+        "yearly_pct": {
+          "2016": 110.5,
+          "2017": 342.2,
+          "2018": -20.2,
+          "2019": 82.5,
+          "2020": 121.9,
+          "2021": 4.3,
+          "2022": -5.7,
+          "2023": 64.8,
+          "2024": 75.5,
+          "2025": -10.5
+        },
+        "passes": true
+      },
+      "sma_200": {
+        "full": {
+          "cagr_pct": 59.2,
+          "sharpe": 1.15,
+          "vol_pct": 52.1,
+          "maxDD_pct": -70.4
+        },
+        "in_sample": {
+          "cagr_pct": 75.7,
+          "sharpe": 1.24,
+          "vol_pct": 59.6,
+          "maxDD_pct": -70.4
+        },
+        "out_sample": {
+          "cagr_pct": 34.3,
+          "sharpe": 1.0,
+          "vol_pct": 35.6,
+          "maxDD_pct": -32.9
+        },
+        "time_in_market_pct": 60.9,
+        "avg_exposure_pct": 60.9,
+        "position_changes_per_year": 6.5,
+        "yearly_pct": {
+          "2016": 123.8,
+          "2017": 1368.9,
+          "2018": -59.3,
+          "2019": 56.9,
+          "2020": 179.2,
+          "2021": -24.1,
+          "2022": 0.0,
+          "2023": 93.0,
+          "2024": 78.4,
+          "2025": -19.2
+        },
+        "passes": false
+      },
+      "sma_200_vt40": {
+        "full": {
+          "cagr_pct": 43.9,
+          "sharpe": 1.25,
+          "vol_pct": 33.6,
+          "maxDD_pct": -47.0
+        },
+        "in_sample": {
+          "cagr_pct": 52.5,
+          "sharpe": 1.38,
+          "vol_pct": 35.2,
+          "maxDD_pct": -47.0
+        },
+        "out_sample": {
+          "cagr_pct": 30.2,
+          "sharpe": 1.02,
+          "vol_pct": 30.5,
+          "maxDD_pct": -25.4
+        },
+        "time_in_market_pct": 60.9,
+        "avg_exposure_pct": 44.8,
+        "position_changes_per_year": 22.6,
+        "yearly_pct": {
+          "2016": 110.5,
+          "2017": 342.2,
+          "2018": -25.7,
+          "2019": 43.0,
+          "2020": 114.7,
+          "2021": -21.0,
+          "2022": 0.0,
+          "2023": 67.2,
+          "2024": 68.6,
+          "2025": -12.8
+        },
+        "passes": true
+      },
+      "cross_50_200": {
+        "full": {
+          "cagr_pct": 54.3,
+          "sharpe": 1.07,
+          "vol_pct": 55.0,
+          "maxDD_pct": -69.5
+        },
+        "in_sample": {
+          "cagr_pct": 80.0,
+          "sharpe": 1.25,
+          "vol_pct": 63.5,
+          "maxDD_pct": -69.5
+        },
+        "out_sample": {
+          "cagr_pct": 18.2,
+          "sharpe": 0.64,
+          "vol_pct": 35.8,
+          "maxDD_pct": -39.9
+        },
+        "time_in_market_pct": 60.7,
+        "avg_exposure_pct": 60.7,
+        "position_changes_per_year": 1.8,
+        "yearly_pct": {
+          "2016": 123.8,
+          "2017": 1368.9,
+          "2018": -51.4,
+          "2019": 68.3,
+          "2020": 119.8,
+          "2021": 17.4,
+          "2022": -7.2,
+          "2023": 35.0,
+          "2024": 91.8,
+          "2025": -29.0
+        },
+        "passes": false
+      },
+      "cross_50_200_vt40": {
+        "full": {
+          "cagr_pct": 34.5,
+          "sharpe": 1.03,
+          "vol_pct": 34.6,
+          "maxDD_pct": -48.9
+        },
+        "in_sample": {
+          "cagr_pct": 48.5,
+          "sharpe": 1.26,
+          "vol_pct": 36.8,
+          "maxDD_pct": -48.9
+        },
+        "out_sample": {
+          "cagr_pct": 13.3,
+          "sharpe": 0.56,
+          "vol_pct": 30.2,
+          "maxDD_pct": -36.3
+        },
+        "time_in_market_pct": 60.7,
+        "avg_exposure_pct": 43.6,
+        "position_changes_per_year": 18.4,
+        "yearly_pct": {
+          "2016": 110.5,
+          "2017": 342.2,
+          "2018": -23.4,
+          "2019": 53.7,
+          "2020": 65.2,
+          "2021": 2.6,
+          "2022": -5.1,
+          "2023": 18.1,
+          "2024": 77.6,
+          "2025": -26.3
+        },
+        "passes": false
+      },
+      "mom_blend": {
+        "full": {
+          "cagr_pct": 64.4,
+          "sharpe": 1.29,
+          "vol_pct": 47.4,
+          "maxDD_pct": -62.6
+        },
+        "in_sample": {
+          "cagr_pct": 89.6,
+          "sharpe": 1.45,
+          "vol_pct": 54.3,
+          "maxDD_pct": -62.6
+        },
+        "out_sample": {
+          "cagr_pct": 28.3,
+          "sharpe": 0.94,
+          "vol_pct": 32.0,
+          "maxDD_pct": -27.9
+        },
+        "time_in_market_pct": 83.3,
+        "avg_exposure_pct": 60.7,
+        "position_changes_per_year": 45.1,
+        "yearly_pct": {
+          "2016": 117.3,
+          "2017": 1061.6,
+          "2018": -46.4,
+          "2019": 68.2,
+          "2020": 178.2,
+          "2021": 56.5,
+          "2022": -32.2,
+          "2023": 75.3,
+          "2024": 72.6,
+          "2025": 3.3
+        },
+        "passes": false
+      },
+      "mom_blend_vt40": {
+        "full": {
+          "cagr_pct": 44.2,
+          "sharpe": 1.35,
+          "vol_pct": 30.6,
+          "maxDD_pct": -41.6
+        },
+        "in_sample": {
+          "cagr_pct": 57.4,
+          "sharpe": 1.56,
+          "vol_pct": 32.4,
+          "maxDD_pct": -36.1
+        },
+        "out_sample": {
+          "cagr_pct": 23.8,
+          "sharpe": 0.92,
+          "vol_pct": 27.0,
+          "maxDD_pct": -26.9
+        },
+        "time_in_market_pct": 83.3,
+        "avg_exposure_pct": 44.6,
+        "position_changes_per_year": 56.6,
+        "yearly_pct": {
+          "2016": 105.7,
+          "2017": 305.8,
+          "2018": -28.6,
+          "2019": 63.0,
+          "2020": 113.7,
+          "2021": 20.4,
+          "2022": -27.0,
+          "2023": 54.3,
+          "2024": 66.6,
+          "2025": 2.5
+        },
+        "passes": false
+      },
+      "breakout_50_20": {
+        "full": {
+          "cagr_pct": 59.1,
+          "sharpe": 1.33,
+          "vol_pct": 41.5,
+          "maxDD_pct": -53.6
+        },
+        "in_sample": {
+          "cagr_pct": 90.2,
+          "sharpe": 1.6,
+          "vol_pct": 47.3,
+          "maxDD_pct": -53.6
+        },
+        "out_sample": {
+          "cagr_pct": 16.8,
+          "sharpe": 0.68,
+          "vol_pct": 28.6,
+          "maxDD_pct": -33.8
+        },
+        "time_in_market_pct": 39.3,
+        "avg_exposure_pct": 39.3,
+        "position_changes_per_year": 6.7,
+        "yearly_pct": {
+          "2016": 66.6,
+          "2017": 359.6,
+          "2018": -22.7,
+          "2019": 146.3,
+          "2020": 207.9,
+          "2021": 49.4,
+          "2022": -32.1,
+          "2023": 74.5,
+          "2024": 76.1,
+          "2025": -19.2
+        },
+        "passes": false
+      },
+      "breakout_50_20_vt40": {
+        "full": {
+          "cagr_pct": 43.5,
+          "sharpe": 1.42,
+          "vol_pct": 28.1,
+          "maxDD_pct": -34.6
+        },
+        "in_sample": {
+          "cagr_pct": 63.9,
+          "sharpe": 1.8,
+          "vol_pct": 29.9,
+          "maxDD_pct": -28.5
+        },
+        "out_sample": {
+          "cagr_pct": 14.0,
+          "sharpe": 0.66,
+          "vol_pct": 24.5,
+          "maxDD_pct": -33.3
+        },
+        "time_in_market_pct": 39.3,
+        "avg_exposure_pct": 29.1,
+        "position_changes_per_year": 17.5,
+        "yearly_pct": {
+          "2016": 66.3,
+          "2017": 168.3,
+          "2018": -12.6,
+          "2019": 112.6,
+          "2020": 124.6,
+          "2021": 23.7,
+          "2022": -28.6,
+          "2023": 62.1,
+          "2024": 67.8,
+          "2025": -19.7
+        },
+        "passes": false
+      }
+    },
+    "passing_rules": [
+      "sma_150",
+      "sma_150_vt40",
+      "sma_200_vt40"
+    ]
+  },
+  "ETH-USD": {
+    "asset": "ETH-USD",
+    "first_day": "2018-05-28",
+    "last_day": "2026-10-05",
+    "out_sample_from": "2023-08-23",
+    "rules": {
+      "buy_hold": {
+        "full": {
+          "cagr_pct": 20.5,
+          "sharpe": 0.64,
+          "vol_pct": 81.1,
+          "maxDD_pct": -86.4
+        },
+        "in_sample": {
+          "cagr_pct": 22.8,
+          "sharpe": 0.68,
+          "vol_pct": 88.9,
+          "maxDD_pct": -86.4
+        },
+        "out_sample": {
+          "cagr_pct": 17.9,
+          "sharpe": 0.58,
+          "vol_pct": 65.9,
+          "maxDD_pct": -67.6
+        },
+        "time_in_market_pct": 100.0,
+        "avg_exposure_pct": 100.0,
+        "position_changes_per_year": 0.0,
+        "yearly_pct": {
+          "2019": -2.8,
+          "2020": 469.2,
+          "2021": 399.1,
+          "2022": -67.5,
+          "2023": 90.6,
+          "2024": 46.1,
+          "2025": -11.0
+        },
+        "passes": null
+      },
+      "buy_hold_vt40": {
+        "full": {
+          "cagr_pct": 22.6,
+          "sharpe": 0.68,
+          "vol_pct": 43.9,
+          "maxDD_pct": -64.3
+        },
+        "in_sample": {
+          "cagr_pct": 23.5,
+          "sharpe": 0.7,
+          "vol_pct": 43.9,
+          "maxDD_pct": -64.3
+        },
+        "out_sample": {
+          "cagr_pct": 22.2,
+          "sharpe": 0.67,
+          "vol_pct": 43.9,
+          "maxDD_pct": -55.8
+        },
+        "time_in_market_pct": 100.0,
+        "avg_exposure_pct": 59.0,
+        "position_changes_per_year": 25.2,
+        "yearly_pct": {
+          "2019": 20.8,
+          "2020": 237.8,
+          "2021": 134.8,
+          "2022": -45.2,
+          "2023": 72.0,
+          "2024": 55.3,
+          "2025": -2.8
+        },
+        "passes": false
+      },
+      "sma_100": {
+        "full": {
+          "cagr_pct": 35.1,
+          "sharpe": 0.82,
+          "vol_pct": 57.7,
+          "maxDD_pct": -74.9
+        },
+        "in_sample": {
+          "cagr_pct": 37.2,
+          "sharpe": 0.82,
+          "vol_pct": 64.8,
+          "maxDD_pct": -74.9
+        },
+        "out_sample": {
+          "cagr_pct": 31.6,
+          "sharpe": 0.85,
+          "vol_pct": 43.3,
+          "maxDD_pct": -50.6
+        },
+        "time_in_market_pct": 52.4,
+        "avg_exposure_pct": 52.4,
+        "position_changes_per_year": 14.0,
+        "yearly_pct": {
+          "2019": 55.6,
+          "2020": 111.0,
+          "2021": 169.4,
+          "2022": -47.3,
+          "2023": 45.0,
+          "2024": 7.4,
+          "2025": 45.8
+        },
+        "passes": false
+      },
+      "sma_100_vt40": {
+        "full": {
+          "cagr_pct": 29.5,
+          "sharpe": 0.97,
+          "vol_pct": 31.9,
+          "maxDD_pct": -45.8
+        },
+        "in_sample": {
+          "cagr_pct": 32.3,
+          "sharpe": 1.01,
+          "vol_pct": 33.2,
+          "maxDD_pct": -45.8
+        },
+        "out_sample": {
+          "cagr_pct": 24.9,
+          "sharpe": 0.9,
+          "vol_pct": 29.7,
+          "maxDD_pct": -40.5
+        },
+        "time_in_market_pct": 52.4,
+        "avg_exposure_pct": 31.5,
+        "position_changes_per_year": 26.3,
+        "yearly_pct": {
+          "2019": 48.2,
+          "2020": 125.0,
+          "2021": 81.6,
+          "2022": -34.1,
+          "2023": 35.1,
+          "2024": 15.2,
+          "2025": 24.7
+        },
+        "passes": true
+      },
+      "sma_150": {
+        "full": {
+          "cagr_pct": 38.5,
+          "sharpe": 0.86,
+          "vol_pct": 58.5,
+          "maxDD_pct": -67.5
+        },
+        "in_sample": {
+          "cagr_pct": 43.5,
+          "sharpe": 0.89,
+          "vol_pct": 65.7,
+          "maxDD_pct": -67.5
+        },
+        "out_sample": {
+          "cagr_pct": 30.5,
+          "sharpe": 0.82,
+          "vol_pct": 43.9,
+          "maxDD_pct": -44.7
+        },
+        "time_in_market_pct": 51.2,
+        "avg_exposure_pct": 51.2,
+        "position_changes_per_year": 8.0,
+        "yearly_pct": {
+          "2019": 7.4,
+          "2020": 145.0,
+          "2021": 163.8,
+          "2022": -24.2,
+          "2023": 62.8,
+          "2024": 46.7,
+          "2025": 0.3
+        },
+        "passes": false
+      },
+      "sma_150_vt40": {
+        "full": {
+          "cagr_pct": 34.6,
+          "sharpe": 1.1,
+          "vol_pct": 31.5,
+          "maxDD_pct": -32.0
+        },
+        "in_sample": {
+          "cagr_pct": 38.5,
+          "sharpe": 1.16,
+          "vol_pct": 32.7,
+          "maxDD_pct": -31.0
+        },
+        "out_sample": {
+          "cagr_pct": 28.2,
+          "sharpe": 0.99,
+          "vol_pct": 29.4,
+          "maxDD_pct": -32.0
+        },
+        "time_in_market_pct": 51.2,
+        "avg_exposure_pct": 30.5,
+        "position_changes_per_year": 19.9,
+        "yearly_pct": {
+          "2019": 24.6,
+          "2020": 141.8,
+          "2021": 81.7,
+          "2022": -16.1,
+          "2023": 49.0,
+          "2024": 47.9,
+          "2025": 4.4
+        },
+        "passes": true
+      },
+      "sma_200": {
+        "full": {
+          "cagr_pct": 42.9,
+          "sharpe": 0.91,
+          "vol_pct": 58.2,
+          "maxDD_pct": -71.5
+        },
+        "in_sample": {
+          "cagr_pct": 53.6,
+          "sharpe": 1.0,
+          "vol_pct": 65.3,
+          "maxDD_pct": -71.5
+        },
+        "out_sample": {
+          "cagr_pct": 26.5,
+          "sharpe": 0.75,
+          "vol_pct": 43.6,
+          "maxDD_pct": -38.9
+        },
+        "time_in_market_pct": 50.8,
+        "avg_exposure_pct": 50.8,
+        "position_changes_per_year": 5.4,
+        "yearly_pct": {
+          "2019": 5.0,
+          "2020": 136.5,
+          "2021": 287.7,
+          "2022": -16.7,
+          "2023": 48.5,
+          "2024": 46.9,
+          "2025": -6.7
+        },
+        "passes": true
+      },
+      "sma_200_vt40": {
+        "full": {
+          "cagr_pct": 34.1,
+          "sharpe": 1.1,
+          "vol_pct": 31.2,
+          "maxDD_pct": -37.2
+        },
+        "in_sample": {
+          "cagr_pct": 39.1,
+          "sharpe": 1.19,
+          "vol_pct": 32.0,
+          "maxDD_pct": -37.2
+        },
+        "out_sample": {
+          "cagr_pct": 26.1,
+          "sharpe": 0.93,
+          "vol_pct": 29.7,
+          "maxDD_pct": -24.5
+        },
+        "time_in_market_pct": 50.8,
+        "avg_exposure_pct": 30.5,
+        "position_changes_per_year": 17.1,
+        "yearly_pct": {
+          "2019": 12.8,
+          "2020": 133.6,
+          "2021": 113.9,
+          "2022": -10.6,
+          "2023": 35.5,
+          "2024": 49.1,
+          "2025": 0.8
+        },
+        "passes": true
+      },
+      "cross_50_200": {
+        "full": {
+          "cagr_pct": 27.4,
+          "sharpe": 0.71,
+          "vol_pct": 59.5,
+          "maxDD_pct": -78.1
+        },
+        "in_sample": {
+          "cagr_pct": 45.6,
+          "sharpe": 0.91,
+          "vol_pct": 66.8,
+          "maxDD_pct": -78.1
+        },
+        "out_sample": {
+          "cagr_pct": 2.6,
+          "sharpe": 0.28,
+          "vol_pct": 44.8,
+          "maxDD_pct": -61.9
+        },
+        "time_in_market_pct": 50.8,
+        "avg_exposure_pct": 50.8,
+        "position_changes_per_year": 2.0,
+        "yearly_pct": {
+          "2019": -0.2,
+          "2020": 123.8,
+          "2021": 330.2,
+          "2022": -31.0,
+          "2023": 23.1,
+          "2024": 2.3,
+          "2025": -17.9
+        },
+        "passes": false
+      },
+      "cross_50_200_vt40": {
+        "full": {
+          "cagr_pct": 21.3,
+          "sharpe": 0.78,
+          "vol_pct": 31.0,
+          "maxDD_pct": -45.9
+        },
+        "in_sample": {
+          "cagr_pct": 30.0,
+          "sharpe": 0.99,
+          "vol_pct": 31.4,
+          "maxDD_pct": -45.9
+        },
+        "out_sample": {
+          "cagr_pct": 9.0,
+          "sharpe": 0.43,
+          "vol_pct": 30.3,
+          "maxDD_pct": -45.4
+        },
+        "time_in_market_pct": 50.8,
+        "avg_exposure_pct": 30.0,
+        "position_changes_per_year": 14.2,
+        "yearly_pct": {
+          "2019": 10.1,
+          "2020": 104.2,
+          "2021": 117.2,
+          "2022": -20.9,
+          "2023": 9.8,
+          "2024": 20.0,
+          "2025": -7.7
+        },
+        "passes": false
+      },
+      "mom_blend": {
+        "full": {
+          "cagr_pct": 37.5,
+          "sharpe": 0.86,
+          "vol_pct": 53.7,
+          "maxDD_pct": -60.7
+        },
+        "in_sample": {
+          "cagr_pct": 48.9,
+          "sharpe": 0.97,
+          "vol_pct": 60.2,
+          "maxDD_pct": -60.7
+        },
+        "out_sample": {
+          "cagr_pct": 20.3,
+          "sharpe": 0.66,
+          "vol_pct": 40.2,
+          "maxDD_pct": -42.2
+        },
+        "time_in_market_pct": 78.0,
+        "avg_exposure_pct": 53.6,
+        "position_changes_per_year": 43.8,
+        "yearly_pct": {
+          "2019": 10.2,
+          "2020": 168.6,
+          "2021": 328.8,
+          "2022": -29.3,
+          "2023": 29.3,
+          "2024": 17.6,
+          "2025": 8.3
+        },
+        "passes": false
+      },
+      "mom_blend_vt40": {
+        "full": {
+          "cagr_pct": 27.4,
+          "sharpe": 0.98,
+          "vol_pct": 29.1,
+          "maxDD_pct": -31.5
+        },
+        "in_sample": {
+          "cagr_pct": 32.3,
+          "sharpe": 1.08,
+          "vol_pct": 30.0,
+          "maxDD_pct": -31.0
+        },
+        "out_sample": {
+          "cagr_pct": 19.7,
+          "sharpe": 0.79,
+          "vol_pct": 27.7,
+          "maxDD_pct": -28.9
+        },
+        "time_in_market_pct": 78.0,
+        "avg_exposure_pct": 32.0,
+        "position_changes_per_year": 52.1,
+        "yearly_pct": {
+          "2019": 17.8,
+          "2020": 131.6,
+          "2021": 113.9,
+          "2022": -20.0,
+          "2023": 21.1,
+          "2024": 29.5,
+          "2025": 7.0
+        },
+        "passes": true
+      },
+      "breakout_50_20": {
+        "full": {
+          "cagr_pct": 36.1,
+          "sharpe": 0.89,
+          "vol_pct": 47.4,
+          "maxDD_pct": -65.0
+        },
+        "in_sample": {
+          "cagr_pct": 40.8,
+          "sharpe": 0.92,
+          "vol_pct": 52.7,
+          "maxDD_pct": -65.0
+        },
+        "out_sample": {
+          "cagr_pct": 28.5,
+          "sharpe": 0.86,
+          "vol_pct": 36.7,
+          "maxDD_pct": -35.2
+        },
+        "time_in_market_pct": 36.1,
+        "avg_exposure_pct": 36.1,
+        "position_changes_per_year": 6.6,
+        "yearly_pct": {
+          "2019": 12.5,
+          "2020": 210.7,
+          "2021": 186.8,
+          "2022": -45.5,
+          "2023": 42.0,
+          "2024": 12.5,
+          "2025": 31.3
+        },
+        "passes": true
+      },
+      "breakout_50_20_vt40": {
+        "full": {
+          "cagr_pct": 24.9,
+          "sharpe": 0.95,
+          "vol_pct": 27.2,
+          "maxDD_pct": -39.1
+        },
+        "in_sample": {
+          "cagr_pct": 26.9,
+          "sharpe": 1.0,
+          "vol_pct": 27.7,
+          "maxDD_pct": -39.1
+        },
+        "out_sample": {
+          "cagr_pct": 21.6,
+          "sharpe": 0.87,
+          "vol_pct": 26.2,
+          "maxDD_pct": -28.6
+        },
+        "time_in_market_pct": 36.1,
+        "avg_exposure_pct": 22.2,
+        "position_changes_per_year": 15.4,
+        "yearly_pct": {
+          "2019": 21.5,
+          "2020": 122.8,
+          "2021": 70.2,
+          "2022": -30.9,
+          "2023": 36.1,
+          "2024": 16.3,
+          "2025": 16.6
+        },
+        "passes": true
+      }
+    },
+    "passing_rules": [
+      "sma_100_vt40",
+      "sma_150_vt40",
+      "sma_200",
+      "sma_200_vt40",
+      "mom_blend_vt40",
+      "breakout_50_20",
+      "breakout_50_20_vt40"
+    ]
+  }
+}

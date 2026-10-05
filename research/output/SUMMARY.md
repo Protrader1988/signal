@@ -1,6 +1,6 @@
 # Backtest results
 
-_Generated 2026-10-05T01:23:12.251838+00:00_
+_Generated 2026-10-05T02:55:57.955971+00:00_
 
 ## US equities/ETFs
 Universe: 65 names · 2017-01-03 → 2026-10-02
@@ -12,8 +12,8 @@ Universe: 65 names · 2017-01-03 → 2026-10-02
 
 ## Major crypto
 Universe: 11 names · 2017-01-01 → 2026-10-05
-- **position_strategy** (full): CAGR 23.1%, Sharpe 0.65, maxDD -80.4%
-    out-of-sample (since 2023-08-02): CAGR -12.6%, Sharpe 0.05, maxDD -69.8%
+- **position_strategy** (full): CAGR 23.0%, Sharpe 0.64, maxDD -80.4%
+    out-of-sample (since 2023-08-02): CAGR -12.7%, Sharpe 0.05, maxDD -69.8%
 - **swing_strategy** (full): CAGR 37.6%, Sharpe 0.7, maxDD -82.9%
     out-of-sample (since 2023-08-02): CAGR 10.1%, Sharpe 0.45, maxDD -75.0%
 - benchmark: CAGR 110.8%, Sharpe 1.31, maxDD -87.1%
