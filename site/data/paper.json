@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T03:28:48.142342+00:00",
+  "updated_utc": "2026-10-05T15:04:01.597721+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -28,6 +28,71 @@
       "qty": 0.073556166,
       "entry": 86551.3591,
       "since": "2026-10-05"
+    },
+    "MU": {
+      "qty": 6.0,
+      "entry": 1066.77,
+      "since": "2026-10-05"
+    },
+    "TXN": {
+      "qty": 24.0,
+      "entry": 292.0429,
+      "since": "2026-10-05"
+    },
+    "INTC": {
+      "qty": 59.0,
+      "entry": 115.5659,
+      "since": "2026-10-05"
+    },
+    "XLK": {
+      "qty": 35.0,
+      "entry": 200.2549,
+      "since": "2026-10-05"
+    },
+    "LLY": {
+      "qty": 6.0,
+      "entry": 1158.0,
+      "since": "2026-10-05"
+    },
+    "VLO": {
+      "qty": 17.0,
+      "entry": 407.27,
+      "since": "2026-10-05"
+    },
+    "CSCO": {
+      "qty": 63.0,
+      "entry": 111.9087,
+      "since": "2026-10-05"
+    },
+    "AMD": {
+      "qty": 11.0,
+      "entry": 626.57,
+      "since": "2026-10-05"
+    },
+    "AMGN": {
+      "qty": 17.0,
+      "entry": 401.7935,
+      "since": "2026-10-05"
+    },
+    "TGT": {
+      "qty": 45.0,
+      "entry": 156.0033,
+      "since": "2026-10-05"
+    },
+    "MRK": {
+      "qty": 49.0,
+      "entry": 142.84,
+      "since": "2026-10-05"
+    },
+    "PSX": {
+      "qty": 26.0,
+      "entry": 265.5481,
+      "since": "2026-10-05"
+    },
+    "UNH": {
+      "qty": 19.0,
+      "entry": 372.1142,
+      "since": "2026-10-05"
     }
   },
   "realized": 0.0,
@@ -35,11 +100,11 @@
   "first_fill": "2026-10-05",
   "spy_start": 769.72,
   "signal": {
-    "unrealized": -6.94,
+    "unrealized": -371.36,
     "realized": 0.0,
-    "total_pl": -6.94,
-    "return_pct": -0.01,
-    "spy_return_pct": 0.0,
+    "total_pl": -371.36,
+    "return_pct": -0.37,
+    "spy_return_pct": 0.37,
     "closed_trades": 0,
     "wins": 0,
     "basis": "Profit and loss on positions Signal opened, as a share of the starting account. Other holdings in the account are excluded."
@@ -53,16 +118,16 @@
     "TSLA"
   ],
   "account": {
-    "equity": 100158.89,
-    "cash": 90486.24,
-    "invested": 6359.45,
-    "other_holdings_value": 3313.21,
-    "return_since_start_pct": -0.03
+    "equity": 99800.16,
+    "cash": 610.95,
+    "invested": 95870.32,
+    "other_holdings_value": 3317.68,
+    "return_since_start_pct": -0.39
   },
   "sizing": {
     "exposure": 0.92,
     "names": 13,
-    "dollars_per_name": 6379.35,
+    "dollars_per_name": 6356.5,
     "stock_share": 0.9,
     "btc_share": 0.1
   },
@@ -73,17 +138,251 @@
   },
   "positions": [
     {
+      "symbol": "CSCO",
+      "qty": 63.0,
+      "avg_entry": 111.91,
+      "price": 112.13,
+      "value": 7064.33,
+      "pl": 14.08,
+      "pl_pct": 0.2
+    },
+    {
+      "symbol": "VLO",
+      "qty": 17.0,
+      "avg_entry": 407.27,
+      "price": 415.0,
+      "value": 7055.0,
+      "pl": 131.41,
+      "pl_pct": 1.9
+    },
+    {
+      "symbol": "UNH",
+      "qty": 19.0,
+      "avg_entry": 372.11,
+      "price": 370.39,
+      "value": 7037.41,
+      "pl": -32.76,
+      "pl_pct": -0.46
+    },
+    {
+      "symbol": "XLK",
+      "qty": 35.0,
+      "avg_entry": 200.25,
+      "price": 200.61,
+      "value": 7021.35,
+      "pl": 12.43,
+      "pl_pct": 0.18
+    },
+    {
+      "symbol": "TXN",
+      "qty": 24.0,
+      "avg_entry": 292.04,
+      "price": 290.85,
+      "value": 6980.28,
+      "pl": -28.75,
+      "pl_pct": -0.41
+    },
+    {
+      "symbol": "PSX",
+      "qty": 26.0,
+      "avg_entry": 265.55,
+      "price": 267.78,
+      "value": 6962.28,
+      "pl": 58.03,
+      "pl_pct": 0.84
+    },
+    {
+      "symbol": "AMD",
+      "qty": 11.0,
+      "avg_entry": 626.57,
+      "price": 629.19,
+      "value": 6921.09,
+      "pl": 28.82,
+      "pl_pct": 0.42
+    },
+    {
+      "symbol": "INTC",
+      "qty": 59.0,
+      "avg_entry": 115.57,
+      "price": 116.84,
+      "value": 6893.32,
+      "pl": 74.93,
+      "pl_pct": 1.1
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6.0,
+      "avg_entry": 1158.0,
+      "price": 1142.07,
+      "value": 6852.42,
+      "pl": -95.58,
+      "pl_pct": -1.38
+    },
+    {
+      "symbol": "MRK",
+      "qty": 49.0,
+      "avg_entry": 142.84,
+      "price": 139.17,
+      "value": 6819.33,
+      "pl": -179.83,
+      "pl_pct": -2.57
+    },
+    {
+      "symbol": "TGT",
+      "qty": 45.0,
+      "avg_entry": 156.0,
+      "price": 150.91,
+      "value": 6790.73,
+      "pl": -229.42,
+      "pl_pct": -3.27
+    },
+    {
+      "symbol": "AMGN",
+      "qty": 17.0,
+      "avg_entry": 401.79,
+      "price": 398.9,
+      "value": 6781.3,
+      "pl": -49.19,
+      "pl_pct": -0.72
+    },
+    {
+      "symbol": "MU",
+      "qty": 6.0,
+      "avg_entry": 1066.77,
+      "price": 1066.91,
+      "value": 6401.46,
+      "pl": 0.84,
+      "pl_pct": 0.01
+    },
+    {
       "symbol": "BTCUSD",
       "qty": 0.073556166,
       "avg_entry": 86551.36,
-      "price": 86457.01,
-      "value": 6359.45,
-      "pl": -6.94,
-      "pl_pct": -0.11
+      "price": 85513.18,
+      "value": 6290.02,
+      "pl": -76.36,
+      "pl_pct": -1.2
     }
   ],
   "orders_this_run": [],
   "recent_orders": [
+    {
+      "symbol": "TGT",
+      "side": "buy",
+      "qty": 45.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 45.0,
+      "fill_price": 156.0
+    },
+    {
+      "symbol": "UNH",
+      "side": "buy",
+      "qty": 19.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 19.0,
+      "fill_price": 372.11
+    },
+    {
+      "symbol": "AMD",
+      "side": "buy",
+      "qty": 11.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 11.0,
+      "fill_price": 626.57
+    },
+    {
+      "symbol": "XLK",
+      "side": "buy",
+      "qty": 35.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 35.0,
+      "fill_price": 200.25
+    },
+    {
+      "symbol": "INTC",
+      "side": "buy",
+      "qty": 59.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 59.0,
+      "fill_price": 115.57
+    },
+    {
+      "symbol": "CSCO",
+      "side": "buy",
+      "qty": 63.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 63.0,
+      "fill_price": 111.91
+    },
+    {
+      "symbol": "MU",
+      "side": "buy",
+      "qty": 6.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 6.0,
+      "fill_price": 1066.77
+    },
+    {
+      "symbol": "VLO",
+      "side": "buy",
+      "qty": 17.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 17.0,
+      "fill_price": 407.27
+    },
+    {
+      "symbol": "AMGN",
+      "side": "buy",
+      "qty": 17.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 17.0,
+      "fill_price": 401.79
+    },
+    {
+      "symbol": "LLY",
+      "side": "buy",
+      "qty": 6.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 6.0,
+      "fill_price": 1158.0
+    },
+    {
+      "symbol": "MRK",
+      "side": "buy",
+      "qty": 49.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 49.0,
+      "fill_price": 142.84
+    },
+    {
+      "symbol": "TXN",
+      "side": "buy",
+      "qty": 24.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 24.0,
+      "fill_price": 292.04
+    },
+    {
+      "symbol": "PSX",
+      "side": "buy",
+      "qty": 26.0,
+      "status": "filled",
+      "submitted": "2026-10-05",
+      "filled_qty": 26.0,
+      "fill_price": 265.55
+    },
     {
       "symbol": "BTC/USD",
       "side": "buy",
@@ -92,123 +391,6 @@
       "submitted": "2026-10-05",
       "filled_qty": 0.073740518,
       "fill_price": 86551.36
-    },
-    {
-      "symbol": "UNH",
-      "side": "buy",
-      "qty": 19.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "XLK",
-      "side": "buy",
-      "qty": 35.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "TXN",
-      "side": "buy",
-      "qty": 24.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "CSCO",
-      "side": "buy",
-      "qty": 63.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "PSX",
-      "side": "buy",
-      "qty": 26.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "TGT",
-      "side": "buy",
-      "qty": 45.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "VLO",
-      "side": "buy",
-      "qty": 17.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "INTC",
-      "side": "buy",
-      "qty": 59.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "AMD",
-      "side": "buy",
-      "qty": 11.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "MU",
-      "side": "buy",
-      "qty": 6.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "AMGN",
-      "side": "buy",
-      "qty": 17.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "MRK",
-      "side": "buy",
-      "qty": 49.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
-    {
-      "symbol": "LLY",
-      "side": "buy",
-      "qty": 6.0,
-      "status": "accepted",
-      "submitted": "2026-10-05",
-      "filled_qty": 0.0,
-      "fill_price": null
     },
     {
       "symbol": "TSLA",
@@ -356,10 +538,6 @@
     }
   ],
   "equity_history": [
-    {
-      "date": "2026-04-03",
-      "equity": 99624.48
-    },
     {
       "date": "2026-04-07",
       "equity": 99657.89
