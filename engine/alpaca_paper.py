@@ -6,8 +6,12 @@ ledger's open POSITION book:
 
   BUY   every ticker the ledger holds open in the position book that the paper
         account does not hold (and has no pending order for).
-  SELL  every ticker the paper account holds that the ledger no longer holds
-        open (stopped out, or reached its time limit).
+  SELL  every ticker THIS SCRIPT bought that the ledger no longer holds open
+        (stopped out, or reached its time limit).
+
+It only ever sells positions it opened itself (tracked in paper.json as
+"managed"). Anything else in the account - positions or orders placed by you or
+by another program - is left alone.
 
 Orders are plain market orders, whole shares, good for the day. The engine runs
 after the US close, so they queue and fill at the NEXT session's open - the
@@ -83,6 +87,22 @@ def run(api, signals, ledger, state, today_utc):
     pending_buy = {o["symbol"] for o in open_orders if o.get("side") == "buy"}
     pending_sell = {o["symbol"] for o in open_orders if o.get("side") == "sell"}
 
+    # --- only manage what this script opened -------------------------------------------------
+    managed = set(state.get("managed") or
+                  [o["symbol"] for o in state.get("orders_this_run", []) if o.get("side") == "buy" and o.get("ok")])
+    cancelled = []
+    # One-time correction: the first run (2026-10-05 02:02 UTC) queued sells for five positions that were
+    # already in the account and were not opened by this script. Cancel exactly those orders, nothing else.
+    if not state.get("cleanup_20261005"):
+        for o in open_orders:
+            if (o.get("side") == "sell" and o.get("symbol") in {"AMZN", "MSFT", "NVDA", "SPY", "TSLA"}
+                    and (o.get("submitted_at") or "").startswith("2026-10-05T02:0")
+                    and not (o.get("client_order_id") or "").startswith("signal-")):
+                c, _ = api("DELETE", f"/v2/orders/{o.get('id')}")
+                cancelled.append({"symbol": o.get("symbol"), "qty": fnum(o.get("qty")), "ok": c in (200, 204)})
+                log(f"CANCEL unintended sell {o.get('symbol')} -> {'ok' if c in (200, 204) else 'FAILED ' + str(c)}")
+        pending_sell -= {c["symbol"] for c in cancelled if c["ok"]}
+
     # target = the ledger's open position book (crypto and the retired swing book are never traded here)
     book = [s for s in ledger.get("open", []) if s.get("book") == "position" and "-USD" not in s.get("ticker", "")]
     target = {s["ticker"]: s for s in book}
@@ -91,10 +111,13 @@ def run(api, signals, ledger, state, today_utc):
 
     # 1) SELL what the ledger no longer holds
     for sym, p in held.items():
+        if sym not in managed: continue            # not ours: never touch it
         if sym in target or sym in pending_sell: continue
         qty = p.get("qty")
-        c, r = api("POST", "/v2/orders", {"symbol": sym, "qty": str(qty), "side": "sell", "type": "market", "time_in_force": "day"})
+        c, r = api("POST", "/v2/orders", {"symbol": sym, "qty": str(qty), "side": "sell", "type": "market", "time_in_force": "day",
+                                          "client_order_id": f"signal-{sym}-sell-{today_utc[:19]}"})
         ok = c in (200, 201)
+        if ok: managed.discard(sym)
         placed.append({"symbol": sym, "side": "sell", "qty": fnum(qty), "ok": ok, "reason": "closed in ledger",
                        "error": None if ok else (r or {}).get("message", f"HTTP {c}") if isinstance(r, dict) else f"HTTP {c}"})
         log(f"SELL {sym} x{qty} -> {'ok' if ok else 'FAILED'}")
@@ -117,9 +140,10 @@ def run(api, signals, ledger, state, today_utc):
             placed.append({"symbol": sym, "side": "buy", "qty": 0, "ok": False, "reason": "new in ledger",
                            "error": f"one share (${px:,.0f}) costs more than the ${dollars:,.0f} allotted"})
             continue
-        c, r = api("POST", "/v2/orders", {"symbol": sym, "qty": str(qty), "side": "buy", "type": "market", "time_in_force": "day"})
+        c, r = api("POST", "/v2/orders", {"symbol": sym, "qty": str(qty), "side": "buy", "type": "market", "time_in_force": "day",
+                                          "client_order_id": f"signal-{sym}-buy-{today_utc[:19]}"})
         ok = c in (200, 201)
-        if ok: budget -= qty * px
+        if ok: budget -= qty * px; managed.add(sym)
         placed.append({"symbol": sym, "side": "buy", "qty": qty, "ok": ok, "reason": "new in ledger", "est_dollars": round(qty * px, 2),
                        "error": None if ok else ((r or {}).get("message", f"HTTP {c}") if isinstance(r, dict) else f"HTTP {c}")})
         log(f"BUY {sym} x{qty} (~${qty*px:,.0f}) -> {'ok' if ok else 'FAILED'}")
@@ -130,14 +154,18 @@ def run(api, signals, ledger, state, today_utc):
     start_equity = state.get("start_equity") or equity
     out.update({
         "status": "ok", "start_equity": round(start_equity, 2),
+        "managed": sorted(managed), "cleanup_20261005": True,
+        "cancelled_this_run": cancelled,
+        "other_positions": sorted(p["symbol"] for p in positions if p["symbol"] not in managed),
         "account": {"equity": round(equity, 2), "cash": round(cash, 2),
-                    "invested": round(sum(fnum(p.get("market_value")) for p in positions), 2),
+                    "invested": round(sum(fnum(p.get("market_value")) for p in positions if p["symbol"] in managed), 2),
+                    "other_holdings_value": round(sum(fnum(p.get("market_value")) for p in positions if p["symbol"] not in managed), 2),
                     "return_since_start_pct": round((equity / start_equity - 1) * 100, 2) if start_equity else 0.0},
         "sizing": {"exposure": exposure, "names": len(target), "dollars_per_name": round(per_name, 2)},
         "positions": [{"symbol": p["symbol"], "qty": fnum(p.get("qty")), "avg_entry": round(fnum(p.get("avg_entry_price")), 2),
                        "price": round(fnum(p.get("current_price")), 2), "value": round(fnum(p.get("market_value")), 2),
                        "pl": round(fnum(p.get("unrealized_pl")), 2), "pl_pct": round(fnum(p.get("unrealized_plpc")) * 100, 2)}
-                      for p in sorted(positions, key=lambda p: -fnum(p.get("market_value")))],
+                      for p in sorted(positions, key=lambda p: -fnum(p.get("market_value"))) if p["symbol"] in managed],
         "orders_this_run": placed,
         "recent_orders": [{"symbol": o.get("symbol"), "side": o.get("side"), "qty": fnum(o.get("qty")), "status": o.get("status"),
                            "submitted": (o.get("submitted_at") or "")[:10], "filled_qty": fnum(o.get("filled_qty")),
