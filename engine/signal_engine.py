@@ -237,7 +237,20 @@ def build_crypto_sleeve(px):
     for tk in on_coins:
         coins.append({"ticker":tk,"entry_ref":round(float(price[tk]),2),
                       "mom_200d_pct":round(float(mom[tk])*100,1)})
-    return {"coins_in_uptrend":coins,"suggested_gross_exposure":exp,
+    # Bitcoin trend rule (research round 5): hold while price is above its 150-day average, else cash.
+    # It passed a pre-set bar: better return per unit of risk than holding, with about half the drawdown.
+    btc_trend={"available":False}
+    if "BTC-USD" in px.columns and px["BTC-USD"].notna().sum()>200:
+        b=px["BTC-USD"].dropna(); sma150=float(b.rolling(150).mean().iloc[-1]); last=float(b.iloc[-1])
+        on=bool(last>sma150)
+        flips=(b>b.rolling(150).mean()).astype(int).diff().abs()
+        since=flips[flips>0].index[-1] if (flips>0).any() else b.index[0]
+        btc_trend={"available":True,"on":on,"price":round(last,2),"sma_150":round(sma150,2),
+                   "gap_pct":round((last/sma150-1)*100,1),"since":str(since.date()),"as_of":str(b.index[-1].date()),
+                   "rule":"Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
+                   "evidence":"2015 to 2026 backtest: 76% a year vs 66% for holding, worst drop -62% vs -83%. "
+                              "Since mid-2022 (data it was not fitted to): 35% a year vs 40%, worst drop -28% vs -53%."}
+    return {"coins_in_uptrend":coins,"suggested_gross_exposure":exp,"btc_trend":btc_trend,
             "label":"RISK-MANAGED BETA — not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
             "as_of":str(t.date())}
 

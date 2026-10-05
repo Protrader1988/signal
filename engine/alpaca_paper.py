@@ -17,8 +17,13 @@ Orders are plain market orders, whole shares, good for the day. The engine runs
 after the US close, so they queue and fill at the NEXT session's open - the
 same entry the ledger's v2 rules assume.
 
-Sizing: each new position gets  equity x position_exposure / number_of_open_names,
+Sizing: each new stock position gets  90% of equity x position_exposure / number_of_open_names,
 capped by the cash actually available. No margin, no shorting, no leverage.
+
+Bitcoin sleeve (research round 5): when signals.json says the Bitcoin trend rule is ON
+(price above its 150-day average) the account holds 10% of equity in Bitcoin; when the
+rule turns OFF it sells what this script bought. Crypto trades around the clock, so
+these orders fill immediately rather than at the next stock-market open.
 
 Safety:
   - The endpoint is hard-coded to Alpaca's PAPER host. This script cannot reach a
@@ -35,7 +40,11 @@ import json, os, sys, traceback, urllib.request, urllib.error
 from datetime import datetime, timezone
 
 BASE = "https://paper-api.alpaca.markets"          # PAPER ONLY. Do not change.
+DATA = "https://data.alpaca.markets"               # market-data host (read-only prices)
 DATA_DIR = "site/data"
+STOCK_SHARE = 0.90      # share of the account the stock position book may use
+BTC_SHARE = 0.10        # share of the account the Bitcoin trend sleeve may use when the rule is ON
+BTC_POS, BTC_ORDER = "BTCUSD", "BTC/USD"   # Alpaca names: positions vs orders
 MAX_NEW_ORDERS_PER_RUN = 25
 MIN_ORDER_DOLLARS = 50.0
 
@@ -44,7 +53,9 @@ def log(m): print(f"[{datetime.now(timezone.utc).strftime('%H:%M:%S')}] {m}", fl
 def make_api(key, secret):
     assert "paper-api" in BASE, "refusing to run against a non-paper endpoint"
     def api(method, path, body=None):
-        req = urllib.request.Request(BASE + path, method=method,
+        url = path if path.startswith(DATA) else BASE + path
+        assert url.startswith(BASE) or (url.startswith(DATA) and method == "GET"), "unexpected endpoint"
+        req = urllib.request.Request(url, method=method,
               data=(json.dumps(body).encode() if body is not None else None),
               headers={"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret,
                        "Content-Type": "application/json", "Accept": "application/json"})
@@ -111,13 +122,12 @@ def run(api, signals, ledger, state, today_utc):
 
     # 1) SELL what the ledger no longer holds
     for sym, p in held.items():
-        if sym not in managed: continue            # not ours: never touch it
+        if sym not in managed or sym == BTC_POS: continue   # not ours (or the Bitcoin sleeve): never touch it here
         if sym in target or sym in pending_sell: continue
         qty = p.get("qty")
         c, r = api("POST", "/v2/orders", {"symbol": sym, "qty": str(qty), "side": "sell", "type": "market", "time_in_force": "day",
                                           "client_order_id": f"signal-{sym}-sell-{today_utc[:19]}"})
         ok = c in (200, 201)
-        if ok: managed.discard(sym)
         placed.append({"symbol": sym, "side": "sell", "qty": fnum(qty), "ok": ok, "reason": "closed in ledger",
                        "error": None if ok else (r or {}).get("message", f"HTTP {c}") if isinstance(r, dict) else f"HTTP {c}"})
         log(f"SELL {sym} x{qty} -> {'ok' if ok else 'FAILED'}")
@@ -125,7 +135,7 @@ def run(api, signals, ledger, state, today_utc):
     # 2) BUY what the ledger holds and the account does not
     to_buy = [t for t in target if t not in held and t not in pending_buy]
     n_names = max(1, len(target))
-    per_name = equity * exposure / n_names
+    per_name = equity * STOCK_SHARE * exposure / n_names
     # cash already spoken for by queued buys
     committed = sum(fnum(o.get("qty")) * fnum(target.get(o["symbol"], {}).get("last_price")) for o in open_orders if o.get("side") == "buy")
     budget = max(0.0, cash - committed) * 0.98
@@ -148,6 +158,66 @@ def run(api, signals, ledger, state, today_utc):
                        "error": None if ok else ((r or {}).get("message", f"HTTP {c}") if isinstance(r, dict) else f"HTTP {c}")})
         log(f"BUY {sym} x{qty} (~${qty*px:,.0f}) -> {'ok' if ok else 'FAILED'}")
 
+    # 2a) BITCOIN TREND SLEEVE: in when the rule is ON, out when it is OFF
+    btc = ((signals.get("crypto") or {}).get("btc_trend") or {})
+    if btc.get("available"):
+        if btc.get("on") and BTC_POS not in managed and not any(o.get("symbol") in (BTC_ORDER, BTC_POS) for o in open_orders):
+            dollars = round(min(equity * BTC_SHARE, max(0.0, budget)), 2)
+            if dollars >= MIN_ORDER_DOLLARS:
+                c, r = api("POST", "/v2/orders", {"symbol": BTC_ORDER, "notional": str(dollars), "side": "buy", "type": "market",
+                                                  "time_in_force": "gtc", "client_order_id": f"signal-BTC-buy-{today_utc[:19]}"})
+                ok = c in (200, 201)
+                if ok: managed.add(BTC_POS); budget -= dollars
+                placed.append({"symbol": "BTC", "side": "buy", "qty": None, "ok": ok, "reason": "Bitcoin trend rule ON", "est_dollars": dollars,
+                               "error": None if ok else ((r or {}).get("message", f"HTTP {c}") if isinstance(r, dict) else f"HTTP {c}")})
+                log(f"BUY BTC ${dollars:,.0f} -> {'ok' if ok else 'FAILED'}")
+            else:
+                placed.append({"symbol": "BTC", "side": "buy", "qty": None, "ok": False, "reason": "Bitcoin trend rule ON",
+                               "error": "not enough free cash for the Bitcoin sleeve yet"})
+        elif (not btc.get("on")) and BTC_POS in managed and BTC_POS in held:
+            qty = min(fnum(held[BTC_POS].get("qty")), fnum((state.get("lots") or {}).get(BTC_POS, {}).get("qty")) or fnum(held[BTC_POS].get("qty")))
+            c, r = api("POST", "/v2/orders", {"symbol": BTC_ORDER, "qty": str(qty), "side": "sell", "type": "market",
+                                              "time_in_force": "gtc", "client_order_id": f"signal-BTC-sell-{today_utc[:19]}"})
+            ok = c in (200, 201)
+            placed.append({"symbol": "BTC", "side": "sell", "qty": qty, "ok": ok, "reason": "Bitcoin trend rule OFF",
+                           "error": None if ok else ((r or {}).get("message", f"HTTP {c}") if isinstance(r, dict) else f"HTTP {c}")})
+            log(f"SELL BTC x{qty} -> {'ok' if ok else 'FAILED'}")
+        if BTC_POS in managed and BTC_POS not in held:
+            # a market crypto order fills at once: refresh so today's snapshot shows it
+            _, positions = api("GET", "/v2/positions"); positions = positions if isinstance(positions, list) else []
+            held = {p["symbol"]: p for p in positions}
+
+    # 2b) SIGNAL-ONLY results. The account may hold other things, so the account balance is not the
+    #     strategy's result. Track only the positions this script opened: what they cost, what they
+    #     are worth, and what was banked when they were sold.
+    lots = dict(state.get("lots") or {}); realized = fnum(state.get("realized")); closed_trades = list(state.get("closed_trades") or [])
+    for sym in list(managed):
+        p = held.get(sym)
+        if p is not None:
+            lots[sym] = {"qty": fnum(p.get("qty")), "entry": round(fnum(p.get("avg_entry_price")), 4),
+                         "since": (lots.get(sym) or {}).get("since") or today_utc[:10]}
+        elif sym in lots:                                   # was held, now gone -> the sell filled
+            lot = lots.pop(sym); managed.discard(sym)
+            q = "BTC%2FUSD" if sym == BTC_POS else sym
+            _, done = api("GET", f"/v2/orders?status=closed&limit=20&direction=desc&symbols={q}")
+            fill = next((fnum(o.get("filled_avg_price")) for o in (done if isinstance(done, list) else [])
+                         if o.get("side") == "sell" and o.get("status") == "filled" and o.get("filled_avg_price")), 0.0)
+            if fill > 0 and lot["entry"] > 0:
+                pl = (fill - lot["entry"]) * lot["qty"]; realized += pl
+                closed_trades.append({"symbol": sym, "qty": lot["qty"], "entry": lot["entry"], "exit": round(fill, 4),
+                                      "pl": round(pl, 2), "pl_pct": round((fill / lot["entry"] - 1) * 100, 2),
+                                      "opened": lot.get("since"), "closed": today_utc[:10]})
+    unrealized = sum(fnum(held[s_].get("unrealized_pl")) for s_ in managed if s_ in held)
+    # benchmark: S&P 500 fund price, from the first day Signal actually holds something
+    spy_now = None
+    try:
+        c_, q = api("GET", f"{DATA}/v2/stocks/SPY/trades/latest?feed=iex")
+        if c_ == 200 and isinstance(q, dict): spy_now = fnum((q.get("trade") or {}).get("p")) or None
+    except Exception: spy_now = None
+    spy_start = state.get("spy_start"); first_fill = state.get("first_fill")
+    if lots and not first_fill:
+        first_fill = today_utc[:10]; spy_start = spy_now
+
     # 3) snapshot for the site (no secrets, no account numbers)
     _, recent = api("GET", "/v2/orders?status=all&limit=50&direction=desc"); recent = recent if isinstance(recent, list) else []
     _, hist = api("GET", "/v2/account/portfolio/history?period=6M&timeframe=1D"); hist = hist if isinstance(hist, dict) else {}
@@ -155,13 +225,25 @@ def run(api, signals, ledger, state, today_utc):
     out.update({
         "status": "ok", "start_equity": round(start_equity, 2),
         "managed": sorted(managed), "cleanup_20261005": True,
+        "lots": lots, "realized": round(realized, 2), "closed_trades": closed_trades[-200:],
+        "first_fill": first_fill, "spy_start": spy_start,
+        "signal": {"unrealized": round(unrealized, 2), "realized": round(realized, 2),
+                   "total_pl": round(unrealized + realized, 2),
+                   "return_pct": round((unrealized + realized) / start_equity * 100, 2) if start_equity else 0.0,
+                   "spy_return_pct": round((spy_now / spy_start - 1) * 100, 2) if (spy_now and spy_start) else None,
+                   "closed_trades": len(closed_trades),
+                   "wins": sum(1 for t in closed_trades if t["pl"] > 0),
+                   "basis": "Profit and loss on positions Signal opened, as a share of the starting account. "
+                            "Other holdings in the account are excluded."},
         "cancelled_this_run": cancelled,
         "other_positions": sorted(p["symbol"] for p in positions if p["symbol"] not in managed),
         "account": {"equity": round(equity, 2), "cash": round(cash, 2),
                     "invested": round(sum(fnum(p.get("market_value")) for p in positions if p["symbol"] in managed), 2),
                     "other_holdings_value": round(sum(fnum(p.get("market_value")) for p in positions if p["symbol"] not in managed), 2),
                     "return_since_start_pct": round((equity / start_equity - 1) * 100, 2) if start_equity else 0.0},
-        "sizing": {"exposure": exposure, "names": len(target), "dollars_per_name": round(per_name, 2)},
+        "sizing": {"exposure": exposure, "names": len(target), "dollars_per_name": round(per_name, 2),
+                   "stock_share": STOCK_SHARE, "btc_share": BTC_SHARE},
+        "btc_rule": {"on": btc.get("on"), "price": btc.get("price"), "sma_150": btc.get("sma_150")} if btc.get("available") else None,
         "positions": [{"symbol": p["symbol"], "qty": fnum(p.get("qty")), "avg_entry": round(fnum(p.get("avg_entry_price")), 2),
                        "price": round(fnum(p.get("current_price")), 2), "value": round(fnum(p.get("market_value")), 2),
                        "pl": round(fnum(p.get("unrealized_pl")), 2), "pl_pct": round(fnum(p.get("unrealized_plpc")) * 100, 2)}
