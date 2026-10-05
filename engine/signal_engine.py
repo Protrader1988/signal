@@ -254,6 +254,80 @@ def build_crypto_sleeve(px):
             "label":"RISK-MANAGED BETA — not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
             "as_of":str(t.date())}
 
+# ---------------- aggressive mix: TRACKED, never traded ----------------
+AGG_START=100000.0; AGG_W_STOCK=0.70; AGG_W_BTC=0.30; AGG_TOP_FRAC=0.10
+AGG_COST_STOCK=10/1e4; AGG_COST_BTC=25/1e4
+
+def top_momentum(px, frac):
+    """Same ranking as the position book (6- and 12-month momentum, above the 200-day average)."""
+    t=px.index[-1]; price=px.loc[t]; sma200=px.rolling(200).mean().loc[t]
+    m12=px.shift(21).loc[t]/px.shift(252).loc[t]-1; m6=px.shift(21).loc[t]/px.shift(126).loc[t]-1
+    score=((z(m12)+z(m6))/2)[price>sma200].dropna()
+    n=max(1,int(round(len(score)*frac)))
+    return list(score.sort_values(ascending=False).head(n).index)
+
+def update_aggressive(state, eq_px, cr_px, as_of, btc_on):
+    """Research round 6's 70/30 mix: 70% in the top 10% of momentum stocks, 30% in Bitcoin while its
+    trend rule is ON (cash when OFF). Rebalanced at the first run of each calendar month.
+    This is a paper CALCULATION on real closing prices with costs charged. No orders are placed."""
+    price=eq_px.iloc[-1]
+    btc_px=float(cr_px["BTC-USD"].dropna().iloc[-1]) if "BTC-USD" in cr_px.columns else None
+    spy_px=float(price["SPY"]) if "SPY" in price.index and np.isfinite(price["SPY"]) else None
+    st=state if state.get("started") else {"started":as_of,"cash":AGG_START,"shares":{},"btc_qty":0.0,"month":None,
+                                           "history":[],"trades":[],"spy_start":spy_px,"start_value":AGG_START}
+    def px_of(tk):
+        v=price.get(tk,np.nan); return float(v) if np.isfinite(v) else None
+    def stock_value(): return sum(q*(px_of(tk) or 0.0) for tk,q in st["shares"].items())
+    def total(): return st["cash"]+stock_value()+st["btc_qty"]*(btc_px or 0.0)
+
+    if st.get("month")!=as_of[:7]:                       # monthly rebalance
+        tot=total(); picks=[tk for tk in top_momentum(eq_px, AGG_TOP_FRAC) if px_of(tk)]
+        new={tk:(tot*AGG_W_STOCK/len(picks))/px_of(tk) for tk in picks} if picks else {}
+        turn=sum(abs(new.get(tk,0.0)-st["shares"].get(tk,0.0))*(px_of(tk) or 0.0) for tk in set(new)|set(st["shares"]))
+        btc_target=(tot*AGG_W_BTC/btc_px) if (btc_on and btc_px) else 0.0
+        btc_turn=abs(btc_target-st["btc_qty"])*(btc_px or 0.0)
+        cost=turn*AGG_COST_STOCK+btc_turn*AGG_COST_BTC
+        added=sorted(set(new)-set(st["shares"])); dropped=sorted(set(st["shares"])-set(new))
+        f=(tot-cost)/tot if tot>0 else 1.0               # pay the trading cost out of the positions, never borrow
+        new={tk:q*f for tk,q in new.items()}; btc_target*=f
+        st["shares"]=new; st["btc_qty"]=btc_target
+        st["cash"]=tot-sum(q*px_of(tk) for tk,q in new.items())-btc_target*(btc_px or 0.0)-cost
+        st["trades"].append({"date":as_of,"type":"monthly rebalance","added":added,"dropped":dropped,
+                             "bitcoin":"held" if btc_target>0 else "cash","cost":round(cost,2)})
+        st["month"]=as_of[:7]
+    elif btc_px:                                         # between rebalances: only the Bitcoin rule can trade
+        if (not btc_on) and st["btc_qty"]>0:
+            proceeds=st["btc_qty"]*btc_px; st["cash"]+=proceeds*(1-AGG_COST_BTC); st["btc_qty"]=0.0
+            st["trades"].append({"date":as_of,"type":"Bitcoin rule OFF - sold","cost":round(proceeds*AGG_COST_BTC,2)})
+        elif btc_on and st["btc_qty"]==0:
+            spend=min(st["cash"], total()*AGG_W_BTC)
+            if spend>1:
+                st["btc_qty"]=spend*(1-AGG_COST_BTC)/btc_px; st["cash"]-=spend
+                st["trades"].append({"date":as_of,"type":"Bitcoin rule ON - bought","cost":round(spend*AGG_COST_BTC,2)})
+
+    val=total(); row={"date":as_of,"value":round(val,2),
+                      "spy":round(AGG_START*spy_px/st["spy_start"],2) if (spy_px and st.get("spy_start")) else None}
+    if st["history"] and st["history"][-1]["date"]==as_of: st["history"][-1]=row
+    else: st["history"].append(row)
+    vals=[h["value"] for h in st["history"]]; peak=np.maximum.accumulate(vals)
+    st["trades"]=st["trades"][-60:]
+    st.update({"updated":as_of,"value":round(val,2),
+               "return_pct":round((val/AGG_START-1)*100,2),
+               "spy_return_pct":round((row["spy"]/AGG_START-1)*100,2) if row["spy"] else None,
+               "max_drawdown_pct":round(float(((np.array(vals)/peak)-1).min())*100,2),
+               "days_tracked":len(st["history"]),
+               "holdings":sorted([{"ticker":tk,"shares":round(q,4),"price":round(px_of(tk) or 0.0,2),"value":round(q*(px_of(tk) or 0.0),2),
+                                   "weight_pct":round(100*q*(px_of(tk) or 0.0)/val,1)} for tk,q in st["shares"].items()],
+                                 key=lambda h:-h["value"])
+                          +([{"ticker":"BTC","shares":round(st["btc_qty"],6),"price":round(btc_px,2),"value":round(st["btc_qty"]*btc_px,2),
+                              "weight_pct":round(100*st["btc_qty"]*btc_px/val,1)}] if st["btc_qty"]>0 else []),
+               "cash":round(st["cash"],2),"cash_pct":round(100*st["cash"]/val,1),
+               "label":"TRACKED, NOT TRADED. A calculation on real closing prices with trading costs charged; no orders are placed.",
+               "rule":"70% in the top 10% of momentum stocks, 30% in Bitcoin while it is above its 150-day average (cash otherwise). Rebalanced monthly.",
+               "backtest":"2018 to 2026 backtest: 41% a year, worst drop -31%, more than two years underwater at one point; "
+                          "lost 14% in 2018. Treat as an upper bound: the stock list was picked with hindsight."})
+    return st
+
 # ---------------- shadow ledger ----------------
 def load_json(path, default):
     if os.path.exists(path):
@@ -457,6 +531,14 @@ def main():
     ledger=update_ledger(ledger, signals, eq, cr, eq_op)
     json.dump(ledger, open(f"{DATA_DIR}/ledger.json","w"), indent=2)
     log(f"updated ledger: {len(ledger['open'])} open, {len(ledger['closed'])} closed")
+
+    try:
+        agg=update_aggressive(load_json(f"{DATA_DIR}/aggressive.json", {}), eq, cr, as_of,
+                              bool((crypto.get("btc_trend") or {}).get("on")))
+        json.dump(agg, open(f"{DATA_DIR}/aggressive.json","w"), indent=2)
+        log(f"aggressive mix (tracked): ${agg['value']:,.0f} · {agg['return_pct']}% since {agg['started']}")
+    except Exception as e:
+        log(f"aggressive mix tracking failed: {e}")
 
     json.dump({"updated_utc":datetime.now(timezone.utc).isoformat(),
                "equity_universe":len(EQUITY_UNIVERSE),"crypto_universe":len(CRYPTO_UNIVERSE)},
