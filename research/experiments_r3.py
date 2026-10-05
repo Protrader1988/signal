@@ -168,7 +168,23 @@ def main():
     open("research/output/EXPERIMENTS_R3.md","w").write("\n".join(L))
     log("done")
 
+def run_round4():
+    """Chain research round 4 from here so it runs inside the existing backtest
+    workflow step (no workflow edit needed). Its output is written to
+    research/output/experiments_r4_log.txt. A round-4 failure never fails round 3."""
+    import subprocess, os
+    here=os.path.dirname(os.path.abspath(__file__)); r4=os.path.join(here,"experiments_r4.py")
+    if not os.path.exists(r4): return
+    try:
+        p=subprocess.run([sys.executable,r4],capture_output=True,text=True,timeout=1500)
+        os.makedirs("research/output",exist_ok=True)
+        open("research/output/experiments_r4_log.txt","w").write((p.stdout or "")+(p.stderr or ""))
+        log(f"round 4 exit code {p.returncode}")
+    except Exception as e:
+        log(f"round 4 did not run: {e}")
+
 if __name__=="__main__":
     try: main()
     except Exception as e:
         open("research/output/EXPERIMENTS_R3_ERROR.txt","w").write(traceback.format_exc()); log(f"FATAL {e}"); sys.exit(1)
+    run_round4()
