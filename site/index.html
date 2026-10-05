@@ -240,6 +240,7 @@
     <a class="fkey" href="#chart"><b>F7</b>PERFORMANCE</a>
     <a class="fkey" href="#ledger"><b>F8</b>TRACK RECORD</a>
     <a class="fkey" href="#paper"><b>F9</b>PAPER ACCOUNT</a>
+    <a class="fkey" href="#aggressive"><b>F10</b>AGGRESSIVE MIX</a>
   </div>
 
   <!-- PLAYBOOK -->
@@ -374,6 +375,17 @@
     <div class="card" style="margin-top:16px">
       <div class="card-head"><span class="code">ORDERS</span><span class="t">Recent orders</span></div>
       <div id="paperOrders"></div>
+    </div>
+  </section>
+
+  <section id="aggressive">
+    <div class="eyebrow"><span class="no">A</span><h2>Aggressive Mix</h2>
+      <span class="hint">tracked on real prices · not traded · 70% concentrated momentum + 30% Bitcoin trend</span></div>
+    <div class="statusgrid" id="aggTiles"></div>
+    <div id="aggNote" style="margin-top:14px"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">MIX</span><span class="t">Holdings</span><span class="expo" id="aggCount"></span></div>
+      <div id="aggHoldings"></div>
     </div>
   </section>
 
@@ -865,6 +877,23 @@ function draw(){
     {h:'Return',k:'return_pct',num:true,cls:sgn,f:v=>`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`},{h:'Days',k:'days_held',num:true}],
     'No open positions yet — they appear the moment the engine runs.');
 
+  // AGGRESSIVE MIX - tracked, not traded
+  (function(){
+    const ag=DATA.agg;
+    if(!ag||!ag.started){$('aggTiles').innerHTML='';$('aggHoldings').innerHTML='<div class="empty">Tracking starts on the next engine run.</div>';$('aggNote').innerHTML='';return;}
+    const money=v=>'$'+(+v||0).toLocaleString(undefined,{maximumFractionDigits:0});
+    const tiles=[{k:'Value',v:money(ag.value),s:'started at '+money(ag.start_value)+' · '+ag.started},
+      {k:'Return since start',v:pc(ag.return_pct||0),s:`${ag.days_tracked} day${ag.days_tracked===1?'':'s'} tracked`},
+      {k:'S&P 500 over the same days',v:ag.spy_return_pct!=null?pc(ag.spy_return_pct):'—',s:'the number to beat'},
+      {k:'Worst drop so far',v:pc(ag.max_drawdown_pct||0),s:'backtest worst was -31%'}];
+    $('aggTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+    $('aggNote').innerHTML=`<div class="banner"><b>${ag.label||''}</b> ${ag.rule||''} ${ag.backtest||''}</div>`;
+    $('aggCount').innerHTML=`<span class="mono" style="color:var(--text2)">${(ag.holdings||[]).length} held · ${ag.cash_pct}% cash</span>`;
+    $('aggHoldings').innerHTML=tbl(ag.holdings||[],[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},{h:'Price',k:'price',num:true,f:v=>'$'+v.toLocaleString()},
+      {h:'Value',k:'value',num:true,f:v=>money(v)},{h:'Weight',k:'weight_pct',num:true,f:v=>v+'%'}],'No holdings yet.');
+  })();
+
   // PAPER ACCOUNT (Alpaca paper) - real fills, simulated money
   (function(){
     const pa=DATA.paper;
@@ -910,7 +939,8 @@ function draw(){
   try{
     const [sig,led,bt,meta,cv,val,watch,news,digest,policy]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null)]);
     const paper=await j('paper.json').catch(()=>null);
-    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,paper};draw();
+    const agg=await j('aggressive.json').catch(()=>null);
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,paper,agg};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';
