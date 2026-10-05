@@ -781,6 +781,8 @@ function draw(){
   ],'The swing book was retired in October 2026: it was flat before costs in live tracking. Open swing trades run off on their own.');
 
   const c=sig.crypto||{};let ch=`<div style="padding:14px 20px 2px"><div class="banner">${c.label||''}</div></div>`;
+  const bt_=c.btc_trend||{};
+  if(bt_.available) ch+=`<div style="padding:10px 20px 2px"><div class="banner ${bt_.on?'ok':'err'}"><b>Bitcoin trend rule: ${bt_.on?'ON — hold Bitcoin':'OFF — hold cash'}</b> since ${bt_.since}. Price $${(bt_.price||0).toLocaleString()} is ${Math.abs(bt_.gap_pct)}% ${bt_.gap_pct>=0?'above':'below'} its 150-day average ($${(bt_.sma_150||0).toLocaleString()}). ${bt_.rule||''} ${bt_.evidence||''} The paper account gives this rule 10% of its balance.</div></div>`;
   if(c.coins_in_uptrend&&c.coins_in_uptrend.length){const cexp=ACCT*(c.suggested_gross_exposure||0);const cEach=cexp/c.coins_in_uptrend.length;
     ch+=`<div style="padding:8px 20px 0"><span class="expo mono" style="color:var(--text2)">high-risk sleeve · ~${usd(cEach)} per coin if you choose to hold</span></div>`;
     ch+=tbl(c.coins_in_uptrend,[{h:'Coin',k:'ticker',f:v=>`<span class="chip">${v.replace('-USD','')}<span class="ex"> /USD</span></span>`},{h:'Ref',k:'entry_ref',num:true,f:v=>'$'+v.toLocaleString()},{h:'200D',k:'mom_200d_pct',num:true,cls:sgn,f:v=>pc(v)}],'');
@@ -872,13 +874,15 @@ function draw(){
       $('paperNote').innerHTML=`<div class="banner err">${why}</div>`;return;
     }
     const a=pa.account||{};const money=v=>'$'+(+v||0).toLocaleString(undefined,{maximumFractionDigits:0});
-    const tiles=[{k:'Equity',v:money(a.equity),s:'started at '+money(pa.start_equity)+' · '+(pa.started||'')},
-      {k:'Return since start',v:pc(a.return_since_start_pct||0),s:'paper account, after real fills'},
+    const sg=pa.signal||{};
+    const tiles=[{k:'Signal profit / loss',v:(sg.total_pl>=0?'+':'-')+money(Math.abs(sg.total_pl||0)),s:`${pc(sg.return_pct||0)} of the starting account · ${money(sg.realized||0)} banked`},
+      {k:'S&P 500 over the same days',v:sg.spy_return_pct!=null?pc(sg.spy_return_pct):'—',s:pa.first_fill?'since first fill '+pa.first_fill:'starts at the first fill'},
+      {k:'Closed trades',v:sg.closed_trades||0,s:(sg.closed_trades?`${sg.wins||0} winners`:'none closed yet')},
       {k:'Invested',v:money(a.invested),s:money(a.cash)+' cash'},
       {k:'Positions',v:(pa.positions||[]).length,s:`target ${((pa.sizing||{}).names)||0} names · ~${money((pa.sizing||{}).dollars_per_name)} each`}];
     $('paperTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
     const failed=(pa.orders_this_run||[]).filter(o=>!o.ok);
-    $('paperNote').innerHTML=`<div class="banner ${failed.length?'':'ok'}">${pa.note||''}${failed.length?' <b>Orders not placed this run:</b> '+failed.map(o=>`${o.symbol} (${o.error})`).join('; '):''}${pa.last_error?' <b>Last run failed:</b> '+((pa.last_error.errors||[]).join(' ')):''}</div>`;
+    $('paperNote').innerHTML=`<div class="banner ${failed.length?'':'ok'}">${pa.note||''}${(pa.other_positions||[]).length?` The account also holds ${pa.other_positions.length} positions Signal did not open (${pa.other_positions.join(', ')}); they are left alone and not counted here.`:''}${failed.length?' <b>Orders not placed this run:</b> '+failed.map(o=>`${o.symbol} (${o.error})`).join('; '):''}${pa.last_error?' <b>Last run failed:</b> '+((pa.last_error.errors||[]).join(' ')):''}</div>`;
     $('paperCount').innerHTML=(pa.positions||[]).length?`<span class="mono" style="color:var(--text2)">${pa.positions.length} held</span>`:'';
     $('paperPositions').innerHTML=tbl(pa.positions||[],[
       {h:'Ticker',k:'symbol',f:v=>`<span class="chip">${v}</span>`},{h:'Shares',k:'qty',num:true},
