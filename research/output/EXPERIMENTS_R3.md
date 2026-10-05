@@ -1,6 +1,6 @@
 # Research round 3 — drawdown control
 
-_Generated 2026-10-05T03:10:50.801576+00:00_
+_Generated 2026-10-05T03:23:56.633155+00:00_
 
 ## EXP A Equity momentum + risk overlays (goal: cut -33% maxDD, keep Sharpe)
 - **base**: full CAGR 27.1% Sharpe 1.04 maxDD -31.2% | OOS CAGR 36.6% Sharpe 1.49 maxDD -26.7%
@@ -9,6 +9,6 @@ _Generated 2026-10-05T03:10:50.801576+00:00_
 - **plus_both**: full CAGR 12.5% Sharpe 0.93 maxDD -19.2% | OOS CAGR 22.9% Sharpe 1.49 maxDD -13.8%
 
 ## EXP B Crypto + risk overlays (goal: make -85% survivable)
-- **buy_hold**: full CAGR 75.5% Sharpe 1.1 maxDD -87.1% | OOS CAGR 22.8% Sharpe 0.64 maxDD -71.6%
+- **buy_hold**: full CAGR 75.5% Sharpe 1.1 maxDD -87.1% | OOS CAGR 22.7% Sharpe 0.64 maxDD -71.6%
 - **voltarget40**: full CAGR 41.5% Sharpe 1.01 maxDD -58.9% | OOS CAGR 28.9% Sharpe 0.81 maxDD -57.5%
-- **trend_plus_voltarget40**: full CAGR 30.7% Sharpe 0.85 maxDD -65.6% | OOS CAGR 20.9% Sharpe 0.69 maxDD -45.1%
+- **trend_plus_voltarget40**: full CAGR 30.7% Sharpe 0.85 maxDD -65.6% | OOS CAGR 20.8% Sharpe 0.69 maxDD -45.1%

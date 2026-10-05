@@ -1,6 +1,6 @@
 # Research round 4 — win bigger, lose smaller?
 
-_Generated 2026-10-05T03:10:58.769537+00:00_
+_Generated 2026-10-05T03:24:03.234464+00:00_
 
 ## EXP A Stops on the position book (per trade, after 20 bps round trip)
 - **no_stop**: n 1422 · win 55.8% · avg trade 1.77% · avg win 8.23% · avg loss -6.4% · worst -33.7% · win/loss 1.29 · t 6.32 | OOS avg trade 2.65% avg loss -5.97% (n 570)

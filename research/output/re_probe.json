@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-05T03:12:13.250632+00:00",
+  "generated_utc": "2026-10-05T03:25:40.078596+00:00",
   "results": [
     {
       "name": "NYC PLUTO (Socrata 64uk-42ks)",
@@ -24,23 +24,9 @@
     },
     {
       "name": "NYC ACRIS master (bnx9-e6tj)",
-      "ok": true,
+      "ok": false,
       "note": "deeds/mortgages",
-      "rows": 1,
-      "sample_fields": [
-        "document_id",
-        "record_type",
-        "crfn",
-        "recorded_borough",
-        "doc_type",
-        "document_date",
-        "document_amt",
-        "recorded_datetime",
-        "modified_date",
-        "reel_yr",
-        "reel_nbr",
-        "reel_pg"
-      ],
+      "error": "TimeoutError: The read operation timed out",
       "url": "https://data.cityofnewyork.us/resource/bnx9-e6tj.json?$limit=1"
     },
     {
@@ -239,6 +225,6 @@
       "url": "https://www.zoningatlas.org/api"
     }
   ],
-  "ok_count": 13,
+  "ok_count": 12,
   "total": 16
 }

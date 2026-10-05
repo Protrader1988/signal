@@ -1,6 +1,6 @@
 # Research round 6 — the aggressive mix (target 30-60% a year)
 
-_Generated 2026-10-05T03:11:19.589156+00:00_
+_Generated 2026-10-05T03:24:21.724442+00:00_
 
 Qualifying bar (set in advance): OOS return >= 30%/yr AND full-history max drawdown no deeper than -50% AND beat SPY in >= 60% of calendar years.
 

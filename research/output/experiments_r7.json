@@ -1,0 +1,536 @@
+{
+  "generated_utc": "2026-10-05T03:24:29.304505+00:00",
+  "bar": "thematic momentum top 10% must beat broad momentum top 10% on OOS Sharpe AND full-history max drawdown no more than 10 points deeper",
+  "tickers_loaded": {
+    "ALAB": "2024-03-20",
+    "ALB": "2017-01-03",
+    "AMAT": "2017-01-03",
+    "AMD": "2017-01-03",
+    "AMZN": "2017-01-03",
+    "ANET": "2017-01-03",
+    "ARM": "2023-09-14",
+    "ASML": "2017-01-03",
+    "ASTS": "2019-11-01",
+    "AVAV": "2017-01-03",
+    "AVGO": "2017-01-03",
+    "BBAI": "2021-04-05",
+    "BE": "2018-07-25",
+    "BKSY": "2019-12-20",
+    "BWXT": "2017-01-03",
+    "CCJ": "2017-01-03",
+    "CEG": "2022-01-19",
+    "COHR": "2017-01-03",
+    "CRDO": "2022-01-27",
+    "CRML": "2022-02-07",
+    "CRWV": "2025-03-28",
+    "CVX": "2017-01-03",
+    "CW": "2017-01-03",
+    "DELL": "2017-01-03",
+    "DRS": "2017-01-03",
+    "ETN": "2017-01-03",
+    "FCX": "2017-01-03",
+    "FLY": "2025-08-07",
+    "FSLR": "2017-01-03",
+    "GD": "2017-01-03",
+    "GEV": "2024-03-27",
+    "GOOGL": "2017-01-03",
+    "HII": "2017-01-03",
+    "HWM": "2017-01-03",
+    "INTC": "2017-01-03",
+    "IRDM": "2017-01-03",
+    "KLAC": "2017-01-03",
+    "KRMN": "2025-02-13",
+    "KTOS": "2017-01-03",
+    "LDOS": "2017-01-03",
+    "LEU": "2017-01-03",
+    "LHX": "2017-01-03",
+    "LMT": "2017-01-03",
+    "LRCX": "2017-01-03",
+    "LUNR": "2021-11-17",
+    "META": "2017-01-03",
+    "MP": "2020-06-22",
+    "MRCY": "2017-01-03",
+    "MRVL": "2017-01-03",
+    "MSFT": "2017-01-03",
+    "MU": "2017-01-03",
+    "NB": "2023-03-21",
+    "NEE": "2017-01-03",
+    "NNE": "2024-05-08",
+    "NOC": "2017-01-03",
+    "NVDA": "2017-01-03",
+    "OKLO": "2021-07-08",
+    "OMEX": "2017-01-03",
+    "ORCL": "2017-01-03",
+    "PL": "2021-04-26",
+    "PLTR": "2020-09-30",
+    "PWR": "2017-01-03",
+    "QCOM": "2017-01-03",
+    "RCAT": "2017-01-03",
+    "RDW": "2021-01-14",
+    "REMX": "2017-01-03",
+    "RKLB": "2020-11-24",
+    "RTX": "2017-01-03",
+    "SMCI": "2017-01-03",
+    "SMR": "2022-03-01",
+    "SPIR": "2020-11-03",
+    "SQM": "2017-01-03",
+    "TDG": "2017-01-03",
+    "TLN": "2023-06-02",
+    "TMC": "2021-09-10",
+    "TSM": "2017-01-03",
+    "TXN": "2017-01-03",
+    "UEC": "2017-01-03",
+    "USAR": "2023-07-17",
+    "UUUU": "2017-01-03",
+    "VOYG": "2025-06-11",
+    "VRT": "2018-08-02",
+    "VSAT": "2017-01-03",
+    "VST": "2017-01-03",
+    "XOM": "2017-01-03"
+  },
+  "tickers_missing": [],
+  "names_with_a_year_of_data_by_year": {
+    "2018": 0,
+    "2019": 56,
+    "2020": 58,
+    "2021": 60,
+    "2022": 64,
+    "2023": 70,
+    "2024": 74,
+    "2025": 78,
+    "2026": 81
+  },
+  "period": "2018-01-03 to 2026-10-02",
+  "out_sample_from": "2023-09-10",
+  "portfolios": {
+    "theme_momentum_top10": {
+      "full": {
+        "cagr_pct": 42.7,
+        "sharpe": 0.97,
+        "vol_pct": 48.8,
+        "maxDD_pct": -53.3,
+        "longest_underwater_days": 623,
+        "worst_12m_pct": -35.3,
+        "best_12m_pct": 243.7
+      },
+      "out_sample": {
+        "cagr_pct": 95.5,
+        "sharpe": 1.38,
+        "vol_pct": 62.5,
+        "maxDD_pct": -53.3,
+        "longest_underwater_days": 153,
+        "worst_12m_pct": 2.9,
+        "best_12m_pct": 243.7
+      },
+      "yearly_pct": {
+        "2018": -13.1,
+        "2019": 35.6,
+        "2020": 63.1,
+        "2021": 17.0,
+        "2022": -18.8,
+        "2023": 81.0,
+        "2024": 151.5,
+        "2025": 53.4
+      }
+    },
+    "theme_momentum_top20": {
+      "full": {
+        "cagr_pct": 41.9,
+        "sharpe": 1.06,
+        "vol_pct": 40.9,
+        "maxDD_pct": -48.6,
+        "longest_underwater_days": 795,
+        "worst_12m_pct": -36.0,
+        "best_12m_pct": 254.4
+      },
+      "out_sample": {
+        "cagr_pct": 92.7,
+        "sharpe": 1.5,
+        "vol_pct": 53.1,
+        "maxDD_pct": -48.6,
+        "longest_underwater_days": 133,
+        "worst_12m_pct": 25.0,
+        "best_12m_pct": 254.4
+      },
+      "yearly_pct": {
+        "2018": -13.6,
+        "2019": 50.7,
+        "2020": 65.4,
+        "2021": 29.8,
+        "2022": -26.3,
+        "2023": 49.1,
+        "2024": 157.3,
+        "2025": 83.7
+      }
+    },
+    "theme_equal_weight": {
+      "full": {
+        "cagr_pct": 39.5,
+        "sharpe": 1.29,
+        "vol_pct": 29.0,
+        "maxDD_pct": -37.1,
+        "longest_underwater_days": 563,
+        "worst_12m_pct": -19.1,
+        "best_12m_pct": 179.4
+      },
+      "out_sample": {
+        "cagr_pct": 66.7,
+        "sharpe": 1.71,
+        "vol_pct": 33.1,
+        "maxDD_pct": -29.3,
+        "longest_underwater_days": 122,
+        "worst_12m_pct": 22.0,
+        "best_12m_pct": 179.4
+      },
+      "yearly_pct": {
+        "2018": -5.6,
+        "2019": 59.8,
+        "2020": 66.8,
+        "2021": 26.9,
+        "2022": -11.7,
+        "2023": 50.6,
+        "2024": 78.1,
+        "2025": 87.5
+      }
+    },
+    "broad_momentum_top10": {
+      "full": {
+        "cagr_pct": 27.2,
+        "sharpe": 1.01,
+        "vol_pct": 27.6,
+        "maxDD_pct": -32.7,
+        "longest_underwater_days": 513,
+        "worst_12m_pct": -16.9,
+        "best_12m_pct": 135.6
+      },
+      "out_sample": {
+        "cagr_pct": 43.5,
+        "sharpe": 1.52,
+        "vol_pct": 26.0,
+        "maxDD_pct": -27.3,
+        "longest_underwater_days": 234,
+        "worst_12m_pct": -16.1,
+        "best_12m_pct": 109.9
+      },
+      "yearly_pct": {
+        "2018": -1.9,
+        "2019": 29.6,
+        "2020": 69.0,
+        "2021": 11.3,
+        "2022": -2.4,
+        "2023": 31.1,
+        "2024": 34.0,
+        "2025": 25.2
+      }
+    },
+    "spy_buy_hold": {
+      "full": {
+        "cagr_pct": 14.5,
+        "sharpe": 0.81,
+        "vol_pct": 19.0,
+        "maxDD_pct": -33.7,
+        "longest_underwater_days": 708,
+        "worst_12m_pct": -19.7,
+        "best_12m_pct": 77.5
+      },
+      "out_sample": {
+        "cagr_pct": 21.1,
+        "sharpe": 1.33,
+        "vol_pct": 15.2,
+        "maxDD_pct": -18.8,
+        "longest_underwater_days": 126,
+        "worst_12m_pct": -3.1,
+        "best_12m_pct": 43.3
+      },
+      "yearly_pct": {
+        "2018": -5.2,
+        "2019": 31.2,
+        "2020": 18.3,
+        "2021": 28.7,
+        "2022": -18.2,
+        "2023": 26.2,
+        "2024": 24.9,
+        "2025": 17.7
+      }
+    },
+    "theme_mix_70_30": {
+      "full": {
+        "cagr_pct": 45.2,
+        "sharpe": 1.17,
+        "vol_pct": 38.0,
+        "maxDD_pct": -45.5,
+        "longest_underwater_days": 605,
+        "worst_12m_pct": -34.2,
+        "best_12m_pct": 301.8
+      },
+      "out_sample": {
+        "cagr_pct": 80.2,
+        "sharpe": 1.5,
+        "vol_pct": 46.5,
+        "maxDD_pct": -44.8,
+        "longest_underwater_days": 152,
+        "worst_12m_pct": 2.5,
+        "best_12m_pct": 169.3
+      },
+      "yearly_pct": {
+        "2018": -23.9,
+        "2019": 67.2,
+        "2020": 103.1,
+        "2021": 26.3,
+        "2022": -14.4,
+        "2023": 88.8,
+        "2024": 133.7,
+        "2025": 34.1
+      }
+    },
+    "broad_mix_70_30": {
+      "full": {
+        "cagr_pct": 33.4,
+        "sharpe": 1.3,
+        "vol_pct": 24.5,
+        "maxDD_pct": -27.9,
+        "longest_underwater_days": 565,
+        "worst_12m_pct": -20.6,
+        "best_12m_pct": 242.2
+      },
+      "out_sample": {
+        "cagr_pct": 43.7,
+        "sharpe": 1.75,
+        "vol_pct": 22.1,
+        "maxDD_pct": -25.9,
+        "longest_underwater_days": 238,
+        "worst_12m_pct": -10.6,
+        "best_12m_pct": 72.7
+      },
+      "yearly_pct": {
+        "2018": -16.4,
+        "2019": 59.9,
+        "2020": 109.1,
+        "2021": 23.0,
+        "2022": -3.2,
+        "2023": 49.4,
+        "2024": 51.5,
+        "2025": 13.9
+      }
+    }
+  },
+  "themes": {
+    "space": {
+      "names": 12,
+      "full": {
+        "cagr_pct": 24.9,
+        "sharpe": 0.7,
+        "vol_pct": 47.6,
+        "maxDD_pct": -61.3,
+        "longest_underwater_days": 1120,
+        "worst_12m_pct": -55.3,
+        "best_12m_pct": 300.6
+      },
+      "out_sample": {
+        "cagr_pct": 83.1,
+        "sharpe": 1.28,
+        "vol_pct": 61.9,
+        "maxDD_pct": -54.4,
+        "longest_underwater_days": 133,
+        "worst_12m_pct": 26.3,
+        "best_12m_pct": 300.6
+      },
+      "yearly_pct": {
+        "2018": 15.2,
+        "2019": 30.5,
+        "2020": 4.1,
+        "2021": -12.4,
+        "2022": -35.4,
+        "2023": 31.4,
+        "2024": 167.7,
+        "2025": 70.6
+      }
+    },
+    "defense": {
+      "names": 17,
+      "full": {
+        "cagr_pct": 36.1,
+        "sharpe": 1.17,
+        "vol_pct": 30.2,
+        "maxDD_pct": -41.4,
+        "longest_underwater_days": 292,
+        "worst_12m_pct": -16.8,
+        "best_12m_pct": 153.4
+      },
+      "out_sample": {
+        "cagr_pct": 43.7,
+        "sharpe": 1.51,
+        "vol_pct": 26.4,
+        "maxDD_pct": -26.6,
+        "longest_underwater_days": 256,
+        "worst_12m_pct": -14.7,
+        "best_12m_pct": 111.1
+      },
+      "yearly_pct": {
+        "2018": 3.9,
+        "2019": 125.3,
+        "2020": 54.3,
+        "2021": 5.8,
+        "2022": -3.0,
+        "2023": 53.6,
+        "2024": 78.9,
+        "2025": 60.0
+      }
+    },
+    "mining": {
+      "names": 8,
+      "full": {
+        "cagr_pct": 34.0,
+        "sharpe": 0.9,
+        "vol_pct": 42.7,
+        "maxDD_pct": -43.9,
+        "longest_underwater_days": 726,
+        "worst_12m_pct": -38.6,
+        "best_12m_pct": 350.3
+      },
+      "out_sample": {
+        "cagr_pct": 43.1,
+        "sharpe": 0.98,
+        "vol_pct": 48.3,
+        "maxDD_pct": -41.7,
+        "longest_underwater_days": 247,
+        "worst_12m_pct": -19.4,
+        "best_12m_pct": 314.8
+      },
+      "yearly_pct": {
+        "2018": -22.8,
+        "2019": 22.8,
+        "2020": 144.2,
+        "2021": 38.7,
+        "2022": 4.2,
+        "2023": 43.1,
+        "2024": 10.0,
+        "2025": 200.8
+      }
+    },
+    "energy": {
+      "names": 16,
+      "full": {
+        "cagr_pct": 35.3,
+        "sharpe": 1.13,
+        "vol_pct": 30.9,
+        "maxDD_pct": -46.5,
+        "longest_underwater_days": 590,
+        "worst_12m_pct": -37.5,
+        "best_12m_pct": 242.0
+      },
+      "out_sample": {
+        "cagr_pct": 67.8,
+        "sharpe": 1.54,
+        "vol_pct": 38.4,
+        "maxDD_pct": -35.5,
+        "longest_underwater_days": 189,
+        "worst_12m_pct": 0.8,
+        "best_12m_pct": 242.0
+      },
+      "yearly_pct": {
+        "2018": -16.8,
+        "2019": 27.0,
+        "2020": 46.2,
+        "2021": 24.7,
+        "2022": 23.9,
+        "2023": 21.8,
+        "2024": 152.3,
+        "2025": 68.6
+      }
+    },
+    "ai_chips": {
+      "names": 26,
+      "full": {
+        "cagr_pct": 41.7,
+        "sharpe": 1.19,
+        "vol_pct": 34.0,
+        "maxDD_pct": -41.7,
+        "longest_underwater_days": 514,
+        "worst_12m_pct": -33.6,
+        "best_12m_pct": 178.8
+      },
+      "out_sample": {
+        "cagr_pct": 73.3,
+        "sharpe": 1.64,
+        "vol_pct": 37.8,
+        "maxDD_pct": -33.2,
+        "longest_underwater_days": 146,
+        "worst_12m_pct": -14.4,
+        "best_12m_pct": 178.8
+      },
+      "yearly_pct": {
+        "2018": -6.5,
+        "2019": 57.6,
+        "2020": 60.9,
+        "2021": 47.9,
+        "2022": -30.4,
+        "2023": 87.5,
+        "2024": 53.9,
+        "2025": 55.9
+      }
+    },
+    "magnets": {
+      "names": 6,
+      "full": {
+        "cagr_pct": 22.7,
+        "sharpe": 0.65,
+        "vol_pct": 52.8,
+        "maxDD_pct": -65.8,
+        "longest_underwater_days": 1338,
+        "worst_12m_pct": -60.4,
+        "best_12m_pct": 546.7
+      },
+      "out_sample": {
+        "cagr_pct": 34.0,
+        "sharpe": 0.77,
+        "vol_pct": 64.7,
+        "maxDD_pct": -58.4,
+        "longest_underwater_days": 353,
+        "worst_12m_pct": -27.4,
+        "best_12m_pct": 496.2
+      },
+      "yearly_pct": {
+        "2018": -10.5,
+        "2019": -13.0,
+        "2020": 135.5,
+        "2021": 85.0,
+        "2022": -22.6,
+        "2023": -11.9,
+        "2024": -8.9,
+        "2025": 194.8
+      }
+    }
+  },
+  "passes_bar": false,
+  "latest_picks": {
+    "date": "2026-09-14",
+    "tickers": [
+      "MU",
+      "DELL",
+      "INTC",
+      "MRVL",
+      "AMD",
+      "IRDM",
+      "ALAB",
+      "BE"
+    ]
+  },
+  "pick_counts": {
+    "NVDA": 44,
+    "LEU": 32,
+    "AMD": 28,
+    "SMCI": 27,
+    "UUUU": 22,
+    "BE": 22,
+    "IRDM": 20,
+    "FSLR": 18,
+    "VRT": 18,
+    "PLTR": 17,
+    "VST": 16,
+    "MU": 15,
+    "RCAT": 15,
+    "UEC": 15,
+    "OMEX": 13
+  }
+}
