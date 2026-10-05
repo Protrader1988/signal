@@ -3,72 +3,867 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Terminals · Signal & Bounty</title>
+<title>SIGNAL · Quantitative Terminal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#05070b;--surface:#0b1018;--line:#1a2434;--text:#eef2f7;--text2:#9aa6b8;--muted:#5f6c80;
-    --em:#2fd39a;--em2:#7ce8c3;--gold:#c9a227;--gold2:#e6c976;--info:#5aa2ff;
-    --mono:'JetBrains Mono',monospace;--sans:'Inter',-apple-system,sans-serif;--serif:'Playfair Display',Georgia,serif;}
+  :root{
+    --bg:#050609; --bg2:#080a10; --surface:#0b0e16; --surface2:#0e121c; --surface3:#141a27;
+    --line:#1a2130; --line2:#232c3f; --hover:#111725;
+    --gold:#c9a227; --gold2:#e6c976; --goldline:rgba(201,162,39,.16);
+    --text:#f1f2f6; --text2:#9aa1b2; --muted:#616a7d; --dim:#3c4356;
+    --up:#2fd39a; --down:#ff5d5d; --info:#5aa2ff; --purple:#b39bff; --warn:#f2b23e;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+    --shadow:0 1px 0 rgba(255,255,255,.02) inset,0 14px 40px -20px rgba(0,0,0,.8);
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100vh;
-    background-image:radial-gradient(1000px 600px at 78% -10%,rgba(47,211,154,.06),transparent 60%),radial-gradient(900px 600px at 15% 110%,rgba(90,162,255,.05),transparent 60%);}
-  .wrap{max-width:1080px;margin:0 auto;padding:72px 26px 80px}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--muted);text-transform:uppercase}
-  h1{font-family:var(--serif);font-size:44px;font-weight:800;letter-spacing:.5px;margin:14px 0 10px;line-height:1.1}
-  h1 .a{background:linear-gradient(180deg,#e9fff6,#2fd39a);-webkit-background-clip:text;background-clip:text;color:transparent}
-  h1 .b{background:linear-gradient(180deg,#f6efd8,#c9a227);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{color:var(--text2);font-size:16px;line-height:1.7;max-width:680px;margin-bottom:44px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
-  .card{display:block;background:linear-gradient(180deg,var(--surface),#070b10);border:1px solid var(--line);border-radius:18px;
-    padding:28px 28px 26px;text-decoration:none;color:inherit;transition:.18s;position:relative;overflow:hidden}
-  .card:hover{transform:translateY(-3px);border-color:rgba(47,211,154,.4);box-shadow:0 24px 60px -30px rgba(0,0,0,.8)}
-  .card.b:hover{border-color:rgba(201,162,39,.4)}
-  .badge{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;border:1px solid}
-  .s .badge{color:var(--em2);border-color:rgba(47,211,154,.3);background:rgba(47,211,154,.06)}
-  .b .badge{color:var(--gold2);border-color:rgba(201,162,39,.3);background:rgba(201,162,39,.06)}
-  .card h2{font-family:var(--serif);font-size:26px;font-weight:700;margin:16px 0 6px}
-  .card .tag{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
-  .card p{color:var(--text2);font-size:14px;line-height:1.7;margin:14px 0 18px}
-  .feats{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
-  .feat{font-family:var(--mono);font-size:10.5px;color:var(--text2);border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:rgba(255,255,255,.02)}
-  .go{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:600}
-  .s .go{color:var(--em2)} .b .go{color:var(--gold2)}
-  .foot{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.8;font-family:var(--mono)}
-  .foot b{color:var(--text2)}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(1000px 520px at 82% -6%,rgba(201,162,39,.06),transparent 60%),radial-gradient(760px 420px at 6% 2%,rgba(90,162,255,.045),transparent 55%);
+    background-attachment:fixed}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 26px 110px}
+  a{color:inherit;text-decoration:none}
+
+  .tape{border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;white-space:nowrap;position:relative}
+  .tape::before,.tape::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+  .tape::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
+  .tape::after{right:0;background:linear-gradient(270deg,var(--bg2),transparent)}
+  .tape .track{display:inline-block;padding:8px 0;animation:scroll 60s linear infinite;font-family:var(--mono);font-size:12px}
+  .tape .it{display:inline-block;padding:0 22px;border-right:1px solid var(--line)}
+  .tape .sym{color:var(--text2);font-weight:600;letter-spacing:.5px}.tape .px{color:var(--text);margin:0 7px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  header{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:linear-gradient(180deg,rgba(5,6,9,.94),rgba(5,6,9,.7));border-bottom:1px solid var(--goldline)}
+  .hbar{max-width:1240px;margin:0 auto;padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:10px;background:radial-gradient(120% 120% at 30% 20%,#241d0c,#0c0a06);border:1px solid #4a3c16;box-shadow:0 0 0 1px rgba(201,162,39,.1),0 8px 22px -10px rgba(201,162,39,.3)}
+  .mark svg{width:21px;height:21px}
+  .wordmark{font-family:var(--serif);font-weight:800;font-size:23px;letter-spacing:5px;background:linear-gradient(180deg,#f6efd8,#c9a227);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand .sub{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+  .hmeta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+  .clock{font-family:var(--mono);font-size:12px;color:var(--text2);text-align:right;line-height:1.6}.clock b{color:var(--gold2)}
+  .live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--up);text-transform:uppercase;letter-spacing:1.5px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--up);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,211,154,.5)}70%{box-shadow:0 0 0 7px rgba(47,211,154,0)}100%{box-shadow:0 0 0 0 rgba(47,211,154,0)}}
+
+  .fkeys{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
+  .fkey{font-family:var(--mono);font-size:11px;letter-spacing:.5px;color:var(--text2);border:1px solid var(--line2);border-radius:7px;padding:7px 13px;background:var(--surface2);transition:.15s}
+  .fkey:hover{border-color:var(--gold);color:var(--gold2);background:var(--surface3)}.fkey b{color:var(--gold);margin-right:7px}
+
+  /* PLAYBOOK */
+  .playbook{margin-top:18px;background:linear-gradient(180deg,#0f1119,#0a0c12);border:1px solid var(--goldline);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .pb-top{display:flex;align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .pb-top .ttl{font-family:var(--serif);font-size:19px;font-weight:700}
+  .pb-top .day{font-family:var(--mono);font-size:12px;color:var(--gold2)}
+  .acct{margin-left:auto;display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;color:var(--text2)}
+  .acct input{width:120px;background:var(--surface3);border:1px solid var(--line2);border-radius:8px;color:var(--text);
+    font-family:var(--mono);font-size:13px;padding:7px 10px;text-align:right}
+  .acct input:focus{outline:none;border-color:var(--gold)}
+  .pb-body{padding:6px 22px 20px}
+  .pb-lead{font-size:15px;line-height:1.7;margin:14px 0 4px}
+  .pb-lead .big{font-family:var(--mono);font-weight:700;color:var(--gold2);font-size:17px}
+  .pb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+  .pbtile{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+  .pbtile .k{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+  .pbtile .v{font-family:var(--mono);font-size:22px;font-weight:700;margin-top:6px}
+  .pbtile .s{font-size:11px;color:var(--dim);margin-top:5px;font-family:var(--mono)}
+  .exwatch{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--down);border-radius:10px;background:rgba(255,93,93,.04);padding:12px 15px}
+  .exwatch .h{font-size:12px;font-weight:600;color:var(--down);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+  .exrow{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:12.5px;padding:3px 0;flex-wrap:wrap}
+  .disc{margin-top:16px;font-size:12.5px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);padding-top:13px}
+  .disc b{color:var(--text2)}
+
+  .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(184px,1fr));gap:1px;background:var(--goldline);border:1px solid var(--goldline);border-radius:16px;overflow:hidden;margin:16px 0 0;box-shadow:var(--shadow)}
+  .kpi{background:linear-gradient(180deg,var(--surface2),var(--surface));padding:19px 22px}
+  .kpi .k{font-size:10px;text-transform:uppercase;letter-spacing:1.6px;color:var(--muted);cursor:help}
+  .kpi .v{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-1px;margin-top:9px;line-height:1}.kpi .v.sm{font-size:22px}
+  .kpi .s{font-size:11px;color:var(--dim);margin-top:8px;font-family:var(--mono)}
+  .gold{color:var(--gold2)}
+
+  section{margin-top:48px}
+  .eyebrow{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;border-bottom:1px solid var(--goldline);padding-bottom:12px}
+  .eyebrow .no{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:2px}
+  .eyebrow h2{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.3px}
+  .eyebrow .hint{color:var(--muted);font-size:12px;margin-left:auto;text-align:right;max-width:50%;font-style:italic}
+  .subnote{color:var(--muted);font-size:12.5px;margin:0 2px 16px;line-height:1.6}
+
+  .card{background:linear-gradient(180deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .card+.card{margin-top:16px}
+  .card-head{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .code{font-family:var(--mono);font-size:10.5px;color:var(--gold);letter-spacing:1px;border:1px solid var(--goldline);padding:3px 8px;border-radius:5px;background:rgba(201,162,39,.05)}
+  .card-head .t{font-size:13px;font-weight:600;letter-spacing:.2px}
+  .card-head .expo{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--text2)}.card-head .expo b{color:var(--gold2)}
+
+  .chartwrap{padding:8px 10px 14px}
+  .chart-legend{display:flex;gap:18px;flex-wrap:wrap;padding:6px 12px 10px;font-family:var(--mono);font-size:11.5px}
+  .lg{display:inline-flex;align-items:center;gap:7px;color:var(--text2)}.lg i{width:14px;height:3px;border-radius:2px;display:inline-block}
+  svg.chart{width:100%;height:300px;display:block}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 20px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  thead th{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;background:var(--bg2)}
+  thead th[title]{cursor:help}
+  tbody tr{transition:background .12s}tbody tr:hover{background:var(--hover)}tbody tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .rankpill{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;font-family:var(--mono);font-size:11px;font-weight:600;color:var(--text2);background:var(--surface3);border:1px solid var(--line2)}
+  .rankpill.top{color:var(--gold2);border-color:#4a3c16;background:#171204}
+  .chip{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.4px}.chip .ex{color:var(--dim);font-weight:400;font-size:11px}
+  .up{color:var(--up)}.down{color:var(--down)}.warn{color:var(--warn)}.neu{color:var(--text2)}
+  .sz{font-family:var(--mono);font-weight:600;color:var(--gold2)}
+  .delta{display:inline-flex;align-items:center;gap:5px;justify-content:flex-end}
+  .mbar{position:relative;height:5px;width:64px;background:var(--surface3);border-radius:3px;display:inline-block;vertical-align:middle;overflow:hidden}
+  .mbar>i{position:absolute;top:0;bottom:0;border-radius:3px}
+  .act{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:5px;text-transform:uppercase;letter-spacing:.6px;border:1px solid}
+  .act-buy{color:#0a0c12;background:var(--up);border-color:var(--up)}
+  .act-hold{color:var(--text2);background:transparent;border-color:var(--line2)}
+  .act-add{color:var(--up);background:transparent;border-color:rgba(47,211,154,.4)}
+  .act-trim{color:var(--warn);background:transparent;border-color:rgba(242,178,62,.4)}
+  .act-exit{color:#0a0c12;background:var(--down);border-color:var(--down)}
+  .badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9.5px;font-weight:600;padding:3px 9px;border-radius:6px;text-transform:uppercase;letter-spacing:.7px;border:1px solid}
+  .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+  .b-sim{color:var(--gold2);border-color:var(--goldline);background:rgba(201,162,39,.06)}
+  .b-risk{color:var(--down);border-color:rgba(255,93,93,.3);background:rgba(255,93,93,.06)}
+  .b-pos{color:var(--up);border-color:rgba(47,211,154,.3)}.b-swing{color:var(--purple);border-color:rgba(179,155,255,.3)}
+  .statusgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .stat{background:var(--surface);padding:17px 20px}
+  .stat .k{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted)}
+  .stat .v{font-family:var(--mono);font-size:23px;font-weight:700;margin-top:7px}.stat .s{font-size:11px;color:var(--dim);margin-top:6px;font-family:var(--mono)}
+  .banner{margin:0;padding:13px 16px;border-radius:10px;font-size:12.5px;color:var(--text2);background:var(--surface2);border:1px solid var(--line);border-left:3px solid var(--warn);line-height:1.65}
+  .banner.ok{border-left-color:var(--up)}.banner.err{border-left-color:var(--down)}
+  .empty{padding:20px;color:var(--muted);font-size:13px}
+  .metaline{padding:0 2px;color:var(--muted);font-size:12px;margin-top:11px;line-height:1.65}
+  .sysbar{margin-top:60px;padding:18px 0;border-top:1px solid var(--goldline);display:flex;gap:8px 24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--dim)}
+  .sysbar b{color:var(--gold2);font-weight:500}
+  .foot{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.75}
+  .loading{padding:22px;color:var(--dim);font-family:var(--mono);font-size:12.5px}
+  code{font-family:var(--mono);color:var(--text2);font-size:12px}
+  /* digest */
+  .digest{background:linear-gradient(180deg,#0f1119,#0a0c12);border:1px solid var(--goldline);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow)}
+  .dg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .lean{font-family:var(--mono);font-size:12px;font-weight:700;padding:4px 12px;border-radius:7px;text-transform:uppercase;letter-spacing:.6px;border:1px solid}
+  .lean.bull{color:var(--up);border-color:rgba(47,211,154,.4);background:rgba(47,211,154,.07)}
+  .lean.bear{color:var(--down);border-color:rgba(255,93,93,.4);background:rgba(255,93,93,.07)}
+  .lean.neut{color:var(--text2);border-color:var(--line2)}
+  .conf{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+  .dg-sum{font-size:14.5px;line-height:1.7;margin:6px 0 14px}
+  .bbgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.bbgrid{grid-template-columns:1fr}}
+  .bb{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+  .bb .h{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:5px}
+  .bb.bull .h{color:var(--up)}.bb.bear .h{color:var(--down)}
+  .bb p{font-size:13px;color:var(--text2);line-height:1.6}
+  .watch{margin-top:12px;font-size:12.5px;color:var(--text2)}.watch b{color:var(--gold2)}
+  .takes{margin-top:14px;display:grid;gap:8px}
+  .take{border:1px solid var(--line);border-radius:9px;padding:10px 13px;background:var(--surface);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+  .take .tp{font-family:var(--mono);font-weight:700;font-size:12.5px;min-width:110px}
+  .take .nt{font-size:12.5px;color:var(--text2);flex:1;line-height:1.55}
+  .dg-note{margin-top:12px;font-size:11px;color:var(--dim);line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
+  .setup{border:1px dashed var(--line2);border-radius:12px;padding:16px 18px;color:var(--text2);font-size:13px;line-height:1.65;background:var(--surface2)}
+  .setup b{color:var(--gold2)}
+  /* policy desk */
+  .b-stake{color:var(--gold2);border-color:var(--goldline);background:rgba(201,162,39,.06)}
+  .b-loi{color:var(--warn);border-color:rgba(242,178,62,.35)}
+  .b-contract{color:var(--info);border-color:rgba(90,162,255,.35)}
+  .b-extraction{color:var(--down);border-color:rgba(255,93,93,.32)}
+  .b-partner{color:var(--purple);border-color:rgba(179,155,255,.32)}
+  .b-radar{color:var(--muted);border-color:var(--line2)}
+  .b-confirm{color:var(--purple);border-color:rgba(179,155,255,.32)}
+  .b-directive{color:var(--info);border-color:rgba(90,162,255,.32)}
+  .b-restrict{color:#ff8fa3;border-color:rgba(255,143,163,.32)}
+  .coverage{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface2);padding:15px 18px}
+  .coverage h4{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold2);font-weight:600;margin-bottom:8px}
+  .coverage p{font-size:12.5px;color:var(--text2);line-height:1.65}
+  .coverage ul{margin:8px 0 0 16px}
+  .coverage li{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:5px}
+  td.wrap{white-space:normal;max-width:420px;color:var(--muted);font-size:11.5px;line-height:1.6;vertical-align:middle}
+  .scrollx{overflow-x:auto}
+  .flowrow{display:grid;grid-template-columns:150px 1fr 96px 74px;gap:14px;align-items:center;padding:11px 20px;border-bottom:1px solid var(--line)}
+  .flowrow:last-child{border-bottom:none}
+  .flowrow .s{font-size:13px;font-weight:600}
+  .flowrow .k{font-size:10.5px;color:var(--dim);font-family:var(--mono);margin-top:3px;display:block}
+  .spark{display:block;width:100%;height:34px}
+  .flowamt{font-family:var(--mono);font-size:13px;text-align:right;color:var(--gold2)}
+  .flowyoy{font-family:var(--mono);font-size:12.5px;text-align:right}
+  @media(max-width:700px){.flowrow{grid-template-columns:1fr 84px;gap:8px}.flowrow .sparkwrap{display:none}}
+  .prec{border-bottom:1px solid var(--line);padding:13px 20px}
+  .prec:last-child{border-bottom:none}
+  .prec .h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .prec .sum{font-size:13.5px;color:var(--text);line-height:1.6;margin-top:6px}
+  .prec .q{font-size:12px;color:var(--muted);line-height:1.6;margin-top:7px;border-left:2px solid var(--line2);padding-left:11px;font-style:italic}
+  .prec .m{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:7px}
+  .conf-high{color:var(--up)}.conf-medium{color:var(--warn)}.conf-low{color:var(--muted)}
+  .cismall{display:block;font-size:10px;color:var(--dim);font-family:var(--mono);margin-top:3px;font-weight:400}
+  #policyTbl tbody td,#policyRadar tbody td{vertical-align:top;padding-top:14px}
+  .dealname{font-weight:600}.dealname .sub{display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
+  td.deal{white-space:normal;min-width:330px;max-width:460px;vertical-align:top;padding-top:14px}
+  #policyTbl table{min-width:1080px}
+  .struct{display:block;margin-top:7px;color:var(--muted);font-size:11.5px;line-height:1.6}
+  .verdict{margin:0 0 16px;padding:14px 17px;border-radius:11px;background:linear-gradient(180deg,#0f1119,#0a0c12);
+    border:1px solid var(--goldline);border-left:3px solid var(--gold);font-size:13.5px;line-height:1.7;color:var(--text2)}
+  .verdict b{color:var(--gold2)}.verdict .hl{color:var(--text);font-weight:600}
+  .chanlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .chan{background:var(--surface);padding:13px 16px}
+  .chan a{font-family:var(--mono);font-size:12px;color:var(--gold2);font-weight:600}.chan a:hover{text-decoration:underline}
+  .chan p{font-size:11.5px;color:var(--dim);line-height:1.55;margin-top:5px}
+  .heat{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:5px;border:1px solid var(--line2);color:var(--muted)}
+  .heat.on{color:var(--gold2);border-color:var(--goldline);background:rgba(201,162,39,.07)}
+  .newsrow{display:flex;gap:12px;align-items:baseline;padding:11px 20px;border-bottom:1px solid var(--line);transition:background .12s}
+  .newsrow:hover{background:var(--hover)}.newsrow:last-child{border-bottom:none}
+  .newsrow .tk{font-family:var(--mono);font-size:10px;color:var(--gold);min-width:64px;text-transform:uppercase}
+  .newsrow a{font-size:13.5px;color:var(--text);flex:1;line-height:1.5}.newsrow a:hover{color:var(--gold2)}
+  .newsrow .src{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
 </style>
 </head>
 <body>
+<div class="tape"><div class="track" id="tape">···</div></div>
+<header>
+  <div class="hbar">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17.5L9 11l4 3.5L21 6" stroke="#c9a227" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="11" r="1.7" fill="#e6c976"/><circle cx="13" cy="14.5" r="1.7" fill="#5aa2ff"/></svg></div>
+      <div><div class="wordmark">SIGNAL</div><div class="sub">Quantitative Terminal</div></div>
+    </div>
+    <div class="hmeta"><span class="live"><span class="dot"></span> Live</span><div class="clock" id="clock">—</div></div>
+  </div>
+</header>
+
 <div class="wrap">
-  <div class="eyebrow">Private research terminals</div>
-  <h1><span class="a">Signal</span> &amp; <span class="b">Bounty</span></h1>
-  <div class="lede">Two institutional-grade terminals running on real public data — no paid services, no simulated numbers, nothing shown without a label. Updated automatically every day.</div>
-
-  <div class="grid">
-    <a class="card s" href="site/index.html">
-      <span class="badge">Quant · Markets</span>
-      <h2>SIGNAL</h2>
-      <div class="tag">Quantitative trading terminal</div>
-      <p>A validated cross-sectional momentum engine for US stocks &amp; ETFs. Daily ranked signals with dollar-sized positions, an honest forward-tracked ledger, a live market read, and a real backtest.</p>
-      <div class="feats"><span class="feat">momentum + vol-target</span><span class="feat">shadow ledger</span><span class="feat">AI market read</span><span class="feat">real news</span></div>
-      <span class="go">Open Signal →</span>
-    </a>
-    <a class="card b" href="site/bounty.html">
-      <span class="badge">Real Estate · Development</span>
-      <h2>BOUNTY</h2>
-      <div class="tag">Development-site terminal</div>
-      <p>Daily scans of NYC, NY suburbs, Connecticut &amp; northern NJ for underutilized development parcels — underwritten across every financing path, mapped, with owner outreach exports and a full program library.</p>
-      <div class="feats"><span class="feat">multi-path underwriting</span><span class="feat">8-30g &amp; PILOT levers</span><span class="feat">deal map</span><span class="feat">outreach CSV</span></div>
-      <span class="go">Open Bounty →</span>
-    </a>
+  <div class="fkeys">
+    <a class="fkey" href="#playbook"><b>F1</b>PLAYBOOK</a>
+    <a class="fkey" href="#signals"><b>F2</b>SIGNALS</a>
+    <a class="fkey" href="#value"><b>F3</b>VALUE</a>
+    <a class="fkey" href="#watch"><b>F4</b>WATCHLIST</a>
+    <a class="fkey" href="#news"><b>F5</b>MARKET READ</a>
+    <a class="fkey" href="#policy"><b>F6</b>POLICY DESK</a>
+    <a class="fkey" href="#chart"><b>F7</b>PERFORMANCE</a>
+    <a class="fkey" href="#ledger"><b>F8</b>TRACK RECORD</a>
   </div>
 
-  <div class="foot">
-    <b>engine</b> github actions · daily &nbsp;·&nbsp; <b>data</b> free public feeds &nbsp;·&nbsp; <b>cost</b> $0.00 &nbsp;·&nbsp; <b>status</b> operational<br>
-    Research tools, not investment advice. Verify everything before acting.
+  <!-- PLAYBOOK -->
+  <div class="playbook" id="playbook">
+    <div class="pb-top">
+      <span class="ttl">Today's Playbook</span><span class="day" id="pbDay"></span>
+      <label class="acct">Account size&nbsp; $<input id="acct" type="number" min="0" step="500" value="25000" oninput="setAcct(this.value)"></label>
+    </div>
+    <div class="pb-body" id="playbookBody"><div class="loading">building your playbook…</div></div>
   </div>
+
+  <div class="hero" id="hero"></div>
+
+  <section id="signals">
+    <div class="eyebrow"><span class="no">02</span><h2>Today's Signals</h2>
+      <span class="hint">what the validated model flags right now — you execute in your own brokerage</span></div>
+    <div class="subnote">Each row shows a suggested dollar size based on your account and the model's risk-sizing. <b class="gold">BUY</b> = new today · <span class="neu">HOLD</span> = still ranked, keep holding. Sizes are equal-weight within each book.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">EQ·MOM</span><span class="badge b-pos">Position</span><span class="t">Cross-sectional momentum · hold ~1 month</span><span class="expo" id="posExpo"></span></div>
+      <div id="position"><div class="loading">loading signals…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">EQ·ST</span><span class="badge b-swing">Swing</span><span class="t">Short-term momentum · hold ~1 week</span><span class="expo" id="swingExpo"></span></div>
+      <div id="swing"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">CR·BETA</span><span class="badge b-risk">Crypto</span><span class="t">Risk-managed beta — <span class="warn">not a signal edge</span></span></div>
+      <div id="crypto"></div>
+    </div>
+  </section>
+
+  <section id="value">
+    <div class="eyebrow"><span class="no">03</span><h2>Value / Opportunistic</h2>
+      <span class="hint">below-book, profitable names — a research screen, not a backtested signal</span></div>
+    <div class="subnote">These trade near or below book value <em>and</em> are actually profitable. Unlike the momentum signals, this is a <b class="warn">screen for your own due diligence</b>, not a validated edge — free data can't backtest it honestly. Value can stay cheap for a long time, so treat these as ideas to research, not buy-now signals. Lower P/B = cheaper vs. assets; higher ROE = higher quality.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">VALUE</span><span class="badge b-sim">Screen · not backtested</span><span class="t" id="valLabel" style="font-weight:400;color:var(--text2)"></span></div>
+      <div id="valueTbl"><div class="loading">loading screen…</div></div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="eyebrow"><span class="no">04</span><h2>Watchlist</h2>
+      <span class="hint">high-profile & recent IPOs — they flow into signals once they season</span></div>
+    <div class="subnote">Names on the radar. Recent IPOs (like <span class="chip">SPCX</span>) need about a year of trading history before the momentum model can generate a validated signal — the status shows how far along each is.</div>
+    <div class="card"><div id="watchTbl"><div class="loading">loading watchlist…</div></div></div>
+  </section>
+
+  <section id="news">
+    <div class="eyebrow"><span class="no">05</span><h2>Market Read &amp; News</h2>
+      <span class="hint">an honest AI read of real headlines — interpretation, not a forecast</span></div>
+    <div id="digestBox"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">NEWS</span><span class="t">Real headlines</span><span class="expo" id="newsMeta"></span></div>
+      <div id="newsList"><div class="loading">loading headlines…</div></div>
+    </div>
+  </section>
+
+  <section id="policy">
+    <div class="eyebrow"><span class="no">06</span><h2>Policy Desk</h2>
+      <span class="hint">where the federal government is actually putting money — scored against SPY, not against the hype</span></div>
+    <div class="subnote">Washington now takes equity, penny warrants, price floors, offtake and revenue shares in listed companies. Rather than list the announcements, this desk runs a <b class="gold">market model event study</b> on them: alpha and beta fitted on the 250 sessions before each deal, abnormal return cumulated over the windows after it. Day 0 is the announcement session — gapped, and mostly unbuyable. Every other window starts at the day-0 close, the first price you could actually pay. The deals are grouped by <em>structure</em>, because the question worth answering is not whether policy pays but which kind of deal pays.</div>
+    <div id="policyVerdict"></div>
+    <div class="statusgrid" id="policyTiles"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">CAR</span><span class="t">Median abnormal return in event time · day 0 = announcement</span><span class="expo" id="policyPathMeta"></span></div>
+      <div class="chart-legend" id="policyLegend"></div>
+      <div class="chartwrap"><div id="policyChart"><div class="loading">loading event study…</div></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">COHORT</span><span class="t">Median return by deal structure \u2014 abnormal, with what a holder made — with sample size, bootstrap CI and sign test</span></div>
+      <div id="policyCohorts"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">DEALS</span><span class="badge b-sim">Event study · not a signal</span><span class="t">Every tracked federal position · buy-and-hold abnormal return</span><span class="expo" id="policyMeta"></span></div>
+      <div id="policyTbl"><div class="loading">loading deals…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">EXPOSURE</span><span class="t">Actual federal obligations — USAspending, not narrative</span><span class="expo" id="policyExpoMeta"></span></div>
+      <div id="policyExposure"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">FLOW</span><span class="t">Where federal money is actually going — obligations by sector, by quarter</span><span class="expo" id="policyFlowMeta"></span></div>
+      <div id="policyFlow"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">READ</span><span class="badge b-loi">Machine-read · proposals</span><span class="t">Documents parsed into deal records</span><span class="expo" id="policyReadMeta"></span></div>
+      <div id="policyPipeline"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">DETECT</span><span class="badge b-loi">Unverified</span><span class="t">White House actions, DoW releases, EDGAR filings, $50M+ awards, headlines</span><span class="expo" id="policyDetectMeta"></span></div>
+      <div id="policyDetect"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">DOCS</span><span class="t">Federal Register and Department of War, straight from the source</span></div>
+      <div id="policyDocs"></div>
+    </div>
+    <div class="metaline" id="policyMethod"></div>
+    <div class="sysbar" id="policyHealth" style="margin-top:18px"></div>
+  </section>
+
+  <section id="chart">
+    <div class="eyebrow"><span class="no">07</span><h2>Flagship Performance</h2>
+      <span class="hint">real historical prices, hypothetical trades · indexed to 100 · log scale</span></div>
+    <div class="card">
+      <div class="card-head"><span class="code">CURVE</span><span class="t" id="curveLabel">Momentum + vol-target vs benchmarks</span><span class="expo" id="curveRange"></span></div>
+      <div class="chart-legend" id="legend"></div>
+      <div class="chartwrap"><div id="chartBox"><div class="loading">loading equity curve…</div></div></div>
+    </div>
+  </section>
+
+  <section id="ledger">
+    <div class="eyebrow"><span class="no">08</span><h2>Live Track Record</h2>
+      <span class="hint">real forward outcomes of every signal — no hindsight, nothing hidden</span></div>
+    <div class="statusgrid" id="ledgerTiles"></div>
+    <div id="ledgerNote" style="margin-top:14px"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">LEDGER</span><span class="t">Open positions</span><span class="expo" id="openCount"></span></div>
+      <div id="openPositions"></div>
+    </div>
+  </section>
+
+  <section id="backtest">
+    <div class="eyebrow"><span class="no">09</span><h2>Backtest Validation</h2>
+      <span class="hint">real historical prices · hypothetical trades applied in hindsight</span></div>
+    <div class="card">
+      <div class="card-head"><span class="code">HIST</span><span class="badge b-sim">Real data · hypothetical trades</span><span class="t mono" id="btPeriod" style="font-weight:400;color:var(--text2)"></span></div>
+      <div id="backtestTbl"></div>
+    </div>
+    <div class="metaline" id="btMethod"></div>
+  </section>
+
+  <div class="sysbar">
+    <span><b>engine</b> github actions</span><span><b>data</b> free market feeds</span><span><b>scheduler</b> daily cron</span><span><b>infra cost</b> $0.00</span><span><b>status</b> <span class="up">operational</span></span>
+  </div>
+  <div class="foot" id="foot"></div>
 </div>
+
+<script>
+const BASE=(location.hostname.endsWith('.github.io'))
+  ? new URL('data/', location.href).href
+  : 'https://raw.githubusercontent.com/Protrader1988/signal/main/site/data/';
+const $=id=>document.getElementById(id);
+const sgn=v=>v>0?'up':(v<0?'down':'neu');
+const arw=v=>v>0?'▲':(v<0?'▼':'▪');
+const pc=v=>(v>0?'+':'')+v+'%';
+const usd=v=>'$'+Math.round(v).toLocaleString();
+let DATA=null, ACCT=25000;
+async function j(f){const r=await fetch(BASE+f+'?t='+Date.now());if(!r.ok)throw new Error(f+' '+r.status);return r.json();}
+function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().slice(17,25)}</b> UTC · ${d.toUTCString().slice(5,16)}`;}
+setInterval(tick,1000);tick();
+function setAcct(v){ACCT=Math.max(0,+v||0);if(DATA)draw();}
+
+function mbar(v,max){const w=Math.max(2,Math.min(30,Math.abs(v)/max*30));const c=v>=0?'var(--up)':'var(--down)';
+  return `<span class="mbar"><i style="${v>=0?'left':'right'}:50%;width:${w}px;background:${c}"></i></span>`;}
+function tbl(rows,cols,em){if(!rows||!rows.length)return `<div class="empty">${em}</div>`;
+  let h='<table><thead><tr>'+cols.map(c=>`<th class="${c.num?'num':''}" ${c.tip?`title="${c.tip}"`:''}>${c.h}</th>`).join('')+'</tr></thead><tbody>';
+  for(const r of rows){h+='<tr>'+cols.map(c=>{const raw=r[c.k];const v=c.f?c.f(raw,r):(raw==null?'—':raw);
+    return `<td class="${c.num?'num':''} ${c.cls?c.cls(raw):''}">${v}</td>`;}).join('')+'</tr>';}return h+'</tbody></table>';}
+
+function drawChart(cv){
+  if(!cv||!cv.dates||!cv.dates.length){$('chartBox').innerHTML='<div class="empty">Equity curve appears after the next engine run.</div>';return;}
+  const W=1000,H=300,pl=52,pr=64,pt=16,pb=28;
+  const series=[['strategy','Signal strategy','#e6c976'],['spy','S&P 500 (SPY)','#5aa2ff'],['equal_weight','Buy-everything average','#5b6478']];
+  const all=[].concat(...series.map(s=>cv[s[0]]||[]));const lo=Math.min(...all),hi=Math.max(...all);
+  const yl=Math.log(lo),yh=Math.log(hi);
+  const X=i=>pl+(W-pl-pr)*i/(cv.dates.length-1);const Y=v=>pt+(H-pt-pb)*(1-(Math.log(v)-yl)/(yh-yl));
+  let grid='';const levels=[];for(let e=1;e<=5;e++)for(const m of[1,2,5]){const val=m*Math.pow(10,e);if(val>=lo*.9&&val<=hi*1.1)levels.push(val);}
+  for(const lv of levels){const y=Y(lv);grid+=`<line x1="${pl}" y1="${y}" x2="${W-pr}" y2="${y}" stroke="#1a2130"/><text x="${pl-8}" y="${y+3}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#616a7d">${lv}</text>`;}
+  let xl='',lastYr='';cv.dates.forEach((d,i)=>{const yr=d.slice(0,4);if(yr!==lastYr){lastYr=yr;const x=X(i);xl+=`<line x1="${x}" y1="${pt}" x2="${x}" y2="${H-pb}" stroke="#121826"/><text x="${x}" y="${H-10}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#616a7d">${yr}</text>`;}});
+  const path=arr=>arr.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(' ');
+  const strat=cv.strategy;const area=`${path(strat)} L${X(strat.length-1).toFixed(1)} ${H-pb} L${X(0).toFixed(1)} ${H-pb} Z`;
+  let lines='';series.slice().reverse().forEach(s=>{const arr=cv[s[0]];if(!arr)return;const w=s[0]==='strategy'?2.4:1.4;const op=s[0]==='strategy'?1:.8;
+    lines+=`<path d="${path(arr)}" fill="none" stroke="${s[2]}" stroke-width="${w}" opacity="${op}" stroke-linejoin="round"/><text x="${W-pr+7}" y="${Y(arr[arr.length-1])+3}" font-family="JetBrains Mono" font-size="10.5" font-weight="600" fill="${s[2]}">${Math.round(arr[arr.length-1])}</text>`;});
+  $('chartBox').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a227" stop-opacity="0.22"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs>${grid}${xl}<path d="${area}" fill="url(#fill)"/>${lines}</svg>`;
+  $('legend').innerHTML=series.map(s=>`<span class="lg"><i style="background:${s[2]}"></i>${s[1]}</span>`).join('');
+  $('curveRange').innerHTML=`<span class="mono">${cv.start} → ${cv.end}</span>`;
+}
+
+function policyChart(paths){
+  const keys=Object.keys(paths||{});
+  if(!keys.length){$('policyChart').innerHTML='<div class="empty">Not enough deals in any single structure to average a path honestly. The chart appears once a cohort has at least three testable events.</div>';return;}
+  const colors={contracted:'#2fd39a',equity:'#e6c976',loi:'#f2b23e',confirmation:'#b39bff',
+    directive:'#5aa2ff',restriction:'#ff8fa3',extraction:'#ff5d5d',partner:'#8892a6'};
+  const W=1000,H=300,pl=54,pr=58,pt=16,pb=30;
+  let lo=0,hi=0,dmin=0,dmax=0;
+  keys.forEach(k=>{const p=paths[k];lo=Math.min(lo,...p.median,...(p.q25||[]));hi=Math.max(hi,...p.median,...(p.q75||[]));dmin=Math.min(dmin,p.days[0]);dmax=Math.max(dmax,p.days[p.days.length-1]);});
+  const pad=Math.max(2,(hi-lo)*0.12);lo-=pad;hi+=pad;
+  const X=d=>pl+(W-pl-pr)*(d-dmin)/Math.max(1,dmax-dmin);
+  const Y=v=>pt+(H-pt-pb)*(1-(v-lo)/Math.max(.001,hi-lo));
+  let grid='';
+  const step=Math.max(1,Math.round((hi-lo)/5));
+  for(let v=Math.ceil(lo/step)*step;v<=hi;v+=step){const y=Y(v);
+    grid+=`<line x1="${pl}" y1="${y}" x2="${W-pr}" y2="${y}" stroke="${v===0?'#2a3345':'#1a2130'}"/><text x="${pl-8}" y="${y+3}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#616a7d">${v>0?'+':''}${v}%</text>`;}
+  [0,21,42,63].filter(d=>d>=dmin&&d<=dmax).forEach(d=>{const x=X(d);
+    grid+=`<line x1="${x}" y1="${pt}" x2="${x}" y2="${H-pb}" stroke="#121826"/>`;});
+  grid+=`<line x1="${X(0)}" y1="${pt}" x2="${X(0)}" y2="${H-pb}" stroke="#4a3c16" stroke-dasharray="3 3"/>`;
+  let xl='';[dmin,0,21,42,63].filter((d,i,a)=>d>=dmin&&d<=dmax&&a.indexOf(d)===i).forEach(d=>{
+    xl+=`<text x="${X(d)}" y="${H-10}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#616a7d">${d===0?'day 0':(d>0?'+'+d:d)}</text>`;});
+  let lines='';
+  keys.forEach(k=>{const p=paths[k],c=colors[k]||'#5aa2ff';
+    if(p.q25&&p.q75){
+      const up=p.days.map((x,i)=>`${i?'L':'M'}${X(x).toFixed(1)} ${Y(p.q75[i]).toFixed(1)}`).join(' ');
+      const dn=p.days.slice().reverse().map((x,i)=>`L${X(x).toFixed(1)} ${Y(p.q25[p.q25.length-1-i]).toFixed(1)}`).join(' ');
+      lines+=`<path d="${up} ${dn} Z" fill="${c}" opacity=".07"/>`;
+    }
+    const d=p.days.map((x,i)=>`${i?'L':'M'}${X(x).toFixed(1)} ${Y(p.median[i]).toFixed(1)}`).join(' ');
+    lines+=`<path d="${d}" fill="none" stroke="${c}" stroke-width="2.2" stroke-linejoin="round" opacity=".95"/>`;
+    const last=p.median[p.median.length-1];
+    lines+=`<text x="${W-pr+7}" y="${Y(last)+3}" font-family="JetBrains Mono" font-size="10.5" font-weight="600" fill="${c}">${last>0?'+':''}${Math.round(last)}%</text>`;});
+  $('policyChart').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${xl}${lines}</svg>`;
+  $('policyLegend').innerHTML=keys.map(k=>`<span class="lg"><i style="background:${colors[k]||'#5aa2ff'}"></i>${paths[k].label} <span class="mono" style="color:var(--dim)">n=${paths[k].n}</span></span>`).join('');
+  $('policyPathMeta').innerHTML=`<span class="mono">median · shaded band = interquartile range</span>`;
+}
+
+function policyFlow(flow){
+  if(!flow||!flow.length){$('policyFlow').innerHTML='<div class="empty">Sector flow appears once USAspending returns quarterly aggregates. Check the source health strip below.</div>';return;}
+  const usd=v=>v==null?'\u2014':(v>=1e9?'$'+(v/1e9).toFixed(1)+'B':(v>=1e6?'$'+Math.round(v/1e6)+'M':'$'+Math.round(v).toLocaleString()));
+  const spark=(series)=>{
+    const v=series.map(x=>x.amount);if(!v.length)return '';
+    const mx=Math.max(...v),mn=Math.min(...v,0),W=240,H=34;
+    const X=i=>v.length<2?W:(W*i/(v.length-1)), Y=x=>H-2-(H-6)*((x-mn)/Math.max(1,(mx-mn)));
+    const d=v.map((x,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(x).toFixed(1)}`).join(' ');
+    const area=`${d} L${W} ${H} L0 ${H} Z`;
+    // fewer than two full years is not a trend, so it is drawn neutral rather than
+    // coloured green or red on half the evidence
+    const c=v.length<8?'#c9a227':(v.slice(-4).reduce((a,b)=>a+b,0)>=v.slice(0,4).reduce((a,b)=>a+b,0)?'#2fd39a':'#ff5d5d');
+    return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${area}" fill="${c}" opacity=".10"/><path d="${d}" fill="none" stroke="${c}" stroke-width="1.6"/></svg>`;
+  };
+  $('policyFlowMeta').innerHTML=`<span class="mono">${flow.length} sectors · 8 quarters</span>`;
+  $('policyFlow').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Prime award obligations matching each sector\u2019s keywords, straight from USAspending, by fiscal quarter. Announcements tell you where attention is; this is where the money actually went, filed whether or not anyone held a press conference. Keyword matching against award descriptions is coarse \u2014 read it as a trend line, not as an accounting of a programme.</div></div>'+
+    flow.map(f=>`<div class="flowrow">
+      <div><div class="s">${f.sector}</div><span class="k">${(f.keywords||[]).slice(0,2).join(', ')}</span></div>
+      <div class="sparkwrap">${spark(f.series||[])}</div>
+      <div class="flowamt">${usd(f.last4)}<span class="k" style="text-align:right">last 4 quarters</span></div>
+      <div class="flowyoy ${sgn(f.yoy_pct)}">${f.yoy_pct==null?'\u2014':pc(f.yoy_pct)}<span class="k" style="text-align:right">vs prior yr</span></div>
+    </div>`).join('');
+}
+
+function policyPipeline(p){
+  const recs=p.pipeline||[], rd=p.reading||{};
+  $('policyReadMeta').innerHTML=`<span class="mono">${rd.model?rd.model:'not run'}</span>`;
+  if(!rd.ok){
+    $('policyPipeline').innerHTML=`<div class="setup"><b>Reading layer is off.</b> ${rd.note||'No model configured.'} Detection still runs on keywords; what is missing is the structured read \u2014 counterparty, instrument, amount, stage \u2014 pulled out of each document.</div>`;
+    return;
+  }
+  const usd=v=>v==null?'':' · '+(v>=1e9?'$'+(v/1e9).toFixed(2)+'B':(v>=1e6?'$'+Math.round(v/1e6)+'M':'$'+Math.round(v).toLocaleString()));
+  $('policyPipeline').innerHTML='<div style="padding:13px 20px 0"><div class="banner">A model reads each document detection finds and returns the counterparty, the instrument, the amount and the stage \u2014 with the verbatim sentence it took them from. Every quote is checked against the source text here and anything that fails is dropped. These are <b>proposals</b>: none of it enters the event study until it is verified and added to the registry by hand.</div></div>'+
+    (recs.length?recs.map(r=>`<div class="prec">
+      <div class="h">
+        <span class="chip">${(r.tickers&&r.tickers.length)?r.tickers.join(' '):'\u2014'}</span>
+        <span class="badge ${r.instrument==='equity'||r.instrument==='warrant'?'b-stake':(r.instrument==='tariff'||r.instrument==='export control'?'b-directive':'b-contract')}">${r.instrument}</span>
+        <span class="badge ${r.stage==='definitive'||r.stage==='closed'?'b-confirm':'b-loi'}">${r.stage}</span>
+        <span class="conf conf-${r.confidence}">confidence ${r.confidence}</span>
+        ${r.already_tracked?'<span class="badge b-radar">already tracked</span>':'<span class="badge b-loi">new</span>'}
+        <span class="src" style="margin-left:auto">${r.date||''}${usd(r.amount_usd)}</span>
+      </div>
+      <div class="sum">${r.summary||''}</div>
+      <div class="q">\u201c${r.quote||''}\u201d</div>
+      <div class="m">${(r.companies||[]).join(' · ')}${r.agency?' · '+r.agency:''}${r.sector?' · '+r.sector:''} · <a href="${r.link}" target="_blank" rel="noopener" style="color:var(--gold2)">source ↗</a></div>
+    </div>`).join('')
+     :`<div class="empty">Nothing in today\u2019s documents parsed into a deal record. That is usually the real answer \u2014 most days the government does not take a position in a listed company. <span class="mono" style="color:var(--dim);display:block;margin-top:8px">${rd.note||''}</span></div>`);
+}
+
+function drawPolicy(p){
+  if(!p||!p.events){
+    $('policyTbl').innerHTML='<div class="empty">Policy desk appears after the next engine run.</div>';
+    $('policyChart').innerHTML='';
+    return;
+  }
+  const cohortMeta={contracted:['Contracted economics','b-stake'],equity:['Equity stake only','b-loi'],
+    loi:['Non-binding LOI','b-contract'],confirmation:['Definitive agreement','b-confirm'],
+    directive:['Sector directive','b-directive'],restriction:['Capital returns cut','b-restrict'],
+    extraction:['Govt takes a cut','b-extraction'],partner:['Partner read-through','b-partner']};
+  const carCell=v=>v==null?'—':`<span class="${sgn(v)}">${pc(v)}</span>`;
+  const ci=w=>(w&&w.median!=null)?`<span class="${sgn(w.median)}">${pc(w.median)}</span><span class="cismall">${pc(w.lo)} to ${pc(w.hi)}</span>`:'—';
+  const pooled=p.pooled||{},co=p.cohorts||{};
+
+  // verdict — assembled from the statistics, and only claims what they support
+  const m1=pooled.m1||{},q1=pooled.q1||{},d0=pooled.day0||{};
+  const WL={day0:'the announcement day',w1:'the week after',m1:'the month after',q1:'the quarter after',h1:'the six months after'};
+  // pick the latest window where BOTH structures have published a median, so the
+  // comparison is like-for-like instead of quietly mixing horizons
+  let cmpKey=null;
+  ['q1','m1','w1','day0'].forEach(k=>{if(cmpKey)return;
+    const A=co.contracted&&co.contracted.windows[k],B=co.equity&&co.equity.windows[k];
+    if(A&&B&&A.median!=null&&B.median!=null)cmpKey=k;});
+  let structLine='';
+  if(cmpKey){
+    const A=co.contracted.windows[cmpKey],B=co.equity.windows[cmpKey];
+    const gap=Math.abs(A.median-B.median);
+    structLine=`Split by structure over ${WL[cmpKey]}, deals with <b>contracted economics</b> — price floors, offtake, procurement — run a median
+      <span class="hl ${sgn(A.median)}">${pc(A.median)}</span> on n=${A.n}, against
+      <span class="hl ${sgn(B.median)}">${pc(B.median)}</span> for <b>equity stakes with nothing attached</b> on n=${B.n}.
+      ${gap<3?'That gap is too small to mean anything at these sample sizes.':'Both intervals are wide enough that the gap is suggestive, not established.'}`;
+  } else if((co.contracted&&co.contracted.reportable)||(co.equity&&co.equity.reportable)){
+    structLine=`The structural comparison is not published yet: the two structures do not yet have a window both have completed,
+      and comparing a one-month median against a one-quarter one would be a fabricated contrast.`;
+  } else {
+    structLine=`No structure yet has the three testable deals needed to report a median, so nothing is published rather than estimated.`;
+  }
+  let concLine='';
+  if(d0.median!=null&&m1.median!=null){
+    if(d0.median>0&&m1.median<0){
+      concLine=`So the pattern is a pop you cannot buy followed by a give-back you can: day 0 gaps at the open, and the month after it runs negative.`;
+    } else if(m1.median>0&&m1.median>d0.median){
+      concLine=`Unusually, the drift after the announcement carries more than the announcement itself — the opposite of the standard event-study result, which at n=${m1.n} deserves suspicion rather than a victory lap.`;
+    } else if(Math.abs(d0.median)>=Math.abs(m1.median)){
+      concLine=`Most of the move sits in the announcement session, which gaps and is therefore the part you cannot buy.`;
+    } else {
+      concLine=`Neither window dominates: the announcement session and the month after it are both small relative to how far apart individual deals land.`;
+    }
+  }
+  let eqLine='';
+  const eqd=co.equity&&co.equity.windows.day0,eqq=co.equity&&co.equity.windows.q1;
+  if(eqd&&eqq&&eqd.raw_median!=null&&eqq.raw_median!=null&&eqq.raw_median<eqd.raw_median){
+    eqLine=` Bare equity stakes hand it back: a holder was up <span class="hl ${sgn(eqd.raw_median)}">${pc(eqd.raw_median)}</span> on day 0 and <span class="hl ${sgn(eqq.raw_median)}">${pc(eqq.raw_median)}</span> by one quarter.`;
+  }
+  // the strongest result on the board, found rather than asserted
+  let sig=null;
+  Object.values(co).forEach(c=>{if(!c.reportable)return;
+    (p.windows||[]).forEach(w=>{const x=c.windows[w.key];
+      if(x&&x.p!=null&&x.n>=4&&(!sig||x.p<sig.p))sig={p:x.p,n:x.n,median:x.median,label:c.label,win:w.label,key:w.key};});});
+  let sigLine='';
+  if(sig&&sig.p<0.05){
+    sigLine=` The one result that clears a conventional significance bar is <b>${sig.label.toLowerCase()}</b> at ${sig.win}:
+      median <span class="hl ${sgn(sig.median)}">${pc(sig.median)}</span> on n=${sig.n}, sign test p=${sig.p}.
+      ${sig.median<0?'It is negative, which is worth sitting with — the clearest thing in this data is a way to lose money, not make it.':'Treat one significant cell among dozens tested as a lead, not a law: run enough windows and one will clear 0.05 by luck.'}`;
+  } else if(sig){
+    sigLine=` Nothing clears a conventional significance bar; the closest is ${sig.label.toLowerCase()} at ${sig.win} (p=${sig.p}, n=${sig.n}).`;
+  }
+  const held=(w)=>w&&w.raw_median!=null?`<span class="hl ${sgn(w.raw_median)}">${pc(w.raw_median)}</span>`:'\u2014';
+  $('policyVerdict').innerHTML=`<div class="verdict"><b>What the study actually says.</b>
+    Two numbers, and they answer different questions. <b>What a holder made:</b> buying each of these
+    at the announcement close returned a median ${held(d0)} on day 0, ${held(m1)} over the month after
+    and ${held(q1)} over the quarter${(q1&&q1.raw_n)?` (${q1.raw_pos} of ${q1.raw_n} positive)`:''}.
+    <b>Against the market:</b> subtracting the market exposure each stock carried anyway leaves a median
+    <span class="hl ${sgn(m1.median)}">${pc(m1.median)}</span> at one month
+    ${m1.p!=null?`(sign test p=${m1.p}${m1.p>0.1?', indistinguishable from noise':''})`:''} and
+    <span class="hl ${sgn(q1.median)}">${pc(q1.median)}</span> at one quarter \u2014 these are high-beta
+    names in a rising market, so owning them was not the same as beating what owning them risked.
+    ${concLine}${eqLine}${sigLine} ${structLine}</div>`;
+
+  const fwd=(p.ledger&&p.ledger.forward)||{};
+  const tiles=[
+    {k:'Deals studied',v:`${(p.counts&&p.counts.testable)||0}/${(p.counts&&p.counts.events)||0}`,s:'testable / tracked'},
+    {k:'Median day 0',v:d0.median==null?'—':pc(d0.median),s:'abnormal, gapped',cls:sgn(d0.median)},
+    {k:'Median +1m',v:m1.median==null?'—':pc(m1.median),s:m1.p!=null?`sign test p=${m1.p}`:'accruing',cls:sgn(m1.median)},
+    {k:'Median +1q',v:q1.median==null?'—':pc(q1.median),s:q1.n?`n=${q1.n} · ${q1.pos} positive`:'accruing',cls:sgn(q1.median)},
+    {k:'Forward record',v:fwd.n||0,s:fwd.since?`live since ${fwd.since}`:'starts at first detection'},
+  ];
+  $('policyTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+
+  policyChart(p.paths);
+  policyFlow(p.flow);
+  policyPipeline(p);
+
+  // cohort table
+  const wins=p.windows||[];
+  const cohorts=Object.values(co).sort((a,b)=>b.n-a.n);
+  let ch='<div class="scrollx"><table><thead><tr><th>Deal structure</th><th class="num">n</th>'+
+    wins.map(w=>`<th class="num" title="Median buy-and-hold abnormal return over sessions ${w.from} to ${w.to} relative to the announcement">${w.label}</th>`).join('')+
+    '<th class="num" title="Two-sided sign test on the +1m window against a zero median">p (+1m)</th></tr></thead><tbody>';
+  for(const c of cohorts){
+    if(!c.reportable){
+      ch+=`<tr><td><div style="font-weight:600">${c.label}</div><div style="color:var(--dim);font-size:11px;margin-top:3px">${c.tickers.join(' · ')}</div></td><td class="num">${c.n}</td><td class="num" colspan="${wins.length+1}" style="color:var(--muted);text-align:left;white-space:normal">Below the three-event minimum. No median published — an average of two things is not a finding.</td></tr>`;
+      continue;
+    }
+    ch+=`<tr><td><div style="font-weight:600">${c.label}</div><div style="color:var(--dim);font-size:11px;margin-top:3px">${c.tickers.join(' · ')}</div></td><td class="num">${c.n}</td>`+
+      wins.map(w=>`<td class="num">${ci(c.windows[w.key])}</td>`).join('')+
+      `<td class="num"><span class="${(c.windows.m1&&c.windows.m1.p!=null&&c.windows.m1.p<0.1)?'gold':'neu'}">${(c.windows.m1&&c.windows.m1.p!=null)?c.windows.m1.p:'—'}</span></td></tr>`;
+  }
+  $('policyCohorts').innerHTML=ch+'</tbody></table></div>'+
+    '<div class="metaline" style="padding:0 20px 16px">A dash means fewer than three deals in that structure have lived long enough to complete the window \u2014 the cell stays empty rather than showing an average of one or two. Ranges under each median are bootstrap 95% confidence intervals; where they straddle zero, the median is not evidence of anything.</div>';
+
+  // deals
+  $('policyMeta').innerHTML=`<span class="mono">${(p.counts&&p.counts.events)||0} deals</span>`;
+  $('policyTbl').innerHTML='<div class="scrollx">'+tbl(p.events,[
+    {h:'Company',k:'name',cls:()=>'deal',f:(v,r)=>`<span class="dealname">${r.source_url?`<a href="${r.source_url}" target="_blank" rel="noopener" style="border-bottom:1px dotted var(--line2)">${v} ↗</a>`:v}<span class="sub">${r.ticker} · ${r.agency} · ${r.date}</span></span><span class="struct">${r.structure||''}</span>`},
+    {h:'Structure',k:'cohort',f:v=>{const t=cohortMeta[v]||['—','b-radar'];return `<span class="badge ${t[1]}">${t[0]}</span>`;}},
+    {h:'Day 0',k:'car',num:true,tip:'Buy-and-hold abnormal return on the announcement session itself. Gapped — treat as unbuyable.',f:v=>carCell(v&&v.day0)},
+    {h:'+1w',k:'car',num:true,f:v=>carCell(v&&v.w1)},
+    {h:'+1m',k:'car',num:true,f:v=>carCell(v&&v.m1)},
+    {h:'+1q',k:'car',num:true,f:v=>carCell(v&&v.q1)},
+    {h:'+6m',k:'car',num:true,f:v=>carCell(v&&v.h1)},
+    {h:'Raw',k:'meta',num:true,tip:'Plain price return since the day-0 close, before any market adjustment.',f:v=>v&&v.raw_since_pct!=null?`<span class="${sgn(v.raw_since_pct)}">${pc(v.raw_since_pct)}</span>`:'—'},
+    {h:'Model',k:'meta',f:v=>v?`<span class="mono" style="font-size:10.5px;color:var(--dim)">β ${v.beta}<br>${v.model}</span>`:'<span class="warn" style="font-size:11px">no data yet</span>'},
+  ],'No deals tracked yet.')+'</div>';
+
+  // exposure
+  const ex=p.exposure||[];
+  const usd0=v=>v==null?'—':(v>=1e9?'$'+(v/1e9).toFixed(1)+'B':(v>=1e6?'$'+(v/1e6).toFixed(0)+'M':'$'+Math.round(v).toLocaleString()));
+  $('policyExpoMeta').innerHTML=`<span class="mono">${ex.length} names</span>`;
+  $('policyExposure').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Prime contract and grant obligations over the last two years, matched on recipient name. Subsidiaries filed under another name are missed and same-name entities can double-count, so this is an order-of-magnitude exposure read, not accounting. Every row links to the underlying USAspending search.</div></div><div class="scrollx">'+
+    tbl(ex,[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Name',k:'name',f:(v,r)=>`<span style="font-weight:600">${v}</span>${r.sector?`<span class="sub" style="display:block;color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px">${r.sector} · no deal, candidate only</span>`:''}`},
+      {h:'Federal awards 2y',k:'federal',num:true,tip:'Prime award obligations over the last two years, matched on recipient name.',f:v=>v?`<span class="gold">${usd0(v.total)}</span><span class="cismall">${v.truncated?'floor: top 100 awards only':(v.basis||'')}</span>`:'—'},
+      {h:'Awards',k:'federal',num:true,f:v=>v?v.count:'—'},
+      {h:'Last action',k:'federal',num:true,f:v=>v&&v.last_action?`<span class="mono neu">${v.last_action}</span>`:'—'},
+      {h:'Top agency',k:'federal',f:v=>v&&v.top_agency?`<span style="font-size:12px;color:var(--text2)">${v.top_agency}</span>`:'—'},
+      {h:'',k:'federal',f:v=>v&&v.link?`<a href="${v.link}" target="_blank" rel="noopener" class="mono" style="font-size:11px;color:var(--gold2)">verify ↗</a>`:''},
+    ],'Exposure appears once USAspending responds.')+'</div>';
+
+  // detection
+  const det=p.detection||[];
+  $('policyDetectMeta').innerHTML=`<span class="mono">${det.length} filings</span>`;
+  const amt=v=>v==null?'':(v>=1e9?' · $'+(v/1e9).toFixed(1)+'B':(v>=1e6?' · $'+Math.round(v/1e6)+'M':''));
+  $('policyDetect').innerHTML='<div style="padding:13px 20px 0"><div class="banner">Machine-found, human-unverified, from four independent detectors: EDGAR full text for the language these deals produce, Department of War contract announcements, federal awards over $50M filed to USAspending (operators of national labs and cleanup sites filtered out, since a consortium that runs a federal facility is not something you can buy), and policy headlines as a backstop. The award and contract feeds matter most, because that money is filed whether or not anyone issues a press release. A hit is something to read, not a deal — nothing enters the study above until it is verified and added by hand.</div></div>'+
+    (det.length?det.map(d=>{
+      const tag=d.ticker||(d.quality==='white house'?'WH':(d.quality==='agency release'?'DoW':(d.quality==='award record'?'AWARD':(d.quality==='filing'?'8-K':'NEWS'))));
+      const extra=(d.named&&d.named.length)?` <span class="mono" style="color:var(--gold2);font-size:11px">also ${d.named.join(' ')}</span>`:'';
+      const cand=(d.candidates&&d.candidates.length)?` <span class="mono" style="color:var(--dim);font-size:11px">unmapped: ${d.candidates.join('; ')}</span>`:'';
+      return `<div class="newsrow"><span class="tk">${tag}</span><a href="${d.link}" target="_blank" rel="noopener">${d.title||d.company}${amt(d.amount)}</a>${extra}${cand}<span class="src">${d.source||''} · ${d.date||''} · <span class="${d.status==='unverified'?'warn':'up'}">${d.status}</span></span></div>`;}).join('')
+      :'<div class="empty">Nothing matched in the detection window. That is a real answer, not an error — check the source health strip below to be sure the feeds actually ran.</div>');
+
+  // documents
+  const docs=p.documents||[];
+  $('policyDocs').innerHTML=docs.length?docs.map(d=>`<div class="newsrow"><span class="tk">${d.matched||''}</span><a href="${d.link}" target="_blank" rel="noopener">${d.title}</a><span class="src">${d.source||''} · ${d.date||''}</span></div>`).join('')
+    :'<div class="empty">No matching documents published in the window.</div>';
+
+  const cov=p.coverage;
+  $('policyMethod').innerHTML=`<div>${(p.method||'')+' '+(p.limits||'')}</div>`+(cov?`<div class="coverage">
+    <h4>What this registry covers · reviewed through ${cov.reviewed_through}</h4>
+    <p>${cov.includes}</p>
+    <ul>${(cov.excludes||[]).map(x=>`<li><b style="color:var(--text2)">Excluded:</b> ${x}</li>`).join('')}</ul>
+    <p style="margin-top:10px"><b style="color:var(--warn)">Known bias:</b> ${cov.bias}</p></div>`:'');
+
+  const h=p.health||{};
+  const names={whitehouse:'white house',reading:'reading',sector_flow:'sector flow',sec_edgar:'edgar',sec_tickers:'cik map',usaspending_recent:'new awards',news_detect:'news scan',federal_register:'fed register',dow_rss:'dow releases',dow_contracts:'dow contracts',usaspending:'usaspending'};
+  $('policyHealth').innerHTML=Object.keys(names).map(k=>{const s=h[k];
+    return `<span><b>${names[k]}</b> <span class="${s?(s.ok?'up':'down'):'neu'}">${s?(s.ok?'ok':'failed'):'not run'}</span></span>`;}).join('')+
+    `<span><b>generated</b> ${(p.generated_utc||'').slice(0,16).replace('T',' ')} UTC</span>`;
+}
+
+function draw(){
+  const {sig,led,bt,meta,cv}=DATA;
+  const today=sig.as_of_equity;
+  const openMap={};(led.open||[]).forEach(o=>openMap[o.book+':'+o.ticker]=o);
+  const sigSet=new Set([...sig.position.map(x=>'position:'+x.ticker),...sig.swing.map(x=>'swing:'+x.ticker)]);
+  // action tag for a signal row
+  function actOf(book,tk){const o=openMap[book+':'+tk];if(!o||o.entry_date===today)return ['BUY','act-buy'];return ['HOLD','act-hold'];}
+  // sizing — no leverage: position book is primary (capped at 80% of account),
+  // swing book draws only from the capital left over. Total can never exceed 100%.
+  const posN=sig.position.length,swN=sig.swing.length;
+  // market-conditions directive: caps how much of the account goes to work today
+  const cond=sig.conditions||{};const condExp=(cond.exposure!=null)?cond.exposure:1;
+  const posExpUse=Math.min(sig.position_suggested_exposure||0,0.80,condExp);
+  const posDeploy=ACCT*posExpUse;
+  const swDeploy=(ACCT-posDeploy)*(sig.swing_suggested_exposure||0)*condExp;
+  const posEach=posN?posDeploy/posN:0,swEach=swN?swDeploy/swN:0;
+  const cashLeft=Math.max(0,ACCT-posDeploy-swDeploy);
+  const newBuys=[...sig.position,...sig.swing].filter((x,i)=>{const book=i<posN?'position':'swing';return actOf(book,x.ticker)[0]==='BUY';}).length;
+
+  // exit watch: open positions NO LONGER in today's signals, or down hard, or past horizon
+  const exit=[];
+  (led.open||[]).forEach(o=>{
+    const horizon=o.book==='position'?32:9;let reason=null;
+    if(!sigSet.has(o.book+':'+o.ticker) && o.days_held>=3) reason='Dropped out of the model — momentum fading. Consider closing.';
+    else if(o.return_pct<=-8) reason='Down past a healthy stop. Consider cutting the loss.';
+    else if(o.days_held>=horizon) reason='Held its full horizon. Take the result and rotate.';
+    if(reason) exit.push({...o,reason});
+  });
+
+  // tape
+  const items=[...sig.position.slice(0,10).map(x=>[x.ticker,x.entry_ref,x.mom_12m_pct]),...sig.swing.slice(0,8).map(x=>[x.ticker,x.entry_ref,x.ret_10d_pct])];
+  $('tape').innerHTML=(items.map(([t,px,ch])=>`<span class="it"><span class="sym">${t}</span><span class="px">$${px}</span><span class="${ch>=0?'up':'down'}">${ch>=0?'▲':'▼'}${Math.abs(ch)}%</span></span>`).join('')).repeat(2);
+
+  // PLAYBOOK
+  $('pbDay').textContent='· '+today;
+  let pb='';
+  if(cond.directive){
+    const tone=condExp>=0.75?'ok':(condExp>=0.5?'':'err');
+    const chips=(cond.checks||[]).map(c=>`<span title="${c.text}" style="display:inline-block;margin:6px 8px 0 0;padding:3px 9px;border-radius:999px;border:1px solid var(--line);font-size:11.5px;color:var(--text2)"><b style="color:var(--${c.pass?'up':'down'})">${c.pass?'✓':'✕'}</b> ${c.name}: ${c.text}</span>`).join('');
+    pb+=`<div class="banner ${tone}" style="margin-bottom:14px"><div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)">Today's directive${cond.days_in_stance?` · day ${cond.days_in_stance} of this stance`:''}</div><div style="font-size:17px;font-weight:700;color:var(--text);margin-top:4px">${cond.directive}</div><div>${chips}</div>${cond.note?`<div style="margin-top:8px;font-size:11.5px">${cond.note}</div>`:''}</div>`;
+  }
+  pb+=`<div class="pb-lead">Deploy up to <span class="big">${usd(posDeploy+swDeploy)}</span> of your <span class="mono">${usd(ACCT)}</span> today — keeping <span class="mono">${usd(cashLeft)}</span> in cash. No leverage: the position book is the core, swing uses what's left over.</div>`;
+  pb+=`<div class="pb-grid">
+    <div class="pbtile"><div class="k">New buys today</div><div class="v gold">${newBuys}</div><div class="s">act on these first</div></div>
+    <div class="pbtile"><div class="k">Position ideas</div><div class="v">${posN}</div><div class="s">~${usd(posEach)} each · hold ~1mo</div></div>
+    <div class="pbtile"><div class="k">Swing ideas</div><div class="v">${swN}</div><div class="s">~${usd(swEach)} each · hold ~1wk</div></div>
+    <div class="pbtile"><div class="k">To review / exit</div><div class="v ${exit.length?'down':''}">${exit.length}</div><div class="s">${exit.length?'see below':'nothing flagged'}</div></div>
+  </div>`;
+  if(exit.length){pb+=`<div class="exwatch"><div class="h">⚠ Positions to review today</div>`+
+    exit.slice(0,8).map(o=>`<div class="exrow"><span class="chip" style="min-width:52px">${o.ticker.replace('-USD','')}</span><span class="${sgn(o.return_pct)}">${pc(o.return_pct)}</span><span style="color:var(--text2)">${o.reason}</span></div>`).join('')+`</div>`;}
+  pb+=`<div class="disc"><b>How to use this:</b> buy the new ideas at roughly the suggested size, set the stop shown in each row, hold the rest, and act on anything in the review list. The edge is real but works over many trades — your job is to follow the sizing and honor the stops every time, not to win on any single position. This is a research tool, not investment advice.</div>`;
+  $('playbookBody').innerHTML=pb;
+
+  // hero
+  const sc=led.scorecard||{};const p=sc.position||{n:0};const s=sc.swing||{n:0};const openN=(led.open||[]).length,closedN=(led.closed||[]).length;const core=(bt.strategies||[])[0]||{};
+  const hero=[
+    {k:'Deploy today',t:'Total dollars to put to work now — capped at your account, no leverage.',v:usd(posDeploy+swDeploy),s:Math.round((posDeploy+swDeploy)/ACCT*100)+'% invested · '+usd(cashLeft)+' cash'},
+    {k:'New buys',t:'Signals that are new today — the ones to act on first.',v:newBuys,s:`${posN+swN} total ideas`},
+    {k:'Open · live',t:'Positions the live ledger is currently tracking.',v:openN,s:`${closedN} closed`},
+    {k:'Model Sharpe',t:'Risk-adjusted return. Above 1 is good, above 2 is excellent. This is the validated flagship.',v:core.sharpe??'—',s:`${core.out_of_sample_sharpe??'—'} out-of-sample`,sm:1},
+    {k:'Worst drawdown',t:'The largest peak-to-trough drop in the validated backtest — the pain you must be able to sit through.',v:(core.max_drawdown_pct??'—')+'%',s:'risk-controlled',sm:1,cls:'down'},
+  ];
+  $('hero').innerHTML=hero.map(t=>`<div class="kpi"><div class="k" title="${t.t||''}">${t.k}</div><div class="v ${t.sm?'sm':''} ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+  $('posExpo').innerHTML=`~${usd(posEach)} each · ${usd(posDeploy)} total`;
+  $('swingExpo').innerHTML=`~${usd(swEach)} each · ${usd(swDeploy)} total`;
+
+  const posMax=Math.max(1,...sig.position.map(x=>Math.abs(x.mom_12m_pct)));
+  const swMax=Math.max(1,...sig.swing.map(x=>Math.abs(x.ret_10d_pct)));
+  const actCell=(book)=>(v,r)=>{const[a,c]=actOf(book,r.ticker);return `<span class="act ${c}">${a}</span>`;};
+  $('position').innerHTML=tbl(sig.position,[
+    {h:'#',k:'rank',num:true,f:v=>`<span class="rankpill ${v<=3?'top':''}">${v}</span>`},
+    {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+    {h:'Action',k:'ticker',f:actCell('position')},
+    {h:'Buy near',k:'entry_ref',num:true,tip:'Recent price. Aim to enter near here; not a limit.',f:v=>'$'+v.toLocaleString()},
+    {h:'Size',k:'entry_ref',num:true,tip:'Suggested dollars for this position, from your account and the risk model.',f:_=>`<span class="sz">${usd(posEach)}</span>`},
+    {h:'12M',k:'mom_12m_pct',num:true,tip:'12-month price momentum.',cls:sgn,f:v=>pc(v)},
+    {h:'Trend',k:'mom_12m_pct',num:true,f:v=>mbar(v,posMax)},
+    {h:'Stop',k:'suggested_stop',num:true,tip:'Suggested exit level to cap the loss. Honor it.',f:v=>v?'$'+v.toLocaleString():'—'},
+  ],'No position signals — the book is in cash. A valid, honest output.');
+  $('swing').innerHTML=tbl(sig.swing,[
+    {h:'#',k:'rank',num:true,f:v=>`<span class="rankpill ${v<=3?'top':''}">${v}</span>`},
+    {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+    {h:'Action',k:'ticker',f:actCell('swing')},
+    {h:'Buy near',k:'entry_ref',num:true,f:v=>'$'+v.toLocaleString()},
+    {h:'Size',k:'entry_ref',num:true,f:_=>`<span class="sz">${usd(swEach)}</span>`},
+    {h:'10D',k:'ret_10d_pct',num:true,cls:sgn,f:v=>pc(v)},
+    {h:'Mom',k:'ret_10d_pct',num:true,f:v=>mbar(v,swMax)},
+    {h:'Stop',k:'suggested_stop',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
+  ],'No swing signals — the book is in cash.');
+
+  const c=sig.crypto||{};let ch=`<div style="padding:14px 20px 2px"><div class="banner">${c.label||''}</div></div>`;
+  if(c.coins_in_uptrend&&c.coins_in_uptrend.length){const cexp=ACCT*(c.suggested_gross_exposure||0);const cEach=cexp/c.coins_in_uptrend.length;
+    ch+=`<div style="padding:8px 20px 0"><span class="expo mono" style="color:var(--text2)">high-risk sleeve · ~${usd(cEach)} per coin if you choose to hold</span></div>`;
+    ch+=tbl(c.coins_in_uptrend,[{h:'Coin',k:'ticker',f:v=>`<span class="chip">${v.replace('-USD','')}<span class="ex"> /USD</span></span>`},{h:'Ref',k:'entry_ref',num:true,f:v=>'$'+v.toLocaleString()},{h:'200D',k:'mom_200d_pct',num:true,cls:sgn,f:v=>pc(v)}],'');
+  } else ch+='<div class="empty">No coins in confirmed uptrend — the sleeve is in cash. Sitting out <em>is</em> the risk control.</div>';
+  $('crypto').innerHTML=ch;
+
+  // VALUE screen
+  const val=DATA.val;
+  if(val&&val.candidates){
+    if(val.label)$('valLabel').textContent='';
+    $('valueTbl').innerHTML=tbl(val.candidates,[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Price',k:'price',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
+      {h:'P/B',k:'pb',num:true,tip:'Price-to-book. Below 1.0 = trading under the accounting value of its assets.',f:v=>`<span class="${v<1?'gold':'neu'}">${v}</span>`},
+      {h:'ROE',k:'roe_pct',num:true,tip:'Return on equity — profitability/quality. Higher is better.',cls:v=>v>=12?'up':'neu',f:v=>v==null?'—':v+'%'},
+      {h:'P/E',k:'pe',num:true,f:v=>v==null?'—':v},
+      {h:'Sector',k:'sector',f:v=>`<span class="neu" style="font-size:12px">${v||'—'}</span>`},
+    ],'No names currently pass the below-book + quality screen. That is a valid, honest result — nothing cheap-and-solid right now.');
+  } else { $('valueTbl').innerHTML='<div class="empty">Value screen will appear after the next engine run publishes it.</div>'; }
+
+  // WATCHLIST
+  const watch=DATA.watch;
+  if(watch&&watch.names){
+    $('watchTbl').innerHTML=tbl(watch.names,[
+      {h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v}</span>`},
+      {h:'Price',k:'price',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
+      {h:'Day',k:'chg_pct',num:true,cls:sgn,f:v=>v==null?'—':pc(v)},
+      {h:'P/B',k:'pb',num:true,f:v=>v==null?'—':v},
+      {h:'Status',k:'status',f:v=>{const ok=/Eligible/.test(v);return `<span class="${ok?'up':'warn'}" style="font-size:12px">${ok?'● ':'○ '}${v}</span>`;}},
+    ],'Watchlist will appear after the next engine run.');
+  } else { $('watchTbl').innerHTML='<div class="empty">Watchlist will appear after the next engine run.</div>'; }
+
+  // MARKET READ (AI digest) + NEWS
+  const leanClass=l=>/bull/i.test(l||'')?'bull':(/bear/i.test(l||'')?'bear':'neut');
+  const dg=DATA.digest;
+  if(dg&&dg.available&&dg.market){
+    const m=dg.market;
+    $('digestBox').innerHTML=`<div class="digest">
+      <div class="dg-head"><span class="lean ${leanClass(m.lean)}">${m.lean||'neutral'}</span>
+        <span class="conf">confidence: ${m.confidence||'—'}</span>
+        <span class="conf" style="margin-left:auto">AI read · ${dg.model||''}</span></div>
+      <div class="dg-sum">${m.summary||''}</div>
+      <div class="bbgrid">
+        <div class="bb bull"><div class="h">▲ Bull case</div><p>${m.bull||''}</p></div>
+        <div class="bb bear"><div class="h">▼ Bear case</div><p>${m.bear||''}</p></div>
+      </div>
+      ${m.watch?`<div class="watch"><b>Watch:</b> ${m.watch}</div>`:''}
+      ${(dg.takes&&dg.takes.length)?`<div class="takes">`+dg.takes.map(t=>`<div class="take"><span class="tp ${leanClass(t.lean)==='bull'?'up':(leanClass(t.lean)==='bear'?'down':'neu')}">${t.topic} · ${t.lean}</span><span class="nt">${t.note} <span class="conf">(${t.confidence})</span></span></div>`).join('')+`</div>`:''}
+      <div class="dg-note">${dg.disclaimer||''}</div>
+    </div>`;
+  } else {
+    const note=(dg&&dg.note)||'Add a free GEMINI_API_KEY repository secret to enable an honest daily market read of the real headlines below.';
+    $('digestBox').innerHTML=`<div class="setup"><b>AI Market Read — not set up yet.</b> ${note}<br><br>To turn it on: create a free key at <span class="mono">aistudio.google.com/apikey</span>, then add it at <span class="mono">Settings → Secrets → Actions</span> in your repo as <span class="mono">GEMINI_API_KEY</span>. The real headlines below work regardless.</div>`;
+  }
+  const nw=DATA.news;
+  if(nw&&nw.items&&nw.items.length){
+    $('newsMeta').innerHTML=`<span class="mono">${nw.count} headlines</span>`;
+    $('newsList').innerHTML=nw.items.map(it=>`<div class="newsrow"><span class="tk">${it.tag||''}</span><a href="${it.link}" target="_blank" rel="noopener">${it.title}</a><span class="src">${it.source||''}</span></div>`).join('');
+  } else { $('newsList').innerHTML='<div class="empty">Headlines will appear after the next engine run publishes them.</div>'; }
+
+  drawPolicy(DATA.policy);
+
+  drawChart(cv);
+
+  const tiles=[{k:'Live since',v:sc.live_since||'—',s:'forward test'},{k:'Open',v:openN,s:'tracked now'},{k:'Closed',v:closedN,s:'reached horizon'},
+    {k:'Position win rate',v:p.n?p.win_rate_pct+'%':'—',s:p.n?`${p.n} closed · avg ${pc(p.avg_return_pct)}`:'accruing'},
+    {k:'Swing win rate',v:s.n?s.win_rate_pct+'%':'—',s:s.n?`${s.n} closed · avg ${pc(s.avg_return_pct)}`:'accruing'},
+    {k:'Position vs S&P 500',v:p.avg_excess_vs_spy_pct!=null?pc(p.avg_excess_vs_spy_pct):'—',s:p.beat_spy_pct!=null?`beat SPY on ${p.beat_spy_pct}% of signals`:'accruing'},
+    {k:'Swing vs S&P 500',v:s.avg_excess_vs_spy_pct!=null?pc(s.avg_excess_vs_spy_pct):'—',s:s.beat_spy_pct!=null?`beat SPY on ${s.beat_spy_pct}% of signals`:'accruing'},
+    {k:'Avg win / avg loss',v:p.n?`${pc(p.avg_win_pct)} / ${pc(p.avg_loss_pct)}`:'—',s:p.n?`position · worst ${pc(p.worst_loss_pct!=null?p.worst_loss_pct:0)} · ${p.stopped_out||0} stopped out`:'accruing'},
+    {k:'Strict rules (v2)',v:((sc.strict||{}).position||{}).n||((sc.strict||{}).swing||{}).n?`${(((sc.strict||{}).position||{}).n||0)+(((sc.strict||{}).swing||{}).n||0)} closed`:'accruing',s:(sc.strict||{}).since?`next-open entry · stops · costs · since ${(sc.strict||{}).since}`:'next-open entry · stops · costs'}];
+  $('ledgerTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
+  $('ledgerNote').innerHTML=closedN===0?'<div class="banner ok">The live track record starts empty and fills in honestly as today\'s signals reach their horizon. Win rates appear once positions close — no backfilling, no hindsight. This is the real forward test.</div>':'';
+  $('openCount').innerHTML=openN?`<span class="mono" style="color:var(--text2)">${openN} tracked</span>`:'';
+  const open=(led.open||[]).slice().sort((a,b)=>(b.entry_date||'').localeCompare(a.entry_date));
+  $('openPositions').innerHTML=tbl(open,[{h:'Ticker',k:'ticker',f:v=>`<span class="chip">${v.replace('-USD','')}</span>`},
+    {h:'Book',k:'book',f:v=>`<span class="badge ${v==='position'?'b-pos':'b-swing'}">${v}</span>`},
+    {h:'Entered',k:'entry_date',f:v=>`<span class="mono neu">${v}</span>`},{h:'Entry',k:'entry_price',num:true,f:v=>'$'+v.toLocaleString()},
+    {h:'Last',k:'last_price',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
+    {h:'Return',k:'return_pct',num:true,cls:sgn,f:v=>`<span class="delta"><span>${arw(v)}</span>${pc(v)}</span>`},{h:'Days',k:'days_held',num:true}],
+    'No open positions yet — they appear the moment the engine runs.');
+
+  $('btPeriod').textContent=bt.period||'';
+  let bh='<table><thead><tr><th>Strategy</th><th>Status</th><th class="num" title="Compound annual growth rate">CAGR</th><th class="num" title="Risk-adjusted return; >1 good, >2 excellent">Sharpe</th><th class="num" title="Sharpe on recent data the model was never fit to">OOS</th><th class="num" title="Worst peak-to-trough drop">Max DD</th></tr></thead><tbody>';
+  for(const st of (bt.strategies||[])) bh+=`<tr><td><div style="font-weight:600">${st.name}</div><div style="color:var(--dim);font-size:11px;margin-top:4px;white-space:normal;max-width:430px">${st.note||''}</div></td><td><span class="mono" style="font-size:11px;color:var(--text2)">${st.status}</span></td><td class="num">${st.cagr_pct}%</td><td class="num">${st.sharpe}</td><td class="num up">${st.out_of_sample_sharpe}</td><td class="num down">${st.max_drawdown_pct}%</td></tr>`;
+  $('backtestTbl').innerHTML=bh+'</tbody></table>';
+  $('btMethod').textContent=bt.method||'';
+  $('foot').innerHTML=`<b>How this works.</b> A cross-sectional momentum model — validated on real historical data and survivorship-controlled — runs daily on free infrastructure and publishes the playbook above. The <span class="up">Live Track Record</span> is a real forward test with no hindsight; the <span class="warn">Backtest</span> uses real historical prices with hypothetical trades applied in hindsight. Crypto is risk-managed beta, not an edge. The <span class="gold">Policy Desk</span> tracks federal equity, warrants and contracts in listed companies and scores each one against SPY from the announcement close — it is a research desk for policy risk, not a signal, and it publishes the losers alongside the winners.<br><br>${sig.disclaimer||''} SIGNAL is a research tool, not investment advice, and is not a broker.`;
+}
+
+(async()=>{
+  try{
+    const [sig,led,bt,meta,cv,val,watch,news,digest,policy]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null)]);
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy};draw();
+  }catch(e){
+    $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
+    $('clock').textContent='awaiting run';
+  }
+})();
+</script>
 </body>
 </html>
