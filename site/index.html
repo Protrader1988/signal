@@ -684,8 +684,8 @@ function draw(){
   // sizing — no leverage: position book is primary (capped at 80% of account),
   // swing book draws only from the capital left over. Total can never exceed 100%.
   const posN=sig.position.length,swN=sig.swing.length;
-  // market-conditions directive: caps how much of the account goes to work today
-  const cond=sig.conditions||{};const condExp=(cond.exposure!=null)?cond.exposure:1;
+  // market conditions: readout only (testing showed no benefit from sizing by it)
+  const cond=sig.conditions||{};const condExp=1;
   const posExpUse=Math.min(sig.position_suggested_exposure||0,0.80,condExp);
   const posDeploy=ACCT*posExpUse;
   const swDeploy=(ACCT-posDeploy)*(sig.swing_suggested_exposure||0)*condExp;
@@ -711,9 +711,9 @@ function draw(){
   $('pbDay').textContent='· '+today;
   let pb='';
   if(cond.directive){
-    const tone=condExp>=0.75?'ok':(condExp>=0.5?'':'err');
+    const tone=(cond.checks_passed||0)>=4?'ok':((cond.checks_passed||0)>=3?'':'err');
     const chips=(cond.checks||[]).map(c=>`<span title="${c.text}" style="display:inline-block;margin:6px 8px 0 0;padding:3px 9px;border-radius:999px;border:1px solid var(--line);font-size:11.5px;color:var(--text2)"><b style="color:var(--${c.pass?'up':'down'})">${c.pass?'✓':'✕'}</b> ${c.name}: ${c.text}</span>`).join('');
-    pb+=`<div class="banner ${tone}" style="margin-bottom:14px"><div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)">Today's directive${cond.days_in_stance?` · day ${cond.days_in_stance} of this stance`:''}</div><div style="font-size:17px;font-weight:700;color:var(--text);margin-top:4px">${cond.directive}</div><div>${chips}</div>${cond.note?`<div style="margin-top:8px;font-size:11.5px">${cond.note}</div>`:''}</div>`;
+    pb+=`<div class="banner ${tone}" style="margin-bottom:14px"><div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)">Market conditions · readout only</div><div style="font-size:17px;font-weight:700;color:var(--text);margin-top:4px">${cond.directive}</div><div>${chips}</div>${cond.note?`<div style="margin-top:8px;font-size:11.5px">${cond.note}</div>`:''}</div>`;
   }
   pb+=`<div class="pb-lead">Deploy up to <span class="big">${usd(posDeploy+swDeploy)}</span> of your <span class="mono">${usd(ACCT)}</span> today — keeping <span class="mono">${usd(cashLeft)}</span> in cash. No leverage: the position book is the core, swing uses what's left over.</div>`;
   pb+=`<div class="pb-grid">
@@ -762,7 +762,7 @@ function draw(){
     {h:'10D',k:'ret_10d_pct',num:true,cls:sgn,f:v=>pc(v)},
     {h:'Mom',k:'ret_10d_pct',num:true,f:v=>mbar(v,swMax)},
     {h:'Stop',k:'suggested_stop',num:true,f:v=>v?'$'+v.toLocaleString():'—'},
-  ],'No swing signals — the book is in cash.');
+  ],'The swing book was retired in October 2026: it was flat before costs in live tracking. Open swing trades run off on their own.');
 
   const c=sig.crypto||{};let ch=`<div style="padding:14px 20px 2px"><div class="banner">${c.label||''}</div></div>`;
   if(c.coins_in_uptrend&&c.coins_in_uptrend.length){const cexp=ACCT*(c.suggested_gross_exposure||0);const cEach=cexp/c.coins_in_uptrend.length;
