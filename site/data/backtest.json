@@ -1,16 +1,16 @@
 {
-  "label": "Backtested on REAL historical prices (2017–2026). Trades are hypothetical — the strategy is applied retroactively to real history to measure what it would have returned. Validating evidence, not live results.",
-  "period": "2017-01 to 2026-07 · real daily prices, 104 names",
+  "label": "Backtested on REAL historical prices (2017\u20132026). Trades are hypothetical \u2014 the strategy is applied retroactively to real history to measure what it would have returned. Validating evidence, not live results.",
+  "period": "2017-01 to 2026-07 \u00b7 real daily prices, 104 names",
   "method": "Real historical data throughout. No look-ahead: signals use only data available at each point in time. Real 10bps transaction costs charged on every trade. Chronological in-sample (65%) / out-of-sample (35%) split so recent years are tested on data the model never saw. Equities benchmarked against an equal-weight basket of the SAME universe, so any outperformance reflects selection skill, not survivorship.",
   "strategies": [
     {
       "name": "Equity momentum (position, top 20%, monthly + vol-target 15%)",
-      "status": "VALIDATED — survivorship-neutral, robust out-of-sample",
+      "status": "VALIDATED \u2014 survivorship-neutral, robust out-of-sample",
       "cagr_pct": 16.4,
       "sharpe": 1.06,
       "out_of_sample_sharpe": 1.58,
       "max_drawdown_pct": -19.1,
-      "note": "Vol-targeting cut drawdown from -31% to -19% while improving risk-adjusted return. Vol target is a tunable risk dial."
+      "note": "Vol-targeting cut drawdown from -31% to -19% while improving risk-adjusted return. Vol target is a tunable risk dial. Research round 4: tight stops cut the average trade by about two-thirds, so the book uses a wide 15% trailing stop instead."
     },
     {
       "name": "Equity momentum (position, top 20%, monthly, no risk overlay)",
@@ -19,20 +19,20 @@
       "sharpe": 1.05,
       "out_of_sample_sharpe": 1.5,
       "max_drawdown_pct": -31.2,
-      "note": "Beats equal-weight-same-universe (Sharpe 0.87). Return scales smoothly with rank concentration — signature of a real signal."
+      "note": "Beats equal-weight-same-universe (Sharpe 0.87). Return scales smoothly with rank concentration \u2014 signature of a real signal."
     },
     {
       "name": "Short-term momentum continuation (swing, weekly)",
-      "status": "VIABLE secondary signal",
+      "status": "RETIRED Oct 2026 - did not hold up live",
       "cagr_pct": 10.8,
       "sharpe": 0.58,
       "out_of_sample_sharpe": 0.75,
       "max_drawdown_pct": -37.8,
-      "note": "Mean-reversion ('buy the dip') was tested and FAILED (Sharpe 0.14); continuation works."
+      "note": "Backtested as viable, but live tracking from July to October 2026 showed +0.05% per signal before costs and it trailed the S&P 500. No new swing signals are issued."
     },
     {
       "name": "Crypto vol-targeted sleeve",
-      "status": "RISK-MANAGED BETA — no alpha edge",
+      "status": "RISK-MANAGED BETA \u2014 no alpha edge",
       "cagr_pct": 37.4,
       "sharpe": 0.95,
       "out_of_sample_sharpe": 0.72,
