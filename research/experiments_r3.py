@@ -169,19 +169,21 @@ def main():
     log("done")
 
 def run_round4():
-    """Chain research round 4 from here so it runs inside the existing backtest
-    workflow step (no workflow edit needed). Its output is written to
-    research/output/experiments_r4_log.txt. A round-4 failure never fails round 3."""
+    """Chain the later research rounds from here so they run inside the existing
+    backtest workflow step (no workflow edit needed). Each round writes its own
+    log to research/output/. A later round failing never fails round 3."""
     import subprocess, os
-    here=os.path.dirname(os.path.abspath(__file__)); r4=os.path.join(here,"experiments_r4.py")
-    if not os.path.exists(r4): return
-    try:
-        p=subprocess.run([sys.executable,r4],capture_output=True,text=True,timeout=1500)
-        os.makedirs("research/output",exist_ok=True)
-        open("research/output/experiments_r4_log.txt","w").write((p.stdout or "")+(p.stderr or ""))
-        log(f"round 4 exit code {p.returncode}")
-    except Exception as e:
-        log(f"round 4 did not run: {e}")
+    here=os.path.dirname(os.path.abspath(__file__))
+    for name in ("experiments_r4","experiments_r5"):
+        script=os.path.join(here,name+".py")
+        if not os.path.exists(script): continue
+        try:
+            p=subprocess.run([sys.executable,script],capture_output=True,text=True,timeout=1500)
+            os.makedirs("research/output",exist_ok=True)
+            open(f"research/output/{name}_log.txt","w").write((p.stdout or "")+(p.stderr or ""))
+            log(f"{name} exit code {p.returncode}")
+        except Exception as e:
+            log(f"{name} did not run: {e}")
 
 if __name__=="__main__":
     try: main()
