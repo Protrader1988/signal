@@ -1,0 +1,39 @@
+name: paper-status
+
+# On-demand refresh of the Alpaca PAPER account only (fills, positions, profit and loss).
+# Safe to run during market hours: it does not run the signal engine or touch the ledger.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signals
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Refresh paper account
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python engine/alpaca_paper.py 2>&1 | tee paper_run.log
+      - name: Commit
+        run: |
+          git config user.name "signal-actions"
+          git config user.email "actions@github.com"
+          git add site/data/paper.json paper_run.log || true
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "paper: status refresh [skip ci]"
+            git push
+          fi
