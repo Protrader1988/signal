@@ -1,0 +1,14 @@
+[01:24:06] downloading 106 from 2017-01-01...
+[01:24:18]   usable 105 rows 2451
+[01:24:18] downloading 16 from 2006-01-01...
+[01:24:21]   usable 16 rows 5220
+[01:24:27] downloading 2 from 2017-01-01...
+[01:24:27]   usable 2 rows 2451
+[01:24:32] done
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
+$WBA: possibly delisted; no timezone found
+
+1 Failed download:
+['WBA']: possibly delisted; no timezone found
+/home/runner/work/signal/signal/research/experiments_r4.py:257: Pandas4Warning: Sorting by default when concatenating all DatetimeIndex is deprecated.  In the future, pandas will respect the default of `sort=False`. Specify `sort=True` or `sort=False` to silence this message. If you see this warnings when not directly calling concat, report a bug to pandas.
+  df = pd.concat([mom_vt.rename("mom"), trend.rename("trend")], axis=1).dropna()

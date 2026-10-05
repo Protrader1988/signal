@@ -1,12 +1,11 @@
-[22:22:52] downloading 106...
-HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PARA"}}}
-$PARA: possibly delisted; no timezone found
+[01:23:51] downloading 106...
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
 $WBA: possibly delisted; no timezone found
 
-2 Failed downloads:
-['PARA', 'WBA']: possibly delisted; no timezone found
-[22:22:58]   usable 104 rows 2400
-[22:23:00] downloading 11...
-[22:23:01]   usable 11 rows 3490
-[22:23:01] done
+1 Failed download:
+['WBA']: possibly delisted; no timezone found
+[01:24:03]   usable 105 rows 2451
+[01:24:04] downloading 11...
+[01:24:06]   usable 11 rows 3564
+[01:24:06] done
+[01:24:32] round 4 exit code 0

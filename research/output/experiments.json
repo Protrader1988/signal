@@ -1,227 +1,227 @@
 {
-  "generated_utc": "2026-07-22T22:22:31.947071+00:00",
+  "generated_utc": "2026-10-05T01:23:26.212309+00:00",
   "params": {
     "cost_bps": 10.0,
     "in_sample_frac": 0.65,
     "start": "2017-01-01"
   },
   "exp1_equity_momentum_robustness": {
-    "universe_size": 104,
+    "universe_size": 105,
     "sweep": {
       "top_10pct": {
         "full": {
-          "cagr_pct": 36.5,
-          "sharpe": 1.13,
-          "vol_pct": 32.0,
+          "cagr_pct": 36.6,
+          "sharpe": 1.14,
+          "vol_pct": 31.9,
           "maxDD_pct": -37.7
         },
         "in_sample": {
           "cagr_pct": 28.6,
           "sharpe": 0.92,
-          "vol_pct": 33.6,
+          "vol_pct": 33.4,
           "maxDD_pct": -37.7
         },
         "out_sample": {
-          "cagr_pct": 52.3,
-          "sharpe": 1.61,
-          "vol_pct": 28.7,
+          "cagr_pct": 52.8,
+          "sharpe": 1.6,
+          "vol_pct": 29.1,
           "maxDD_pct": -29.5
         },
-        "split": "2023-07-24"
+        "split": "2023-09-08"
       },
       "top_20pct": {
         "full": {
-          "cagr_pct": 27.4,
-          "sharpe": 1.05,
-          "vol_pct": 26.5,
+          "cagr_pct": 27.1,
+          "sharpe": 1.04,
+          "vol_pct": 26.3,
           "maxDD_pct": -31.2
         },
         "in_sample": {
-          "cagr_pct": 22.5,
-          "sharpe": 0.86,
-          "vol_pct": 28.4,
+          "cagr_pct": 22.1,
+          "sharpe": 0.85,
+          "vol_pct": 28.2,
           "maxDD_pct": -31.2
         },
         "out_sample": {
-          "cagr_pct": 36.8,
-          "sharpe": 1.5,
-          "vol_pct": 22.6,
+          "cagr_pct": 36.6,
+          "sharpe": 1.49,
+          "vol_pct": 22.7,
           "maxDD_pct": -26.7
         },
-        "split": "2023-07-24"
+        "split": "2023-09-08"
       },
       "top_30pct": {
         "full": {
-          "cagr_pct": 21.8,
-          "sharpe": 0.94,
-          "vol_pct": 24.0,
+          "cagr_pct": 22.0,
+          "sharpe": 0.96,
+          "vol_pct": 23.6,
           "maxDD_pct": -32.1
         },
         "in_sample": {
-          "cagr_pct": 18.8,
-          "sharpe": 0.79,
-          "vol_pct": 26.0,
+          "cagr_pct": 19.3,
+          "sharpe": 0.82,
+          "vol_pct": 25.7,
           "maxDD_pct": -32.1
         },
         "out_sample": {
-          "cagr_pct": 27.4,
+          "cagr_pct": 27.2,
           "sharpe": 1.34,
-          "vol_pct": 19.5,
+          "vol_pct": 19.3,
           "maxDD_pct": -24.1
         },
-        "split": "2023-07-24"
+        "split": "2023-09-08"
       }
     },
     "equal_weight_same_universe": {
       "full": {
-        "cagr_pct": 16.0,
-        "sharpe": 0.87,
-        "vol_pct": 19.3,
+        "cagr_pct": 14.7,
+        "sharpe": 0.81,
+        "vol_pct": 19.1,
         "maxDD_pct": -35.5
       },
       "in_sample": {
-        "cagr_pct": 13.6,
-        "sharpe": 0.7,
-        "vol_pct": 21.7,
+        "cagr_pct": 12.8,
+        "sharpe": 0.67,
+        "vol_pct": 21.4,
         "maxDD_pct": -35.5
       },
       "out_sample": {
-        "cagr_pct": 20.4,
-        "sharpe": 1.42,
-        "vol_pct": 13.8,
+        "cagr_pct": 18.2,
+        "sharpe": 1.28,
+        "vol_pct": 13.7,
         "maxDD_pct": -17.5
       },
-      "split": "2023-07-24"
+      "split": "2023-09-08"
     }
   },
   "exp2_shortterm_variants": {
     "short_mom_10d": {
       "full": {
-        "cagr_pct": 10.8,
-        "sharpe": 0.58,
-        "vol_pct": 22.1,
+        "cagr_pct": 9.6,
+        "sharpe": 0.53,
+        "vol_pct": 21.7,
         "maxDD_pct": -37.8
       },
       "in_sample": {
-        "cagr_pct": 9.7,
-        "sharpe": 0.51,
-        "vol_pct": 23.8,
+        "cagr_pct": 9.4,
+        "sharpe": 0.5,
+        "vol_pct": 23.3,
         "maxDD_pct": -37.8
       },
       "out_sample": {
-        "cagr_pct": 12.6,
-        "sharpe": 0.74,
+        "cagr_pct": 9.9,
+        "sharpe": 0.6,
         "vol_pct": 18.5,
         "maxDD_pct": -31.8
       },
-      "split": "2023-07-24"
+      "split": "2023-09-08"
     },
     "breakout_52w": {
       "full": {
-        "cagr_pct": 4.7,
-        "sharpe": 0.35,
-        "vol_pct": 17.4,
+        "cagr_pct": 4.5,
+        "sharpe": 0.34,
+        "vol_pct": 16.9,
         "maxDD_pct": -38.6
       },
       "in_sample": {
-        "cagr_pct": 2.4,
-        "sharpe": 0.22,
-        "vol_pct": 18.9,
+        "cagr_pct": 3.5,
+        "sharpe": 0.28,
+        "vol_pct": 18.1,
         "maxDD_pct": -38.6
       },
       "out_sample": {
-        "cagr_pct": 8.9,
-        "sharpe": 0.67,
-        "vol_pct": 14.3,
+        "cagr_pct": 6.3,
+        "sharpe": 0.5,
+        "vol_pct": 14.4,
         "maxDD_pct": -15.4
       },
-      "split": "2023-07-24"
+      "split": "2023-09-08"
     },
     "reversal_5d": {
       "full": {
-        "cagr_pct": 0.5,
-        "sharpe": 0.14,
-        "vol_pct": 23.5,
+        "cagr_pct": 0.7,
+        "sharpe": 0.15,
+        "vol_pct": 23.2,
         "maxDD_pct": -49.6
       },
       "in_sample": {
-        "cagr_pct": -4.8,
-        "sharpe": -0.05,
-        "vol_pct": 26.2,
+        "cagr_pct": -5.0,
+        "sharpe": -0.07,
+        "vol_pct": 25.9,
         "maxDD_pct": -49.6
       },
       "out_sample": {
-        "cagr_pct": 11.0,
-        "sharpe": 0.69,
-        "vol_pct": 17.3,
+        "cagr_pct": 12.1,
+        "sharpe": 0.75,
+        "vol_pct": 17.2,
         "maxDD_pct": -26.9
       },
-      "split": "2023-07-24"
+      "split": "2023-09-08"
     }
   },
   "exp3_crypto_timing": {
     "trend_timed_all": {
       "full": {
-        "cagr_pct": 49.4,
-        "sharpe": 0.91,
-        "vol_pct": 78.1,
+        "cagr_pct": 51.7,
+        "sharpe": 0.93,
+        "vol_pct": 77.4,
         "maxDD_pct": -85.0
       },
       "in_sample": {
-        "cagr_pct": 72.9,
-        "sharpe": 1.07,
-        "vol_pct": 87.8,
+        "cagr_pct": 76.2,
+        "sharpe": 1.09,
+        "vol_pct": 87.4,
         "maxDD_pct": -85.0
       },
       "out_sample": {
-        "cagr_pct": 13.7,
-        "sharpe": 0.51,
-        "vol_pct": 55.7,
+        "cagr_pct": 16.2,
+        "sharpe": 0.55,
+        "vol_pct": 54.3,
         "maxDD_pct": -64.6
       },
-      "split": "2023-06-15"
+      "split": "2023-08-02"
     },
     "trend_timed_BTC_ETH": {
       "full": {
-        "cagr_pct": 26.8,
-        "sharpe": 0.71,
-        "vol_pct": 57.5,
+        "cagr_pct": 28.3,
+        "sharpe": 0.73,
+        "vol_pct": 57.1,
         "maxDD_pct": -88.5
       },
       "in_sample": {
-        "cagr_pct": 32.1,
-        "sharpe": 0.76,
-        "vol_pct": 65.5,
+        "cagr_pct": 34.5,
+        "sharpe": 0.79,
+        "vol_pct": 64.9,
         "maxDD_pct": -88.5
       },
       "out_sample": {
-        "cagr_pct": 17.1,
-        "sharpe": 0.6,
+        "cagr_pct": 18.2,
+        "sharpe": 0.63,
         "vol_pct": 38.7,
         "maxDD_pct": -38.8
       },
-      "split": "2023-06-15"
+      "split": "2023-08-02"
     },
     "buy_hold_basket": {
       "full": {
-        "cagr_pct": 70.1,
-        "sharpe": 1.06,
-        "vol_pct": 82.7,
+        "cagr_pct": 75.5,
+        "sharpe": 1.1,
+        "vol_pct": 82.2,
         "maxDD_pct": -87.1
       },
       "in_sample": {
-        "cagr_pct": 108.5,
-        "sharpe": 1.27,
-        "vol_pct": 91.6,
+        "cagr_pct": 114.0,
+        "sharpe": 1.3,
+        "vol_pct": 91.0,
         "maxDD_pct": -87.1
       },
       "out_sample": {
-        "cagr_pct": 16.4,
-        "sharpe": 0.56,
-        "vol_pct": 63.0,
+        "cagr_pct": 22.9,
+        "sharpe": 0.64,
+        "vol_pct": 62.6,
         "maxDD_pct": -71.6
       },
-      "split": "2023-06-15"
+      "split": "2023-08-02"
     }
   }
 }

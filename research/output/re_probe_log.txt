@@ -1,5 +1,5 @@
 OK   NYC PLUTO (Socrata 64uk-42ks): rows/keys=1 sample=['borough', 'block', 'lot', 'cd', 'ct2010', 'cb2010', 'schooldist', 'council', 'zipcode', 'firecomp', 'policeprct', 'healtharea']
-OK   NYC ACRIS master (bnx9-e6tj): rows/keys=1 sample=['document_id', 'record_type', 'crfn', 'recorded_borough', 'doc_type', 'document_date', 'document_amt', 'recorded_datetime', 'modified_date', 'reel_yr', 'reel_nbr', 'reel_pg']
+FAIL NYC ACRIS master (bnx9-e6tj): TimeoutError The read operation timed out
 OK   NYC DOF rolling sales (usep-8jbt): rows/keys=1 sample=['borough', 'neighborhood', 'building_class_category', 'tax_class_at_present', 'block', 'lot', 'building_class_at_present', 'address', 'zip_code', 'residential_units', 'commercial_units', 'total_units']
 OK   NYC DOF assessments (yjxr-fw8i): rows/keys=1 sample=['bble', 'boro', 'block', 'lot', 'owner', 'bldgcl', 'taxclass', 'ltfront', 'ltdepth', 'stories', 'fullval', 'avland']
 FAIL NYC city-owned (caiw-33pf): HTTPError HTTP Error 404: Not Found
@@ -15,4 +15,4 @@ OK   NJ parcels/MOD-IV composite query (Fort Lee test): rows/keys=1 sample=['err
 FAIL NJGIN open data catalog: HTTPError HTTP Error 404: Not Found
 FAIL National Zoning Atlas API check: HTTPError HTTP Error 404: Not Found
 
-13/16 endpoints OK
+12/16 endpoints OK
