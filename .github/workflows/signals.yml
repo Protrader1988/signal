@@ -11,6 +11,7 @@ on:
   push:
     paths:
       - "engine/signal_engine.py"
+      - "engine/alpaca_paper.py"
       - "engine/curve.py"
       - "engine/fundamentals.py"
       - "engine/news.py"
@@ -41,6 +42,12 @@ jobs:
       - name: Generate signals + update ledger
         continue-on-error: true
         run: python engine/signal_engine.py 2>&1 | tee engine_run.log
+      - name: Paper trading (Alpaca PAPER account - mirrors the open position book)
+        continue-on-error: true
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python engine/alpaca_paper.py 2>&1 | tee paper_run.log
       - name: Generate equity curve
         continue-on-error: true
         run: python engine/curve.py 2>&1 | tee curve_run.log
