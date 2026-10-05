@@ -1,228 +1,75 @@
 {
-  "updated_utc": "2026-10-05T02:02:15.076010+00:00",
+  "updated_utc": "2026-10-05T02:07:23.287068+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
   "errors": [],
   "status": "ok",
   "start_equity": 100191.71,
+  "managed": [
+    "AMD",
+    "AMGN",
+    "CSCO",
+    "INTC",
+    "LLY",
+    "MRK",
+    "MU",
+    "PSX",
+    "TGT",
+    "TXN",
+    "UNH",
+    "VLO",
+    "XLK"
+  ],
+  "cleanup_20261005": true,
+  "cancelled_this_run": [
+    {
+      "symbol": "TSLA",
+      "qty": 0.2244,
+      "ok": true
+    },
+    {
+      "symbol": "SPY",
+      "qty": 0.1456,
+      "ok": true
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 0.25,
+      "ok": true
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 0.4202,
+      "ok": true
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 11.286,
+      "ok": true
+    }
+  ],
+  "other_positions": [
+    "AMZN",
+    "MSFT",
+    "NVDA",
+    "SPY",
+    "TSLA"
+  ],
   "account": {
-    "equity": 100191.71,
+    "equity": 100190.47,
     "cash": 96868.58,
-    "invested": 3323.13,
-    "return_since_start_pct": 0.0
+    "invested": 0,
+    "other_holdings_value": 3321.89,
+    "return_since_start_pct": -0.0
   },
   "sizing": {
     "exposure": 0.92,
     "names": 13,
-    "dollars_per_name": 7090.49
+    "dollars_per_name": 7090.4
   },
-  "positions": [
-    {
-      "symbol": "AMZN",
-      "qty": 11.286,
-      "avg_entry": 239.97,
-      "price": 252.62,
-      "value": 2851.07,
-      "pl": 142.77,
-      "pl_pct": 5.27
-    },
-    {
-      "symbol": "MSFT",
-      "qty": 0.4202,
-      "avg_entry": 476.0,
-      "price": 516.9,
-      "value": 217.2,
-      "pl": 17.19,
-      "pl_pct": 8.59
-    },
-    {
-      "symbol": "SPY",
-      "qty": 0.1456,
-      "avg_entry": 686.67,
-      "price": 770.62,
-      "value": 112.2,
-      "pl": 12.22,
-      "pl_pct": 12.23
-    },
-    {
-      "symbol": "TSLA",
-      "qty": 0.2244,
-      "avg_entry": 445.62,
-      "price": 372.9,
-      "value": 83.68,
-      "pl": -16.32,
-      "pl_pct": -16.32
-    },
-    {
-      "symbol": "NVDA",
-      "qty": 0.25,
-      "avg_entry": 187.08,
-      "price": 235.91,
-      "value": 58.98,
-      "pl": 12.21,
-      "pl_pct": 26.1
-    }
-  ],
-  "orders_this_run": [
-    {
-      "symbol": "AMZN",
-      "side": "sell",
-      "qty": 11.286,
-      "ok": true,
-      "reason": "closed in ledger",
-      "error": null
-    },
-    {
-      "symbol": "MSFT",
-      "side": "sell",
-      "qty": 0.4202,
-      "ok": true,
-      "reason": "closed in ledger",
-      "error": null
-    },
-    {
-      "symbol": "NVDA",
-      "side": "sell",
-      "qty": 0.25,
-      "ok": true,
-      "reason": "closed in ledger",
-      "error": null
-    },
-    {
-      "symbol": "SPY",
-      "side": "sell",
-      "qty": 0.1456,
-      "ok": true,
-      "reason": "closed in ledger",
-      "error": null
-    },
-    {
-      "symbol": "TSLA",
-      "side": "sell",
-      "qty": 0.2244,
-      "ok": true,
-      "reason": "closed in ledger",
-      "error": null
-    },
-    {
-      "symbol": "LLY",
-      "side": "buy",
-      "qty": 6,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6857.1,
-      "error": null
-    },
-    {
-      "symbol": "MRK",
-      "side": "buy",
-      "qty": 49,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 7070.7,
-      "error": null
-    },
-    {
-      "symbol": "AMGN",
-      "side": "buy",
-      "qty": 17,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6851.68,
-      "error": null
-    },
-    {
-      "symbol": "MU",
-      "side": "buy",
-      "qty": 6,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6449.34,
-      "error": null
-    },
-    {
-      "symbol": "AMD",
-      "side": "buy",
-      "qty": 11,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6973.01,
-      "error": null
-    },
-    {
-      "symbol": "INTC",
-      "side": "buy",
-      "qty": 59,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 7040.47,
-      "error": null
-    },
-    {
-      "symbol": "VLO",
-      "side": "buy",
-      "qty": 17,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6907.1,
-      "error": null
-    },
-    {
-      "symbol": "TGT",
-      "side": "buy",
-      "qty": 45,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 7020.0,
-      "error": null
-    },
-    {
-      "symbol": "PSX",
-      "side": "buy",
-      "qty": 26,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6879.08,
-      "error": null
-    },
-    {
-      "symbol": "CSCO",
-      "side": "buy",
-      "qty": 63,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 7068.6,
-      "error": null
-    },
-    {
-      "symbol": "TXN",
-      "side": "buy",
-      "qty": 24,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 7051.2,
-      "error": null
-    },
-    {
-      "symbol": "XLK",
-      "side": "buy",
-      "qty": 35,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 6993.35,
-      "error": null
-    },
-    {
-      "symbol": "UNH",
-      "side": "buy",
-      "qty": 19,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 7066.1,
-      "error": null
-    }
-  ],
+  "positions": [],
+  "orders_this_run": [],
   "recent_orders": [
     {
       "symbol": "UNH",
@@ -345,7 +192,7 @@
       "symbol": "TSLA",
       "side": "sell",
       "qty": 0.2244,
-      "status": "accepted",
+      "status": "canceled",
       "submitted": "2026-10-05",
       "filled_qty": 0.0,
       "fill_price": null
@@ -354,7 +201,7 @@
       "symbol": "SPY",
       "side": "sell",
       "qty": 0.1456,
-      "status": "accepted",
+      "status": "canceled",
       "submitted": "2026-10-05",
       "filled_qty": 0.0,
       "fill_price": null

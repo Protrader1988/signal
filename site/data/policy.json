@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-05T02:04:55.335463+00:00",
+  "generated_utc": "2026-10-05T02:09:52.959115+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -1882,7 +1882,7 @@
         "43": 19.68,
         "44": 20.37,
         "45": 19.25,
-        "46": 17.11,
+        "46": 17.1,
         "47": 14.4,
         "48": 16.32,
         "49": 16.16,
@@ -6399,78 +6399,10 @@
       "link": "https://www.usaspending.gov/search?keywords=active%20pharmaceutical%20ingredient"
     }
   ],
-  "pipeline": [
-    {
-      "id": "6",
-      "companies": [
-        "RTX"
-      ],
-      "tickers": [
-        "RTX"
-      ],
-      "sector": "defense",
-      "instrument": "procurement",
-      "stage": "definitive",
-      "amount_usd": 20700000000.0,
-      "agency": "Department of War",
-      "summary": "The Department of War awarded RTX a $20.7 billion contract to accelerate Advanced Medium-Range Air-to-Air Missile production.",
-      "quote": "Department of War and RTX Accelerate Advanced Medium-Range Air-to-Air Missile Production Through $20.7B Award",
-      "confidence": "high",
-      "date": "2026-09-28",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4613107/department-of-war-and-rtx-accelerate-advanced-medium-range-air-to-air-missile-p/",
-      "source": "Dept. of War",
-      "title": "Department of War and RTX Accelerate Advanced Medium-Range Air-to-Air Missile Production Through $20.7B Award",
-      "already_tracked": true
-    },
-    {
-      "id": "8",
-      "companies": [],
-      "tickers": [],
-      "sector": "pharmaceuticals",
-      "instrument": "price floor",
-      "stage": "definitive",
-      "amount_usd": null,
-      "agency": "White House",
-      "summary": "The administration established agreements with pharmaceutical manufacturers to provide Medicaid programs with most-favored-nation pricing rebates.",
-      "quote": "participating pharmaceutical manufacturers will provide State Medicaid programs with rebates on expensive brand-name drugs to ensure the final price to Medicaid does not exceed the MFN price.",
-      "confidence": "medium",
-      "date": "2026-09-18",
-      "link": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-announces-lower-drug-prices-for-all-50-state-medicaid-programs/",
-      "source": "White House",
-      "title": "Fact sheet president donald j trump announces lower drug prices for all 50 state medicaid programs",
-      "already_tracked": false
-    },
-    {
-      "id": "3",
-      "companies": [
-        "Raytheon"
-      ],
-      "tickers": [
-        "RTX"
-      ],
-      "sector": "defense",
-      "instrument": "procurement",
-      "stage": "announced",
-      "amount_usd": null,
-      "agency": "Department of War",
-      "summary": "The Department of War and U.S. Navy announced a contract with Raytheon to accelerate Standard Missile-6 production.",
-      "quote": "DoW and U.S. Navy Announce Contract With Raytheon to Accelerate Standard Missile-6 Production",
-      "confidence": "medium",
-      "date": "2026-10-01",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4616995/dow-and-us-navy-announce-contract-with-raytheon-to-accelerate-standard-missile/",
-      "source": "Dept. of War",
-      "title": "DoW and U.S. Navy Announce Contract With Raytheon to Accelerate\u202fStandard Missile-6 Production",
-      "already_tracked": true
-    }
-  ],
+  "pipeline": [],
   "reading": {
-    "ok": true,
-    "model": "gemini-flash-latest",
-    "stats": {
-      "not_a_deal": 6
-    },
-    "note": "3 records from 9 documents \u2014 not a deal 6",
-    "generated_utc": "2026-10-05T02:04:25+00:00"
+    "ok": false,
+    "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash "
   },
   "detection": [
     {
@@ -7223,62 +7155,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-10-05T02:03:13+00:00"
+      "checked_utc": "2026-10-05T02:08:22+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-10-05T02:03:22+00:00"
+      "checked_utc": "2026-10-05T02:08:32+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "7 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-10-05T02:03:32+00:00"
+      "checked_utc": "2026-10-05T02:08:41+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-10-05T02:03:32+00:00"
+      "checked_utc": "2026-10-05T02:08:42+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-10-05T02:04:03+00:00"
+      "checked_utc": "2026-10-05T02:09:13+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-10-05T02:04:04+00:00"
+      "checked_utc": "2026-10-05T02:09:15+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-10-05T02:04:07+00:00"
+      "checked_utc": "2026-10-05T02:09:17+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "3 documents",
-      "checked_utc": "2026-10-05T02:04:10+00:00"
+      "checked_utc": "2026-10-05T02:09:20+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-10-05T02:04:10+00:00"
+      "checked_utc": "2026-10-05T02:09:20+00:00"
     },
     "reading": {
-      "ok": true,
-      "note": "3 records from 9 documents \u2014 not a deal 6",
-      "checked_utc": "2026-10-05T02:04:25+00:00"
+      "ok": false,
+      "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash ",
+      "checked_utc": "2026-10-05T02:09:28+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-10-05T02:04:55+00:00"
+      "checked_utc": "2026-10-05T02:09:52+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-10-05T02:04:55+00:00"
+      "checked_utc": "2026-10-05T02:09:52+00:00"
     }
   },
   "counts": {
@@ -7287,7 +7219,7 @@
     "radar": 9,
     "detection": 24,
     "documents": 9,
-    "pipeline": 3,
+    "pipeline": 0,
     "flow": 8
   }
 }
