@@ -1,9 +1,1009 @@
 {
-  "updated_utc": "2026-10-05T01:53:09.088616+00:00",
+  "updated_utc": "2026-10-05T02:02:15.076010+00:00",
   "mode": "paper",
-  "status": "no_keys",
-  "started": null,
-  "errors": [
-    "The ALPACA_API_KEY / ALPACA_SECRET_KEY secrets are not available to this run."
-  ]
+  "broker": "Alpaca (paper account)",
+  "started": "2026-10-05",
+  "errors": [],
+  "status": "ok",
+  "start_equity": 100191.71,
+  "account": {
+    "equity": 100191.71,
+    "cash": 96868.58,
+    "invested": 3323.13,
+    "return_since_start_pct": 0.0
+  },
+  "sizing": {
+    "exposure": 0.92,
+    "names": 13,
+    "dollars_per_name": 7090.49
+  },
+  "positions": [
+    {
+      "symbol": "AMZN",
+      "qty": 11.286,
+      "avg_entry": 239.97,
+      "price": 252.62,
+      "value": 2851.07,
+      "pl": 142.77,
+      "pl_pct": 5.27
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 0.4202,
+      "avg_entry": 476.0,
+      "price": 516.9,
+      "value": 217.2,
+      "pl": 17.19,
+      "pl_pct": 8.59
+    },
+    {
+      "symbol": "SPY",
+      "qty": 0.1456,
+      "avg_entry": 686.67,
+      "price": 770.62,
+      "value": 112.2,
+      "pl": 12.22,
+      "pl_pct": 12.23
+    },
+    {
+      "symbol": "TSLA",
+      "qty": 0.2244,
+      "avg_entry": 445.62,
+      "price": 372.9,
+      "value": 83.68,
+      "pl": -16.32,
+      "pl_pct": -16.32
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 0.25,
+      "avg_entry": 187.08,
+      "price": 235.91,
+      "value": 58.98,
+      "pl": 12.21,
+      "pl_pct": 26.1
+    }
+  ],
+  "orders_this_run": [
+    {
+      "symbol": "AMZN",
+      "side": "sell",
+      "qty": 11.286,
+      "ok": true,
+      "reason": "closed in ledger",
+      "error": null
+    },
+    {
+      "symbol": "MSFT",
+      "side": "sell",
+      "qty": 0.4202,
+      "ok": true,
+      "reason": "closed in ledger",
+      "error": null
+    },
+    {
+      "symbol": "NVDA",
+      "side": "sell",
+      "qty": 0.25,
+      "ok": true,
+      "reason": "closed in ledger",
+      "error": null
+    },
+    {
+      "symbol": "SPY",
+      "side": "sell",
+      "qty": 0.1456,
+      "ok": true,
+      "reason": "closed in ledger",
+      "error": null
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.2244,
+      "ok": true,
+      "reason": "closed in ledger",
+      "error": null
+    },
+    {
+      "symbol": "LLY",
+      "side": "buy",
+      "qty": 6,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6857.1,
+      "error": null
+    },
+    {
+      "symbol": "MRK",
+      "side": "buy",
+      "qty": 49,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 7070.7,
+      "error": null
+    },
+    {
+      "symbol": "AMGN",
+      "side": "buy",
+      "qty": 17,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6851.68,
+      "error": null
+    },
+    {
+      "symbol": "MU",
+      "side": "buy",
+      "qty": 6,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6449.34,
+      "error": null
+    },
+    {
+      "symbol": "AMD",
+      "side": "buy",
+      "qty": 11,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6973.01,
+      "error": null
+    },
+    {
+      "symbol": "INTC",
+      "side": "buy",
+      "qty": 59,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 7040.47,
+      "error": null
+    },
+    {
+      "symbol": "VLO",
+      "side": "buy",
+      "qty": 17,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6907.1,
+      "error": null
+    },
+    {
+      "symbol": "TGT",
+      "side": "buy",
+      "qty": 45,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 7020.0,
+      "error": null
+    },
+    {
+      "symbol": "PSX",
+      "side": "buy",
+      "qty": 26,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6879.08,
+      "error": null
+    },
+    {
+      "symbol": "CSCO",
+      "side": "buy",
+      "qty": 63,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 7068.6,
+      "error": null
+    },
+    {
+      "symbol": "TXN",
+      "side": "buy",
+      "qty": 24,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 7051.2,
+      "error": null
+    },
+    {
+      "symbol": "XLK",
+      "side": "buy",
+      "qty": 35,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 6993.35,
+      "error": null
+    },
+    {
+      "symbol": "UNH",
+      "side": "buy",
+      "qty": 19,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 7066.1,
+      "error": null
+    }
+  ],
+  "recent_orders": [
+    {
+      "symbol": "UNH",
+      "side": "buy",
+      "qty": 19.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "XLK",
+      "side": "buy",
+      "qty": 35.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "TXN",
+      "side": "buy",
+      "qty": 24.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "CSCO",
+      "side": "buy",
+      "qty": 63.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "PSX",
+      "side": "buy",
+      "qty": 26.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "TGT",
+      "side": "buy",
+      "qty": 45.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "VLO",
+      "side": "buy",
+      "qty": 17.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "INTC",
+      "side": "buy",
+      "qty": 59.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "AMD",
+      "side": "buy",
+      "qty": 11.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "MU",
+      "side": "buy",
+      "qty": 6.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "AMGN",
+      "side": "buy",
+      "qty": 17.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "MRK",
+      "side": "buy",
+      "qty": 49.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "LLY",
+      "side": "buy",
+      "qty": 6.0,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.2244,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "SPY",
+      "side": "sell",
+      "qty": 0.1456,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "NVDA",
+      "side": "sell",
+      "qty": 0.25,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "MSFT",
+      "side": "sell",
+      "qty": 0.4202,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "AMZN",
+      "side": "sell",
+      "qty": 11.286,
+      "status": "accepted",
+      "submitted": "2026-10-05",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1122,
+      "status": "filled",
+      "submitted": "2026-05-14",
+      "filled_qty": 0.1122,
+      "fill_price": 445.62
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1122,
+      "status": "filled",
+      "submitted": "2026-05-14",
+      "filled_qty": 0.1122,
+      "fill_price": 445.62
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.1214,
+      "status": "filled",
+      "submitted": "2026-05-08",
+      "filled_qty": 0.1214,
+      "fill_price": 429.22
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1214,
+      "status": "filled",
+      "submitted": "2026-02-17",
+      "filled_qty": 0.1214,
+      "fill_price": 412.18
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.1247,
+      "status": "filled",
+      "submitted": "2026-02-09",
+      "filled_qty": 0.1247,
+      "fill_price": 418.42
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1247,
+      "status": "filled",
+      "submitted": "2026-02-04",
+      "filled_qty": 0.1247,
+      "fill_price": 400.96
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.1192,
+      "status": "filled",
+      "submitted": "2026-02-03",
+      "filled_qty": 0.1192,
+      "fill_price": 415.16
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1192,
+      "status": "filled",
+      "submitted": "2026-02-02",
+      "filled_qty": 0.1192,
+      "fill_price": 419.6
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.1176,
+      "status": "filled",
+      "submitted": "2026-01-30",
+      "filled_qty": 0.1176,
+      "fill_price": 426.64
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1176,
+      "status": "filled",
+      "submitted": "2026-01-30",
+      "filled_qty": 0.1176,
+      "fill_price": 425.17
+    },
+    {
+      "symbol": "TSLA",
+      "side": "sell",
+      "qty": 0.1178,
+      "status": "filled",
+      "submitted": "2026-01-30",
+      "filled_qty": 0.1178,
+      "fill_price": 429.39
+    },
+    {
+      "symbol": "TSLA",
+      "side": "buy",
+      "qty": 0.1178,
+      "status": "filled",
+      "submitted": "2026-01-30",
+      "filled_qty": 0.1178,
+      "fill_price": 424.47
+    }
+  ],
+  "equity_history": [
+    {
+      "date": "2026-04-03",
+      "equity": 99624.48
+    },
+    {
+      "date": "2026-04-07",
+      "equity": 99657.89
+    },
+    {
+      "date": "2026-04-08",
+      "equity": 99668.12
+    },
+    {
+      "date": "2026-04-09",
+      "equity": 99756.42
+    },
+    {
+      "date": "2026-04-10",
+      "equity": 99897.15
+    },
+    {
+      "date": "2026-04-11",
+      "equity": 99951.13
+    },
+    {
+      "date": "2026-04-14",
+      "equity": 99975.4
+    },
+    {
+      "date": "2026-04-15",
+      "equity": 100086.56
+    },
+    {
+      "date": "2026-04-16",
+      "equity": 100093.06
+    },
+    {
+      "date": "2026-04-17",
+      "equity": 100110.15
+    },
+    {
+      "date": "2026-04-18",
+      "equity": 100124.41
+    },
+    {
+      "date": "2026-04-21",
+      "equity": 100095.8
+    },
+    {
+      "date": "2026-04-22",
+      "equity": 100114.59
+    },
+    {
+      "date": "2026-04-23",
+      "equity": 100181.61
+    },
+    {
+      "date": "2026-04-24",
+      "equity": 100168.44
+    },
+    {
+      "date": "2026-04-25",
+      "equity": 100276.0
+    },
+    {
+      "date": "2026-04-28",
+      "equity": 100246.24
+    },
+    {
+      "date": "2026-04-29",
+      "equity": 100230.39
+    },
+    {
+      "date": "2026-04-30",
+      "equity": 100264.68
+    },
+    {
+      "date": "2026-05-01",
+      "equity": 100280.16
+    },
+    {
+      "date": "2026-05-02",
+      "equity": 100320.19
+    },
+    {
+      "date": "2026-05-05",
+      "equity": 100320.19
+    },
+    {
+      "date": "2026-05-06",
+      "equity": 100378.4
+    },
+    {
+      "date": "2026-05-07",
+      "equity": 100401.17
+    },
+    {
+      "date": "2026-05-08",
+      "equity": 100363.1
+    },
+    {
+      "date": "2026-05-09",
+      "equity": 100381.68
+    },
+    {
+      "date": "2026-05-12",
+      "equity": 100340.3
+    },
+    {
+      "date": "2026-05-13",
+      "equity": 100302.64
+    },
+    {
+      "date": "2026-05-14",
+      "equity": 100352.07
+    },
+    {
+      "date": "2026-05-15",
+      "equity": 100323.81
+    },
+    {
+      "date": "2026-05-16",
+      "equity": 100285.66
+    },
+    {
+      "date": "2026-05-19",
+      "equity": 100290.89
+    },
+    {
+      "date": "2026-05-20",
+      "equity": 100223.56
+    },
+    {
+      "date": "2026-05-21",
+      "equity": 100293.84
+    },
+    {
+      "date": "2026-05-22",
+      "equity": 100331.3
+    },
+    {
+      "date": "2026-05-23",
+      "equity": 100308.14
+    },
+    {
+      "date": "2026-05-27",
+      "equity": 100297.76
+    },
+    {
+      "date": "2026-05-28",
+      "equity": 100371.32
+    },
+    {
+      "date": "2026-05-29",
+      "equity": 100403.0
+    },
+    {
+      "date": "2026-05-30",
+      "equity": 100372.93
+    },
+    {
+      "date": "2026-06-02",
+      "equity": 100270.53
+    },
+    {
+      "date": "2026-06-03",
+      "equity": 100270.68
+    },
+    {
+      "date": "2026-06-04",
+      "equity": 100128.46
+    },
+    {
+      "date": "2026-06-05",
+      "equity": 100171.52
+    },
+    {
+      "date": "2026-06-06",
+      "equity": 100066.76
+    },
+    {
+      "date": "2026-06-09",
+      "equity": 100060.7
+    },
+    {
+      "date": "2026-06-10",
+      "equity": 100042.4
+    },
+    {
+      "date": "2026-06-11",
+      "equity": 99962.98
+    },
+    {
+      "date": "2026-06-12",
+      "equity": 100006.49
+    },
+    {
+      "date": "2026-06-13",
+      "equity": 99975.54
+    },
+    {
+      "date": "2026-06-16",
+      "equity": 100068.42
+    },
+    {
+      "date": "2026-06-17",
+      "equity": 100062.33
+    },
+    {
+      "date": "2026-06-18",
+      "equity": 99956.22
+    },
+    {
+      "date": "2026-06-19",
+      "equity": 100037.46
+    },
+    {
+      "date": "2026-06-23",
+      "equity": 99901.64
+    },
+    {
+      "date": "2026-06-24",
+      "equity": 99910.33
+    },
+    {
+      "date": "2026-06-25",
+      "equity": 99906.9
+    },
+    {
+      "date": "2026-06-26",
+      "equity": 99818.9
+    },
+    {
+      "date": "2026-06-27",
+      "equity": 99890.92
+    },
+    {
+      "date": "2026-06-30",
+      "equity": 99982.72
+    },
+    {
+      "date": "2026-07-01",
+      "equity": 99968.36
+    },
+    {
+      "date": "2026-07-02",
+      "equity": 100011.3
+    },
+    {
+      "date": "2026-07-03",
+      "equity": 100016.88
+    },
+    {
+      "date": "2026-07-07",
+      "equity": 100039.15
+    },
+    {
+      "date": "2026-07-08",
+      "equity": 100056.61
+    },
+    {
+      "date": "2026-07-09",
+      "equity": 100027.14
+    },
+    {
+      "date": "2026-07-10",
+      "equity": 100069.56
+    },
+    {
+      "date": "2026-07-11",
+      "equity": 100053.47
+    },
+    {
+      "date": "2026-07-14",
+      "equity": 100072.56
+    },
+    {
+      "date": "2026-07-15",
+      "equity": 100074.82
+    },
+    {
+      "date": "2026-07-16",
+      "equity": 100163.84
+    },
+    {
+      "date": "2026-07-17",
+      "equity": 100106.29
+    },
+    {
+      "date": "2026-07-18",
+      "equity": 100068.69
+    },
+    {
+      "date": "2026-07-21",
+      "equity": 100100.81
+    },
+    {
+      "date": "2026-07-22",
+      "equity": 100075.37
+    },
+    {
+      "date": "2026-07-23",
+      "equity": 100041.74
+    },
+    {
+      "date": "2026-07-24",
+      "equity": 99897.41
+    },
+    {
+      "date": "2026-07-25",
+      "equity": 99878.11
+    },
+    {
+      "date": "2026-07-28",
+      "equity": 99869.68
+    },
+    {
+      "date": "2026-07-29",
+      "equity": 99865.46
+    },
+    {
+      "date": "2026-07-30",
+      "equity": 99865.46
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 99942.04
+    },
+    {
+      "date": "2026-08-01",
+      "equity": 100357.7
+    },
+    {
+      "date": "2026-08-04",
+      "equity": 100513.19
+    },
+    {
+      "date": "2026-08-05",
+      "equity": 100445.37
+    },
+    {
+      "date": "2026-08-06",
+      "equity": 100389.58
+    },
+    {
+      "date": "2026-08-07",
+      "equity": 100389.7
+    },
+    {
+      "date": "2026-08-08",
+      "equity": 100418.77
+    },
+    {
+      "date": "2026-08-11",
+      "equity": 100460.94
+    },
+    {
+      "date": "2026-08-12",
+      "equity": 100394.37
+    },
+    {
+      "date": "2026-08-13",
+      "equity": 100334.01
+    },
+    {
+      "date": "2026-08-14",
+      "equity": 100315.5
+    },
+    {
+      "date": "2026-08-15",
+      "equity": 100287.15
+    },
+    {
+      "date": "2026-08-18",
+      "equity": 100264.46
+    },
+    {
+      "date": "2026-08-19",
+      "equity": 100241.38
+    },
+    {
+      "date": "2026-08-20",
+      "equity": 100317.51
+    },
+    {
+      "date": "2026-08-21",
+      "equity": 100249.05
+    },
+    {
+      "date": "2026-08-22",
+      "equity": 100237.13
+    },
+    {
+      "date": "2026-08-25",
+      "equity": 100272.66
+    },
+    {
+      "date": "2026-08-26",
+      "equity": 100264.89
+    },
+    {
+      "date": "2026-08-27",
+      "equity": 100256.23
+    },
+    {
+      "date": "2026-08-28",
+      "equity": 100221.84
+    },
+    {
+      "date": "2026-08-29",
+      "equity": 100335.96
+    },
+    {
+      "date": "2026-09-01",
+      "equity": 100262.95
+    },
+    {
+      "date": "2026-09-02",
+      "equity": 100201.32
+    },
+    {
+      "date": "2026-09-03",
+      "equity": 100202.67
+    },
+    {
+      "date": "2026-09-04",
+      "equity": 100259.02
+    },
+    {
+      "date": "2026-09-05",
+      "equity": 100245.28
+    },
+    {
+      "date": "2026-09-09",
+      "equity": 100226.87
+    },
+    {
+      "date": "2026-09-10",
+      "equity": 100173.22
+    },
+    {
+      "date": "2026-09-11",
+      "equity": 100164.85
+    },
+    {
+      "date": "2026-09-12",
+      "equity": 100222.72
+    },
+    {
+      "date": "2026-09-15",
+      "equity": 100186.48
+    },
+    {
+      "date": "2026-09-16",
+      "equity": 100124.47
+    },
+    {
+      "date": "2026-09-17",
+      "equity": 100094.13
+    },
+    {
+      "date": "2026-09-18",
+      "equity": 100160.71
+    },
+    {
+      "date": "2026-09-19",
+      "equity": 100187.65
+    },
+    {
+      "date": "2026-09-22",
+      "equity": 100249.91
+    },
+    {
+      "date": "2026-09-23",
+      "equity": 100210.39
+    },
+    {
+      "date": "2026-09-24",
+      "equity": 100145.66
+    },
+    {
+      "date": "2026-09-25",
+      "equity": 100144.97
+    },
+    {
+      "date": "2026-09-26",
+      "equity": 100155.33
+    },
+    {
+      "date": "2026-09-29",
+      "equity": 100109.5
+    },
+    {
+      "date": "2026-09-30",
+      "equity": 100113.61
+    },
+    {
+      "date": "2026-10-01",
+      "equity": 100143.76
+    },
+    {
+      "date": "2026-10-02",
+      "equity": 100134.0
+    },
+    {
+      "date": "2026-10-03",
+      "equity": 100178.41
+    }
+  ],
+  "note": "Real fills in an Alpaca PAPER account (simulated money). The account mirrors the ledger's open position book; orders are placed after the close and fill at the next open."
 }
