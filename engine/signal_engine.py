@@ -328,6 +328,67 @@ def update_aggressive(state, eq_px, cr_px, as_of, btc_on):
                           "lost 14% in 2018. Treat as an upper bound: the stock list was picked with hindsight."})
     return st
 
+# ---------------- theme basket: TRACKED, never traded ----------------
+THEMES={
+    "Space":["RKLB","ASTS","PL","LUNR","RDW","BKSY","SPIR","IRDM","FLY","VOYG","KRMN","VSAT"],
+    "Defense":["LMT","RTX","NOC","GD","LHX","HII","KTOS","AVAV","PLTR","LDOS","CW","TDG","HWM","MRCY","DRS","RCAT","BBAI"],
+    "Mining and critical minerals":["TMC","OMEX","FCX","ALB","SQM","CCJ","UEC","LEU"],
+    "Energy":["CEG","VST","TLN","OKLO","SMR","NNE","BWXT","GEV","ETN","PWR","VRT","BE","FSLR","XOM","CVX","NEE"],
+    "AI and chips":["NVDA","AMD","AVGO","TSM","ASML","MU","AMAT","LRCX","KLAC","MRVL","ARM","INTC","QCOM","TXN",
+                    "SMCI","ANET","CRWV","ALAB","CRDO","COHR","DELL","MSFT","GOOGL","META","AMZN","ORCL"],
+    "Magnets and rare earths":["MP","USAR","UUUU","NB","CRML","REMX"],
+}
+
+def fetch_latest(tickers):
+    """Recent closes only, with no history requirement (many of these listed recently)."""
+    import yfinance as yf
+    raw=yf.download(sorted(set(tickers)|{"SPY"}), period="3mo", progress=False, auto_adjust=True)
+    px=raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw[["Close"]]
+    return px.dropna(how="all").ffill(limit=5)
+
+def update_theme_basket(state, px, as_of):
+    """Six themes, one-sixth of the money each, split equally among that theme's stocks, rebalanced at the
+    first run of each month. A calculation on real closing prices with 10 bps trading costs. No orders."""
+    last=px.iloc[-1]
+    def p(tk):
+        v=last.get(tk,np.nan); return float(v) if np.isfinite(v) and v>0 else None
+    spy=p("SPY")
+    st=state if state.get("started") else {"started":as_of,"cash":AGG_START,"shares":{},"month":None,"history":[],
+                                           "spy_start":spy,"start_value":AGG_START,"theme_index":{k:100.0 for k in THEMES},
+                                           "theme_prev":{}}
+    tval=lambda names: sum(st["shares"].get(tk,0.0)*(p(tk) or 0.0) for tk in names)
+    total=lambda: st["cash"]+sum(q*(p(tk) or 0.0) for tk,q in st["shares"].items())
+    # carry each theme's own return forward (before any rebalance changes the holdings)
+    for k,names in THEMES.items():
+        prev=st["theme_prev"].get(k); now=tval(names)
+        if prev and prev>0 and now>0: st["theme_index"][k]=round(st["theme_index"].get(k,100.0)*now/prev,4)
+    if st.get("month")!=as_of[:7]:
+        tot=total(); live={k:[tk for tk in names if p(tk)] for k,names in THEMES.items()}
+        live={k:v for k,v in live.items() if v}
+        new={tk:(tot/len(live)/len(v))/p(tk) for k,v in live.items() for tk in v}
+        turn=sum(abs(new.get(tk,0.0)-st["shares"].get(tk,0.0))*(p(tk) or 0.0) for tk in set(new)|set(st["shares"]))
+        cost=turn*AGG_COST_STOCK; f=(tot-cost)/tot if tot>0 else 1.0
+        st["shares"]={tk:q*f for tk,q in new.items()}
+        st["cash"]=tot-cost-sum(q*p(tk) for tk,q in st["shares"].items()); st["month"]=as_of[:7]
+        st["last_rebalance"]={"date":as_of,"cost":round(cost,2),"names":len(new)}
+    st["theme_prev"]={k:tval(names) for k,names in THEMES.items()}
+    val=total(); row={"date":as_of,"value":round(val,2),"spy":round(AGG_START*spy/st["spy_start"],2) if (spy and st.get("spy_start")) else None}
+    if st["history"] and st["history"][-1]["date"]==as_of: st["history"][-1]=row
+    else: st["history"].append(row)
+    vals=np.array([h["value"] for h in st["history"]]); peak=np.maximum.accumulate(vals)
+    st.update({"updated":as_of,"value":round(val,2),"return_pct":round((val/AGG_START-1)*100,2),
+               "spy_return_pct":round((row["spy"]/AGG_START-1)*100,2) if row["spy"] else None,
+               "max_drawdown_pct":round(float((vals/peak-1).min())*100,2),"days_tracked":len(st["history"]),
+               "themes":[{"theme":k,"names":sum(1 for tk in names if st["shares"].get(tk)),"value":round(tval(names),2),
+                          "weight_pct":round(100*tval(names)/val,1),"return_pct":round(st["theme_index"].get(k,100.0)-100,2),
+                          "missing":[tk for tk in names if not p(tk)]} for k,names in THEMES.items()],
+               "label":"TRACKED, NOT TRADED. A calculation on real closing prices with trading costs charged; no orders are placed.",
+               "rule":"Six themes, one-sixth each, split equally among each theme's stocks. Rebalanced monthly.",
+               "backtest":"Looking back to 2018 these stocks held equally made about 40% a year against 14.5% for the S&P 500, with a worst drop of -37% "
+                          "(space and magnets each fell more than 60%). That gap is hindsight: the themes were chosen because they had already risen. "
+                          "Picking the strongest names inside the themes did not help and deepened the worst drop to -53%."})
+    return st
+
 # ---------------- shadow ledger ----------------
 def load_json(path, default):
     if os.path.exists(path):
@@ -539,6 +600,14 @@ def main():
         log(f"aggressive mix (tracked): ${agg['value']:,.0f} · {agg['return_pct']}% since {agg['started']}")
     except Exception as e:
         log(f"aggressive mix tracking failed: {e}")
+
+    try:
+        tpx=fetch_latest([tk for v in THEMES.values() for tk in v])
+        tb=update_theme_basket(load_json(f"{DATA_DIR}/themes.json", {}), tpx, str(tpx.index[-1].date()))
+        json.dump(tb, open(f"{DATA_DIR}/themes.json","w"), indent=2)
+        log(f"theme basket (tracked): ${tb['value']:,.0f} · {tb['return_pct']}% since {tb['started']}")
+    except Exception as e:
+        log(f"theme basket tracking failed: {e}")
 
     json.dump({"updated_utc":datetime.now(timezone.utc).isoformat(),
                "equity_universe":len(EQUITY_UNIVERSE),"crypto_universe":len(CRYPTO_UNIVERSE)},
