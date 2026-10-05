@@ -684,9 +684,11 @@ function draw(){
   // sizing — no leverage: position book is primary (capped at 80% of account),
   // swing book draws only from the capital left over. Total can never exceed 100%.
   const posN=sig.position.length,swN=sig.swing.length;
-  const posExpUse=Math.min(sig.position_suggested_exposure||0,0.80);
+  // market-conditions directive: caps how much of the account goes to work today
+  const cond=sig.conditions||{};const condExp=(cond.exposure!=null)?cond.exposure:1;
+  const posExpUse=Math.min(sig.position_suggested_exposure||0,0.80,condExp);
   const posDeploy=ACCT*posExpUse;
-  const swDeploy=(ACCT-posDeploy)*(sig.swing_suggested_exposure||0);
+  const swDeploy=(ACCT-posDeploy)*(sig.swing_suggested_exposure||0)*condExp;
   const posEach=posN?posDeploy/posN:0,swEach=swN?swDeploy/swN:0;
   const cashLeft=Math.max(0,ACCT-posDeploy-swDeploy);
   const newBuys=[...sig.position,...sig.swing].filter((x,i)=>{const book=i<posN?'position':'swing';return actOf(book,x.ticker)[0]==='BUY';}).length;
@@ -707,7 +709,13 @@ function draw(){
 
   // PLAYBOOK
   $('pbDay').textContent='· '+today;
-  let pb=`<div class="pb-lead">Deploy up to <span class="big">${usd(posDeploy+swDeploy)}</span> of your <span class="mono">${usd(ACCT)}</span> today — keeping <span class="mono">${usd(cashLeft)}</span> in cash. No leverage: the position book is the core, swing uses what's left over.</div>`;
+  let pb='';
+  if(cond.directive){
+    const tone=condExp>=0.75?'ok':(condExp>=0.5?'':'err');
+    const chips=(cond.checks||[]).map(c=>`<span title="${c.text}" style="display:inline-block;margin:6px 8px 0 0;padding:3px 9px;border-radius:999px;border:1px solid var(--line);font-size:11.5px;color:var(--text2)"><b style="color:var(--${c.pass?'up':'down'})">${c.pass?'✓':'✕'}</b> ${c.name}: ${c.text}</span>`).join('');
+    pb+=`<div class="banner ${tone}" style="margin-bottom:14px"><div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)">Today's directive${cond.days_in_stance?` · day ${cond.days_in_stance} of this stance`:''}</div><div style="font-size:17px;font-weight:700;color:var(--text);margin-top:4px">${cond.directive}</div><div>${chips}</div>${cond.note?`<div style="margin-top:8px;font-size:11.5px">${cond.note}</div>`:''}</div>`;
+  }
+  pb+=`<div class="pb-lead">Deploy up to <span class="big">${usd(posDeploy+swDeploy)}</span> of your <span class="mono">${usd(ACCT)}</span> today — keeping <span class="mono">${usd(cashLeft)}</span> in cash. No leverage: the position book is the core, swing uses what's left over.</div>`;
   pb+=`<div class="pb-grid">
     <div class="pbtile"><div class="k">New buys today</div><div class="v gold">${newBuys}</div><div class="s">act on these first</div></div>
     <div class="pbtile"><div class="k">Position ideas</div><div class="v">${posN}</div><div class="s">~${usd(posEach)} each · hold ~1mo</div></div>
@@ -823,7 +831,11 @@ function draw(){
 
   const tiles=[{k:'Live since',v:sc.live_since||'—',s:'forward test'},{k:'Open',v:openN,s:'tracked now'},{k:'Closed',v:closedN,s:'reached horizon'},
     {k:'Position win rate',v:p.n?p.win_rate_pct+'%':'—',s:p.n?`${p.n} closed · avg ${pc(p.avg_return_pct)}`:'accruing'},
-    {k:'Swing win rate',v:s.n?s.win_rate_pct+'%':'—',s:s.n?`${s.n} closed · avg ${pc(s.avg_return_pct)}`:'accruing'}];
+    {k:'Swing win rate',v:s.n?s.win_rate_pct+'%':'—',s:s.n?`${s.n} closed · avg ${pc(s.avg_return_pct)}`:'accruing'},
+    {k:'Position vs S&P 500',v:p.avg_excess_vs_spy_pct!=null?pc(p.avg_excess_vs_spy_pct):'—',s:p.beat_spy_pct!=null?`beat SPY on ${p.beat_spy_pct}% of signals`:'accruing'},
+    {k:'Swing vs S&P 500',v:s.avg_excess_vs_spy_pct!=null?pc(s.avg_excess_vs_spy_pct):'—',s:s.beat_spy_pct!=null?`beat SPY on ${s.beat_spy_pct}% of signals`:'accruing'},
+    {k:'Avg win / avg loss',v:p.n?`${pc(p.avg_win_pct)} / ${pc(p.avg_loss_pct)}`:'—',s:p.n?`position · worst ${pc(p.worst_loss_pct!=null?p.worst_loss_pct:0)} · ${p.stopped_out||0} stopped out`:'accruing'},
+    {k:'Strict rules (v2)',v:((sc.strict||{}).position||{}).n||((sc.strict||{}).swing||{}).n?`${(((sc.strict||{}).position||{}).n||0)+(((sc.strict||{}).swing||{}).n||0)} closed`:'accruing',s:(sc.strict||{}).since?`next-open entry · stops · costs · since ${(sc.strict||{}).since}`:'next-open entry · stops · costs'}];
   $('ledgerTiles').innerHTML=tiles.map(t=>`<div class="stat"><div class="k">${t.k}</div><div class="v">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
   $('ledgerNote').innerHTML=closedN===0?'<div class="banner ok">The live track record starts empty and fills in honestly as today\'s signals reach their horizon. Win rates appear once positions close — no backfilling, no hindsight. This is the real forward test.</div>':'';
   $('openCount').innerHTML=openN?`<span class="mono" style="color:var(--text2)">${openN} tracked</span>`:'';
