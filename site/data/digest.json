@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-06T02:04:10.496093+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bullish",
+    "confidence": "medium",
+    "summary": "Tech resilience continues to drive equity markets, with the Nasdaq closing at record highs and the S&P 500 approaching its own records despite rising bond yields. However, persistent inflation concerns and a cooling labor market present underlying macro headwinds. Investors are currently looking past high yields and weak economic prints, though caution remains visible in dollar strength.",
+    "bull": "Strong tech sector momentum and mega-cap earnings potential are successfully lifting major indices to fresh record levels despite tight financial conditions.",
+    "bear": "Dramatically slowing job growth (just 29,000 jobs added) and rising unemployment (4.2%) alongside persistent inflation worries could trigger broad risk aversion if Fed rate decisions disappoint.",
+    "watch": "Upcoming Federal Reserve interest rate decision and inflation data to see if macroeconomic weakness prompts policy shifts."
+  },
+  "takes": [
+    {
+      "topic": "U.S. Economy & Labor Market",
+      "lean": "leaning bearish",
+      "confidence": "high",
+      "note": "Job growth slowed sharply to just 29,000 additions as unemployment rose to 4.2%, signalling a cooling labor backdrop ahead of a crucial Fed rate decision."
+    },
+    {
+      "topic": "Semiconductors (AMD, INTC, MU)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Tech and AI momentum remain major market drivers powering AMD, though individual names like Intel and Micron face specific headwinds from client setbacks and memory-price peak fears."
+    },
+    {
+      "topic": "Energy & Refining (VLO, PSX)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Refining stocks like Valero are showing strong positive momentum with gains over 3%, though high valuation questions hang over peers like Phillips 66."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }

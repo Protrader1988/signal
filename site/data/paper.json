@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-05T15:04:01.597721+00:00",
+  "updated_utc": "2026-10-06T01:58:43.143646+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -10,6 +10,7 @@
     "AMD",
     "AMGN",
     "BTCUSD",
+    "CRM",
     "CSCO",
     "INTC",
     "LLY",
@@ -100,11 +101,11 @@
   "first_fill": "2026-10-05",
   "spy_start": 769.72,
   "signal": {
-    "unrealized": -371.36,
+    "unrealized": 285.14,
     "realized": 0.0,
-    "total_pl": -371.36,
-    "return_pct": -0.37,
-    "spy_return_pct": 0.37,
+    "total_pl": 285.14,
+    "return_pct": 0.28,
+    "spy_return_pct": 0.65,
     "closed_trades": 0,
     "wins": 0,
     "basis": "Profit and loss on positions Signal opened, as a share of the starting account. Other holdings in the account are excluded."
@@ -118,154 +119,173 @@
     "TSLA"
   ],
   "account": {
-    "equity": 99800.16,
+    "equity": 100458.8,
     "cash": 610.95,
-    "invested": 95870.32,
-    "other_holdings_value": 3317.68,
-    "return_since_start_pct": -0.39
+    "invested": 96526.82,
+    "other_holdings_value": 3321.03,
+    "return_since_start_pct": 0.27
   },
   "sizing": {
-    "exposure": 0.92,
-    "names": 13,
-    "dollars_per_name": 6356.5,
+    "exposure": 0.97,
+    "names": 14,
+    "dollars_per_name": 6264.32,
     "stock_share": 0.9,
     "btc_share": 0.1
   },
   "btc_rule": {
     "on": true,
-    "price": 86443.32,
-    "sma_150": 70923.02
+    "price": 85636.0,
+    "sma_150": 70959.6
   },
   "positions": [
     {
-      "symbol": "CSCO",
-      "qty": 63.0,
-      "avg_entry": 111.91,
-      "price": 112.13,
-      "value": 7064.33,
-      "pl": 14.08,
-      "pl_pct": 0.2
+      "symbol": "UNH",
+      "qty": 19.0,
+      "avg_entry": 372.11,
+      "price": 378.01,
+      "value": 7182.19,
+      "pl": 112.02,
+      "pl_pct": 1.58
     },
     {
       "symbol": "VLO",
       "qty": 17.0,
       "avg_entry": 407.27,
-      "price": 415.0,
-      "value": 7055.0,
-      "pl": 131.41,
-      "pl_pct": 1.9
+      "price": 422.13,
+      "value": 7176.21,
+      "pl": 252.62,
+      "pl_pct": 3.65
     },
     {
-      "symbol": "UNH",
-      "qty": 19.0,
-      "avg_entry": 372.11,
-      "price": 370.39,
-      "value": 7037.41,
-      "pl": -32.76,
-      "pl_pct": -0.46
-    },
-    {
-      "symbol": "XLK",
-      "qty": 35.0,
-      "avg_entry": 200.25,
-      "price": 200.61,
-      "value": 7021.35,
-      "pl": 12.43,
-      "pl_pct": 0.18
+      "symbol": "CSCO",
+      "qty": 63.0,
+      "avg_entry": 111.91,
+      "price": 112.87,
+      "value": 7110.81,
+      "pl": 60.56,
+      "pl_pct": 0.86
     },
     {
       "symbol": "TXN",
       "qty": 24.0,
       "avg_entry": 292.04,
-      "price": 290.85,
-      "value": 6980.28,
-      "pl": -28.75,
-      "pl_pct": -0.41
+      "price": 294.21,
+      "value": 7061.04,
+      "pl": 52.01,
+      "pl_pct": 0.74
+    },
+    {
+      "symbol": "XLK",
+      "qty": 35.0,
+      "avg_entry": 200.25,
+      "price": 201.23,
+      "value": 7043.05,
+      "pl": 34.13,
+      "pl_pct": 0.49
     },
     {
       "symbol": "PSX",
       "qty": 26.0,
       "avg_entry": 265.55,
-      "price": 267.78,
-      "value": 6962.28,
-      "pl": 58.03,
-      "pl_pct": 0.84
+      "price": 269.72,
+      "value": 7012.72,
+      "pl": 108.47,
+      "pl_pct": 1.57
     },
     {
       "symbol": "AMD",
       "qty": 11.0,
       "avg_entry": 626.57,
-      "price": 629.19,
-      "value": 6921.09,
-      "pl": 28.82,
-      "pl_pct": 0.42
-    },
-    {
-      "symbol": "INTC",
-      "qty": 59.0,
-      "avg_entry": 115.57,
-      "price": 116.84,
-      "value": 6893.32,
-      "pl": 74.93,
-      "pl_pct": 1.1
-    },
-    {
-      "symbol": "LLY",
-      "qty": 6.0,
-      "avg_entry": 1158.0,
-      "price": 1142.07,
-      "value": 6852.42,
-      "pl": -95.58,
-      "pl_pct": -1.38
-    },
-    {
-      "symbol": "MRK",
-      "qty": 49.0,
-      "avg_entry": 142.84,
-      "price": 139.17,
-      "value": 6819.33,
-      "pl": -179.83,
-      "pl_pct": -2.57
+      "price": 632.0,
+      "value": 6952.0,
+      "pl": 59.73,
+      "pl_pct": 0.87
     },
     {
       "symbol": "TGT",
       "qty": 45.0,
       "avg_entry": 156.0,
-      "price": 150.91,
-      "value": 6790.73,
-      "pl": -229.42,
-      "pl_pct": -3.27
+      "price": 152.99,
+      "value": 6884.55,
+      "pl": -135.6,
+      "pl_pct": -1.93
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6.0,
+      "avg_entry": 1158.0,
+      "price": 1146.86,
+      "value": 6881.14,
+      "pl": -66.86,
+      "pl_pct": -0.96
     },
     {
       "symbol": "AMGN",
       "qty": 17.0,
       "avg_entry": 401.79,
-      "price": 398.9,
-      "value": 6781.3,
-      "pl": -49.19,
-      "pl_pct": -0.72
+      "price": 403.99,
+      "value": 6867.83,
+      "pl": 37.34,
+      "pl_pct": 0.55
+    },
+    {
+      "symbol": "INTC",
+      "qty": 59.0,
+      "avg_entry": 115.57,
+      "price": 116.08,
+      "value": 6848.72,
+      "pl": 30.33,
+      "pl_pct": 0.45
+    },
+    {
+      "symbol": "MRK",
+      "qty": 49.0,
+      "avg_entry": 142.84,
+      "price": 139.57,
+      "value": 6838.93,
+      "pl": -160.23,
+      "pl_pct": -2.29
     },
     {
       "symbol": "MU",
       "qty": 6.0,
       "avg_entry": 1066.77,
-      "price": 1066.91,
-      "value": 6401.46,
-      "pl": 0.84,
-      "pl_pct": 0.01
+      "price": 1061.4,
+      "value": 6368.4,
+      "pl": -32.22,
+      "pl_pct": -0.5
     },
     {
       "symbol": "BTCUSD",
       "qty": 0.073556166,
       "avg_entry": 86551.36,
-      "price": 85513.18,
-      "value": 6290.02,
-      "pl": -76.36,
-      "pl_pct": -1.2
+      "price": 85638.42,
+      "value": 6299.23,
+      "pl": -67.15,
+      "pl_pct": -1.05
     }
   ],
-  "orders_this_run": [],
+  "orders_this_run": [
+    {
+      "symbol": "CRM",
+      "side": "buy",
+      "qty": 2,
+      "ok": true,
+      "reason": "new in ledger",
+      "est_dollars": 459.58,
+      "error": null
+    }
+  ],
   "recent_orders": [
+    {
+      "symbol": "CRM",
+      "side": "buy",
+      "qty": 2.0,
+      "status": "accepted",
+      "submitted": "2026-10-06",
+      "filled_qty": 0.0,
+      "fill_price": null
+    },
     {
       "symbol": "TGT",
       "side": "buy",
@@ -526,15 +546,6 @@
       "submitted": "2026-01-30",
       "filled_qty": 0.1176,
       "fill_price": 425.17
-    },
-    {
-      "symbol": "TSLA",
-      "side": "sell",
-      "qty": 0.1178,
-      "status": "filled",
-      "submitted": "2026-01-30",
-      "filled_qty": 0.1178,
-      "fill_price": 429.39
     }
   ],
   "equity_history": [
