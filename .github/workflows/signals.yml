@@ -17,6 +17,8 @@ on:
       - "engine/news.py"
       - "engine/policy.py"
       - "engine/policy_sources.py"
+      - "engine/lab.py"
+      - "engine/lab_strategies.py"
       - "engine/policy_llm.py"
       - "engine/tickers.py"
       - "engine/ai_digest.py"
@@ -63,6 +65,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
         run: python engine/policy.py 2>&1 | tee policy_run.log
+      - name: Strategy lab (13 books, live paper, allocated by live results)
+        continue-on-error: true
+        run: python engine/lab.py 2>&1 | tee lab_run.log
       - name: AI market digest (honest read of real news)
         continue-on-error: true
         env:

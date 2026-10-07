@@ -180,6 +180,13 @@
   .coverage li{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:5px}
   td.wrap{white-space:normal;max-width:420px;color:var(--muted);font-size:11.5px;line-height:1.6;vertical-align:middle}
   .scrollx{overflow-x:auto}
+  .bookname{font-weight:600}.bookname .sub{display:block;color:var(--dim);font-size:11px;margin-top:4px;white-space:normal;max-width:330px;line-height:1.5}
+  .wbar{position:relative;height:7px;width:70px;background:var(--surface3);border-radius:4px;display:inline-block;vertical-align:middle;overflow:hidden}
+  .wbar>i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);border-radius:4px}
+  .dim{color:var(--dim)}
+  .st-live{color:var(--up)}.st-warming{color:var(--warn)}.st-retired{color:var(--down)}
+  .holdchip{display:inline-block;font-family:var(--mono);font-size:11.5px;padding:4px 9px;margin:3px 5px 3px 0;border:1px solid var(--line2);border-radius:7px;color:var(--text2)}
+  .holdchip b{color:var(--gold2);font-weight:600}
   .flowrow{display:grid;grid-template-columns:150px 1fr 96px 74px;gap:14px;align-items:center;padding:11px 20px;border-bottom:1px solid var(--line)}
   .flowrow:last-child{border-bottom:none}
   .flowrow .s{font-size:13px;font-weight:600}
@@ -237,8 +244,9 @@
     <a class="fkey" href="#watch"><b>F4</b>WATCHLIST</a>
     <a class="fkey" href="#news"><b>F5</b>MARKET READ</a>
     <a class="fkey" href="#policy"><b>F6</b>POLICY DESK</a>
-    <a class="fkey" href="#chart"><b>F7</b>PERFORMANCE</a>
-    <a class="fkey" href="#ledger"><b>F8</b>TRACK RECORD</a>
+    <a class="fkey" href="#lab"><b>F7</b>STRATEGY LAB</a>
+    <a class="fkey" href="#chart"><b>F8</b>PERFORMANCE</a>
+    <a class="fkey" href="#ledger"><b>F9</b>TRACK RECORD</a>
     <a class="fkey" href="#paper"><b>F9</b>PAPER ACCOUNT</a>
     <a class="fkey" href="#aggressive"><b>F10</b>AGGRESSIVE MIX</a>
     <a class="fkey" href="#themes"><b>F11</b>THEME BASKET</a>
@@ -343,8 +351,25 @@
     <div class="sysbar" id="policyHealth" style="margin-top:18px"></div>
   </section>
 
+  <section id="lab">
+    <div class="eyebrow"><span class="no">07</span><h2>Strategy Lab</h2>
+      <span class="hint">twelve books run live, capital follows what is working, and the page says how long until any of it means anything</span></div>
+    <div class="subnote">Each book forms positions from data up to today's close; the return is realised from the next session and charged for turnover. Capital is allocated by <b class="gold">live results only</b> — a backtest never promotes a book. Two of the books trade the policy desk's own data, which is the part nobody else is assembling: per-name federal obligations, and sector spending growth.</div>
+    <div id="labVerdict"></div>
+    <div class="statusgrid" id="labTiles"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">BOOKS</span><span class="badge b-sim">Live \u00b7 paper</span><span class="t">Every book, what it holds, and how far it is from proving anything</span><span class="expo" id="labMeta"></span></div>
+      <div id="labBooks"><div class="loading">loading lab\u2026</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">BLEND</span><span class="t">What the allocated book holds today</span><span class="expo" id="labBlendMeta"></span></div>
+      <div id="labBlend"></div>
+    </div>
+    <div class="metaline" id="labMethod"></div>
+  </section>
+
   <section id="chart">
-    <div class="eyebrow"><span class="no">07</span><h2>Flagship Performance</h2>
+    <div class="eyebrow"><span class="no">08</span><h2>Flagship Performance</h2>
       <span class="hint">real historical prices, hypothetical trades · indexed to 100 · log scale</span></div>
     <div class="card">
       <div class="card-head"><span class="code">CURVE</span><span class="t" id="curveLabel">Momentum + vol-target vs benchmarks</span><span class="expo" id="curveRange"></span></div>
@@ -354,7 +379,7 @@
   </section>
 
   <section id="ledger">
-    <div class="eyebrow"><span class="no">08</span><h2>Live Track Record</h2>
+    <div class="eyebrow"><span class="no">09</span><h2>Live Track Record</h2>
       <span class="hint">real forward outcomes of every signal — no hindsight, nothing hidden</span></div>
     <div class="statusgrid" id="ledgerTiles"></div>
     <div id="ledgerNote" style="margin-top:14px"></div>
@@ -402,7 +427,7 @@
   </section>
 
   <section id="backtest">
-    <div class="eyebrow"><span class="no">09</span><h2>Backtest Validation</h2>
+    <div class="eyebrow"><span class="no">10</span><h2>Backtest Validation</h2>
       <span class="hint">real historical prices · hypothetical trades applied in hindsight</span></div>
     <div class="card">
       <div class="card-head"><span class="code">HIST</span><span class="badge b-sim">Real data · hypothetical trades</span><span class="t mono" id="btPeriod" style="font-weight:400;color:var(--text2)"></span></div>
@@ -541,6 +566,52 @@ function policyPipeline(p){
       <div class="m">${(r.companies||[]).join(' · ')}${r.agency?' · '+r.agency:''}${r.sector?' · '+r.sector:''} · <a href="${r.link}" target="_blank" rel="noopener" style="color:var(--gold2)">source ↗</a></div>
     </div>`).join('')
      :`<div class="empty">Nothing in today\u2019s documents parsed into a deal record. That is usually the real answer \u2014 most days the government does not take a position in a listed company. <span class="mono" style="color:var(--dim);display:block;margin-top:8px">${rd.note||''}</span></div>`);
+}
+
+function drawLab(L){
+  if(!L||!L.books){$('labBooks').innerHTML='<div class="empty">The lab appears after its first run.</div>';return;}
+  const A=L.allocator||{}, R=L.rules||{};
+  const t=v=>v==null?'\u2014':(v>0?'+':'')+v;
+  const days=s=>{if(!s)return '\u2014';
+    if(s.beyond_horizon)return '<span class="dim">beyond a decade</span>';
+    if(s.days_remaining==null)return '\u2014';
+    return `<span class="${s.would_prove?'gold':'neu'}">${s.days_remaining}d</span>`;};
+
+  $('labVerdict').innerHTML=`<div class="verdict"><b>Read the clock before the returns.</b>
+    ${L.n_books} books have been live for <span class="hl">${L.live_days}</span> trading day${L.live_days===1?'':'s'}
+    since ${L.started}. Capital is allocated by ${A.mature?'live performance':'equal weight, because no book has a real sample yet'}.
+    ${L.honesty}</div>`;
+
+  const tiles=[
+    {k:'Books live',v:`${(L.books||[]).filter(b=>b.status!=='retired').length}/${L.n_books}`,s:`${(L.books||[]).filter(b=>b.status==='retired').length} retired`},
+    {k:'Live days',v:L.live_days||0,s:`since ${L.started||'\u2014'}`},
+    {k:'Allocated book',v:A.live&&A.live.cum_pct!=null?pc(A.live.cum_pct):'\u2014',s:'vs equal-weight '+(A.equal_weight&&A.equal_weight.cum_pct!=null?pc(A.equal_weight.cum_pct):'\u2014'),cls:A.live?sgn(A.live.cum_pct):''},
+    {k:'SPY same window',v:A.benchmark&&A.benchmark.cum_pct!=null?pc(A.benchmark.cum_pct):'\u2014',s:'the bar to clear',cls:A.benchmark?sgn(A.benchmark.cum_pct):''},
+    {k:'Market',v:(L.context&&L.context.breadth!=null)?Math.round(L.context.breadth*100)+'%':'\u2014',s:(L.context&&L.context.spy_above_200?'above 200d':'below 200d')+' \u00b7 vol '+((L.context&&L.context.vol_regime)||'\u2014')},
+  ];
+  $('labTiles').innerHTML=tiles.map(x=>`<div class="stat"><div class="k">${x.k}</div><div class="v ${x.cls||''}">${x.v}</div><div class="s">${x.s}</div></div>`).join('');
+
+  $('labMeta').innerHTML=`<span class="mono">${R.cost_bps}bp costs \u00b7 ${R.half_life}d half-life \u00b7 ${Math.round(R.max_weight*100)}% cap</span>`;
+  $('labBooks').innerHTML='<div class="scrollx">'+tbl(L.books,[
+    {h:'Book',k:'label',cls:()=>'deal',f:(v,r)=>`<span class="bookname">${v}<span class="sub">${r.why||''}</span></span>`},
+    {h:'Status',k:'status',f:(v,r)=>`<span class="st-${v==='warming up'?'warming':v}">${v}</span>`+(r.retired_reason?`<span class="cismall">${r.retired_reason}</span>`:'')},
+    {h:'Weight',k:'weight',num:true,tip:'Share of the allocated book. Set by live results once every book has a real sample.',f:v=>`<span class="sz">${Math.round((v||0)*100)}%</span> <span class="wbar"><i style="width:${Math.min(100,(v||0)*300)}%"></i></span>`},
+    {h:'Holds',k:'positions',num:true,f:v=>Object.keys(v||{}).length||'\u2014'},
+    {h:'Return t',k:'live',num:true,tip:'t-statistic of the book\u2019s own return. The slowest measure: most of its variance is just the market.',f:v=>v&&v.t_stat!=null?`<span class="${sgn(v.t_stat)}">${t(v.t_stat)}</span>`:'<span class="dim">too early</span>'},
+    {h:'Signal t',k:'signal',num:true,tip:'t-statistic of the book measured against the equal-weight universe. The market factor is removed, so a real edge shows up far sooner.',f:v=>v&&v.t_stat!=null?`<span class="${sgn(v.t_stat)}">${t(v.t_stat)}</span>`:'\u2014'},
+    {h:'IC',k:'ic',num:true,tip:'Daily rank correlation between what the book wanted to own and what actually rose, across the whole universe. The fastest honest read.',f:v=>v&&v.mean!=null?`<span class="${sgn(v.mean)}">${v.mean.toFixed(3)}</span>`:'\u2014'},
+    {h:'Days to proof',k:'ic',num:true,tip:'Trading days still needed at the rate observed so far, against a bar that accounts for every book being tested at once.',f:(v,r)=>days(v&&v.days_remaining!=null?v:r.signal)},
+    {h:'Hindsight',k:'hindsight',num:true,tip:'Backtest Sharpe. Context only \u2014 it never promotes a book.',f:v=>v&&v.sharpe!=null?`<span class="dim">${v.sharpe}</span>`:'\u2014'},
+  ],'No books yet.')+'</div>';
+
+  const bl=L.blended||{};
+  const names=Object.keys(bl);
+  $('labBlendMeta').innerHTML=`<span class="mono">${names.length} names \u00b7 ${L.blended_invested_pct||0}% invested</span>`;
+  $('labBlend').innerHTML=names.length
+    ? '<div style="padding:14px 20px"><div class="banner">This is the combined book: every live strategy\u2019s holdings, scaled by its allocation. It is paper, it is not advice, and until the clock above says a book is proven it is a candidate being measured, not a recommendation.</div><div style="margin-top:12px">'
+      +names.map(n=>`<span class="holdchip">${n} <b>${(bl[n]*100).toFixed(1)}%</b></span>`).join('')+'</div></div>'
+    : '<div class="empty">Every book is in cash today.</div>';
+  $('labMethod').textContent=(L.method||'')+' '+(L.learning||'');
 }
 
 function drawPolicy(p){
@@ -868,6 +939,7 @@ function draw(){
   } else { $('newsList').innerHTML='<div class="empty">Headlines will appear after the next engine run publishes them.</div>'; }
 
   drawPolicy(DATA.policy);
+  drawLab(DATA.lab);
 
   drawChart(cv);
 
@@ -966,11 +1038,11 @@ function draw(){
 
 (async()=>{
   try{
-    const [sig,led,bt,meta,cv,val,watch,news,digest,policy]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null)]);
+    const [sig,led,bt,meta,cv,val,watch,news,digest,policy,lab]=await Promise.all([j('signals.json'),j('ledger.json'),j('backtest.json'),j('meta.json').catch(()=>null),j('curve.json').catch(()=>null),j('value.json').catch(()=>null),j('watchlist.json').catch(()=>null),j('news.json').catch(()=>null),j('digest.json').catch(()=>null),j('policy.json').catch(()=>null),j('lab_public.json').catch(()=>null)]);
     const paper=await j('paper.json').catch(()=>null);
     const agg=await j('aggressive.json').catch(()=>null);
     const themes=await j('themes.json').catch(()=>null);
-    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,paper,agg,themes};draw();
+    DATA={sig,led,bt,meta,cv,val,watch,news,digest,policy,lab,paper,agg,themes};draw();
   }catch(e){
     $('playbookBody').innerHTML=`<div class="banner err">Waiting for the first engine run (<code>${e.message}</code>). The playbook fills in automatically once it runs.</div>`;
     $('clock').textContent='awaiting run';
