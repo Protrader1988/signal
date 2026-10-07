@@ -1,12 +1,13 @@
-[01:58:24] fetching equities...
+[01:06:11] fetching equities...
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
 $WBA: possibly delisted; no timezone found
 
-1 Failed download:
+2 Failed downloads:
+['JPM']: OperationalError('database is locked')
 ['WBA']: possibly delisted; no timezone found
-[01:58:36] fetching crypto...
-[01:58:37] wrote signals.json (12 position, 0 swing)
-[01:58:37] updated ledger: 22 open, 201 closed
-[01:58:37] aggressive mix (tracked): $99,492 · -0.51% since 2026-10-02
-[01:58:42] theme basket (tracked): $99,830 · -0.17% since 2026-10-02
-[01:58:42] done
+[01:06:17] fetching crypto...
+[01:06:18] wrote signals.json (12 position, 0 swing)
+[01:06:18] updated ledger: 20 open, 203 closed
+[01:06:18] aggressive mix (tracked): $99,287 · -0.71% since 2026-10-02
+[01:06:20] theme basket (tracked): $101,041 · 1.04% since 2026-10-02
+[01:06:20] done
