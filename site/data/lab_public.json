@@ -1,0 +1,663 @@
+{
+  "generated_utc": "2026-10-07T20:25:17+00:00",
+  "blended": {
+    "XLB": 0.0833,
+    "TGT": 0.0773,
+    "PSX": 0.0683,
+    "VLO": 0.0671,
+    "INTC": 0.0663,
+    "AMD": 0.0628,
+    "CSCO": 0.0587,
+    "MRK": 0.0585,
+    "FDX": 0.0541,
+    "MU": 0.0537,
+    "CAT": 0.05,
+    "QCOM": 0.0167,
+    "BMY": 0.0167,
+    "JNJ": 0.0167,
+    "DE": 0.0167,
+    "CRM": 0.0167,
+    "TMO": 0.0167,
+    "PFE": 0.0167,
+    "JPM": 0.0167,
+    "UNH": 0.0083,
+    "MS": 0.0083,
+    "TXN": 0.0083,
+    "AMGN": 0.0083,
+    "PG": 0.0083,
+    "PEP": 0.0083,
+    "COST": 0.0083,
+    "V": 0.0083,
+    "CL": 0.0083,
+    "MA": 0.0083,
+    "KO": 0.0083,
+    "BAC": 0.0083,
+    "VZ": 0.0083,
+    "C": 0.0083,
+    "ABBV": 0.0083,
+    "NVDA": 0.0083,
+    "AAPL": 0.0083,
+    "MSFT": 0.0083,
+    "EMR": 0.0083,
+    "XOM": 0.0083
+  },
+  "blended_invested_pct": 100.0,
+  "as_of": "2026-10-07",
+  "started": null,
+  "n_books": 13,
+  "live_days": 0,
+  "rules": {
+    "cost_bps": 5.0,
+    "half_life": 60,
+    "max_weight": 0.3,
+    "warmup_days": 20,
+    "kill_min_days": 60,
+    "kill_tstat": -1.5,
+    "kill_max_dd_pct": 25.0
+  },
+  "method": "Each book forms positions from data up to today's close; the return is realised from the next session and charged 5bp of one-way turnover. Capital is allocated by exponential weights over LIVE returns with a 60-day half-life, capped at 30% per book. The backtest column is hindsight: it is shown for context, it never promotes a book, and it is not mixed into the live record.",
+  "honesty": "With 13 books running, the significance bar is z=2.94 rather than 1.96, and a book with a true Sharpe of 1.0 needs about 8.6 years of live data to clear it. Every row prints the years its own Sharpe would need. Until a row says proven, it is a candidate, not an edge.",
+  "learning": "Three readings per book, in ascending order of statistical power. The RETURN is what a holder made and the slowest thing to prove, because most of its variance is simply the market moving. The SPREAD measures the same book against the equal-weight universe, which removes the common factor and cuts the daily noise by roughly three, so the same edge proves itself about an order of magnitude sooner. The IC is the rank correlation between what the book wanted to own and what actually rose, across every name in the universe every day \u2014 one number built from ninety comparisons, which reads the signal rather than the portfolio and is the fastest honest read available. Each carries the number of trading days still required at the rate observed so far, computed rather than asserted. Trading more often does not speed this up on its own: fifty long-only positions correlated at 0.3 are worth about three independent bets, not fifty.",
+  "books": [
+    {
+      "key": "mom_12_1",
+      "label": "12-1 momentum",
+      "why": "Cross-sectional momentum, 12 months skipping the last.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0837,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 114.44,
+        "ann_pct": 46.55,
+        "vol_pct": 26.91,
+        "sharpe": 1.56,
+        "max_dd_pct": -23.27,
+        "hit_pct": 57.1,
+        "t_stat": 2.2,
+        "years_to_prove": 3.6,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "mom_6_1",
+      "label": "6-1 momentum",
+      "why": "Same idea on a faster horizon.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "AMD": 0.1,
+        "INTC": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CSCO": 0.1,
+        "UNH": 0.1,
+        "TGT": 0.1,
+        "MS": 0.1,
+        "TXN": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 75.21,
+        "ann_pct": 32.44,
+        "vol_pct": 25.61,
+        "sharpe": 1.23,
+        "max_dd_pct": -23.49,
+        "hit_pct": 58.1,
+        "t_stat": 1.74,
+        "years_to_prove": 5.7,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "rev_5d",
+      "label": "5-day reversal",
+      "why": "Weekly losers inside long-term uptrends.",
+      "status": "warming up",
+      "positions": {
+        "INTC": 0.1,
+        "QCOM": 0.1,
+        "TGT": 0.1,
+        "BMY": 0.1,
+        "JNJ": 0.1,
+        "DE": 0.1,
+        "CRM": 0.1,
+        "AMGN": 0.1,
+        "TMO": 0.1,
+        "PFE": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 44.06,
+        "ann_pct": 20.07,
+        "vol_pct": 20.38,
+        "sharpe": 1.0,
+        "max_dd_pct": -25.47,
+        "hit_pct": 54.9,
+        "t_stat": 1.41,
+        "years_to_prove": 8.6,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "lowvol",
+      "label": "Low volatility",
+      "why": "The low-beta anomaly, equal weighted.",
+      "status": "warming up",
+      "positions": {
+        "PG": 0.1,
+        "JPM": 0.1,
+        "PEP": 0.1,
+        "COST": 0.1,
+        "V": 0.1,
+        "PFE": 0.1,
+        "CL": 0.1,
+        "MA": 0.1,
+        "KO": 0.1,
+        "BAC": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": -7.31,
+        "ann_pct": -3.73,
+        "vol_pct": 13.26,
+        "sharpe": -0.22,
+        "max_dd_pct": -15.07,
+        "hit_pct": 50.1,
+        "t_stat": -0.31,
+        "years_to_prove": 178.6,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "trend_abs",
+      "label": "Trend-filtered momentum",
+      "why": "Momentum, flat while SPY is below its 200-day.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 72.99,
+        "ann_pct": 31.6,
+        "vol_pct": 24.15,
+        "sharpe": 1.26,
+        "max_dd_pct": -21.61,
+        "hit_pct": 50.3,
+        "t_stat": 1.78,
+        "years_to_prove": 5.4,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "dual_mom",
+      "label": "Dual momentum",
+      "why": "Relative strength plus an absolute filter per name.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 114.44,
+        "ann_pct": 46.55,
+        "vol_pct": 26.91,
+        "sharpe": 1.56,
+        "max_dd_pct": -23.27,
+        "hit_pct": 57.1,
+        "t_stat": 2.2,
+        "years_to_prove": 3.6,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "breadth_gated",
+      "label": "Breadth-gated momentum",
+      "why": "Momentum only while breadth is expanding.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 33.32,
+        "ann_pct": 15.5,
+        "vol_pct": 18.27,
+        "sharpe": 0.88,
+        "max_dd_pct": -11.56,
+        "hit_pct": 30.2,
+        "t_stat": 1.24,
+        "years_to_prove": 11.2,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "dip_in_uptrend",
+      "label": "Dip in uptrend",
+      "why": "Pullbacks within names above their 200-day.",
+      "status": "warming up",
+      "positions": {
+        "CRM": 0.1,
+        "QCOM": 0.1,
+        "VZ": 0.1,
+        "C": 0.1,
+        "DE": 0.1,
+        "TGT": 0.1,
+        "BMY": 0.1,
+        "JPM": 0.1,
+        "JNJ": 0.1,
+        "MRK": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 32.92,
+        "ann_pct": 15.32,
+        "vol_pct": 19.35,
+        "sharpe": 0.83,
+        "max_dd_pct": -21.28,
+        "hit_pct": 54.5,
+        "t_stat": 1.17,
+        "years_to_prove": 12.5,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "near_high",
+      "label": "Near 52-week high",
+      "why": "Proximity to the high as its own signal.",
+      "status": "warming up",
+      "positions": {
+        "ABBV": 0.1,
+        "VLO": 0.1,
+        "AMD": 0.1,
+        "NVDA": 0.1,
+        "PSX": 0.1,
+        "AAPL": 0.1,
+        "MSFT": 0.1,
+        "TMO": 0.1,
+        "EMR": 0.1,
+        "XOM": 0.1
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 5.58,
+        "ann_pct": 2.76,
+        "vol_pct": 15.8,
+        "sharpe": 0.25,
+        "max_dd_pct": -17.56,
+        "hit_pct": 49.9,
+        "t_stat": 0.35,
+        "years_to_prove": 138.3,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "invvol_mom",
+      "label": "Risk-weighted momentum",
+      "why": "Momentum names sized inverse to volatility.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.0492,
+        "INTC": 0.0522,
+        "AMD": 0.0582,
+        "VLO": 0.1099,
+        "PSX": 0.1237,
+        "CAT": 0.1043,
+        "TGT": 0.1324,
+        "MRK": 0.1067,
+        "FDX": 0.1541,
+        "CSCO": 0.1094
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 82.45,
+        "ann_pct": 35.15,
+        "vol_pct": 22.16,
+        "sharpe": 1.47,
+        "max_dd_pct": -20.99,
+        "hit_pct": 54.3,
+        "t_stat": 2.08,
+        "years_to_prove": 4.0,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "policy_tilt",
+      "label": "Policy-tilted momentum",
+      "why": "Momentum tilted toward names with real federal obligations.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.0952,
+        "INTC": 0.1429,
+        "AMD": 0.0952,
+        "VLO": 0.0952,
+        "PSX": 0.0952,
+        "CAT": 0.0952,
+        "TGT": 0.0952,
+        "MRK": 0.0952,
+        "FDX": 0.0952,
+        "CSCO": 0.0952
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 119.1,
+        "ann_pct": 48.13,
+        "vol_pct": 27.55,
+        "sharpe": 1.56,
+        "max_dd_pct": -23.22,
+        "hit_pct": 57.1,
+        "t_stat": 2.2,
+        "years_to_prove": 3.6,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "flow_rotation",
+      "label": "Federal flow rotation",
+      "why": "Sector ETFs where federal spending is accelerating.",
+      "status": "warming up",
+      "positions": {
+        "XLB": 1.0
+      },
+      "turnover": 1.0,
+      "weight": 0.0833,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 7.35,
+        "ann_pct": 3.62,
+        "vol_pct": 18.81,
+        "sharpe": 0.28,
+        "max_dd_pct": -23.17,
+        "hit_pct": 48.9,
+        "t_stat": 0.4,
+        "years_to_prove": 110.2,
+        "proven": false
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    },
+    {
+      "key": "cash",
+      "label": "Cash",
+      "why": "Holds nothing. The null hypothesis.",
+      "status": "warming up",
+      "positions": {},
+      "turnover": 0,
+      "weight": 0.0,
+      "live": {
+        "days": 0
+      },
+      "hindsight": {
+        "days": 503,
+        "cum_pct": 0.0,
+        "ann_pct": 0.0,
+        "vol_pct": 0.0,
+        "sharpe": null,
+        "max_dd_pct": 0.0,
+        "hit_pct": 0.0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      },
+      "retired_reason": null,
+      "curve": []
+    }
+  ],
+  "allocator": {
+    "weights": {
+      "mom_12_1": 0.0837,
+      "mom_6_1": 0.0833,
+      "rev_5d": 0.0833,
+      "lowvol": 0.0833,
+      "trend_abs": 0.0833,
+      "dual_mom": 0.0833,
+      "breadth_gated": 0.0833,
+      "dip_in_uptrend": 0.0833,
+      "near_high": 0.0833,
+      "invvol_mom": 0.0833,
+      "policy_tilt": 0.0833,
+      "flow_rotation": 0.0833
+    },
+    "mode": "equal weight until every book has 20 live days",
+    "mature": false,
+    "live": {
+      "days": 0
+    },
+    "equal_weight": {
+      "days": 0
+    },
+    "benchmark": {
+      "days": 0
+    },
+    "curve": []
+  },
+  "context": {
+    "spy_above_200": true,
+    "breadth": 0.588,
+    "breadth_rising": true,
+    "vol_regime": 10.2
+  },
+  "policy_inputs": {
+    "exposure_names": 23,
+    "flow_sectors": 7
+  }
+}

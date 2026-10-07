@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-07T20:25:26.672931+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "Major indexes retreated from recent record territory as 10-year Treasury yields surged to 24-year highs, spooking stock investors. Fed minutes reinforced expectations of another interest rate hike coming this year due to persistent inflation concerns, though a strong 10-year auction helped indexes pare initial losses.",
+    "bull": "A strong 10-year Treasury auction helped stocks bounce off session lows, while selective strength in AI-linked tech stocks like AMD shows appetite for growth remains alive.",
+    "bear": "Treasuries spiking to their highest yields since 2002 coupled with explicit Fed messaging around additional rate hikes creates strong valuation headwinds for equities.",
+    "watch": "Subsequent U.S. inflation data, labor market signals following hiring slowdowns, and the trajectory of Treasury yields."
+  },
+  "takes": [
+    {
+      "topic": "Federal Reserve & Yields",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "Fed minutes confirmed officials anticipate another rate hike this year to combat inflation, driving 10-year Treasury yields to multidecade highs and weighing heavily on equities."
+    },
+    {
+      "topic": "AMD",
+      "lean": "bullish",
+      "confidence": "high",
+      "note": "AMD stock hit fresh highs fueled by strong demand for CPU sales tied to AI agents and Meta Muse popularity, alongside bullish commentary from CEO Lisa Su."
+    },
+    {
+      "topic": "Merck (MRK)",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "Merck faced a legal setback regarding its key drug Keytruda and saw its stock price target lowered by Morgan Stanley."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }

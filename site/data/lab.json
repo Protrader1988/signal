@@ -1,0 +1,418 @@
+{
+  "started": null,
+  "books": {
+    "mom_12_1": {
+      "label": "12-1 momentum",
+      "why": "Cross-sectional momentum, 12 months skipping the last.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "mom_6_1": {
+      "label": "6-1 momentum",
+      "why": "Same idea on a faster horizon.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "AMD": 0.1,
+        "INTC": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CSCO": 0.1,
+        "UNH": 0.1,
+        "TGT": 0.1,
+        "MS": 0.1,
+        "TXN": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "rev_5d": {
+      "label": "5-day reversal",
+      "why": "Weekly losers inside long-term uptrends.",
+      "status": "warming up",
+      "positions": {
+        "INTC": 0.1,
+        "QCOM": 0.1,
+        "TGT": 0.1,
+        "BMY": 0.1,
+        "JNJ": 0.1,
+        "DE": 0.1,
+        "CRM": 0.1,
+        "AMGN": 0.1,
+        "TMO": 0.1,
+        "PFE": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "lowvol": {
+      "label": "Low volatility",
+      "why": "The low-beta anomaly, equal weighted.",
+      "status": "warming up",
+      "positions": {
+        "PG": 0.1,
+        "JPM": 0.1,
+        "PEP": 0.1,
+        "COST": 0.1,
+        "V": 0.1,
+        "PFE": 0.1,
+        "CL": 0.1,
+        "MA": 0.1,
+        "KO": 0.1,
+        "BAC": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "trend_abs": {
+      "label": "Trend-filtered momentum",
+      "why": "Momentum, flat while SPY is below its 200-day.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "dual_mom": {
+      "label": "Dual momentum",
+      "why": "Relative strength plus an absolute filter per name.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "breadth_gated": {
+      "label": "Breadth-gated momentum",
+      "why": "Momentum only while breadth is expanding.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.1,
+        "INTC": 0.1,
+        "AMD": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "CAT": 0.1,
+        "TGT": 0.1,
+        "MRK": 0.1,
+        "FDX": 0.1,
+        "CSCO": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "dip_in_uptrend": {
+      "label": "Dip in uptrend",
+      "why": "Pullbacks within names above their 200-day.",
+      "status": "warming up",
+      "positions": {
+        "CRM": 0.1,
+        "QCOM": 0.1,
+        "VZ": 0.1,
+        "C": 0.1,
+        "DE": 0.1,
+        "TGT": 0.1,
+        "BMY": 0.1,
+        "JPM": 0.1,
+        "JNJ": 0.1,
+        "MRK": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "near_high": {
+      "label": "Near 52-week high",
+      "why": "Proximity to the high as its own signal.",
+      "status": "warming up",
+      "positions": {
+        "ABBV": 0.1,
+        "VLO": 0.1,
+        "AMD": 0.1,
+        "NVDA": 0.1,
+        "PSX": 0.1,
+        "AAPL": 0.1,
+        "MSFT": 0.1,
+        "TMO": 0.1,
+        "EMR": 0.1,
+        "XOM": 0.1
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "invvol_mom": {
+      "label": "Risk-weighted momentum",
+      "why": "Momentum names sized inverse to volatility.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.0492,
+        "INTC": 0.0522,
+        "AMD": 0.0582,
+        "VLO": 0.1099,
+        "PSX": 0.1237,
+        "CAT": 0.1043,
+        "TGT": 0.1324,
+        "MRK": 0.1067,
+        "FDX": 0.1541,
+        "CSCO": 0.1094
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "policy_tilt": {
+      "label": "Policy-tilted momentum",
+      "why": "Momentum tilted toward names with real federal obligations.",
+      "status": "warming up",
+      "positions": {
+        "MU": 0.0952,
+        "INTC": 0.1429,
+        "AMD": 0.0952,
+        "VLO": 0.0952,
+        "PSX": 0.0952,
+        "CAT": 0.0952,
+        "TGT": 0.0952,
+        "MRK": 0.0952,
+        "FDX": 0.0952,
+        "CSCO": 0.0952
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "flow_rotation": {
+      "label": "Federal flow rotation",
+      "why": "Sector ETFs where federal spending is accelerating.",
+      "status": "warming up",
+      "positions": {
+        "XLB": 1.0
+      },
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 1.0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    },
+    "cash": {
+      "label": "Cash",
+      "why": "Holds nothing. The null hypothesis.",
+      "status": "warming up",
+      "positions": {},
+      "as_of": "2026-10-07",
+      "live": [],
+      "retired_reason": null,
+      "turnover": 0,
+      "stats": {
+        "days": 0
+      },
+      "signal": {
+        "days": 0,
+        "kind": "spread vs universe"
+      },
+      "ic": {
+        "days": 0,
+        "kind": "rank IC"
+      }
+    }
+  },
+  "allocator": {
+    "returns": [],
+    "weights": {
+      "mom_12_1": 0.0837,
+      "mom_6_1": 0.0833,
+      "rev_5d": 0.0833,
+      "lowvol": 0.0833,
+      "trend_abs": 0.0833,
+      "dual_mom": 0.0833,
+      "breadth_gated": 0.0833,
+      "dip_in_uptrend": 0.0833,
+      "near_high": 0.0833,
+      "invvol_mom": 0.0833,
+      "policy_tilt": 0.0833,
+      "flow_rotation": 0.0833
+    }
+  }
+}
