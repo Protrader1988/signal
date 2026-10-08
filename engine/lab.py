@@ -340,7 +340,8 @@ def main():
     log(f"panel {panel.shape[1]} tickers x {len(panel)} sessions, through {today}")
 
     books = state.setdefault("books", {})
-    state.setdefault("started", today)
+    if not state.get("started"):          # setdefault leaves an existing None in place
+        state["started"] = today
     stock_cols = [c for c in panel.columns if c not in strat.ETFS]
 
     # ---- 1. mark yesterday's positions to market -------------------------
