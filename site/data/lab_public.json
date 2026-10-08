@@ -1,24 +1,23 @@
 {
-  "generated_utc": "2026-10-07T20:25:17+00:00",
+  "generated_utc": "2026-10-08T01:32:20+00:00",
   "blended": {
     "XLB": 0.0833,
-    "TGT": 0.0773,
-    "PSX": 0.0683,
-    "VLO": 0.0671,
-    "INTC": 0.0663,
+    "PSX": 0.0682,
+    "VLO": 0.067,
+    "MRK": 0.0668,
+    "INTC": 0.0662,
     "AMD": 0.0628,
+    "MU": 0.062,
+    "TGT": 0.0607,
     "CSCO": 0.0587,
-    "MRK": 0.0585,
-    "FDX": 0.0541,
-    "MU": 0.0537,
-    "CAT": 0.05,
-    "QCOM": 0.0167,
-    "BMY": 0.0167,
-    "JNJ": 0.0167,
-    "DE": 0.0167,
-    "CRM": 0.0167,
-    "TMO": 0.0167,
+    "FDX": 0.054,
+    "CAT": 0.0504,
+    "JNJ": 0.025,
     "PFE": 0.0167,
+    "BMY": 0.0167,
+    "GILD": 0.0167,
+    "TMO": 0.0167,
+    "CRM": 0.0167,
     "JPM": 0.0167,
     "UNH": 0.0083,
     "MS": 0.0083,
@@ -31,14 +30,15 @@
     "CL": 0.0083,
     "MA": 0.0083,
     "KO": 0.0083,
-    "BAC": 0.0083,
     "VZ": 0.0083,
     "C": 0.0083,
+    "QCOM": 0.0083,
+    "MDT": 0.0083,
     "ABBV": 0.0083,
     "NVDA": 0.0083,
-    "AAPL": 0.0083,
-    "MSFT": 0.0083,
     "EMR": 0.0083,
+    "MSFT": 0.0083,
+    "AAPL": 0.0083,
     "XOM": 0.0083
   },
   "blended_invested_pct": 100.0,
@@ -76,15 +76,15 @@
         "FDX": 0.1,
         "CSCO": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0837,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 114.44,
-        "ann_pct": 46.55,
+        "cum_pct": 114.85,
+        "ann_pct": 46.69,
         "vol_pct": 26.91,
         "sharpe": 1.56,
         "max_dd_pct": -23.27,
@@ -121,21 +121,21 @@
         "MS": 0.1,
         "TXN": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 75.21,
-        "ann_pct": 32.44,
+        "cum_pct": 74.75,
+        "ann_pct": 32.27,
         "vol_pct": 25.61,
-        "sharpe": 1.23,
+        "sharpe": 1.22,
         "max_dd_pct": -23.49,
-        "hit_pct": 58.1,
-        "t_stat": 1.74,
-        "years_to_prove": 5.7,
+        "hit_pct": 57.9,
+        "t_stat": 1.72,
+        "years_to_prove": 5.8,
         "proven": false
       },
       "signal": {
@@ -156,31 +156,31 @@
       "status": "warming up",
       "positions": {
         "INTC": 0.1,
-        "QCOM": 0.1,
-        "TGT": 0.1,
-        "BMY": 0.1,
-        "JNJ": 0.1,
-        "DE": 0.1,
-        "CRM": 0.1,
         "AMGN": 0.1,
+        "JNJ": 0.1,
+        "PFE": 0.1,
+        "BMY": 0.1,
+        "GILD": 0.1,
         "TMO": 0.1,
-        "PFE": 0.1
+        "MRK": 0.1,
+        "CRM": 0.1,
+        "MU": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.6,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 44.06,
-        "ann_pct": 20.07,
-        "vol_pct": 20.38,
-        "sharpe": 1.0,
+        "cum_pct": 42.4,
+        "ann_pct": 19.38,
+        "vol_pct": 20.37,
+        "sharpe": 0.97,
         "max_dd_pct": -25.47,
-        "hit_pct": 54.9,
-        "t_stat": 1.41,
-        "years_to_prove": 8.6,
+        "hit_pct": 54.7,
+        "t_stat": 1.37,
+        "years_to_prove": 9.2,
         "proven": false
       },
       "signal": {
@@ -201,31 +201,31 @@
       "status": "warming up",
       "positions": {
         "PG": 0.1,
-        "JPM": 0.1,
         "PEP": 0.1,
+        "JPM": 0.1,
         "COST": 0.1,
-        "V": 0.1,
         "PFE": 0.1,
+        "V": 0.1,
         "CL": 0.1,
         "MA": 0.1,
         "KO": 0.1,
-        "BAC": 0.1
+        "JNJ": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.2,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": -7.31,
-        "ann_pct": -3.73,
+        "cum_pct": -7.5,
+        "ann_pct": -3.83,
         "vol_pct": 13.26,
-        "sharpe": -0.22,
+        "sharpe": -0.23,
         "max_dd_pct": -15.07,
-        "hit_pct": 50.1,
-        "t_stat": -0.31,
-        "years_to_prove": 178.6,
+        "hit_pct": 49.9,
+        "t_stat": -0.32,
+        "years_to_prove": 163.4,
         "proven": false
       },
       "signal": {
@@ -256,15 +256,15 @@
         "FDX": 0.1,
         "CSCO": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 72.99,
-        "ann_pct": 31.6,
+        "cum_pct": 73.32,
+        "ann_pct": 31.72,
         "vol_pct": 24.15,
         "sharpe": 1.26,
         "max_dd_pct": -21.61,
@@ -301,15 +301,15 @@
         "FDX": 0.1,
         "CSCO": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 114.44,
-        "ann_pct": 46.55,
+        "cum_pct": 114.85,
+        "ann_pct": 46.69,
         "vol_pct": 26.91,
         "sharpe": 1.56,
         "max_dd_pct": -23.27,
@@ -346,7 +346,7 @@
         "FDX": 0.1,
         "CSCO": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
@@ -381,25 +381,25 @@
       "status": "warming up",
       "positions": {
         "CRM": 0.1,
-        "QCOM": 0.1,
-        "VZ": 0.1,
-        "C": 0.1,
-        "DE": 0.1,
-        "TGT": 0.1,
-        "BMY": 0.1,
-        "JPM": 0.1,
         "JNJ": 0.1,
-        "MRK": 0.1
+        "VZ": 0.1,
+        "BMY": 0.1,
+        "C": 0.1,
+        "JPM": 0.1,
+        "QCOM": 0.1,
+        "MRK": 0.1,
+        "MDT": 0.1,
+        "GILD": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.4,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 32.92,
-        "ann_pct": 15.32,
+        "cum_pct": 32.93,
+        "ann_pct": 15.33,
         "vol_pct": 19.35,
         "sharpe": 0.83,
         "max_dd_pct": -21.28,
@@ -426,31 +426,31 @@
       "status": "warming up",
       "positions": {
         "ABBV": 0.1,
-        "VLO": 0.1,
         "AMD": 0.1,
         "NVDA": 0.1,
+        "VLO": 0.1,
+        "EMR": 0.1,
+        "MSFT": 0.1,
         "PSX": 0.1,
         "AAPL": 0.1,
-        "MSFT": 0.1,
-        "TMO": 0.1,
-        "EMR": 0.1,
-        "XOM": 0.1
+        "XOM": 0.1,
+        "TMO": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 5.58,
-        "ann_pct": 2.76,
+        "cum_pct": 5.32,
+        "ann_pct": 2.63,
         "vol_pct": 15.8,
-        "sharpe": 0.25,
+        "sharpe": 0.24,
         "max_dd_pct": -17.56,
-        "hit_pct": 49.9,
-        "t_stat": 0.35,
-        "years_to_prove": 138.3,
+        "hit_pct": 49.7,
+        "t_stat": 0.34,
+        "years_to_prove": 150.1,
         "proven": false
       },
       "signal": {
@@ -470,32 +470,32 @@
       "why": "Momentum names sized inverse to volatility.",
       "status": "warming up",
       "positions": {
-        "MU": 0.0492,
-        "INTC": 0.0522,
-        "AMD": 0.0582,
-        "VLO": 0.1099,
-        "PSX": 0.1237,
-        "CAT": 0.1043,
-        "TGT": 0.1324,
-        "MRK": 0.1067,
-        "FDX": 0.1541,
-        "CSCO": 0.1094
+        "MU": 0.0491,
+        "INTC": 0.0518,
+        "AMD": 0.0578,
+        "VLO": 0.109,
+        "PSX": 0.1226,
+        "CAT": 0.1091,
+        "TGT": 0.1334,
+        "MRK": 0.1059,
+        "FDX": 0.1529,
+        "CSCO": 0.1085
       },
-      "turnover": 1.0,
+      "turnover": 0.012,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 82.45,
-        "ann_pct": 35.15,
-        "vol_pct": 22.16,
-        "sharpe": 1.47,
+        "cum_pct": 83.37,
+        "ann_pct": 35.5,
+        "vol_pct": 22.15,
+        "sharpe": 1.48,
         "max_dd_pct": -20.99,
         "hit_pct": 54.3,
-        "t_stat": 2.08,
-        "years_to_prove": 4.0,
+        "t_stat": 2.09,
+        "years_to_prove": 3.9,
         "proven": false
       },
       "signal": {
@@ -526,21 +526,21 @@
         "FDX": 0.0952,
         "CSCO": 0.0952
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 119.1,
-        "ann_pct": 48.13,
+        "cum_pct": 119.44,
+        "ann_pct": 48.25,
         "vol_pct": 27.55,
-        "sharpe": 1.56,
+        "sharpe": 1.57,
         "max_dd_pct": -23.22,
         "hit_pct": 57.1,
-        "t_stat": 2.2,
-        "years_to_prove": 3.6,
+        "t_stat": 2.22,
+        "years_to_prove": 3.5,
         "proven": false
       },
       "signal": {
@@ -562,21 +562,21 @@
       "positions": {
         "XLB": 1.0
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 0
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 7.35,
-        "ann_pct": 3.62,
-        "vol_pct": 18.81,
-        "sharpe": 0.28,
+        "cum_pct": 8.99,
+        "ann_pct": 4.41,
+        "vol_pct": 18.78,
+        "sharpe": 0.32,
         "max_dd_pct": -23.17,
         "hit_pct": 48.9,
-        "t_stat": 0.4,
-        "years_to_prove": 110.2,
+        "t_stat": 0.45,
+        "years_to_prove": 84.4,
         "proven": false
       },
       "signal": {
