@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-13T03:08:35.199717+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "A sharp slowdown in job growth to just 29,000 positions alongside Fed minutes signaling another potential rate hike paints a tricky macro backdrop. Tech and semiconductor leaders are failing to spark momentum on new announcements, leaving flat index futures reliant on energy strength and upcoming bank earnings to prevent broader downside.",
+    "bull": "Oil-driven gains across energy stocks and the potential for positive bank earnings surprises could keep broader indices afloat.",
+    "bear": "Weakening employment data paired with sticky inflation and the threat of another Fed hike risks compressing multiples, particularly as AI momentum names lose traction.",
+    "watch": "Upcoming bank earnings reports and the fallout from energy strikes in Ukraine."
+  },
+  "takes": [
+    {
+      "topic": "Semiconductors & AI (NVDA, AMD, MU)",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "New AI updates from Nvidia and AMD failed to re-energize buyers, while competitive advances from China's CXMT are dragging on Micron, signaling near-term exhaustion in the sector."
+    },
+    {
+      "topic": "U.S. Economy & Federal Reserve",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "A cooling labor market with unemployment ticking up to 4.2% combined with Fed minutes pointing to another rate hike this year creates uncomfortable stagflationary headwinds."
+    },
+    {
+      "topic": "Energy Sector",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Fresh strikes on Ukraine's energy infrastructure are pushing crude higher and lifting energy equities, providing one of the few clear pockets of strength in the market."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
