@@ -1,6 +1,6 @@
 {
   "as_of_equity": "2026-10-12",
-  "as_of_crypto": "2026-10-13",
+  "as_of_crypto": "2026-10-14",
   "conditions": {
     "available": true,
     "as_of": "2026-10-12",
@@ -187,49 +187,54 @@
     "coins_in_uptrend": [
       {
         "ticker": "BNB-USD",
-        "entry_ref": 739.27,
-        "mom_200d_pct": 17.5
+        "entry_ref": 744.97,
+        "mom_200d_pct": 21.5
       },
       {
         "ticker": "BTC-USD",
-        "entry_ref": 82777.22,
-        "mom_200d_pct": 20.3
+        "entry_ref": 83560.99,
+        "mom_200d_pct": 26.0
       },
       {
         "ticker": "ETH-USD",
-        "entry_ref": 2481.67,
-        "mom_200d_pct": 20.5
+        "entry_ref": 2515.96,
+        "mom_200d_pct": 26.3
       },
       {
         "ticker": "LINK-USD",
-        "entry_ref": 12.79,
-        "mom_200d_pct": 43.4
+        "entry_ref": 13.0,
+        "mom_200d_pct": 51.8
       },
       {
         "ticker": "LTC-USD",
-        "entry_ref": 61.46,
-        "mom_200d_pct": 12.6
+        "entry_ref": 61.57,
+        "mom_200d_pct": 14.7
       },
       {
         "ticker": "SOL-USD",
-        "entry_ref": 106.49,
-        "mom_200d_pct": 23.2
+        "entry_ref": 107.79,
+        "mom_200d_pct": 29.8
+      },
+      {
+        "ticker": "XRP-USD",
+        "entry_ref": 1.38,
+        "mom_200d_pct": 3.8
       }
     ],
-    "suggested_gross_exposure": 0.31,
+    "suggested_gross_exposure": 0.29,
     "btc_trend": {
       "available": true,
       "on": true,
-      "price": 82777.22,
-      "sma_150": 71080.75,
-      "gap_pct": 16.5,
+      "price": 83560.99,
+      "sma_150": 71110.18,
+      "gap_pct": 17.5,
       "since": "2026-08-19",
-      "as_of": "2026-10-13",
+      "as_of": "2026-10-14",
       "rule": "Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
       "evidence": "2015 to 2026 backtest: 76% a year vs 66% for holding, worst drop -62% vs -83%. Since mid-2022 (data it was not fitted to): 35% a year vs 40%, worst drop -28% vs -53%."
     },
     "label": "RISK-MANAGED BETA \u2014 not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
-    "as_of": "2026-10-13"
+    "as_of": "2026-10-14"
   },
   "disclaimer": "Educational signals from a validated momentum model. Not investment advice. Execute in your own brokerage at your discretion."
 }
