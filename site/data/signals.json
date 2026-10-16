@@ -1,14 +1,14 @@
 {
-  "as_of_equity": "2026-10-13",
+  "as_of_equity": "2026-10-15",
   "as_of_crypto": "2026-10-15",
   "conditions": {
     "available": true,
-    "as_of": "2026-10-13",
-    "score": 5,
-    "checks_passed": 5,
+    "as_of": "2026-10-15",
+    "score": 4,
+    "checks_passed": 4,
     "checks_total": 5,
     "sizing": false,
-    "directive": "5 of 5 market conditions are favorable.",
+    "directive": "4 of 5 market conditions are favorable.",
     "checks": [
       {
         "key": "trend",
@@ -31,8 +31,8 @@
       {
         "key": "credit",
         "name": "Credit",
-        "pass": true,
-        "text": "High-yield bonds are holding up"
+        "pass": false,
+        "text": "High-yield bonds are weakening against Treasuries"
       },
       {
         "key": "room",
@@ -41,128 +41,128 @@
         "text": "Index is not overextended"
       }
     ],
-    "days_at_score": 7,
+    "days_at_score": 2,
     "note": "Readout only: it does not set position size. In testing (2017 to now), sizing by this score did no better than holding a constant smaller position, and low scores were not followed by worse months. Size comes from the volatility target."
   },
   "position": [
     {
       "ticker": "MU",
       "rank": 1,
-      "score": 5.94,
-      "entry_ref": 953.19,
-      "mom_6m_pct": 98.5,
-      "mom_12m_pct": 409.3,
-      "suggested_stop": 810.21,
+      "score": 5.98,
+      "entry_ref": 931.24,
+      "mom_6m_pct": 102.7,
+      "mom_12m_pct": 395.8,
+      "suggested_stop": 791.55,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "AMD",
       "rank": 2,
-      "score": 3.1,
-      "entry_ref": 605.53,
-      "mom_6m_pct": 93.4,
-      "mom_12m_pct": 129.6,
-      "suggested_stop": 514.7,
+      "score": 2.99,
+      "entry_ref": 562.23,
+      "mom_6m_pct": 84.2,
+      "mom_12m_pct": 135.0,
+      "suggested_stop": 477.9,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "VLO",
       "rank": 3,
-      "score": 2.52,
-      "entry_ref": 456.46,
-      "mom_6m_pct": 64.0,
-      "mom_12m_pct": 147.5,
-      "suggested_stop": 387.99,
+      "score": 2.77,
+      "entry_ref": 444.06,
+      "mom_6m_pct": 68.3,
+      "mom_12m_pct": 153.9,
+      "suggested_stop": 377.45,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "INTC",
       "rank": 4,
-      "score": 2.42,
-      "entry_ref": 102.81,
-      "mom_6m_pct": 52.3,
-      "mom_12m_pct": 167.2,
-      "suggested_stop": 87.39,
+      "score": 2.53,
+      "entry_ref": 95.37,
+      "mom_6m_pct": 47.5,
+      "mom_12m_pct": 183.6,
+      "suggested_stop": 81.06,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "PSX",
       "rank": 5,
-      "score": 2.15,
-      "entry_ref": 292.73,
-      "mom_6m_pct": 64.0,
-      "mom_12m_pct": 108.8,
-      "suggested_stop": 248.82,
+      "score": 2.22,
+      "entry_ref": 289.2,
+      "mom_6m_pct": 64.1,
+      "mom_12m_pct": 108.2,
+      "suggested_stop": 245.82,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "TGT",
       "rank": 6,
-      "score": 1.26,
-      "entry_ref": 151.99,
-      "mom_6m_pct": 35.1,
-      "mom_12m_pct": 93.1,
-      "suggested_stop": 129.19,
-      "stop_rule": "15% trailing, from the highest close since entry",
-      "horizon": "~1 month (position)"
-    },
-    {
-      "ticker": "CSCO",
-      "rank": 7,
-      "score": 0.95,
-      "entry_ref": 115.07,
-      "mom_6m_pct": 33.7,
-      "mom_12m_pct": 64.4,
-      "suggested_stop": 97.81,
-      "stop_rule": "15% trailing, from the highest close since entry",
-      "horizon": "~1 month (position)"
-    },
-    {
-      "ticker": "CRM",
-      "rank": 8,
-      "score": 0.86,
-      "entry_ref": 238.01,
-      "mom_6m_pct": 51.8,
-      "mom_12m_pct": 8.1,
-      "suggested_stop": 202.31,
+      "score": 1.02,
+      "entry_ref": 156.63,
+      "mom_6m_pct": 27.0,
+      "mom_12m_pct": 80.9,
+      "suggested_stop": 133.14,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "MRK",
-      "rank": 9,
-      "score": 0.72,
-      "entry_ref": 141.98,
-      "mom_6m_pct": 21.6,
-      "mom_12m_pct": 72.4,
-      "suggested_stop": 120.68,
+      "rank": 7,
+      "score": 0.98,
+      "entry_ref": 145.19,
+      "mom_6m_pct": 27.2,
+      "mom_12m_pct": 76.1,
+      "suggested_stop": 123.41,
+      "stop_rule": "15% trailing, from the highest close since entry",
+      "horizon": "~1 month (position)"
+    },
+    {
+      "ticker": "CSCO",
+      "rank": 8,
+      "score": 0.84,
+      "entry_ref": 109.85,
+      "mom_6m_pct": 28.0,
+      "mom_12m_pct": 59.2,
+      "suggested_stop": 93.37,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "QCOM",
-      "rank": 10,
-      "score": 0.6,
-      "entry_ref": 176.86,
-      "mom_6m_pct": 36.9,
-      "mom_12m_pct": 19.7,
-      "suggested_stop": 150.33,
+      "rank": 9,
+      "score": 0.69,
+      "entry_ref": 178.4,
+      "mom_6m_pct": 38.7,
+      "mom_12m_pct": 16.7,
+      "suggested_stop": 151.64,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
-      "ticker": "TXN",
+      "ticker": "LLY",
+      "rank": 10,
+      "score": 0.62,
+      "entry_ref": 1251.61,
+      "mom_6m_pct": 26.3,
+      "mom_12m_pct": 40.9,
+      "suggested_stop": 1063.87,
+      "stop_rule": "15% trailing, from the highest close since entry",
+      "horizon": "~1 month (position)"
+    },
+    {
+      "ticker": "CRM",
       "rank": 11,
-      "score": 0.57,
-      "entry_ref": 287.85,
-      "mom_6m_pct": 21.6,
-      "mom_12m_pct": 57.4,
-      "suggested_stop": 244.67,
+      "score": 0.58,
+      "entry_ref": 246.74,
+      "mom_6m_pct": 38.6,
+      "mom_12m_pct": 5.2,
+      "suggested_stop": 209.73,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
@@ -170,16 +170,16 @@
       "ticker": "AAPL",
       "rank": 12,
       "score": 0.56,
-      "entry_ref": 341.27,
-      "mom_6m_pct": 28.9,
-      "mom_12m_pct": 36.3,
-      "suggested_stop": 290.08,
+      "entry_ref": 342.0,
+      "mom_6m_pct": 26.4,
+      "mom_12m_pct": 34.7,
+      "suggested_stop": 290.7,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     }
   ],
   "swing": [],
-  "position_suggested_exposure": 0.91,
+  "position_suggested_exposure": 0.94,
   "swing_suggested_exposure": 0.0,
   "swing_retired": true,
   "vol_target_annual_pct": 15,
@@ -187,42 +187,47 @@
     "coins_in_uptrend": [
       {
         "ticker": "BNB-USD",
-        "entry_ref": 728.8,
-        "mom_200d_pct": 19.3
+        "entry_ref": 728.67,
+        "mom_200d_pct": 20.3
       },
       {
         "ticker": "BTC-USD",
-        "entry_ref": 81626.8,
-        "mom_200d_pct": 23.1
+        "entry_ref": 82135.76,
+        "mom_200d_pct": 24.5
       },
       {
         "ticker": "ETH-USD",
-        "entry_ref": 2419.76,
-        "mom_200d_pct": 21.4
+        "entry_ref": 2439.94,
+        "mom_200d_pct": 23.1
       },
       {
         "ticker": "LINK-USD",
         "entry_ref": 12.44,
-        "mom_200d_pct": 47.6
+        "mom_200d_pct": 48.1
       },
       {
         "ticker": "LTC-USD",
-        "entry_ref": 59.28,
-        "mom_200d_pct": 10.1
+        "entry_ref": 60.9,
+        "mom_200d_pct": 14.3
       },
       {
         "ticker": "SOL-USD",
-        "entry_ref": 104.21,
-        "mom_200d_pct": 27.1
+        "entry_ref": 105.32,
+        "mom_200d_pct": 29.4
+      },
+      {
+        "ticker": "XRP-USD",
+        "entry_ref": 1.33,
+        "mom_200d_pct": 0.5
       }
     ],
-    "suggested_gross_exposure": 0.3,
+    "suggested_gross_exposure": 0.31,
     "btc_trend": {
       "available": true,
       "on": true,
-      "price": 81626.8,
-      "sma_150": 71135.06,
-      "gap_pct": 14.7,
+      "price": 82135.76,
+      "sma_150": 71169.17,
+      "gap_pct": 15.4,
       "since": "2026-08-19",
       "as_of": "2026-10-15",
       "rule": "Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
