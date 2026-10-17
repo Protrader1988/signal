@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-17T00:10:54.769753+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "Wall Street is under pressure as tech valuations reverse, leading the Nasdaq to its worst week since June. The broader market is being dragged down by an AI sell-off, weakness in chip stocks, and high oil prices. Unclear signals on future Federal Reserve interest rate moves further compound market hesitation.",
+    "bull": "Contrarian value opportunities may be emerging in severely beaten-down tech names like Intel, while market expectations lean toward the Fed keeping rates on hold in October.",
+    "bear": "Sustained pressure from high oil prices, ongoing valuation reversals in the AI trade, and persistent inflation concerns could prompt further downside across major indexes.",
+    "watch": "Federal Reserve policy communications and Q3 earnings reports from energy majors like Valero."
+  },
+  "takes": [
+    {
+      "topic": "AI & Semiconductor Stocks",
+      "lean": "leaning bearish",
+      "confidence": "high",
+      "note": "Chipmakers including AMD, Arm, and Micron are taking heavy losses as AI valuations reverse and legal verdicts weigh on the sector. Despite 'buy the dip' calls and selective bullish analyst calls on Intel, current trader appetite remains weak."
+    },
+    {
+      "topic": "Federal Reserve & Interest Rates",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "Expectations have strengthened for a Fed rate hold in October following comments by Kevin Warsh. However, recent alarming inflation data and hawkish commentary from Fed officials leave the door open for future rate increases."
+    },
+    {
+      "topic": "Energy Sector (PSX, VLO)",
+      "lean": "neutral",
+      "confidence": "low",
+      "note": "While elevated oil prices are straining the broader market, energy stocks themselves reflect mixed signals with Phillips 66 raising its dividend despite strike risks and Valero sinking ahead of its Q3 earnings report."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }

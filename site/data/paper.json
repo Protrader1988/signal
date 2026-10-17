@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-15T23:57:48.843335+00:00",
+  "updated_utc": "2026-10-17T00:02:52.475859+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -123,11 +123,11 @@
   "first_fill": "2026-10-05",
   "spy_start": 769.72,
   "signal": {
-    "unrealized": -1474.2,
+    "unrealized": -3065.12,
     "realized": 88.95,
-    "total_pl": -1385.25,
-    "return_pct": -1.38,
-    "spy_return_pct": 0.25,
+    "total_pl": -2976.17,
+    "return_pct": -2.97,
+    "spy_return_pct": -0.83,
     "closed_trades": 1,
     "wins": 1,
     "basis": "Profit and loss on positions Signal opened, as a share of the starting account. Other holdings in the account are excluded."
@@ -141,168 +141,168 @@
     "TSLA"
   ],
   "account": {
-    "equity": 98799.63,
-    "cash": 42.98,
-    "invested": 95424.21,
-    "other_holdings_value": 3332.45,
-    "return_since_start_pct": -1.39
+    "equity": 97151.28,
+    "cash": 42.97,
+    "invested": 93833.29,
+    "other_holdings_value": 3275.02,
+    "return_since_start_pct": -3.03
   },
   "sizing": {
     "exposure": 0.94,
     "names": 16,
-    "dollars_per_name": 5224.03,
+    "dollars_per_name": 5136.87,
     "stock_share": 0.9,
     "btc_share": 0.1
   },
   "btc_rule": {
     "on": true,
-    "price": 82135.76,
-    "sma_150": 71169.17
+    "price": 81497.29,
+    "sma_150": 71200.85
   },
   "positions": [
+    {
+      "symbol": "PSX",
+      "qty": 26.0,
+      "avg_entry": 265.55,
+      "price": 293.17,
+      "value": 7622.42,
+      "pl": 718.17,
+      "pl_pct": 10.4
+    },
     {
       "symbol": "UNH",
       "qty": 19.0,
       "avg_entry": 372.11,
-      "price": 407.16,
-      "value": 7736.04,
-      "pl": 665.87,
-      "pl_pct": 9.42
+      "price": 400.8,
+      "value": 7615.2,
+      "pl": 545.03,
+      "pl_pct": 7.71
     },
     {
       "symbol": "VLO",
       "qty": 17.0,
       "avg_entry": 407.27,
-      "price": 443.5,
-      "value": 7539.5,
-      "pl": 615.91,
-      "pl_pct": 8.9
-    },
-    {
-      "symbol": "PSX",
-      "qty": 26.0,
-      "avg_entry": 265.55,
-      "price": 289.2,
-      "value": 7519.2,
-      "pl": 614.95,
-      "pl_pct": 8.91
+      "price": 444.71,
+      "value": 7560.07,
+      "pl": 636.48,
+      "pl_pct": 9.19
     },
     {
       "symbol": "AMGN",
       "qty": 17.0,
       "avg_entry": 401.79,
-      "price": 434.0,
-      "value": 7378.0,
-      "pl": 547.51,
-      "pl_pct": 8.02
+      "price": 432.49,
+      "value": 7352.33,
+      "pl": 521.84,
+      "pl_pct": 7.64
     },
     {
       "symbol": "MRK",
       "qty": 49.0,
       "avg_entry": 142.84,
-      "price": 145.2,
-      "value": 7114.8,
-      "pl": 115.64,
-      "pl_pct": 1.65
+      "price": 145.26,
+      "value": 7117.57,
+      "pl": 118.41,
+      "pl_pct": 1.69
     },
     {
       "symbol": "TGT",
       "qty": 45.0,
       "avg_entry": 156.0,
-      "price": 156.63,
-      "value": 7048.35,
-      "pl": 28.2,
-      "pl_pct": 0.4
+      "price": 154.11,
+      "value": 6934.95,
+      "pl": -85.2,
+      "pl_pct": -1.21
     },
     {
       "symbol": "CSCO",
       "qty": 63.0,
       "avg_entry": 111.91,
-      "price": 109.7,
-      "value": 6911.1,
-      "pl": -139.15,
-      "pl_pct": -1.97
+      "price": 107.03,
+      "value": 6742.76,
+      "pl": -307.49,
+      "pl_pct": -4.36
     },
     {
       "symbol": "TXN",
       "qty": 24.0,
       "avg_entry": 292.04,
-      "price": 277.23,
-      "value": 6653.52,
-      "pl": -355.51,
-      "pl_pct": -5.07
+      "price": 276.49,
+      "value": 6635.76,
+      "pl": -373.27,
+      "pl_pct": -5.33
     },
     {
       "symbol": "XLK",
       "qty": 35.0,
       "avg_entry": 200.25,
-      "price": 188.2,
-      "value": 6587.0,
-      "pl": -421.92,
-      "pl_pct": -6.02
-    },
-    {
-      "symbol": "AMD",
-      "qty": 11.0,
-      "avg_entry": 626.57,
-      "price": 554.28,
-      "value": 6097.08,
-      "pl": -795.19,
-      "pl_pct": -11.54
+      "price": 183.47,
+      "value": 6421.45,
+      "pl": -587.47,
+      "pl_pct": -8.38
     },
     {
       "symbol": "BTCUSD",
       "qty": 0.073556166,
       "avg_entry": 86551.4,
-      "price": 82156.13,
-      "value": 6043.09,
-      "pl": -323.3,
-      "pl_pct": -5.08
+      "price": 81502.31,
+      "value": 5995.0,
+      "pl": -371.39,
+      "pl_pct": -5.83
+    },
+    {
+      "symbol": "AMD",
+      "qty": 11.0,
+      "avg_entry": 626.57,
+      "price": 527.09,
+      "value": 5797.94,
+      "pl": -1094.33,
+      "pl_pct": -15.88
     },
     {
       "symbol": "INTC",
       "qty": 59.0,
       "avg_entry": 115.57,
-      "price": 94.63,
-      "value": 5582.95,
-      "pl": -1235.44,
-      "pl_pct": -18.12
+      "price": 89.33,
+      "value": 5270.43,
+      "pl": -1547.96,
+      "pl_pct": -22.7
     },
     {
       "symbol": "MU",
       "qty": 6.0,
       "avg_entry": 1066.77,
-      "price": 923.56,
-      "value": 5541.34,
-      "pl": -859.28,
-      "pl_pct": -13.43
+      "price": 875.98,
+      "value": 5255.88,
+      "pl": -1144.74,
+      "pl_pct": -17.89
     },
     {
       "symbol": "QCOM",
       "qty": 29.0,
       "avg_entry": 174.47,
-      "price": 177.05,
-      "value": 5134.45,
-      "pl": 74.96,
-      "pl_pct": 1.48
+      "price": 171.61,
+      "value": 4976.69,
+      "pl": -82.8,
+      "pl_pct": -1.64
     },
     {
       "symbol": "AAPL",
       "qty": 6.0,
       "avg_entry": 347.2,
-      "price": 340.8,
-      "value": 2044.8,
-      "pl": -38.38,
-      "pl_pct": -1.84
+      "price": 342.62,
+      "value": 2055.72,
+      "pl": -27.46,
+      "pl_pct": -1.32
     },
     {
       "symbol": "CRM",
       "qty": 2.0,
       "avg_entry": 231.03,
-      "price": 246.49,
-      "value": 492.98,
-      "pl": 30.92,
-      "pl_pct": 6.69
+      "price": 239.56,
+      "value": 479.11,
+      "pl": 17.05,
+      "pl_pct": 3.69
     }
   ],
   "orders_this_run": [
@@ -588,10 +588,6 @@
     }
   ],
   "equity_history": [
-    {
-      "date": "2026-04-16",
-      "equity": 100093.06
-    },
     {
       "date": "2026-04-17",
       "equity": 100110.15
@@ -1095,6 +1091,10 @@
     {
       "date": "2026-10-15",
       "equity": 99570.86
+    },
+    {
+      "date": "2026-10-16",
+      "equity": 99119.05
     }
   ],
   "note": "Real fills in an Alpaca PAPER account (simulated money). The account mirrors the ledger's open position book; orders are placed after the close and fill at the next open."

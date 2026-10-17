@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-16T00:03:51.748445+00:00",
+  "generated_utc": "2026-10-17T00:09:49.819049+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -5553,9 +5553,9 @@
       "thesis": null,
       "recipient": "LOCKHEED MARTIN",
       "federal": {
-        "total": 49298091665.0,
+        "total": 49298894243.0,
         "count": 300,
-        "last_action": "2026-10-13",
+        "last_action": "2026-10-14",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5570,7 +5570,7 @@
       "thesis": null,
       "recipient": "RTX",
       "federal": {
-        "total": 15483313355.0,
+        "total": 15484058958.0,
         "count": 300,
         "last_action": "2026-10-07",
         "top_agency": "Department of Defense",
@@ -5587,9 +5587,9 @@
       "thesis": null,
       "recipient": "GENERAL DYNAMICS",
       "federal": {
-        "total": 9534302525.0,
+        "total": 9544138843.0,
         "count": 300,
-        "last_action": "2026-10-13",
+        "last_action": "2026-10-14",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5604,7 +5604,7 @@
       "thesis": null,
       "recipient": "HUNTINGTON INGALLS",
       "federal": {
-        "total": 8003585168.0,
+        "total": 8001942653.0,
         "count": 300,
         "last_action": "2026-09-15",
         "top_agency": "Department of Defense",
@@ -5640,7 +5640,7 @@
       "federal": {
         "total": 2865491478.0,
         "count": 300,
-        "last_action": "2026-10-07",
+        "last_action": "2026-10-14",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5655,9 +5655,9 @@
       "thesis": null,
       "recipient": "INTERNATIONAL BUSINESS MACHINES",
       "federal": {
-        "total": 1630322632.0,
+        "total": 1631915824.0,
         "count": 300,
-        "last_action": "2026-10-09",
+        "last_action": "2026-10-14",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5689,7 +5689,7 @@
       "thesis": null,
       "recipient": "KRATOS",
       "federal": {
-        "total": 305107490.0,
+        "total": 305011617.0,
         "count": 179,
         "last_action": "2026-09-30",
         "top_agency": "Department of Defense",
@@ -5725,7 +5725,7 @@
       "federal": {
         "total": 141303158.0,
         "count": 300,
-        "last_action": "2026-10-06",
+        "last_action": "2026-10-14",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5775,7 +5775,7 @@
       "recipient": "PERPETUA",
       "federal": {
         "total": 5181868.0,
-        "count": 15,
+        "count": 14,
         "last_action": "2026-09-03",
         "top_agency": "Department of Defense",
         "truncated": false,
@@ -6170,7 +6170,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 275132109.9
+          "amount": 275119709.9
         },
         {
           "period": "FY2025 Q2",
@@ -6198,16 +6198,16 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 1026804287.87
+          "amount": 1028590682.23
         },
         {
           "period": "FY2027 Q1",
           "amount": -54581.34
         }
       ],
-      "last4": 4172525520.9599996,
+      "last4": 4174311915.3199997,
       "prior4": 5883250858.9,
-      "yoy_pct": -29.1,
+      "yoy_pct": -29.0,
       "link": "https://www.usaspending.gov/search?keywords=shipbuilding"
     },
     {
@@ -6248,16 +6248,16 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 342649898.99
+          "amount": 328535506.99
         },
         {
           "period": "FY2027 Q1",
           "amount": 0.0
         }
       ],
-      "last4": 2165869617.1099997,
+      "last4": 2151755225.1099997,
       "prior4": 2260829706.4700003,
-      "yoy_pct": -4.2,
+      "yoy_pct": -4.8,
       "link": "https://www.usaspending.gov/search?keywords=unmanned%20aircraft"
     },
     {
@@ -6298,14 +6298,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 191363029.85
+          "amount": 191389029.85
         },
         {
           "period": "FY2027 Q1",
-          "amount": 375394.06
+          "amount": 449496.65
         }
       ],
-      "last4": 1808114375.7299998,
+      "last4": 1808214478.32,
       "prior4": 2385424841.84,
       "yoy_pct": -24.2,
       "link": "https://www.usaspending.gov/search?keywords=nuclear%20reactor"
@@ -6320,7 +6320,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 185154914.59
+          "amount": 185145548.16
         },
         {
           "period": "FY2025 Q2",
@@ -6348,16 +6348,16 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 131473313.12
+          "amount": 140873021.7
         },
         {
           "period": "FY2027 Q1",
           "amount": 155973.38
         }
       ],
-      "last4": 873747878.94,
+      "last4": 883147587.5200001,
       "prior4": 1358138058.3300002,
-      "yoy_pct": -35.7,
+      "yoy_pct": -35.0,
       "link": "https://www.usaspending.gov/search?keywords=semiconductor"
     },
     {
@@ -6372,7 +6372,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 2679348.38
+          "amount": 2679390.12
         },
         {
           "period": "FY2025 Q2",
@@ -6400,16 +6400,16 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 42269492.76
+          "amount": 42414419.68
         },
         {
           "period": "FY2027 Q1",
           "amount": 0.0
         }
       ],
-      "last4": 230440806.67,
+      "last4": 230585733.59,
       "prior4": 114247990.63,
-      "yoy_pct": 101.7,
+      "yoy_pct": 101.8,
       "link": "https://www.usaspending.gov/search?keywords=rare%20earth"
     },
     {
@@ -6561,10 +6561,179 @@
       "link": "https://www.usaspending.gov/search?keywords=active%20pharmaceutical%20ingredient"
     }
   ],
-  "pipeline": [],
+  "pipeline": [
+    {
+      "id": "7",
+      "companies": [
+        "Wolfspeed, Inc."
+      ],
+      "tickers": [
+        "WOLF"
+      ],
+      "sector": "semiconductors",
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": 1500000000.0,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital announced a $1.5 billion conditional loan commitment to Wolfspeed, Inc.",
+      "quote": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc.",
+      "confidence": "high",
+      "date": "2026-10-07",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4621223/department-of-wars-office-of-strategic-capital-announces-15-billion-conditional/",
+      "source": "Dept. of War",
+      "title": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc.",
+      "already_tracked": false
+    },
+    {
+      "id": "8",
+      "companies": [
+        "Wolfspeed, Inc."
+      ],
+      "tickers": [
+        "WOLF"
+      ],
+      "sector": "semiconductors",
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": 1500000000.0,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital announced a $1.5 billion conditional loan commitment to Wolfspeed, Inc.",
+      "quote": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc.",
+      "confidence": "high",
+      "date": "2026-10-07",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQY0dBZEswYjhsTHZrb1lUNjJVbnRtbUhsZjJYUURiOUhFMExBVmpPSGNhQ3B6Vkg4djlCOWtHYURPa1NQZW5BSGdCaGxreG9TemZKdnEtRGpZa0ZmTmVqOTJ1WVNWbFRuRElaMGt6cnZrbGVsNV9WcGY0U0xtZUlCcGhHVzc0b2Q2VEItY1l5VUk2WVpLRHZQTkFBM3VuVW1YOUZMZzVRZjBrMTNhUFpVVGh2bV9TSGVLZXp4NDRSLW9zTEZQdzBZTkNpbmZoMkZqNjR5RA?oc=5",
+      "source": "U.S. Department of War (.gov)",
+      "title": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc. - U.S. Department of W",
+      "already_tracked": false
+    },
+    {
+      "id": "3",
+      "companies": [
+        "RTX",
+        "Raytheon"
+      ],
+      "tickers": [
+        "RTX"
+      ],
+      "sector": "defense",
+      "instrument": "procurement",
+      "stage": "definitive",
+      "amount_usd": 6300000000.0,
+      "agency": "Department of War",
+      "summary": "The Department of War awarded a $6.3 billion multi-year procurement contract to RTX's Raytheon for SM-3 BLOCK IB interceptors.",
+      "quote": "Department of War Awards $6.3 Billion Multi-Year Contract to RTX's Raytheon for SM-3 BLOCK IB Interceptors",
+      "confidence": "high",
+      "date": "2026-10-08",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4622796/department-of-war-awards-63-billion-multi-year-contract-to-rtxs-raytheon-for-sm/",
+      "source": "Dept. of War",
+      "title": "Department of War Awards $6.3 Billion Multi-Year Contract to RTX's Raytheon for SM-3 BLOCK IB Interceptors",
+      "already_tracked": true
+    },
+    {
+      "id": "5",
+      "companies": [
+        "PsiQuantum"
+      ],
+      "tickers": [],
+      "sector": "quantum computing",
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": 150000000.0,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with PsiQuantum.",
+      "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With PsiQuantum",
+      "confidence": "high",
+      "date": "2026-10-08",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4622113/department-of-wars-office-of-strategic-capital-signs-150-million-conditional-lo/",
+      "source": "Dept. of War",
+      "title": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With PsiQuantum",
+      "already_tracked": false
+    },
+    {
+      "id": "13",
+      "companies": [
+        "Raytheon"
+      ],
+      "tickers": [
+        "RTX"
+      ],
+      "sector": "defense",
+      "instrument": "procurement",
+      "stage": "definitive",
+      "amount_usd": null,
+      "agency": "DoW and U.S. Navy",
+      "summary": "The Department of War and U.S. Navy announced a contract with Raytheon to accelerate Standard Missile-6 production.",
+      "quote": "DoW and U.S. Navy Announce Contract With Raytheon to Accelerate\u202fStandard Missile-6 Production",
+      "confidence": "medium",
+      "date": "2026-10-01",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4616995/dow-and-us-navy-announce-contract-with-raytheon-to-accelerate-standard-missile/",
+      "source": "Dept. of War",
+      "title": "DoW and U.S. Navy Announce Contract With Raytheon to Accelerate\u202fStandard Missile-6 Production",
+      "already_tracked": true
+    },
+    {
+      "id": "10",
+      "companies": [],
+      "tickers": [],
+      "sector": "defense",
+      "instrument": "procurement",
+      "stage": "announced",
+      "amount_usd": null,
+      "agency": "JIATF 401",
+      "summary": "Systems were selected for the JIATF 401 directed-energy counter-drone pilot program.",
+      "quote": "Systems Selected for JIATF 401 Directed-Energy Counter-Drone Pilot Program",
+      "confidence": "medium",
+      "date": "2026-10-05",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4619430/systems-selected-for-jiatf-401-directed-energy-counter-drone-pilot-program/",
+      "source": "Dept. of War",
+      "title": "Systems Selected for JIATF 401 Directed-Energy Counter-Drone Pilot Program",
+      "already_tracked": false
+    },
+    {
+      "id": "2",
+      "companies": [],
+      "tickers": [],
+      "sector": "science",
+      "instrument": "grant",
+      "stage": "announced",
+      "amount_usd": 6000000000.0,
+      "agency": "White House Office of Science and Technology Policy",
+      "summary": "The Trump Administration announced science initiatives representing over $6 billion in investments across government, industry, academia, and philanthropy.",
+      "quote": "launched the most ambitious set of science initiatives in decades, representing over $6 billion in investments across the Federal Government, industry, academia, and philanthropy",
+      "confidence": "medium",
+      "date": "2026-10-08",
+      "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-trump-administration-announces-the-most-ambitious-set-of-science-initiatives-this-century/",
+      "source": "White House",
+      "title": "Fact sheet trump administration announces the most ambitious set of science initiatives this century",
+      "already_tracked": false
+    },
+    {
+      "id": "4",
+      "companies": [],
+      "tickers": [],
+      "sector": "quantum computing",
+      "instrument": "grant",
+      "stage": "announced",
+      "amount_usd": 350000000.0,
+      "agency": "Department of War",
+      "summary": "The Department of War announced $350 million in quantum computing initiatives.",
+      "quote": "Department of War Announces $350 Million in Quantum Computing Initiatives",
+      "confidence": "medium",
+      "date": "2026-10-08",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4622109/department-of-war-announces-350-million-in-quantum-computing-initiatives/",
+      "source": "Dept. of War",
+      "title": "Department of War Announces $350 Million in Quantum Computing Initiatives",
+      "already_tracked": false
+    }
+  ],
   "reading": {
-    "ok": false,
-    "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash "
+    "ok": true,
+    "model": "gemini-flash-latest",
+    "stats": {
+      "not_a_deal": 6
+    },
+    "note": "8 records from 14 documents \u2014 not a deal 6",
+    "generated_utc": "2026-10-17T00:05:27+00:00"
   },
   "detection": [
     {
@@ -6609,19 +6778,6 @@
       "ticker": "HON",
       "quality": "award record",
       "named": [],
-      "status": "unverified"
-    },
-    {
-      "company": "US buyer ups offtake deal with Rinehart-backed Arafura - The West Australian",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOaDRWeGFObDdJWE9HaTlHaDNoOXNBcmRkSlUtRzJXcnZUZ01zNEYwZ0RCalRYYmJDTEgtM0xXaG5qcmF1YThzS0NMMlh4c1dkNjFwMUxkWW1COHc1eGE4UnB1d2N2SFYxdXlHSGRveXNhV0RrQlFnUHdObGo4N1o3MTdKblEyRlRNWm8wQ0FNWUhDVXdoNkFST0lUbE90anZnYTlJbEQ3MEJWS1JtQjdZNEhhUHdCX1dCalo3UXVoREpvTTBfbFpHMWt3RFNoR244NnJSLVFrVTRpSXc?oc=5",
-      "date": "2026-10-11",
-      "source": "The West Australian",
-      "matched": "offtake",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "named": [],
-      "candidates": [],
       "status": "unverified"
     },
     {
@@ -7106,9 +7262,45 @@
       "quality": "white house",
       "named": [],
       "status": "in registry"
+    },
+    {
+      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+      "amount": 27617040104.1,
+      "date": "2026-09-29",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [
+        "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC"
+      ],
+      "status": "unverified"
     }
   ],
   "documents": [
+    {
+      "title": "Certain Semiconductor Devices, Products Containing Same, and Components Thereof; Notice of Commission Determination Not To Review an Initial Determination To Amend the Complaint and Notice of Investigation",
+      "link": "https://www.federalregister.gov/documents/2026/10/16/2026-21124/certain-semiconductor-devices-products-containing-same-and-components-thereof-notice-of-commission",
+      "date": "2026-10-16",
+      "source": "International Trade Commission",
+      "kind": "Notice",
+      "matched": "semiconductor"
+    },
+    {
+      "title": "Contracts for Oct. 16, 2026",
+      "company": "Contracts for Oct. 16, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4627497/contracts-for-oct-16-2026/",
+      "date": "2026-10-16",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
     {
       "title": "Foreign-Trade Zone (FTZ) 230; Authorization of Limited Production Activity; Qorvo US, Inc.; (Semiconductor Wafers, Modules, and Chips); Greensboro, North Carolina; Correction",
       "link": "https://www.federalregister.gov/documents/2026/10/15/2026-21041/foreign-trade-zone-ftz-230-authorization-of-limited-production-activity-qorvo-us-inc-semiconductor",
@@ -7116,22 +7308,6 @@
       "source": "Commerce Department, Foreign-Trade Zones Board",
       "kind": "Notice",
       "matched": "semiconductor"
-    },
-    {
-      "title": "Foreign-Trade Zone (FTZ) 45; Authorization of Limited Production Activity; Qorvo US, Inc.; (Semiconductor Wafers and Modules); Hillsboro, Oregon; Correction",
-      "link": "https://www.federalregister.gov/documents/2026/10/15/2026-21040/foreign-trade-zone-ftz-45-authorization-of-limited-production-activity-qorvo-us-inc-semiconductor",
-      "date": "2026-10-15",
-      "source": "Commerce Department, Foreign-Trade Zones Board",
-      "kind": "Notice",
-      "matched": "semiconductor"
-    },
-    {
-      "title": "Renewal of Agency Information Collections of Previously Approved Collections; Carrier Automated Tariffs; 3072-0064; 60-Day Public Comment Request",
-      "link": "https://www.federalregister.gov/documents/2026/10/15/2026-21083/renewal-of-agency-information-collections-of-previously-approved-collections-carrier-automated",
-      "date": "2026-10-15",
-      "source": "Federal Maritime Commission",
-      "kind": "Notice",
-      "matched": "tariff"
     },
     {
       "title": "Contracts for Oct. 15, 2026",
@@ -7182,16 +7358,6 @@
       "kind": "contracts digest",
       "matched": "daily contracts",
       "form": "contract"
-    },
-    {
-      "title": "Contracts for Oct. 7, 2026",
-      "company": "Contracts for Oct. 7, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4621482/contracts-for-oct-7-2026/",
-      "date": "2026-10-07",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
     }
   ],
   "ledger": {
@@ -7211,7 +7377,7 @@
         "backfilled": false,
         "return_since_seen_pct": -15.2,
         "last_price": 19.49,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7223,7 +7389,7 @@
         "backfilled": true,
         "return_since_seen_pct": -24.8,
         "last_price": 2.45,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7235,7 +7401,7 @@
         "backfilled": true,
         "return_since_seen_pct": -19.9,
         "last_price": 12.63,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7247,7 +7413,7 @@
         "backfilled": true,
         "return_since_seen_pct": -25.1,
         "last_price": 12.81,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "AA:2026-08-31",
@@ -7259,7 +7425,7 @@
         "backfilled": true,
         "return_since_seen_pct": -9.0,
         "last_price": 40.42,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7271,7 +7437,7 @@
         "backfilled": true,
         "return_since_seen_pct": -14.2,
         "last_price": 40.74,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7283,7 +7449,7 @@
         "backfilled": true,
         "return_since_seen_pct": -23.0,
         "last_price": 123.22,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7295,7 +7461,7 @@
         "backfilled": true,
         "return_since_seen_pct": -27.4,
         "last_price": 4.9,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7307,7 +7473,7 @@
         "backfilled": true,
         "return_since_seen_pct": -14.1,
         "last_price": 6.35,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7319,7 +7485,7 @@
         "backfilled": true,
         "return_since_seen_pct": 2.0,
         "last_price": 48.76,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7331,7 +7497,7 @@
         "backfilled": true,
         "return_since_seen_pct": 2.0,
         "last_price": 234.12,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7343,7 +7509,7 @@
         "backfilled": true,
         "return_since_seen_pct": -25.1,
         "last_price": 12.81,
-        "last_update": "2026-10-16"
+        "last_update": "2026-10-17"
       }
     ]
   },
@@ -7351,62 +7517,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-10-15T23:58:59+00:00"
+      "checked_utc": "2026-10-17T00:04:00+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-10-15T23:59:08+00:00"
+      "checked_utc": "2026-10-17T00:04:09+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "10 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-10-15T23:59:26+00:00"
+      "checked_utc": "2026-10-17T00:04:29+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-10-15T23:59:26+00:00"
+      "checked_utc": "2026-10-17T00:04:29+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-10-15T23:59:58+00:00"
+      "checked_utc": "2026-10-17T00:05:01+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-10-16T00:00:00+00:00"
+      "checked_utc": "2026-10-17T00:05:07+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-10-16T00:00:02+00:00"
+      "checked_utc": "2026-10-17T00:05:09+00:00"
     },
     "federal_register": {
       "ok": true,
-      "note": "3 documents",
-      "checked_utc": "2026-10-16T00:00:08+00:00"
+      "note": "2 documents",
+      "checked_utc": "2026-10-17T00:05:12+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-10-16T00:00:08+00:00"
+      "checked_utc": "2026-10-17T00:05:13+00:00"
     },
     "reading": {
-      "ok": false,
-      "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash ",
-      "checked_utc": "2026-10-16T00:00:13+00:00"
+      "ok": true,
+      "note": "8 records from 14 documents \u2014 not a deal 6",
+      "checked_utc": "2026-10-17T00:05:27+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-10-16T00:03:51+00:00"
+      "checked_utc": "2026-10-17T00:09:49+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-10-16T00:03:51+00:00"
+      "checked_utc": "2026-10-17T00:09:49+00:00"
     }
   },
   "counts": {
@@ -7414,8 +7580,8 @@
     "testable": 34,
     "radar": 9,
     "detection": 24,
-    "documents": 9,
-    "pipeline": 0,
+    "documents": 8,
+    "pipeline": 8,
     "flow": 8
   }
 }
