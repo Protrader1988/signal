@@ -1,9 +1,9 @@
 {
-  "as_of_equity": "2026-10-15",
-  "as_of_crypto": "2026-10-17",
+  "as_of_equity": "2026-10-16",
+  "as_of_crypto": "2026-10-20",
   "conditions": {
     "available": true,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "score": 4,
     "checks_passed": 4,
     "checks_total": 5,
@@ -41,145 +41,145 @@
         "text": "Index is not overextended"
       }
     ],
-    "days_at_score": 2,
+    "days_at_score": 3,
     "note": "Readout only: it does not set position size. In testing (2017 to now), sizing by this score did no better than holding a constant smaller position, and low scores were not followed by worse months. Size comes from the volatility target."
   },
   "position": [
     {
       "ticker": "MU",
       "rank": 1,
-      "score": 5.98,
-      "entry_ref": 931.24,
-      "mom_6m_pct": 102.7,
-      "mom_12m_pct": 395.8,
-      "suggested_stop": 791.55,
-      "stop_rule": "15% trailing, from the highest close since entry",
-      "horizon": "~1 month (position)"
-    },
-    {
-      "ticker": "AMD",
-      "rank": 2,
-      "score": 2.99,
-      "entry_ref": 562.23,
-      "mom_6m_pct": 84.2,
-      "mom_12m_pct": 135.0,
-      "suggested_stop": 477.9,
+      "score": 6.02,
+      "entry_ref": 878.84,
+      "mom_6m_pct": 114.8,
+      "mom_12m_pct": 409.8,
+      "suggested_stop": 747.01,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "VLO",
+      "rank": 2,
+      "score": 3.04,
+      "entry_ref": 444.71,
+      "mom_6m_pct": 86.0,
+      "mom_12m_pct": 161.7,
+      "suggested_stop": 378.0,
+      "stop_rule": "15% trailing, from the highest close since entry",
+      "horizon": "~1 month (position)"
+    },
+    {
+      "ticker": "AMD",
       "rank": 3,
-      "score": 2.77,
-      "entry_ref": 444.06,
-      "mom_6m_pct": 68.3,
-      "mom_12m_pct": 153.9,
-      "suggested_stop": 377.45,
+      "score": 2.94,
+      "entry_ref": 528.75,
+      "mom_6m_pct": 95.8,
+      "mom_12m_pct": 128.5,
+      "suggested_stop": 449.44,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "INTC",
       "rank": 4,
-      "score": 2.53,
-      "entry_ref": 95.37,
-      "mom_6m_pct": 47.5,
-      "mom_12m_pct": 183.6,
-      "suggested_stop": 81.06,
+      "score": 2.71,
+      "entry_ref": 89.85,
+      "mom_6m_pct": 58.8,
+      "mom_12m_pct": 192.9,
+      "suggested_stop": 76.37,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "PSX",
       "rank": 5,
-      "score": 2.22,
-      "entry_ref": 289.2,
-      "mom_6m_pct": 64.1,
-      "mom_12m_pct": 108.2,
-      "suggested_stop": 245.82,
+      "score": 2.43,
+      "entry_ref": 293.17,
+      "mom_6m_pct": 77.6,
+      "mom_12m_pct": 117.9,
+      "suggested_stop": 249.19,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "TGT",
       "rank": 6,
-      "score": 1.02,
-      "entry_ref": 156.63,
-      "mom_6m_pct": 27.0,
-      "mom_12m_pct": 80.9,
-      "suggested_stop": 133.14,
+      "score": 0.97,
+      "entry_ref": 154.26,
+      "mom_6m_pct": 27.2,
+      "mom_12m_pct": 82.9,
+      "suggested_stop": 131.12,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "MRK",
       "rank": 7,
-      "score": 0.98,
-      "entry_ref": 145.19,
-      "mom_6m_pct": 27.2,
-      "mom_12m_pct": 76.1,
-      "suggested_stop": 123.41,
+      "score": 0.9,
+      "entry_ref": 145.95,
+      "mom_6m_pct": 25.2,
+      "mom_12m_pct": 80.1,
+      "suggested_stop": 124.06,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "CSCO",
       "rank": 8,
-      "score": 0.84,
-      "entry_ref": 109.85,
-      "mom_6m_pct": 28.0,
-      "mom_12m_pct": 59.2,
-      "suggested_stop": 93.37,
+      "score": 0.79,
+      "entry_ref": 107.39,
+      "mom_6m_pct": 28.3,
+      "mom_12m_pct": 60.9,
+      "suggested_stop": 91.28,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "QCOM",
       "rank": 9,
-      "score": 0.69,
-      "entry_ref": 178.4,
-      "mom_6m_pct": 38.7,
-      "mom_12m_pct": 16.7,
-      "suggested_stop": 151.64,
+      "score": 0.64,
+      "entry_ref": 172.11,
+      "mom_6m_pct": 39.8,
+      "mom_12m_pct": 18.2,
+      "suggested_stop": 146.29,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
       "ticker": "LLY",
       "rank": 10,
-      "score": 0.62,
-      "entry_ref": 1251.61,
-      "mom_6m_pct": 26.3,
-      "mom_12m_pct": 40.9,
-      "suggested_stop": 1063.87,
+      "score": 0.51,
+      "entry_ref": 1257.03,
+      "mom_6m_pct": 24.7,
+      "mom_12m_pct": 40.3,
+      "suggested_stop": 1068.48,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
-      "ticker": "CRM",
+      "ticker": "XLE",
       "rank": 11,
-      "score": 0.58,
-      "entry_ref": 246.74,
-      "mom_6m_pct": 38.6,
-      "mom_12m_pct": 5.2,
-      "suggested_stop": 209.73,
+      "score": 0.48,
+      "entry_ref": 68.24,
+      "mom_6m_pct": 18.0,
+      "mom_12m_pct": 52.7,
+      "suggested_stop": 58.0,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     },
     {
-      "ticker": "AAPL",
+      "ticker": "COP",
       "rank": 12,
-      "score": 0.56,
-      "entry_ref": 342.0,
-      "mom_6m_pct": 26.4,
-      "mom_12m_pct": 34.7,
-      "suggested_stop": 290.7,
+      "score": 0.48,
+      "entry_ref": 146.51,
+      "mom_6m_pct": 16.4,
+      "mom_12m_pct": 56.6,
+      "suggested_stop": 124.53,
       "stop_rule": "15% trailing, from the highest close since entry",
       "horizon": "~1 month (position)"
     }
   ],
   "swing": [],
-  "position_suggested_exposure": 0.94,
+  "position_suggested_exposure": 0.86,
   "swing_suggested_exposure": 0.0,
   "swing_retired": true,
   "vol_target_annual_pct": 15,
@@ -187,49 +187,49 @@
     "coins_in_uptrend": [
       {
         "ticker": "BNB-USD",
-        "entry_ref": 720.34,
-        "mom_200d_pct": 18.4
+        "entry_ref": 727.47,
+        "mom_200d_pct": 24.8
       },
       {
         "ticker": "BTC-USD",
-        "entry_ref": 81497.29,
-        "mom_200d_pct": 22.2
+        "entry_ref": 81490.5,
+        "mom_200d_pct": 21.8
       },
       {
         "ticker": "ETH-USD",
-        "entry_ref": 2418.76,
-        "mom_200d_pct": 19.5
+        "entry_ref": 2392.32,
+        "mom_200d_pct": 16.3
       },
       {
         "ticker": "LINK-USD",
-        "entry_ref": 12.32,
-        "mom_200d_pct": 43.1
+        "entry_ref": 11.96,
+        "mom_200d_pct": 38.6
       },
       {
         "ticker": "LTC-USD",
-        "entry_ref": 59.62,
-        "mom_200d_pct": 12.1
+        "entry_ref": 59.38,
+        "mom_200d_pct": 13.6
       },
       {
         "ticker": "SOL-USD",
-        "entry_ref": 104.29,
-        "mom_200d_pct": 26.5
+        "entry_ref": 104.51,
+        "mom_200d_pct": 32.4
       }
     ],
-    "suggested_gross_exposure": 0.31,
+    "suggested_gross_exposure": 0.37,
     "btc_trend": {
       "available": true,
       "on": true,
-      "price": 81497.29,
-      "sma_150": 71200.85,
-      "gap_pct": 14.5,
+      "price": 81490.5,
+      "sma_150": 71296.91,
+      "gap_pct": 14.3,
       "since": "2026-08-19",
-      "as_of": "2026-10-17",
+      "as_of": "2026-10-20",
       "rule": "Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
       "evidence": "2015 to 2026 backtest: 76% a year vs 66% for holding, worst drop -62% vs -83%. Since mid-2022 (data it was not fitted to): 35% a year vs 40%, worst drop -28% vs -53%."
     },
     "label": "RISK-MANAGED BETA \u2014 not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
-    "as_of": "2026-10-17"
+    "as_of": "2026-10-20"
   },
   "disclaimer": "Educational signals from a validated momentum model. Not investment advice. Execute in your own brokerage at your discretion."
 }
