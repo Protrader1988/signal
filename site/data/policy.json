@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-21T00:21:48.990219+00:00",
+  "generated_utc": "2026-10-22T00:23:59.473786+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -55,7 +55,7 @@
       "basis": null,
       "structure": "$450M committed: redeemable preferred plus warrants for up to 19.9%, $200M drawn at closing, one DoW director and one observer. Separately a DLA stockpile IDIQ for tungsten with a $2B ceiling and $150M funded.",
       "source_url": "https://www.globenewswire.com/news-release/2026/09/14/3360841/0/en/department-of-war-makes-landmark-450-million-committed-investment-in-the-elmet-group-to-secure-america-s-tungsten-supply-chain.html",
-      "price": 18.75,
+      "price": 19.04,
       "car": {
         "day0": 33.2,
         "w1": -0.4,
@@ -101,15 +101,16 @@
         "22": 24.67,
         "23": 25.43,
         "24": 23.66,
-        "25": 22.28
+        "25": 22.28,
+        "26": 23.5
       },
       "meta": {
         "model": "market-adjusted (short history)",
         "beta": 1.0,
         "beta_raw": null,
         "alpha_bp": 0.0,
-        "sessions_since": 25,
-        "raw_since_pct": -12.8,
+        "sessions_since": 26,
+        "raw_since_pct": -11.4,
         "resid_vol_pct": null
       },
       "testable": true
@@ -123,7 +124,7 @@
       "basis": null,
       "structure": "The eleven-month-old LOI actually closes: $35.6M funded, the government becomes a holder.",
       "source_url": "https://www.prnewswire.com/news-releases/trilogy-metals-closes-us35-6-million-strategic-equity-investment-by-the-us-department-of-war-302876686.html",
-      "price": 2.33,
+      "price": 2.28,
       "car": {
         "day0": -2.6,
         "w1": -0.1,
@@ -170,15 +171,16 @@
         "23": -35.96,
         "24": -35.6,
         "25": -37.47,
-        "26": -39.43
+        "26": -39.43,
+        "27": -42.12
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 1.63,
         "beta_raw": 1.94,
         "alpha_bp": 75.0,
-        "sessions_since": 26,
-        "raw_since_pct": -28.7,
+        "sessions_since": 27,
+        "raw_since_pct": -30.3,
         "resid_vol_pct": 15.45
       },
       "testable": true
@@ -192,7 +194,7 @@
       "basis": null,
       "structure": "The May announcement becomes a signed agreement. Tests directly whether confirmation is worth anything once the headline is old.",
       "source_url": "https://247wallst.com/investing/2026/09/08/quantum-stocks-rally-as-commerce-department-takes-equity-stakes-rigetti-surges-6-d-wave-climbs-5/",
-      "price": 11.67,
+      "price": 11.66,
       "car": {
         "day0": 5.4,
         "w1": -1.7,
@@ -242,14 +244,15 @@
         "26": -28.02,
         "27": -20.59,
         "28": -24.4,
-        "29": -26.56
+        "29": -26.56,
+        "30": -27.48
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 2.5,
         "beta_raw": 3.89,
         "alpha_bp": -5.1,
-        "sessions_since": 29,
+        "sessions_since": 30,
         "raw_since_pct": -26.2,
         "resid_vol_pct": 6.13
       },
@@ -264,7 +267,7 @@
       "basis": null,
       "structure": "Same package finalised; the stock moved roughly a fifth as much as it did on the announcement.",
       "source_url": "https://247wallst.com/investing/2026/09/08/quantum-stocks-rally-as-commerce-department-takes-equity-stakes-rigetti-surges-6-d-wave-climbs-5/",
-      "price": 11.83,
+      "price": 11.78,
       "car": {
         "day0": 7.9,
         "w1": -4.3,
@@ -314,15 +317,16 @@
         "26": -33.16,
         "27": -27.35,
         "28": -32.66,
-        "29": -33.29
+        "29": -33.29,
+        "30": -34.55
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 2.5,
         "beta_raw": 4.25,
         "alpha_bp": 0.7,
-        "sessions_since": 29,
-        "raw_since_pct": -33.1,
+        "sessions_since": 30,
+        "raw_since_pct": -33.3,
         "resid_vol_pct": 6.41
       },
       "testable": true
@@ -336,7 +340,7 @@
       "basis": null,
       "structure": "~$174M of equity in the project vehicle for the Wagerup gallium refinery, with offtake attached. The stake is in the project, not the parent.",
       "source_url": "https://www.war.gov/News/Releases/Release/Article/4587183/department-of-war-announces-174-million-investment-to-secure-gallium-supply-cha/",
-      "price": 41.67,
+      "price": 40.79,
       "car": {
         "day0": -0.3,
         "w1": 3.8,
@@ -391,15 +395,16 @@
         "31": -26.0,
         "32": -25.58,
         "33": -21.37,
-        "34": -21.47
+        "34": -21.47,
+        "35": -24.09
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 1.5,
         "beta_raw": 1.75,
         "alpha_bp": 9.1,
-        "sessions_since": 34,
-        "raw_since_pct": -16.6,
+        "sessions_since": 35,
+        "raw_since_pct": -18.3,
         "resid_vol_pct": 3.27
       },
       "testable": true
@@ -413,7 +418,7 @@
       "basis": null,
       "structure": "Section 232 drone tariffs \u2014 100% on large drones and critical components \u2014 signed the evening of 13 August, so day 0 is the first session that could trade it.",
       "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-drones-and-their-parts-and-components/",
-      "price": 39.17,
+      "price": 38.96,
       "car": {
         "day0": 3.2,
         "w1": -9.2,
@@ -479,15 +484,16 @@
         "42": -36.89,
         "43": -33.79,
         "44": -32.69,
-        "45": -36.51
+        "45": -36.51,
+        "46": -37.61
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 1.7,
         "beta_raw": 2.04,
         "alpha_bp": -19.8,
-        "sessions_since": 45,
-        "raw_since_pct": -39.3,
+        "sessions_since": 46,
+        "raw_since_pct": -39.7,
         "resid_vol_pct": 4.25
       },
       "testable": true
@@ -501,7 +507,7 @@
       "basis": null,
       "structure": "Same proclamation; protection of domestic small-UAS production.",
       "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-drones-and-their-parts-and-components/",
-      "price": 117.9,
+      "price": 117.63,
       "car": {
         "day0": 2.1,
         "w1": -14.7,
@@ -567,15 +573,16 @@
         "42": -33.01,
         "43": -31.29,
         "44": -30.68,
-        "45": -34.55
+        "45": -34.55,
+        "46": -35.32
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 1.61,
         "beta_raw": 1.91,
         "alpha_bp": -28.2,
-        "sessions_since": 45,
-        "raw_since_pct": -38.9,
+        "sessions_since": 46,
+        "raw_since_pct": -39.0,
         "resid_vol_pct": 4.53
       },
       "testable": true
@@ -589,7 +596,7 @@
       "basis": null,
       "structure": "Same proclamation; small-cap beneficiary.",
       "source_url": "https://finance.yahoo.com/economy/policy/articles/umac-rcat-onds-avav-ktos-012719145.html",
-      "price": 4.68,
+      "price": 4.52,
       "car": {
         "day0": 9.3,
         "w1": -10.2,
@@ -655,15 +662,16 @@
         "42": -57.04,
         "43": -54.16,
         "44": -55.06,
-        "45": -56.97
+        "45": -56.97,
+        "46": -61.23
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 2.5,
         "beta_raw": 3.63,
         "alpha_bp": -7.5,
-        "sessions_since": 45,
-        "raw_since_pct": -58.0,
+        "sessions_since": 46,
+        "raw_since_pct": -59.4,
         "resid_vol_pct": 6.75
       },
       "testable": true
@@ -677,7 +685,7 @@
       "basis": null,
       "structure": "Same proclamation; small-cap beneficiary.",
       "source_url": "https://finance.yahoo.com/economy/policy/articles/umac-rcat-onds-avav-ktos-012719145.html",
-      "price": 6.06,
+      "price": 6.1,
       "car": {
         "day0": 4.2,
         "w1": -2.3,
@@ -743,15 +751,16 @@
         "42": -32.84,
         "43": -30.13,
         "44": -32.24,
-        "45": -32.97
+        "45": -32.97,
+        "46": -33.15
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 2.5,
         "beta_raw": 3.38,
         "alpha_bp": 27.7,
-        "sessions_since": 45,
-        "raw_since_pct": -34.4,
+        "sessions_since": 46,
+        "raw_since_pct": -34.0,
         "resid_vol_pct": 7.17
       },
       "testable": true
@@ -765,7 +774,7 @@
       "basis": null,
       "structure": "Second letter of intent, $300M for silicon photonics, with Commerce taking a further ~1%. The stock fell about 6.6% on the day \u2014 a federal cheque is not automatically good news.",
       "source_url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300",
-      "price": 46.11,
+      "price": 47.01,
       "car": {
         "day0": -1.2,
         "w1": -4.9,
@@ -843,15 +852,16 @@
         "54": -21.34,
         "55": -22.22,
         "56": -24.52,
-        "57": -26.49
+        "57": -26.49,
+        "58": -25.13
       },
       "meta": {
         "model": "market model (beta shrunk)",
         "beta": 1.77,
         "beta_raw": 2.16,
         "alpha_bp": 21.6,
-        "sessions_since": 57,
-        "raw_since_pct": -1.8,
+        "sessions_since": 58,
+        "raw_since_pct": 0.1,
         "resid_vol_pct": 3.18
       },
       "testable": true
@@ -865,7 +875,7 @@
       "basis": null,
       "structure": "Two executive orders on quantum innovation and post-quantum cryptography. No money, no equity \u2014 pure policy signal.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/",
-      "price": 236.39,
+      "price": 241.92,
       "car": {
         "day0": 1.6,
         "w1": 10.7,
@@ -956,8 +966,8 @@
         "beta": 1.0,
         "beta_raw": 1.0,
         "alpha_bp": -16.6,
-        "sessions_since": 83,
-        "raw_since_pct": -5.6,
+        "sessions_since": 84,
+        "raw_since_pct": -3.4,
         "resid_vol_pct": 2.01
       },
       "testable": true
@@ -971,7 +981,7 @@
       "basis": null,
       "structure": "Same executive orders, no company-specific commitment.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/",
-      "price": 11.83,
+      "price": 11.78,
       "car": {
         "day0": -0.1,
         "w1": -1.4,
@@ -1062,8 +1072,8 @@
         "beta": 2.5,
         "beta_raw": 4.04,
         "alpha_bp": -12.5,
-        "sessions_since": 83,
-        "raw_since_pct": -51.7,
+        "sessions_since": 84,
+        "raw_since_pct": -51.9,
         "resid_vol_pct": 5.8
       },
       "testable": true
@@ -1077,7 +1087,7 @@
       "basis": null,
       "structure": "Same executive orders, no company-specific commitment.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/",
-      "price": 11.67,
+      "price": 11.66,
       "car": {
         "day0": 0.9,
         "w1": -7.8,
@@ -1168,8 +1178,8 @@
         "beta": 2.5,
         "beta_raw": 3.66,
         "alpha_bp": 0.5,
-        "sessions_since": 83,
-        "raw_since_pct": -45.4,
+        "sessions_since": 84,
+        "raw_since_pct": -45.5,
         "resid_vol_pct": 5.93
       },
       "testable": true
@@ -1183,7 +1193,7 @@
       "basis": null,
       "structure": "Rallied on the orders despite taking no federal equity in the May package.",
       "source_url": "https://www.lawfaremedia.org/article/white-house-releases-executive-orders-on-quantum-computing",
-      "price": 30.78,
+      "price": 31.26,
       "car": {
         "day0": 3.9,
         "w1": -6.4,
@@ -1274,8 +1284,8 @@
         "beta": 2.5,
         "beta_raw": 3.26,
         "alpha_bp": -7.5,
-        "sessions_since": 83,
-        "raw_since_pct": -47.2,
+        "sessions_since": 84,
+        "raw_since_pct": -46.4,
         "resid_vol_pct": 5.32
       },
       "testable": true
@@ -1289,7 +1299,7 @@
       "basis": null,
       "structure": "Also outside the equity package; moved on the policy signal alone.",
       "source_url": "https://www.lawfaremedia.org/article/white-house-releases-executive-orders-on-quantum-computing",
-      "price": 6.42,
+      "price": 6.5,
       "car": {
         "day0": -1.3,
         "w1": -4.6,
@@ -1380,8 +1390,8 @@
         "beta": 2.5,
         "beta_raw": 3.5,
         "alpha_bp": -46.7,
-        "sessions_since": 83,
-        "raw_since_pct": -39.1,
+        "sessions_since": 84,
+        "raw_since_pct": -38.3,
         "resid_vol_pct": 5.69
       },
       "testable": true
@@ -1395,7 +1405,7 @@
       "basis": null,
       "structure": "Up to $100M for a minority non-controlling stake, reported at roughly 2.3% and struck at a discount. Part of the ~$2B nine-company quantum package.",
       "source_url": "https://www.cnbc.com/2026/05/21/quantum-stocks--us-taking-equity-stakes.html",
-      "price": 11.67,
+      "price": 11.66,
       "car": {
         "day0": 30.1,
         "w1": 11.2,
@@ -1486,7 +1496,7 @@
         "beta": 2.5,
         "beta_raw": 3.39,
         "alpha_bp": 13.1,
-        "sessions_since": 103,
+        "sessions_since": 104,
         "raw_since_pct": -47.1,
         "resid_vol_pct": 6.2
       },
@@ -1501,7 +1511,7 @@
       "basis": null,
       "structure": "$100M CHIPS award for a minority stake of roughly 1.9%, in the same quantum tranche.",
       "source_url": "https://www.cnbc.com/2026/05/21/quantum-stocks--us-taking-equity-stakes.html",
-      "price": 11.83,
+      "price": 11.78,
       "car": {
         "day0": 32.9,
         "w1": 12.4,
@@ -1592,8 +1602,8 @@
         "beta": 2.5,
         "beta_raw": 3.68,
         "alpha_bp": 0.4,
-        "sessions_since": 103,
-        "raw_since_pct": -54.0,
+        "sessions_since": 104,
+        "raw_since_pct": -54.2,
         "resid_vol_pct": 6.06
       },
       "testable": true
@@ -1607,7 +1617,7 @@
       "basis": null,
       "structure": "$1B toward a 300mm quantum wafer foundry venture for a minority non-controlling stake, reported at letter-of-intent stage.",
       "source_url": "https://www.datacenterdynamics.com/en/news/us-dept-of-commerce-awards-nine-quantum-computing-companies-2bn-in-exchange-for-non-controlling-equity-stakes/",
-      "price": 236.39,
+      "price": 241.92,
       "car": {
         "day0": 12.2,
         "w1": 15.8,
@@ -1698,8 +1708,8 @@
         "beta": 1.03,
         "beta_raw": 1.04,
         "alpha_bp": -7.4,
-        "sessions_since": 103,
-        "raw_since_pct": -5.9,
+        "sessions_since": 104,
+        "raw_since_pct": -3.7,
         "resid_vol_pct": 1.89
       },
       "testable": true
@@ -1713,7 +1723,7 @@
       "basis": null,
       "structure": "Letter of intent for a $375M quantum manufacturing award, with Commerce taking strategic equity of about 1%.",
       "source_url": "https://gf.com/news-and-events/news/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/",
-      "price": 46.11,
+      "price": 47.01,
       "car": {
         "day0": 14.6,
         "w1": -4.6,
@@ -1804,8 +1814,8 @@
         "beta": 1.55,
         "beta_raw": 1.82,
         "alpha_bp": 7.7,
-        "sessions_since": 103,
-        "raw_since_pct": -43.1,
+        "sessions_since": 104,
+        "raw_since_pct": -42.0,
         "resid_vol_pct": 2.68
       },
       "testable": true
@@ -1819,7 +1829,7 @@
       "basis": null,
       "structure": "Letter of intent for access to up to $1.6B with an equity stake plus warrants. Non-binding: the terms in the headline are not yet the terms of a contract.",
       "source_url": "https://www.nist.gov/news-events/news/2026/01/department-commerces-chips-program-announces-letter-intent-usa-rare-earth",
-      "price": 10.09,
+      "price": 10.06,
       "car": {
         "day0": 7.7,
         "w1": -17.4,
@@ -1910,8 +1920,8 @@
         "beta": 0.42,
         "beta_raw": 0.13,
         "alpha_bp": 55.6,
-        "sessions_since": 184,
-        "raw_since_pct": -62.2,
+        "sessions_since": 185,
+        "raw_since_pct": -62.4,
         "resid_vol_pct": 10.39
       },
       "testable": true
@@ -1925,7 +1935,7 @@
       "basis": null,
       "structure": "$1B convertible preferred in the Missile Solutions unit, auto-converting at its spin-off IPO, tied to multi-year solid rocket motor procurement. Conversion is subject to appropriations.",
       "source_url": "https://www.cato.org/blog/trump-administration-takes-equity-stake-defense-contractor",
-      "price": 243.84,
+      "price": 248.77,
       "car": {
         "day0": 0.3,
         "w1": 2.6,
@@ -2016,8 +2026,8 @@
         "beta": 0.59,
         "beta_raw": 0.38,
         "alpha_bp": 11.2,
-        "sessions_since": 192,
-        "raw_since_pct": -27.7,
+        "sessions_since": 193,
+        "raw_since_pct": -26.2,
         "resid_vol_pct": 1.3
       },
       "testable": true
@@ -2031,7 +2041,7 @@
       "basis": null,
       "structure": "EO 14372 lets the Secretary of War restrict buybacks, dividends and executive pay at contractors judged to be underperforming on critical programmes. HII halted buybacks.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2026/01/prioritizing-the-warfighter-in-defense-contracting/",
-      "price": 269.64,
+      "price": 272.23,
       "car": {
         "day0": -2.8,
         "w1": 16.5,
@@ -2122,8 +2132,8 @@
         "beta": 0.7,
         "beta_raw": 0.55,
         "alpha_bp": 22.9,
-        "sessions_since": 196,
-        "raw_since_pct": -23.4,
+        "sessions_since": 197,
+        "raw_since_pct": -22.7,
         "resid_vol_pct": 2.27
       },
       "testable": true
@@ -2137,7 +2147,7 @@
       "basis": null,
       "structure": "Same order; capital returns become conditional on delivery performance.",
       "source_url": "https://www.cnbc.com/2026/01/07/trump-dividends-stock-buybacks-defense-companies.html",
-      "price": 341.43,
+      "price": 344.44,
       "car": {
         "day0": -4.0,
         "w1": 5.8,
@@ -2228,8 +2238,8 @@
         "beta": 0.68,
         "beta_raw": 0.52,
         "alpha_bp": 10.3,
-        "sessions_since": 196,
-        "raw_since_pct": 0.6,
+        "sessions_since": 197,
+        "raw_since_pct": 1.5,
         "resid_vol_pct": 1.19
       },
       "testable": true
@@ -2243,7 +2253,7 @@
       "basis": null,
       "structure": "Same order. No company is named in the text; the names came from the President's remarks that day.",
       "source_url": "https://www.cnbc.com/2026/01/07/trump-dividends-stock-buybacks-defense-companies.html",
-      "price": 548.23,
+      "price": 548.71,
       "car": {
         "day0": -4.7,
         "w1": 15.2,
@@ -2334,8 +2344,8 @@
         "beta": 0.46,
         "beta_raw": 0.19,
         "alpha_bp": -0.3,
-        "sessions_since": 196,
-        "raw_since_pct": 12.3,
+        "sessions_since": 197,
+        "raw_since_pct": 12.4,
         "resid_vol_pct": 1.68
       },
       "testable": true
@@ -2349,7 +2359,7 @@
       "basis": null,
       "structure": "Same order; defence primes sold off that session.",
       "source_url": "https://news.usni.org/2026/01/08/trump-executive-order-puts-pressure-on-defense-companies-seeks-to-halt-stock-buybacks",
-      "price": 192.11,
+      "price": 193.34,
       "car": {
         "day0": -2.2,
         "w1": 7.0,
@@ -2440,8 +2450,8 @@
         "beta": 0.7,
         "beta_raw": 0.55,
         "alpha_bp": 16.1,
-        "sessions_since": 196,
-        "raw_since_pct": 4.6,
+        "sessions_since": 197,
+        "raw_since_pct": 5.2,
         "resid_vol_pct": 1.62
       },
       "testable": true
@@ -2455,7 +2465,7 @@
       "basis": null,
       "structure": "Same order.",
       "source_url": "https://news.usni.org/2026/01/08/trump-executive-order-puts-pressure-on-defense-companies-seeks-to-halt-stock-buybacks",
-      "price": 510.65,
+      "price": 534.0,
       "car": {
         "day0": -5.4,
         "w1": 13.2,
@@ -2546,8 +2556,8 @@
         "beta": 0.36,
         "beta_raw": 0.05,
         "alpha_bp": 10.5,
-        "sessions_since": 196,
-        "raw_since_pct": -10.4,
+        "sessions_since": 197,
+        "raw_since_pct": -6.3,
         "resid_vol_pct": 1.76
       },
       "testable": true
@@ -2561,7 +2571,7 @@
       "basis": null,
       "structure": "$80M Office of Strategic Capital loan to subsidiary ReElement, matched by private capital, with the Department of War taking warrants. Part of the $1.4B Vulcan Elements magnet package; the warrants sit in the subsidiary, not the listed parent.",
       "source_url": "https://www.prnewswire.com/news-releases/vulcan-elements-forges-1-4-billion-partnership-with-the-united-states-government-and-reelement-technologies-to-expand-100-vertically-integrated-domestic-magnet-supply-chain-302602878.html",
-      "price": 1.13,
+      "price": 1.1,
       "car": {
         "day0": 3.7,
         "w1": 4.0,
@@ -2652,8 +2662,8 @@
         "beta": 1.06,
         "beta_raw": 1.09,
         "alpha_bp": 83.0,
-        "sessions_since": 240,
-        "raw_since_pct": -71.3,
+        "sessions_since": 241,
+        "raw_since_pct": -72.1,
         "resid_vol_pct": 10.02
       },
       "testable": true
@@ -2667,7 +2677,7 @@
       "basis": null,
       "structure": "Read-through to the $80B Westinghouse AP1000 partnership. The government's warrants sit in Westinghouse, which is private \u2014 holders own the partner, not the instrument.",
       "source_url": "https://www.cameco.com/media/news/united-states-government-brookfield-and-cameco-announce-transformational-partnership",
-      "price": 80.7,
+      "price": 80.51,
       "car": {
         "day0": -3.0,
         "w1": 16.7,
@@ -2758,8 +2768,8 @@
         "beta": 1.09,
         "beta_raw": 1.13,
         "alpha_bp": 17.2,
-        "sessions_since": 245,
-        "raw_since_pct": -6.7,
+        "sessions_since": 246,
+        "raw_since_pct": -6.9,
         "resid_vol_pct": 2.68
       },
       "testable": true
@@ -2773,7 +2783,7 @@
       "basis": 2.17,
       "structure": "Letter of intent for $35.6M \u2014 10% of common plus 7.5% in penny warrants \u2014 tied to the Ambler Road access decision. It stayed an LOI for eleven months, with the closing deadline extended more than once.",
       "source_url": "https://trilogymetals.com/news-and-media/news/trilogy-metals-provides-an-update-on-the-strategic-equity-investment-by-the-u-s-department-of-war/",
-      "price": 2.33,
+      "price": 2.28,
       "car": {
         "day0": 0.0,
         "w1": 215.5,
@@ -2864,12 +2874,12 @@
         "beta": 1.27,
         "beta_raw": 1.41,
         "alpha_bp": 72.5,
-        "sessions_since": 260,
-        "raw_since_pct": 11.5,
+        "sessions_since": 261,
+        "raw_since_pct": 9.1,
         "resid_vol_pct": 7.68
       },
       "testable": true,
-      "vs_basis_pct": 7.4
+      "vs_basis_pct": 5.1
     },
     {
       "ticker": "LAC",
@@ -2971,7 +2981,7 @@
         "beta": 1.12,
         "beta_raw": 1.18,
         "alpha_bp": 6.4,
-        "sessions_since": 264,
+        "sessions_since": 265,
         "raw_since_pct": -62.5,
         "resid_vol_pct": 4.17
       },
@@ -2987,7 +2997,7 @@
       "basis": 20.47,
       "structure": "9.9% of common (433M shares) at $20.47, converting $8.9B of unpaid CHIPS and Secure Enclave money. Additional 5% warrant only if Intel sells majority control of Foundry. No board seat, no stated exit.",
       "source_url": "https://www.intc.com/news-events/press-releases/detail/1748/intel-and-trump-administration-reach-historic-agreement-to",
-      "price": 92.03,
+      "price": 91.69,
       "car": {
         "day0": 3.4,
         "w1": -1.8,
@@ -3078,12 +3088,12 @@
         "beta": 1.39,
         "beta_raw": 1.59,
         "alpha_bp": 0.0,
-        "sessions_since": 290,
-        "raw_since_pct": 271.1,
+        "sessions_since": 291,
+        "raw_since_pct": 269.7,
         "resid_vol_pct": 3.11
       },
       "testable": true,
-      "vs_basis_pct": 349.6
+      "vs_basis_pct": 347.9
     },
     {
       "ticker": "NVDA",
@@ -3094,7 +3104,7 @@
       "basis": null,
       "structure": "15% of China H20 revenue paid to the government for export licences, later 25% on H200. Value flows out of the company, not in.",
       "source_url": "https://www.cbsnews.com/news/nvidia-amd-chip-sales-china-15-percent-h20-mi308/",
-      "price": 217.09,
+      "price": 216.47,
       "car": {
         "day0": -0.0,
         "w1": -1.9,
@@ -3185,8 +3195,8 @@
         "beta": 1.64,
         "beta_raw": 1.96,
         "alpha_bp": 8.7,
-        "sessions_since": 299,
-        "raw_since_pct": 19.5,
+        "sessions_since": 300,
+        "raw_since_pct": 19.2,
         "resid_vol_pct": 2.34
       },
       "testable": true
@@ -3200,7 +3210,7 @@
       "basis": null,
       "structure": "15% of China MI308 revenue in exchange for export licences. Same structure as Nvidia: a levy presented as a partnership.",
       "source_url": "https://www.pbs.org/newshour/politics/under-new-unusual-agreement-u-s-will-get-a-15-cut-of-nvidia-and-amd-chip-sales-to-china",
-      "price": 538.05,
+      "price": 534.74,
       "car": {
         "day0": 0.0,
         "w1": 0.3,
@@ -3291,8 +3301,8 @@
         "beta": 1.66,
         "beta_raw": 1.98,
         "alpha_bp": -9.1,
-        "sessions_since": 299,
-        "raw_since_pct": 212.3,
+        "sessions_since": 300,
+        "raw_since_pct": 210.4,
         "resid_vol_pct": 2.14
       },
       "testable": true
@@ -3306,7 +3316,7 @@
       "basis": 30.03,
       "structure": "$400M convertible preferred at $30.03 plus warrants, ~15% as-converted. The economics that matter are contractual: a 10-year $110/kg NdPr price floor and 100% magnet offtake from the 10X facility.",
       "source_url": "https://mpmaterials.com/news/mp-materials-announces-transformational-public-private-partnership-with-the-department-of-defense-to-accelerate-u-s-rare-earth-magnet-independence/",
-      "price": 38.95,
+      "price": 39.05,
       "car": {
         "day0": 50.3,
         "w1": 32.8,
@@ -3397,12 +3407,12 @@
         "beta": 1.09,
         "beta_raw": 1.14,
         "alpha_bp": 30.5,
-        "sessions_since": 321,
-        "raw_since_pct": -13.9,
+        "sessions_since": 322,
+        "raw_since_pct": -13.7,
         "resid_vol_pct": 4.26
       },
       "testable": true,
-      "vs_basis_pct": 29.7
+      "vs_basis_pct": 30.0
     }
   ],
   "untestable": [],
@@ -4144,7 +4154,8 @@
         23,
         24,
         25,
-        26
+        26,
+        27
       ],
       "median": [
         1.2,
@@ -4178,7 +4189,8 @@
         -17.64,
         -23.19,
         -25.78,
-        -33.16
+        -33.16,
+        -27.35
       ],
       "q25": [
         -3.27,
@@ -4212,7 +4224,8 @@
         -26.8,
         -29.4,
         -31.62,
-        -36.3
+        -36.3,
+        -34.73
       ],
       "q75": [
         1.59,
@@ -4246,7 +4259,8 @@
         -15.41,
         -20.89,
         -23.95,
-        -30.59
+        -30.59,
+        -23.97
       ],
       "n": 3,
       "n_min": 3
@@ -4293,7 +4307,8 @@
         31,
         32,
         33,
-        34
+        34,
+        35
       ],
       "median": [
         1.47,
@@ -4327,7 +4342,7 @@
         18.53,
         18.3,
         18.62,
-        13.81,
+        18.66,
         14.13,
         13.46,
         9.23,
@@ -4335,7 +4350,8 @@
         16.62,
         20.41,
         18.16,
-        17.95
+        17.95,
+        15.93
       ],
       "q25": [
         -0.59,
@@ -4369,7 +4385,7 @@
         3.33,
         4.96,
         6.09,
-        -3.96,
+        4.93,
         -3.07,
         -4.59,
         -7.29,
@@ -4377,7 +4393,8 @@
         -4.69,
         -2.58,
         -1.61,
-        -1.76
+        -1.76,
+        -4.08
       ],
       "q75": [
         2.45,
@@ -4411,7 +4428,7 @@
         42.91,
         41.64,
         40.99,
-        54.59,
+        41.47,
         52.88,
         50.82,
         48.04,
@@ -4419,7 +4436,8 @@
         50.91,
         56.3,
         53.23,
-        54.12
+        54.12,
+        54.39
       ],
       "n": 4,
       "n_min": 3
@@ -4549,7 +4567,7 @@
         -29.49,
         -30.68,
         -32.97,
-        -28.2,
+        -33.15,
         -26.7,
         -31.3,
         -30.1,
@@ -4620,7 +4638,7 @@
         -31.29,
         -32.69,
         -35.61,
-        -31.0,
+        -37.61,
         -30.42,
         -34.93,
         -32.95,
@@ -4691,7 +4709,7 @@
         -16.58,
         -24.23,
         -21.44,
-        -20.91,
+        -28.2,
         -18.96,
         -24.17,
         -22.44,
@@ -5139,7 +5157,7 @@
         14.28,
         13.0,
         12.77,
-        27.99,
+        11.79,
         27.8,
         34.37,
         30.74,
@@ -5210,7 +5228,7 @@
         -22.22,
         -24.52,
         -26.49,
-        0.92,
+        -25.13,
         -0.81,
         -0.43,
         0.12,
@@ -5281,7 +5299,7 @@
         22.85,
         23.19,
         30.93,
-        82.37,
+        44.19,
         82.67,
         90.99,
         85.83,
@@ -5589,7 +5607,7 @@
       "thesis": null,
       "recipient": "LOCKHEED MARTIN",
       "federal": {
-        "total": 49295444851.0,
+        "total": 49300431565.0,
         "count": 300,
         "last_action": "2026-10-16",
         "top_agency": "Department of Defense",
@@ -5606,9 +5624,9 @@
       "thesis": null,
       "recipient": "RTX",
       "federal": {
-        "total": 15457324929.0,
+        "total": 15457420644.0,
         "count": 300,
-        "last_action": "2026-10-15",
+        "last_action": "2026-10-19",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5623,9 +5641,9 @@
       "thesis": null,
       "recipient": "GENERAL DYNAMICS",
       "federal": {
-        "total": 9546133379.0,
+        "total": 9546278255.0,
         "count": 300,
-        "last_action": "2026-10-14",
+        "last_action": "2026-10-19",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5640,7 +5658,7 @@
       "thesis": null,
       "recipient": "HUNTINGTON INGALLS",
       "federal": {
-        "total": 8003463013.0,
+        "total": 8018311002.0,
         "count": 300,
         "last_action": "2026-09-15",
         "top_agency": "Department of Defense",
@@ -5657,7 +5675,7 @@
       "thesis": null,
       "recipient": "NORTHROP GRUMMAN",
       "federal": {
-        "total": 4134756605.0,
+        "total": 4767356605.0,
         "count": 300,
         "last_action": "2026-10-01",
         "top_agency": "Department of Defense",
@@ -5674,7 +5692,7 @@
       "thesis": null,
       "recipient": "L3HARRIS",
       "federal": {
-        "total": 2867606513.0,
+        "total": 2912883381.0,
         "count": 300,
         "last_action": "2026-10-14",
         "top_agency": "Department of Defense",
@@ -5691,9 +5709,9 @@
       "thesis": null,
       "recipient": "INTERNATIONAL BUSINESS MACHINES",
       "federal": {
-        "total": 1637027491.0,
+        "total": 1637902278.0,
         "count": 300,
-        "last_action": "2026-10-16",
+        "last_action": "2026-10-19",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5725,7 +5743,7 @@
       "thesis": null,
       "recipient": "KRATOS",
       "federal": {
-        "total": 305011617.0,
+        "total": 310766759.0,
         "count": 181,
         "last_action": "2026-10-16",
         "top_agency": "Department of Defense",
@@ -6234,14 +6252,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 1036220101.8
+          "amount": 1036244737.46
         },
         {
           "period": "FY2027 Q1",
           "amount": -54581.34
         }
       ],
-      "last4": 4181941334.8899994,
+      "last4": 4181965970.5499997,
       "prior4": 5883250858.9,
       "yoy_pct": -28.9,
       "link": "https://www.usaspending.gov/search?keywords=shipbuilding"
@@ -6284,16 +6302,16 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 330244453.4
+          "amount": 334752975.78
         },
         {
           "period": "FY2027 Q1",
-          "amount": 30030.1
+          "amount": 93252.5
         }
       ],
-      "last4": 2153494201.62,
+      "last4": 2158065946.3999996,
       "prior4": 2260829706.4700003,
-      "yoy_pct": -4.7,
+      "yoy_pct": -4.5,
       "link": "https://www.usaspending.gov/search?keywords=unmanned%20aircraft"
     },
     {
@@ -6334,14 +6352,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 195560067.85
+          "amount": 195569930.63
         },
         {
           "period": "FY2027 Q1",
           "amount": 511896.65
         }
       ],
-      "last4": 1812447916.32,
+      "last4": 1812457779.1,
       "prior4": 2385424841.84,
       "yoy_pct": -24.0,
       "link": "https://www.usaspending.gov/search?keywords=nuclear%20reactor"
@@ -6356,7 +6374,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 184369744.38
+          "amount": 184344044.15
         },
         {
           "period": "FY2025 Q2",
@@ -6384,14 +6402,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 141344023.47
+          "amount": 142482052.6
         },
         {
           "period": "FY2027 Q1",
-          "amount": 174563.38
+          "amount": 210863.38
         }
       ],
-      "last4": 883637179.2900001,
+      "last4": 884811508.4200001,
       "prior4": 1358138058.3300002,
       "yoy_pct": -34.9,
       "link": "https://www.usaspending.gov/search?keywords=semiconductor"
@@ -6408,7 +6426,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 2656747.07
+          "amount": 2656515.07
         },
         {
           "period": "FY2025 Q2",
@@ -6436,14 +6454,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 42466680.52
+          "amount": 42491012.15
         },
         {
           "period": "FY2027 Q1",
           "amount": 1615.07
         }
       ],
-      "last4": 230639609.5,
+      "last4": 230663941.13,
       "prior4": 114247990.63,
       "yoy_pct": 101.9,
       "link": "https://www.usaspending.gov/search?keywords=rare%20earth"
@@ -6683,6 +6701,36 @@
       "named": [],
       "candidates": [
         "BAE Systems"
+      ],
+      "status": "unverified"
+    },
+    {
+      "company": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
+      "amount": 1115135671.74,
+      "date": "2026-10-19",
+      "agency": "Department of Energy",
+      "desc": "HANFORD CENTRAL PLATEAU CLEANUP CONTRACT - TASK ORDER 7 - END STATES & BASE OPS. THIS TASK ORDER IS ISSUED AS AN UNDEFINITIZED TASK ORDER PURSUANT TO CLAUSE H.4",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89303924FEM400054_8900_89303320DEM000030_8900",
+      "ticker": "F",
+      "quality": "award record",
+      "named": [],
+      "status": "unverified"
+    },
+    {
+      "company": "Australia\u2013US critical minerals pact turns one: Five investor takeaways - Australian Resources & Investment",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPUjlTR2xrUWcwYWg1MkdqeHQ4NThOLTZlU2RYTWN3VFN6NWFrb3hFSndoZ2xJelFTUkF0NDBFN2hiTUlKRE5tZXhNejBHVTFYRFlmbktJTHpzS0RySFVncHVuXzRaSUctLUpKVHFlbjlMMTZ5R1ZPQzAtMnc3T29ueExRSmdQYjRfX0YxeUQzaTFHMkUxSXdPaUhtcGZqZFd3WXpqeE14ejYyelB2LThDWG9CMTRVNndWOVhkMC14TFliOG1OaG5fNzlDSTh6Zw?oc=5",
+      "date": "2026-10-19",
+      "source": "Australian Resources & Investment",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "named": [],
+      "candidates": [
+        "Australian Resources"
       ],
       "status": "unverified"
     },
@@ -6941,43 +6989,6 @@
       "status": "unverified"
     },
     {
-      "company": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc.",
-      "title": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc.",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4621223/department-of-wars-office-of-strategic-capital-announces-15-billion-conditional/",
-      "date": "2026-10-07",
-      "source": "Dept. of War",
-      "evidence": {
-        "industry": [],
-        "instrument": [
-          "strategic capital"
-        ],
-        "money": [
-          "$1.5 Billion"
-        ],
-        "tickers": [
-          "WOLF"
-        ],
-        "score": 5
-      },
-      "matched": "strategic capital \u00b7 $1.5 Billion",
-      "ticker": "WOLF",
-      "quality": "agency release",
-      "named": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Department of War's Office of Strategic Capital Announces $1.5 Billion Conditional Loan Commitment to Wolfspeed, Inc. - U.S. Department of W",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQY0dBZEswYjhsTHZrb1lUNjJVbnRtbUhsZjJYUURiOUhFMExBVmpPSGNhQ3B6Vkg4djlCOWtHYURPa1NQZW5BSGdCaGxreG9TemZKdnEtRGpZa0ZmTmVqOTJ1WVNWbFRuRElaMGt6cnZrbGVsNV9WcGY0U0xtZUlCcGhHVzc0b2Q2VEItY1l5VUk2WVpLRHZQTkFBM3VuVW1YOUZMZzVRZjBrMTNhUFpVVGh2bV9TSGVLZXp4NDRSLW9zTEZQdzBZTkNpbmZoMkZqNjR5RA?oc=5",
-      "date": "2026-10-07",
-      "source": "U.S. Department of War (.gov)",
-      "matched": "federal investment",
-      "form": "headline",
-      "ticker": "WOLF",
-      "quality": "headline",
-      "named": [],
-      "status": "unverified"
-    },
-    {
       "company": "IDAHO ENVIRONMENTAL COALITION LLC",
       "amount": 1657305176.37,
       "date": "2026-10-06",
@@ -6993,21 +7004,6 @@
       "candidates": [
         "IDAHO ENVIRONMENTAL COALITION LLC"
       ],
-      "status": "unverified"
-    },
-    {
-      "company": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
-      "amount": 1115135671.74,
-      "date": "2026-10-06",
-      "agency": "Department of Energy",
-      "desc": "HANFORD CENTRAL PLATEAU CLEANUP CONTRACT - TASK ORDER 7 - END STATES & BASE OPS. THIS TASK ORDER IS ISSUED AS AN UNDEFINITIZED TASK ORDER PURSUANT TO CLAUSE H.4",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_89303924FEM400054_8900_89303320DEM000030_8900",
-      "ticker": "F",
-      "quality": "award record",
-      "named": [],
       "status": "unverified"
     },
     {
@@ -7036,30 +7032,6 @@
       "ticker": "F",
       "quality": "white house",
       "named": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Systems Selected for JIATF 401 Directed-Energy Counter-Drone Pilot Program",
-      "title": "Systems Selected for JIATF 401 Directed-Energy Counter-Drone Pilot Program",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4619430/systems-selected-for-jiatf-401-directed-energy-counter-drone-pilot-program/",
-      "date": "2026-10-05",
-      "source": "Dept. of War",
-      "evidence": {
-        "industry": [
-          "drone"
-        ],
-        "instrument": [],
-        "money": [],
-        "tickers": [],
-        "score": 2
-      },
-      "matched": "drone",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [
-        "Directed-Energy Counter-Drone Pilot Program Systems"
-      ],
       "status": "unverified"
     },
     {
@@ -7155,9 +7127,72 @@
       "named": [],
       "candidates": [],
       "status": "unverified"
+    },
+    {
+      "company": "UNITED CLEANUP OAK RIDGE LLC",
+      "amount": 2544767269.97,
+      "date": "2026-09-30",
+      "agency": "Department of Energy",
+      "desc": "OAK RIDGE RESERVATION CLEANUP CONTRACT TASK ORDERS",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89303523FEM400032_8900_89303322DEM000067_8900",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [
+        "UNITED CLEANUP OAK RIDGE LLC"
+      ],
+      "status": "unverified"
+    },
+    {
+      "title": "Fact sheet president donald j trump inaugurates the era of super intelligence",
+      "company": "Fact sheet president donald j trump inaugurates the era of super intelligence",
+      "link": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-inaugurates-the-era-of-super-intelligence/",
+      "date": "2026-09-29",
+      "date_precision": "day",
+      "source": "White House",
+      "kind": "fact sheets",
+      "matched": "$5 billion",
+      "evidence": {
+        "industry": [],
+        "instrument": [],
+        "money": [
+          "$5 billion"
+        ],
+        "tickers": [
+          "INTC"
+        ],
+        "score": 3
+      },
+      "desc": "Fact Sheet: President Donald J. Trump Inaugurates The Era of Super Intelligence &#8211; The White House Skip to content Fact Sheets Fact Sheet: President Donald J. Trump Inaugurates The Era of Super Intelligence The White House September 29, 2026 USHERING IN SUPER INTELLIGENCE: Today, President Donald J. Trump signed an Executive Order to replace the term \u201cArtificial Intelligence\u201d (\u201cAI\u201d) with \u201cSuper Intelligence\u201d (\u201cSI\u201d) in the executive branch to recognize the continuously advancing technological frontier and the limitless promise it offers the American people. The Order directs all departments and agencies to use the terms \u201cSuper Intelligence\u201d and \u201cSI\u201d in official correspondence, public communications, policy documents, and non-statutory documents within the executive branch and to no longer acknowledge the terms \u201cArtificial Intelligence\u201d or \u201cAI\u201d. The Order directs the Assistant to the President for Science and Technology (APST) to propose a Federal definition of \u201cSuper Intelligence\u201d and \u201cSI\u201d that reflects the state of this extraordinary frontier technology and identify any additional executive action necessary to implement the proposed definition. RECOGNIZING THE IMMENSE OPPORTUN",
+      "form": "white house",
+      "ticker": "INTC",
+      "quality": "white house",
+      "named": [],
+      "status": "in registry"
     }
   ],
   "documents": [
+    {
+      "title": "Implementing the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026",
+      "link": "https://www.federalregister.gov/documents/2026/10/21/2026-21599/implementing-the-lindsey-o-graham-sanctioning-russia-and-iran-act-of-2026",
+      "date": "2026-10-21",
+      "source": "Executive Office of the President",
+      "kind": "Presidential Document",
+      "matched": "tariff"
+    },
+    {
+      "title": "Contracts for Oct. 21, 2026",
+      "company": "Contracts for Oct. 21, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4630997/contracts-for-oct-21-2026/",
+      "date": "2026-10-21",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
     {
       "title": "Notice of Joint Meeting of the Federal Energy Regulatory Commission and the Nuclear Regulatory Commission",
       "link": "https://www.federalregister.gov/documents/2026/10/20/2026-21434/notice-of-joint-meeting-of-the-federal-energy-regulatory-commission-and-the-nuclear-regulatory",
@@ -7165,6 +7200,16 @@
       "source": "Energy Department, Federal Energy Regulatory Commission",
       "kind": "Notice",
       "matched": "nuclear"
+    },
+    {
+      "title": "Contracts for Oct. 20, 2026",
+      "company": "Contracts for Oct. 20, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4629644/contracts-for-oct-20-2026/",
+      "date": "2026-10-20",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
     },
     {
       "title": "Contracts for Oct. 19, 2026",
@@ -7221,33 +7266,13 @@
       "kind": "contracts digest",
       "matched": "daily contracts",
       "form": "contract"
-    },
-    {
-      "title": "Contracts for Oct. 13, 2026",
-      "company": "Contracts for Oct. 13, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4624853/contracts-for-oct-13-2026/",
-      "date": "2026-10-13",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
-      "title": "Contracts for Oct. 9, 2026",
-      "company": "Contracts for Oct. 9, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4623681/contracts-for-oct-9-2026/",
-      "date": "2026-10-09",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
     }
   ],
   "ledger": {
     "forward": {
       "n": 1,
       "since": "2026-09-19",
-      "median_return_pct": -18.4
+      "median_return_pct": -17.1
     },
     "entries": [
       {
@@ -7258,9 +7283,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 22.98,
         "backfilled": false,
-        "return_since_seen_pct": -18.4,
-        "last_price": 18.75,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -17.1,
+        "last_price": 19.04,
+        "last_update": "2026-10-22"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7270,9 +7295,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 3.26,
         "backfilled": true,
-        "return_since_seen_pct": -28.5,
-        "last_price": 2.33,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -30.1,
+        "last_price": 2.28,
+        "last_update": "2026-10-22"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7283,8 +7308,8 @@
         "price_at_first_seen": 15.76,
         "backfilled": true,
         "return_since_seen_pct": -26.0,
-        "last_price": 11.67,
-        "last_update": "2026-10-21"
+        "last_price": 11.66,
+        "last_update": "2026-10-22"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7294,9 +7319,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 17.11,
         "backfilled": true,
-        "return_since_seen_pct": -30.9,
-        "last_price": 11.83,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -31.2,
+        "last_price": 11.78,
+        "last_update": "2026-10-22"
       },
       {
         "key": "AA:2026-08-31",
@@ -7306,9 +7331,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 44.43,
         "backfilled": true,
-        "return_since_seen_pct": -6.2,
-        "last_price": 41.67,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -8.2,
+        "last_price": 40.79,
+        "last_update": "2026-10-22"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7318,9 +7343,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 47.46,
         "backfilled": true,
-        "return_since_seen_pct": -17.5,
-        "last_price": 39.17,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -17.9,
+        "last_price": 38.96,
+        "last_update": "2026-10-22"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7330,9 +7355,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 159.95,
         "backfilled": true,
-        "return_since_seen_pct": -26.3,
-        "last_price": 117.9,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -26.5,
+        "last_price": 117.63,
+        "last_update": "2026-10-22"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7342,9 +7367,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 6.75,
         "backfilled": true,
-        "return_since_seen_pct": -30.7,
-        "last_price": 4.68,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -33.0,
+        "last_price": 4.52,
+        "last_update": "2026-10-22"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7354,9 +7379,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 7.39,
         "backfilled": true,
-        "return_since_seen_pct": -18.0,
-        "last_price": 6.06,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -17.5,
+        "last_price": 6.1,
+        "last_update": "2026-10-22"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7366,9 +7391,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 47.82,
         "backfilled": true,
-        "return_since_seen_pct": -3.6,
-        "last_price": 46.11,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -1.7,
+        "last_price": 47.01,
+        "last_update": "2026-10-22"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7378,9 +7403,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 229.55,
         "backfilled": true,
-        "return_since_seen_pct": 3.0,
-        "last_price": 236.39,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": 5.4,
+        "last_price": 241.92,
+        "last_update": "2026-10-22"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7390,9 +7415,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 17.11,
         "backfilled": true,
-        "return_since_seen_pct": -30.9,
-        "last_price": 11.83,
-        "last_update": "2026-10-21"
+        "return_since_seen_pct": -31.2,
+        "last_price": 11.78,
+        "last_update": "2026-10-22"
       }
     ]
   },
@@ -7400,62 +7425,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-10-21T00:14:55+00:00"
+      "checked_utc": "2026-10-22T00:18:59+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-10-21T00:15:05+00:00"
+      "checked_utc": "2026-10-22T00:19:08+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "10 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-10-21T00:15:26+00:00"
+      "checked_utc": "2026-10-22T00:19:25+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-10-21T00:15:26+00:00"
+      "checked_utc": "2026-10-22T00:19:25+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-10-21T00:15:59+00:00"
+      "checked_utc": "2026-10-22T00:19:58+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (16 facility operators dropped)",
-      "checked_utc": "2026-10-21T00:16:00+00:00"
+      "checked_utc": "2026-10-22T00:19:59+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-10-21T00:16:02+00:00"
+      "checked_utc": "2026-10-22T00:20:02+00:00"
     },
     "federal_register": {
       "ok": true,
-      "note": "3 documents",
-      "checked_utc": "2026-10-21T00:16:05+00:00"
+      "note": "4 documents",
+      "checked_utc": "2026-10-22T00:20:04+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-10-21T00:16:06+00:00"
+      "checked_utc": "2026-10-22T00:20:05+00:00"
     },
     "reading": {
       "ok": false,
       "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash ",
-      "checked_utc": "2026-10-21T00:16:12+00:00"
+      "checked_utc": "2026-10-22T00:20:07+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-10-21T00:21:48+00:00"
+      "checked_utc": "2026-10-22T00:23:59+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-10-21T00:21:48+00:00"
+      "checked_utc": "2026-10-22T00:23:59+00:00"
     }
   },
   "counts": {
@@ -7463,7 +7488,7 @@
     "testable": 34,
     "radar": 9,
     "detection": 24,
-    "documents": 9,
+    "documents": 10,
     "pipeline": 0,
     "flow": 8
   }
