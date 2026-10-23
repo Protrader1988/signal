@@ -132,8 +132,10 @@ def _fetch_grantees(doc_ids):
                 if did and did not in out:
                     addr = " ".join(str(r.get(k) or "").strip() for k in ("address_1", "address_2")).strip()
                     csz = " ".join(str(r.get(k) or "").strip() for k in ("city", "state", "zip")).strip()
-                    out[did] = {"name": (r.get("name") or "").strip().title(),
-                                "mailing": (addr + ", " + csz).strip(", ").title() if addr or csz else ""}
+                    full = (addr + ", " + csz).strip(", ").title() if addr or csz else ""
+                    # drop placeholder records ("00000", "N/A") — a mailing address needs a street name
+                    if not any(ch.isalpha() for ch in addr): full = ""
+                    out[did] = {"name": (r.get("name") or "").strip().title(), "mailing": full}
         except Exception as e:
             print(f"  ACRIS parties chunk failed: {e}")
             DEBUG["stages"].setdefault("parties_errors", []).append(str(e)[:200])
