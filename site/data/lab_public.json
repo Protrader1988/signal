@@ -1,46 +1,50 @@
 {
-  "generated_utc": "2026-10-22T00:25:15+00:00",
+  "generated_utc": "2026-10-23T00:21:10+00:00",
   "blended": {
     "XLB": 0.0833,
-    "INTC": 0.0747,
+    "TGT": 0.0773,
+    "INTC": 0.0748,
     "AMD": 0.0711,
     "MU": 0.0706,
-    "TGT": 0.0689,
-    "PSX": 0.0683,
     "CSCO": 0.0669,
-    "VLO": 0.0667,
+    "PSX": 0.0599,
+    "VLO": 0.0584,
     "FDX": 0.0547,
-    "CAT": 0.0499,
     "MRK": 0.0499,
-    "TXN": 0.025,
+    "CAT": 0.0498,
     "QCOM": 0.0167,
+    "TMO": 0.0167,
     "META": 0.0167,
     "DE": 0.0167,
-    "NVDA": 0.0167,
-    "KO": 0.0167,
     "V": 0.0167,
     "MA": 0.0167,
     "PFE": 0.0167,
+    "TXN": 0.0083,
     "UNH": 0.0083,
-    "TMO": 0.0083,
+    "MDT": 0.0083,
+    "GILD": 0.0083,
+    "CRM": 0.0083,
     "PG": 0.0083,
     "JPM": 0.0083,
     "COST": 0.0083,
+    "KO": 0.0083,
     "CL": 0.0083,
     "PEP": 0.0083,
-    "MCD": 0.0083,
-    "ABBV": 0.0083,
+    "AXP": 0.0083,
+    "NVDA": 0.0083,
+    "JNJ": 0.0083,
+    "AAPL": 0.0083,
     "CVX": 0.0083,
-    "LLY": 0.0083,
     "EOG": 0.0083,
-    "COP": 0.0083,
-    "GILD": 0.0083
+    "EMR": 0.0083,
+    "XOM": 0.0083,
+    "COP": 0.0083
   },
   "blended_invested_pct": 100.0,
-  "as_of": "2026-10-21",
+  "as_of": "2026-10-22",
   "started": "2026-10-08",
   "n_books": 13,
-  "live_days": 10,
+  "live_days": 11,
   "rules": {
     "cost_bps": 5.0,
     "half_life": 60,
@@ -68,33 +72,33 @@
         "MRK": 0.1,
         "TGT": 0.1,
         "CAT": 0.1,
-        "FDX": 0.1,
-        "CSCO": 0.1
+        "CSCO": 0.1,
+        "FDX": 0.1
       },
       "turnover": 0.0,
       "weight": 0.0837,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -1.47,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 94.51,
-        "ann_pct": 39.56,
-        "vol_pct": 26.94,
-        "sharpe": 1.37,
+        "cum_pct": 94.82,
+        "ann_pct": 39.67,
+        "vol_pct": 26.95,
+        "sharpe": 1.38,
         "max_dd_pct": -23.27,
         "hit_pct": 56.3,
-        "t_stat": 1.94,
-        "years_to_prove": 4.6,
+        "t_stat": 1.95,
+        "years_to_prove": 4.5,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00175,
+        "mean": -0.00159,
         "t_stat": -1.35,
         "hit_pct": 0.0,
         "too_early": true
@@ -108,6 +112,7 @@
         -0.004425,
         0.0,
         -0.010312,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -128,36 +133,36 @@
         "MU": 0.1,
         "VLO": 0.1,
         "QCOM": 0.1,
-        "PSX": 0.1,
         "TXN": 0.1,
-        "TGT": 0.1,
+        "PSX": 0.1,
         "UNH": 0.1,
+        "TGT": 0.1,
         "TMO": 0.1
       },
-      "turnover": 0.2,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -1.72,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 65.17,
-        "ann_pct": 28.58,
-        "vol_pct": 25.67,
-        "sharpe": 1.11,
+        "cum_pct": 67.01,
+        "ann_pct": 29.3,
+        "vol_pct": 25.68,
+        "sharpe": 1.13,
         "max_dd_pct": -23.49,
-        "hit_pct": 57.3,
-        "t_stat": 1.57,
-        "years_to_prove": 7.0,
+        "hit_pct": 57.5,
+        "t_stat": 1.6,
+        "years_to_prove": 6.8,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00195,
+        "mean": -0.00178,
         "t_stat": -1.39,
         "hit_pct": 0.0,
         "too_early": true
@@ -177,7 +182,8 @@
         0.0,
         0.0,
         0.0,
-        -0.0001
+        -0.0001,
+        0.0
       ]
     },
     {
@@ -186,42 +192,42 @@
       "why": "Weekly losers inside long-term uptrends.",
       "status": "warming up",
       "positions": {
-        "INTC": 0.1,
-        "AMD": 0.1,
-        "CSCO": 0.1,
         "META": 0.1,
-        "VLO": 0.1,
+        "TGT": 0.1,
+        "MDT": 0.1,
+        "INTC": 0.1,
+        "GILD": 0.1,
+        "CSCO": 0.1,
         "DE": 0.1,
-        "NVDA": 0.1,
-        "PSX": 0.1,
+        "CRM": 0.1,
         "MU": 0.1,
-        "TXN": 0.1
+        "AMD": 0.1
       },
-      "turnover": 0.2,
+      "turnover": 0.8,
       "weight": 0.0833,
       "live": {
-        "days": 10,
-        "cum_pct": -2.51,
-        "needs_days": 10,
+        "days": 11,
+        "cum_pct": -2.55,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 35.89,
-        "ann_pct": 16.61,
-        "vol_pct": 20.51,
-        "sharpe": 0.85,
+        "cum_pct": 36.39,
+        "ann_pct": 16.82,
+        "vol_pct": 20.52,
+        "sharpe": 0.86,
         "max_dd_pct": -25.47,
         "hit_pct": 54.1,
-        "t_stat": 1.2,
-        "years_to_prove": 12.0,
+        "t_stat": 1.22,
+        "years_to_prove": 11.7,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00248,
-        "t_stat": -1.5,
+        "mean": -0.00225,
+        "t_stat": -1.49,
         "hit_pct": 0.0,
         "too_early": true
       },
@@ -240,7 +246,8 @@
         -0.0003,
         -0.0002,
         -0.0003,
-        -0.0001
+        -0.0001,
+        -0.0004
       ]
     },
     {
@@ -258,34 +265,34 @@
         "MA": 0.1,
         "PEP": 0.1,
         "PFE": 0.1,
-        "MCD": 0.1
+        "AXP": 0.1
       },
-      "turnover": 0.0,
+      "turnover": 0.2,
       "weight": 0.0833,
       "live": {
-        "days": 10,
-        "cum_pct": 1.29,
-        "needs_days": 10,
+        "days": 11,
+        "cum_pct": 1.28,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": -3.35,
-        "ann_pct": -1.69,
+        "cum_pct": -4.12,
+        "ann_pct": -2.09,
         "vol_pct": 13.32,
-        "sharpe": -0.06,
+        "sharpe": -0.09,
         "max_dd_pct": -15.07,
-        "hit_pct": 50.3,
-        "t_stat": -0.08,
-        "years_to_prove": 2401.0,
+        "hit_pct": 50.1,
+        "t_stat": -0.13,
+        "years_to_prove": 1067.1,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": 0.00105,
+        "mean": 0.00096,
         "t_stat": 1.27,
-        "hit_pct": 20.0,
+        "hit_pct": 18.2,
         "too_early": true
       },
       "ic": {
@@ -303,7 +310,8 @@
         0.0,
         0.0,
         0.0,
-        0.0
+        0.0,
+        -0.0001
       ]
     },
     {
@@ -320,33 +328,33 @@
         "MRK": 0.1,
         "TGT": 0.1,
         "CAT": 0.1,
-        "FDX": 0.1,
-        "CSCO": 0.1
+        "CSCO": 0.1,
+        "FDX": 0.1
       },
       "turnover": 0.0,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -1.47,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 56.91,
-        "ann_pct": 25.32,
+        "cum_pct": 57.16,
+        "ann_pct": 25.42,
         "vol_pct": 24.18,
-        "sharpe": 1.05,
+        "sharpe": 1.06,
         "max_dd_pct": -21.61,
         "hit_pct": 49.5,
-        "t_stat": 1.48,
-        "years_to_prove": 7.8,
+        "t_stat": 1.5,
+        "years_to_prove": 7.7,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00175,
+        "mean": -0.00159,
         "t_stat": -1.35,
         "hit_pct": 0.0,
         "too_early": true
@@ -360,6 +368,7 @@
         -0.004425,
         0.0,
         -0.010312,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -383,33 +392,33 @@
         "MRK": 0.1,
         "TGT": 0.1,
         "CAT": 0.1,
-        "FDX": 0.1,
-        "CSCO": 0.1
+        "CSCO": 0.1,
+        "FDX": 0.1
       },
       "turnover": 0.0,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -1.47,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 94.51,
-        "ann_pct": 39.56,
-        "vol_pct": 26.94,
-        "sharpe": 1.37,
+        "cum_pct": 94.82,
+        "ann_pct": 39.67,
+        "vol_pct": 26.95,
+        "sharpe": 1.38,
         "max_dd_pct": -23.27,
         "hit_pct": 56.3,
-        "t_stat": 1.94,
-        "years_to_prove": 4.6,
+        "t_stat": 1.95,
+        "years_to_prove": 4.5,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00175,
+        "mean": -0.00159,
         "t_stat": -1.35,
         "hit_pct": 0.0,
         "too_early": true
@@ -423,6 +432,7 @@
         -0.004425,
         0.0,
         -0.010312,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -446,34 +456,34 @@
         "MRK": 0.1,
         "TGT": 0.1,
         "CAT": 0.1,
-        "FDX": 0.1,
-        "CSCO": 0.1
+        "CSCO": 0.1,
+        "FDX": 0.1
       },
       "turnover": 0.0,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -1.57,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 29.61,
-        "ann_pct": 13.88,
+        "cum_pct": 29.82,
+        "ann_pct": 13.97,
         "vol_pct": 18.26,
-        "sharpe": 0.8,
+        "sharpe": 0.81,
         "max_dd_pct": -11.56,
         "hit_pct": 29.4,
-        "t_stat": 1.13,
-        "years_to_prove": 13.5,
+        "t_stat": 1.14,
+        "years_to_prove": 13.2,
         "proven": false
       },
       "signal": {
-        "days": 6,
+        "days": 7,
         "kind": "spread vs universe",
-        "mean": -0.00291,
-        "t_stat": -1.4,
+        "mean": -0.00249,
+        "t_stat": -1.38,
         "hit_pct": 0.0,
         "too_early": true
       },
@@ -492,6 +502,7 @@
         -0.0005,
         0.0,
         0.0,
+        0.0,
         0.0
       ]
     },
@@ -506,24 +517,24 @@
         "AMD": 0.1,
         "META": 0.1,
         "DE": 0.1,
-        "NVDA": 0.1,
         "CSCO": 0.1,
+        "NVDA": 0.1,
+        "TGT": 0.1,
         "QCOM": 0.1,
-        "TXN": 0.1,
-        "TGT": 0.1
+        "JNJ": 0.1
       },
-      "turnover": 0.4,
+      "turnover": 0.2,
       "weight": 0.0833,
       "live": {
-        "days": 10,
-        "cum_pct": -0.16,
-        "needs_days": 10,
+        "days": 11,
+        "cum_pct": -0.17,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 28.73,
-        "ann_pct": 13.49,
+        "cum_pct": 28.69,
+        "ann_pct": 13.47,
         "vol_pct": 19.44,
         "sharpe": 0.75,
         "max_dd_pct": -21.28,
@@ -533,11 +544,11 @@
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00022,
+        "mean": -0.0002,
         "t_stat": -0.63,
-        "hit_pct": 10.0,
+        "hit_pct": 9.1,
         "too_early": true
       },
       "ic": {
@@ -555,7 +566,8 @@
         -0.0003,
         -0.0001,
         -0.0001,
-        -0.0002
+        -0.0002,
+        -0.0001
       ]
     },
     {
@@ -564,43 +576,43 @@
       "why": "Proximity to the high as its own signal.",
       "status": "warming up",
       "positions": {
-        "ABBV": 0.1,
+        "AAPL": 0.1,
         "CVX": 0.1,
-        "LLY": 0.1,
         "MA": 0.1,
-        "PFE": 0.1,
         "V": 0.1,
         "EOG": 0.1,
+        "TMO": 0.1,
+        "EMR": 0.1,
+        "XOM": 0.1,
         "COP": 0.1,
-        "KO": 0.1,
-        "GILD": 0.1
+        "PFE": 0.1
       },
-      "turnover": 0.4,
+      "turnover": 0.8,
       "weight": 0.0833,
       "live": {
-        "days": 10,
-        "cum_pct": 0.93,
-        "needs_days": 10,
+        "days": 11,
+        "cum_pct": 0.89,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 6.12,
-        "ann_pct": 3.02,
+        "cum_pct": 5.59,
+        "ann_pct": 2.76,
         "vol_pct": 15.77,
-        "sharpe": 0.27,
+        "sharpe": 0.25,
         "max_dd_pct": -17.56,
         "hit_pct": 50.3,
-        "t_stat": 0.38,
-        "years_to_prove": 118.6,
+        "t_stat": 0.35,
+        "years_to_prove": 138.3,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": 0.00088,
-        "t_stat": 1.07,
-        "hit_pct": 20.0,
+        "mean": 0.0008,
+        "t_stat": 1.06,
+        "hit_pct": 18.2,
         "too_early": true
       },
       "ic": {
@@ -618,7 +630,8 @@
         -0.0004,
         -0.0002,
         -0.0001,
-        -0.0002
+        -0.0002,
+        -0.0004
       ]
     },
     {
@@ -627,41 +640,41 @@
       "why": "Momentum names sized inverse to volatility.",
       "status": "warming up",
       "positions": {
-        "MU": 0.0515,
-        "INTC": 0.053,
-        "AMD": 0.0578,
-        "VLO": 0.1049,
-        "PSX": 0.1244,
-        "MRK": 0.1036,
-        "TGT": 0.1318,
-        "CAT": 0.1039,
-        "FDX": 0.1614,
-        "CSCO": 0.1076
+        "MU": 0.0524,
+        "INTC": 0.0543,
+        "AMD": 0.0577,
+        "VLO": 0.1051,
+        "PSX": 0.124,
+        "MRK": 0.1033,
+        "TGT": 0.1317,
+        "CAT": 0.1027,
+        "CSCO": 0.1076,
+        "FDX": 0.1611
       },
-      "turnover": 0.007,
+      "turnover": 0.005,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -0.62,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 71.81,
-        "ann_pct": 31.15,
-        "vol_pct": 22.14,
-        "sharpe": 1.34,
+        "cum_pct": 70.92,
+        "ann_pct": 30.81,
+        "vol_pct": 22.13,
+        "sharpe": 1.32,
         "max_dd_pct": -20.99,
         "hit_pct": 53.7,
-        "t_stat": 1.89,
-        "years_to_prove": 4.8,
+        "t_stat": 1.86,
+        "years_to_prove": 5.0,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00088,
+        "mean": -0.0008,
         "t_stat": -1.14,
         "hit_pct": 0.0,
         "too_early": true
@@ -681,7 +694,8 @@
         -6e-06,
         -7e-06,
         -3e-06,
-        -4e-06
+        -4e-06,
+        -2e-06
       ]
     },
     {
@@ -698,22 +712,22 @@
         "MRK": 0.0952,
         "TGT": 0.0952,
         "CAT": 0.0952,
-        "FDX": 0.0952,
-        "CSCO": 0.0952
+        "CSCO": 0.0952,
+        "FDX": 0.0952
       },
       "turnover": 0.0,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -1.73,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 97.21,
-        "ann_pct": 40.53,
-        "vol_pct": 27.6,
+        "cum_pct": 97.63,
+        "ann_pct": 40.68,
+        "vol_pct": 27.61,
         "sharpe": 1.37,
         "max_dd_pct": -23.22,
         "hit_pct": 56.3,
@@ -722,10 +736,10 @@
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.002,
-        "t_stat": -1.4,
+        "mean": -0.00182,
+        "t_stat": -1.39,
         "hit_pct": 0.0,
         "too_early": true
       },
@@ -739,6 +753,7 @@
         -0.0,
         -0.011386,
         -4.3e-05,
+        -0.0,
         -0.0,
         -0.0,
         -0.0,
@@ -758,28 +773,28 @@
       "turnover": 0.0,
       "weight": 0.0833,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": -0.08,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
         "days": 503,
-        "cum_pct": 9.36,
-        "ann_pct": 4.58,
+        "cum_pct": 9.11,
+        "ann_pct": 4.47,
         "vol_pct": 18.84,
         "sharpe": 0.33,
-        "max_dd_pct": -23.17,
+        "max_dd_pct": -22.57,
         "hit_pct": 49.1,
         "t_stat": 0.47,
         "years_to_prove": 79.4,
         "proven": false
       },
       "signal": {
-        "days": 10,
+        "days": 11,
         "kind": "spread vs universe",
-        "mean": -0.00035,
-        "t_stat": -1.49,
+        "mean": -0.00032,
+        "t_stat": -1.48,
         "hit_pct": 0.0,
         "too_early": true
       },
@@ -798,6 +813,7 @@
         0.0,
         0.0,
         0.0,
+        0.0,
         0.0
       ]
     },
@@ -810,9 +826,9 @@
       "turnover": 0,
       "weight": 0.0,
       "live": {
-        "days": 10,
+        "days": 11,
         "cum_pct": 0.0,
-        "needs_days": 10,
+        "needs_days": 9,
         "too_early": true
       },
       "hindsight": {
@@ -834,6 +850,7 @@
       },
       "retired_reason": null,
       "curve": [
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -865,21 +882,21 @@
     "mode": "equal weight until every book has 20 live days",
     "mature": false,
     "live": {
-      "days": 10,
-      "cum_pct": -0.88,
-      "needs_days": 10,
+      "days": 11,
+      "cum_pct": -0.89,
+      "needs_days": 9,
       "too_early": true
     },
     "equal_weight": {
-      "days": 10,
-      "cum_pct": -0.88,
-      "needs_days": 10,
+      "days": 11,
+      "cum_pct": -0.89,
+      "needs_days": 9,
       "too_early": true
     },
     "benchmark": {
-      "days": 10,
-      "cum_pct": -1.05,
-      "needs_days": 10,
+      "days": 11,
+      "cum_pct": -0.53,
+      "needs_days": 9,
       "too_early": true
     },
     "curve": [
@@ -892,14 +909,15 @@
       -0.000125,
       -4.2e-05,
       -4.2e-05,
-      -5e-05
+      -5e-05,
+      -8.3e-05
     ]
   },
   "context": {
     "spy_above_200": true,
-    "breadth": 0.576,
+    "breadth": 0.612,
     "breadth_rising": true,
-    "vol_regime": 8.8
+    "vol_regime": 8.6
   },
   "policy_inputs": {
     "exposure_names": 23,

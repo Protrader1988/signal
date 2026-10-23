@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-23T00:21:28.810701+00:00",
+  "model": "gemini-flash-latest",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "high",
+    "summary": "Broad equities are under intense pressure as a steep tech and semiconductor sell-off dragged the Nasdaq down over 2% for its worst day since June. Growing skepticism over AI spending, supply warnings, and persistent Fed rate hike expectations are driving investors toward Treasurys.",
+    "bull": "Value-oriented segments ('Buffett market') are holding up, beaten-down chipmakers like Micron still retain aggressive long-term analyst targets, and an anticipated US-Iran ceasefire could alleviate macro and inflation strains.",
+    "bear": "Revived AI monetization doubts and supply warnings triggered heavy drops across marquee tech names, while economists anticipate another Fed rate hike in December amidst flashing warning signs in housing.",
+    "watch": "Treasury yield reactions to safe-haven flows and whether chipmakers can find a floor after severe single-day drops."
+  },
+  "takes": [
+    {
+      "topic": "Semiconductors & AI",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "Supply warnings and mounting doubts over heavy AI spending sparked a rout, sending AMD down 8% and Intel down 7% despite isolated analyst defenses."
+    },
+    {
+      "topic": "Federal Reserve & Interest Rates",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "With economists expecting an additional rate hike in December and the housing sector flashing warnings, monetary policy remains an active headwind for risk assets."
+    },
+    {
+      "topic": "Energy & Refining (VLO, PSX)",
+      "lean": "neutral",
+      "confidence": "medium",
+      "note": "Valero delivered strong results with an earnings beat fueled by record refining utilization, yet Phillips 66 dropped sharply as energy prices added to broader market volatility."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
