@@ -107,7 +107,7 @@ def fetch_zap():
     out, off = [], 0
     while off < 6000:
         url = (ZAP_PROJECTS + f"?$select={urllib.parse.quote(fields)}&$where={urllib.parse.quote(where)}"
-               f"&$order=app_filed_date DESC&$limit=1000&$offset={off}")
+               f"&$order={urllib.parse.quote('app_filed_date DESC')}&$limit=1000&$offset={off}")
         page = get(url); out += page
         if len(page) < 1000: break
         off += 1000
@@ -185,7 +185,8 @@ MUNIS = {
     "NJ": ["Fort Lee","Edgewater","Englewood","Englewood Cliffs","Cliffside Park","Fairview","Palisades Park","Leonia",
            "Ridgefield NJ","Hackensack","Teaneck","Bogota","North Bergen","West New York","Union City","Weehawken",
            "Guttenberg","Hoboken","Jersey City","Tenafly","Bergenfield"],
-    "NYC": ["Bronx","Brooklyn","Queens","New York City"],
+    "NYC": ["City Planning Commission rezoning","ULURP rezoning Bronx","ULURP rezoning Brooklyn","ULURP rezoning Queens",
+            "City of Yes housing","HPD RFP affordable housing site","Council land use rezoning Bronx","Council land use rezoning Brooklyn"],
 }
 TOPIC = '(rezoning OR zoning OR "accessory dwelling" OR ADU OR duplex OR overlay OR "transit-oriented" OR upzone OR "mixed-use" OR "redevelopment plan" OR "affordable housing plan" OR "fourth round" OR 8-30g OR "housing growth plan" OR "City of Yes")'
 DENSITY_WORDS = {
@@ -196,7 +197,9 @@ DENSITY_WORDS = {
     "as-of-right": 20, "as of right": 20, "height": 8, "stories": 8, "units": 8, "approved": 10, "adopted": 15,
     "ordinance": 10, "moratorium": -20, "lawsuit": -10, "rejected": -15, "denied": -15,
 }
-NEG = ("obituar", "sports", "football", "basketball", "arrest", "crash")
+NEG = ("obituar", "sports", "football", "basketball", "arrest", "crash", "closes sale", "for sale", "listed for", "asks $",
+       "sells for", "curbed", "raleigh", "charlotte", "mecklenburg", "ohio", "michigan", "texas", "florida", "california",
+       "brooklyn park", "brooklyn center", "brooklyn village", "queens park", "bronx zoo")
 
 def news_for(q, region, muni):
     url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": q, "hl": "en-US", "gl": "US", "ceid": "US:en"})
@@ -219,9 +222,12 @@ def news_for(q, region, muni):
         if dt and dt < cutoff: continue
         t = title.lower()
         if any(n in t for n in NEG): continue
+        mname = muni.lower().split(" nj")[0]
+        if region != "NYC" and mname not in t: continue        # the town must be in the headline, not just the query
+        if region == "NYC" and not any(k in t for k in ("bronx","brooklyn","queens","nyc","new york","city planning","council","hpd","ulurp","city of yes")): continue
         score = sum(w for k, w in DENSITY_WORDS.items() if k in t)
-        if muni.lower().split(" nj")[0] in t: score += 10
-        if score < 15: continue
+        if region != "NYC": score += 10
+        if score < 20: continue
         out.append({"region": region, "muni": muni, "title": title, "link": link, "source": src,
                     "date": dt.date().isoformat() if dt else None, "score": score})
     return out
@@ -230,10 +236,11 @@ def build_news():
     items, seen = [], set()
     for region, munis in MUNIS.items():
         for m in munis:
-            q = f'"{m.replace(" NJ","")}" {TOPIC}'
-            if region == "NJ": q += " NJ"
-            if region == "CT": q += " Connecticut"
-            if region == "NY": q += " NY"
+            if region == "NYC":
+                q = m
+            else:
+                q = f'"{m.replace(" NJ","")}" {TOPIC}'
+                q += {"NJ": " NJ", "CT": " Connecticut", "NY": " NY"}[region]
             for it in news_for(q, region, m):
                 k = it["title"].lower()[:80]
                 if k in seen: continue
