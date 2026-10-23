@@ -19,13 +19,17 @@ Below is REAL output from our parcel screener: underutilized NYC lots underwritt
 paths (485-x tax exemption, City of Yes UAP, Section 8 overlay, ELLA/LIHTC stack). Land costs are
 ESTIMATES from real sale comps; walk_away_land is the max land price where the deal still pencils.
 
+Each deal carries an ACTION: "offer" (walk-away land >= est. land: send the letter, bid at or under comps,
+never above max_offer), "negotiate" (walk-away 70-100% of comps: only with a motivated seller),
+"program" (only the HPD subsidy stack works), "rfp" (city-owned: RFP / Fast Track pipeline, never a private sale).
+walk_away_as_builder assumes the principal is the GC; walk_away_third_party_gc is the same site at a hired-GC cost.
+
 Using ONLY the data provided (never invent addresses, numbers, or programs):
-- Write a tight morning brief: where the opportunity is concentrated and why (2-3 sentences).
-- Pick the 3-5 most compelling targets and for each give: the play in one sentence, the negotiating
-  frame (est land vs walk-away headroom), and the main risk to check (zoning verify, site condition,
-  HPD disposition process for city-owned, subsidy competitiveness for program plays).
-- Be honest: these are screening estimates pending diligence; city-owned sites go through HPD/EDC
-  disposition (RFPs), not private purchase.
+- Write a tight morning brief: which 3-5 sites to send letters to THIS WEEK and why (2-3 sentences).
+- For each target give: the play in one sentence, the offer frame (max_offer vs est. land, headroom),
+  and the one thing to verify before the letter goes out (zoning, occupancy, institutional-owner approval,
+  sewer, site condition). For rfp sites say who to call (Council member, community board) not "make an offer".
+- Plain language, no em dashes. These are screening estimates pending diligence.
 
 Return ONLY JSON: {"brief":"...", "targets":[{"address":"...","play":"...","negotiation":"...","risk":"..."}],
 "process_note":"one sentence on next steps"}
@@ -58,16 +62,20 @@ def main():
         json.dump({"available":False,"note":"Add GEMINI_API_KEY secret to enable AI deal briefs."},
                   open("bounty/data/briefs.json","w"),indent=2); return
     d=json.load(open("bounty/data/nyc_deals.json"))
-    mk=[x for x in d["deals"] if x.get("tier")=="market"][:12]
-    pr=[x for x in d["deals"] if x.get("tier")=="program"][:4]
+    mk=[x for x in d["deals"] if x.get("action") in ("offer","negotiate")][:12]
+    pr=[x for x in d["deals"] if x.get("action")=="program"][:3]
+    rf=[x for x in d["deals"] if x.get("action")=="rfp"][:3]
     slim=[]
-    for x in mk+pr:
+    for x in mk+pr+rf:
         b=x.get("best") or {}
         slim.append({"address":x["address"],"borough":x["borough"],"zone":x["zone"],
-                     "units":x["est_units"],"tier":x["tier"],"city_owned":x["city_owned"],
-                     "est_land_cost":x["est_land_cost"],"walk_away_land":x["walk_away_land"],
+                     "units":x["est_units"],"action":x.get("action"),"action_why":x.get("action_why"),
+                     "owner_class":x.get("owner_class"),"occupied":x.get("occupied"),"city_owned":x["city_owned"],
+                     "est_land_cost":x["est_land_cost"],"max_offer":x.get("max_offer"),"headroom":x.get("headroom"),
+                     "walk_away_as_builder":x["walk_away_land"],"walk_away_third_party_gc":x.get("walk_away_land_institutional"),
                      "best_path":x["best_path_label"],"equity":x["equity_needed"],
-                     "coc_pct":b.get("coc_pct"),"dev_fee":b.get("dev_fee"),"score":x["score"]})
+                     "yoc_pct":b.get("yoc_pct"),"coc_pct":b.get("coc_pct"),"dev_fee":b.get("dev_fee"),
+                     "motivated":x.get("motivated"),"has_mailing":bool(x.get("owner_mailing")),"score":x["score"]})
     payload=PROMPT+json.dumps({"land_comps_psf":d.get("land_comps_psf"),
                                "counts":d.get("counts"),"deals":slim},indent=1)
     try:

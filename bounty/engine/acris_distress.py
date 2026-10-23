@@ -37,6 +37,7 @@ DEBUG = {"stages": {}}
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/2.0)"}
 LEGALS = "https://data.cityofnewyork.us/resource/8h5j-fqxa.json"
 MASTER = "https://data.cityofnewyork.us/resource/bnx9-e6tj.json"
+PARTIES = "https://data.cityofnewyork.us/resource/636b-3b5g.json"   # Real Property Parties: grantee name + mailing address
 
 MORTGAGE_CODES = {"MTGE"}  # a recorded mortgage = the lot is encumbered
 
@@ -114,6 +115,31 @@ def _fetch_master(doc_ids):
     return out
 
 
+def _fetch_grantees(doc_ids):
+    """Grantee (party_type 2) name + mailing address on the given deed document_ids.
+    This is the address the current owner gave the City Register at closing —
+    the best free mailing address there is for an outreach letter."""
+    out = {}
+    ids = [d for d in doc_ids if d]
+    for chunk in _chunks(ids, 120):
+        inb = ",".join(f"'{d}'" for d in chunk)
+        where = f"document_id in({inb}) and party_type='2'"
+        try:
+            page = _get(PARTIES + f"?$select=document_id,name,address_1,address_2,city,state,zip"
+                        f"&$where={urllib.parse.quote(where)}&$limit=50000")
+            for r in page:
+                did = r.get("document_id")
+                if did and did not in out:
+                    addr = " ".join(str(r.get(k) or "").strip() for k in ("address_1", "address_2")).strip()
+                    csz = " ".join(str(r.get(k) or "").strip() for k in ("city", "state", "zip")).strip()
+                    out[did] = {"name": (r.get("name") or "").strip().title(),
+                                "mailing": (addr + ", " + csz).strip(", ").title() if addr or csz else ""}
+        except Exception as e:
+            print(f"  ACRIS parties chunk failed: {e}")
+            DEBUG["stages"].setdefault("parties_errors", []).append(str(e)[:200])
+    return out
+
+
 def annotate(deals, boro_map):
     """
     deals: list of dicts each with 'bbl' and PLUTO 'borocode','block','lot'
@@ -175,6 +201,7 @@ def annotate(deals, boro_map):
             return 0
 
     flags = {}
+    latest_deed_doc = {}   # bbl -> document_id of the current owner's deed
     for d in deals:
         bc = str(d.get("_bc") or "")
         acris_boro = boro_map.get(bc, bc)
@@ -186,6 +213,7 @@ def annotate(deals, boro_map):
         docs = parcel_docs.get((acris_boro, blk, lot), [])
         latest_deed_ord = 0
         latest_mtge_ord = 0
+        latest_deed_id = None
         for did in docs:
             m = master.get(did)
             if not m:
@@ -195,11 +223,14 @@ def annotate(deals, boro_map):
             o = ord_of(rec)
             if _is_deed(dt) and o > latest_deed_ord:
                 latest_deed_ord = o
+                latest_deed_id = did
             elif dt.upper() in MORTGAGE_CODES and o > latest_mtge_ord:
                 latest_mtge_ord = o
         tenure = None
         if latest_deed_ord:
             tenure = round((today.toordinal() - latest_deed_ord) / 365.25, 1)
+            if latest_deed_id:
+                latest_deed_doc[d.get("bbl")] = latest_deed_id
         # free & clear: no mortgage recorded at/after the current owner's deed
         free_and_clear = bool(latest_deed_ord) and (latest_mtge_ord < latest_deed_ord)
         motivated = (tenure is not None and tenure >= 25) or \
@@ -213,6 +244,20 @@ def annotate(deals, boro_map):
         if motivated:
             flags[d.get("bbl")] = {"tenure_years": tenure,
                                    "free_and_clear": free_and_clear, "motivated": motivated}
+
+    # Owner mailing address: grantee on the current owner's deed (private owners only).
+    want_ids = {did for bbl, did in latest_deed_doc.items()}
+    grantees = _fetch_grantees(list(want_ids)) if want_ids else {}
+    DEBUG["stages"]["grantee_rows"] = len(grantees)
+    hits = 0
+    for d in deals:
+        g = grantees.get(latest_deed_doc.get(d.get("bbl")))
+        if g and not d.get("city_owned"):
+            d["owner_mailing"] = g["mailing"]
+            if g["name"] and not d.get("owner_on_deed"):
+                d["owner_on_deed"] = g["name"]
+            hits += 1
+    DEBUG["stages"]["owner_mailing_hits"] = hits
     DEBUG["stages"]["motivated"] = sum(1 for d in deals if d.get("motivated"))
     DEBUG["stages"]["free_and_clear"] = sum(1 for d in deals if d.get("free_and_clear"))
     DEBUG["stages"]["with_tenure"] = sum(1 for d in deals if d.get("owner_tenure_years"))

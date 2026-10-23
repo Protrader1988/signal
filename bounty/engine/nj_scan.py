@@ -19,8 +19,10 @@ town-specific ratios (not market) — labeled as such. Owner names = outreach li
 
 Output: bounty/data/nj_deals.json (+ appends to history.json)
 """
-import json, os, urllib.request, urllib.parse, traceback
+import json, os, sys, urllib.request, urllib.parse, traceback
 from datetime import datetime, timezone, date
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import residual
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/1.0)"}
 LAYER = ("https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/"
@@ -55,7 +57,8 @@ def n(x, d=0.0):
         v = float(str(x).replace(",", "").replace("$", "")); return v if v == v else d
     except Exception: return d
 
-FIELDS = "PAMS_PIN,MUN_NAME,COUNTY,PROP_CLASS,PROP_LOC,OWNER_NAME,ST_ADDRESS,LAND_VAL,IMPRVT_VAL,NET_VALUE,CALC_ACRE,LAND_DESC,BLDG_DESC"
+FIELDS = "PAMS_PIN,MUN_NAME,COUNTY,PROP_CLASS,PROP_LOC,OWNER_NAME,ST_ADDRESS,CITY_STATE,ZIP_CODE,LAND_VAL,IMPRVT_VAL,NET_VALUE,CALC_ACRE,LAND_DESC,BLDG_DESC"
+FIELDS_FALLBACK = "PAMS_PIN,MUN_NAME,COUNTY,PROP_CLASS,PROP_LOC,OWNER_NAME,ST_ADDRESS,LAND_VAL,IMPRVT_VAL,NET_VALUE,CALC_ACRE,LAND_DESC,BLDG_DESC"
 
 def fetch_town(town, county):
     cls = ",".join(f"'{c}'" for c in CLASSES)
@@ -66,6 +69,9 @@ def fetch_town(town, county):
                   "f": "json", "resultRecordCount": 2000, "resultOffset": offset}
         try:
             d = get_json(LAYER + "?" + urllib.parse.urlencode(params))
+            if d.get("error"):   # unknown field name on this layer version -> retry without mailing fields
+                params["outFields"] = FIELDS_FALLBACK
+                d = get_json(LAYER + "?" + urllib.parse.urlencode(params))
         except Exception as e:
             print(f"  {town} @{offset} failed: {e}"); break
         feats = d.get("features", [])
@@ -80,6 +86,7 @@ def main():
     A = ASSUMPTIONS
     deals = []
     town_counts = {}
+    passed = 0
     for town, county, dens in TOWNS:
         rows = fetch_town(town, county)
         town_counts[town] = len(rows)
@@ -103,17 +110,24 @@ def main():
             if per_acre < A["min_assessed_per_acre"]: continue
             owner = str(r.get("OWNER_NAME", "") or "").title()
             if any(k in owner.upper() for k in EXCLUDE_OWNERS): continue
+            mail = " ".join(str(r.get(k) or "").strip() for k in ("ST_ADDRESS", "CITY_STATE", "ZIP_CODE")).strip().title()
             est_units = int(acres * dens)
             if est_units < 6: continue
+            R = residual.residual("NJ", town, acres, net, density_override=dens)
+            if not R or R["realistic_units"] < 6: continue
+            if R["action"] == "pass": passed += 1; continue
             per_unit = net/est_units if est_units else 9e9
-            addr = str(r.get("PROP_LOC", "") or r.get("ST_ADDRESS", "") or "").title()
+            addr = str(r.get("PROP_LOC", "") or "").title()
+            if "RIPARIAN" in addr.upper() or "UNDERWATER" in addr.upper() or "UNDER WATER" in addr.upper(): continue
             play = "vacant land" if vacant else ("commercial redevelopment" if pclass == "4A" else "industrial redevelopment")
-            # score: vacant + redevelopment-class sites, cheap assessed basis, size, county-agnostic
-            s_type = 30 if vacant else 22
-            s_cost = max(0, min(1, (250000 - per_unit)/230000)) * 26
-            s_size = max(0, min(1, est_units/60)) * 18
-            s_redev = 12 if redev else 0
-            score = round(s_type + s_cost + s_size + s_redev, 1)
+            # score: headroom first, then vacant / redevelopment class, size, mailing address on file
+            head = R["headroom"] or 1.0
+            s_head = max(0, min(1, (head - 0.7)/1.0)) * 40
+            s_type = 18 if vacant else 12
+            s_size = max(0, min(1, est_units/60)) * 14
+            s_redev = 10 if redev else 0
+            s_mail = 6 if mail else 0
+            score = round(s_head + s_type + s_size + s_redev + s_mail, 1)
             deals.append({
                 "region": "NJ", "town": town.title(), "county": county.title(),
                 "address": addr or "(unaddressed parcel)",
@@ -121,10 +135,15 @@ def main():
                 "play_type": play, "vacant": vacant, "redevelopment_candidate": redev,
                 "acres": round(acres, 2), "assumed_density_uac": dens,
                 "improvement_ratio": round(imp_ratio, 2),
-                "est_units": est_units,
+                "est_units": est_units, "realistic_density_uac": R["realistic_density_uac"],
+                "product": R["product"], "sale_price_per_unit": R["sale_price_per_unit"],
+                "revenue": R["revenue"], "build_cost": R["build_cost"],
+                "max_offer": R["max_offer"], "headroom": R["headroom"], "action": R["action"], "action_why": R["action_why"],
+                "asking_proxy": R["asking_proxy"], "asking_source": R["asking_source"],
+                "profit_at_max_offer": R["profit_at_max_offer"],
                 "assessed_net": int(net), "assessed_per_acre": int(per_acre),
                 "assessed_per_est_unit": int(per_unit),
-                "owner": owner, "pams_pin": r.get("PAMS_PIN"),
+                "owner": owner, "owner_mailing": mail, "pams_pin": r.get("PAMS_PIN"),
                 "score": score, "tier": "screen",
                 "pilot_note": "Verify against the municipal redevelopment map — an 'Area in Need of Redevelopment' designation unlocks a 40A:20 PILOT and direct conveyance.",
                 "verify": "Assessed value ≠ market (apply town ratio); confirm zoning/redevelopment status.",
@@ -149,11 +168,13 @@ def main():
     json.dump(hist, open(hp, "w"))
     out = {"generated_utc": datetime.now(timezone.utc).isoformat(),
            "region": "Northern NJ — Bergen/Hudson Gold Coast + GWB corridor",
-           "tier_note": "SCREEN tier: real NJ MOD-IV parcel data. Density is a published assumption; assessed values are not market. The redevelopment/PILOT flag is the strategic edge.",
+           "tier_note": "Real NJ MOD-IV parcel data. Max offer is the residual land value at the town's assumed density; the asking proxy is ASSESSED value (NJ ratios vary by town, so headroom here is relative, not absolute). The redevelopment/PILOT flag is the strategic edge.",
            "counts": {"by_town": town_counts, "qualified": len(deals), "new_today": new_count,
                       "vacant": sum(1 for d in deals if d["vacant"]),
-                      "redevelopment": sum(1 for d in deals if d["redevelopment_candidate"])},
-           "assumptions": ASSUMPTIONS,
+                      "redevelopment": sum(1 for d in deals if d["redevelopment_candidate"]),
+                      "offer": sum(1 for d in deals if d["action"]=="offer"),
+                      "negotiate": sum(1 for d in deals if d["action"]=="negotiate"), "passed": passed},
+           "assumptions": ASSUMPTIONS, "residual_assumptions": residual.ASSUMPTIONS,
            "deals": deals[:250]}
     err = "bounty/data/NJ_ERROR.txt"
     if os.path.exists(err): os.remove(err)

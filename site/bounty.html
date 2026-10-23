@@ -116,7 +116,10 @@
   .leaflet-control-attribution{background:rgba(10,16,20,.7)!important;color:var(--dim)!important}
 
   table{width:100%;border-collapse:collapse;font-size:13px}
-  th,td{padding:11px 16px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  #dealTbl,#subTbl,#ctTbl,#njTbl,#rfpTbl{overflow-x:auto}
+  td.tags{white-space:normal;max-width:190px;line-height:1.9}
+  .pipebtn{white-space:nowrap}
   thead th{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;background:var(--bg2)}
   thead th[title]{cursor:help}
   thead th.sortable{cursor:pointer;user-select:none;transition:color .12s}
@@ -143,6 +146,34 @@
   .b-new{color:#0a0c12;background:var(--em);border-color:var(--em)}
   .b-hot{color:#ff8a8a;border-color:rgba(255,93,93,.4);background:rgba(255,93,93,.08)}
   .b-hold{color:var(--warn);border-color:rgba(242,178,62,.35);background:rgba(242,178,62,.06)}
+  .b-offer{color:#052e1f;background:var(--em);border-color:var(--em)}
+  .b-neg{color:var(--warn);border-color:rgba(242,178,62,.45);background:rgba(242,178,62,.08)}
+  .b-rfp{color:var(--gold2);border-color:rgba(201,162,39,.45);background:rgba(201,162,39,.08)}
+  .b-inst{color:var(--info);border-color:rgba(90,162,255,.4);background:rgba(90,162,255,.08)}
+  .b-occ{color:#ff8a8a;border-color:rgba(255,93,93,.4);background:rgba(255,93,93,.08)}
+  .pipebtn{font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;color:var(--em2);border:1px solid var(--emline);
+    border-radius:7px;padding:5px 11px;background:rgba(47,211,154,.06);cursor:pointer;transition:.15s;margin-right:6px}
+  .pipebtn:hover{background:rgba(47,211,154,.14);border-color:var(--em)}
+  .pipebtn.in{color:var(--gold2);border-color:rgba(201,162,39,.4);background:rgba(201,162,39,.08)}
+  /* pipeline tracker */
+  .kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:14px}
+  .kcol{background:var(--surface2);border:1px solid var(--line);border-radius:10px;min-height:120px;padding:10px}
+  .kcol h4{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 8px;display:flex;justify-content:space-between}
+  .kcol h4 span{color:var(--em2)}
+  .kcard{background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:9px 10px;margin-top:8px;font-size:12px}
+  .kcard .ka{font-family:var(--mono);font-weight:700;color:var(--em2);font-size:12px}
+  .kcard .km{color:var(--muted);font-size:11px;margin-top:3px;line-height:1.5}
+  .kcard select,.kcard input{font-family:var(--mono);font-size:10.5px;background:var(--surface3);color:var(--text);border:1px solid var(--line2);border-radius:5px;padding:3px 5px;margin-top:6px;max-width:100%}
+  .kcard textarea{width:100%;font-family:var(--sans);font-size:11.5px;background:var(--surface3);color:var(--text);border:1px solid var(--line2);border-radius:5px;padding:5px;margin-top:6px;resize:vertical;min-height:34px}
+  .kcard .kx{float:right;color:var(--muted);cursor:pointer;font-size:12px}
+  .kcard .kx:hover{color:var(--down)}
+  .kcard.due{border-color:rgba(255,93,93,.5)}
+  .checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;padding:14px 20px 18px}
+  .check{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+  .check h4{font-size:12.5px;color:var(--em2);margin-bottom:6px;font-family:var(--mono);letter-spacing:.4px}
+  .check p,.check li{font-size:12.5px;color:var(--text2);line-height:1.65}
+  .check ul{padding-left:18px;margin-top:4px}
+  .check b{color:var(--text)}
   .scorepill{display:inline-grid;place-items:center;min-width:42px;height:24px;border-radius:7px;font-family:var(--mono);
     font-size:12px;font-weight:700;padding:0 8px}
   .s-hi{color:#052e1f;background:var(--em)} .s-md{color:var(--em2);background:rgba(47,211,154,.12);border:1px solid var(--emline)}
@@ -197,9 +228,11 @@
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
     <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
     <a class="fkey" href="#tsmap"><b>F6</b>TRI-STATE MAP</a>
-    <a class="fkey" href="#programs"><b>F7</b>PROGRAMS</a>
-    <a class="fkey" href="#playbook"><b>F8</b>PLAYBOOK</a>
-    <a class="fkey" href="#assumptions"><b>F9</b>ASSUMPTIONS</a>
+    <a class="fkey" href="#rfp"><b>F7</b>RFP · FAST TRACK</a>
+    <a class="fkey" href="#pipeline"><b>F8</b>MY PIPELINE</a>
+    <a class="fkey" href="#programs"><b>F9</b>PROGRAMS</a>
+    <a class="fkey" href="#playbook"><b>F10</b>PLAYBOOK</a>
+    <a class="fkey" href="#assumptions"><b>F11</b>ASSUMPTIONS</a>
   </div>
   <div class="hero" id="hero"></div>
 
@@ -212,7 +245,7 @@
   <section id="board">
     <div class="eyebrow"><span class="no">02</span><h2>Deal Board</h2>
       <span class="hint">click any row to expand its full financing-path underwriting</span></div>
-    <div class="subnote"><b class="em">Market</b> = self-executing (485-x / UAP / Section 8 paths pencil today). <b style="color:var(--purple)">Program</b> = pencils only via competitive subsidy stack (ELLA/LIHTC — dev-fee play). <b class="gold">City-owned</b> = HPD/EDC disposition targets (RFP process, not private sale). Land costs are comp-anchored estimates; <b>walk-away</b> is the max land price where the deal still pencils.</div>
+    <div class="subnote">Every row carries a next step. <span class="badge b-offer">Offer</span> = the walk-away land price (target yield on cost, you as GC) covers the comp-based land estimate: send the letter, bid at or under comps, never above <b>max offer</b>. <span class="badge b-neg">Negotiate</span> = walk-away is 70-100% of comps: only worth it with a long-hold or free-and-clear owner. <span class="badge b-prog">Program</span> = pencils only with the HPD subsidy stack (JV, dev-fee play). <span class="badge b-inst">Institutional</span> = church / yeshiva / hospital owner: sells, but needs a board vote and Attorney General or court approval (N-PCL 511), 6-12 months. <span class="badge b-occ">Occupied</span> = 3+ existing units: tenant relocation plus 485-x replacement units. City-owned lots live on the <a href="#rfp" class="em">RFP board</a>, not here.</div>
     <div class="filters" id="filters"></div>
     <div style="margin:-6px 0 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
       <div class="viewtog" style="margin:0"><button id="vTable" class="on" onclick="setView('table')">▤ Table</button><button id="vMap" onclick="setView('map')">🗺 Map</button></div>
@@ -234,7 +267,7 @@
   <section id="suburbs">
     <div class="eyebrow"><span class="no">03</span><h2>Suburban Screens</h2>
       <span class="hint">Westchester · Putnam · Dutchess — real NYS parcel data, screen tier</span></div>
-    <div class="subnote"><span class="badge b-prog">Screen tier</span> Real 2025 assessment-roll parcels (vacant developable + underimproved multifamily-class), government/watershed owners excluded, unbuildable-land floor applied. <b class="warn">Unit counts assume ~20/acre IF zoning allows — verify at town hall before underwriting.</b> Owner names come from the roll — this is your outreach list.</div>
+    <div class="subnote"><span class="badge b-prog">Screen tier</span> Real 2025 assessment-roll parcels (vacant developable + underimproved multifamily-class), government/watershed owners excluded, unbuildable-land floor applied. Units are at a <b>per-town density a planning board will plausibly approve for townhomes</b> (4-16/acre, published per town), not 20/acre. <b>Max offer</b> is the residual land value: net sale revenue after 6% selling cost and a 15% margin, minus owner-builder construction. <b class="warn">Verify zoning, sewer and wetlands at town hall before offering.</b> Owner names and mailing addresses come from the roll — this is your letter list.</div>
     <div class="card">
       <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('subTbl',this.value)"><button class="expbtn" onclick="exportBoard('subs')">⬇ Outreach CSV</button></div>
       <div id="subTbl"><div class="loading">loading suburban screens…</div></div>
@@ -244,7 +277,7 @@
   <section id="ct">
     <div class="eyebrow"><span class="no">04</span><h2>Connecticut · 8-30g Board</h2>
       <span class="hint">Gold Coast + Stamford/New Haven — real CT CAMA data with zoning-override flagging</span></div>
-    <div class="subnote"><b class="em">The play:</b> in towns under 10% affordable (Greenwich 5.3%, Westport 3.5%, Ridgefield, New Canaan, Darien), <b>CGS 8-30g lets a 30%-affordable set-aside override local zoning denial</b> — so estate-zoned vacant land becomes developable. Unit counts assume ~16/acre WHERE 8-30g applies (~8/acre elsewhere) — verify with an affordability plan. Stamford/New Haven are 8-30g-exempt (over threshold). <b class="warn">Screen tier: confirm zoning, wetlands, and sewer before pursuing.</b></div>
+    <div class="subnote"><b class="em">The play:</b> in towns under 10% affordable (Greenwich 5.3%, Westport 3.5%, Ridgefield, New Canaan, Darien), <b>CGS 8-30g lets a 30%-affordable set-aside override local zoning denial</b> — so estate-zoned vacant land becomes developable. Units are at the density that has actually been approved or settled in each town (Greenwich 6/acre, Darien/New Canaan/Westport/Ridgefield 8, Stamford/New Haven 20), capped at 40 units; the statute's ceiling is higher but backcountry sites have no sewer and multi-year appeals. <b>Max offer</b> is the residual land value with 30% of units sold at the deed-restricted price. Stamford/New Haven are 8-30g-exempt. <b class="warn">Confirm sewer, wetlands and the town's current moratorium status before pursuing.</b></div>
     <div class="card">
       <div class="card-head"><span class="code">CT</span><span class="t">Zoning-override development plays</span><span class="expo" id="ctMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('ctTbl',this.value)"><button class="expbtn" onclick="exportBoard('ct')">⬇ Outreach CSV</button></div>
       <div id="ctTbl"><div class="loading">loading Connecticut board…</div></div>
@@ -254,7 +287,7 @@
   <section id="nj">
     <div class="eyebrow"><span class="no">05</span><h2>New Jersey · Redevelopment Board</h2>
       <span class="hint">Bergen/Hudson Gold Coast + GWB corridor — real MOD-IV parcel data</span></div>
-    <div class="subnote"><b class="em">The play:</b> NJ's lever is the <b>40A:20 long-term tax exemption PILOT</b> — once a site is in a municipal "Area in Need of Redevelopment," the town can convey it directly (no bid) with a ~30-year PILOT (~10-15% of revenue vs. full taxes). This board leads with vacant + commercial/industrial (class 4A/4B) parcels — the ones that become redevelopment sites. <b class="warn">Screen tier: assessed values are NOT market (apply town ratio); verify redevelopment designation on the municipal map. Owner data is sparse in the NJ layer.</b></div>
+    <div class="subnote"><b class="em">The play:</b> NJ's lever is the <b>40A:20 long-term tax exemption PILOT</b> — once a site is in a municipal "Area in Need of Redevelopment," the town can convey it directly (no bid) with a ~30-year PILOT (~10-15% of revenue vs. full taxes). This board leads with vacant + commercial/industrial (class 4A/4B) parcels — the ones that become redevelopment sites. <b>Max offer</b> is the residual land value at the town's assumed density (capped at 150 units); the asking proxy is the higher of assessed value and a published $/acre land floor, because NJ assessed values run below market by a town-specific ratio. <b class="warn">Verify redevelopment designation on the municipal map before pursuing; the PILOT is the whole deal.</b></div>
     <div class="card">
       <div class="card-head"><span class="code">NJ</span><span class="t">Redevelopment / PILOT candidates</span><span class="expo" id="njMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('njTbl',this.value)"><button class="expbtn" onclick="exportBoard('nj')">⬇ Outreach CSV</button></div>
       <div id="njTbl"><div class="loading">loading New Jersey board…</div></div>
@@ -276,8 +309,41 @@
     </div>
   </section>
 
+  <section id="rfp">
+    <div class="eyebrow"><span class="no">07</span><h2>City-Owned Sites · RFP &amp; Fast Track Pipeline</h2>
+      <span class="hint">HPD · DCAS · EDC lots the engine found — these transfer by RFP, never by private sale</span></div>
+    <div class="subnote"><b class="em">How this actually works in 2026.</b> City land goes to developers through HPD/EDC RFPs and, since March 2026, HPD's <b>Neighborhood Builders Fast Track</b>: a rolling RFQ that pre-qualifies developers for small city-owned sites without a full RFP. The catch: <b>the qualified entity must be a nonprofit or a certified M/WBE, and must hold at least 51% of the managing ownership interest</b> in any joint venture. The practical structure for a non-M/WBE principal is a JV where the nonprofit or M/WBE partner holds 51%, you hold 49% and the GC contract. The sites below are the ones to watch for RFPs and to raise with the Council member and community board; the checklist is what the Fast Track submission needs.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">RFP</span><span class="t">City-owned development sites (HPD / DCAS / EDC)</span><span class="expo" id="rfpMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('rfpTbl',this.value)"><button class="expbtn" onclick="exportBoard('rfp')">⬇ Watchlist CSV</button></div>
+      <div id="rfpTbl"><div class="loading">loading city-owned sites…</div></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head"><span class="code">FAST TRACK</span><span class="t">Neighborhood Builders Fast Track RFQ — what it takes</span><span class="expo"><a href="https://www.nyc.gov/site/hpd/services-and-information/neighborhood-builders-rfq.page" target="_blank" rel="noopener" class="em">HPD page ↗</a></span></div>
+      <div class="checklist">
+        <div class="check"><h4>01 · ELIGIBILITY</h4><p>Nonprofit organizations or NYC-certified M/WBEs only. In a JV the nonprofit/M/WBE must hold <b>≥ 51% of managing ownership</b>. A non-M/WBE developer or GC can be the 49% partner and builder.</p><p style="margin-top:6px"><b>Your move:</b> line up one nonprofit or M/WBE co-developer who already has an HPD-completed project. They qualify; you bring the site work, the GC and the equity.</p></div>
+        <div class="check"><h4>02 · SUBMISSION</h4><ul><li>Email <b>NeighborhoodBuildersRFQ@hpd.nyc.gov</b> stating intent to submit, then register to download the RFQ.</li><li>Form A-1 completeness checklist · Forms C-1/C-2 residential development experience · Form D portfolio management · Form E financial capacity · no adverse findings.</li><li>One PDF, single-page layouts, table of contents, every form complete.</li><li>Rolling intake; the initial qualified list is expected Fall 2026 and updated periodically.</li></ul></div>
+        <div class="check"><h4>03 · HOW SITES GET ASSIGNED</h4><p>HPD picks from the Qualified Developer List for site-specific mini-competitions; being listed does not guarantee a site. Separately, HPD/EDC publish full RFPs (5+ per year under the LIFT program) and the LIFT tracker maps the 100+ city sites in the pipeline.</p><p style="margin-top:6px"><a class="em" href="https://www.nyc.gov/site/hpd/services-and-information/request-for-proposals.page" target="_blank" rel="noopener">Open HPD RFPs ↗</a> · <a class="em" href="https://storymaps.arcgis.com/stories/afce9e93d79847608fc846878e17db8e" target="_blank" rel="noopener">LIFT site tracker ↗</a> · <a class="em" href="https://edc.nyc/rfps" target="_blank" rel="noopener">EDC RFPs ↗</a></p></div>
+        <div class="check"><h4>04 · MOVING A LOT INTO THE PIPELINE</h4><p>A city lot that is not yet in HPD's inventory (DCAS surplus, an agency lot that looks unused) gets there politically: the Council member for the district, the community board's land-use committee and the Borough President's office can ask DCAS/HPD to designate it. Bring the zoning math from this board and a nonprofit partner's letter of interest. Expect 2-4 years; do it for sites you also want for the long run.</p></div>
+        <div class="check"><h4>05 · WHAT HPD SCORES</h4><p>Completed affordable units (Forms C-1/C-2), units under management and compliance record (Form D), liquidity and net worth of the sponsor (Form E), M/WBE and nonprofit participation, design and sustainability, and community ties. Two or three finished 485-x buildings on this board's private lots are the fastest way to score on experience.</p></div>
+        <div class="check"><h4>06 · SUBSIDY STACK ON A CITY SITE</h4><p>Land at nominal cost, HPD subsidy loan (ELLA / Mix &amp; Match / Open Door term sheets), 4% LIHTC equity, HDC tax-exempt bonds, 100% affordable at a 60% AMI average. The engine's ELLA path on each site shows the gap or surplus at $185k/unit of city subsidy; developer fee is 10-15% of TDC and is the profit.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline">
+    <div class="eyebrow"><span class="no">08</span><h2>My Pipeline</h2>
+      <span class="hint">add any row from any board with “+ Pipeline” · saved in this browser · export to back up</span></div>
+    <div class="subnote">Stages mirror how a site actually moves: <b>Screened → Letter sent → Owner replied → Site visit → LOI → Contract → Diligence → Closed</b> (or <b>Dead</b>). Set a next-action date on each card; overdue cards turn red. Export JSON weekly and keep it with your deal files, since this lives in your browser's storage only.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">PIPE</span><span class="t">Deal tracker</span><span class="expo" id="pipeMeta"></span>
+        <button class="expbtn" onclick="pipeExport('csv')">⬇ CSV</button><button class="expbtn" onclick="pipeExport('json')">⬇ Backup JSON</button>
+        <label class="expbtn" style="cursor:pointer">⬆ Restore JSON<input type="file" accept="application/json" style="display:none" onchange="pipeImport(this)"></label></div>
+      <div class="kanban" id="kanban"></div>
+    </div>
+  </section>
+
   <section id="programs">
-    <div class="eyebrow"><span class="no">07</span><h2>Program Library</h2>
+    <div class="eyebrow"><span class="no">09</span><h2>Program Library</h2>
       <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
     <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
     <div class="filters" id="progTabs"></div>
@@ -285,13 +351,13 @@
   </section>
 
   <section id="playbook">
-    <div class="eyebrow"><span class="no">08</span><h2>Emerging Developer Playbook</h2>
+    <div class="eyebrow"><span class="no">10</span><h2>Emerging Developer Playbook</h2>
       <span class="hint">how to actually use the programs — strategy, sequencing, screening habits</span></div>
     <div id="playbookBox"><div class="loading">loading playbook…</div></div>
   </section>
 
   <section id="assumptions">
-    <div class="eyebrow"><span class="no">09</span><h2>Published Assumptions</h2>
+    <div class="eyebrow"><span class="no">11</span><h2>Published Assumptions</h2>
       <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
     <div class="assump" id="assumpBox"></div>
     <div class="banner" style="margin-top:14px" id="assumpNote"></div>
@@ -307,7 +373,7 @@
 <script>
 // On GitHub Pages, fetch data same-origin from the Pages CDN (fast, no rate limit);
 // when opened as a delivered file, fall back to the raw GitHub feed.
-const BASE=(location.hostname.endsWith('.github.io'))
+const BASE=(location.protocol.startsWith('http'))
   ? new URL('../bounty/data/', location.href).href
   : 'https://raw.githubusercontent.com/Protrader1988/signal/main/bounty/data/';
 const $=id=>document.getElementById(id);
@@ -320,8 +386,77 @@ async function j(f,retries){retries=(retries==null)?3:retries;
 function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().slice(17,25)}</b> UTC · ${d.toUTCString().slice(5,16)}`;}
 setInterval(tick,1000);tick();
 
-let DEALS=[], FILTER={boro:'ALL', tier:'ALL', q:''};
+let DEALS=[], FILTER={boro:'ALL', tier:'actionable', q:''};
 let SORT={key:'score', dir:-1};
+// ---- action badges (shared by every board) ----
+const ACT={offer:['b-offer','Offer'],negotiate:['b-neg','Negotiate'],program:['b-prog','Program'],rfp:['b-rfp','RFP'],pass:['b-hold','Pass']};
+const actBadge=a=>{const x=ACT[a]||['b-hold',a||'—'];return `<span class="badge ${x[0]}">${x[1]}</span>`;};
+// ---- pipeline tracker (localStorage; export/import for backup) ----
+const STAGES=['Screened','Letter sent','Owner replied','Site visit','LOI','Contract','Diligence','Closed','Dead'];
+function pipeLoad(){try{return JSON.parse(localStorage.getItem('bounty_pipeline')||'[]');}catch(e){return [];}}
+function pipeSave(p){try{localStorage.setItem('bounty_pipeline',JSON.stringify(p));}catch(e){}}
+function pipeKey(d){return d.bbl||d.pams_pin||((d.region||d.borough||'')+'|'+(d.town||d.muni||'')+'|'+(d.address||''));}
+function pipeHas(d){return pipeLoad().some(x=>x.key===pipeKey(d));}
+function pipeAdd(region,i){
+  const list=(window.__D||{})[region]||[]; const d=(region==='nyc'?(window._rows||[])[i]:(window.__BROWS&&window.__BROWS[region]||list)[i]);
+  if(!d)return; const key=pipeKey(d); let p=pipeLoad();
+  if(p.some(x=>x.key===key)){p=p.filter(x=>x.key!==key);pipeSave(p);renderPipeline();if(region==='nyc')renderTable();else{const B=window.__BOARDS[{subs:'subTbl',ct:'ctTbl',nj:'njTbl',rfp:'rfpTbl'}[region]];if(B)B.render();}return;}
+  p.push({key,region,address:d.address,town:d.town||d.muni||d.borough||'',owner:d.owner||'',owner_mailing:d.owner_mailing||'',
+    units:d.est_units||'',max_offer:d.max_offer||d.walk_away_land||'',action:d.action||'',stage:d.action==='rfp'?'Screened':'Screened',
+    next:'',notes:'',added:new Date().toISOString().slice(0,10)});
+  pipeSave(p);renderPipeline();
+  if(region==='nyc')renderTable();else{const B=window.__BOARDS[{subs:'subTbl',ct:'ctTbl',nj:'njTbl',rfp:'rfpTbl'}[region]];if(B)B.render();}
+}
+function pipeUpd(key,field,val){const p=pipeLoad();const x=p.find(y=>y.key===key);if(!x)return;x[field]=val;x.updated=new Date().toISOString().slice(0,10);pipeSave(p);if(field==='stage')renderPipeline();else{const m=$('pipeMeta');if(m)m.innerHTML=pipeMetaText(p);}}
+function pipeDel(key){if(!confirm('Remove this site from your pipeline?'))return;pipeSave(pipeLoad().filter(x=>x.key!==key));renderPipeline();renderTable();Object.values(window.__BOARDS||{}).forEach(B=>B.render());}
+function pipeMetaText(p){const live=p.filter(x=>!['Closed','Dead'].includes(x.stage)).length;const due=p.filter(x=>x.next&&x.next<new Date().toISOString().slice(0,10)&&!['Closed','Dead'].includes(x.stage)).length;return `<span class="mono">${p.length} tracked · ${live} live${due?` · <span class="down">${due} overdue</span>`:''}</span>`;}
+function renderPipeline(){
+  const p=pipeLoad(); const el=$('kanban'); if(!el)return;
+  $('pipeMeta').innerHTML=pipeMetaText(p);
+  const today=new Date().toISOString().slice(0,10);
+  const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  el.innerHTML=STAGES.map(st=>{
+    const cards=p.filter(x=>(x.stage||'Screened')===st);
+    return `<div class="kcol"><h4>${st}<span>${cards.length}</span></h4>${cards.map(x=>`
+      <div class="kcard ${x.next&&x.next<today&&!['Closed','Dead'].includes(st)?'due':''}">
+        <span class="kx" title="remove" onclick="pipeDel('${esc(x.key)}')">✕</span>
+        <div class="ka">${esc(x.address)}</div>
+        <div class="km">${esc(x.town)} · ${x.units?x.units+'u · ':''}${x.max_offer?'max '+usd(x.max_offer):''}${x.owner?'<br>'+esc(x.owner):''}${x.owner_mailing?'<br><span style="color:var(--dim)">'+esc(x.owner_mailing)+'</span>':''}</div>
+        <select onchange="pipeUpd('${esc(x.key)}','stage',this.value)">${STAGES.map(s=>`<option ${s===st?'selected':''}>${s}</option>`).join('')}</select>
+        <input type="date" value="${esc(x.next)}" title="next action date" onchange="pipeUpd('${esc(x.key)}','next',this.value)">
+        <textarea placeholder="notes / next action" onchange="pipeUpd('${esc(x.key)}','notes',this.value)">${esc(x.notes)}</textarea>
+      </div>`).join('')||'<div class="empty" style="padding:8px 2px;font-size:11.5px">—</div>'}</div>`;}).join('');
+}
+function pipeExport(kind){
+  const p=pipeLoad(); if(!p.length){alert('Pipeline is empty — add sites with “+ Pipeline”.');return;}
+  const day=new Date().toISOString().slice(0,10);
+  let blob,name;
+  if(kind==='json'){blob=new Blob([JSON.stringify(p,null,2)],{type:'application/json'});name='bounty_pipeline_'+day+'.json';}
+  else{const cols=['stage','address','town','region','owner','owner_mailing','units','max_offer','action','next','notes','added','updated'];
+    const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
+    blob=new Blob([[cols.join(',')].concat(p.map(r=>cols.map(c=>esc(r[c])).join(','))).join('\n')],{type:'text/csv'});name='bounty_pipeline_'+day+'.csv';}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();
+}
+function pipeImport(inp){const f=inp.files&&inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const arr=JSON.parse(r.result);if(!Array.isArray(arr))throw 0;const cur=pipeLoad();const keys=new Set(cur.map(x=>x.key));arr.forEach(x=>{if(x&&x.key&&!keys.has(x.key))cur.push(x);});pipeSave(cur);renderPipeline();alert('Restored '+arr.length+' sites (merged).');}catch(e){alert('That file is not a pipeline backup.');}};r.readAsText(f);inp.value='';}
+// ---- outreach letter (plain, printable; no em dashes) ----
+function letter(region,i){
+  const d=region==='nyc'?(window._rows||[])[i]:((window.__BROWS&&window.__BROWS[region])||[])[i]; if(!d)return;
+  const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const town=d.town||d.muni||({BX:'Bronx',BK:'Brooklyn',QN:'Queens'}[d.borough]||'');
+  const body=`<!doctype html><html><head><meta charset="utf-8"><title>Letter · ${esc(d.address)}</title>
+  <style>body{font:14px/1.6 Georgia,serif;color:#111;max-width:680px;margin:40px auto;padding:0 24px}.pbtn{position:fixed;top:14px;right:16px;font:600 12px ui-monospace,monospace;padding:9px 15px;border-radius:8px;border:1px solid #1a7a54;background:#1a7a54;color:#fff;cursor:pointer}@media print{.pbtn{display:none}}.h{color:#777;font-size:12px}</style></head><body>
+  <button class="pbtn" onclick="window.print()">Print</button>
+  <p class="h">[Your letterhead]</p><p>${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</p>
+  <p>${esc(d.owner||'Property Owner')}<br>${esc(d.owner_mailing||'[mailing address]')}</p>
+  <p>Re: ${esc(d.address)}, ${esc(town)}</p>
+  <p>Dear Owner,</p>
+  <p>I am a local builder and developer and I am writing about your property at ${esc(d.address)}. I am not a broker and there is no fee involved. I buy land and underbuilt lots directly, close with my own financing, and I can work around tenants, estates, or a longer timeline if that helps you.</p>
+  <p>If you have thought about selling, or would simply like to know what the property could be worth to a builder, I would welcome a short conversation. A phone call or a walk of the site at your convenience is all I would ask.</p>
+  <p>Thank you for your time.</p>
+  <p>Sincerely,<br><br>[Name]<br>[Company]<br>[Phone] · [Email]</p>
+  </body></html>`;
+  const w=window.open('','_blank'); if(w&&w.document){w.document.open();w.document.write(body);w.document.close();}
+}
 let _map=null;
 // ---- generic sortable/searchable board (subs · CT · NJ) ----
 window.__BOARDS={};
@@ -342,8 +477,9 @@ function buildBoard(mountId, deals, cols, st){
       if(col.num){av=+av||0;bv=+bv||0;return (av-bv)*st.dir;}
       return String(av==null?'':av).localeCompare(String(bv==null?'':bv))*st.dir;});
     const shown=rows.slice(0,120);
+    window.__BROWS=window.__BROWS||{}; if(st.region)window.__BROWS[st.region]=shown;
     const head='<tr>'+cols.map(c=>`<th class="${c.num?'num ':''}sortable${st.key===c.key?' sorted':''}" title="${c.title||''}" onclick="__bsort('${mountId}','${c.key}')">${c.label}${st.key===c.key?(st.dir<0?' ▾':' ▴'):''}</th>`).join('')+'</tr>';
-    const body=shown.length?shown.map(x=>'<tr class="deal">'+cols.map(c=>`<td class="${c.num?'num ':''}${c.cls||''}" style="${c.style||''}">${c.html?c.html(x):(c.get(x)==null?'—':c.get(x))}</td>`).join('')+'</tr>').join('')
+    const body=shown.length?shown.map((x,i)=>'<tr class="deal">'+cols.map(c=>`<td class="${c.num?'num ':''}${c.cls||''}" style="${c.style||''}">${c.html?c.html(x,i):(c.get(x)==null?'—':c.get(x))}</td>`).join('')+'</tr>').join('')
       :'<tr><td class="empty" colspan="'+cols.length+'">No matches.</td></tr>';
     $(mountId).innerHTML=`<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
   }
@@ -452,17 +588,21 @@ function initTriMap(){
 function exportBoard(region){
   const D=(window.__D||{})[region]||[];
   if(!D.length){alert('No rows to export yet — wait for data to load.');return;}
-  const pitch={nyc:'Underbuilt lot — 485-x/UAP development interest',
-    subs:'Development-shaped parcel — purchase inquiry',
-    ct:'8-30g affordable set-aside development interest',
-    nj:'Redevelopment-area / PILOT development interest'}[region]||'';
-  const cols=['region','town','address','owner','owner_mailing','zone','acres','est_units','est_value','pitch'];
-  const rows=D.slice(0,200).map(x=>({
+  const pitch={nyc:'Underbuilt lot: direct purchase inquiry from a local builder',
+    subs:'Townhome site: direct purchase inquiry from a local builder',
+    ct:'Residential site (8-30g eligible town): direct purchase inquiry',
+    nj:'Redevelopment-area site: direct purchase inquiry',
+    rfp:'City-owned site: watch for HPD/EDC RFP; raise with Council member and CB'}[region]||'';
+  const rowsIn=region==='nyc'?D.filter(x=>x.action==='offer'||x.action==='negotiate'):D;
+  const cols=['action','max_offer','headroom','region','town','address','owner','owner_mailing','zone','acres','est_units','asking_proxy','best_path','pitch'];
+  const rows=rowsIn.slice(0,300).map(x=>({
+    action:x.action||'', max_offer:x.max_offer||x.walk_away_land||'', headroom:x.headroom!=null?x.headroom:'',
     region:x.region||region.toUpperCase(), town:x.town||x.borough||x.muni||'',
     address:x.address||'', owner:x.owner||'', owner_mailing:x.owner_mailing||'',
-    zone:x.zone||x.zone_desc||x.prop_class||'', acres:x.acres||'',
+    zone:x.zone||x.zone_desc||x.prop_class||'', acres:x.acres||(x.lot_sf?(x.lot_sf/43560).toFixed(2):''),
     est_units:x.est_units||x.est_units_at_assumed_density||'',
-    est_value:x.est_value||x.est_market_value||x.assessed_net||x.est_land_cost||'', pitch}));
+    asking_proxy:x.asking_proxy||x.est_value||x.est_market_value||x.assessed_net||x.est_land_cost||'',
+    best_path:x.best_market_path||x.product||'', pitch}));
   const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
   const csv=[cols.join(',')].concat(rows.map(r=>cols.map(c=>esc(r[c])).join(','))).join('\n');
   const a=document.createElement('a');
@@ -472,11 +612,16 @@ function exportBoard(region){
 }
 
 function scoreCls(s){return s>=80?'s-hi':(s>=55?'s-md':'s-lo');}
+const actCol={key:'action',label:'Action',sort:x=>({offer:3,negotiate:2,program:1}[x.action]||0),get:x=>x.action,html:x=>actBadge(x.action),title:'offer = residual land value covers the asking proxy; negotiate = 70-100%'};
+const offerCol={key:'offer',label:'Max offer',num:1,sort:x=>x.max_offer,get:x=>x.max_offer,html:x=>`<span class="em">${usd(x.max_offer)}</span>`,title:'Residual land value after owner-builder construction, 6% selling cost and 15% margin — never bid above this'};
+const headCol={key:'head',label:'Headroom',num:1,sort:x=>x.headroom||0,get:x=>x.headroom,html:x=>x.headroom!=null?`<span class="${x.headroom>=1?'up':(x.headroom>=0.7?'warn':'neu')}">${x.headroom.toFixed(2)}×</span>`:'—',title:'Max offer ÷ asking proxy (roll market value or the published land floor, whichever is higher)'};
+const pipeCol=r=>({key:'pipe',label:'',get:()=>'' ,html:(x,i)=>`<button class="pipebtn ${pipeHas(x)?'in':''}" onclick="event.stopPropagation();pipeAdd('${r}',${i})">${pipeHas(x)?'✓':'+ Pipeline'}</button> <button class="pipebtn" onclick="event.stopPropagation();letter('${r}',${i})">✉</button>`});
+const ownerCol={key:'owner',label:'Owner (outreach)',get:x=>x.owner,html:x=>`<span title="${(x.owner_mailing||'no mailing address on roll').replace(/"/g,'')}">${(x.owner||'—').slice(0,26)}${x.owner_mailing?' <span class="em">✉</span>':''}</span>`,style:'font-size:12px;color:var(--text2)'};
 const spill=x=>`<span class="scorepill ${scoreCls(x.score)}">${x.score}</span>`;
 const addrCell=x=>`<span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}`;
 
 function renderFilters(){
-  const boros=['ALL','BX','BK','QN'], tiers=[['ALL','All'],['market','Market'],['program','Program'],['city','City-owned'],['motivated','Motivated'],['new','New today']];
+  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
   $('filters').innerHTML=
     boros.map(b=>`<button class="chipbtn ${FILTER.boro===b?'on':''}" onclick="FILTER.boro='${b}';renderFilters();renderTable()">${b==='ALL'?'All boroughs':b}</button>`).join('')+
     '<span style="width:14px"></span>'+
@@ -484,16 +629,19 @@ function renderFilters(){
 }
 
 const NYCVAL={score:d=>d.score, address:d=>d.address, zone:d=>d.zone, units:d=>d.est_units,
-  land:d=>d.est_land_cost, walk:d=>d.walk_away_land, path:d=>d.best_path||'',
-  equity:d=>d.equity_needed, coc:d=>(d.best||{}).coc_pct};
-const NYCNUM=['score','units','land','walk','equity','coc'];
-function nycSort(key){if(SORT.key===key)SORT.dir*=-1;else{SORT.key=key;SORT.dir=['address','zone','path'].includes(key)?1:-1;}renderTable();}
+  land:d=>d.est_land_cost, walk:d=>d.max_offer||d.walk_away_land, head:d=>d.headroom, path:d=>d.best_market_path||d.best_path||'',
+  equity:d=>d.equity_needed, yoc:d=>{const b=(d.paths||[]).find(p=>p.path===d.best_market_path)||d.best||{};return b.yoc_pct;}, action:d=>d.action||''};
+const NYCNUM=['score','units','land','walk','head','equity','yoc'];
+function nycSort(key){if(SORT.key===key)SORT.dir*=-1;else{SORT.key=key;SORT.dir=['address','zone','path','action'].includes(key)?1:-1;}renderTable();}
 function nth(key,label,num,title){return `<th class="${num?'num ':''}sortable${SORT.key===key?' sorted':''}" title="${title}" onclick="nycSort('${key}')">${label}${SORT.key===key?(SORT.dir<0?' ▾':' ▴'):''}</th>`;}
 function renderTable(){
   const q=(FILTER.q||'').trim().toLowerCase();
   let rows=DEALS.filter(d=>
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
-    (FILTER.tier==='ALL' || (FILTER.tier==='city'?d.city_owned:(FILTER.tier==='new'?d.is_new:(FILTER.tier==='motivated'?d.motivated:d.tier===FILTER.tier)))) &&
+    !d.city_owned && d.action!=='rfp' &&
+    (FILTER.tier==='ALL' || (FILTER.tier==='actionable'?(d.action==='offer'||d.action==='negotiate'):
+      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
+      FILTER.tier==='s8'?(String(d.best_market_path||'').endsWith('_s8')&&(d.action==='offer'||d.action==='negotiate')): d.action===FILTER.tier)) &&
     (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+(d.motivated?' motivated':'')+(d.free_and_clear?' free clear':'')).toLowerCase().includes(q)));
   const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
   rows=rows.slice().sort((a,b)=>{let av=sv(a),bv=sv(b);
@@ -501,48 +649,58 @@ function renderTable(){
     return String(av==null?'':av).localeCompare(String(bv==null?'':bv))*SORT.dir || (b.score-a.score);}).slice(0,120);
   if(!rows.length){$('dealTbl').innerHTML='<div class="empty">No deals match this filter'+(q?' / search':'')+'.</div>';window._rows=[];return;}
   let h=`<table><thead><tr>
-    ${nth('score','Score',1,'Composite: land basis vs comps, underuse, best-path returns, size fit, city-owned')}
+    ${nth('score','Score',1,'Composite: headroom (walk-away vs est. land), yield on cost, size fit, underuse, motivated seller')}
     ${nth('address','Address',0,'Lot address · click row to expand')}${nth('zone','Zone',0,'Zoning district')}<th>Tags</th>
+    ${nth('action','Action',0,'Next step from the underwriting')}
     ${nth('units','Units',1,'Buildable units at max residential FAR')}
     ${nth('land','Est. land',1,'Comp-anchored land cost estimate — not an asking price')}
-    ${nth('walk','Walk-away',1,'Max land price where the deal still pencils — your negotiating ceiling')}
-    ${nth('path','Best path',0,'Best financing path that pencils')}
-    ${nth('equity','Equity',1,'Equity required under the best market path')}
-    ${nth('coc','CoC',1,'Cash-on-cash under best path (market tiers)')}
+    ${nth('walk','Max offer',1,'Walk-away land price at the target yield on cost with you as GC — never bid above this')}
+    ${nth('head','Headroom',1,'Max offer ÷ est. land. ≥1.0 = offer at comps; 0.7-1.0 = negotiate')}
+    ${nth('path','Best path',0,'Financing path with the highest walk-away land')}
+    ${nth('yoc','YoC',1,'Yield on cost (NOI ÷ TDC) under the best path at est. land')}
+    ${nth('equity','Equity',1,'Equity required under the best path (70% LTC, 1.20x DSCR)')}
+    <th></th>
   </tr></thead><tbody>`;
   rows.forEach((d,i)=>{
-    const b=d.best||{};
-    const tags=[d.city_owned?'<span class="badge b-city">City</span>':'',
-                d.tier==='market'?'<span class="badge b-mkt">Market</span>':'<span class="badge b-prog">Program</span>',
+    const bm=(d.paths||[]).find(p=>p.path===d.best_market_path)||d.best||{};
+    const inPipe=pipeHas(d);
+    const tags=[d.owner_class==='institutional'?'<span class="badge b-inst" title="Sells via board vote + AG/court approval (N-PCL 511)">Institutional</span>':'',
+                d.occupied?`<span class="badge b-occ" title="${d.existing_units} existing units: relocation + 485-x replacement units">Occupied</span>`:'',
                 d.motivated?`<span class="badge b-hold" title="${d.free_and_clear?'Free & clear (no mortgage after deed)':'Long-held owner'}${d.owner_tenure_years?' · '+d.owner_tenure_years+'y tenure':''}">${d.free_and_clear?'Free&clear':'Long-hold'}</span>`:'',
+                d.owner_mailing?'<span class="badge b-mkt" title="Owner mailing address on file (ACRIS deed)">✉</span>':'',
                 d.is_new?'<span class="badge b-new">New</span>':''].join(' ');
     h+=`<tr class="deal" onclick="toggle(${i})" id="r${i}">
       <td class="num"><span class="scorepill ${scoreCls(d.score)}">${d.score}</span></td>
       <td><span class="chip">${d.address}</span> <span class="neu" style="font-size:11px">${d.borough}</span></td>
-      <td class="mono" style="font-size:12px">${d.zone}</td><td>${tags}</td>
+      <td class="mono" style="font-size:12px">${d.zone}</td><td class="tags">${tags}</td>
+      <td>${actBadge(d.action)}</td>
       <td class="num">${d.est_units}</td>
       <td class="num">${usd(d.est_land_cost)}</td>
-      <td class="num em">${usd(d.walk_away_land)}</td>
-      <td style="font-size:12px;color:var(--text2)">${(d.best_path||'—').replace('_',' ')}</td>
-      <td class="num">${d.tier==='program'?'<span class="neu">$0*</span>':usd(d.equity_needed)}</td>
-      <td class="num ${b.coc_pct>=10?'up':'neu'}">${b.coc_pct!=null?b.coc_pct+'%':(d.tier==='program'?'fee':'—')}</td>
+      <td class="num em">${usd(d.max_offer||d.walk_away_land)}</td>
+      <td class="num ${d.headroom>=1?'up':(d.headroom>=0.7?'warn':'neu')}">${d.headroom!=null?d.headroom.toFixed(2)+'×':'—'}</td>
+      <td style="font-size:12px;color:var(--text2)">${(d.best_market_path||d.best_path||'—').replace(/_/g,' ')}</td>
+      <td class="num ${bm.yoc_pct>=6.25?'up':'neu'}">${bm.yoc_pct!=null?bm.yoc_pct.toFixed(2)+'%':'—'}</td>
+      <td class="num">${d.tier==='program'?'<span class="neu">fee</span>':usd(d.equity_needed)}</td>
+      <td><button class="pipebtn ${inPipe?'in':''}" onclick="event.stopPropagation();pipeAdd('nyc',${i})">${inPipe?'✓ In pipeline':'+ Pipeline'}</button></td>
     </tr>
-    <tr class="detail" id="d${i}" style="display:none"><td colspan="10">
+    <tr class="detail" id="d${i}" style="display:none"><td colspan="13">
       <div style="margin-bottom:9px;font-size:12px;color:var(--text2)">
-        <b style="color:var(--text)">${d.best_path_label||''}</b> · owner: <span class="mono">${d.owner||'—'}</span>
-        · lot ${d.lot_sf.toLocaleString()} SF · FAR ${d.built_far} → ${d.max_far} (${d.buildable_sf.toLocaleString()} SF buildable)
-        · assessed land ${usd(d.assessed_land)}${d.rent_market_used?` · nbhd rent ${usd(d.rent_market_used)}/mo${d.neighborhood_factor&&d.neighborhood_factor!==1?` (${d.neighborhood_factor}× boro)`:''}`:''}</div>
+        <b style="color:var(--text)">${actBadge(d.action)} ${d.action_why||''}</b><br>
+        owner: <span class="mono">${d.owner||'—'}</span>${d.owner_on_deed&&d.owner_on_deed!==d.owner?` (deed: <span class="mono">${d.owner_on_deed}</span>)`:''}${d.owner_mailing?` · mail to: <span class="mono" style="color:var(--em2)">${d.owner_mailing}</span>`:' · <span class="warn">no mailing address on file yet (ACRIS join runs nightly)</span>'}
+        · lot ${d.lot_sf.toLocaleString()} SF · FAR ${d.built_far} → ${d.max_far} (${d.buildable_sf.toLocaleString()} SF ZFA)${d.existing_units?` · <b class="warn">${d.existing_units} existing units</b>`:''}
+        · assessed land ${usd(d.assessed_land)}${d.rent_market_used?` · nbhd rent ${usd(d.rent_market_used)}/mo${d.neighborhood_factor&&d.neighborhood_factor!==1?` (${d.neighborhood_factor}× boro)`:''}`:''}
+        <br>walk-away land: <b class="em">${usd(d.walk_away_land)}</b> as owner-builder · <b>${usd(d.walk_away_land_institutional)}</b> with a third-party GC — the difference is your edge as the builder.</div>
       ${d.motivated?`<div style="margin-bottom:10px;font-size:12px;color:var(--warn)">◆ <b>Motivated-seller signal:</b> ${[d.free_and_clear?'free &amp; clear (no mortgage recorded after the deed — no payoff, cleaner close)':'',d.owner_tenure_years?`~${d.owner_tenure_years}y since last recorded deed (long-hold / low basis)`:''].filter(Boolean).join(' · ')} — statistically likelier to sell</div>`:''}
       <div class="paths">${(d.paths||[]).map(p=>`
         <div class="pth ${p.feasible?'ok':''}">
-          <div class="pn">${p.feasible?'●':'○'} ${p.path.toUpperCase().replace('_',' ')}</div>
+          <div class="pn">${p.feasible?'●':'○'} ${p.path.toUpperCase().replace(/_/g,' ')}</div>
           <div class="pl">${p.label}</div>
-          <div class="pv">TDC <b>${usd(p.tdc)}</b> · loan <b>${usd(p.loan)}</b><br>
-          equity <b>${usd(p.equity)}</b> (${p.equity_pct}%) · DSCR <b>${p.dscr}</b><br>
+          <div class="pv">TDC <b>${usd(p.tdc)}</b>${p.gross_sf?` (${p.gross_sf.toLocaleString()} gross SF)`:''} · loan <b>${usd(p.loan)}</b><br>
+          equity <b>${usd(p.equity)}</b> (${p.equity_pct}%) · DSCR <b>${p.dscr}</b>${p.yoc_pct!=null?` · YoC <b>${p.yoc_pct}%</b>`:''}<br>
           ${p.funding_gap!=null?`gap <b class="${p.funding_gap<=0?'up':'down'}">${usd(p.funding_gap)}</b> · dev fee <b>${usd(p.dev_fee)}</b>`:
-          `cash flow <b>${usd(p.cash_flow)}</b> · CoC <b>${p.coc_pct!=null?p.coc_pct+'%':'—'}</b>`}</div>
+          `cash flow <b>${usd(p.cash_flow)}</b> · CoC <b>${p.coc_pct!=null?p.coc_pct+'%':'—'}</b>${p.walk_away_land!=null?` · walk-away <b class="em">${usd(p.walk_away_land)}</b>`:''}`}</div>
         </div>`).join('')}</div>
-      <div style="margin-top:13px"><button class="onepager" onclick="event.stopPropagation();onePager(${i})">⎙ Lender / JV one-pager</button></div>
+      <div style="margin-top:13px"><button class="onepager" onclick="event.stopPropagation();onePager(${i})">⎙ Lender / JV one-pager</button> <button class="pipebtn" style="margin-left:8px" onclick="event.stopPropagation();letter('nyc',${i})">✉ Owner letter</button></div>
     </td></tr>`;
   });
   $('dealTbl').innerHTML=h+'</tbody></table>';
@@ -553,7 +711,7 @@ function toggle(i){const el=$('d'+i);el.style.display=el.style.display==='none'?
 function onePager(i){
   const d=(window._rows||[])[i]; if(!d)return;
   const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  const tierName=d.city_owned?'City-owned (HPD/EDC disposition)':(d.tier==='market'?'Market — self-executing':'Program — subsidy-dependent');
+  const tierName=d.city_owned?'City-owned (HPD/EDC disposition)':({offer:'OFFER — pencils at comps',negotiate:'NEGOTIATE — needs land below comps',program:'PROGRAM — HPD subsidy stack only',pass:'PASS'}[d.action]||(d.tier==='market'?'Market':'Program'));
   const b=d.best||{};
   const pRow=p=>`<tr class="${p.feasible?'ok':'no'}">
     <td>${p.feasible?'●':'○'} ${esc(p.path.toUpperCase().replace(/_/g,' '))}</td>
@@ -617,8 +775,8 @@ function onePager(i){
   <h2>Acquisition economics</h2>
   <div class="facts">
     ${fact('Est. land cost', usd(d.est_land_cost))}
-    ${fact('Walk-away land', '<span class="hl">'+usd(d.walk_away_land)+'</span>')}
-    ${fact('Assessed land', usd(d.assessed_land))}
+    ${fact('Max offer', '<span class="hl">'+usd(d.max_offer||d.walk_away_land)+'</span>')}
+    ${fact('Walk-away (builder / 3rd-party GC)', usd(d.walk_away_land)+' / '+usd(d.walk_away_land_institutional))}
     ${fact('Equity (best path)', d.tier==='program'?'dev-fee play':usd(d.equity_needed))}
   </div>
 
@@ -651,17 +809,18 @@ function onePager(i){
       $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
       window.__D.subs=subs.deals;
       buildBoard('subTbl', subs.deals, [
-        {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill,title:'Screen composite'},
+        {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill,title:'Headroom, vacant, size fit, value, county, mailing address on file'},
         {key:'address',label:'Address',get:x=>x.address,html:addrCell},
         {key:'muni',label:'Municipality',get:x=>x.muni,style:'font-size:12px'},
-        {key:'county',label:'County',sort:x=>x.region,get:x=>x.region,html:x=>x.region,cls:'mono',style:'font-size:11px;color:var(--text2)'},
-        {key:'class',label:'Class',sort:x=>x.class_desc||'',get:x=>x.class_desc,html:x=>(x.class_desc||'').slice(0,26),style:'font-size:11.5px;color:var(--muted)'},
-        {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres,title:'From front×depth — verify survey'},
-        {key:'units',label:'Est. units*',num:1,sort:x=>x.est_units_at_assumed_density,get:x=>x.est_units_at_assumed_density,title:'At assumed 20/acre — VERIFY zoning'},
-        {key:'value',label:'Est. value',num:1,sort:x=>x.est_market_value,get:x=>x.est_market_value,html:x=>usd(x.est_market_value),title:'Full market value per assessment roll'},
-        {key:'perunit',label:'$/unit*',num:1,sort:x=>x.value_per_est_unit,get:x=>x.value_per_est_unit,html:x=>usd(x.value_per_est_unit)},
-        {key:'owner',label:'Owner (outreach)',get:x=>x.owner,html:x=>(x.owner||'—').slice(0,26),style:'font-size:12px;color:var(--text2)'},
-      ], {q:'',key:'score',dir:-1})();
+        actCol,
+        {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres,title:'From the roll — verify survey'},
+        {key:'units',label:'Units',num:1,sort:x=>x.est_units,get:x=>x.est_units,html:x=>`${x.est_units}<span class="neu" style="font-size:10px"> @${x.realistic_density_uac||'—'}/ac</span>`,title:'At the published per-town density (townhomes) — verify zoning'},
+        {key:'product',label:'Product',get:x=>x.product,html:x=>`<span style="font-size:11px;color:var(--muted)">${x.product||'—'}<br>${usd(x.sale_price_per_unit)}/unit</span>`},
+        {key:'value',label:'Asking proxy',num:1,sort:x=>x.asking_proxy||x.est_market_value,get:x=>x.asking_proxy||x.est_market_value,html:x=>`<span title="${(x.asking_source||'roll market value').replace(/"/g,'')}">${usd(x.asking_proxy||x.est_market_value)}</span>`,title:'Higher of roll market value and the published $/acre land floor'},
+        offerCol, headCol,
+        {key:'profit',label:'Profit @ max',num:1,sort:x=>x.profit_at_max_offer,get:x=>x.profit_at_max_offer,html:x=>usd(x.profit_at_max_offer),title:'Developer margin (15% of revenue) if land is bought at max offer'},
+        ownerCol, pipeCol('subs'),
+      ], {q:'',key:'score',dir:-1,region:'subs'})();
     } else { $('subTbl').innerHTML='<div class="empty">Suburban screen data appears after the next engine run.</div>'; }
     // Connecticut 8-30g board
     if(ct&&ct.deals&&ct.deals.length){
@@ -672,15 +831,15 @@ function onePager(i){
         {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill},
         {key:'address',label:'Address',get:x=>x.address,html:addrCell},
         {key:'town',label:'Town',get:x=>x.town,style:'font-size:12px'},
-        {key:'zone',label:'Zone',sort:x=>x.zone||'',get:x=>x.zone,html:x=>x.zone||'—',style:'font-size:11px;color:var(--text2)',title:'Base zoning — 8-30g can override'},
-        {key:'play',label:'Play',sort:x=>x.play_type||'',get:x=>x.play_type,html:x=>(x.play_type||'').replace(' (occupied)',''),style:'font-size:11px'},
+        actCol,
+        {key:'zone',label:'Zone',sort:x=>x.zone||'',get:x=>x.zone,html:x=>(x.zone||'—').slice(0,22),style:'font-size:11px;color:var(--text2)',title:'Base zoning — 8-30g can override'},
         {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres},
-        {key:'units',label:'Est. units*',num:1,sort:x=>x.est_units,get:x=>x.est_units,title:'At assumed density WITH 8-30g override — verify'},
-        {key:'value',label:'Est. value',num:1,sort:x=>x.est_value,get:x=>x.est_value,html:x=>usd(x.est_value)},
-        {key:'perunit',label:'$/unit*',num:1,sort:x=>x.value_per_est_unit,get:x=>x.value_per_est_unit,html:x=>usd(x.value_per_est_unit)},
+        {key:'units',label:'Units',num:1,sort:x=>x.est_units,get:x=>x.est_units,html:x=>`${x.est_units}<span class="neu" style="font-size:10px"> @${x.realistic_density_uac||'—'}/ac</span>`,title:'At the density actually approved in this town under 8-30g — verify sewer'},
+        {key:'value',label:'Asking proxy',num:1,sort:x=>x.asking_proxy||x.est_value,get:x=>x.asking_proxy||x.est_value,html:x=>`<span title="${(x.asking_source||'').replace(/"/g,'')}">${usd(x.asking_proxy||x.est_value)}</span>`},
+        offerCol, headCol,
         {key:'flag',label:'8-30g',sort:x=>x.town_affordable_pct||99,get:x=>x.town_affordable_pct,html:ctflag,title:'Town affordable %; under 10% = override available'},
-        {key:'owner',label:'Owner (outreach)',get:x=>x.owner,html:x=>(x.owner||'—').slice(0,24),style:'font-size:12px;color:var(--text2)'},
-      ], {q:'',key:'score',dir:-1})();
+        ownerCol, pipeCol('ct'),
+      ], {q:'',key:'score',dir:-1,region:'ct'})();
     } else { $('ctTbl').innerHTML='<div class="empty">Connecticut board appears after the next engine run.</div>'; }
     // New Jersey redevelopment board
     if(nj&&nj.deals&&nj.deals.length){
@@ -691,15 +850,14 @@ function onePager(i){
         {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:spill},
         {key:'address',label:'Address',get:x=>x.address,html:addrCell},
         {key:'town',label:'Town',get:x=>x.town,style:'font-size:12px'},
-        {key:'county',label:'County',get:x=>x.county,cls:'mono',style:'font-size:11px;color:var(--text2)'},
+        actCol,
         {key:'class',label:'Class',sort:x=>x.prop_class||'',get:x=>x.prop_class,html:njpc,title:'NJ property class: 1=vacant, 4A=commercial, 4B=industrial'},
-        {key:'play',label:'Play',sort:x=>x.play_type||'',get:x=>x.play_type,html:x=>(x.play_type||'').replace(' redevelopment',' redev'),style:'font-size:11px'},
         {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres},
-        {key:'units',label:'Est. units*',num:1,sort:x=>x.est_units,get:x=>x.est_units,title:'At assumed town density — verify zoning'},
-        {key:'assessed',label:'Assessed',num:1,sort:x=>x.assessed_net,get:x=>x.assessed_net,html:x=>usd(x.assessed_net),title:'Assessed value — NOT market; apply town ratio'},
-        {key:'perunit',label:'$/unit*',num:1,sort:x=>x.assessed_per_est_unit,get:x=>x.assessed_per_est_unit,html:x=>usd(x.assessed_per_est_unit)},
-        {key:'owner',label:'Owner',get:x=>x.owner,html:x=>(x.owner||'—').slice(0,22)||'—',style:'font-size:12px;color:var(--text2)'},
-      ], {q:'',key:'score',dir:-1})();
+        {key:'units',label:'Units',num:1,sort:x=>x.est_units,get:x=>x.est_units,html:x=>`${x.est_units}<span class="neu" style="font-size:10px"> @${x.realistic_density_uac||x.assumed_density_uac||'—'}/ac</span>`,title:'At assumed town density (capped 150) — verify zoning / redevelopment plan'},
+        {key:'assessed',label:'Asking proxy',num:1,sort:x=>x.asking_proxy||x.assessed_net,get:x=>x.asking_proxy||x.assessed_net,html:x=>`<span title="${(x.asking_source||'assessed').replace(/"/g,'')}">${usd(x.asking_proxy||x.assessed_net)}</span>`,title:'Higher of assessed value and the published $/acre land floor — NJ assessed ≠ market'},
+        offerCol, headCol,
+        ownerCol, pipeCol('nj'),
+      ], {q:'',key:'score',dir:-1,region:'nj'})();
     } else { $('njTbl').innerHTML='<div class="empty">New Jersey board appears after the next engine run.</div>'; }
     // playbook
     if(pb&&pb.ladder){
@@ -744,12 +902,32 @@ function onePager(i){
     } else { $('progGrid').innerHTML='<div class="empty">Program library loads after the next data publish.</div>'; }
     DEALS=deals.deals||[]; window.__D.nyc=DEALS;
     const c=deals.counts||{};
+    // city-owned RFP pipeline board
+    const RFP=DEALS.filter(d=>d.city_owned||d.action==='rfp'); window.__D.rfp=RFP;
+    if(RFP.length){
+      $('rfpMeta').innerHTML=`<span class="mono">${RFP.length} city-owned sites · ${RFP.filter(d=>(d.paths||[]).some(p=>p.path==='ella'&&p.feasible)).length} pencil on the ELLA stack</span>`;
+      buildBoard('rfpTbl', RFP, [
+        {key:'address',label:'Address',get:x=>x.address,html:x=>`<span class="chip">${x.address}</span> <span class="neu" style="font-size:11px">${x.borough}</span>`},
+        {key:'owner',label:'Agency',get:x=>x.owner,html:x=>(x.owner||'—').replace(/^Nyc /,'').slice(0,34),style:'font-size:12px;color:var(--gold2)'},
+        {key:'zone',label:'Zone',get:x=>x.zone,cls:'mono',style:'font-size:12px'},
+        {key:'lot',label:'Lot SF',num:1,sort:x=>x.lot_sf,get:x=>x.lot_sf,html:x=>(x.lot_sf||0).toLocaleString()},
+        {key:'units',label:'Units',num:1,sort:x=>x.est_units,get:x=>x.est_units,title:'As-of-right at max residential FAR'},
+        {key:'uap',label:'w/ UAP',num:1,sort:x=>{const p=(x.paths||[]).find(q=>q.path==='uap');return p?p.units_market+p.units_affordable:0;},get:x=>{const p=(x.paths||[]).find(q=>q.path==='uap');return p?p.units_market+p.units_affordable:'—';},title:'Units with the City of Yes UAP floor-area bonus'},
+        {key:'gap',label:'ELLA gap',num:1,sort:x=>{const p=(x.paths||[]).find(q=>q.path==='ella');return p?-p.funding_gap:-9e9;},get:x=>{const p=(x.paths||[]).find(q=>q.path==='ella');return p?p.funding_gap:null;},html:x=>{const p=(x.paths||[]).find(q=>q.path==='ella');return p?`<span class="${p.funding_gap<=0?'up':'down'}">${p.funding_gap<=0?'surplus '+usd(-p.funding_gap):'gap '+usd(p.funding_gap)}</span>`:'—';},title:'Funding gap on the all-affordable stack at $185k/unit city subsidy; surplus = pencils'},
+        {key:'fee',label:'Dev fee',num:1,sort:x=>{const p=(x.paths||[]).find(q=>q.path==='ella');return p?p.dev_fee:0;},get:x=>{const p=(x.paths||[]).find(q=>q.path==='ella');return p?p.dev_fee:null;},html:x=>{const p=(x.paths||[]).find(q=>q.path==='ella');return p?`<span class="em">${usd(p.dev_fee)}</span>`:'—';},title:'Developer fee at 10% of TDC — the profit on an HPD deal, shared with the 51% partner'},
+        {key:'pipe',label:'',get:()=>'' ,html:(x,i)=>`<button class="pipebtn ${pipeHas(x)?'in':''}" onclick="event.stopPropagation();pipeAdd('rfp',${i})">${pipeHas(x)?'✓':'+ Watch'}</button>`},
+      ], {q:'',key:'units',dir:-1,region:'rfp'})();
+    } else { $('rfpTbl').innerHTML='<div class="empty">No city-owned sites in the current scan.</div>'; }
+    renderPipeline();
     // hero
+    const subsC=(subs&&subs.counts)||{}, ctC=(ct&&ct.counts)||{}, njC=(nj&&nj.counts)||{};
+    const subAct=(subsC.offer||0)+(subsC.negotiate||0)+(ctC.offer||0)+(ctC.negotiate||0)+(njC.offer||0)+(njC.negotiate||0);
     const hero=[
-      {k:'Qualified sites',v:c.qualified??'—',s:`${c.scanned??'—'} parcels scanned`},
-      {k:'Pencil today',v:c.pencils??'—',s:'some financing path works',cls:'em'},
-      {k:'City-owned',v:c.city_owned??'—',s:'HPD/EDC disposition targets',cls:'gold'},
-      {k:'New today',v:c.new_today??'—',s:'first seen this scan'},
+      {k:'NYC: make an offer',v:c.offer??'—',s:`${c.negotiate??0} more to negotiate · ${c.pass??0} passed`,cls:'em'},
+      {k:'NYC: letters ready',v:c.with_mailing??'—',s:'owner mailing address on file'},
+      {k:'Suburbs · CT · NJ',v:subAct||'—',s:`${(subsC.offer||0)+(subsC.negotiate||0)} NY · ${(ctC.offer||0)+(ctC.negotiate||0)} CT · ${(njC.offer||0)+(njC.negotiate||0)} NJ actionable`,cls:'em'},
+      {k:'City-owned (RFP)',v:c.city_owned??'—',s:'HPD/DCAS/EDC pipeline',cls:'gold'},
+      {k:'New today',v:c.new_today??'—',s:`${c.scanned??'—'} NYC parcels scanned`},
       {k:'Land comps',v:deals.land_comps_psf?`${deals.land_comps_psf.BK||'—'}`:'—',s:`BK $/SF · BX ${deals.land_comps_psf?.BX||'—'} · QN ${deals.land_comps_psf?.QN||'—'} (${c.land_sales_used||0} real sales)`,sm:1},
     ];
     $('hero').innerHTML=hero.map(t=>`<div class="kpi"><div class="k">${t.k}</div><div class="v ${t.sm?'sm':''} ${t.cls||''}">${t.v}</div><div class="s">${t.s}</div></div>`).join('');
@@ -776,7 +954,8 @@ function onePager(i){
     } else { initTriMap(); }
     // assumptions
     const A=deals.program_assumptions||deals.assumptions||{};
-    const rows=[["Hard cost","$"+(A.hard_cost_psf||'—')+"/SF"],["Soft cost",(A.soft_cost_pct*100||'—')+"%"],
+    const hc=A.hard_cost_psf&&typeof A.hard_cost_psf==='object'?`$${A.hard_cost_psf.owner_builder} you as GC · $${A.hard_cost_psf.institutional} third-party`:("$"+(A.hard_cost_psf||'—'));
+    const rows=[["Hard cost (gross SF)",hc],["Soft + financing",`${Math.round((A.soft_cost_pct||0)*100)}% + ${Math.round((A.financing_pct||0)*100)}%`],["Target yield on cost",A.target_yoc?(A.target_yoc*100).toFixed(2)+'%':'—'],["Section 8 rent",A.rent_mo&&A.rent_mo.s8_vps_blended?`min(market, ${usd(A.rent_mo.s8_vps_blended)} VPS) · ${(A.vacancy_s8||0)*100}% vacancy`:'—'],
       ["Unit factor",(A.du_factor_sf||'—')+" SF/DU"],["Market rent BX/BK/QN", A.rent_mo?`$${A.rent_mo.market.BX}/${A.rent_mo.market.BK}/${A.rent_mo.market.QN}`:'—'],
       ["80% AMI rent",A.rent_mo?usd(A.rent_mo.ami80)+"/mo":'—'],["60% AMI rent",A.rent_mo?usd(A.rent_mo.ami60)+"/mo":'—'],
       ["Taxes unabated/abated",A.tax_psf_unabated?`$${A.tax_psf_unabated} / $${A.tax_psf_abated} psf`:'—'],
@@ -785,7 +964,7 @@ function onePager(i){
       ["LIHTC equity",(A.lihtc_equity_pct_tdc*100||'—')+"% of TDC"],["City subsidy",usd(A.city_subsidy_per_unit)+"/unit"]];
     $('assumpBox').innerHTML=rows.map(([k,v])=>`<div class="as"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
     $('assumpNote').textContent=A.note||'';
-    $('foot').innerHTML=`<b>How this works.</b> A daily engine scans every NYC parcel for underutilized development sites (built FAR under half of allowed, dev-friendly zones), anchors land to real vacant-land sale comps, and underwrites each site across every applicable financing path — 485-x tiers, City of Yes UAP, Section 8 overlay, and the ELLA/LIHTC stack. Self-executing deals rank above subsidy-dependent ones; nothing simulated is shown without a label. Estimates are for screening and outreach — verify zoning, site condition, and program terms before acting. Not investment advice.`;
+    $('foot').innerHTML=`<b>How this works.</b> A daily engine scans every NYC parcel for underutilized development sites (built FAR under half of allowed, dev-friendly zones), drops lots nobody can buy (Parks, DOT, DOE, NYCHA and other agencies), anchors land to real vacant-land sale comps, and underwrites each private site across every applicable path — 485-x Options B and C, City of Yes UAP, a Section 8 overlay capped at the voucher payment standard, and the ELLA/LIHTC stack — with hard cost on gross area and you as the GC. The output per site is a next step and a max offer. Suburban, CT and NJ parcels get a for-sale residual land model at a per-town density. City-owned HPD/DCAS/EDC lots go to the RFP board. Estimates are for screening and outreach — verify zoning, sewer, site condition and program terms before acting. Not investment advice.`;
   }catch(e){
     $('hero').innerHTML=`<div class="kpi"><div class="k">status</div><div class="v sm warn">reconnecting</div><div class="s">auto-retrying…</div></div>`;
     $('briefBox').innerHTML=`<div class="banner">Data source is briefly unreachable (<code>${e.message}</code>). This is usually a temporary GitHub rate-limit on the raw feed — retrying automatically. If it persists, enabling GitHub Pages (a proper CDN) fixes it permanently.</div>`;

@@ -16,8 +16,10 @@ are from the roll — your outreach list.
 
 Output: bounty/data/ct_deals.json (+ appends to history.json)
 """
-import json, os, urllib.request, urllib.parse, traceback
+import json, os, sys, urllib.request, urllib.parse, traceback
 from datetime import datetime, timezone, date
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import residual
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/1.0)"}
 BASE = "https://data.ct.gov/resource/rny9-6ak2.json"
@@ -115,6 +117,7 @@ def main():
     F, keys = discover()
     deals = []
     town_counts = {}
+    passed = 0
     for town, meta in TOWNS.items():
         try:
             rows = fetch_town(F, town)
@@ -148,14 +151,19 @@ def main():
             per_unit = val/est_units if est_units else 9e9
             addr = str(r.get(F["addr"], "") or "").title() if F["addr"] else ""
             play_type = "vacant land" if vacant else "teardown / assemblage (occupied)"
+            R = residual.residual("CT", town, acres, val, eight_30g=applies)
+            if not R or R["realistic_units"] < 4: continue
+            if R["action"] == "pass": passed += 1; continue
             zone_label = (r.get(F["zone_desc"]) if F["zone_desc"] and r.get(F["zone_desc"]) else
                           (r.get(F["zone"]) if F["zone"] else None))
-            # score: 8-30g availability dominates, then vacant land, basis, size
-            s_830 = 40 if applies else 8
-            s_cost = max(0, min(1, (400000 - per_unit)/380000)) * 22
-            s_vac = 20 if vacant else 4
-            s_size = max(0, min(1, est_units/40)) * 12
-            score = round(s_830 + s_cost + s_vac + s_size, 1)
+            # score: headroom first, then 8-30g leverage, vacant land, size, mailing address on file
+            head = R["headroom"] or 1.0
+            s_head = max(0, min(1, (head - 0.7)/1.0)) * 40
+            s_830 = 22 if applies else 6
+            s_vac = 14 if vacant else 4
+            s_size = max(0, min(1, R["realistic_units"]/30)) * 12
+            s_mail = 6 if mail else 0
+            score = round(s_head + s_830 + s_vac + s_size + s_mail, 1)
             deals.append({
                 "region": "CT", "town": town.title(),
                 "address": addr or "(unaddressed parcel)",
@@ -171,8 +179,13 @@ def main():
                 "town_affordable_pct": meta["pct"],
                 "eight_30g_note": meta.get("reason") or meta.get("note") or
                     "Under 10% affordable — a 30%-set-aside project can override local zoning denial.",
-                "assumed_density_uac": uac,
-                "est_units": est_units,
+                "assumed_density_uac": uac, "est_units_at_assumed_density": est_units,
+                "est_units": R["realistic_units"], "realistic_density_uac": R["realistic_density_uac"],
+                "product": R["product"], "sale_price_per_unit": R["sale_price_per_unit"],
+                "revenue": R["revenue"], "build_cost": R["build_cost"],
+                "max_offer": R["max_offer"], "headroom": R["headroom"], "action": R["action"], "action_why": R["action_why"],
+                "asking_proxy": R["asking_proxy"], "asking_source": R["asking_source"],
+                "profit_at_max_offer": R["profit_at_max_offer"],
                 "assessed_total": int(total_val), "est_value": int(val),
                 "value_per_acre": int(per_acre), "value_per_est_unit": int(per_unit),
                 "owner": owner, "owner_mailing": mail, "score": score, "tier": "screen",
@@ -203,8 +216,10 @@ def main():
            "towns": {t: {"affordable_pct": m["pct"], "8_30g_applies": m["applies"]} for t, m in TOWNS.items()},
            "counts": {"by_town": town_counts, "qualified": len(deals), "new_today": new_count,
                       "in_8_30g_towns": sum(1 for d in deals if d["eight_30g_applies"]),
+                      "offer": sum(1 for d in deals if d["action"]=="offer"),
+                      "negotiate": sum(1 for d in deals if d["action"]=="negotiate"), "passed": passed,
                       "vacant": sum(1 for d in deals if d["vacant"])},
-           "assumptions": ASSUMPTIONS,
+           "assumptions": ASSUMPTIONS, "residual_assumptions": residual.ASSUMPTIONS,
            "deals": deals[:250]}
     err = "bounty/data/CT_ERROR.txt"
     if os.path.exists(err): os.remove(err)

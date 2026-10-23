@@ -12,8 +12,10 @@ verified against town zoning before any underwriting is trusted.
 
 Outputs: bounty/data/nys_deals.json (+ appends to history.json)
 """
-import json, os, urllib.request, urllib.parse, traceback
+import json, os, sys, urllib.request, urllib.parse, traceback
 from datetime import datetime, timezone, date
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import residual
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/1.0)"}
 BASE = "https://data.ny.gov/resource/7vem-aaz7.json"
@@ -110,6 +112,7 @@ def main():
     all_classes = A["target_classes_vacant"] + A["target_classes_underused"]
     deals = []
     county_counts = {}
+    passed = 0
     for county in COUNTIES:
         try:
             rows = fetch_county(F, county, all_classes, roll_year)
@@ -132,6 +135,7 @@ def main():
             if not vacant and imp_ratio > A["underuse_improvement_ratio_max"]: continue
             est_units = int(acres * A["density_units_per_acre"])
             if est_units < 8: continue
+            muni_name = str(r.get(F["muni"], "") or "")
             val = market if market > 0 else tot_av * 1.0
             per_acre = val/acres if acres > 0 else 0
             if per_acre < A["min_value_per_acre"]: continue   # unbuildable-land floor
@@ -140,13 +144,18 @@ def main():
             if F["owner2"] and r.get(F["owner2"]):
                 owner = (owner + " " + str(r.get(F["owner2"])).title()).strip()
             if any(k in owner.upper() for k in EXCLUDE_OWNERS): continue
-            # score: vacant preferred, sane land basis per est-unit, size, priority county
-            per_unit = val/est_units if est_units else 9e9
-            s_type = 26 if vacant else 16
-            s_cost = max(0, min(1, (150000 - per_unit)/130000)) * 34
-            s_size = max(0, min(1, est_units/40)) * 18
-            s_val  = 10 if val < 2_000_000 else (6 if val < 3_000_000 else 2)
-            s_cty  = {"Westchester": 12, "Putnam": 6, "Dutchess": 6}.get(county, 0)
+            # residual land value -> max offer -> action (the actionable layer)
+            R = residual.residual("NYS", muni_name, acres, val)
+            if not R or R["realistic_units"] < 4: continue
+            if R["action"] == "pass": passed += 1; continue
+            per_unit = val/R["realistic_units"]
+            head = R["headroom"] or 1.0
+            s_head = max(0, min(1, (head - 0.7)/1.0)) * 40
+            s_type = 18 if vacant else 8
+            s_size = max(0, min(1, R["realistic_units"]/24)) * 14    # 4-24 townhomes = the sweet spot
+            s_val  = 12 if val < 1_500_000 else (8 if val < 3_000_000 else 3)
+            s_cty  = {"Westchester": 10, "Putnam": 6, "Dutchess": 4}.get(county, 0)
+            s_mail = 6 if (F.get("mail_addr") and r.get(F["mail_addr"])) else 0
             deals.append({
                 "region": county, "muni": str(r.get(F["muni"], "") or "").title(),
                 "address": addr or "(unaddressed parcel)",
@@ -154,6 +163,12 @@ def main():
                 "acres": round(acres, 2), "vacant": vacant,
                 "improvement_ratio": round(imp_ratio, 2),
                 "est_units_at_assumed_density": est_units,
+                "est_units": R["realistic_units"], "realistic_density_uac": R["realistic_density_uac"],
+                "product": R["product"], "sale_price_per_unit": R["sale_price_per_unit"],
+                "revenue": R["revenue"], "build_cost": R["build_cost"],
+                "max_offer": R["max_offer"], "headroom": R["headroom"], "action": R["action"], "action_why": R["action_why"],
+                "asking_proxy": R["asking_proxy"], "asking_source": R["asking_source"],
+                "profit_at_max_offer": R["profit_at_max_offer"],
                 "assessed_total": int(tot_av), "est_market_value": int(val),
                 "value_per_acre": int(per_acre), "value_per_est_unit": int(per_unit),
                 "owner": owner,
@@ -161,11 +176,17 @@ def main():
                 "school_district": r.get(F["school"]),
                 "lat": (n(r.get(F["lat"]), None) if F.get("lat") else None),
                 "lng": (n(r.get(F["lng"]), None) if F.get("lng") else None),
-                "score": round(s_type + s_cost + s_size + s_val + s_cty, 1),
+                "score": round(s_head + s_type + s_size + s_val + s_cty + s_mail, 1),
                 "tier": "screen",
                 "verify": "Confirm zoning/density with the municipality before underwriting.",
             })
     deals.sort(key=lambda d: d["score"], reverse=True)
+    # per-municipality cap so one town's roll quirks cannot flood the board
+    per = {}; capped = []
+    for d in deals:
+        k = d["muni"]; per[k] = per.get(k, 0) + 1
+        if per[k] <= 25: capped.append(d)
+    deals = capped
     # history / new flags (shared history file, keyed by county+address)
     hp = "bounty/data/history.json"
     hist = {}
@@ -180,11 +201,13 @@ def main():
     json.dump(hist, open(hp, "w"))
     out = {"generated_utc": datetime.now(timezone.utc).isoformat(),
            "region": "NY Suburbs — Westchester, Putnam, Dutchess",
-           "tier_note": "SCREEN tier: real NYS parcel/assessment data; density and value figures are published assumptions pending town-hall zoning verification. Not underwritten like NYC.",
+           "tier_note": "Real NYS parcel/assessment data. Units are at a per-town density the board will plausibly approve for townhomes; max offer is the residual land value after owner-builder construction, selling cost and a 15% margin. Verify zoning, sewer and wetlands at town hall before offering.",
            "roll_year": roll_year,
            "counts": {"by_county": county_counts, "qualified": len(deals), "new_today": new_count,
-                      "vacant": sum(1 for d in deals if d["vacant"])},
-           "assumptions": ASSUMPTIONS,
+                      "vacant": sum(1 for d in deals if d["vacant"]),
+                      "offer": sum(1 for d in deals if d["action"]=="offer"),
+                      "negotiate": sum(1 for d in deals if d["action"]=="negotiate"), "passed": passed},
+           "assumptions": ASSUMPTIONS, "residual_assumptions": residual.ASSUMPTIONS,
            "deals": deals[:250]}
     err = "bounty/data/NYS_ERROR.txt"
     if os.path.exists(err): os.remove(err)
