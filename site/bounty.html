@@ -320,7 +320,7 @@
     <div class="card" style="margin-top:16px">
       <div class="card-head"><span class="code">FAST TRACK</span><span class="t">Neighborhood Builders Fast Track RFQ — what it takes</span><span class="expo"><a href="https://www.nyc.gov/site/hpd/services-and-information/neighborhood-builders-rfq.page" target="_blank" rel="noopener" class="em">HPD page ↗</a></span></div>
       <div class="checklist">
-        <div class="check"><h4>01 · ELIGIBILITY</h4><p>Nonprofit organizations or NYC-certified M/WBEs only. In a JV the nonprofit/M/WBE must hold <b>≥ 51% of managing ownership</b>. A non-M/WBE developer or GC can be the 49% partner and builder.</p><p style="margin-top:6px"><b>Your move:</b> line up one nonprofit or M/WBE co-developer who already has an HPD-completed project. They qualify; you bring the site work, the GC and the equity.</p></div>
+        <div class="check"><h4>01 · ELIGIBILITY</h4><p>Nonprofit organizations or NYC-certified M/WBEs only. In a JV the nonprofit/M/WBE must hold <b>≥ 51% of managing ownership</b>. A non-M/WBE developer or GC can be the 49% partner and builder.</p><p style="margin-top:6px"><b>Your move:</b> line up one nonprofit or M/WBE co-developer who already has an HPD-completed project. They qualify; you bring the site work, the GC and the equity.</p><p style="margin-top:6px"><b>The church angle:</b> a congregation is a nonprofit. On the Deal Board, the <span class="badge b-inst">Faith</span> filter lists congregations that own underbuilt land; a ground-lease JV with the church as 51% partner is both a Fast Track-eligible team and a site, with no land purchase. Church sales and long leases need a board resolution plus Attorney General or court approval (Religious Corporations Law §12 / N-PCL 511), so start with the trustees and budget 6-12 months.</p></div>
         <div class="check"><h4>02 · SUBMISSION</h4><ul><li>Email <b>NeighborhoodBuildersRFQ@hpd.nyc.gov</b> stating intent to submit, then register to download the RFQ.</li><li>Form A-1 completeness checklist · Forms C-1/C-2 residential development experience · Form D portfolio management · Form E financial capacity · no adverse findings.</li><li>One PDF, single-page layouts, table of contents, every form complete.</li><li>Rolling intake; the initial qualified list is expected Fall 2026 and updated periodically.</li></ul></div>
         <div class="check"><h4>03 · HOW SITES GET ASSIGNED</h4><p>HPD picks from the Qualified Developer List for site-specific mini-competitions; being listed does not guarantee a site. Separately, HPD/EDC publish full RFPs (5+ per year under the LIFT program) and the LIFT tracker maps the 100+ city sites in the pipeline.</p><p style="margin-top:6px"><a class="em" href="https://www.nyc.gov/site/hpd/services-and-information/request-for-proposals.page" target="_blank" rel="noopener">Open HPD RFPs ↗</a> · <a class="em" href="https://storymaps.arcgis.com/stories/afce9e93d79847608fc846878e17db8e" target="_blank" rel="noopener">LIFT site tracker ↗</a> · <a class="em" href="https://edc.nyc/rfps" target="_blank" rel="noopener">EDC RFPs ↗</a></p></div>
         <div class="check"><h4>04 · MOVING A LOT INTO THE PIPELINE</h4><p>A city lot that is not yet in HPD's inventory (DCAS surplus, an agency lot that looks unused) gets there politically: the Council member for the district, the community board's land-use committee and the Borough President's office can ask DCAS/HPD to designate it. Bring the zoning math from this board and a nonprofit partner's letter of interest. Expect 2-4 years; do it for sites you also want for the long run.</p></div>
@@ -594,6 +594,7 @@ function exportBoard(region){
     nj:'Redevelopment-area site: direct purchase inquiry',
     rfp:'City-owned site: watch for HPD/EDC RFP; raise with Council member and CB'}[region]||'';
   const rowsIn=region==='nyc'?D.filter(x=>x.action==='offer'||x.action==='negotiate'):D;
+  const pitchFor=x=>x.faith_owned?'Congregation land: ground-lease JV, you develop and build, they stay the nonprofit majority partner':(x.owner_class==='institutional'?'Institutional owner: purchase or JV, board + AG approval':pitch);
   const cols=['action','max_offer','headroom','region','town','address','owner','owner_mailing','zone','acres','est_units','asking_proxy','best_path','pitch'];
   const rows=rowsIn.slice(0,300).map(x=>({
     action:x.action||'', max_offer:x.max_offer||x.walk_away_land||'', headroom:x.headroom!=null?x.headroom:'',
@@ -602,7 +603,7 @@ function exportBoard(region){
     zone:x.zone||x.zone_desc||x.prop_class||'', acres:x.acres||(x.lot_sf?(x.lot_sf/43560).toFixed(2):''),
     est_units:x.est_units||x.est_units_at_assumed_density||'',
     asking_proxy:x.asking_proxy||x.est_value||x.est_market_value||x.assessed_net||x.est_land_cost||'',
-    best_path:x.best_market_path||x.product||'', pitch}));
+    best_path:x.best_market_path||x.product||'', pitch:pitchFor(x)}));
   const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
   const csv=[cols.join(',')].concat(rows.map(r=>cols.map(c=>esc(r[c])).join(','))).join('\n');
   const a=document.createElement('a');
@@ -621,7 +622,7 @@ const spill=x=>`<span class="scorepill ${scoreCls(x.score)}">${x.score}</span>`;
 const addrCell=x=>`<span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}`;
 
 function renderFilters(){
-  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
+  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
   $('filters').innerHTML=
     boros.map(b=>`<button class="chipbtn ${FILTER.boro===b?'on':''}" onclick="FILTER.boro='${b}';renderFilters();renderTable()">${b==='ALL'?'All boroughs':b}</button>`).join('')+
     '<span style="width:14px"></span>'+
@@ -640,7 +641,7 @@ function renderTable(){
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
     !d.city_owned && d.action!=='rfp' &&
     (FILTER.tier==='ALL' || (FILTER.tier==='actionable'?(d.action==='offer'||d.action==='negotiate'):
-      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
+      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
       FILTER.tier==='s8'?(String(d.best_market_path||'').endsWith('_s8')&&(d.action==='offer'||d.action==='negotiate')): d.action===FILTER.tier)) &&
     (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+(d.motivated?' motivated':'')+(d.free_and_clear?' free clear':'')).toLowerCase().includes(q)));
   const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
@@ -664,7 +665,8 @@ function renderTable(){
   rows.forEach((d,i)=>{
     const bm=(d.paths||[]).find(p=>p.path===d.best_market_path)||d.best||{};
     const inPipe=pipeHas(d);
-    const tags=[d.owner_class==='institutional'?'<span class="badge b-inst" title="Sells via board vote + AG/court approval (N-PCL 511)">Institutional</span>':'',
+    const tags=[d.faith_owned?'<span class="badge b-inst" title="Church / congregation: a nonprofit landowner — Fast Track 51% partner + ground-lease JV. Sale or lease needs AG/court approval (N-PCL 511)">Faith</span>':(d.owner_class==='institutional'?'<span class="badge b-inst" title="Sells via board vote + AG/court approval (N-PCL 511)">Institutional</span>':''),
+                (d.owner_lot_count||0)>1?`<span class="badge b-hold" title="Same owner holds ${d.owner_lot_count} underbuilt lots on this board: ${(d.owner_other_lots||[]).join(', ')}">${d.owner_lot_count} lots</span>`:'',
                 d.occupied?`<span class="badge b-occ" title="${d.existing_units} existing units: relocation + 485-x replacement units">Occupied</span>`:'',
                 d.motivated?`<span class="badge b-hold" title="${d.free_and_clear?'Free & clear (no mortgage after deed)':'Long-held owner'}${d.owner_tenure_years?' · '+d.owner_tenure_years+'y tenure':''}">${d.free_and_clear?'Free&clear':'Long-hold'}</span>`:'',
                 d.owner_mailing?'<span class="badge b-mkt" title="Owner mailing address on file (ACRIS deed)">✉</span>':'',
@@ -689,6 +691,7 @@ function renderTable(){
         owner: <span class="mono">${d.owner||'—'}</span>${d.owner_on_deed&&d.owner_on_deed!==d.owner?` (deed: <span class="mono">${d.owner_on_deed}</span>)`:''}${d.owner_mailing?` · mail to: <span class="mono" style="color:var(--em2)">${d.owner_mailing}</span>`:' · <span class="warn">no mailing address on file yet (ACRIS join runs nightly)</span>'}
         · lot ${d.lot_sf.toLocaleString()} SF · FAR ${d.built_far} → ${d.max_far} (${d.buildable_sf.toLocaleString()} SF ZFA)${d.existing_units?` · <b class="warn">${d.existing_units} existing units</b>`:''}
         · assessed land ${usd(d.assessed_land)}${d.rent_market_used?` · nbhd rent ${usd(d.rent_market_used)}/mo${d.neighborhood_factor&&d.neighborhood_factor!==1?` (${d.neighborhood_factor}× boro)`:''}`:''}
+        ${d.faith_owned?`<br><b class="em">Faith-owned JV play:</b> the congregation keeps the land on a ground lease (no cash offer needed), qualifies as the nonprofit 51% partner for HPD Fast Track or an HPD-financed deal, and you develop and build. Ask for the trustees, not a broker.${(d.owner_lot_count||0)>1?` This owner also holds ${d.owner_lot_count-1} other underbuilt lot(s) here: ${(d.owner_other_lots||[]).join(', ')}.`:''}`:''}
         <br>walk-away land: <b class="em">${usd(d.walk_away_land)}</b> as owner-builder · <b>${usd(d.walk_away_land_institutional)}</b> with a third-party GC — the difference is your edge as the builder.</div>
       ${d.motivated?`<div style="margin-bottom:10px;font-size:12px;color:var(--warn)">◆ <b>Motivated-seller signal:</b> ${[d.free_and_clear?'free &amp; clear (no mortgage recorded after the deed — no payoff, cleaner close)':'',d.owner_tenure_years?`~${d.owner_tenure_years}y since last recorded deed (long-hold / low basis)`:''].filter(Boolean).join(' · ')} — statistically likelier to sell</div>`:''}
       <div class="paths">${(d.paths||[]).map(p=>`

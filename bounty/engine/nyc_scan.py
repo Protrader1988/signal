@@ -171,6 +171,17 @@ def fetch_pluto():
         offset += 2000
     return out
 
+FAITH_KEYS = ("CHURCH"," CH ","CH/","CHTLC","CATHOLIC","DIOCESE","ARCHDIOCESE","CONGREGATION","CONG ","SYNAGOGUE",
+              "TEMPLE","MOSQUE","MASJID","PARISH","RECTORY","CONVENT","MINISTR","BAPTIST","METHODIST","LUTHERAN",
+              "PRESBYTERIAN","EPISCOPAL","PENTECOSTAL","YESHIVA","BNOS","BAIS ","BETH ","B'NAI","BNAI","TALMUD","TORAH",
+              "HEBREW","ISLAMIC","CHRISTIAN","GOSPEL","TABERNACLE","ASSEMBLY OF GOD","SEVENTH DAY","7 DAY","ADVENTIST",
+              "SALVATION ARMY","SAINT","MONSIGNOR","REVEREND","REV.","ROMAN C","R C ","RC ","EVANGEL","APOSTOLIC","ZION","BETHEL",
+              "IGLESIA","A.M.E","AME ","A.W.M.E","CHUR","HOLY ","MISSION","DELIVERANCE","FELLOWSHIP","BIBLE","PRAYER","WORSHIP","JEHOVAH")
+
+def faith_owned(p):
+    owner = (p.get("ownername") or "").upper()
+    return any(k in owner for k in FAITH_KEYS)
+
 def owner_class(p):
     """'private' | 'rfp' (HPD/DCAS/EDC) | 'excluded' (agency that does not dispose)."""
     owner = (p.get("ownername") or "").upper()
@@ -254,6 +265,7 @@ def underwrite(p, comps):
         "existing_units": existing, "occupied": occupied,
         "year_built": int(n(p.get("yearbuilt"))) or None,
         "owner": (p.get("ownername") or "").title(), "owner_class": oclass, "city_owned": city,
+        "faith_owned": faith_owned(p) and oclass == "institutional",
         "owner_mailing": "", "owner_on_deed": "",
         "assessed_land": int(assess_land), "land_comp_psf": comp_psf,
         "est_land_cost": int(land),
@@ -288,6 +300,16 @@ def main():
         if d: deals.append(d)
     deals.sort(key=lambda d: d["score"], reverse=True)
     print(f"excluded {excluded} non-acquirable owners; underwrote {len(deals)}")
+    # owner portfolio: the same owner holding several underbuilt lots (a congregation's spare land, or an assemblage)
+    by_owner = {}
+    for d in deals:
+        k = (d["owner"] or "").upper().strip()
+        if k: by_owner.setdefault(k, []).append(d)
+    for d in deals:
+        k = (d["owner"] or "").upper().strip()
+        sib = by_owner.get(k, [])
+        d["owner_lot_count"] = len(sib)
+        d["owner_other_lots"] = [x["address"] for x in sib if x is not d][:6]
 
     # ACRIS layer: motivated-seller flags + owner mailing address, private owners first.
     try:
@@ -340,6 +362,8 @@ def main():
                       "motivated": sum(1 for d in actionable if d.get("motivated")),
                       "free_and_clear": sum(1 for d in actionable if d.get("free_and_clear")),
                       "with_mailing": sum(1 for d in actionable if d.get("owner_mailing")),
+                      "faith_owned": sum(1 for d in actionable if d.get("faith_owned")),
+                      "faith_multi_lot": sum(1 for d in actionable if d.get("faith_owned") and (d.get("owner_lot_count") or 0) > 1),
                       "land_sales_used": n_sales},
            "program_assumptions": UW,
            "land_comps_psf": comps,
