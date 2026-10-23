@@ -179,7 +179,7 @@ MUNIS = {
     "NY": ["Yonkers","Mount Vernon","New Rochelle","White Plains","Peekskill","Ossining","Port Chester","Tarrytown",
            "Sleepy Hollow","Mamaroneck","Harrison","Rye","Scarsdale","Greenburgh","Mount Kisco","Bedford","Yorktown",
            "Cortlandt","Somers","Croton-on-Hudson","Pleasantville","Dobbs Ferry","Hastings-on-Hudson","Irvington",
-           "Carmel","Brewster","Southeast","Kent","Patterson","Putnam Valley","Philipstown","Cold Spring",
+           "Carmel","Brewster","Putnam Valley","Philipstown","Cold Spring",
            "Beacon","Fishkill","Wappingers","Poughkeepsie","Hyde Park","Rhinebeck","Red Hook","Pawling"],
     "CT": ["Greenwich","Stamford","Darien","New Canaan","Westport","Norwalk","Ridgefield","Fairfield","Danbury","New Haven"],
     "NJ": ["Fort Lee","Edgewater","Englewood","Englewood Cliffs","Cliffside Park","Fairview","Palisades Park","Leonia",
@@ -197,7 +197,18 @@ DENSITY_WORDS = {
     "as-of-right": 20, "as of right": 20, "height": 8, "stories": 8, "units": 8, "approved": 10, "adopted": 15,
     "ordinance": 10, "moratorium": -20, "lawsuit": -10, "rejected": -15, "denied": -15,
 }
-NEG = ("obituar", "sports", "football", "basketball", "arrest", "crash", "closes sale", "for sale", "listed for", "asks $",
+# headline words that mean a same-named place somewhere else (or a listing, not a zoning story)
+COLLISIONS = {"bedford": ("virginia","lynchburg","bedford county","bedford-stuy","bedford stuyvesant","bedford ave","bedford avenue","massachusetts","texas"),
+              "greenwich": ("village","penthouse","london","greenwich st","greenwich street","greenwich ave"),
+              "rye": ("whiskey","bread","rye brook ny","rye, nh"), "carmel": ("indiana","california","carmel-by-the-sea","carmel valley"),
+              "beacon": ("beacon hill","beacon st","beacon street","lighthouse"), "red hook": ("brooklyn",), "hyde park": ("chicago","london","hyde park ave"),
+              "fairview": ("fairview heights","oregon","tennessee","texas","north carolina","nc"), "ridgefield": ("washington","wa"),
+              "harrison": ("new jersey","nj","arkansas","harrison county","harrison township"), "newburgh": ("newburgh heights",),
+              "hastings-on-hudson": (), "mamaroneck": (), "peekskill": (), "yonkers": (), "union city": ("california","georgia","tennessee"),
+              "fort lee": ("virginia","fort lee va"), "englewood": ("colorado","florida","chicago","ohio"), "hackensack": (), "teaneck": (),
+              "new canaan": (), "darien": ("georgia","illinois"), "westport": ("massachusetts","washington"), "norwalk": ("california","ohio","iowa"),
+              "stamford": ("stamford bridge","lincolnshire","england"), "danbury": ("texas","nh"), "fairfield": ("california","iowa","ohio","new jersey","fairfield county, ohio")}
+NEG = ("obituar", "penthouse", "asking price", "lynchburg", "virginia beach", "sports", "football", "basketball", "arrest", "crash", "closes sale", "for sale", "listed for", "asks $",
        "sells for", "curbed", "raleigh", "charlotte", "mecklenburg", "ohio", "michigan", "texas", "florida", "california",
        "brooklyn park", "brooklyn center", "brooklyn village", "queens park", "bronx zoo")
 
@@ -224,7 +235,8 @@ def news_for(q, region, muni):
         if any(n in t for n in NEG): continue
         mname = muni.lower().split(" nj")[0]
         if region != "NYC" and mname not in t: continue        # the town must be in the headline, not just the query
-        if region == "NYC" and not any(k in t for k in ("bronx","brooklyn","queens","nyc","new york","city planning","council","hpd","ulurp","city of yes")): continue
+        if region != "NYC" and any(c in t for c in COLLISIONS.get(mname, ())): continue
+        if region == "NYC" and not any(k in t for k in ("bronx","brooklyn","queens","manhattan","nyc","new york","city planning commission","hpd","ulurp","city of yes")): continue
         score = sum(w for k, w in DENSITY_WORDS.items() if k in t)
         if region != "NYC": score += 10
         if score < 20: continue
