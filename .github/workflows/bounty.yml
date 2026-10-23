@@ -27,6 +27,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Zoning radar (DCP ZAP rezonings + municipal news + state tracker)
+        continue-on-error: true
+        run: python bounty/engine/zoning_radar.py 2>&1 | tee bounty/data/zoning_run.log
       - name: NYC scan
         continue-on-error: true
         run: python bounty/engine/nyc_scan.py 2>&1 | tee bounty/data/nyc_run.log

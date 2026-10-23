@@ -168,6 +168,16 @@
   .kcard .kx{float:right;color:var(--muted);cursor:pointer;font-size:12px}
   .kcard .kx:hover{color:var(--down)}
   .kcard.due{border-color:rgba(255,93,93,.5)}
+  .b-rz{color:#9be7ff;border-color:rgba(90,200,255,.45);background:rgba(90,200,255,.08)}
+  .rzgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;padding:14px 20px 18px}
+  .rz{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+  .rz h4{font-size:13px;color:var(--text);margin-bottom:4px;line-height:1.4}
+  .rz .m{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.7}
+  .rz .m b{color:var(--em2);font-weight:600}
+  .rz p{font-size:12.5px;color:var(--text2);line-height:1.6;margin-top:6px}
+  .rz a{color:var(--em2)}
+  .stage{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid var(--line2);color:var(--text2)}
+  .stage.s3{color:var(--warn);border-color:rgba(242,178,62,.45)} .stage.s4,.stage.s5{color:var(--em2);border-color:var(--em)}
   .checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;padding:14px 20px 18px}
   .check{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
   .check h4{font-size:12.5px;color:var(--em2);margin-bottom:6px;font-family:var(--mono);letter-spacing:.4px}
@@ -228,11 +238,12 @@
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
     <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
     <a class="fkey" href="#tsmap"><b>F6</b>TRI-STATE MAP</a>
-    <a class="fkey" href="#rfp"><b>F7</b>RFP · FAST TRACK</a>
-    <a class="fkey" href="#pipeline"><b>F8</b>MY PIPELINE</a>
-    <a class="fkey" href="#programs"><b>F9</b>PROGRAMS</a>
-    <a class="fkey" href="#playbook"><b>F10</b>PLAYBOOK</a>
-    <a class="fkey" href="#assumptions"><b>F11</b>ASSUMPTIONS</a>
+    <a class="fkey" href="#radar"><b>F7</b>ZONING RADAR</a>
+    <a class="fkey" href="#rfp"><b>F8</b>RFP · FAST TRACK</a>
+    <a class="fkey" href="#pipeline"><b>F9</b>MY PIPELINE</a>
+    <a class="fkey" href="#programs"><b>F10</b>PROGRAMS</a>
+    <a class="fkey" href="#playbook"><b>F11</b>PLAYBOOK</a>
+    <a class="fkey" href="#assumptions"><b>F12</b>ASSUMPTIONS</a>
   </div>
   <div class="hero" id="hero"></div>
 
@@ -309,8 +320,17 @@
     </div>
   </section>
 
+  <section id="radar">
+    <div class="eyebrow"><span class="no">07</span><h2>Zoning Radar</h2>
+      <span class="hint">density changes before the market prices them: NYC rezonings by lot · town-by-town news · state law</span></div>
+    <div class="subnote"><b class="em">NYC</b> is parcel-level and real: every map and text amendment in DCP's Zoning Application Portal from the last two years, with the lots inside the rezoning area. Lots on the Deal Board that sit <b>inside</b> a rezoning get a <span class="badge b-rz">Rezoning</span> tag and are re-underwritten at the proposed FAR; lots on the <b>same block</b> as a private upzoning get an <b>adjacent</b> flag (the neighbor pays for the ULURP, you get the district). <b class="warn">Suburbs, CT and NJ</b> have no zoning feed, so that tab is a scored news radar per municipality: it tells you which agenda to read, not what passed. The <b>state</b> tab tracks laws that move density in many towns at once.</div>
+    <div class="filters" id="radarTabs"></div>
+    <div class="card"><div class="card-head"><span class="code">RADAR</span><span class="t" id="radarTitle">NYC rezonings</span><span class="expo" id="radarMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="RADARQ=this.value;renderRadar()"></div>
+      <div id="radarBox"><div class="loading">loading zoning radar…</div></div></div>
+  </section>
+
   <section id="rfp">
-    <div class="eyebrow"><span class="no">07</span><h2>City-Owned Sites · RFP &amp; Fast Track Pipeline</h2>
+    <div class="eyebrow"><span class="no">08</span><h2>City-Owned Sites · RFP &amp; Fast Track Pipeline</h2>
       <span class="hint">HPD · DCAS · EDC lots the engine found — these transfer by RFP, never by private sale</span></div>
     <div class="subnote"><b class="em">How this actually works in 2026.</b> City land goes to developers through HPD/EDC RFPs and, since March 2026, HPD's <b>Neighborhood Builders Fast Track</b>: a rolling RFQ that pre-qualifies developers for small city-owned sites without a full RFP. The catch: <b>the qualified entity must be a nonprofit or a certified M/WBE, and must hold at least 51% of the managing ownership interest</b> in any joint venture. The practical structure for a non-M/WBE principal is a JV where the nonprofit or M/WBE partner holds 51%, you hold 49% and the GC contract. The sites below are the ones to watch for RFPs and to raise with the Council member and community board; the checklist is what the Fast Track submission needs.</div>
     <div class="card">
@@ -331,7 +351,7 @@
   </section>
 
   <section id="pipeline">
-    <div class="eyebrow"><span class="no">08</span><h2>My Pipeline</h2>
+    <div class="eyebrow"><span class="no">09</span><h2>My Pipeline</h2>
       <span class="hint">add any row from any board with “+ Pipeline” · saved in this browser · export to back up</span></div>
     <div class="subnote">Stages mirror how a site actually moves: <b>Screened → Letter sent → Owner replied → Site visit → LOI → Contract → Diligence → Closed</b> (or <b>Dead</b>). Set a next-action date on each card; overdue cards turn red. Export JSON weekly and keep it with your deal files, since this lives in your browser's storage only.</div>
     <div class="card">
@@ -343,7 +363,7 @@
   </section>
 
   <section id="programs">
-    <div class="eyebrow"><span class="no">09</span><h2>Program Library</h2>
+    <div class="eyebrow"><span class="no">10</span><h2>Program Library</h2>
       <span class="hint">every developer program across your regions · verified Jul 2026 · sources linked</span></div>
     <div class="subnote"><span class="badge b-mkt">Underwritten</span> = the engine models this path automatically on every deal. <span class="badge b-prog">Cataloged</span> = a real tool for structuring — verify current terms at the linked source before relying on it.</div>
     <div class="filters" id="progTabs"></div>
@@ -351,13 +371,13 @@
   </section>
 
   <section id="playbook">
-    <div class="eyebrow"><span class="no">10</span><h2>Emerging Developer Playbook</h2>
+    <div class="eyebrow"><span class="no">11</span><h2>Emerging Developer Playbook</h2>
       <span class="hint">how to actually use the programs — strategy, sequencing, screening habits</span></div>
     <div id="playbookBox"><div class="loading">loading playbook…</div></div>
   </section>
 
   <section id="assumptions">
-    <div class="eyebrow"><span class="no">11</span><h2>Published Assumptions</h2>
+    <div class="eyebrow"><span class="no">12</span><h2>Published Assumptions</h2>
       <span class="hint">every number the engine uses — nothing hidden, all tunable</span></div>
     <div class="assump" id="assumpBox"></div>
     <div class="banner" style="margin-top:14px" id="assumpNote"></div>
@@ -380,8 +400,8 @@ const $=id=>document.getElementById(id);
 const usd=v=>v==null?'—':'$'+Math.round(v).toLocaleString();
 async function j(f,retries){retries=(retries==null)?3:retries;
   for(let i=0;i<=retries;i++){
-    try{const r=await fetch(BASE+f+'?t='+Date.now()+'_'+i,{cache:'no-store'});if(!r.ok)throw new Error(f+' '+r.status);return await r.json();}
-    catch(e){if(i===retries)throw e;await new Promise(res=>setTimeout(res,700*(i+1)));}
+    try{const r=await fetch(BASE+f+'?t='+Date.now()+'_'+i,{cache:'no-store'});if(r.status===404)throw Object.assign(new Error(f+' 404'),{final:true});if(!r.ok)throw new Error(f+' '+r.status);return await r.json();}
+    catch(e){if(i===retries||e.final)throw e;await new Promise(res=>setTimeout(res,700*(i+1)));}
   }}
 function tick(){const d=new Date();$('clock').innerHTML=`<b>${d.toUTCString().slice(17,25)}</b> UTC · ${d.toUTCString().slice(5,16)}`;}
 setInterval(tick,1000);tick();
@@ -438,6 +458,43 @@ function pipeExport(kind){
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();
 }
 function pipeImport(inp){const f=inp.files&&inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const arr=JSON.parse(r.result);if(!Array.isArray(arr))throw 0;const cur=pipeLoad();const keys=new Set(cur.map(x=>x.key));arr.forEach(x=>{if(x&&x.key&&!keys.has(x.key))cur.push(x);});pipeSave(cur);renderPipeline();alert('Restored '+arr.length+' sites (merged).');}catch(e){alert('That file is not a pipeline backup.');}};r.readAsText(f);inp.value='';}
+// ---- zoning radar ----
+let RADAR=null, RADARTAB='nyc', RADARQ='';
+function renderRadar(){
+  const box=$('radarBox'); if(!RADAR||!box)return;
+  const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const q=RADARQ.trim().toLowerCase();
+  const tabs=[['nyc','NYC rezonings'],['news','Town-by-town news'],['state','State law tracker']];
+  $('radarTabs').innerHTML=tabs.map(([k,l])=>`<button class="chipbtn ${RADARTAB===k?'on':''}" onclick="RADARTAB='${k}';renderRadar()">${l}</button>`).join('');
+  $('radarTitle').textContent=tabs.find(t=>t[0]===RADARTAB)[1];
+  const c=RADAR.counts||{};
+  if(RADARTAB==='nyc'){
+    let items=(RADAR.nyc||[]).filter(i=>!q||(i.name+' '+i.borough+' '+(i.cd||'')+' '+(i.to||[]).join(' ')+' '+(i.applicant||'')+' '+i.kind).toLowerCase().includes(q));
+    $('radarMeta').innerHTML=`<span class="mono">${c.nyc_total||0} amendments · ${c.nyc_upzonings||0} upzonings · ${c.nyc_in_review_or_approved||0} certified or approved · ${(c.nyc_lots_covered||0).toLocaleString()} lots</span>`;
+    const onBoard=new Set((DEALS||[]).filter(d=>d.rezoning).map(d=>d.rezoning.project_id));
+    box.innerHTML=items.length?`<div class="rzgrid">${items.slice(0,90).map(i=>`<div class="rz">
+      <h4>${esc(i.name)} ${i.kind==='upzoning'?'<span class="badge b-rz">Upzoning</span>':(i.kind==='downzoning'?'<span class="badge b-occ">Downzoning</span>':`<span class="badge b-hold">${esc(i.kind)}</span>`)}${onBoard.has(i.project_id)?' <span class="badge b-offer">On deal board</span>':''}</h4>
+      <div class="m">${esc(i.borough)} · CD ${esc(i.cd||'—')} · <span class="stage s${i.stage_rank}">${esc(i.stage)}</span> · ${esc(i.applicant_type||'')}${i.lots?` · <b>${i.lots} lots</b>`:''}</div>
+      <div class="m">${(i.from||[]).length?esc(i.from.join('/'))+' → ':''}<b>${esc((i.to||[]).join(', ')||'see brief')}</b>${i.far_from&&i.far_to?` · FAR ${i.far_from} → <b>${i.far_to}</b> (${i.far_delta_pct>0?'+':''}${i.far_delta_pct}%)`:(i.far_to?` · FAR → <b>${i.far_to}</b>`:'')}${i.mih?' · MIH':''}${i.units_proposed?` · ~${i.units_proposed} units`:''}</div>
+      <div class="m">filed ${esc(i.filed||'—')}${i.certified?' · certified '+esc(i.certified):''}${i.approved?' · approved '+esc(i.approved):''} · last: ${esc(i.milestone||'')} ${esc(i.milestone_date||'')}</div>
+      <p>${esc((i.brief||'').slice(0,260))}${(i.brief||'').length>260?'…':''} <a href="${esc(i.url)}" target="_blank" rel="noopener">ZAP ↗</a></p></div>`).join('')}</div>`
+      :'<div class="empty">No rezonings loaded yet — appears after the next engine run.</div>';
+  } else if(RADARTAB==='news'){
+    let items=(RADAR.news||[]).filter(i=>!q||(i.title+' '+i.muni+' '+i.region).toLowerCase().includes(q));
+    $('radarMeta').innerHTML=`<span class="mono">${items.length} scored items · last ${120} days</span>`;
+    box.innerHTML=items.length?`<div class="rzgrid">${items.slice(0,120).map(i=>`<div class="rz">
+      <h4><a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a></h4>
+      <div class="m"><b>${esc(i.muni)}</b> · ${esc(i.region)} · ${esc(i.date||'')} · ${esc(i.source||'')} · score ${i.score}</div></div>`).join('')}</div>`
+      :'<div class="empty">News radar appears after the next engine run (or nothing scored above threshold in the last 120 days).</div>';
+  } else {
+    const items=(RADAR.state_tracker||[]).filter(i=>!q||(i.name+' '+i.state+' '+i.what).toLowerCase().includes(q));
+    $('radarMeta').innerHTML=`<span class="mono">${items.length} tracked · curated, verified-on dates</span>`;
+    box.innerHTML=`<div class="rzgrid">${items.map(i=>`<div class="rz">
+      <h4><span class="code" style="margin-right:6px">${esc(i.state)}</span>${esc(i.name)}</h4>
+      <div class="m"><b>${esc(i.status)}</b> · ${esc(i.date)} · verified ${esc(i.verified)}</div>
+      <p>${esc(i.what)}</p><p><b style="color:var(--em2)">Play:</b> ${esc(i.play)} <a href="${esc(i.source)}" target="_blank" rel="noopener">source ↗</a></p></div>`).join('')}</div>`;
+  }
+}
 // ---- outreach letter (plain, printable; no em dashes) ----
 function letter(region,i){
   const d=region==='nyc'?(window._rows||[])[i]:((window.__BROWS&&window.__BROWS[region])||[])[i]; if(!d)return;
@@ -622,7 +679,7 @@ const spill=x=>`<span class="scorepill ${scoreCls(x.score)}">${x.score}</span>`;
 const addrCell=x=>`<span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}`;
 
 function renderFilters(){
-  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
+  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['rezoning','Rezoning upside'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
   $('filters').innerHTML=
     boros.map(b=>`<button class="chipbtn ${FILTER.boro===b?'on':''}" onclick="FILTER.boro='${b}';renderFilters();renderTable()">${b==='ALL'?'All boroughs':b}</button>`).join('')+
     '<span style="width:14px"></span>'+
@@ -641,7 +698,7 @@ function renderTable(){
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
     !d.city_owned && d.action!=='rfp' &&
     (FILTER.tier==='ALL' || (FILTER.tier==='actionable'?(d.action==='offer'||d.action==='negotiate'):
-      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
+      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='rezoning'?!!(d.rezoning||(d.rezoning_adjacent||[]).length): FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
       FILTER.tier==='s8'?(String(d.best_market_path||'').endsWith('_s8')&&(d.action==='offer'||d.action==='negotiate')): d.action===FILTER.tier)) &&
     (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+(d.motivated?' motivated':'')+(d.free_and_clear?' free clear':'')).toLowerCase().includes(q)));
   const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
@@ -666,6 +723,7 @@ function renderTable(){
     const bm=(d.paths||[]).find(p=>p.path===d.best_market_path)||d.best||{};
     const inPipe=pipeHas(d);
     const tags=[d.faith_owned?'<span class="badge b-inst" title="Church / congregation: a nonprofit landowner — Fast Track 51% partner + ground-lease JV. Sale or lease needs AG/court approval (N-PCL 511)">Faith</span>':(d.owner_class==='institutional'?'<span class="badge b-inst" title="Sells via board vote + AG/court approval (N-PCL 511)">Institutional</span>':''),
+                d.rezoning?`<span class="badge b-rz" title="${(d.rezoning.name||'')} · ${d.rezoning.stage} · to ${(d.rezoning.to||[]).join('/')}">Rezoning · ${d.rezoning.stage}</span>`:((d.rezoning_adjacent||[]).length?`<span class="badge b-rz" title="${d.rezoning_adjacent.map(r=>r.name+' ('+r.stage+')').join('; ')}">Adjacent upzoning</span>`:''),
                 (d.owner_lot_count||0)>1?`<span class="badge b-hold" title="Same owner holds ${d.owner_lot_count} underbuilt lots on this board: ${(d.owner_other_lots||[]).join(', ')}">${d.owner_lot_count} lots</span>`:'',
                 d.occupied?`<span class="badge b-occ" title="${d.existing_units} existing units: relocation + 485-x replacement units">Occupied</span>`:'',
                 d.motivated?`<span class="badge b-hold" title="${d.free_and_clear?'Free & clear (no mortgage after deed)':'Long-held owner'}${d.owner_tenure_years?' · '+d.owner_tenure_years+'y tenure':''}">${d.free_and_clear?'Free&clear':'Long-hold'}</span>`:'',
@@ -692,6 +750,9 @@ function renderTable(){
         · lot ${d.lot_sf.toLocaleString()} SF · FAR ${d.built_far} → ${d.max_far} (${d.buildable_sf.toLocaleString()} SF ZFA)${d.existing_units?` · <b class="warn">${d.existing_units} existing units</b>`:''}
         · assessed land ${usd(d.assessed_land)}${d.rent_market_used?` · nbhd rent ${usd(d.rent_market_used)}/mo${d.neighborhood_factor&&d.neighborhood_factor!==1?` (${d.neighborhood_factor}× boro)`:''}`:''}
         ${d.faith_owned?`<br><b class="em">Faith-owned JV play:</b> the congregation keeps the land on a ground lease (no cash offer needed), qualifies as the nonprofit 51% partner for HPD Fast Track or an HPD-financed deal, and you develop and build. Ask for the trustees, not a broker.${(d.owner_lot_count||0)>1?` This owner also holds ${d.owner_lot_count-1} other underbuilt lot(s) here: ${(d.owner_other_lots||[]).join(', ')}.`:''}`:''}
+        ${d.rezoning?`<br><b style="color:#9be7ff">Inside a rezoning:</b> ${d.rezoning.name} (${d.rezoning.stage}${d.rezoning.certified?', certified '+d.rezoning.certified:''}${d.rezoning.approved?', approved '+d.rezoning.approved:''}) → ${(d.rezoning.to||[]).join('/')||'see ZAP'}${d.rezoning.far_to?' · FAR '+d.rezoning.far_to:''} <a href="${d.rezoning.url}" target="_blank" rel="noopener" class="em">ZAP ↗</a>`:''}
+        ${(d.rezoning_adjacent||[]).length?`<br><b style="color:#9be7ff">Adjacent upzoning on this block:</b> ${d.rezoning_adjacent.map(r=>`${r.name} (${r.stage}, → ${(r.to||[]).join('/')}) <a href="${r.url}" target="_blank" rel="noopener" class="em">↗</a>`).join('; ')}`:''}
+        ${d.if_rezoned?`<br><b style="color:#9be7ff">If the rezoning lands:</b> ${d.if_rezoned.units} units at FAR ${d.if_rezoned.far} (${d.if_rezoned.source}) · walk-away land <b class="em">${usd(d.if_rezoned.walk_away_land)}</b> vs ${usd(d.walk_away_land)} today · best path ${(d.if_rezoned.best_path||'').replace(/_/g,' ')}. Speculative until approved; price the option, not the outcome.`:''}
         <br>walk-away land: <b class="em">${usd(d.walk_away_land)}</b> as owner-builder · <b>${usd(d.walk_away_land_institutional)}</b> with a third-party GC — the difference is your edge as the builder.</div>
       ${d.motivated?`<div style="margin-bottom:10px;font-size:12px;color:var(--warn)">◆ <b>Motivated-seller signal:</b> ${[d.free_and_clear?'free &amp; clear (no mortgage recorded after the deed — no payoff, cleaner close)':'',d.owner_tenure_years?`~${d.owner_tenure_years}y since last recorded deed (long-hold / low basis)`:''].filter(Boolean).join(' · ')} — statistically likelier to sell</div>`:''}
       <div class="paths">${(d.paths||[]).map(p=>`
@@ -805,7 +866,7 @@ function onePager(i){
 
 (async()=>{
   try{
-    const [deals,briefs,progs,subs,pb,ct,nj]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb,ct,nj,radar]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null)]);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
@@ -922,11 +983,12 @@ function onePager(i){
       ], {q:'',key:'units',dir:-1,region:'rfp'})();
     } else { $('rfpTbl').innerHTML='<div class="empty">No city-owned sites in the current scan.</div>'; }
     renderPipeline();
+    RADAR=radar||{nyc:[],news:[],state_tracker:[],counts:{}}; renderRadar();
     // hero
     const subsC=(subs&&subs.counts)||{}, ctC=(ct&&ct.counts)||{}, njC=(nj&&nj.counts)||{};
     const subAct=(subsC.offer||0)+(subsC.negotiate||0)+(ctC.offer||0)+(ctC.negotiate||0)+(njC.offer||0)+(njC.negotiate||0);
     const hero=[
-      {k:'NYC: make an offer',v:c.offer??'—',s:`${c.negotiate??0} more to negotiate · ${c.pass??0} passed`,cls:'em'},
+      {k:'NYC: make an offer',v:c.offer??'—',s:`${c.negotiate??0} more to negotiate${c.upside_if_rezoned?` · ${c.upside_if_rezoned} with rezoning upside`:''}`,cls:'em'},
       {k:'NYC: letters ready',v:c.with_mailing??'—',s:'owner mailing address on file'},
       {k:'Suburbs · CT · NJ',v:subAct||'—',s:`${(subsC.offer||0)+(subsC.negotiate||0)} NY · ${(ctC.offer||0)+(ctC.negotiate||0)} CT · ${(njC.offer||0)+(njC.negotiate||0)} NJ actionable`,cls:'em'},
       {k:'City-owned (RFP)',v:c.city_owned??'—',s:'HPD/DCAS/EDC pipeline',cls:'gold'},

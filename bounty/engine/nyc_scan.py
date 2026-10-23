@@ -203,11 +203,38 @@ def acquirable(p):
     if not any(ch.isdigit() for ch in p.get("address","")): return False
     return owner_class(p) != "excluded"
 
+RADAR = {"bbl": {}, "block": {}}
+def load_radar():
+    """Zoning Radar join tables: bbl -> best rezoning covering it; boro+block -> private rezonings on that block."""
+    try:
+        z = json.load(open("bounty/data/zoning_radar.json"))
+    except Exception:
+        return
+    for it in z.get("nyc", []):
+        slim = {k: it.get(k) for k in ("project_id","name","kind","stage","stage_rank","to","far_to","far_from","mih",
+                                       "units_proposed","applicant_type","url","filed","certified","approved","lots")}
+        for b in it.get("bbls", []):
+            cur = RADAR["bbl"].get(b)
+            if not cur or (it["stage_rank"], it.get("far_to") or 0) > (cur["stage_rank"], cur.get("far_to") or 0):
+                RADAR["bbl"][b] = slim
+        if it.get("kind") == "upzoning":
+            for blk in it.get("blocks", []):
+                RADAR["block"].setdefault(blk, []).append(slim)
+    print(f"zoning radar: {len(RADAR['bbl'])} lots inside rezonings, {len(RADAR['block'])} blocks with upzonings")
+
 def underwrite(p, comps):
     A = ASSUMPTIONS
     lot = n(p.get("lotarea")); rfar = n(p.get("residfar")); bfar = n(p.get("builtfar"))
     if lot <= 0 or rfar <= 0: return None
     boro = BOROUGHS.get(str(p.get("borocode","")), "BX")
+    # --- zoning radar join ---
+    bbl = str(p.get("bbl") or "").split(".")[0]
+    rz = RADAR["bbl"].get(bbl)
+    rz_adj = [r for r in RADAR["block"].get(bbl[:6], []) if not rz or r["project_id"] != rz["project_id"]]
+    rz_adj = [r for r in rz_adj if (r.get("far_to") or 0) > rfar]
+    rfar_current = rfar
+    if rz and rz["stage_rank"] >= 4 and (rz.get("far_to") or 0) > rfar:
+        rfar = rz["far_to"]          # approved: the new district is the real capacity
     buildable = lot * rfar
     units = int(buildable / UW["du_factor_sf"])
     if units < 6 or units > 300: return None
@@ -230,6 +257,11 @@ def underwrite(p, comps):
     rent_market = round(UW["rent_mo"]["market"][boro] * rfac)
     uw = underwrite_all_paths(boro, lot, rfar, land, rent_market=rent_market)
     if not uw: return None
+    # speculative capacity if a pending rezoning (inside) or a neighbor's upzoning (adjacent) lands
+    rz_far = max([rz.get("far_to") or 0] if rz else [0]) if rz else 0
+    adj_far = max([r.get("far_to") or 0 for r in rz_adj] or [0])
+    spec_far = max(rz_far, adj_far)
+    uw_rz = underwrite_all_paths(boro, lot, spec_far, land, rent_market=rent_market) if spec_far > rfar else None
     best = next((pp for pp in uw["paths"] if pp["path"] == uw["best_path"]), None)
     walk = uw["walk_away_land"]
     act = action_for(land, walk, city_owned=city, rfp_eligible=city,
@@ -251,7 +283,8 @@ def underwrite(p, comps):
     s_fit  = {"solo": 15, "mid": 9, "jv": 3, "program": 5, "city": 8}[bucket]
     s_use  = (1 - bfar/rfar) * 10
     s_s8   = 6 if (bm.get("path","").endswith("_s8") and boro in ("BX","QN")) else 0
-    score = round(s_head + s_yoc + s_fit + s_use + s_s8, 1)
+    s_rz   = (10 if (rz and rz["stage_rank"] >= 3 and rz_far > rfar_current) else (5 if rz and rz_far > rfar_current else 0)) + (5 if rz_adj else 0)
+    score = round(s_head + s_yoc + s_fit + s_use + s_s8 + s_rz, 1)
     if occupied: score = round(score * 0.6, 1)
     if oclass == "institutional": score = round(score * 0.85, 1)
     if tier == "none": score = min(score, 29.9)
@@ -260,7 +293,11 @@ def underwrite(p, comps):
     return {
         "bbl": p.get("bbl"), "address": (p.get("address") or "").title(),
         "borough": boro, "zip": p.get("zipcode"), "zone": p.get("zonedist1"),
-        "lot_sf": int(lot), "built_far": round(bfar,2), "max_far": round(rfar,2),
+        "lot_sf": int(lot), "built_far": round(bfar,2), "max_far": round(rfar,2), "max_far_mapped": round(rfar_current,2),
+        "rezoning": rz, "rezoning_adjacent": rz_adj[:3],
+        "if_rezoned": ({"far": spec_far, "units": uw_rz["units_base"], "walk_away_land": int(uw_rz["walk_away_land"]),
+                        "best_path": uw_rz["best_market_path"], "source": ("inside " + rz["stage"] + " rezoning") if (rz and rz_far >= adj_far) else "adjacent upzoning on the block"}
+                       if uw_rz else None),
         "buildable_sf": int(buildable), "est_units": uw["units_base"],
         "existing_units": existing, "occupied": occupied,
         "year_built": int(n(p.get("yearbuilt"))) or None,
@@ -291,6 +328,7 @@ def main():
     except Exception as e:
         print(f"comps failed entirely ({e}); degrading to assessed-only anchor (labeled)")
         comps, n_sales = {"BX": None, "BK": None, "QN": None}, 0
+    load_radar()
     raw = fetch_pluto()
     print(f"PLUTO {len(raw)} parcels fetched")
     deals, excluded = [], 0
