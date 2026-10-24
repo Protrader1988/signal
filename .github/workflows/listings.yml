@@ -1,0 +1,40 @@
+name: bounty-listings
+
+# On-market cross-check for the top actionable sites (Gemini + Google Search grounding).
+# Runs on its own schedule, away from the main scan and the signal digest, to stay inside
+# the free-tier rate limits.
+
+on:
+  schedule:
+    - cron: "15 13 * * 1-5"     # 13:15 UTC weekdays (~9:15am ET)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bounty
+  cancel-in-progress: false
+
+jobs:
+  listings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: On-market cross-check
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python bounty/engine/listings.py 2>&1 | tee bounty/data/listings_run.log
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "bounty-actions"
+          git config user.email "actions@github.com"
+          git pull --rebase origin main || true
+          git add bounty/data || true
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "bounty: listings check [skip ci]"; git push; fi

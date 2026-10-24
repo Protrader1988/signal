@@ -13,7 +13,7 @@ Runs after the scans. Same GEMINI_API_KEY as the digest. Budget: ~12 grounded ca
 import json, os, re, time, urllib.request, urllib.error, traceback
 from datetime import date
 
-MODELS = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-2.5-flash"]
+MODELS = ["gemini-3.6-flash", "gemini-flash-latest"]
 API = "https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
 OUT = "bounty/data/listings.json"
 
@@ -33,7 +33,7 @@ def gemini(key, prompt):
                        "generationConfig": {"temperature": 0.1}}).encode()
     last = None
     for m in MODELS:
-        for attempt in (1, 2):
+        for attempt in (1, 2, 3):
             try:
                 req = urllib.request.Request(API.format(m=m) + f"?key={key}", data=body, headers={"Content-Type": "application/json"})
                 raw = urllib.request.urlopen(req, timeout=150).read()
@@ -42,7 +42,7 @@ def gemini(key, prompt):
                 return text, m
             except urllib.error.HTTPError as e:
                 print(f"{m} attempt {attempt}: HTTP {e.code}"); last = e
-                if e.code == 429 and attempt == 1: time.sleep(35); continue
+                if e.code == 429 and attempt < 3: time.sleep(70 * attempt); continue
                 break
             except Exception as e:
                 print(f"{m} attempt {attempt}: {e}"); last = e
@@ -106,7 +106,7 @@ def main():
                    "note": str(a.get("note") or "")[:160], "checked": today, "model": model, "board": b["board"], "address": b["address"]}
             if rec["listed"] is True: n_listed += 1
             out[b["key"]] = rec
-        time.sleep(4)
+        time.sleep(20)
     out["_meta"] = {"generated": today, "targets": len(tg), "checked_today": len(due), "listed_now": sum(1 for k, v in out.items() if k != "_meta" and v.get("listed") is True),
                     "note": "AI + Google Search derived. A hit means a listing was found in search results for that address; a miss means nothing was found, not that the lot is unavailable."}
     json.dump(out, open(OUT, "w"), indent=1)

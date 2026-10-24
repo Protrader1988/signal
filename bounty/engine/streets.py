@@ -50,38 +50,75 @@ def classify(width):
     if w <= 36: return "narrow", w
     return "verify", w
 
-def lookup(lat, lng, address, radius_m=45):
-    """Return {'street','roadbed_ft','class'} for the lot's frontage street, or None."""
-    if not lat or not lng: return None
-    want = street_of(address)
-    where = f"within_circle(the_geom,{lat},{lng},{radius_m})"
+_CACHE = {}
+
+def _segments(boro, want):
+    """All CSCL segments in a borough for a normalized street name (cached). Tries exact label, then LIKE."""
+    k = (boro, want)
+    if k in _CACHE: return _CACHE[k]
+    rows = []
     try:
-        rows = _get(CSCL + f"?$select=full_street_name,streetwidth,rw_type,l_low_hn,l_high_hn,r_low_hn,r_high_hn&$where={urllib.parse.quote(where)}&$limit=40")
+        where = f"boroughcode='{boro}' and upper(full_street_name)='{want}'"
+        rows = _get(CSCL + f"?$select=full_street_name,streetwidth,rw_type,l_low_hn,l_high_hn,r_low_hn,r_high_hn,the_geom&$where={urllib.parse.quote(where)}&$limit=600")
+        if not rows:
+            core = want.rsplit(" ", 1)[0] if " " in want else want
+            where = f"boroughcode='{boro}' and upper(full_street_name) like '%{core}%'"
+            rows = _get(CSCL + f"?$select=full_street_name,streetwidth,rw_type,l_low_hn,l_high_hn,r_low_hn,r_high_hn,the_geom&$where={urllib.parse.quote(where)}&$limit=600")
+            rows = [r for r in rows if norm(r.get("full_street_name")) == want]
     except Exception as e:
-        return {"error": str(e)[:120]}
-    rows = [r for r in rows if str(r.get("rw_type", "1")) in ("1", "", None) or str(r.get("rw_type")) == "1"]
-    best = None
-    for r in rows:
-        nm = norm(r.get("full_street_name"))
-        if nm and (nm == want or want.endswith(nm) or nm.endswith(want)):
-            best = r; break
-    if not best:
-        # fall back to any segment that carries house numbers (a real frontage street), prefer widest
-        cands = [r for r in rows if r.get("l_low_hn") or r.get("r_low_hn")] or rows
-        if not cands: return None
-        best = max(cands, key=lambda r: float(r.get("streetwidth") or 0))
-        matched = False
-    else:
-        matched = True
-    cls, w = classify(best.get("streetwidth"))
-    return {"street": best.get("full_street_name"), "roadbed_ft": w, "class": cls, "name_matched": matched}
+        _CACHE[k] = {"error": str(e)[:120]}; return _CACHE[k]
+    _CACHE[k] = rows
+    return rows
+
+def _hn(s):
+    try: return int(re.sub(r"[^0-9]", "", str(s).split("-")[-1]))
+    except Exception: return None
+
+def _house_number(address):
+    m = re.match(r"^\s*([\d\-]+)", address or "")
+    return _hn(m.group(1)) if m else None
+
+def _seg_dist(lat, lng, geom):
+    try:
+        best = 9e9
+        for part in geom.get("coordinates", []):
+            for x, y in part:
+                d = ((y - lat) * 364000.0) ** 2 + ((x - lng) * 364000.0 * 0.76) ** 2
+                best = min(best, d)
+        return best ** 0.5
+    except Exception:
+        return 9e9
+
+def lookup(lat, lng, address, boro=None):
+    """Return {'street','roadbed_ft','class','match'} for the lot's frontage street, or None."""
+    want = street_of(address)
+    if not want or not boro: return None
+    rows = _segments(boro, want)
+    if isinstance(rows, dict): return rows
+    if not rows: return None
+    hn = _house_number(address)
+    pick, how = None, None
+    if hn is not None:
+        for r in rows:
+            for lo, hi in ((r.get("l_low_hn"), r.get("l_high_hn")), (r.get("r_low_hn"), r.get("r_high_hn"))):
+                a, b = _hn(lo), _hn(hi)
+                if a is not None and b is not None and min(a, b) <= hn <= max(a, b) and (a % 2 == hn % 2 or b % 2 == hn % 2):
+                    pick, how = r, "house number"; break
+            if pick: break
+    if not pick and lat and lng:
+        pick = min(rows, key=lambda r: _seg_dist(lat, lng, r.get("the_geom") or {}))
+        how = "nearest segment"
+    if not pick: return None
+    cls, w = classify(pick.get("streetwidth"))
+    return {"street": pick.get("full_street_name"), "roadbed_ft": w, "class": cls, "match": how}
 
 def annotate(deals, limit=420, sleep=0.0):
     """Attach d['street'] and return the number of lots whose FAR rises on a wide street."""
     import time
     bumped = 0
+    boro_code = {"BX": "2", "BK": "3", "QN": "4", "MN": "1", "SI": "5"}
     for d in deals[:limit]:
-        r = lookup(d.get("lat"), d.get("lng"), d.get("address"))
+        r = lookup(d.get("lat"), d.get("lng"), d.get("address"), boro=boro_code.get(d.get("borough")))
         d["street"] = r
         if sleep: time.sleep(sleep)
     return bumped

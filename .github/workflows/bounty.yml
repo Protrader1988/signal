@@ -42,11 +42,6 @@ jobs:
       - name: NJ scan (Bergen/Hudson Gold Coast)
         continue-on-error: true
         run: python bounty/engine/nj_scan.py 2>&1 | tee bounty/data/nj_run.log
-      - name: On-market cross-check (Gemini + Google Search grounding)
-        continue-on-error: true
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python bounty/engine/listings.py 2>&1 | tee bounty/data/listings_run.log
       - name: AI deal briefs
         continue-on-error: true
         env:
