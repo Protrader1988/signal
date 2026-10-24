@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from underwrite import underwrite_all_paths, action_for, ASSUMPTIONS as UW
 import acris_distress
 import diligence
+import streets
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/3.0)"}
 
@@ -224,9 +225,10 @@ def load_radar():
                 RADAR["block"].setdefault(blk, []).append(slim)
     print(f"zoning radar: {len(RADAR['bbl'])} lots inside rezonings, {len(RADAR['block'])} blocks with upzonings")
 
-def underwrite(p, comps):
+def underwrite(p, comps, rfar_override=None):
     A = ASSUMPTIONS
     lot = n(p.get("lotarea")); rfar = n(p.get("residfar")); bfar = n(p.get("builtfar"))
+    if rfar_override and rfar_override > rfar: rfar = rfar_override
     if lot <= 0 or rfar <= 0: return None
     boro = BOROUGHS.get(str(p.get("borocode","")), "BX")
     # --- zoning radar join ---
@@ -365,6 +367,27 @@ def main():
     except Exception as e:
         print(f"ACRIS layer skipped: {e}")
 
+    # Street width (CSCL): resolve wide/narrow for the actionable set; re-underwrite where the district gains FAR on a wide street.
+    try:
+        sw = [d for d in deals if d["owner_class"] in ("private", "institutional") and d["action"] in ("offer", "negotiate", "program")][:420]
+        streets.annotate(sw)
+        bumped = 0
+        for i, d in enumerate(sw):
+            st = d.get("street") or {}
+            wf = streets.WIDE_FAR.get(d["zone"])
+            if st.get("class") == "wide" and wf and wf > d["max_far_mapped"]:
+                p = pluto_by_bbl.get(d["bbl"])
+                nd = underwrite(p, comps, rfar_override=wf) if p else None
+                if nd:
+                    for k in ("owner_mailing","owner_on_deed","owner_tenure_years","free_and_clear","motivated","owner_lot_count","owner_other_lots","first_seen","is_new"):
+                        nd[k] = d.get(k)
+                    nd["street"] = st; nd["wide_street_far"] = wf
+                    deals[deals.index(d)] = nd; sw[i] = nd; bumped += 1
+        deals.sort(key=lambda d: d["score"], reverse=True)
+        print(f"  streets: {sum(1 for d in sw if (d.get('street') or {}).get('class'))} resolved · wide {sum(1 for d in sw if (d.get('street') or {}).get('class')=='wide')} · {bumped} re-underwritten at wide-street FAR")
+    except Exception as e:
+        print(f"streets layer skipped: {e}")
+
     # Diligence layer: zoning layers, geometry, DOB/ECB, lien sale, DEC sites, envelope — on the actionable set.
     try:
         dl = [d for d in deals if d["owner_class"] in ("private", "institutional") and d["action"] in ("offer", "negotiate", "program")][:400]
@@ -426,6 +449,8 @@ def main():
                       "diligence_clean": sum(1 for d in actionable if d.get("diligence") and not d["diligence"]["red"] and not d["diligence"]["amber"]),
                       "lien_sale": sum(1 for d in deals if d.get("lien_sale")),
                       "flipped_to_pass": sum(1 for d in deals if d.get("action_before_diligence")),
+                      "wide_street": sum(1 for d in deals if (d.get("street") or {}).get("class") == "wide"),
+                      "wide_street_far_bump": sum(1 for d in deals if d.get("wide_street_far")),
                       "land_sales_used": n_sales},
            "program_assumptions": UW,
            "land_comps_psf": comps,

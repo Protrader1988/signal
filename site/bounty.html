@@ -168,6 +168,11 @@
   .kcard .kx{float:right;color:var(--muted);cursor:pointer;font-size:12px}
   .kcard .kx:hover{color:var(--down)}
   .kcard.due{border-color:rgba(255,93,93,.5)}
+  .b-listed{color:#ffd37a;border-color:rgba(255,211,122,.5);background:rgba(255,211,122,.1)}
+  .sketch{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin:10px 0 4px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+  .sketch svg{background:var(--bg2);border-radius:6px}
+  .sketch .sk{font-family:var(--mono);font-size:11px;color:var(--text2);line-height:1.8;min-width:220px}
+  .sketch .sk b{color:var(--em2)}
   .dq{display:inline-flex;gap:4px;font-family:var(--mono);font-size:11px}
   .dq i{display:inline-block;min-width:18px;text-align:center;border-radius:5px;padding:1px 5px;font-style:normal;font-weight:700}
   .dq .r{background:rgba(255,93,93,.18);color:#ff8a8a} .dq .a{background:rgba(242,178,62,.16);color:var(--warn)} .dq .g{background:rgba(47,211,154,.14);color:var(--em2)}
@@ -465,6 +470,34 @@ function pipeExport(kind){
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();
 }
 function pipeImport(inp){const f=inp.files&&inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const arr=JSON.parse(r.result);if(!Array.isArray(arr))throw 0;const cur=pipeLoad();const keys=new Set(cur.map(x=>x.key));arr.forEach(x=>{if(x&&x.key&&!keys.has(x.key))cur.push(x);});pipeSave(cur);renderPipeline();alert('Restored '+arr.length+' sites (merged).');}catch(e){alert('That file is not a pipeline backup.');}};r.readAsText(f);inp.value='';}
+// ---- zoning envelope sketch (plan + section) from lot dimensions and QH bulk rules ----
+function sketch(d){
+  const e=d.envelope; if(!e||!e.front_ft||!e.depth_ft)return '';
+  const F=e.front_ft, D=e.depth_ft, ry=e.rear_yard_ft||30, fpD=Math.max(0,D-ry);
+  const sc=Math.min(150/Math.max(F,D), 150/Math.max(F,D)); // ft -> px
+  const W=Math.round(F*sc), H=Math.round(D*sc), BH=Math.round(fpD*sc);
+  const fl=Math.min(e.floors_needed||e.floors, e.floors), fh=Math.min(14, Math.max(7, Math.round(120/Math.max(fl,1))));
+  const secH=fl*fh+22, secW=Math.max(60,W);
+  const plan=`<svg width="${W+70}" height="${H+30}" viewBox="0 0 ${W+70} ${H+30}">
+    <rect x="35" y="15" width="${W}" height="${H}" fill="none" stroke="#3b4c48" stroke-dasharray="3 3"/>
+    <rect x="35" y="15" width="${W}" height="${BH}" fill="rgba(47,211,154,.25)" stroke="#2fd39a"/>
+    <rect x="35" y="${15+BH}" width="${W}" height="${H-BH}" fill="rgba(242,178,62,.10)" stroke="none"/>
+    <text x="${35+W/2}" y="${15+BH/2+4}" fill="#eef4f2" font-size="10" text-anchor="middle" font-family="monospace">${fpD.toFixed(0)}' deep</text>
+    <text x="${35+W/2}" y="${15+BH+(H-BH)/2+4}" fill="#f2b23e" font-size="9" text-anchor="middle" font-family="monospace">rear yard ${ry}'</text>
+    <text x="${35+W/2}" y="${H+27}" fill="#9bb0aa" font-size="9" text-anchor="middle" font-family="monospace">street · ${F.toFixed(0)}' front</text>
+    <text x="8" y="${15+H/2}" fill="#9bb0aa" font-size="9" font-family="monospace" transform="rotate(-90 8,${15+H/2})" text-anchor="middle">${D.toFixed(0)}' lot</text></svg>`;
+  let floorsSvg='';
+  for(let i=0;i<fl;i++){floorsSvg+=`<rect x="20" y="${secH-18-(i+1)*fh}" width="${secW}" height="${fh-1}" fill="${i===0?'rgba(90,162,255,.35)':'rgba(47,211,154,.28)'}" stroke="#2fd39a" stroke-width=".6"/>`;}
+  const section=`<svg width="${secW+40}" height="${secH+6}" viewBox="0 0 ${secW+40} ${secH+6}">${floorsSvg}
+    <line x1="10" y1="${secH-18}" x2="${secW+30}" y2="${secH-18}" stroke="#5f7570"/>
+    <text x="${20+secW/2}" y="${secH-4}" fill="#9bb0aa" font-size="9" text-anchor="middle" font-family="monospace">${fl} floors · ≤ ${e.height_ft} ft</text></svg>`;
+  return `<div class="sketch">${plan}${section}<div class="sk">
+    <b>Zoning envelope sketch</b> · ${e.zone}${e.wide_street?' · wide street':' · narrow/base'}<br>
+    footprint <b>${(e.footprint_sf||0).toLocaleString()} SF</b> (${(e.coverage*100).toFixed(0)}% coverage cap)<br>
+    floors to reach FAR: <b>${e.floors_needed||'—'}</b> · max under height: ${e.floors}<br>
+    ZFA allowed <b>${(e.zfa_allowed||0).toLocaleString()}</b> · fits <b>${(e.zfa_fits||0).toLocaleString()}</b><br>
+    <span style="color:var(--muted);font-size:10.5px">interior lot assumed · no setbacks, courts, egress or unit layout · order the architect's study in diligence</span></div></div>`;
+}
 // ---- zoning radar ----
 let RADAR=null, RADARTAB='nyc', RADARQ='';
 function renderRadar(){
@@ -661,7 +694,7 @@ function exportBoard(region){
     rfp:'City-owned site: watch for HPD/EDC RFP; raise with Council member and CB'}[region]||'';
   const rowsIn=region==='nyc'?D.filter(x=>x.action==='offer'||x.action==='negotiate'):D;
   const pitchFor=x=>x.faith_owned?'Congregation land: ground-lease JV, you develop and build, they stay the nonprofit majority partner':(x.owner_class==='institutional'?'Institutional owner: purchase or JV, board + AG approval':pitch);
-  const cols=['action','max_offer','headroom','region','town','address','owner','owner_mailing','zone','acres','est_units','asking_proxy','best_path','red_flags','amber_flags','lien_sale','ecb_balance_due','pitch'];
+  const cols=['action','max_offer','headroom','region','town','address','owner','owner_mailing','zone','acres','est_units','asking_proxy','best_path','listed','asking_price','listing_url','red_flags','amber_flags','lien_sale','ecb_balance_due','pitch'];
   const rows=rowsIn.slice(0,300).map(x=>({
     action:x.action||'', max_offer:x.max_offer||x.walk_away_land||'', headroom:x.headroom!=null?x.headroom:'',
     region:x.region||region.toUpperCase(), town:x.town||x.borough||x.muni||'',
@@ -672,6 +705,7 @@ function exportBoard(region){
     best_path:x.best_market_path||x.product||'',
     red_flags:((x.diligence||{}).flags||[]).filter(f=>f.sev==='red').map(f=>f.text).join(' | '),
     amber_flags:((x.diligence||{}).flags||[]).filter(f=>f.sev==='amber').map(f=>f.text).join(' | '),
+    listed:x.listing?(x.listing.listed===true?'yes':(x.listing.listed===false?'no':'unknown')):'', asking_price:(x.listing||{}).asking_price||'', listing_url:(x.listing||{}).url||'',
     lien_sale:x.lien_sale||'', ecb_balance_due:x.ecb_balance_due||'', pitch:pitchFor(x)}));
   const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
   const csv=[cols.join(',')].concat(rows.map(r=>cols.map(c=>esc(r[c])).join(','))).join('\n');
@@ -691,7 +725,7 @@ const spill=x=>`<span class="scorepill ${scoreCls(x.score)}">${x.score}</span>`;
 const addrCell=x=>`<span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}`;
 
 function renderFilters(){
-  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['rezoning','Rezoning upside'],['clean','No red flags'],['lien','Lien sale'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
+  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['rezoning','Rezoning upside'],['clean','No red flags'],['lien','Lien sale'],['listed','On market'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
   $('filters').innerHTML=
     boros.map(b=>`<button class="chipbtn ${FILTER.boro===b?'on':''}" onclick="FILTER.boro='${b}';renderFilters();renderTable()">${b==='ALL'?'All boroughs':b}</button>`).join('')+
     '<span style="width:14px"></span>'+
@@ -711,7 +745,7 @@ function renderTable(){
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
     !d.city_owned && d.action!=='rfp' &&
     (FILTER.tier==='ALL' || (FILTER.tier==='actionable'?(d.action==='offer'||d.action==='negotiate'):
-      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='rezoning'?!!(d.rezoning||(d.rezoning_adjacent||[]).length): FILTER.tier==='clean'?(d.diligence&&!d.diligence.red&&(d.action==='offer'||d.action==='negotiate')): FILTER.tier==='lien'?!!d.lien_sale: FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
+      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='rezoning'?!!(d.rezoning||(d.rezoning_adjacent||[]).length): FILTER.tier==='clean'?(d.diligence&&!d.diligence.red&&(d.action==='offer'||d.action==='negotiate')): FILTER.tier==='lien'?!!d.lien_sale: FILTER.tier==='listed'?!!(d.listing&&d.listing.listed===true): FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
       FILTER.tier==='s8'?(String(d.best_market_path||'').endsWith('_s8')&&(d.action==='offer'||d.action==='negotiate')): d.action===FILTER.tier)) &&
     (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+(d.motivated?' motivated':'')+(d.free_and_clear?' free clear':'')).toLowerCase().includes(q)));
   const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
@@ -741,6 +775,8 @@ function renderTable(){
                 (d.owner_lot_count||0)>1?`<span class="badge b-hold" title="Same owner holds ${d.owner_lot_count} underbuilt lots on this board: ${(d.owner_other_lots||[]).join(', ')}">${d.owner_lot_count} lots</span>`:'',
                 d.occupied?`<span class="badge b-occ" title="${d.existing_units} existing units: relocation + 485-x replacement units">Occupied</span>`:'',
                 d.lien_sale?`<span class="badge b-occ" title="On the DOF tax lien sale list (${d.lien_sale})">Lien sale</span>`:'',
+                (d.listing&&d.listing.listed===true)?`<span class="badge b-listed" title="${(d.listing.note||'').replace(/"/g,'')}">Listed${d.listing.asking_price?' '+usd(d.listing.asking_price):''}</span>`:'',
+                d.wide_street_far?`<span class="badge b-mkt" title="Wide street (CSCL roadbed ${((d.street||{}).roadbed_ft||0).toFixed(0)} ft): FAR ${d.max_far_mapped} → ${d.max_far}">Wide st · FAR ${d.max_far}</span>`:'',
                 d.motivated?`<span class="badge b-hold" title="${d.free_and_clear?'Free & clear (no mortgage after deed)':'Long-held owner'}${d.owner_tenure_years?' · '+d.owner_tenure_years+'y tenure':''}">${d.free_and_clear?'Free&clear':'Long-hold'}</span>`:'',
                 d.owner_mailing?'<span class="badge b-mkt" title="Owner mailing address on file (ACRIS deed)">✉</span>':'',
                 d.is_new?'<span class="badge b-new">New</span>':''].join(' ');
@@ -770,6 +806,8 @@ function renderTable(){
         ${(d.rezoning_adjacent||[]).length?`<br><b style="color:#9be7ff">Adjacent upzoning on this block:</b> ${d.rezoning_adjacent.map(r=>`${r.name} (${r.stage}, → ${(r.to||[]).join('/')}) <a href="${r.url}" target="_blank" rel="noopener" class="em">↗</a>`).join('; ')}`:''}
         ${d.if_rezoned?`<br><b style="color:#9be7ff">If the rezoning lands:</b> ${d.if_rezoned.units} units at FAR ${d.if_rezoned.far} (${d.if_rezoned.source}) · walk-away land <b class="em">${usd(d.if_rezoned.walk_away_land)}</b> vs ${usd(d.walk_away_land)} today · best path ${(d.if_rezoned.best_path||'').replace(/_/g,' ')}. Speculative until approved; price the option, not the outcome.`:''}
         <br>walk-away land: <b class="em">${usd(d.walk_away_land)}</b> as owner-builder · <b>${usd(d.walk_away_land_institutional)}</b> with a third-party GC — the difference is your edge as the builder.</div>
+      ${d.listing?`<div style="margin-bottom:9px;font-size:12px;color:${d.listing.listed===true?'#ffd37a':'var(--text2)'}">◆ <b>On-market check (${d.listing.checked}, AI + Google Search):</b> ${d.listing.listed===true?`LISTED${d.listing.asking_price?' at <b>'+usd(d.listing.asking_price)+'</b> vs your max offer <b>'+usd(d.max_offer||d.walk_away_land)+'</b> ('+(d.max_offer&&d.listing.asking_price?Math.round(d.max_offer/d.listing.asking_price*100)+'% of ask':'')+')':''}${d.listing.broker?' · '+d.listing.broker:''}${d.listing.url?` · <a class="em" href="${d.listing.url}" target="_blank" rel="noopener">listing ↗</a>`:''}`:(d.listing.listed===false?'no listing found in search (off-market, not "not for sale")':'could not determine')}${d.listing.note?` · <span style="color:var(--muted)">${d.listing.note}</span>`:''}</div>`:''}
+      ${d.envelope?sketch(d):''}
       ${d.diligence?`<div style="margin:4px 0 10px"><div style="font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Pre-offer checks · ${d.diligence.checked} · <span class="down">${d.diligence.red} red</span> · <span class="warn">${d.diligence.amber} amber</span>${d.action_before_diligence?` · <span class="down">was ${d.action_before_diligence}, now pass</span>`:''}</div>
         <div class="dlist">${(d.diligence.flags||[]).sort((a,b)=>({red:0,amber:1,manual:2,green:3}[a.sev]-{red:0,amber:1,manual:2,green:3}[b.sev])).map(f=>`<div class="dl ${f.sev}">${f.text}</div>`).join('')}</div>
         <div style="font-size:11px;color:var(--dim);margin-top:4px">Not automatable from open data: street width (ZoLa), court judgments, LLC members, survey, Phase I, a real massing study. Red flags on frontage, landmark or historic district flip the row to pass.</div></div>`:''}
@@ -885,7 +923,7 @@ function onePager(i){
 
 (async()=>{
   try{
-    const [deals,briefs,progs,subs,pb,ct,nj,radar]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb,ct,nj,radar,listings]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null)]);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
@@ -983,6 +1021,12 @@ function onePager(i){
       };
       renderProgs();
     } else { $('progGrid').innerHTML='<div class="empty">Program library loads after the next data publish.</div>'; }
+    window.LISTINGS=listings||{};
+    const attachListing=(arr,keyOf)=>arr.forEach(x=>{const L=window.LISTINGS[keyOf(x)];if(L&&L.listed!==undefined)x.listing=L;});
+    attachListing(deals.deals||[],x=>x.bbl);
+    if(subs&&subs.deals)attachListing(subs.deals,x=>'nys|'+x.muni+'|'+x.address);
+    if(ct&&ct.deals)attachListing(ct.deals,x=>'ct|'+x.town+'|'+x.address);
+    if(nj&&nj.deals)attachListing(nj.deals,x=>x.pams_pin||('nj|'+x.town+'|'+x.address));
     DEALS=deals.deals||[]; window.__D.nyc=DEALS;
     const c=deals.counts||{};
     // city-owned RFP pipeline board
@@ -1008,7 +1052,7 @@ function onePager(i){
     const subAct=(subsC.offer||0)+(subsC.negotiate||0)+(ctC.offer||0)+(ctC.negotiate||0)+(njC.offer||0)+(njC.negotiate||0);
     const hero=[
       {k:'NYC: make an offer',v:c.offer??'—',s:`${c.negotiate??0} more to negotiate${c.upside_if_rezoned?` · ${c.upside_if_rezoned} with rezoning upside`:''}`,cls:'em'},
-      {k:'NYC: letters ready',v:c.with_mailing??'—',s:`owner mailing on file${c.diligence_clean!=null?` · ${c.diligence_clean} pass all checks`:''}${c.lien_sale?` · ${c.lien_sale} on lien sale list`:''}`},
+      {k:'NYC: letters ready',v:c.with_mailing??'—',s:`owner mailing on file${c.diligence_clean!=null?` · ${c.diligence_clean} pass all checks`:''}${c.lien_sale?` · ${c.lien_sale} on lien sale list`:''}${(window.LISTINGS&&window.LISTINGS._meta)?` · ${window.LISTINGS._meta.listed_now} listed`:''}`},
       {k:'Suburbs · CT · NJ',v:subAct||'—',s:`${(subsC.offer||0)+(subsC.negotiate||0)} NY · ${(ctC.offer||0)+(ctC.negotiate||0)} CT · ${(njC.offer||0)+(njC.negotiate||0)} NJ actionable`,cls:'em'},
       {k:'City-owned (RFP)',v:c.city_owned??'—',s:'HPD/DCAS/EDC pipeline',cls:'gold'},
       {k:'New today',v:c.new_today??'—',s:`${c.scanned??'—'} NYC parcels scanned`},

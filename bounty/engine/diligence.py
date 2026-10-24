@@ -34,12 +34,15 @@ DEC = "https://data.ny.gov/resource/c6ci-rzpg.json"
 # Conservative pre-City-of-Yes QH heights; COY added ~10-20 ft in several districts, so a "does not fit"
 # here is a real red flag, a "fits" is not a guarantee. Height-factor districts (R6, R7-1/2, R8) can
 # go taller under the HF rules, so they get a generous allowance.
+# (max height narrow street, max height wide street, lot coverage interior). Quality Housing after City of Yes,
+# conservative. Height-factor districts (R6, R7-1/2, R8) get the QH wide/narrow values; HF can go taller with setbacks.
 ENVELOPE = {
-    "R6":(115,0.65),"R6-1":(115,0.65),"R6A":(85,0.65),"R6B":(55,0.60),"R7-1":(125,0.65),"R7-2":(125,0.65),"R7-3":(185,0.70),
-    "R7A":(95,0.65),"R7B":(75,0.65),"R7D":(110,0.65),"R7X":(135,0.70),"R8":(155,0.70),"R8A":(135,0.70),"R8B":(85,0.70),
-    "R8X":(165,0.70),"R9":(185,0.70),"R9A":(165,0.70),"R9X":(185,0.70),"R10":(235,0.70),"R10A":(215,0.70),
-    "C1-4":(0,0),"C2-4":(0,0),"C4-4":(125,0.65),"C4-5X":(135,0.70),
+    "R6":(75,85,0.65),"R6-1":(75,85,0.65),"R6A":(85,85,0.65),"R6B":(55,55,0.60),"R7-1":(85,95,0.65),"R7-2":(85,95,0.65),"R7-3":(185,185,0.70),
+    "R7A":(95,95,0.65),"R7B":(75,75,0.65),"R7D":(110,110,0.65),"R7X":(135,135,0.70),"R8":(125,145,0.70),"R8A":(135,135,0.70),"R8B":(85,85,0.70),
+    "R8X":(165,165,0.70),"R9":(165,175,0.70),"R9A":(165,175,0.70),"R9X":(185,185,0.70),"R10":(215,235,0.70),"R10A":(215,235,0.70),
+    "C4-4":(85,95,0.65),"C4-4A":(95,95,0.65),"C4-4D":(135,135,0.70),"C4-5X":(135,135,0.70),"C4-5D":(135,135,0.70),
 }
+REAR_YARD_FT = 30      # interior lots in R districts (QH); corner lots have none, but we can't see corners in PLUTO
 AUTO_CLASSES = ("G",)          # PLUTO building class G* = garages, gas stations, car washes
 AUTO_LANDUSE = ("10",)         # parking facilities
 
@@ -83,19 +86,37 @@ def static_checks(d, p):
     zone = str(p.get("zonedist1") or "")
     env = ENVELOPE.get(zone)
     lot = float(p.get("lotarea") or 0); far = float(d.get("max_far") or 0)
-    if env and env[0] and lot:
-        hgt, cov = env
-        floors = max(1, int((hgt - 10) / 10))          # 10 ft floor-to-floor after a taller ground floor
-        max_zfa = lot * cov * floors
+    st = d.get("street") or {}
+    wide = st.get("class") == "wide"
+    if env and lot:
+        hgt = env[1] if wide else env[0]; cov = env[2]
+        floors = max(1, int((hgt - 12) / 10) + 1)        # taller ground floor, then 10 ft floor-to-floor
+        # footprint: rear yard off the depth (interior lot), then the coverage cap
+        fp_depth = max(0.0, depth - REAR_YARD_FT) if depth else None
+        footprint = min(lot * cov, front * fp_depth) if (front and fp_depth) else lot * cov
+        max_zfa = footprint * floors
         need = lot * far
+        d["envelope"] = {"zone": zone, "height_ft": hgt, "wide_street": wide, "coverage": cov, "floors": floors,
+                         "rear_yard_ft": REAR_YARD_FT, "front_ft": front, "depth_ft": depth,
+                         "footprint_sf": int(footprint), "zfa_allowed": int(need), "zfa_fits": int(min(need, max_zfa)),
+                         "floors_needed": (math.ceil(need / footprint) if footprint else None),
+                         "note": "Zoning envelope sketch from lot dimensions and Quality Housing bulk rules (interior lot, 30 ft rear yard). Not an architect's massing study: no setbacks, courts, egress or unit layout."}
         if need > max_zfa * 1.02:
-            f.append(_flag("red", "envelope", f"FAR {far} needs {need:,.0f} SF but {floors} floors × {int(cov*100)}% coverage caps ~{max_zfa:,.0f} SF: usable FAR ≈ {max_zfa/lot:.2f}"))
+            f.append(_flag("red", "envelope", f"FAR {far} needs {need:,.0f} SF but {floors} floors on a {footprint:,.0f} SF footprint caps ~{max_zfa:,.0f} SF: usable FAR ≈ {max_zfa/lot:.2f}"))
             d["far_fits"] = round(max_zfa / lot, 2)
         else:
-            f.append(_flag("green", "envelope", f"FAR fits: ~{floors} floors under {hgt} ft, {int(cov*100)}% coverage"))
+            fl_need = math.ceil(need / footprint) if footprint else floors
+            f.append(_flag("green", "envelope", f"FAR fits: {fl_need} floors on a {footprint:,.0f} SF footprint under the {hgt} ft {'wide' if wide else 'narrow'}-street limit"))
             d["far_fits"] = far
-    # --- street width (not in open data) ---
-    f.append(_flag("manual", "street_width", "street width not in open data: confirm wide vs narrow street on ZoLa (changes R-district FAR)"))
+    # --- street width (from CSCL roadbed width; see streets.py) ---
+    if st.get("class") == "wide":
+        f.append(_flag("green", "street_width", f"wide street ({st.get('street')}, roadbed {st.get('roadbed_ft'):.0f} ft): wide-street FAR/height applied where the district has one"))
+    elif st.get("class") == "narrow":
+        f.append(_flag("green", "street_width", f"narrow street ({st.get('street')}, roadbed {st.get('roadbed_ft'):.0f} ft): base FAR applies"))
+    elif st.get("class") == "verify":
+        f.append(_flag("manual", "street_width", f"street width ambiguous ({st.get('street')}, roadbed {st.get('roadbed_ft'):.0f} ft ≈ 70-80 ft mapped): confirm wide vs narrow on ZoLa"))
+    else:
+        f.append(_flag("manual", "street_width", "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"))
     return f
 
 def fetch_dob(bkl_by_boro):
