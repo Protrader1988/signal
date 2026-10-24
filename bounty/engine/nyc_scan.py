@@ -29,6 +29,7 @@ from datetime import datetime, timezone, date, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from underwrite import underwrite_all_paths, action_for, ASSUMPTIONS as UW
 import acris_distress
+import diligence
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/3.0)"}
 
@@ -156,8 +157,9 @@ def fetch_pluto():
              "and residfar > 0 and builtfar < residfar*0.5 "
              "and ownertype not in('O') "
              "and landuse not in('06','07','08','09')")
-    fields = ("borocode,borough,block,lot,address,zipcode,zonedist1,overlay1,"
-              "lotarea,lotfront,bldgarea,builtfar,residfar,"
+    fields = ("borocode,borough,block,lot,address,zipcode,zonedist1,overlay1,overlay2,spdist1,spdist2,spdist3,"
+              "ltdheight,histdist,landmark,edesignum,firm07_flag,pfirm15_flag,bldgclass,irrlotcode,"
+              "lotarea,lotfront,lotdepth,bldgarea,builtfar,residfar,"
               "numfloors,unitsres,unitstotal,yearbuilt,ownername,ownertype,"
               "assessland,assesstot,landuse,bbl,latitude,longitude")
     out, offset = [], 0
@@ -332,10 +334,12 @@ def main():
     raw = fetch_pluto()
     print(f"PLUTO {len(raw)} parcels fetched")
     deals, excluded = [], 0
+    pluto_by_bbl = {}
     for p in raw:
         if not acquirable(p): excluded += 1; continue
         d = underwrite(p, comps)
-        if d: deals.append(d)
+        if d:
+            deals.append(d); pluto_by_bbl[d["bbl"]] = p
     deals.sort(key=lambda d: d["score"], reverse=True)
     print(f"excluded {excluded} non-acquirable owners; underwrote {len(deals)}")
     # owner portfolio: the same owner holding several underbuilt lots (a congregation's spare land, or an assemblage)
@@ -360,6 +364,19 @@ def main():
         deals.sort(key=lambda d: d["score"], reverse=True)
     except Exception as e:
         print(f"ACRIS layer skipped: {e}")
+
+    # Diligence layer: zoning layers, geometry, DOB/ECB, lien sale, DEC sites, envelope — on the actionable set.
+    try:
+        dl = [d for d in deals if d["owner_class"] in ("private", "institutional") and d["action"] in ("offer", "negotiate", "program")][:400]
+        diligence.annotate(dl, pluto_by_bbl)
+        for d in dl:
+            dg = d.get("diligence") or {}
+            d["score"] = round(max(0, d["score"] - 12*dg.get("red", 0) - 3*dg.get("amber", 0) + (6 if d.get("lien_sale") else 0)), 1)
+        deals.sort(key=lambda d: d["score"], reverse=True)
+        print(f"  diligence: {sum(1 for d in dl if (d.get('diligence') or {}).get('red'))} lots with red flags, "
+              f"{sum(1 for d in dl if d.get('action_before_diligence'))} flipped to pass, {sum(1 for d in dl if d.get('lien_sale'))} on the lien sale list")
+    except Exception as e:
+        print(f"diligence layer skipped: {e}")
 
     hist_path = "bounty/data/history.json"
     hist = {}
@@ -405,6 +422,10 @@ def main():
                       "inside_rezoning": sum(1 for d in deals if d.get("rezoning")),
                       "adjacent_upzoning": sum(1 for d in deals if d.get("rezoning_adjacent")),
                       "upside_if_rezoned": sum(1 for d in deals if d.get("if_rezoned")),
+                      "diligence_checked": sum(1 for d in deals if d.get("diligence")),
+                      "diligence_clean": sum(1 for d in actionable if d.get("diligence") and not d["diligence"]["red"] and not d["diligence"]["amber"]),
+                      "lien_sale": sum(1 for d in deals if d.get("lien_sale")),
+                      "flipped_to_pass": sum(1 for d in deals if d.get("action_before_diligence")),
                       "land_sales_used": n_sales},
            "program_assumptions": UW,
            "land_comps_psf": comps,

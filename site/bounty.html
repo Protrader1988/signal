@@ -168,6 +168,13 @@
   .kcard .kx{float:right;color:var(--muted);cursor:pointer;font-size:12px}
   .kcard .kx:hover{color:var(--down)}
   .kcard.due{border-color:rgba(255,93,93,.5)}
+  .dq{display:inline-flex;gap:4px;font-family:var(--mono);font-size:11px}
+  .dq i{display:inline-block;min-width:18px;text-align:center;border-radius:5px;padding:1px 5px;font-style:normal;font-weight:700}
+  .dq .r{background:rgba(255,93,93,.18);color:#ff8a8a} .dq .a{background:rgba(242,178,62,.16);color:var(--warn)} .dq .g{background:rgba(47,211,154,.14);color:var(--em2)}
+  .dlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:6px 14px;margin:10px 0 4px}
+  .dl{font-size:12px;line-height:1.5;color:var(--text2);padding-left:16px;position:relative}
+  .dl::before{content:"●";position:absolute;left:0;top:0;font-size:10px}
+  .dl.red{color:#ffb3b3}.dl.red::before{color:var(--down)} .dl.amber::before{color:var(--warn)} .dl.green::before{color:var(--em)} .dl.manual{color:var(--muted)}.dl.manual::before{content:"○";color:var(--muted)}
   .b-rz{color:#9be7ff;border-color:rgba(90,200,255,.45);background:rgba(90,200,255,.08)}
   .rzgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;padding:14px 20px 18px}
   .rz{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
@@ -654,7 +661,7 @@ function exportBoard(region){
     rfp:'City-owned site: watch for HPD/EDC RFP; raise with Council member and CB'}[region]||'';
   const rowsIn=region==='nyc'?D.filter(x=>x.action==='offer'||x.action==='negotiate'):D;
   const pitchFor=x=>x.faith_owned?'Congregation land: ground-lease JV, you develop and build, they stay the nonprofit majority partner':(x.owner_class==='institutional'?'Institutional owner: purchase or JV, board + AG approval':pitch);
-  const cols=['action','max_offer','headroom','region','town','address','owner','owner_mailing','zone','acres','est_units','asking_proxy','best_path','pitch'];
+  const cols=['action','max_offer','headroom','region','town','address','owner','owner_mailing','zone','acres','est_units','asking_proxy','best_path','red_flags','amber_flags','lien_sale','ecb_balance_due','pitch'];
   const rows=rowsIn.slice(0,300).map(x=>({
     action:x.action||'', max_offer:x.max_offer||x.walk_away_land||'', headroom:x.headroom!=null?x.headroom:'',
     region:x.region||region.toUpperCase(), town:x.town||x.borough||x.muni||'',
@@ -662,7 +669,10 @@ function exportBoard(region){
     zone:x.zone||x.zone_desc||x.prop_class||'', acres:x.acres||(x.lot_sf?(x.lot_sf/43560).toFixed(2):''),
     est_units:x.est_units||x.est_units_at_assumed_density||'',
     asking_proxy:x.asking_proxy||x.est_value||x.est_market_value||x.assessed_net||x.est_land_cost||'',
-    best_path:x.best_market_path||x.product||'', pitch:pitchFor(x)}));
+    best_path:x.best_market_path||x.product||'',
+    red_flags:((x.diligence||{}).flags||[]).filter(f=>f.sev==='red').map(f=>f.text).join(' | '),
+    amber_flags:((x.diligence||{}).flags||[]).filter(f=>f.sev==='amber').map(f=>f.text).join(' | '),
+    lien_sale:x.lien_sale||'', ecb_balance_due:x.ecb_balance_due||'', pitch:pitchFor(x)}));
   const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
   const csv=[cols.join(',')].concat(rows.map(r=>cols.map(c=>esc(r[c])).join(','))).join('\n');
   const a=document.createElement('a');
@@ -681,7 +691,7 @@ const spill=x=>`<span class="scorepill ${scoreCls(x.score)}">${x.score}</span>`;
 const addrCell=x=>`<span class="chip">${x.address}</span>${x.is_new?' <span class="badge b-new">New</span>':''}`;
 
 function renderFilters(){
-  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['rezoning','Rezoning upside'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
+  const boros=['ALL','BX','BK','QN'], tiers=[['actionable','Actionable'],['offer','Offer'],['negotiate','Negotiate'],['program','Program'],['solo','Solo (≤$1M equity)'],['faith','Faith-owned (JV)'],['rezoning','Rezoning upside'],['clean','No red flags'],['lien','Lien sale'],['s8','Section 8 fit'],['motivated','Motivated'],['new','New'],['ALL','All']];
   $('filters').innerHTML=
     boros.map(b=>`<button class="chipbtn ${FILTER.boro===b?'on':''}" onclick="FILTER.boro='${b}';renderFilters();renderTable()">${b==='ALL'?'All boroughs':b}</button>`).join('')+
     '<span style="width:14px"></span>'+
@@ -690,8 +700,9 @@ function renderFilters(){
 
 const NYCVAL={score:d=>d.score, address:d=>d.address, zone:d=>d.zone, units:d=>d.est_units,
   land:d=>d.est_land_cost, walk:d=>d.max_offer||d.walk_away_land, head:d=>d.headroom, path:d=>d.best_market_path||d.best_path||'',
-  equity:d=>d.equity_needed, yoc:d=>{const b=(d.paths||[]).find(p=>p.path===d.best_market_path)||d.best||{};return b.yoc_pct;}, action:d=>d.action||''};
-const NYCNUM=['score','units','land','walk','head','equity','yoc'];
+  equity:d=>d.equity_needed, yoc:d=>{const b=(d.paths||[]).find(p=>p.path===d.best_market_path)||d.best||{};return b.yoc_pct;}, action:d=>d.action||'',
+  dq:d=>{const g=d.diligence;return g?-(g.red*10+g.amber):-99;}};
+const NYCNUM=['score','units','land','walk','head','equity','yoc','dq'];
 function nycSort(key){if(SORT.key===key)SORT.dir*=-1;else{SORT.key=key;SORT.dir=['address','zone','path','action'].includes(key)?1:-1;}renderTable();}
 function nth(key,label,num,title){return `<th class="${num?'num ':''}sortable${SORT.key===key?' sorted':''}" title="${title}" onclick="nycSort('${key}')">${label}${SORT.key===key?(SORT.dir<0?' ▾':' ▴'):''}</th>`;}
 function renderTable(){
@@ -700,7 +711,7 @@ function renderTable(){
     (FILTER.boro==='ALL'||d.borough===FILTER.boro) &&
     !d.city_owned && d.action!=='rfp' &&
     (FILTER.tier==='ALL' || (FILTER.tier==='actionable'?(d.action==='offer'||d.action==='negotiate'):
-      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='rezoning'?!!(d.rezoning||(d.rezoning_adjacent||[]).length): FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
+      FILTER.tier==='new'?d.is_new: FILTER.tier==='motivated'?d.motivated: FILTER.tier==='faith'?d.faith_owned: FILTER.tier==='rezoning'?!!(d.rezoning||(d.rezoning_adjacent||[]).length): FILTER.tier==='clean'?(d.diligence&&!d.diligence.red&&(d.action==='offer'||d.action==='negotiate')): FILTER.tier==='lien'?!!d.lien_sale: FILTER.tier==='solo'?(d.bucket==='solo'&&(d.action==='offer'||d.action==='negotiate')):
       FILTER.tier==='s8'?(String(d.best_market_path||'').endsWith('_s8')&&(d.action==='offer'||d.action==='negotiate')): d.action===FILTER.tier)) &&
     (!q || (d.address+' '+d.borough+' '+d.zone+' '+(d.owner||'')+' '+(d.best_path||'')+(d.motivated?' motivated':'')+(d.free_and_clear?' free clear':'')).toLowerCase().includes(q)));
   const sv=NYCVAL[SORT.key]||NYCVAL.score, num=NYCNUM.includes(SORT.key);
@@ -719,6 +730,7 @@ function renderTable(){
     ${nth('path','Best path',0,'Financing path with the highest walk-away land')}
     ${nth('yoc','YoC',1,'Yield on cost (NOI ÷ TDC) under the best path at est. land')}
     ${nth('equity','Equity',1,'Equity required under the best path (70% LTC, 1.20x DSCR)')}
+    ${nth('dq','Checks',1,'Diligence: red / amber / green flags from DOB, ECB, DOF lien sale, DEC, PLUTO zoning layers, lot geometry, envelope')}
     <th></th>
   </tr></thead><tbody>`;
   rows.forEach((d,i)=>{
@@ -728,6 +740,7 @@ function renderTable(){
                 d.rezoning?`<span class="badge b-rz" title="${(d.rezoning.name||'')} · ${d.rezoning.stage} · to ${(d.rezoning.to||[]).join('/')}">Rezoning · ${d.rezoning.stage}</span>`:((d.rezoning_adjacent||[]).length?`<span class="badge b-rz" title="${d.rezoning_adjacent.map(r=>r.name+' ('+r.stage+')').join('; ')}">Adjacent upzoning</span>`:''),
                 (d.owner_lot_count||0)>1?`<span class="badge b-hold" title="Same owner holds ${d.owner_lot_count} underbuilt lots on this board: ${(d.owner_other_lots||[]).join(', ')}">${d.owner_lot_count} lots</span>`:'',
                 d.occupied?`<span class="badge b-occ" title="${d.existing_units} existing units: relocation + 485-x replacement units">Occupied</span>`:'',
+                d.lien_sale?`<span class="badge b-occ" title="On the DOF tax lien sale list (${d.lien_sale})">Lien sale</span>`:'',
                 d.motivated?`<span class="badge b-hold" title="${d.free_and_clear?'Free & clear (no mortgage after deed)':'Long-held owner'}${d.owner_tenure_years?' · '+d.owner_tenure_years+'y tenure':''}">${d.free_and_clear?'Free&clear':'Long-hold'}</span>`:'',
                 d.owner_mailing?'<span class="badge b-mkt" title="Owner mailing address on file (ACRIS deed)">✉</span>':'',
                 d.is_new?'<span class="badge b-new">New</span>':''].join(' ');
@@ -743,9 +756,10 @@ function renderTable(){
       <td style="font-size:12px;color:var(--text2)">${(d.best_market_path||d.best_path||'—').replace(/_/g,' ')}</td>
       <td class="num ${bm.yoc_pct>=6.25?'up':'neu'}">${bm.yoc_pct!=null?bm.yoc_pct.toFixed(2)+'%':'—'}</td>
       <td class="num">${d.tier==='program'?'<span class="neu">fee</span>':usd(d.equity_needed)}</td>
+      <td>${d.diligence?`<span class="dq" title="red / amber / green"><i class="r">${d.diligence.red}</i><i class="a">${d.diligence.amber}</i><i class="g">${(d.diligence.flags||[]).filter(f=>f.sev==='green').length}</i></span>`:'<span class="neu" style="font-size:11px">—</span>'}</td>
       <td><button class="pipebtn ${inPipe?'in':''}" onclick="event.stopPropagation();pipeAdd('nyc',${i})">${inPipe?'✓ In pipeline':'+ Pipeline'}</button></td>
     </tr>
-    <tr class="detail" id="d${i}" style="display:none"><td colspan="13">
+    <tr class="detail" id="d${i}" style="display:none"><td colspan="14">
       <div style="margin-bottom:9px;font-size:12px;color:var(--text2)">
         <b style="color:var(--text)">${actBadge(d.action)} ${d.action_why||''}</b><br>
         owner: <span class="mono">${d.owner||'—'}</span>${d.owner_on_deed&&d.owner_on_deed!==d.owner?` (deed: <span class="mono">${d.owner_on_deed}</span>)`:''}${d.owner_mailing?` · mail to: <span class="mono" style="color:var(--em2)">${d.owner_mailing}</span>`:' · <span class="warn">no mailing address on file yet (ACRIS join runs nightly)</span>'}
@@ -756,6 +770,9 @@ function renderTable(){
         ${(d.rezoning_adjacent||[]).length?`<br><b style="color:#9be7ff">Adjacent upzoning on this block:</b> ${d.rezoning_adjacent.map(r=>`${r.name} (${r.stage}, → ${(r.to||[]).join('/')}) <a href="${r.url}" target="_blank" rel="noopener" class="em">↗</a>`).join('; ')}`:''}
         ${d.if_rezoned?`<br><b style="color:#9be7ff">If the rezoning lands:</b> ${d.if_rezoned.units} units at FAR ${d.if_rezoned.far} (${d.if_rezoned.source}) · walk-away land <b class="em">${usd(d.if_rezoned.walk_away_land)}</b> vs ${usd(d.walk_away_land)} today · best path ${(d.if_rezoned.best_path||'').replace(/_/g,' ')}. Speculative until approved; price the option, not the outcome.`:''}
         <br>walk-away land: <b class="em">${usd(d.walk_away_land)}</b> as owner-builder · <b>${usd(d.walk_away_land_institutional)}</b> with a third-party GC — the difference is your edge as the builder.</div>
+      ${d.diligence?`<div style="margin:4px 0 10px"><div style="font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Pre-offer checks · ${d.diligence.checked} · <span class="down">${d.diligence.red} red</span> · <span class="warn">${d.diligence.amber} amber</span>${d.action_before_diligence?` · <span class="down">was ${d.action_before_diligence}, now pass</span>`:''}</div>
+        <div class="dlist">${(d.diligence.flags||[]).sort((a,b)=>({red:0,amber:1,manual:2,green:3}[a.sev]-{red:0,amber:1,manual:2,green:3}[b.sev])).map(f=>`<div class="dl ${f.sev}">${f.text}</div>`).join('')}</div>
+        <div style="font-size:11px;color:var(--dim);margin-top:4px">Not automatable from open data: street width (ZoLa), court judgments, LLC members, survey, Phase I, a real massing study. Red flags on frontage, landmark or historic district flip the row to pass.</div></div>`:''}
       ${d.motivated?`<div style="margin-bottom:10px;font-size:12px;color:var(--warn)">◆ <b>Motivated-seller signal:</b> ${[d.free_and_clear?'free &amp; clear (no mortgage recorded after the deed — no payoff, cleaner close)':'',d.owner_tenure_years?`~${d.owner_tenure_years}y since last recorded deed (long-hold / low basis)`:''].filter(Boolean).join(' · ')} — statistically likelier to sell</div>`:''}
       <div class="paths">${(d.paths||[]).map(p=>`
         <div class="pth ${p.feasible?'ok':''}">
@@ -991,7 +1008,7 @@ function onePager(i){
     const subAct=(subsC.offer||0)+(subsC.negotiate||0)+(ctC.offer||0)+(ctC.negotiate||0)+(njC.offer||0)+(njC.negotiate||0);
     const hero=[
       {k:'NYC: make an offer',v:c.offer??'—',s:`${c.negotiate??0} more to negotiate${c.upside_if_rezoned?` · ${c.upside_if_rezoned} with rezoning upside`:''}`,cls:'em'},
-      {k:'NYC: letters ready',v:c.with_mailing??'—',s:'owner mailing address on file'},
+      {k:'NYC: letters ready',v:c.with_mailing??'—',s:`owner mailing on file${c.diligence_clean!=null?` · ${c.diligence_clean} pass all checks`:''}${c.lien_sale?` · ${c.lien_sale} on lien sale list`:''}`},
       {k:'Suburbs · CT · NJ',v:subAct||'—',s:`${(subsC.offer||0)+(subsC.negotiate||0)} NY · ${(ctC.offer||0)+(ctC.negotiate||0)} CT · ${(njC.offer||0)+(njC.negotiate||0)} NJ actionable`,cls:'em'},
       {k:'City-owned (RFP)',v:c.city_owned??'—',s:'HPD/DCAS/EDC pipeline',cls:'gold'},
       {k:'New today',v:c.new_today??'—',s:`${c.scanned??'—'} NYC parcels scanned`},
