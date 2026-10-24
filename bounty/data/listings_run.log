@@ -1,8 +1,9 @@
 listings: 115 targets, 115 due for a check
 gemini-3.6-flash attempt 1: HTTP 429
 gemini-3.6-flash attempt 2: HTTP 429
+gemini-3.6-flash attempt 3: HTTP 429
 gemini-flash-latest attempt 1: HTTP 429
 gemini-flash-latest attempt 2: HTTP 429
-gemini-2.5-flash attempt 1: HTTP 404
-  batch 0 failed: HTTP Error 404: Not Found
+gemini-flash-latest attempt 3: HTTP 429
+  batch 0 failed: HTTP Error 429: Too Many Requests
 listings: {'generated': '2026-10-24', 'targets': 115, 'checked_today': 115, 'listed_now': 0, 'note': 'AI + Google Search derived. A hit means a listing was found in search results for that address; a miss means nothing was found, not that the lot is unavailable.'}
