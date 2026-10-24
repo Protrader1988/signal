@@ -269,6 +269,7 @@
     <div class="eyebrow"><span class="no">02</span><h2>Deal Board</h2>
       <span class="hint">click any row to expand its full financing-path underwriting</span></div>
     <div class="subnote">Every row carries a next step. <span class="badge b-offer">Offer</span> = the walk-away land price (target yield on cost, you as GC) covers the comp-based land estimate: send the letter, bid at or under comps, never above <b>max offer</b>. <span class="badge b-neg">Negotiate</span> = walk-away is 70-100% of comps: only worth it with a long-hold or free-and-clear owner. <span class="badge b-prog">Program</span> = pencils only with the HPD subsidy stack (JV, dev-fee play). <span class="badge b-inst">Institutional</span> = church / yeshiva / hospital owner: sells, but needs a board vote and Attorney General or court approval (N-PCL 511), 6-12 months. <span class="badge b-occ">Occupied</span> = 3+ existing units: tenant relocation plus 485-x replacement units. City-owned lots live on the <a href="#rfp" class="em">RFP board</a>, not here.</div>
+    <div id="listingNote"></div>
     <div class="filters" id="filters"></div>
     <div style="margin:-6px 0 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
       <div class="viewtog" style="margin:0"><button id="vTable" class="on" onclick="setView('table')">▤ Table</button><button id="vMap" onclick="setView('map')">🗺 Map</button></div>
@@ -1022,6 +1023,7 @@ function onePager(i){
       renderProgs();
     } else { $('progGrid').innerHTML='<div class="empty">Program library loads after the next data publish.</div>'; }
     window.LISTINGS=listings||{};
+    {const m=(listings||{})._meta; const ln=$('listingNote'); if(ln){ if(!m||m.error||!m.checked_today&&!m.listed_now){ln.innerHTML=`<div class="banner" style="margin-bottom:12px"><b>On-market check not running.</b> ${m&&m.error?'Gemini Google-Search grounding returned <code>'+m.error.replace(/</g,'&lt;').slice(0,80)+'</code>. ':''}The free Gemini tier has no search-grounding quota; enabling pay-as-you-go on the key (≈$35 per 1,000 grounded prompts, ~12 a day here) turns on the listed / asking-price badges. Until then every row is off-market by construction: check StreetEasy, LoopNet and Crexi for the few you are about to mail.</div>`;} else {ln.innerHTML=`<div class="subnote" style="margin:0 0 10px"><b class="em">On-market check</b> · ${m.generated} · ${m.listed_now} of ${m.targets} top sites currently listed (AI + Google Search; a miss means nothing found, not unavailable).</div>`;} } }
     const attachListing=(arr,keyOf)=>arr.forEach(x=>{const L=window.LISTINGS[keyOf(x)];if(L&&L.listed!==undefined)x.listing=L;});
     attachListing(deals.deals||[],x=>x.bbl);
     if(subs&&subs.deals)attachListing(subs.deals,x=>'nys|'+x.muni+'|'+x.address);

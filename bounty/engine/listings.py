@@ -41,7 +41,9 @@ def gemini(key, prompt):
                 text = "".join(p.get("text", "") for p in j["candidates"][0]["content"]["parts"])
                 return text, m
             except urllib.error.HTTPError as e:
-                print(f"{m} attempt {attempt}: HTTP {e.code}"); last = e
+                try: body = e.read().decode()[:300]
+                except Exception: body = ""
+                print(f"{m} attempt {attempt}: HTTP {e.code} {body}"); last = e
                 if e.code == 429 and attempt < 3: time.sleep(70 * attempt); continue
                 break
             except Exception as e:
@@ -94,7 +96,11 @@ def main():
         try:
             text, model = gemini(key, payload)
         except Exception as e:
-            print(f"  batch {i//8} failed: {e}"); break
+            print(f"  batch {i//8} failed: {e}")
+            out["_meta"] = {"generated": today, "targets": len(tg), "checked_today": 0, "listed_now": 0,
+                            "error": f"{type(e).__name__}: {str(e)[:160]}",
+                            "note": "On-market check did not run: Google Search grounding returned an error. On the free Gemini tier grounding has no quota; enable pay-as-you-go on the key (about $35 per 1,000 grounded prompts, ~12/day here) or leave the board off-market only."}
+            json.dump(out, open(OUT, "w"), indent=1); return
         arr = parse_json_array(text)
         got = {str(a.get("key")): a for a in arr if isinstance(a, dict)}
         for b in batch:
