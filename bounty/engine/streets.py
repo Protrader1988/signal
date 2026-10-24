@@ -71,7 +71,10 @@ def _segments(boro, want):
     return rows
 
 def _hn(s):
-    try: return int(re.sub(r"[^0-9]", "", str(s).split("-")[-1]))
+    """'2355' -> 2355; Queens '87-11' -> 8711 (keeps the block prefix so ranges compare correctly)."""
+    try:
+        digits = re.sub(r"[^0-9]", "", str(s))
+        return int(digits) if digits else None
     except Exception: return None
 
 def _house_number(address):
