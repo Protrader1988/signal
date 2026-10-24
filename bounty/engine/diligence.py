@@ -111,8 +111,9 @@ def fetch_dob(bkl_by_boro):
             except Exception as e:
                 print(f"  DOB violations chunk failed: {e}"); continue
             for r in rows:
-                k = (boro, str(r.get("block") or "").zfill(5), str(r.get("lot") or "").zfill(5))
-                if k not in keys: continue
+                bl = (str(r.get("block") or "").zfill(5), str(r.get("lot") or "").zfill(5))
+                if bl not in keys: continue
+                k = (boro,) + bl
                 o = out.setdefault(k, {"dob_open": 0, "dob_total": 0, "types": set()})
                 o["dob_total"] += 1
                 cat = str(r.get("violation_category") or "").upper()
@@ -134,8 +135,9 @@ def fetch_ecb(bkl_by_boro):
             except Exception as e:
                 print(f"  ECB chunk failed: {e}"); continue
             for r in rows:
-                k = (boro, str(r.get("block") or "").zfill(5), str(r.get("lot") or "").zfill(5))
-                if k not in keys: continue
+                bl = (str(r.get("block") or "").zfill(5), str(r.get("lot") or "").zfill(5))
+                if bl not in keys: continue
+                k = (boro,) + bl
                 o = out.setdefault(k, {"ecb_active": 0, "ecb_balance": 0.0, "ecb_total": 0})
                 o["ecb_total"] += 1
                 if str(r.get("ecb_violation_status") or "").upper().startswith("ACTIVE"):
@@ -154,13 +156,14 @@ def fetch_lien_sale(bkl_by_boro):
             inb = ",".join(chunk)
             where = f"borough='{boro}' and block in({inb})"
             try:
-                rows = _get(LIEN + f"?$select=borough,block,lot,cycle,water_debt_only,tax_class_code&$where={urllib.parse.quote(where)}&$order=cycle DESC&$limit=50000")
+                rows = _get(LIEN + f"?$select=borough,block,lot,cycle,water_debt_only,tax_class_code&$where={urllib.parse.quote(where)}&$order=" + urllib.parse.quote("cycle DESC") + "&$limit=50000")
             except Exception as e:
                 print(f"  lien sale chunk failed: {e}"); continue
             for r in rows:
-                try: k = (boro, str(int(r.get("block"))).zfill(5), str(int(r.get("lot"))).zfill(5))
+                try: bl = (str(int(r.get("block"))).zfill(5), str(int(r.get("lot"))).zfill(5))
                 except Exception: continue
-                if k not in keys: continue
+                if bl not in keys: continue
+                k = (boro,) + bl
                 cur = out.get(k)
                 if not cur or str(r.get("cycle") or "") > str(cur.get("cycle") or ""):
                     out[k] = {"cycle": r.get("cycle"), "water_only": str(r.get("water_debt_only") or "").upper().startswith("Y")}
@@ -169,8 +172,8 @@ def fetch_lien_sale(bkl_by_boro):
 def fetch_dec_sites():
     """NYS DEC remediation sites in the Bronx, Kings, Queens with coordinates."""
     try:
-        rows = _get(DEC + "?$select=site_name,site_class,program_type,address,locality,county,latitude,longitude&$where=" +
-                    urllib.parse.quote("upper(county) in('BRONX','KINGS','QUEENS')") + "&$limit=50000")
+        rows = _get(DEC + "?$select=program_facility_name,siteclass,program_type,address1,locality,county,latitude,longitude&$where=" +
+                    urllib.parse.quote("county in('Bronx','Kings','Queens')") + "&$limit=50000")
     except Exception as e:
         print(f"  DEC remediation fetch failed: {e}"); return []
     out = []
@@ -210,6 +213,7 @@ def annotate(deals, pluto_by_bbl):
         v = dob.get(k) if k else None
         if v and v["dob_open"]:
             flags.append(_flag("amber", "dob", f"{v['dob_open']} open DOB violation(s) of {v['dob_total']} ({', '.join(sorted(v['types'])[:3])}): owner has a problem you can solve"))
+            d["dob_open"] = v["dob_open"]
         else:
             flags.append(_flag("green", "dob", "no open DOB violations"))
         e = ecb.get(k) if k else None
@@ -235,7 +239,7 @@ def annotate(deals, pluto_by_bbl):
             if near:
                 x, r = near[0]
                 sev = "red" if x <= 40 else "amber"
-                flags.append(_flag(sev, "remediation", f"NYS DEC remediation site {x} ft away: {r.get('site_name','')} ({r.get('program_type','')}, class {r.get('site_class','')})"))
+                flags.append(_flag(sev, "remediation", f"NYS DEC remediation site {x} ft away: {r.get('program_facility_name','')} ({r.get('program_type','')}, class {r.get('siteclass','')})"))
             else:
                 flags.append(_flag("green", "remediation", "no DEC remediation site within 150 ft"))
         red = sum(1 for x in flags if x["sev"] == "red"); amber = sum(1 for x in flags if x["sev"] == "amber")
