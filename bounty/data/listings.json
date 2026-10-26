@@ -1,9 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-24",
+  "generated": "2026-10-26",
   "targets": 115,
-  "checked_today": 115,
+  "checked_today": 0,
   "listed_now": 0,
-  "note": "AI + Google Search derived. A hit means a listing was found in search results for that address; a miss means nothing was found, not that the lot is unavailable."
+  "error": "TypeError: POST data should be bytes, an iterable of bytes, or a file object. It cannot be of type str.",
+  "note": "On-market check did not run: Google Search grounding returned an error. On the free Gemini tier grounding has no quota; enable pay-as-you-go on the key (about $35 per 1,000 grounded prompts, ~12/day here) or leave the board off-market only."
  }
 }
