@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-24T18:54:55.070461+00:00",
+  "generated_utc": "2026-10-26T17:38:13.776494+00:00",
   "region": "NYC \u2014 Bronx, Brooklyn, Queens",
   "thesis": "Private underbuilt lots where the walk-away land price (at target yield on cost, owner-builder basis) covers the comp-based land estimate. Those are the sites to make offers on. City-owned HPD/DCAS/EDC lots are a separate RFP pipeline.",
   "counts": {
@@ -19,7 +19,7 @@
     "pencils": 669,
     "motivated": 111,
     "free_and_clear": 103,
-    "with_mailing": 143,
+    "with_mailing": 144,
     "faith_owned": 99,
     "faith_multi_lot": 24,
     "inside_rezoning": 34,
@@ -418,7 +418,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -740,7 +740,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -995,7 +995,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 18.0,
+      "owner_tenure_years": 18.1,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.7080077,
@@ -1079,7 +1079,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -1334,7 +1334,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 18.0,
+      "owner_tenure_years": 18.1,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.7075153,
@@ -1413,7 +1413,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -1706,7 +1706,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -2041,7 +2041,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -2375,7 +2375,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -2638,10 +2638,7 @@
       "owner_lot_count": 1,
       "owner_other_lots": [],
       "street": {
-        "street": "KENT ST",
-        "roadbed_ft": 30.0,
-        "class": "narrow",
-        "match": "house number"
+        "error": "<urlopen error [Errno 104] Connection reset by peer>"
       },
       "envelope": {
         "zone": "R6B",
@@ -2672,9 +2669,9 @@
             "text": "FAR fits: 4 floors on a 1,500 SF footprint under the 55 ft narrow-street limit"
           },
           {
-            "sev": "green",
+            "sev": "manual",
             "code": "street_width",
-            "text": "narrow street (KENT ST, roadbed 30 ft): base FAR applies"
+            "text": "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
           },
           {
             "sev": "green",
@@ -2694,8 +2691,10 @@
         ],
         "red": 0,
         "amber": 0,
-        "manual": [],
-        "checked": "2026-10-24"
+        "manual": [
+          "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
+        ],
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -3024,337 +3023,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
-      },
-      "first_seen": "2026-07-22",
-      "is_new": false
-    },
-    {
-      "bbl": "3019840045.00000000",
-      "address": "442 Classon Avenue",
-      "borough": "BK",
-      "zip": "11238",
-      "zone": "R6B",
-      "lot_sf": 2500,
-      "built_far": 0.0,
-      "max_far": 2.0,
-      "max_far_mapped": 2.0,
-      "rezoning": null,
-      "rezoning_adjacent": [],
-      "if_rezoned": null,
-      "buildable_sf": 5000,
-      "est_units": 7,
-      "existing_units": 0,
-      "occupied": false,
-      "year_built": null,
-      "owner": "Mount Zion Tabern/Christ",
-      "owner_class": "institutional",
-      "city_owned": false,
-      "faith_owned": true,
-      "owner_mailing": "",
-      "owner_on_deed": "",
-      "assessed_land": 141300,
-      "land_comp_psf": 467.0,
-      "est_land_cost": 813540,
-      "walk_away_land": 1382275,
-      "walk_away_land_institutional": 970147,
-      "action": "offer",
-      "max_offer": 894894,
-      "headroom": 1.7,
-      "action_why": "pencils at comps; walk-away is 170% of est. land",
-      "pencils": true,
-      "tier": "market",
-      "best_path": "485x_small",
-      "best_path_label": "485-x Option C small building (10-yr exemption, 50% stabilized, market rents)",
-      "best_market_path": "485x_small",
-      "best": {
-        "path": "485x_small",
-        "label": "485-x Option C small building (10-yr exemption, 50% stabilized, market rents)",
-        "units_market": 7,
-        "units_affordable": 0,
-        "gross_sf": 5400,
-        "hard": 1566000,
-        "soft": 313200,
-        "financing": 112752,
-        "tdc": 2805492,
-        "tdc_institutional": 3217620,
-        "loan": 1963844,
-        "equity": 841647,
-        "equity_pct": 30.0,
-        "noi": 210889,
-        "dscr": 1.38,
-        "yoc_pct": 7.52,
-        "cash_flow": 58039,
-        "coc_pct": 6.9,
-        "walk_away_land": 1382275,
-        "walk_away_land_institutional": 970147,
-        "feasible": true
-      },
-      "paths": [
-        {
-          "path": "conv",
-          "label": "Conventional market, no abatement",
-          "units_market": 7,
-          "units_affordable": 0,
-          "gross_sf": 5400,
-          "hard": 1566000,
-          "soft": 313200,
-          "financing": 112752,
-          "tdc": 2805492,
-          "tdc_institutional": 3217620,
-          "loan": 1896603,
-          "equity": 908888,
-          "equity_pct": 32.4,
-          "noi": 177139,
-          "dscr": 1.2,
-          "yoc_pct": 6.31,
-          "cash_flow": 29523,
-          "coc_pct": 3.2,
-          "walk_away_land": 842275,
-          "walk_away_land_institutional": 430147,
-          "feasible": true
-        },
-        {
-          "path": "485x_small",
-          "label": "485-x Option C small building (10-yr exemption, 50% stabilized, market rents)",
-          "units_market": 7,
-          "units_affordable": 0,
-          "gross_sf": 5400,
-          "hard": 1566000,
-          "soft": 313200,
-          "financing": 112752,
-          "tdc": 2805492,
-          "tdc_institutional": 3217620,
-          "loan": 1963844,
-          "equity": 841647,
-          "equity_pct": 30.0,
-          "noi": 210889,
-          "dscr": 1.38,
-          "yoc_pct": 7.52,
-          "cash_flow": 58039,
-          "coc_pct": 6.9,
-          "walk_away_land": 1382275,
-          "walk_away_land_institutional": 970147,
-          "feasible": true
-        },
-        {
-          "path": "485x_small_s8",
-          "label": "485-x Option C + Section 8 tenants (VPS-capped, 2% vacancy)",
-          "units_market": 7,
-          "units_affordable": 0,
-          "gross_sf": 5400,
-          "hard": 1566000,
-          "soft": 313200,
-          "financing": 112752,
-          "tdc": 2805492,
-          "tdc_institutional": 3217620,
-          "loan": 1861514,
-          "equity": 943977,
-          "equity_pct": 33.6,
-          "noi": 173862,
-          "dscr": 1.2,
-          "yoc_pct": 6.2,
-          "cash_flow": 28977,
-          "coc_pct": 3.1,
-          "walk_away_land": 789840,
-          "walk_away_land_institutional": 377712,
-          "feasible": false
-        },
-        {
-          "path": "485x",
-          "label": "485-x Option B (20% @ 80% AMI, 35-yr exemption)",
-          "units_market": 6,
-          "units_affordable": 1,
-          "gross_sf": 5400,
-          "hard": 1566000,
-          "soft": 313200,
-          "financing": 112752,
-          "tdc": 2805492,
-          "tdc_institutional": 3217620,
-          "loan": 1963844,
-          "equity": 841647,
-          "equity_pct": 30.0,
-          "noi": 198645,
-          "dscr": 1.3,
-          "yoc_pct": 7.08,
-          "cash_flow": 45796,
-          "coc_pct": 5.4,
-          "walk_away_land": 1186377,
-          "walk_away_land_institutional": 774249,
-          "feasible": true
-        },
-        {
-          "path": "485x_s8",
-          "label": "485-x Option B + Section 8 tenants (VPS-capped, 2% vacancy)",
-          "units_market": 6,
-          "units_affordable": 1,
-          "gross_sf": 5400,
-          "hard": 1566000,
-          "soft": 313200,
-          "financing": 112752,
-          "tdc": 2805492,
-          "tdc_institutional": 3217620,
-          "loan": 1796040,
-          "equity": 1009451,
-          "equity_pct": 36.0,
-          "noi": 167746,
-          "dscr": 1.2,
-          "yoc_pct": 5.98,
-          "cash_flow": 27957,
-          "coc_pct": 2.8,
-          "walk_away_land": 691996,
-          "walk_away_land_institutional": 279868,
-          "feasible": false
-        },
-        {
-          "path": "uap",
-          "label": "City of Yes UAP +20% FAR + 485-x",
-          "units_market": 6,
-          "units_affordable": 2,
-          "gross_sf": 6480,
-          "hard": 1879200,
-          "soft": 375840,
-          "financing": 135302,
-          "tdc": 3203882,
-          "tdc_institutional": 3698436,
-          "loan": 2210382,
-          "equity": 993499,
-          "equity_pct": 31.0,
-          "noi": 206445,
-          "dscr": 1.2,
-          "yoc_pct": 6.44,
-          "cash_flow": 34407,
-          "coc_pct": 3.5,
-          "walk_away_land": 912787,
-          "walk_away_land_institutional": 418233,
-          "feasible": true
-        },
-        {
-          "path": "uap_s8",
-          "label": "UAP +20% FAR + 485-x + Section 8 tenants",
-          "units_market": 6,
-          "units_affordable": 2,
-          "gross_sf": 6480,
-          "hard": 1879200,
-          "soft": 375840,
-          "financing": 135302,
-          "tdc": 3203882,
-          "tdc_institutional": 3698436,
-          "loan": 1886299,
-          "equity": 1317583,
-          "equity_pct": 41.1,
-          "noi": 176176,
-          "dscr": 1.2,
-          "yoc_pct": 5.5,
-          "cash_flow": 29362,
-          "coc_pct": 2.2,
-          "walk_away_land": 428486,
-          "walk_away_land_institutional": 0,
-          "feasible": false
-        },
-        {
-          "path": "ella",
-          "label": "ELLA / 4% LIHTC all-affordable stack (HPD award required; profit = dev fee)",
-          "units_market": 0,
-          "units_affordable": 7,
-          "tdc": 3539382,
-          "loan": 1077774,
-          "equity": 0,
-          "equity_pct": 0.0,
-          "noi": 78900,
-          "dscr": 1.15,
-          "cash_flow": 0,
-          "coc_pct": null,
-          "dev_fee": 321762,
-          "funding_gap": 104792,
-          "feasible": false,
-          "program_dependent": true
-        }
-      ],
-      "equity_needed": 841647,
-      "bucket": "solo",
-      "score": 69.6,
-      "rent_market_used": 3404,
-      "neighborhood_factor": 1.22,
-      "distress": false,
-      "distress_type": null,
-      "distress_year": null,
-      "owner_tenure_years": 50.1,
-      "free_and_clear": true,
-      "motivated": true,
-      "lat": 40.6847832,
-      "lng": -73.9594908,
-      "owner_lot_count": 1,
-      "owner_other_lots": [],
-      "street": {
-        "street": "CLASSON AVE",
-        "roadbed_ft": 34.0,
-        "class": "narrow",
-        "match": "house number"
-      },
-      "envelope": {
-        "zone": "R6B",
-        "height_ft": 55,
-        "wide_street": false,
-        "coverage": 0.6,
-        "floors": 5,
-        "rear_yard_ft": 30,
-        "front_ft": 25.0,
-        "depth_ft": 100.0,
-        "footprint_sf": 1500,
-        "zfa_allowed": 5000,
-        "zfa_fits": 5000,
-        "floors_needed": 4,
-        "note": "Zoning envelope sketch from lot dimensions and Quality Housing bulk rules (interior lot, 30 ft rear yard). Not an architect's massing study: no setbacks, courts, egress or unit layout."
-      },
-      "far_fits": 2.0,
-      "diligence": {
-        "flags": [
-          {
-            "sev": "green",
-            "code": "frontage",
-            "text": "frontage 25 ft \u00d7 depth 100 ft"
-          },
-          {
-            "sev": "amber",
-            "code": "auto_use",
-            "text": "prior auto / parking use (class G7): Phase I and likely Phase II for petroleum"
-          },
-          {
-            "sev": "green",
-            "code": "envelope",
-            "text": "FAR fits: 4 floors on a 1,500 SF footprint under the 55 ft narrow-street limit"
-          },
-          {
-            "sev": "green",
-            "code": "street_width",
-            "text": "narrow street (CLASSON AVE, roadbed 34 ft): base FAR applies"
-          },
-          {
-            "sev": "green",
-            "code": "dob",
-            "text": "no open DOB violations"
-          },
-          {
-            "sev": "green",
-            "code": "ecb",
-            "text": "no active ECB balances"
-          },
-          {
-            "sev": "green",
-            "code": "mortgage",
-            "text": "no mortgage recorded after the current deed"
-          },
-          {
-            "sev": "green",
-            "code": "remediation",
-            "text": "no DEC remediation site within 150 ft"
-          }
-        ],
-        "red": 0,
-        "amber": 1,
-        "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -3684,7 +3353,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -3901,10 +3570,7 @@
       "owner_lot_count": 1,
       "owner_other_lots": [],
       "street": {
-        "street": "WASHINGTON AVE",
-        "roadbed_ft": 40.0,
-        "class": "verify",
-        "match": "house number"
+        "error": "<urlopen error [Errno 104] Connection reset by peer>"
       },
       "envelope": {
         "zone": "R7A",
@@ -3942,7 +3608,7 @@
           {
             "sev": "manual",
             "code": "street_width",
-            "text": "street width ambiguous (WASHINGTON AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
+            "text": "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
           },
           {
             "sev": "green",
@@ -3968,9 +3634,9 @@
         "red": 0,
         "amber": 1,
         "manual": [
-          "street width ambiguous (WASHINGTON AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
+          "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -4330,7 +3996,7 @@
         "manual": [
           "street width ambiguous (FRANKLIN AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -4627,7 +4293,7 @@
         "manual": [
           "street width ambiguous (ROEBLING ST, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -4915,7 +4581,342 @@
         "manual": [
           "street width ambiguous (VAN CORTLANDT AVE W, roadbed 44 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
+      },
+      "first_seen": "2026-07-22",
+      "is_new": false
+    },
+    {
+      "bbl": "3019840045.00000000",
+      "address": "442 Classon Avenue",
+      "borough": "BK",
+      "zip": "11238",
+      "zone": "R6B",
+      "lot_sf": 2500,
+      "built_far": 0.0,
+      "max_far": 2.0,
+      "max_far_mapped": 2.0,
+      "rezoning": null,
+      "rezoning_adjacent": [],
+      "if_rezoned": null,
+      "buildable_sf": 5000,
+      "est_units": 7,
+      "existing_units": 0,
+      "occupied": false,
+      "year_built": null,
+      "owner": "Mount Zion Tabern/Christ",
+      "owner_class": "institutional",
+      "city_owned": false,
+      "faith_owned": true,
+      "owner_mailing": "Municipal Building, New York Ny",
+      "owner_on_deed": "The City Of New York",
+      "assessed_land": 141300,
+      "land_comp_psf": 467.0,
+      "est_land_cost": 813540,
+      "walk_away_land": 1382275,
+      "walk_away_land_institutional": 970147,
+      "action": "offer",
+      "max_offer": 894894,
+      "headroom": 1.7,
+      "action_why": "pencils at comps; walk-away is 170% of est. land",
+      "pencils": true,
+      "tier": "market",
+      "best_path": "485x_small",
+      "best_path_label": "485-x Option C small building (10-yr exemption, 50% stabilized, market rents)",
+      "best_market_path": "485x_small",
+      "best": {
+        "path": "485x_small",
+        "label": "485-x Option C small building (10-yr exemption, 50% stabilized, market rents)",
+        "units_market": 7,
+        "units_affordable": 0,
+        "gross_sf": 5400,
+        "hard": 1566000,
+        "soft": 313200,
+        "financing": 112752,
+        "tdc": 2805492,
+        "tdc_institutional": 3217620,
+        "loan": 1963844,
+        "equity": 841647,
+        "equity_pct": 30.0,
+        "noi": 210889,
+        "dscr": 1.38,
+        "yoc_pct": 7.52,
+        "cash_flow": 58039,
+        "coc_pct": 6.9,
+        "walk_away_land": 1382275,
+        "walk_away_land_institutional": 970147,
+        "feasible": true
+      },
+      "paths": [
+        {
+          "path": "conv",
+          "label": "Conventional market, no abatement",
+          "units_market": 7,
+          "units_affordable": 0,
+          "gross_sf": 5400,
+          "hard": 1566000,
+          "soft": 313200,
+          "financing": 112752,
+          "tdc": 2805492,
+          "tdc_institutional": 3217620,
+          "loan": 1896603,
+          "equity": 908888,
+          "equity_pct": 32.4,
+          "noi": 177139,
+          "dscr": 1.2,
+          "yoc_pct": 6.31,
+          "cash_flow": 29523,
+          "coc_pct": 3.2,
+          "walk_away_land": 842275,
+          "walk_away_land_institutional": 430147,
+          "feasible": true
+        },
+        {
+          "path": "485x_small",
+          "label": "485-x Option C small building (10-yr exemption, 50% stabilized, market rents)",
+          "units_market": 7,
+          "units_affordable": 0,
+          "gross_sf": 5400,
+          "hard": 1566000,
+          "soft": 313200,
+          "financing": 112752,
+          "tdc": 2805492,
+          "tdc_institutional": 3217620,
+          "loan": 1963844,
+          "equity": 841647,
+          "equity_pct": 30.0,
+          "noi": 210889,
+          "dscr": 1.38,
+          "yoc_pct": 7.52,
+          "cash_flow": 58039,
+          "coc_pct": 6.9,
+          "walk_away_land": 1382275,
+          "walk_away_land_institutional": 970147,
+          "feasible": true
+        },
+        {
+          "path": "485x_small_s8",
+          "label": "485-x Option C + Section 8 tenants (VPS-capped, 2% vacancy)",
+          "units_market": 7,
+          "units_affordable": 0,
+          "gross_sf": 5400,
+          "hard": 1566000,
+          "soft": 313200,
+          "financing": 112752,
+          "tdc": 2805492,
+          "tdc_institutional": 3217620,
+          "loan": 1861514,
+          "equity": 943977,
+          "equity_pct": 33.6,
+          "noi": 173862,
+          "dscr": 1.2,
+          "yoc_pct": 6.2,
+          "cash_flow": 28977,
+          "coc_pct": 3.1,
+          "walk_away_land": 789840,
+          "walk_away_land_institutional": 377712,
+          "feasible": false
+        },
+        {
+          "path": "485x",
+          "label": "485-x Option B (20% @ 80% AMI, 35-yr exemption)",
+          "units_market": 6,
+          "units_affordable": 1,
+          "gross_sf": 5400,
+          "hard": 1566000,
+          "soft": 313200,
+          "financing": 112752,
+          "tdc": 2805492,
+          "tdc_institutional": 3217620,
+          "loan": 1963844,
+          "equity": 841647,
+          "equity_pct": 30.0,
+          "noi": 198645,
+          "dscr": 1.3,
+          "yoc_pct": 7.08,
+          "cash_flow": 45796,
+          "coc_pct": 5.4,
+          "walk_away_land": 1186377,
+          "walk_away_land_institutional": 774249,
+          "feasible": true
+        },
+        {
+          "path": "485x_s8",
+          "label": "485-x Option B + Section 8 tenants (VPS-capped, 2% vacancy)",
+          "units_market": 6,
+          "units_affordable": 1,
+          "gross_sf": 5400,
+          "hard": 1566000,
+          "soft": 313200,
+          "financing": 112752,
+          "tdc": 2805492,
+          "tdc_institutional": 3217620,
+          "loan": 1796040,
+          "equity": 1009451,
+          "equity_pct": 36.0,
+          "noi": 167746,
+          "dscr": 1.2,
+          "yoc_pct": 5.98,
+          "cash_flow": 27957,
+          "coc_pct": 2.8,
+          "walk_away_land": 691996,
+          "walk_away_land_institutional": 279868,
+          "feasible": false
+        },
+        {
+          "path": "uap",
+          "label": "City of Yes UAP +20% FAR + 485-x",
+          "units_market": 6,
+          "units_affordable": 2,
+          "gross_sf": 6480,
+          "hard": 1879200,
+          "soft": 375840,
+          "financing": 135302,
+          "tdc": 3203882,
+          "tdc_institutional": 3698436,
+          "loan": 2210382,
+          "equity": 993499,
+          "equity_pct": 31.0,
+          "noi": 206445,
+          "dscr": 1.2,
+          "yoc_pct": 6.44,
+          "cash_flow": 34407,
+          "coc_pct": 3.5,
+          "walk_away_land": 912787,
+          "walk_away_land_institutional": 418233,
+          "feasible": true
+        },
+        {
+          "path": "uap_s8",
+          "label": "UAP +20% FAR + 485-x + Section 8 tenants",
+          "units_market": 6,
+          "units_affordable": 2,
+          "gross_sf": 6480,
+          "hard": 1879200,
+          "soft": 375840,
+          "financing": 135302,
+          "tdc": 3203882,
+          "tdc_institutional": 3698436,
+          "loan": 1886299,
+          "equity": 1317583,
+          "equity_pct": 41.1,
+          "noi": 176176,
+          "dscr": 1.2,
+          "yoc_pct": 5.5,
+          "cash_flow": 29362,
+          "coc_pct": 2.2,
+          "walk_away_land": 428486,
+          "walk_away_land_institutional": 0,
+          "feasible": false
+        },
+        {
+          "path": "ella",
+          "label": "ELLA / 4% LIHTC all-affordable stack (HPD award required; profit = dev fee)",
+          "units_market": 0,
+          "units_affordable": 7,
+          "tdc": 3539382,
+          "loan": 1077774,
+          "equity": 0,
+          "equity_pct": 0.0,
+          "noi": 78900,
+          "dscr": 1.15,
+          "cash_flow": 0,
+          "coc_pct": null,
+          "dev_fee": 321762,
+          "funding_gap": 104792,
+          "feasible": false,
+          "program_dependent": true
+        }
+      ],
+      "equity_needed": 841647,
+      "bucket": "solo",
+      "score": 66.6,
+      "rent_market_used": 3404,
+      "neighborhood_factor": 1.22,
+      "distress": false,
+      "distress_type": null,
+      "distress_year": null,
+      "owner_tenure_years": 50.1,
+      "free_and_clear": true,
+      "motivated": true,
+      "lat": 40.6847832,
+      "lng": -73.9594908,
+      "owner_lot_count": 1,
+      "owner_other_lots": [],
+      "street": {
+        "street": "CLASSON AVE",
+        "roadbed_ft": 34.0,
+        "class": "narrow",
+        "match": "house number"
+      },
+      "envelope": {
+        "zone": "R6B",
+        "height_ft": 55,
+        "wide_street": false,
+        "coverage": 0.6,
+        "floors": 5,
+        "rear_yard_ft": 30,
+        "front_ft": 25.0,
+        "depth_ft": 100.0,
+        "footprint_sf": 1500,
+        "zfa_allowed": 5000,
+        "zfa_fits": 5000,
+        "floors_needed": 4,
+        "note": "Zoning envelope sketch from lot dimensions and Quality Housing bulk rules (interior lot, 30 ft rear yard). Not an architect's massing study: no setbacks, courts, egress or unit layout."
+      },
+      "far_fits": 2.0,
+      "diligence": {
+        "flags": [
+          {
+            "sev": "green",
+            "code": "frontage",
+            "text": "frontage 25 ft \u00d7 depth 100 ft"
+          },
+          {
+            "sev": "amber",
+            "code": "auto_use",
+            "text": "prior auto / parking use (class G7): Phase I and likely Phase II for petroleum"
+          },
+          {
+            "sev": "green",
+            "code": "envelope",
+            "text": "FAR fits: 4 floors on a 1,500 SF footprint under the 55 ft narrow-street limit"
+          },
+          {
+            "sev": "green",
+            "code": "street_width",
+            "text": "narrow street (CLASSON AVE, roadbed 34 ft): base FAR applies"
+          },
+          {
+            "sev": "green",
+            "code": "dob",
+            "text": "no open DOB violations"
+          },
+          {
+            "sev": "green",
+            "code": "ecb",
+            "text": "no active ECB balances"
+          },
+          {
+            "sev": "green",
+            "code": "mortgage",
+            "text": "no mortgage recorded after the current deed"
+          },
+          {
+            "sev": "amber",
+            "code": "name_mismatch",
+            "text": "PLUTO owner 'Mount Zion Tabern/Christ' vs deed grantee 'The City Of New York': confirm who holds title"
+          },
+          {
+            "sev": "green",
+            "code": "remediation",
+            "text": "no DEC remediation site within 150 ft"
+          }
+        ],
+        "red": 0,
+        "amber": 2,
+        "manual": [],
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -5240,7 +5241,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -5576,7 +5577,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -5905,7 +5906,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -6242,7 +6243,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -6562,7 +6563,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -6888,7 +6889,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -7220,7 +7221,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -7494,7 +7495,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -7703,7 +7704,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 36.4,
+      "owner_tenure_years": 36.5,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.7732551,
@@ -7780,7 +7781,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -8056,7 +8057,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -8376,7 +8377,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -8719,7 +8720,7 @@
         "red": 0,
         "amber": 5,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -9003,7 +9004,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -9338,7 +9339,7 @@
         "red": 1,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -9667,7 +9668,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -9997,7 +9998,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -10324,7 +10325,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -10651,7 +10652,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -10679,7 +10680,7 @@
       "city_owned": false,
       "faith_owned": true,
       "owner_mailing": "",
-      "owner_on_deed": "City Of New York",
+      "owner_on_deed": "The City Of Ne Wyork",
       "assessed_land": 313200,
       "land_comp_psf": 467.0,
       "est_land_cost": 1749630,
@@ -10939,7 +10940,7 @@
           {
             "sev": "amber",
             "code": "name_mismatch",
-            "text": "PLUTO owner 'Saints Peter & Paul'S Ch' vs deed grantee 'City Of New York': confirm who holds title"
+            "text": "PLUTO owner 'Saints Peter & Paul'S Ch' vs deed grantee 'The City Of Ne Wyork': confirm who holds title"
           },
           {
             "sev": "green",
@@ -10950,7 +10951,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -11228,7 +11229,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -11559,7 +11560,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -11892,7 +11893,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -12183,7 +12184,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -12438,7 +12439,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 18.0,
+      "owner_tenure_years": 18.1,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.7098973,
@@ -12527,7 +12528,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -12803,7 +12804,7 @@
         "manual": [
           "street width ambiguous (PROSPECT AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -13085,7 +13086,7 @@
         "manual": [
           "street width ambiguous (CRESCENT ST, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -13368,7 +13369,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -13702,7 +13703,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -13989,7 +13990,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -14198,7 +14199,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 36.4,
+      "owner_tenure_years": 36.5,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.7657925,
@@ -14273,7 +14274,7 @@
         "manual": [
           "street width ambiguous (35 AVE, roadbed 48 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -14602,7 +14603,7 @@
         "manual": [
           "street width ambiguous (VANDERBILT AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -14937,7 +14938,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -15218,7 +15219,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -15543,7 +15544,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -15875,7 +15876,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -16196,7 +16197,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -16224,7 +16225,7 @@
       "city_owned": false,
       "faith_owned": false,
       "owner_mailing": "280  Wyckoff Ave, Bklyn Ny",
-      "owner_on_deed": "Buena Vida Nursing Home",
+      "owner_on_deed": "Buena Vida Corporation",
       "assessed_land": 110700,
       "land_comp_psf": 467.0,
       "est_land_cost": 995847,
@@ -16477,7 +16478,7 @@
           {
             "sev": "amber",
             "code": "name_mismatch",
-            "text": "PLUTO owner 'Knickerbocker Squareassociates L P' vs deed grantee 'Buena Vida Nursing Home': confirm who holds title"
+            "text": "PLUTO owner 'Knickerbocker Squareassociates L P' vs deed grantee 'Buena Vida Corporation': confirm who holds title"
           },
           {
             "sev": "green",
@@ -16488,7 +16489,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -16814,7 +16815,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -17141,7 +17142,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -17430,7 +17431,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -17768,7 +17769,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -18100,7 +18101,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -18430,7 +18431,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -18709,7 +18710,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -18737,7 +18738,7 @@
       "city_owned": false,
       "faith_owned": false,
       "owner_mailing": "280  Wyckoff Ave, Bklyn Ny",
-      "owner_on_deed": "Buena Vida Nursing Home",
+      "owner_on_deed": "Buena Vida Corporation",
       "assessed_land": 111150,
       "land_comp_psf": 467.0,
       "est_land_cost": 1000130,
@@ -18990,7 +18991,7 @@
           {
             "sev": "amber",
             "code": "name_mismatch",
-            "text": "PLUTO owner 'Knickerbocker Squareassociates L P' vs deed grantee 'Buena Vida Nursing Home': confirm who holds title"
+            "text": "PLUTO owner 'Knickerbocker Squareassociates L P' vs deed grantee 'Buena Vida Corporation': confirm who holds title"
           },
           {
             "sev": "green",
@@ -19001,7 +19002,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -19298,7 +19299,7 @@
         "manual": [
           "street width ambiguous (MYRTLE AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -19572,7 +19573,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -19883,7 +19884,7 @@
         "manual": [
           "street width ambiguous (60 ST, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -20159,7 +20160,7 @@
         "manual": [
           "street width ambiguous (8 AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -20490,7 +20491,7 @@
         "red": 1,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -20818,7 +20819,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -21027,7 +21028,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 26.5,
+      "owner_tenure_years": 26.6,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.6381207,
@@ -21101,7 +21102,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -21421,7 +21422,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -21752,7 +21753,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -22036,7 +22037,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -22347,7 +22348,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -22686,7 +22687,7 @@
         "manual": [
           "street width ambiguous (VANDERBILT AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -23018,7 +23019,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -23315,7 +23316,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -23594,7 +23595,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -23886,7 +23887,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -24167,7 +24168,7 @@
         "manual": [
           "street width ambiguous (ST MARKS AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -24497,7 +24498,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -24797,7 +24798,7 @@
         "manual": [
           "street width ambiguous (GATES AVE, roadbed 38 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -24825,7 +24826,7 @@
       "city_owned": false,
       "faith_owned": false,
       "owner_mailing": "280  Wyckoff Ave, Bklyn Ny",
-      "owner_on_deed": "Buena Vida Nursing Home",
+      "owner_on_deed": "Buena Vida Corporation",
       "assessed_land": 102150,
       "land_comp_psf": 467.0,
       "est_land_cost": 996573,
@@ -25083,7 +25084,7 @@
           {
             "sev": "amber",
             "code": "name_mismatch",
-            "text": "PLUTO owner 'Knickerbocker Squareassociates L P' vs deed grantee 'Buena Vida Nursing Home': confirm who holds title"
+            "text": "PLUTO owner 'Knickerbocker Squareassociates L P' vs deed grantee 'Buena Vida Corporation': confirm who holds title"
           },
           {
             "sev": "green",
@@ -25094,7 +25095,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -25375,7 +25376,7 @@
         "manual": [
           "street width ambiguous (FULTON ST, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -25670,7 +25671,7 @@
         "red": 1,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -25961,7 +25962,7 @@
         "manual": [
           "street width ambiguous (FULTON ST, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -26291,7 +26292,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -26577,7 +26578,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -26863,7 +26864,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -27185,7 +27186,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -27493,7 +27494,7 @@
         "red": 0,
         "amber": 5,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -27811,7 +27812,7 @@
         "manual": [
           "street width ambiguous (39 ST, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -28145,7 +28146,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -28474,7 +28475,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -28810,7 +28811,7 @@
         "red": 0,
         "amber": 5,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -29087,7 +29088,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -29428,7 +29429,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -29709,7 +29710,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -29995,7 +29996,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -30319,7 +30320,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -30643,7 +30644,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -30968,7 +30969,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -31257,7 +31258,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -31545,7 +31546,7 @@
         "manual": [
           "street width ambiguous (3 AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -31833,7 +31834,7 @@
         "manual": [
           "street width ambiguous (3 AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -32112,7 +32113,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -32399,7 +32400,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -32724,7 +32725,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -32989,7 +32990,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -33277,7 +33278,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -33565,7 +33566,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -33895,7 +33896,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -34220,7 +34221,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -34502,7 +34503,7 @@
         "manual": [
           "street width ambiguous (CHURCH AVE, roadbed 44 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -34791,7 +34792,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -35070,7 +35071,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -35362,7 +35363,7 @@
         "manual": [
           "street width ambiguous (FULTON ST, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -35641,7 +35642,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -35933,7 +35934,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -36211,7 +36212,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -36541,7 +36542,7 @@
         "red": 1,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -36868,7 +36869,7 @@
         "manual": [
           "street width ambiguous (FULTON ST, roadbed 46 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -37154,7 +37155,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -37433,7 +37434,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -37712,7 +37713,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -37996,7 +37997,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -38285,7 +38286,7 @@
         "manual": [
           "street width ambiguous (FULTON ST, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -38571,7 +38572,7 @@
         "manual": [
           "street width ambiguous (AVE M, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -38905,7 +38906,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -39227,7 +39228,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -39498,7 +39499,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -39784,7 +39785,7 @@
         "manual": [
           "street width ambiguous (AVE K, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -40068,7 +40069,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -40393,7 +40394,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -40679,7 +40680,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -41009,7 +41010,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -41344,7 +41345,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -41634,7 +41635,7 @@
         "manual": [
           "street width ambiguous (GATES AVE, roadbed 38 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -41915,7 +41916,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -42191,7 +42192,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -42472,7 +42473,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -42764,7 +42765,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -43052,7 +43053,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -43329,7 +43330,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -43618,7 +43619,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -43912,7 +43913,7 @@
         "red": 1,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -44205,7 +44206,7 @@
         "manual": [
           "street width ambiguous (JAMAICA AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -44530,7 +44531,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -44739,7 +44740,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 17.3,
+      "owner_tenure_years": 17.4,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.6327347,
@@ -44813,7 +44814,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -45088,7 +45089,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -45395,7 +45396,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -45686,7 +45687,7 @@
         "manual": [
           "street width ambiguous (GATES AVE, roadbed 38 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -45975,7 +45976,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -46307,7 +46308,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -46588,7 +46589,7 @@
         "red": 1,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -46797,7 +46798,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 9.2,
+      "owner_tenure_years": 9.3,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.6625522,
@@ -46872,289 +46873,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
-      },
-      "first_seen": "2026-07-22",
-      "is_new": false
-    },
-    {
-      "bbl": "3019730041.00000000",
-      "address": "374 Franklin Avenue",
-      "borough": "BK",
-      "zip": "11238",
-      "zone": "R6A",
-      "lot_sf": 4750,
-      "built_far": 1.01,
-      "max_far": 3.0,
-      "max_far_mapped": 3.0,
-      "rezoning": null,
-      "rezoning_adjacent": [],
-      "if_rezoned": null,
-      "buildable_sf": 14250,
-      "est_units": 20,
-      "existing_units": 8,
-      "occupied": true,
-      "year_built": 1930,
-      "owner": "Dca 1 Apartments, Inc.",
-      "owner_class": "private",
-      "city_owned": false,
-      "faith_owned": false,
-      "owner_mailing": "C/O Omni New York Llc 885 Second Avenue, 31St Floor, New York Ny 10017",
-      "owner_on_deed": "Dca 1 Apartments, Inc.",
-      "assessed_land": 6300,
-      "land_comp_psf": 467.0,
-      "est_land_cost": 1335990,
-      "walk_away_land": 3361978,
-      "walk_away_land_institutional": 1952500,
-      "action": "offer",
-      "max_offer": 1469589,
-      "headroom": 2.52,
-      "action_why": "pencils at comps; walk-away is 252% of est. land",
-      "pencils": true,
-      "tier": "market",
-      "best_path": "uap",
-      "best_path_label": "City of Yes UAP +20% FAR + 485-x",
-      "best_market_path": "uap",
-      "best": {
-        "path": "uap",
-        "label": "City of Yes UAP +20% FAR + 485-x",
-        "units_market": 19,
-        "units_affordable": 5,
-        "gross_sf": 18468,
-        "hard": 5355720,
-        "soft": 1071144,
-        "financing": 385611,
-        "tdc": 8148465,
-        "tdc_institutional": 9557943,
-        "loan": 5703926,
-        "equity": 2444539,
-        "equity_pct": 30.0,
-        "noi": 635903,
-        "dscr": 1.43,
-        "yoc_pct": 7.8,
-        "cash_flow": 191956,
-        "coc_pct": 7.9,
-        "walk_away_land": 3361978,
-        "walk_away_land_institutional": 1952500,
-        "feasible": true
-      },
-      "paths": [
-        {
-          "path": "conv",
-          "label": "Conventional market, no abatement",
-          "units_market": 20,
-          "units_affordable": 0,
-          "gross_sf": 15390,
-          "hard": 4463100,
-          "soft": 892620,
-          "financing": 321343,
-          "tdc": 7013053,
-          "tdc_institutional": 8187618,
-          "loan": 4909137,
-          "equity": 2103915,
-          "equity_pct": 30.0,
-          "noi": 506786,
-          "dscr": 1.33,
-          "yoc_pct": 7.23,
-          "cash_flow": 124700,
-          "coc_pct": 5.9,
-          "walk_away_land": 2431528,
-          "walk_away_land_institutional": 1256963,
-          "feasible": true
-        },
-        {
-          "path": "485x",
-          "label": "485-x Option B (20% @ 80% AMI, 35-yr exemption)",
-          "units_market": 16,
-          "units_affordable": 4,
-          "gross_sf": 15390,
-          "hard": 4463100,
-          "soft": 892620,
-          "financing": 321343,
-          "tdc": 7013053,
-          "tdc_institutional": 8187618,
-          "loan": 4909137,
-          "equity": 2103915,
-          "equity_pct": 30.0,
-          "noi": 554000,
-          "dscr": 1.45,
-          "yoc_pct": 7.9,
-          "cash_flow": 171913,
-          "coc_pct": 8.2,
-          "walk_away_land": 3186938,
-          "walk_away_land_institutional": 2012373,
-          "feasible": true
-        },
-        {
-          "path": "485x_s8",
-          "label": "485-x Option B + Section 8 tenants (VPS-capped, 2% vacancy)",
-          "units_market": 16,
-          "units_affordable": 4,
-          "gross_sf": 15390,
-          "hard": 4463100,
-          "soft": 892620,
-          "financing": 321343,
-          "tdc": 7013053,
-          "tdc_institutional": 8187618,
-          "loan": 4909137,
-          "equity": 2103915,
-          "equity_pct": 30.0,
-          "noi": 472721,
-          "dscr": 1.24,
-          "yoc_pct": 6.74,
-          "cash_flow": 90634,
-          "coc_pct": 4.3,
-          "walk_away_land": 1886483,
-          "walk_away_land_institutional": 711919,
-          "feasible": true
-        },
-        {
-          "path": "uap",
-          "label": "City of Yes UAP +20% FAR + 485-x",
-          "units_market": 19,
-          "units_affordable": 5,
-          "gross_sf": 18468,
-          "hard": 5355720,
-          "soft": 1071144,
-          "financing": 385611,
-          "tdc": 8148465,
-          "tdc_institutional": 9557943,
-          "loan": 5703926,
-          "equity": 2444539,
-          "equity_pct": 30.0,
-          "noi": 635903,
-          "dscr": 1.43,
-          "yoc_pct": 7.8,
-          "cash_flow": 191956,
-          "coc_pct": 7.9,
-          "walk_away_land": 3361978,
-          "walk_away_land_institutional": 1952500,
-          "feasible": true
-        },
-        {
-          "path": "uap_s8",
-          "label": "UAP +20% FAR + 485-x + Section 8 tenants",
-          "units_market": 19,
-          "units_affordable": 5,
-          "gross_sf": 18468,
-          "hard": 5355720,
-          "soft": 1071144,
-          "financing": 385611,
-          "tdc": 8148465,
-          "tdc_institutional": 9557943,
-          "loan": 5703926,
-          "equity": 2444539,
-          "equity_pct": 30.0,
-          "noi": 538759,
-          "dscr": 1.21,
-          "yoc_pct": 6.61,
-          "cash_flow": 94813,
-          "coc_pct": 3.9,
-          "walk_away_land": 1807680,
-          "walk_away_land_institutional": 398203,
-          "feasible": true
-        },
-        {
-          "path": "ella",
-          "label": "ELLA / 4% LIHTC all-affordable stack (HPD award required; profit = dev fee)",
-          "units_market": 0,
-          "units_affordable": 20,
-          "tdc": 9006379,
-          "loan": 3085282,
-          "equity": 0,
-          "equity_pct": 0.0,
-          "noi": 225862,
-          "dscr": 1.15,
-          "cash_flow": 0,
-          "coc_pct": null,
-          "dev_fee": 818761,
-          "funding_gap": -480817,
-          "feasible": true,
-          "program_dependent": true
-        }
-      ],
-      "equity_needed": 2103915,
-      "bucket": "mid",
-      "score": 39.6,
-      "rent_market_used": 3404,
-      "neighborhood_factor": 1.22,
-      "distress": false,
-      "distress_type": null,
-      "distress_year": null,
-      "owner_tenure_years": 10.1,
-      "free_and_clear": true,
-      "motivated": false,
-      "lat": 40.6860696,
-      "lng": -73.9569516,
-      "owner_lot_count": 2,
-      "owner_other_lots": [
-        "892 Hancock Street"
-      ],
-      "street": {
-        "street": "FRANKLIN AVE",
-        "roadbed_ft": 34.0,
-        "class": "narrow",
-        "match": "house number"
-      },
-      "envelope": {
-        "zone": "R6A",
-        "height_ft": 85,
-        "wide_street": false,
-        "coverage": 0.65,
-        "floors": 8,
-        "rear_yard_ft": 30,
-        "front_ft": 50.0,
-        "depth_ft": 95.0,
-        "footprint_sf": 3087,
-        "zfa_allowed": 14250,
-        "zfa_fits": 14250,
-        "floors_needed": 5,
-        "note": "Zoning envelope sketch from lot dimensions and Quality Housing bulk rules (interior lot, 30 ft rear yard). Not an architect's massing study: no setbacks, courts, egress or unit layout."
-      },
-      "far_fits": 3.0,
-      "dob_open": 1,
-      "diligence": {
-        "flags": [
-          {
-            "sev": "green",
-            "code": "frontage",
-            "text": "frontage 50 ft \u00d7 depth 95 ft"
-          },
-          {
-            "sev": "green",
-            "code": "envelope",
-            "text": "FAR fits: 5 floors on a 3,088 SF footprint under the 85 ft narrow-street limit"
-          },
-          {
-            "sev": "green",
-            "code": "street_width",
-            "text": "narrow street (FRANKLIN AVE, roadbed 34 ft): base FAR applies"
-          },
-          {
-            "sev": "amber",
-            "code": "dob",
-            "text": "1 open DOB violation(s) of 7 (LL6291-LOCAL LAW 62/91 - BOILERS        ): owner has a problem you can solve"
-          },
-          {
-            "sev": "green",
-            "code": "ecb",
-            "text": "no active ECB balances"
-          },
-          {
-            "sev": "green",
-            "code": "mortgage",
-            "text": "no mortgage recorded after the current deed"
-          },
-          {
-            "sev": "green",
-            "code": "remediation",
-            "text": "no DEC remediation site within 150 ft"
-          }
-        ],
-        "red": 0,
-        "amber": 1,
-        "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -47428,7 +47147,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -47711,7 +47430,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -47995,7 +47714,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -48277,7 +47996,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -48563,7 +48282,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -48888,7 +48607,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -49168,7 +48887,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -49442,7 +49161,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -49779,7 +49498,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -50111,7 +49830,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -50449,7 +50168,7 @@
         "manual": [
           "street width ambiguous (ST ANNS AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -50734,7 +50453,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -51025,7 +50744,7 @@
         "manual": [
           "street width ambiguous (101 AVE, roadbed 45 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -51350,7 +51069,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -51630,7 +51349,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -51914,7 +51633,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -52193,9 +51912,296 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
+      "is_new": false
+    },
+    {
+      "bbl": "3019730041.00000000",
+      "address": "374 Franklin Avenue",
+      "borough": "BK",
+      "zip": "11238",
+      "zone": "R6A",
+      "lot_sf": 4750,
+      "built_far": 1.01,
+      "max_far": 3.0,
+      "max_far_mapped": 3.0,
+      "rezoning": null,
+      "rezoning_adjacent": [],
+      "if_rezoned": null,
+      "buildable_sf": 14250,
+      "est_units": 20,
+      "existing_units": 8,
+      "occupied": true,
+      "year_built": 1930,
+      "owner": "Dca 1 Apartments, Inc.",
+      "owner_class": "private",
+      "city_owned": false,
+      "faith_owned": false,
+      "owner_mailing": "C/O Omni New York Llc 885 Second Avenue, 31St Floor, New York Ny 10017",
+      "owner_on_deed": "Dca 1, L.P.",
+      "assessed_land": 6300,
+      "land_comp_psf": 467.0,
+      "est_land_cost": 1335990,
+      "walk_away_land": 3361978,
+      "walk_away_land_institutional": 1952500,
+      "action": "offer",
+      "max_offer": 1469589,
+      "headroom": 2.52,
+      "action_why": "pencils at comps; walk-away is 252% of est. land",
+      "pencils": true,
+      "tier": "market",
+      "best_path": "uap",
+      "best_path_label": "City of Yes UAP +20% FAR + 485-x",
+      "best_market_path": "uap",
+      "best": {
+        "path": "uap",
+        "label": "City of Yes UAP +20% FAR + 485-x",
+        "units_market": 19,
+        "units_affordable": 5,
+        "gross_sf": 18468,
+        "hard": 5355720,
+        "soft": 1071144,
+        "financing": 385611,
+        "tdc": 8148465,
+        "tdc_institutional": 9557943,
+        "loan": 5703926,
+        "equity": 2444539,
+        "equity_pct": 30.0,
+        "noi": 635903,
+        "dscr": 1.43,
+        "yoc_pct": 7.8,
+        "cash_flow": 191956,
+        "coc_pct": 7.9,
+        "walk_away_land": 3361978,
+        "walk_away_land_institutional": 1952500,
+        "feasible": true
+      },
+      "paths": [
+        {
+          "path": "conv",
+          "label": "Conventional market, no abatement",
+          "units_market": 20,
+          "units_affordable": 0,
+          "gross_sf": 15390,
+          "hard": 4463100,
+          "soft": 892620,
+          "financing": 321343,
+          "tdc": 7013053,
+          "tdc_institutional": 8187618,
+          "loan": 4909137,
+          "equity": 2103915,
+          "equity_pct": 30.0,
+          "noi": 506786,
+          "dscr": 1.33,
+          "yoc_pct": 7.23,
+          "cash_flow": 124700,
+          "coc_pct": 5.9,
+          "walk_away_land": 2431528,
+          "walk_away_land_institutional": 1256963,
+          "feasible": true
+        },
+        {
+          "path": "485x",
+          "label": "485-x Option B (20% @ 80% AMI, 35-yr exemption)",
+          "units_market": 16,
+          "units_affordable": 4,
+          "gross_sf": 15390,
+          "hard": 4463100,
+          "soft": 892620,
+          "financing": 321343,
+          "tdc": 7013053,
+          "tdc_institutional": 8187618,
+          "loan": 4909137,
+          "equity": 2103915,
+          "equity_pct": 30.0,
+          "noi": 554000,
+          "dscr": 1.45,
+          "yoc_pct": 7.9,
+          "cash_flow": 171913,
+          "coc_pct": 8.2,
+          "walk_away_land": 3186938,
+          "walk_away_land_institutional": 2012373,
+          "feasible": true
+        },
+        {
+          "path": "485x_s8",
+          "label": "485-x Option B + Section 8 tenants (VPS-capped, 2% vacancy)",
+          "units_market": 16,
+          "units_affordable": 4,
+          "gross_sf": 15390,
+          "hard": 4463100,
+          "soft": 892620,
+          "financing": 321343,
+          "tdc": 7013053,
+          "tdc_institutional": 8187618,
+          "loan": 4909137,
+          "equity": 2103915,
+          "equity_pct": 30.0,
+          "noi": 472721,
+          "dscr": 1.24,
+          "yoc_pct": 6.74,
+          "cash_flow": 90634,
+          "coc_pct": 4.3,
+          "walk_away_land": 1886483,
+          "walk_away_land_institutional": 711919,
+          "feasible": true
+        },
+        {
+          "path": "uap",
+          "label": "City of Yes UAP +20% FAR + 485-x",
+          "units_market": 19,
+          "units_affordable": 5,
+          "gross_sf": 18468,
+          "hard": 5355720,
+          "soft": 1071144,
+          "financing": 385611,
+          "tdc": 8148465,
+          "tdc_institutional": 9557943,
+          "loan": 5703926,
+          "equity": 2444539,
+          "equity_pct": 30.0,
+          "noi": 635903,
+          "dscr": 1.43,
+          "yoc_pct": 7.8,
+          "cash_flow": 191956,
+          "coc_pct": 7.9,
+          "walk_away_land": 3361978,
+          "walk_away_land_institutional": 1952500,
+          "feasible": true
+        },
+        {
+          "path": "uap_s8",
+          "label": "UAP +20% FAR + 485-x + Section 8 tenants",
+          "units_market": 19,
+          "units_affordable": 5,
+          "gross_sf": 18468,
+          "hard": 5355720,
+          "soft": 1071144,
+          "financing": 385611,
+          "tdc": 8148465,
+          "tdc_institutional": 9557943,
+          "loan": 5703926,
+          "equity": 2444539,
+          "equity_pct": 30.0,
+          "noi": 538759,
+          "dscr": 1.21,
+          "yoc_pct": 6.61,
+          "cash_flow": 94813,
+          "coc_pct": 3.9,
+          "walk_away_land": 1807680,
+          "walk_away_land_institutional": 398203,
+          "feasible": true
+        },
+        {
+          "path": "ella",
+          "label": "ELLA / 4% LIHTC all-affordable stack (HPD award required; profit = dev fee)",
+          "units_market": 0,
+          "units_affordable": 20,
+          "tdc": 9006379,
+          "loan": 3085282,
+          "equity": 0,
+          "equity_pct": 0.0,
+          "noi": 225862,
+          "dscr": 1.15,
+          "cash_flow": 0,
+          "coc_pct": null,
+          "dev_fee": 818761,
+          "funding_gap": -480817,
+          "feasible": true,
+          "program_dependent": true
+        }
+      ],
+      "equity_needed": 2103915,
+      "bucket": "mid",
+      "score": 36.6,
+      "rent_market_used": 3404,
+      "neighborhood_factor": 1.22,
+      "distress": false,
+      "distress_type": null,
+      "distress_year": null,
+      "owner_tenure_years": 10.1,
+      "free_and_clear": true,
+      "motivated": false,
+      "lat": 40.6860696,
+      "lng": -73.9569516,
+      "owner_lot_count": 2,
+      "owner_other_lots": [
+        "892 Hancock Street"
+      ],
+      "street": {
+        "street": "FRANKLIN AVE",
+        "roadbed_ft": 34.0,
+        "class": "narrow",
+        "match": "house number"
+      },
+      "envelope": {
+        "zone": "R6A",
+        "height_ft": 85,
+        "wide_street": false,
+        "coverage": 0.65,
+        "floors": 8,
+        "rear_yard_ft": 30,
+        "front_ft": 50.0,
+        "depth_ft": 95.0,
+        "footprint_sf": 3087,
+        "zfa_allowed": 14250,
+        "zfa_fits": 14250,
+        "floors_needed": 5,
+        "note": "Zoning envelope sketch from lot dimensions and Quality Housing bulk rules (interior lot, 30 ft rear yard). Not an architect's massing study: no setbacks, courts, egress or unit layout."
+      },
+      "far_fits": 3.0,
+      "dob_open": 1,
+      "diligence": {
+        "flags": [
+          {
+            "sev": "green",
+            "code": "frontage",
+            "text": "frontage 50 ft \u00d7 depth 95 ft"
+          },
+          {
+            "sev": "green",
+            "code": "envelope",
+            "text": "FAR fits: 5 floors on a 3,088 SF footprint under the 85 ft narrow-street limit"
+          },
+          {
+            "sev": "green",
+            "code": "street_width",
+            "text": "narrow street (FRANKLIN AVE, roadbed 34 ft): base FAR applies"
+          },
+          {
+            "sev": "amber",
+            "code": "dob",
+            "text": "1 open DOB violation(s) of 7 (LL6291-LOCAL LAW 62/91 - BOILERS        ): owner has a problem you can solve"
+          },
+          {
+            "sev": "green",
+            "code": "ecb",
+            "text": "no active ECB balances"
+          },
+          {
+            "sev": "green",
+            "code": "mortgage",
+            "text": "no mortgage recorded after the current deed"
+          },
+          {
+            "sev": "amber",
+            "code": "name_mismatch",
+            "text": "PLUTO owner 'Dca 1 Apartments, Inc.' vs deed grantee 'Dca 1, L.P.': confirm who holds title"
+          },
+          {
+            "sev": "green",
+            "code": "remediation",
+            "text": "no DEC remediation site within 150 ft"
+          }
+        ],
+        "red": 0,
+        "amber": 2,
+        "manual": [],
+        "checked": "2026-10-26"
+      },
+      "first_seen": "2026-07-22",
       "is_new": false
     },
     {
@@ -52476,7 +52482,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -52804,7 +52810,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -53094,7 +53100,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -53303,7 +53309,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 3.7,
+      "owner_tenure_years": 3.8,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.6443243,
@@ -53386,7 +53392,7 @@
         "manual": [
           "street width ambiguous (BEVERLEY RD, roadbed 44 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -53717,7 +53723,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -53986,7 +53992,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -54273,7 +54279,7 @@
         "red": 1,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -54598,7 +54604,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -54883,7 +54889,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -55213,7 +55219,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -55546,7 +55552,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -55878,7 +55884,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -56210,7 +56216,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -56542,7 +56548,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -56843,7 +56849,7 @@
         "manual": [
           "street width ambiguous (METROPOLITAN AVE, roadbed 40 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -57122,7 +57128,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -57413,7 +57419,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -57697,7 +57703,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -57981,7 +57987,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -58265,7 +58271,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -58587,7 +58593,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -58871,7 +58877,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -59151,7 +59157,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -59432,7 +59438,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -59767,7 +59773,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -60048,7 +60054,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -60382,7 +60388,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -60702,7 +60708,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -60978,7 +60984,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -61258,7 +61264,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -61544,7 +61550,7 @@
         "red": 0,
         "amber": 4,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -61876,7 +61882,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -62202,7 +62208,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -62483,7 +62489,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -62759,7 +62765,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -63047,7 +63053,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -63327,7 +63333,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -63611,7 +63617,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -63877,7 +63883,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -64213,7 +64219,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -64477,7 +64483,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -64776,7 +64782,7 @@
         "manual": [
           "street width ambiguous (NEW UTRECHT AVE, roadbed 44 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -65065,7 +65071,7 @@
         "red": 0,
         "amber": 2,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -65364,7 +65370,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -65647,7 +65653,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -65928,7 +65934,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -66213,7 +66219,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-08-25",
       "is_new": false
@@ -66541,7 +66547,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -66796,7 +66802,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 10.9,
+      "owner_tenure_years": 11.0,
       "free_and_clear": false,
       "motivated": false,
       "lat": 40.6893824,
@@ -66874,7 +66880,7 @@
         "red": 0,
         "amber": 3,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -67191,7 +67197,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -67460,7 +67466,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -67734,7 +67740,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -68006,7 +68012,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -68280,7 +68286,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -68557,7 +68563,7 @@
         "red": 0,
         "amber": 0,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -68828,7 +68834,7 @@
         "manual": [
           "street width ambiguous (GRAND AVE, roadbed 42 ft \u2248 70-80 ft mapped): confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -69032,7 +69038,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 41.4,
+      "owner_tenure_years": 41.5,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.8145515,
@@ -69110,7 +69116,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -69392,7 +69398,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       }
     },
     {
@@ -69668,7 +69674,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -69947,7 +69953,7 @@
         "red": 0,
         "amber": 1,
         "manual": [],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -70218,7 +70224,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -70486,7 +70492,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -70759,7 +70765,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -71027,7 +71033,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -71301,7 +71307,7 @@
         "manual": [
           "street width not resolved from CSCL: confirm wide vs narrow on ZoLa"
         ],
-        "checked": "2026-10-24"
+        "checked": "2026-10-26"
       },
       "first_seen": "2026-07-22",
       "is_new": false
@@ -71945,7 +71951,7 @@
       "distress": false,
       "distress_type": null,
       "distress_year": null,
-      "owner_tenure_years": 55.9,
+      "owner_tenure_years": 56.0,
       "free_and_clear": true,
       "motivated": true,
       "lat": 40.8794605,
