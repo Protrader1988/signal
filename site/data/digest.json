@@ -1,4 +1,40 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-10-31T01:24:51.475811+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "high",
+    "summary": "A severe technology sell-off driven by AI cash burn fears and disappointing semiconductor earnings wiped out $1 trillion in market value, pushing the Nasdaq toward its worst month in over a year. Meanwhile, the Federal Reserve opted to hold interest rates steady due to persistent inflation, maintaining macro headwinds. Pockets of strength remain isolated to traditional sectors like energy and healthcare.",
+    "bull": "Value and defensive sectors are showing resilience, highlighted by gains in energy stocks like Valero and Phillips 66 alongside rallies in healthcare names such as Merck and Thermo Fisher.",
+    "bear": "Deepening concerns over massive AI investments, sharp earnings-driven slides in key tech leaders like Intel, and lingering inflation keeping Fed rates elevated threaten further downside.",
+    "watch": "AMD's upcoming earnings report on Nov. 3 and market reaction to the Fed keeping interest rates steady."
+  },
+  "takes": [
+    {
+      "topic": "Tech & Semiconductor Stocks",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "Fears around AI cash burn and Intel's post-earnings plunge triggered a massive sell-off, dragging down Micron, AMD, and wiping out $1 trillion in market value."
+    },
+    {
+      "topic": "Federal Reserve & Rate Policy",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "The Fed held key interest rates unchanged as inflation remains stubborn, offering no immediate rate-cut relief to financial markets."
+    },
+    {
+      "topic": "Energy Sector (VLO & PSX)",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Valero Energy surged 3.9% and Phillips 66 gained 3.4%, showing solid momentum against the broader market tech sell-off."
+    },
+    {
+      "topic": "Merck (MRK)",
+      "lean": "bullish",
+      "confidence": "medium",
+      "note": "Merck stock flew higher on Friday, standing out as a strong performer amid widespread market turbulence."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
