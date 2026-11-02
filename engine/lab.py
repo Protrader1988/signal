@@ -61,10 +61,26 @@ def log(*a):
 
 # ---------------------------------------------------------------------------
 def load_panel(tickers, period="4y"):
+    """Daily closes, with phantom sessions removed.
+
+    ffill is necessary for the odd missing name, but it also manufactures whole
+    fake sessions: when the feed carries a row for a date it has no prices for —
+    a half-session, a holiday, or simply the current day before the close has
+    settled — ffill copies the previous row wholesale. Every price is then
+    unchanged, every return is exactly zero, and the lab records a trading day
+    that never happened. A row identical to the one before it is not a session,
+    so it is dropped here rather than measured."""
     df = yf.download(sorted(set(tickers)), period=period, progress=False,
                      auto_adjust=True, threads=True)
     close = df["Close"] if isinstance(df.columns, pd.MultiIndex) else df
     close = close.dropna(axis=1, thresh=int(len(close) * 0.8)).ffill().dropna(how="all")
+    if len(close) > 1:
+        moved = close.diff().abs().sum(axis=1) > 0
+        moved.iloc[0] = True                    # the first row has nothing to differ from
+        dropped = int((~moved).sum())
+        if dropped:
+            log(f"dropped {dropped} phantom session(s) with no price movement at all")
+        close = close[moved]
     return close
 
 
@@ -339,6 +355,22 @@ def main():
     n_books = len(strat.REGISTRY)
     log(f"panel {panel.shape[1]} tickers x {len(panel)} sessions, through {today}")
 
+    # Remove phantom days already written. These were recorded when the panel
+    # carried a copied row: return exactly zero, spread exactly zero, no IC. They
+    # are not sessions and they drag every statistic toward nothing, so they come
+    # out of the record rather than being left in to flatter the volatility.
+    purged = 0
+    for _b in (state.get("books") or {}).values():
+        keep = [e for e in (_b.get("live") or [])
+                if not (e.get("ic") is None and abs(e.get("ret", 0)) < 1e-12
+                        and abs(e.get("spread", 0) or 0) < 1e-12)]
+        purged += len(_b.get("live") or []) - len(keep)
+        _b["live"] = keep
+    if purged:
+        log(f"purged {purged} phantom day-records across all books")
+        state["phantom_purge"] = {"removed": purged,
+                                  "on": datetime.now(timezone.utc).date().isoformat()}
+
     books = state.setdefault("books", {})
     if not state.get("started"):          # setdefault leaves an existing None in place
         state["started"] = today
@@ -353,6 +385,9 @@ def main():
         prev_date, prev_pos = b.get("as_of"), b.get("positions") or {}
         if prev_date and prev_date in dates and prev_date != today:
             i_prev = dates.index(prev_date)
+            if i_prev + 1 < len(panel) and float(
+                    (panel.iloc[i_prev + 1] - panel.iloc[i_prev]).abs().sum()) == 0.0:
+                continue                        # a copied row, not a session
             gross, spread, ic = measure(panel, i_prev, prev_pos, stock_cols)
             # costs are charged when the book CHANGES, which is the next step below
             entry = {"date": dates[i_prev + 1], "ret": round(gross, 6)}
@@ -478,6 +513,7 @@ def main():
         "as_of": today, "started": state["started"],
         "n_books": n_books,
         "live_days": max((r["live"].get("days", 0) for r in rows), default=0),
+        "phantom_purge": state.get("phantom_purge"),
         "rules": {"cost_bps": COST_BPS, "half_life": HALF_LIFE, "max_weight": MAX_WEIGHT,
                   "warmup_days": WARMUP_DAYS, "kill_min_days": KILL_MIN_DAYS,
                   "kill_tstat": KILL_TSTAT, "kill_max_dd_pct": KILL_MAX_DD * 100},
