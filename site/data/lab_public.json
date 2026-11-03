@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-02T23:10:23+00:00",
+  "generated_utc": "2026-11-03T03:15:00+00:00",
   "blended": {
     "XLB": 0.0833,
     "CSCO": 0.0761,
@@ -43,8 +43,8 @@
   "n_books": 13,
   "live_days": 18,
   "phantom_purge": {
-    "removed": 110,
-    "on": "2026-11-02"
+    "removed": 1,
+    "on": "2026-11-03"
   },
   "rules": {
     "cost_bps": 5.0,
@@ -199,7 +199,7 @@
         "CVS": 0.1,
         "EOG": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 18,
@@ -270,7 +270,7 @@
         "PEP": 0.1,
         "AXP": 0.1
       },
-      "turnover": 0.2,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 11,
@@ -509,7 +509,7 @@
         "CVS": 0.1,
         "OXY": 0.1
       },
-      "turnover": 0.4,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 17,
@@ -579,7 +579,7 @@
         "LLY": 0.1,
         "PG": 0.1
       },
-      "turnover": 1.0,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 16,
@@ -648,7 +648,7 @@
         "TXN": 0.1303,
         "MRK": 0.108
       },
-      "turnover": 0.027,
+      "turnover": 0.0,
       "weight": 0.0833,
       "live": {
         "days": 18,
@@ -814,7 +814,7 @@
       "turnover": 0,
       "weight": 0.0,
       "live": {
-        "days": 1
+        "days": 0
       },
       "hindsight": {
         "days": 503,
@@ -834,9 +834,7 @@
         "kind": "rank IC"
       },
       "retired_reason": null,
-      "curve": [
-        0.0
-      ]
+      "curve": []
     }
   ],
   "allocator": {

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-02T23:09:12.364853+00:00",
+  "generated_utc": "2026-11-03T03:13:39.760656+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -6382,7 +6382,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 264840498.38
+          "amount": 264571815.48
         },
         {
           "period": "FY2025 Q2",
@@ -6432,7 +6432,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 172579561.25
+          "amount": 153454053.02
         },
         {
           "period": "FY2025 Q2",
@@ -6482,7 +6482,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 274341662.58
+          "amount": 273751662.58
         },
         {
           "period": "FY2025 Q2",
@@ -6532,7 +6532,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 169211703.03
+          "amount": 167531788.73
         },
         {
           "period": "FY2025 Q2",
@@ -6584,7 +6584,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 2606653.98
+          "amount": 2810795.44
         },
         {
           "period": "FY2025 Q2",
@@ -6785,8 +6785,8 @@
       "stage": "letter of intent",
       "amount_usd": 150000000.0,
       "agency": "Department of War's Office of Strategic Capital",
-      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with Stoke Space Technologies, Inc.",
-      "quote": "Signs $150 Million Conditional Loan Commitment with Stoke Space Technologies, Inc.",
+      "summary": "The Office of Strategic Capital signed a $150 million conditional loan commitment with Stoke Space Technologies, Inc.",
+      "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment with Stoke Space Technologies, Inc.",
       "confidence": "high",
       "date": "2026-10-26",
       "link": "https://www.war.gov/News/Releases/Release/Article/4633729/department-of-wars-office-of-strategic-capital-signs-150-million-conditional-lo/",
@@ -6806,7 +6806,7 @@
       "amount_usd": 450000000.0,
       "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a conditional loan commitment of up to $450 million with Neros, Inc.",
-      "quote": "Signs Conditional Loan Commitment of up to $450 Million With Neros, Inc.",
+      "quote": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to $450 Million With Neros, Inc.",
       "confidence": "high",
       "date": "2026-11-02",
       "link": "https://www.war.gov/News/Releases/Release/Article/4638926/department-of-wars-office-of-strategic-capital-signs-conditional-loan-commitmen/",
@@ -6815,17 +6815,35 @@
       "already_tracked": false
     },
     {
+      "id": "7",
+      "companies": [],
+      "tickers": [],
+      "sector": null,
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": 150000000.0,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment.",
+      "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commit",
+      "confidence": "medium",
+      "date": "2026-10-26",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUHh2am4xdndrVmRlbkNwTHRPMDJmc3hoRWJBNzNHeGpmbm02VjNWY0p5ZFVmVTJxOE4zUUtpSXJjR1JBRjdvVlpyRW1xLWFmekE2alJGV1dPX1JmV0hZVWJDOUJVWEpKVFlhSlVUa0Q2b3UyVEdfWVRTZGNobW9YZm9ZQ3FaVXQxcjI1dG00TW0yZnNNU2NTUHkxZkl6cWFxWXNWYUxUWmtUNmZIZi02dFlIeF91SkZZVFZRWVVKaW5lMWpJdHdFbmcxcGk5cEF4eTFQRQ?oc=5",
+      "source": "U.S. Department of War (.gov)",
+      "title": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commit - U.S. Department of War (.gov)",
+      "already_tracked": false
+    },
+    {
       "id": "11",
       "companies": [],
       "tickers": [],
       "sector": "petroleum",
-      "instrument": "procurement",
+      "instrument": "none",
       "stage": "announced",
       "amount_usd": null,
-      "agency": "Department of War",
+      "agency": "The White House",
       "summary": "President Trump issued a Presidential Determination under Section 303 of the Defense Production Act regarding domestic petroleum production, refining, and logistics capacity.",
       "quote": "Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logistics Capacity",
-      "confidence": "medium",
+      "confidence": "low",
       "date": "2026-10-22",
       "link": "https://www.whitehouse.gov/presidential-actions/2026/10/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-domestic-petroleum-production-refining-and-logistics-capacity-c139/",
       "source": "White House",
@@ -6840,10 +6858,10 @@
       "instrument": "tariff",
       "stage": "announced",
       "amount_usd": null,
-      "agency": "Department of Commerce",
-      "summary": "President Trump issued a proclamation under Section 232 to adjust imports of wind turbines and their parts into the United States.",
+      "agency": "The White House",
+      "summary": "The President issued a Section 232 proclamation regarding national security impacts from imports of wind turbines and components.",
       "quote": "investigation into the effects of imports of wind turbines and their parts and components on the national security of the United States",
-      "confidence": "medium",
+      "confidence": "low",
       "date": "2026-10-22",
       "link": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/",
       "source": "White House",
@@ -6858,32 +6876,14 @@
       "instrument": "tariff",
       "stage": "announced",
       "amount_usd": null,
-      "agency": "White House",
-      "summary": "President Donald J. Trump signed a proclamation under Section 338 to modify tariffs on certain Canadian products.",
+      "agency": "The White House",
+      "summary": "President Trump signed a proclamation under Section 338 modifying tariffs applied to certain Canadian products.",
       "quote": "signed a Proclamation pursuant to Section 338 of the Tariff Act of 1930 to further refine the scope of the tariffs on certain Canadian products",
-      "confidence": "medium",
+      "confidence": "low",
       "date": "2026-10-23",
       "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-further-modifies-canadian-products-subject-to-tariffs-under-section-338/",
       "source": "White House",
       "title": "Fact sheet president donald j trump further modifies canadian products subject to tariffs under section 338",
-      "already_tracked": false
-    },
-    {
-      "id": "7",
-      "companies": [],
-      "tickers": [],
-      "sector": null,
-      "instrument": "loan",
-      "stage": "letter of intent",
-      "amount_usd": 150000000.0,
-      "agency": "Department of War's Office of Strategic Capital",
-      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment.",
-      "quote": "Office of Strategic Capital Signs $150 Million Conditional Loan Commit",
-      "confidence": "medium",
-      "date": "2026-10-26",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUHh2am4xdndrVmRlbkNwTHRPMDJmc3hoRWJBNzNHeGpmbm02VjNWY0p5ZFVmVTJxOE4zUUtpSXJjR1JBRjdvVlpyRW1xLWFmekE2alJGV1dPX1JmV0hZVWJDOUJVWEpKVFlhSlVUa0Q2b3UyVEdfWVRTZGNobW9YZm9ZQ3FaVXQxcjI1dG00TW0yZnNNU2NTUHkxZkl6cWFxWXNWYUxUWmtUNmZIZi02dFlIeF91SkZZVFZRWVVKaW5lMWpJdHdFbmcxcGk5cEF4eTFQRQ?oc=5",
-      "source": "U.S. Department of War (.gov)",
-      "title": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commit - U.S. Department of War (.gov)",
       "already_tracked": false
     },
     {
@@ -6894,10 +6894,10 @@
       "instrument": "tariff",
       "stage": "announced",
       "amount_usd": null,
-      "agency": "Department of Commerce",
-      "summary": "President Trump signed a proclamation under Section 232 of the Trade Expansion Act to address national security concerns regarding imports of robotics and industrial machinery.",
-      "quote": "Proclamation pursuant to Section 232 of the Trade Expansion Act of 1962 (Section 232) to address the threatened impairment of national security with respect to imports of robotics",
-      "confidence": "medium",
+      "agency": "The White House",
+      "summary": "President Trump signed a Section 232 proclamation directing negotiations regarding national security impacts of robotics and industrial machinery imports.",
+      "quote": "Proclamation pursuant to Section 232 of the Trade Expansion Act of 1962 (Section 232) to address the threatened impairment of national security",
+      "confidence": "low",
       "date": "2026-10-28",
       "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-adjusts-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
       "source": "White House",
@@ -6912,10 +6912,10 @@
       "instrument": "tariff",
       "stage": "announced",
       "amount_usd": null,
-      "agency": "Department of Commerce",
-      "summary": "President Trump issued a proclamation adjusting imports of robotics, industrial machinery, and their parts under Section 232.",
-      "quote": "investigation into the effects of imports of robotics and industrial machinery, as well as their parts and components, on the national security of the United States",
-      "confidence": "medium",
+      "agency": "The White House",
+      "summary": "The President issued a Section 232 proclamation following a Commerce Department investigation into national security effects of imported robotics and machinery.",
+      "quote": "investigation into the effects of imports of robotics and industrial machinery, as well as their parts and components",
+      "confidence": "low",
       "date": "2026-10-28",
       "link": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
       "source": "White House",
@@ -6930,7 +6930,7 @@
       "not_a_deal": 5
     },
     "note": "8 records from 13 documents \u2014 not a deal 5",
-    "generated_utc": "2026-11-02T23:06:31+00:00"
+    "generated_utc": "2026-11-03T03:11:11+00:00"
   },
   "detection": [
     {
@@ -7444,34 +7444,18 @@
       "status": "unverified"
     },
     {
-      "title": "Fact sheet president donald j trump and first lady melania trump advance womens health to improve outcomes in all phases of life",
-      "company": "Fact sheet president donald j trump and first lady melania trump advance womens health to improve outcomes in all phases of life",
-      "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-and-first-lady-melania-trump-advance-womens-health-to-improve-outcomes-in-all-phases-of-life/",
-      "date": "2026-10-19",
-      "date_precision": "day",
-      "source": "White House",
-      "kind": "fact sheets",
-      "matched": "pharmaceutical \u00b7 $50 billion, $600 billion",
-      "evidence": {
-        "industry": [
-          "pharmaceutical"
-        ],
-        "instrument": [],
-        "money": [
-          "$50 billion",
-          "$600 billion"
-        ],
-        "tickers": [
-          "F"
-        ],
-        "score": 5
-      },
-      "desc": "Fact Sheet: President Donald J. Trump and First Lady Melania Trump Advance Women\u2019s Health to Improve Outcomes in All Phases of Life &#8211; The White House Skip to content Fact Sheets Fact Sheet: President Donald J. Trump and First Lady Melania Trump Advance Women\u2019s Health to Improve Outcomes in All Phases of Life The White House October 19, 2026 PRIORITIZING SOLUTIONS FOR WOMEN\u2019S HEALTH: Today, President Donald J. Trump signed an Executive Order, led by First Lady Melania Trump, to strengthen research, prevention, diagnosis, treatment, and care for women and girls throughout every stage of life. The Order establishes the White House Women\u2019s Health Task Force to ensure the Federal Government pursues a comprehensive approach to women\u2019s health that recognizes evolving health needs from infancy, childhood, and adolescence through pregnancy, midlife, menopause, and aging, and supports necessary policy and regulatory reforms to ensure timely and stage-specific prevention, diagnosis, treatment, and care for women. The Order directs the Secretary of Health and Human Services and the Director of the National Institutes of Health to establish a Women\u2019s Health Division within the National In",
-      "form": "white house",
+      "company": "Australia\u2013US critical minerals pact turns one: Five investor takeaways - Australian Resources & Investment",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOM3pJSWdFQnhQN1BPNV91NUxNOWN1Skhnd0tDZFZ4b2dVTzRuc2dRcUxuSHRzcmZjOGd4VHNQNkt3a0NjYWF3dXFVNDdvUHp1bXl0dnNOMU9DMXh0WnAwRnRUcm9zWElrQ1gweEJMUHpBLTdvcFllVE9ESmNtZjctWEJjSGM0cnIyQ1dFbnA0eVpySzlPbDdzMTNLOUhyYTliczRwNU9tRzRaRmJXN0N6VGF6TFdYc1BscHJTUlJfMA?oc=5",
+      "date": "2026-10-20",
+      "source": "Australian Resources & Investment",
+      "matched": "offtake",
+      "form": "headline",
       "ticker": null,
-      "quality": "white house",
+      "quality": "headline",
       "named": [],
-      "candidates": [],
+      "candidates": [
+        "Australian Resources"
+      ],
       "status": "unverified"
     }
   ],
@@ -7570,7 +7554,7 @@
         "backfilled": false,
         "return_since_seen_pct": -3.7,
         "last_price": 22.13,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7582,7 +7566,7 @@
         "backfilled": true,
         "return_since_seen_pct": -33.1,
         "last_price": 2.18,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7594,7 +7578,7 @@
         "backfilled": true,
         "return_since_seen_pct": -32.3,
         "last_price": 10.67,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7606,7 +7590,7 @@
         "backfilled": true,
         "return_since_seen_pct": -41.0,
         "last_price": 10.09,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "AA:2026-08-31",
@@ -7618,7 +7602,7 @@
         "backfilled": true,
         "return_since_seen_pct": -10.2,
         "last_price": 39.9,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7630,7 +7614,7 @@
         "backfilled": true,
         "return_since_seen_pct": -15.2,
         "last_price": 40.23,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7642,7 +7626,7 @@
         "backfilled": true,
         "return_since_seen_pct": -23.1,
         "last_price": 123.08,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7654,7 +7638,7 @@
         "backfilled": true,
         "return_since_seen_pct": -34.1,
         "last_price": 4.45,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7666,7 +7650,7 @@
         "backfilled": true,
         "return_since_seen_pct": -22.2,
         "last_price": 5.75,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7678,7 +7662,7 @@
         "backfilled": true,
         "return_since_seen_pct": -12.5,
         "last_price": 41.82,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7690,7 +7674,7 @@
         "backfilled": true,
         "return_since_seen_pct": 10.0,
         "last_price": 252.51,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7702,7 +7686,7 @@
         "backfilled": true,
         "return_since_seen_pct": -41.0,
         "last_price": 10.09,
-        "last_update": "2026-11-02"
+        "last_update": "2026-11-03"
       }
     ]
   },
@@ -7710,62 +7694,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-11-02T23:04:46+00:00"
+      "checked_utc": "2026-11-03T03:09:22+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-11-02T23:04:55+00:00"
+      "checked_utc": "2026-11-03T03:09:31+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "12 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-11-02T23:05:18+00:00"
+      "checked_utc": "2026-11-03T03:09:47+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-11-02T23:05:18+00:00"
+      "checked_utc": "2026-11-03T03:09:47+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-11-02T23:05:50+00:00"
+      "checked_utc": "2026-11-03T03:10:20+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (15 facility operators dropped)",
-      "checked_utc": "2026-11-02T23:05:51+00:00"
+      "checked_utc": "2026-11-03T03:10:21+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-11-02T23:05:53+00:00"
+      "checked_utc": "2026-11-03T03:10:23+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "2 documents",
-      "checked_utc": "2026-11-02T23:05:56+00:00"
+      "checked_utc": "2026-11-03T03:10:26+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-11-02T23:05:56+00:00"
+      "checked_utc": "2026-11-03T03:10:26+00:00"
     },
     "reading": {
       "ok": true,
       "note": "8 records from 13 documents \u2014 not a deal 5",
-      "checked_utc": "2026-11-02T23:06:31+00:00"
+      "checked_utc": "2026-11-03T03:11:11+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-11-02T23:09:12+00:00"
+      "checked_utc": "2026-11-03T03:13:39+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-11-02T23:09:12+00:00"
+      "checked_utc": "2026-11-03T03:13:39+00:00"
     }
   },
   "counts": {
