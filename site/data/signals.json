@@ -1,6 +1,6 @@
 {
   "as_of_equity": "2026-11-02",
-  "as_of_crypto": "2026-11-03",
+  "as_of_crypto": "2026-11-04",
   "conditions": {
     "available": true,
     "as_of": "2026-11-02",
@@ -209,39 +209,34 @@
     "coins_in_uptrend": [
       {
         "ticker": "BNB-USD",
-        "entry_ref": 695.75,
-        "mom_200d_pct": 9.5
-      },
-      {
-        "ticker": "BTC-USD",
-        "entry_ref": 76654.57,
-        "mom_200d_pct": 2.0
+        "entry_ref": 690.07,
+        "mom_200d_pct": 7.2
       },
       {
         "ticker": "LINK-USD",
-        "entry_ref": 11.07,
-        "mom_200d_pct": 15.5
+        "entry_ref": 10.79,
+        "mom_200d_pct": 12.1
       },
       {
         "ticker": "SOL-USD",
-        "entry_ref": 91.85,
-        "mom_200d_pct": 3.2
+        "entry_ref": 91.54,
+        "mom_200d_pct": 3.0
       }
     ],
-    "suggested_gross_exposure": 0.37,
+    "suggested_gross_exposure": 0.33,
     "btc_trend": {
       "available": true,
       "on": true,
-      "price": 76654.57,
-      "sma_150": 72082.22,
+      "price": 76766.1,
+      "sma_150": 72188.36,
       "gap_pct": 6.3,
       "since": "2026-08-19",
-      "as_of": "2026-11-03",
+      "as_of": "2026-11-04",
       "rule": "Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
       "evidence": "2015 to 2026 backtest: 76% a year vs 66% for holding, worst drop -62% vs -83%. Since mid-2022 (data it was not fitted to): 35% a year vs 40%, worst drop -28% vs -53%."
     },
     "label": "RISK-MANAGED BETA \u2014 not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
-    "as_of": "2026-11-03"
+    "as_of": "2026-11-04"
   },
   "disclaimer": "Educational signals from a validated momentum model. Not investment advice. Execute in your own brokerage at your discretion."
 }

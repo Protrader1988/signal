@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-03T03:13:39.760656+00:00",
+  "generated_utc": "2026-11-04T01:55:53.691369+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -5799,7 +5799,7 @@
       "thesis": null,
       "recipient": "GENERAL DYNAMICS",
       "federal": {
-        "total": 9531206720.0,
+        "total": 9530571720.0,
         "count": 300,
         "last_action": "2026-10-30",
         "top_agency": "Department of Defense",
@@ -5869,7 +5869,7 @@
       "federal": {
         "total": 1627481006.0,
         "count": 300,
-        "last_action": "2026-10-30",
+        "last_action": "2026-11-01",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6382,7 +6382,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 264571815.48
+          "amount": 239608662.07
         },
         {
           "period": "FY2025 Q2",
@@ -6432,7 +6432,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 153454053.02
+          "amount": 153250848.81
         },
         {
           "period": "FY2025 Q2",
@@ -6532,7 +6532,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 167531788.73
+          "amount": 167510148.25
         },
         {
           "period": "FY2025 Q2",
@@ -6584,7 +6584,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 2810795.44
+          "amount": 2810508.84
         },
         {
           "period": "FY2025 Q2",
@@ -6775,7 +6775,7 @@
   ],
   "pipeline": [
     {
-      "id": "6",
+      "id": "7",
       "companies": [
         "Stoke Space Technologies, Inc."
       ],
@@ -6785,7 +6785,7 @@
       "stage": "letter of intent",
       "amount_usd": 150000000.0,
       "agency": "Department of War's Office of Strategic Capital",
-      "summary": "The Office of Strategic Capital signed a $150 million conditional loan commitment with Stoke Space Technologies, Inc.",
+      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with Stoke Space Technologies, Inc.",
       "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment with Stoke Space Technologies, Inc.",
       "confidence": "high",
       "date": "2026-10-26",
@@ -6815,7 +6815,61 @@
       "already_tracked": false
     },
     {
-      "id": "7",
+      "id": "12",
+      "companies": [],
+      "tickers": [],
+      "sector": "petroleum",
+      "instrument": "none",
+      "stage": "announced",
+      "amount_usd": null,
+      "agency": "Department of War",
+      "summary": "The President issued a determination under Section 303 of the Defense Production Act regarding domestic petroleum production, refining, and logistics capacity.",
+      "quote": "Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logistics Capacity",
+      "confidence": "medium",
+      "date": "2026-10-22",
+      "link": "https://www.whitehouse.gov/presidential-actions/2026/10/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-domestic-petroleum-production-refining-and-logistics-capacity-c139/",
+      "source": "White House",
+      "title": "Presidential determination pursuant to section 303 of the defense production act of 1950 as amended on domestic petroleum production refining and logistics capacity c139",
+      "already_tracked": false
+    },
+    {
+      "id": "13",
+      "companies": [],
+      "tickers": [],
+      "sector": "wind turbines",
+      "instrument": "tariff",
+      "stage": "announced",
+      "amount_usd": null,
+      "agency": "Department of Commerce",
+      "summary": "The Secretary of Commerce submitted a Section 232 report regarding the national security effects of wind turbine imports.",
+      "quote": "investigation into the effects of imports of wind turbines and their parts and components on the national security of the United States",
+      "confidence": "medium",
+      "date": "2026-10-22",
+      "link": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/",
+      "source": "White House",
+      "title": "Adjusting imports of wind turbines and their parts and components into the united states",
+      "already_tracked": false
+    },
+    {
+      "id": "10",
+      "companies": [],
+      "tickers": [],
+      "sector": null,
+      "instrument": "tariff",
+      "stage": "announced",
+      "amount_usd": null,
+      "agency": "White House",
+      "summary": "The President signed a proclamation under Section 338 modifying tariffs on Canadian products.",
+      "quote": "signed a Proclamation pursuant to Section 338 of the Tariff Act of 1930 to further refine the scope of the tariffs on certain Canadian products",
+      "confidence": "medium",
+      "date": "2026-10-23",
+      "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-further-modifies-canadian-products-subject-to-tariffs-under-section-338/",
+      "source": "White House",
+      "title": "Fact sheet president donald j trump further modifies canadian products subject to tariffs under section 338",
+      "already_tracked": false
+    },
+    {
+      "id": "8",
       "companies": [],
       "tickers": [],
       "sector": null,
@@ -6833,78 +6887,6 @@
       "already_tracked": false
     },
     {
-      "id": "11",
-      "companies": [],
-      "tickers": [],
-      "sector": "petroleum",
-      "instrument": "none",
-      "stage": "announced",
-      "amount_usd": null,
-      "agency": "The White House",
-      "summary": "President Trump issued a Presidential Determination under Section 303 of the Defense Production Act regarding domestic petroleum production, refining, and logistics capacity.",
-      "quote": "Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logistics Capacity",
-      "confidence": "low",
-      "date": "2026-10-22",
-      "link": "https://www.whitehouse.gov/presidential-actions/2026/10/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-domestic-petroleum-production-refining-and-logistics-capacity-c139/",
-      "source": "White House",
-      "title": "Presidential determination pursuant to section 303 of the defense production act of 1950 as amended on domestic petroleum production refining and logistics capacity c139",
-      "already_tracked": false
-    },
-    {
-      "id": "12",
-      "companies": [],
-      "tickers": [],
-      "sector": "wind turbines",
-      "instrument": "tariff",
-      "stage": "announced",
-      "amount_usd": null,
-      "agency": "The White House",
-      "summary": "The President issued a Section 232 proclamation regarding national security impacts from imports of wind turbines and components.",
-      "quote": "investigation into the effects of imports of wind turbines and their parts and components on the national security of the United States",
-      "confidence": "low",
-      "date": "2026-10-22",
-      "link": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/",
-      "source": "White House",
-      "title": "Adjusting imports of wind turbines and their parts and components into the united states",
-      "already_tracked": false
-    },
-    {
-      "id": "9",
-      "companies": [],
-      "tickers": [],
-      "sector": null,
-      "instrument": "tariff",
-      "stage": "announced",
-      "amount_usd": null,
-      "agency": "The White House",
-      "summary": "President Trump signed a proclamation under Section 338 modifying tariffs applied to certain Canadian products.",
-      "quote": "signed a Proclamation pursuant to Section 338 of the Tariff Act of 1930 to further refine the scope of the tariffs on certain Canadian products",
-      "confidence": "low",
-      "date": "2026-10-23",
-      "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-further-modifies-canadian-products-subject-to-tariffs-under-section-338/",
-      "source": "White House",
-      "title": "Fact sheet president donald j trump further modifies canadian products subject to tariffs under section 338",
-      "already_tracked": false
-    },
-    {
-      "id": "4",
-      "companies": [],
-      "tickers": [],
-      "sector": "robotics and industrial machinery",
-      "instrument": "tariff",
-      "stage": "announced",
-      "amount_usd": null,
-      "agency": "The White House",
-      "summary": "President Trump signed a Section 232 proclamation directing negotiations regarding national security impacts of robotics and industrial machinery imports.",
-      "quote": "Proclamation pursuant to Section 232 of the Trade Expansion Act of 1962 (Section 232) to address the threatened impairment of national security",
-      "confidence": "low",
-      "date": "2026-10-28",
-      "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-adjusts-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
-      "source": "White House",
-      "title": "Fact sheet president donald j trump adjusts imports of robotics industrial machinery and their parts and components into the united states",
-      "already_tracked": false
-    },
-    {
       "id": "5",
       "companies": [],
       "tickers": [],
@@ -6912,10 +6894,28 @@
       "instrument": "tariff",
       "stage": "announced",
       "amount_usd": null,
-      "agency": "The White House",
-      "summary": "The President issued a Section 232 proclamation following a Commerce Department investigation into national security effects of imported robotics and machinery.",
+      "agency": "Department of Commerce",
+      "summary": "The President signed a Proclamation pursuant to Section 232 concerning imports of robotics and industrial machinery.",
+      "quote": "signed a Proclamation pursuant to Section 232 of the Trade Expansion Act of 1962 (Section 232) to address the threatened impairment of national security with respect to imports of robotics",
+      "confidence": "medium",
+      "date": "2026-10-28",
+      "link": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-adjusts-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
+      "source": "White House",
+      "title": "Fact sheet president donald j trump adjusts imports of robotics industrial machinery and their parts and components into the united states",
+      "already_tracked": false
+    },
+    {
+      "id": "6",
+      "companies": [],
+      "tickers": [],
+      "sector": "robotics and industrial machinery",
+      "instrument": "tariff",
+      "stage": "announced",
+      "amount_usd": null,
+      "agency": "Department of Commerce",
+      "summary": "The Secretary of Commerce submitted a Section 232 report on national security impacts of imports of robotics and industrial machinery.",
       "quote": "investigation into the effects of imports of robotics and industrial machinery, as well as their parts and components",
-      "confidence": "low",
+      "confidence": "medium",
       "date": "2026-10-28",
       "link": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
       "source": "White House",
@@ -6930,7 +6930,7 @@
       "not_a_deal": 5
     },
     "note": "8 records from 13 documents \u2014 not a deal 5",
-    "generated_utc": "2026-11-03T03:11:11+00:00"
+    "generated_utc": "2026-11-04T01:49:33+00:00"
   },
   "detection": [
     {
@@ -6953,6 +6953,19 @@
       "matched": "strategic capital \u00b7 $450 Million",
       "ticker": null,
       "quality": "agency release",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
+      "company": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to - U.S. Department of War (.gov)",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWTNsOEU5RjhWQzVIaTd1RkxyUGRRM2xEUUF6akc4NVM2SF94X01ZR1VBU3p2WUVTOUxJY2dTSS1McDhoRUN1R0MxSGc1Zi0yeWliX0xMUHhOZ25EZTUwQmhqVUZNa2c0M1lPbUdtZFg5VTdFUjI1ZFQ5Zjk5S2ZObjdQVDQ1TUtTQzgtQUFZNXVqdmZRcFA1NG1ybWtMbjlWXzZFbHJGbFVydVQtOHZEOC11bnVfWThrLWNVdEVibmZ5UTJvVDRVQVowQ1VPd20zaHIzSQ?oc=5",
+      "date": "2026-11-02",
+      "source": "U.S. Department of War (.gov)",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
       "named": [],
       "candidates": [],
       "status": "unverified"
@@ -7086,7 +7099,7 @@
       "date": "2026-10-28",
       "date_precision": "day",
       "source": "White House",
-      "kind": "news",
+      "kind": "fact sheets",
       "matched": "$221 million, $50 million",
       "evidence": {
         "industry": [],
@@ -7115,7 +7128,7 @@
       "date": "2026-10-28",
       "date_precision": "day",
       "source": "White House",
-      "kind": "news",
+      "kind": "fact sheets",
       "matched": "semiconductor, drone, steel \u00b7 section 232, tariff",
       "evidence": {
         "industry": [
@@ -7442,31 +7455,26 @@
       "quality": "award record",
       "named": [],
       "status": "unverified"
-    },
-    {
-      "company": "Australia\u2013US critical minerals pact turns one: Five investor takeaways - Australian Resources & Investment",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOM3pJSWdFQnhQN1BPNV91NUxNOWN1Skhnd0tDZFZ4b2dVTzRuc2dRcUxuSHRzcmZjOGd4VHNQNkt3a0NjYWF3dXFVNDdvUHp1bXl0dnNOMU9DMXh0WnAwRnRUcm9zWElrQ1gweEJMUHpBLTdvcFllVE9ESmNtZjctWEJjSGM0cnIyQ1dFbnA0eVpySzlPbDdzMTNLOUhyYTliczRwNU9tRzRaRmJXN0N6VGF6TFdYc1BscHJTUlJfMA?oc=5",
-      "date": "2026-10-20",
-      "source": "Australian Resources & Investment",
-      "matched": "offtake",
-      "form": "headline",
-      "ticker": null,
-      "quality": "headline",
-      "named": [],
-      "candidates": [
-        "Australian Resources"
-      ],
-      "status": "unverified"
     }
   ],
   "documents": [
     {
-      "title": "Adjusting Imports of Robotics, Industrial Machinery, and Their Parts and Components Into the United States",
-      "link": "https://www.federalregister.gov/documents/2026/11/02/2026-22385/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united",
-      "date": "2026-11-02",
-      "source": "Executive Office of the President",
-      "kind": "Presidential Document",
-      "matched": "tariff"
+      "title": "List of Approved Spent Fuel Storage Casks: TN Americas, LLC: Standardized NUHOMS\u00ae Horizontal Modular Storage System for Irradiated Nuclear Fuel, Certificate of Compliance No. 1004, Renewed Amendment No. 19",
+      "link": "https://www.federalregister.gov/documents/2026/11/03/2026-22421/list-of-approved-spent-fuel-storage-casks-tn-americas-llc-standardized-nuhoms-horizontal-modular",
+      "date": "2026-11-03",
+      "source": "Nuclear Regulatory Commission",
+      "kind": "Rule",
+      "matched": "nuclear"
+    },
+    {
+      "title": "Contracts for Nov. 3, 2026",
+      "company": "Contracts for Nov. 3, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+      "date": "2026-11-03",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
     },
     {
       "title": "Contracts for Nov. 2, 2026",
@@ -7525,16 +7533,6 @@
       "source": "Trade Representative, Office of United States",
       "kind": "Notice",
       "matched": "shipbuilding"
-    },
-    {
-      "title": "Contracts for Oct. 26, 2026",
-      "company": "Contracts for Oct. 26, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4633995/contracts-for-oct-26-2026/",
-      "date": "2026-10-26",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
     }
   ],
   "ledger": {
@@ -7554,7 +7552,7 @@
         "backfilled": false,
         "return_since_seen_pct": -3.7,
         "last_price": 22.13,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7566,7 +7564,7 @@
         "backfilled": true,
         "return_since_seen_pct": -33.1,
         "last_price": 2.18,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7578,7 +7576,7 @@
         "backfilled": true,
         "return_since_seen_pct": -32.3,
         "last_price": 10.67,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7590,7 +7588,7 @@
         "backfilled": true,
         "return_since_seen_pct": -41.0,
         "last_price": 10.09,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "AA:2026-08-31",
@@ -7602,7 +7600,7 @@
         "backfilled": true,
         "return_since_seen_pct": -10.2,
         "last_price": 39.9,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7614,7 +7612,7 @@
         "backfilled": true,
         "return_since_seen_pct": -15.2,
         "last_price": 40.23,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7626,7 +7624,7 @@
         "backfilled": true,
         "return_since_seen_pct": -23.1,
         "last_price": 123.08,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7638,7 +7636,7 @@
         "backfilled": true,
         "return_since_seen_pct": -34.1,
         "last_price": 4.45,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7650,7 +7648,7 @@
         "backfilled": true,
         "return_since_seen_pct": -22.2,
         "last_price": 5.75,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7662,7 +7660,7 @@
         "backfilled": true,
         "return_since_seen_pct": -12.5,
         "last_price": 41.82,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7674,7 +7672,7 @@
         "backfilled": true,
         "return_since_seen_pct": 10.0,
         "last_price": 252.51,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7686,7 +7684,7 @@
         "backfilled": true,
         "return_since_seen_pct": -41.0,
         "last_price": 10.09,
-        "last_update": "2026-11-03"
+        "last_update": "2026-11-04"
       }
     ]
   },
@@ -7694,62 +7692,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-11-03T03:09:22+00:00"
+      "checked_utc": "2026-11-04T01:47:30+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-11-03T03:09:31+00:00"
+      "checked_utc": "2026-11-04T01:47:40+00:00"
     },
     "whitehouse": {
       "ok": true,
-      "note": "12 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-11-03T03:09:47+00:00"
+      "note": "11 of 30 posts cleared the evidence bar (24 bodies read)",
+      "checked_utc": "2026-11-04T01:48:02+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-11-03T03:09:47+00:00"
+      "checked_utc": "2026-11-04T01:48:02+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-11-03T03:10:20+00:00"
+      "checked_utc": "2026-11-04T01:48:35+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (15 facility operators dropped)",
-      "checked_utc": "2026-11-03T03:10:21+00:00"
+      "checked_utc": "2026-11-04T01:48:49+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-11-03T03:10:23+00:00"
+      "checked_utc": "2026-11-04T01:48:52+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "2 documents",
-      "checked_utc": "2026-11-03T03:10:26+00:00"
+      "checked_utc": "2026-11-04T01:48:54+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-11-03T03:10:26+00:00"
+      "checked_utc": "2026-11-04T01:48:55+00:00"
     },
     "reading": {
       "ok": true,
       "note": "8 records from 13 documents \u2014 not a deal 5",
-      "checked_utc": "2026-11-03T03:11:11+00:00"
+      "checked_utc": "2026-11-04T01:49:33+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-11-03T03:13:39+00:00"
+      "checked_utc": "2026-11-04T01:55:53+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-11-03T03:13:39+00:00"
+      "checked_utc": "2026-11-04T01:55:53+00:00"
     }
   },
   "counts": {
