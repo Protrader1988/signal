@@ -1,72 +1,22 @@
 {
   "stages": {
-    "legals_sample": {
-      "document_id": [
-        "str",
-        "2026083000008002"
-      ],
-      "record_type": [
-        "str",
-        "L"
-      ],
-      "borough": [
-        "str",
-        "4"
-      ],
-      "block": [
-        "str",
-        "8643"
-      ],
-      "lot": [
-        "str",
-        "16"
-      ],
-      "easement": [
-        "str",
-        "N"
-      ],
-      "partial_lot": [
-        "str",
-        "E"
-      ],
-      "air_rights": [
-        "str",
-        "N"
-      ],
-      "subterranean_rights": [
-        "str",
-        "N"
-      ],
-      "property_type": [
-        "str",
-        "D1"
-      ],
-      "street_number": [
-        "str",
-        "87-21"
-      ],
-      "street_name": [
-        "str",
-        "250TH STREET"
-      ],
-      "good_through_date": [
-        "str",
-        "2026-09-30T00:00:00.000"
-      ]
-    },
+    "legals_probe_error": "The read operation timed out",
     "legals_types": {
-      "borough": false,
-      "block": false,
-      "lot": false
+      "borough": true,
+      "block": true,
+      "lot": true
     },
-    "legals_rows": 200000,
-    "parcels_matched": 340,
-    "doc_ids": 2747,
-    "master_rows": 2747,
-    "grantee_rows": 248,
-    "owner_mailing_hits": 283,
-    "motivated": 171,
-    "free_and_clear": 182,
-    "with_tenure": 283
+    "legals_errors": [
+      "HTTP Error 503: Service Unavailable"
+    ],
+    "legals_rows": 150000,
+    "parcels_matched": 213,
+    "doc_ids": 1890,
+    "master_rows": 1410,
+    "grantee_rows": 145,
+    "owner_mailing_hits": 158,
+    "motivated": 94,
+    "free_and_clear": 91,
+    "with_tenure": 158
   }
 }
