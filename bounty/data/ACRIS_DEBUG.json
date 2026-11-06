@@ -63,14 +63,20 @@
       "block": false,
       "lot": false
     },
-    "legals_rows": 200000,
-    "parcels_matched": 340,
-    "doc_ids": 2747,
-    "master_rows": 2160,
-    "grantee_rows": 219,
-    "owner_mailing_hits": 255,
-    "motivated": 161,
-    "free_and_clear": 164,
-    "with_tenure": 255
+    "legals_errors": [
+      "The read operation timed out"
+    ],
+    "legals_rows": 150000,
+    "parcels_matched": 234,
+    "doc_ids": 2138,
+    "master_rows": 1560,
+    "parties_errors": [
+      "HTTP Error 503: Service Unavailable"
+    ],
+    "grantee_rows": 46,
+    "owner_mailing_hits": 49,
+    "motivated": 116,
+    "free_and_clear": 128,
+    "with_tenure": 184
   }
 }
