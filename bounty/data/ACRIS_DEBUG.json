@@ -3,7 +3,7 @@
     "legals_sample": {
       "document_id": [
         "str",
-        "2026091400620004"
+        "2026091400981010"
       ],
       "record_type": [
         "str",
@@ -11,15 +11,15 @@
       ],
       "borough": [
         "str",
-        "1"
+        "3"
       ],
       "block": [
         "str",
-        "905"
+        "1954"
       ],
       "lot": [
         "str",
-        "1347"
+        "2"
       ],
       "easement": [
         "str",
@@ -39,19 +39,15 @@
       ],
       "property_type": [
         "str",
-        "SC"
+        "AP"
       ],
       "street_number": [
         "str",
-        "250"
+        "327-329"
       ],
       "street_name": [
         "str",
-        "EAST 25TH STREET"
-      ],
-      "unit": [
-        "str",
-        "9E"
+        "FRANKLIN AVE"
       ],
       "good_through_date": [
         "str",
@@ -63,20 +59,14 @@
       "block": false,
       "lot": false
     },
-    "legals_errors": [
-      "The read operation timed out"
-    ],
-    "legals_rows": 150000,
-    "parcels_matched": 234,
-    "doc_ids": 2138,
-    "master_rows": 1560,
-    "parties_errors": [
-      "HTTP Error 503: Service Unavailable"
-    ],
-    "grantee_rows": 46,
-    "owner_mailing_hits": 49,
-    "motivated": 116,
-    "free_and_clear": 128,
-    "with_tenure": 184
+    "legals_rows": 200000,
+    "parcels_matched": 340,
+    "doc_ids": 2747,
+    "master_rows": 2747,
+    "grantee_rows": 248,
+    "owner_mailing_hits": 283,
+    "motivated": 171,
+    "free_and_clear": 182,
+    "with_tenure": 283
   }
 }
