@@ -1,76 +1,26 @@
 {
   "stages": {
-    "legals_sample": {
-      "document_id": [
-        "str",
-        "2026102700868001"
-      ],
-      "record_type": [
-        "str",
-        "L"
-      ],
-      "borough": [
-        "str",
-        "1"
-      ],
-      "block": [
-        "str",
-        "823"
-      ],
-      "lot": [
-        "str",
-        "1705"
-      ],
-      "easement": [
-        "str",
-        "N"
-      ],
-      "partial_lot": [
-        "str",
-        "E"
-      ],
-      "air_rights": [
-        "str",
-        "N"
-      ],
-      "subterranean_rights": [
-        "str",
-        "N"
-      ],
-      "property_type": [
-        "str",
-        "SC"
-      ],
-      "street_number": [
-        "str",
-        "29"
-      ],
-      "street_name": [
-        "str",
-        "WEST 21ST STREET"
-      ],
-      "unit": [
-        "str",
-        "5"
-      ],
-      "good_through_date": [
-        "str",
-        "2026-10-31T00:00:00.000"
-      ]
-    },
+    "legals_probe_error": "The read operation timed out",
     "legals_types": {
-      "borough": false,
-      "block": false,
-      "lot": false
+      "borough": true,
+      "block": true,
+      "lot": true
     },
-    "legals_rows": 200000,
-    "parcels_matched": 340,
-    "doc_ids": 2740,
-    "master_rows": 2740,
-    "grantee_rows": 246,
-    "owner_mailing_hits": 281,
-    "motivated": 169,
-    "free_and_clear": 181,
-    "with_tenure": 281
+    "legals_errors": [
+      "HTTP Error 503: Service Unavailable",
+      "IncompleteRead(0 bytes read)"
+    ],
+    "legals_rows": 100000,
+    "parcels_matched": 173,
+    "doc_ids": 1448,
+    "master_rows": 1208,
+    "parties_errors": [
+      "HTTP Error 503: Service Unavailable"
+    ],
+    "grantee_rows": 0,
+    "owner_mailing_hits": 0,
+    "motivated": 71,
+    "free_and_clear": 65,
+    "with_tenure": 118
   }
 }
