@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-12T02:40:24.153597+00:00",
+  "generated_utc": "2026-11-13T02:21:02.887569+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -5884,9 +5884,9 @@
       "thesis": null,
       "recipient": "LOCKHEED MARTIN",
       "federal": {
-        "total": 49341420949.0,
+        "total": 49332437352.0,
         "count": 300,
-        "last_action": "2026-11-05",
+        "last_action": "2026-11-10",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5901,9 +5901,9 @@
       "thesis": null,
       "recipient": "RTX",
       "federal": {
-        "total": 16986380204.0,
+        "total": 16985693734.0,
         "count": 300,
-        "last_action": "2026-11-02",
+        "last_action": "2026-11-09",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5918,9 +5918,9 @@
       "thesis": null,
       "recipient": "GENERAL DYNAMICS",
       "federal": {
-        "total": 9563904880.0,
+        "total": 9559536766.0,
         "count": 300,
-        "last_action": "2026-11-06",
+        "last_action": "2026-11-09",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5935,7 +5935,7 @@
       "thesis": null,
       "recipient": "HUNTINGTON INGALLS",
       "federal": {
-        "total": 8012562083.0,
+        "total": 8012415215.0,
         "count": 300,
         "last_action": "2026-10-30",
         "top_agency": "Department of Defense",
@@ -5954,7 +5954,7 @@
       "federal": {
         "total": 4790244237.0,
         "count": 300,
-        "last_action": "2026-11-05",
+        "last_action": "2026-11-09",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5969,9 +5969,9 @@
       "thesis": null,
       "recipient": "L3HARRIS",
       "federal": {
-        "total": 2779927837.0,
+        "total": 2780092287.0,
         "count": 300,
-        "last_action": "2026-11-06",
+        "last_action": "2026-11-09",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5986,9 +5986,9 @@
       "thesis": null,
       "recipient": "INTERNATIONAL BUSINESS MACHINES",
       "federal": {
-        "total": 1699528146.0,
+        "total": 1702180659.0,
         "count": 300,
-        "last_action": "2026-11-07",
+        "last_action": "2026-11-10",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6005,7 +6005,7 @@
       "federal": {
         "total": 1273486596.0,
         "count": 103,
-        "last_action": "2026-11-04",
+        "last_action": "2026-11-09",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6021,7 +6021,7 @@
       "recipient": "KRATOS",
       "federal": {
         "total": 300507516.0,
-        "count": 177,
+        "count": 176,
         "last_action": "2026-11-05",
         "top_agency": "Department of Defense",
         "truncated": false,
@@ -6056,7 +6056,7 @@
       "federal": {
         "total": 138896656.0,
         "count": 300,
-        "last_action": "2026-11-06",
+        "last_action": "2026-11-09",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6533,10 +6533,10 @@
         },
         {
           "period": "FY2027 Q1",
-          "amount": 6239604.86
+          "amount": 6528755.97
         }
       ],
-      "last4": 4196186096.36,
+      "last4": 4196475247.47,
       "prior4": 5886323364.25,
       "yoy_pct": -28.7,
       "link": "https://www.usaspending.gov/search?keywords=shipbuilding"
@@ -6651,7 +6651,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 138563097.68
+          "amount": 138424666.9
         },
         {
           "period": "FY2025 Q2",
@@ -6735,10 +6735,10 @@
         },
         {
           "period": "FY2027 Q1",
-          "amount": 67395.76
+          "amount": 2302.64
         }
       ],
-      "last4": 232878484.63,
+      "last4": 232813391.51,
       "prior4": 114247990.63,
       "yoy_pct": 103.8,
       "link": "https://www.usaspending.gov/search?keywords=rare%20earth"
@@ -6894,7 +6894,7 @@
   ],
   "pipeline": [
     {
-      "id": "14",
+      "id": "13",
       "companies": [
         "Neros, Inc."
       ],
@@ -6903,7 +6903,7 @@
       "instrument": "loan",
       "stage": "letter of intent",
       "amount_usd": 450000000.0,
-      "agency": "Department of War",
+      "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a conditional loan commitment of up to $450 million with Neros, Inc.",
       "quote": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to $450 Million With Neros, Inc.",
       "confidence": "high",
@@ -6911,6 +6911,26 @@
       "link": "https://www.war.gov/News/Releases/Release/Article/4638926/department-of-wars-office-of-strategic-capital-signs-conditional-loan-commitmen/",
       "source": "Dept. of War",
       "title": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to $450 Million With Neros, Inc.",
+      "already_tracked": false
+    },
+    {
+      "id": "11",
+      "companies": [
+        "LeoLabs, Inc."
+      ],
+      "tickers": [],
+      "sector": null,
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": 150000000.0,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with LeoLabs, Inc.",
+      "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With LeoLabs, Inc.",
+      "confidence": "high",
+      "date": "2026-11-04",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4641087/department-of-wars-office-of-strategic-capital-signs-150-million-conditional-lo/",
+      "source": "Dept. of War",
+      "title": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With LeoLabs, Inc.",
       "already_tracked": false
     },
     {
@@ -6923,27 +6943,7 @@
       "instrument": "loan",
       "stage": "letter of intent",
       "amount_usd": 150000000.0,
-      "agency": "Department of War",
-      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with LeoLabs, Inc.",
-      "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With LeoLabs, Inc.",
-      "confidence": "high",
-      "date": "2026-11-04",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4641087/department-of-wars-office-of-strategic-capital-signs-150-million-conditional-lo/",
-      "source": "Dept. of War",
-      "title": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With LeoLabs, Inc.",
-      "already_tracked": false
-    },
-    {
-      "id": "13",
-      "companies": [
-        "LeoLabs, Inc."
-      ],
-      "tickers": [],
-      "sector": null,
-      "instrument": "loan",
-      "stage": "letter of intent",
-      "amount_usd": 150000000.0,
-      "agency": "Department of War",
+      "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with LeoLabs, Inc.",
       "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With LeoLabs, Inc.",
       "confidence": "high",
@@ -6954,7 +6954,7 @@
       "already_tracked": false
     },
     {
-      "id": "7",
+      "id": "6",
       "companies": [
         "Halo Industries, Inc."
       ],
@@ -6963,7 +6963,7 @@
       "instrument": "loan",
       "stage": "letter of intent",
       "amount_usd": 75000000.0,
-      "agency": "Department of War",
+      "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a $75 million conditional loan commitment with Halo Industries, Inc.",
       "quote": "Department of War's Office of Strategic Capital Signs $75 Million Conditional Loan Commitment With Halo Industries, Inc.",
       "confidence": "high",
@@ -6971,6 +6971,26 @@
       "link": "https://www.war.gov/News/Releases/Release/Article/4642227/department-of-wars-office-of-strategic-capital-signs-75-million-conditional-loa/",
       "source": "Dept. of War",
       "title": "Department of War's Office of Strategic Capital Signs $75 Million Conditional Loan Commitment With Halo Industries, Inc.",
+      "already_tracked": false
+    },
+    {
+      "id": "7",
+      "companies": [
+        "6K Inc."
+      ],
+      "tickers": [],
+      "sector": null,
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": 250000000.0,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital signed a $250 million conditional loan commitment with 6K Inc.",
+      "quote": "Department of War's Office of Strategic Capital Signs $250 Million Conditional Loan Commitment With 6K Inc.",
+      "confidence": "high",
+      "date": "2026-11-05",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4642212/department-of-wars-office-of-strategic-capital-signs-250-million-conditional-lo/",
+      "source": "Dept. of War",
+      "title": "Department of War's Office of Strategic Capital Signs $250 Million Conditional Loan Commitment With 6K Inc.",
       "already_tracked": false
     },
     {
@@ -6983,27 +7003,7 @@
       "instrument": "loan",
       "stage": "letter of intent",
       "amount_usd": 250000000.0,
-      "agency": "Department of War",
-      "summary": "The Department of War's Office of Strategic Capital signed a $250 million conditional loan commitment with 6K Inc.",
-      "quote": "Department of War's Office of Strategic Capital Signs $250 Million Conditional Loan Commitment With 6K Inc.",
-      "confidence": "high",
-      "date": "2026-11-05",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4642212/department-of-wars-office-of-strategic-capital-signs-250-million-conditional-lo/",
-      "source": "Dept. of War",
-      "title": "Department of War's Office of Strategic Capital Signs $250 Million Conditional Loan Commitment With 6K Inc.",
-      "already_tracked": false
-    },
-    {
-      "id": "9",
-      "companies": [
-        "6K Inc."
-      ],
-      "tickers": [],
-      "sector": null,
-      "instrument": "loan",
-      "stage": "letter of intent",
-      "amount_usd": 250000000.0,
-      "agency": "Department of War",
+      "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a $250 million conditional loan commitment with 6K Inc.",
       "quote": "Department of War's Office of Strategic Capital Signs $250 Million Conditional Loan Commitment With 6K Inc.",
       "confidence": "high",
@@ -7014,18 +7014,18 @@
       "already_tracked": false
     },
     {
-      "id": "5",
+      "id": "4",
       "companies": [
         "Rocket Lab"
       ],
       "tickers": [
         "RKLB"
       ],
-      "sector": "aerospace",
+      "sector": null,
       "instrument": "loan",
       "stage": "letter of intent",
       "amount_usd": 150000000.0,
-      "agency": "Department of War",
+      "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with Rocket Lab.",
       "quote": "The Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With Rocket Lab",
       "confidence": "high",
@@ -7036,14 +7036,14 @@
       "already_tracked": false
     },
     {
-      "id": "10",
+      "id": "9",
       "companies": [],
       "tickers": [],
       "sector": null,
       "instrument": "loan",
       "stage": "letter of intent",
       "amount_usd": 75000000.0,
-      "agency": "Department of War",
+      "agency": "Department of War's Office of Strategic Capital",
       "summary": "The Department of War's Office of Strategic Capital signed a $75 million conditional loan commitment.",
       "quote": "Department of War's Office of Strategic Capital Signs $75 Million Conditional Loan Commitm",
       "confidence": "medium",
@@ -7052,16 +7052,34 @@
       "source": "U.S. Department of War (.gov)",
       "title": "Department of War's Office of Strategic Capital Signs $75 Million Conditional Loan Commitm - U.S. Department of War (.gov)",
       "already_tracked": false
+    },
+    {
+      "id": "14",
+      "companies": [],
+      "tickers": [],
+      "sector": null,
+      "instrument": "loan",
+      "stage": "letter of intent",
+      "amount_usd": null,
+      "agency": "Department of War's Office of Strategic Capital",
+      "summary": "The Department of War's Office of Strategic Capital signed a conditional loan commitment.",
+      "quote": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to",
+      "confidence": "low",
+      "date": "2026-11-02",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWTNsOEU5RjhWQzVIaTd1RkxyUGRRM2xEUUF6akc4NVM2SF94X01ZR1VBU3p2WUVTOUxJY2dTSS1McDhoRUN1R0MxSGc1Zi0yeWliX0xMUHhOZ25EZTUwQmhqVUZNa2c0M1lPbUdtZFg5VTdFUjI1ZFQ5Zjk5S2ZObjdQVDQ1TUtTQzgtQUFZNXVqdmZRcFA1NG1ybWtMbjlWXzZFbHJGbFVydVQtOHZEOC11bnVfWThrLWNVdEVibmZ5UTJvVDRVQVowQ1VPd20zaHIzSQ?oc=5",
+      "source": "U.S. Department of War (.gov)",
+      "title": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to - U.S. Department of War (.gov)",
+      "already_tracked": false
     }
   ],
   "reading": {
     "ok": true,
     "model": "gemini-3.6-flash",
     "stats": {
-      "not_a_deal": 6
+      "not_a_deal": 5
     },
-    "note": "8 records from 14 documents \u2014 not a deal 6",
-    "generated_utc": "2026-11-12T02:38:20+00:00"
+    "note": "9 records from 14 documents \u2014 not a deal 5",
+    "generated_utc": "2026-11-13T02:18:09+00:00"
   },
   "detection": [
     {
@@ -7102,7 +7120,7 @@
       "date": "2026-11-10",
       "date_precision": "day",
       "source": "White House",
-      "kind": "news",
+      "kind": "briefings statements",
       "matched": "shipbuilding",
       "evidence": {
         "industry": [
@@ -7130,7 +7148,7 @@
       "date": "2026-11-10",
       "date_precision": "day",
       "source": "White House",
-      "kind": "news",
+      "kind": "briefings statements",
       "matched": "nuclear, supply chain \u00b7 defense production act",
       "evidence": {
         "industry": [
@@ -7156,29 +7174,17 @@
       "status": "unverified"
     },
     {
-      "title": "First lady melania trumps fostering the future together grows its international momentum across the united states asia europe and the caribbean",
-      "company": "First lady melania trumps fostering the future together grows its international momentum across the united states asia europe and the caribbean",
-      "link": "https://www.whitehouse.gov/briefings-statements/2026/11/first-lady-melania-trumps-fostering-the-future-together-grows-its-international-momentum-across-the-united-states-asia-europe-and-the-caribbean/",
+      "company": "UCHICAGO ARGONNE, LLC",
+      "amount": 17730321030.51,
       "date": "2026-11-10",
-      "date_precision": "day",
-      "source": "White House",
-      "kind": "briefings statements",
-      "matched": "$23 million",
-      "evidence": {
-        "industry": [],
-        "instrument": [],
-        "money": [
-          "$23 million"
-        ],
-        "tickers": [
-          "INTC"
-        ],
-        "score": 3
-      },
-      "desc": "First Lady Melania Trump\u2019s Fostering the Future Together Grows Its International Momentum Across the United States, Asia, Europe, and the Caribbean &#8211; The White House Skip to content Office of the First Lady First Lady Melania Trump\u2019s Fostering the Future Together Grows Its International Momentum Across the United States, Asia, Europe, and the Caribbean The White House November 10, 2026 First Lady Melania Trump\u2019s Fostering the Future Together is accelerating its global mission with four major international gatherings before the end of 2026. The member nation leaders are mobilizing to empower children through technology and education. Mrs. Trump\u2019s international initiative, Fostering the Future Together, will convene world leaders at four significant gatherings: United States: G20 Leaders\u2019 Summit, Miami, hosted by First Lady Melania Trump Philippines: ASEAN Conference, hosted by First Lady Liza Araneta-Marcos Poland: European Regional Conference, hosted by First Lady Marta Nawrocka St. Kitts and Nevis: Caribbean Regional Conference, hosted by First Lady Diani Prince-Drew \u201cI applaud First Ladies Liza Araneta-Marcos, Marta Nawrocka, and Diani Prince-Drew for their extraordinary le",
-      "form": "white house",
+      "agency": "Department of Energy",
+      "desc": "PERFORMANCE-BASED CONTRACT FOR MANAGEMENT AND OPERATION OF ARGONNE NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-",
       "ticker": null,
-      "quality": "white house",
+      "quality": "award record",
       "named": [],
       "candidates": [],
       "status": "unverified"
@@ -7440,25 +7446,17 @@
       "status": "unverified"
     },
     {
-      "company": "Department of War Releases Fiscal Year 2026 Military Intelligence Program Budget",
-      "title": "Department of War Releases Fiscal Year 2026 Military Intelligence Program Budget",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4637317/department-of-war-releases-fiscal-year-2026-military-intelligence-program-budget/",
-      "date": "2026-10-30",
-      "source": "Dept. of War",
-      "evidence": {
-        "industry": [],
-        "instrument": [],
-        "money": [],
-        "tickers": [
-          "INTC"
-        ],
-        "score": 2
-      },
-      "matched": "named company",
-      "ticker": "INTC",
-      "quality": "agency release",
+      "company": "Department of War's Office of Strategic Capital Signs Conditional Loan Commitment of up to - U.S. Department of War (.gov)",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWTNsOEU5RjhWQzVIaTd1RkxyUGRRM2xEUUF6akc4NVM2SF94X01ZR1VBU3p2WUVTOUxJY2dTSS1McDhoRUN1R0MxSGc1Zi0yeWliX0xMUHhOZ25EZTUwQmhqVUZNa2c0M1lPbUdtZFg5VTdFUjI1ZFQ5Zjk5S2ZObjdQVDQ1TUtTQzgtQUFZNXVqdmZRcFA1NG1ybWtMbjlWXzZFbHJGbFVydVQtOHZEOC11bnVfWThrLWNVdEVibmZ5UTJvVDRVQVowQ1VPd20zaHIzSQ?oc=5",
+      "date": "2026-11-02",
+      "source": "U.S. Department of War (.gov)",
+      "matched": "federal investment",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
       "named": [],
-      "status": "in registry"
+      "candidates": [],
+      "status": "unverified"
     },
     {
       "company": "CONSOLIDATED NUCLEAR SECURITY, LLC",
@@ -7575,6 +7573,16 @@
   ],
   "documents": [
     {
+      "title": "Contracts for Nov. 12, 2026",
+      "company": "Contracts for Nov. 12, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4647086/contracts-for-nov-12-2026/",
+      "date": "2026-11-12",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
+    {
       "title": "Notice of Modification of Section 301 Action: China's Targeting of the Maritime, Logistics, and Shipbuilding Sectors for Dominance",
       "link": "https://www.federalregister.gov/documents/2026/11/10/2026-22867/notice-of-modification-of-section-301-action-chinas-targeting-of-the-maritime-logistics-and",
       "date": "2026-11-10",
@@ -7633,16 +7641,6 @@
       "form": "contract"
     },
     {
-      "title": "Contracts for Nov. 3, 2026",
-      "company": "Contracts for Nov. 3, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
-      "date": "2026-11-03",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
       "title": "Request for Comments on Further Suspension of Section 301 Action: China's Targeting of the Maritime, Logistics, and Shipbuilding Sectors for Dominance",
       "link": "https://www.federalregister.gov/documents/2026/10/26/2026-21755/request-for-comments-on-further-suspension-of-section-301-action-chinas-targeting-of-the-maritime",
       "date": "2026-10-26",
@@ -7668,7 +7666,7 @@
         "backfilled": false,
         "return_since_seen_pct": -8.6,
         "last_price": 21.01,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7680,7 +7678,7 @@
         "backfilled": true,
         "return_since_seen_pct": -35.6,
         "last_price": 2.1,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7692,7 +7690,7 @@
         "backfilled": true,
         "return_since_seen_pct": -29.5,
         "last_price": 11.11,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7704,7 +7702,7 @@
         "backfilled": true,
         "return_since_seen_pct": -37.8,
         "last_price": 10.65,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "AA:2026-08-31",
@@ -7716,7 +7714,7 @@
         "backfilled": true,
         "return_since_seen_pct": -7.6,
         "last_price": 41.04,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7728,7 +7726,7 @@
         "backfilled": true,
         "return_since_seen_pct": -22.7,
         "last_price": 36.69,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7740,7 +7738,7 @@
         "backfilled": true,
         "return_since_seen_pct": -22.2,
         "last_price": 124.4,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7752,7 +7750,7 @@
         "backfilled": true,
         "return_since_seen_pct": -36.4,
         "last_price": 4.29,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7764,7 +7762,7 @@
         "backfilled": true,
         "return_since_seen_pct": -22.5,
         "last_price": 5.73,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7776,7 +7774,7 @@
         "backfilled": true,
         "return_since_seen_pct": -10.4,
         "last_price": 42.85,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7788,7 +7786,7 @@
         "backfilled": true,
         "return_since_seen_pct": 8.1,
         "last_price": 248.22,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7800,7 +7798,7 @@
         "backfilled": true,
         "return_since_seen_pct": -37.8,
         "last_price": 10.65,
-        "last_update": "2026-11-12"
+        "last_update": "2026-11-13"
       }
     ]
   },
@@ -7808,62 +7806,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-11-12T02:36:49+00:00"
+      "checked_utc": "2026-11-13T02:16:32+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-11-12T02:36:59+00:00"
+      "checked_utc": "2026-11-13T02:16:42+00:00"
     },
     "whitehouse": {
       "ok": true,
-      "note": "9 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-11-12T02:37:20+00:00"
+      "note": "7 of 30 posts cleared the evidence bar (24 bodies read)",
+      "checked_utc": "2026-11-13T02:17:05+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-11-12T02:37:20+00:00"
+      "checked_utc": "2026-11-13T02:17:05+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-11-12T02:37:52+00:00"
+      "checked_utc": "2026-11-13T02:17:38+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "15 of 80 awards over $50M kept (15 facility operators dropped)",
-      "checked_utc": "2026-11-12T02:37:54+00:00"
+      "checked_utc": "2026-11-13T02:17:40+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-11-12T02:37:56+00:00"
+      "checked_utc": "2026-11-13T02:17:42+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "2 documents",
-      "checked_utc": "2026-11-12T02:37:58+00:00"
+      "checked_utc": "2026-11-13T02:17:44+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-11-12T02:37:59+00:00"
+      "checked_utc": "2026-11-13T02:17:45+00:00"
     },
     "reading": {
       "ok": true,
-      "note": "8 records from 14 documents \u2014 not a deal 6",
-      "checked_utc": "2026-11-12T02:38:20+00:00"
+      "note": "9 records from 14 documents \u2014 not a deal 5",
+      "checked_utc": "2026-11-13T02:18:09+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-11-12T02:40:24+00:00"
+      "checked_utc": "2026-11-13T02:21:02+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-11-12T02:40:24+00:00"
+      "checked_utc": "2026-11-13T02:21:02+00:00"
     }
   },
   "counts": {
@@ -7872,7 +7870,7 @@
     "radar": 9,
     "detection": 24,
     "documents": 8,
-    "pipeline": 8,
+    "pipeline": 9,
     "flow": 8
   }
 }
