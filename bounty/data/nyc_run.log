@@ -1,18 +1,13 @@
-rolling-sales fields: ['borough', 'neighborhood', 'building_class_category', 'tax_class_at_present', 'block', 'lot', 'building_class_at_present', 'address', 'zip_code', 'residential_units', 'commercial_units', 'total_units', 'land_square_feet', 'gross_square_feet', 'year_built', 'tax_class_at_time_of_sale', 'building_class_at_time_of', 'sale_price', 'sale_date']
-land comps $/SF: {'BX': 328.0, 'BK': 467.0, 'QN': 302.0} (347 usable sales of 1218 fetched)
-zoning radar: 712 lots inside rezonings, 57 blocks with upzonings
+comps failed entirely (HTTP Error 503: Service Unavailable); degrading to assessed-only anchor (labeled)
+zoning radar: 5719 lots inside rezonings, 140 blocks with upzonings
 PLUTO 1307 parcels fetched
-excluded 507 non-acquirable owners; underwrote 732
-  ACRIS legals boro 4 chunk failed: HTTP Error 503: Service Unavailable
-  ACRIS legals boro 2 chunk failed: IncompleteRead(0 bytes read)
+excluded 507 non-acquirable owners; underwrote 699
   ACRIS master chunk failed: HTTP Error 503: Service Unavailable
-  ACRIS master chunk failed: HTTP Error 503: Service Unavailable
-  ACRIS parties chunk failed: HTTP Error 503: Service Unavailable
-  ACRIS: 71 motivated (65 free-and-clear), 118 with tenure
-  streets: 301 resolved · wide 41 · 26 re-underwritten at wide-street FAR
-  DOB violations chunk failed: HTTP Error 503: Service Unavailable
-  DOB violations chunk failed: HTTP Error 503: Service Unavailable
-  lien sale chunk failed: Remote end closed connection without response
-  diligence: DOB 86 lots w/ violations · ECB 118 · lien sale 21 · DEC sites 39676
-  diligence: 55 lots with red flags, 23 flipped to pass, 21 on the lien sale list
-qualified 732 | actionable 271 (offer 219 / negotiate 52) | program 253 | pass 63 | rfp 145 | mailing 0 | new 0 | emitted 340
+  ACRIS: 143 motivated (156 free-and-clear), 270 with tenure
+  streets: 320 resolved · wide 45 · 25 re-underwritten at wide-street FAR
+  ECB chunk failed: HTTP Error 503: Service Unavailable
+  ECB chunk failed: HTTP Error 503: Service Unavailable
+  lien sale chunk failed: HTTP Error 503: Service Unavailable
+  diligence: DOB 150 lots w/ violations · ECB 89 · lien sale 18 · DEC sites 39686
+  diligence: 47 lots with red flags, 24 flipped to pass, 18 on the lien sale list
+qualified 699 | actionable 367 (offer 357 / negotiate 10) | program 157 | pass 32 | rfp 143 | mailing 195 | new 0 | emitted 340
