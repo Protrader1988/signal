@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-11-14T01:59:09.036816+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bearish",
+    "confidence": "medium",
+    "summary": "Markets face compounding headwinds as persistent inflation pushes the Federal Reserve toward rate hikes while stocks wobble ahead of upcoming PPI data. The mood is further dampened by severe executive turmoil and falling stock prices at Nvidia, alongside an unexpected nationwide FAA ground stop impacting airline shares.",
+    "bull": "Resilience in energy earnings, potential value in oversold retail/pharma names, and market rotation into Nvidia competitors like AMD and Broadcom could cushion broader indices.",
+    "bear": "Sustained inflation combined with rate hike expectations, potential market crash fears stemming from Nvidia's executive shock, and transportation disruptions could ignite broader selling pressure.",
+    "watch": "Upcoming PPI inflation metrics, Fed rate messaging, and developments surrounding the nationwide FAA flight pause."
+  },
+  "takes": [
+    {
+      "topic": "Nvidia & Chipmakers",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "Jensen Huang's resignation and fallout have knocked Nvidia's stock down and raised crash fears, though rivals AMD and Broadcom are catching immediate upside."
+    },
+    {
+      "topic": "US Monetary Policy & Inflation",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "Sticky inflation is forcing the Fed to raise interest rates, eroding consumer spending power and keeping equities unsettled ahead of fresh PPI data."
+    },
+    {
+      "topic": "Airlines & Transportation",
+      "lean": "bearish",
+      "confidence": "high",
+      "note": "A nationwide FAA ground stop for all flights has triggered an immediate drop in airline stocks, creating acute operational and headline risk."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
