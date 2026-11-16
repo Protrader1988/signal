@@ -1,19 +1,64 @@
 {
   "stages": {
-    "legals_probe_error": "The read operation timed out",
+    "legals_sample": {
+      "document_id": [
+        "str",
+        "FT_3520005834952"
+      ],
+      "record_type": [
+        "str",
+        "L"
+      ],
+      "borough": [
+        "str",
+        "3"
+      ],
+      "block": [
+        "str",
+        "4077"
+      ],
+      "lot": [
+        "str",
+        "10"
+      ],
+      "easement": [
+        "str",
+        "N"
+      ],
+      "partial_lot": [
+        "str",
+        "E"
+      ],
+      "air_rights": [
+        "str",
+        "N"
+      ],
+      "subterranean_rights": [
+        "str",
+        "N"
+      ],
+      "property_type": [
+        "str",
+        "PA"
+      ],
+      "good_through_date": [
+        "str",
+        "2026-10-31T00:00:00.000"
+      ]
+    },
     "legals_types": {
-      "borough": true,
-      "block": true,
-      "lot": true
+      "borough": false,
+      "block": false,
+      "lot": false
     },
     "legals_rows": 200000,
-    "parcels_matched": 336,
-    "doc_ids": 3008,
-    "master_rows": 2888,
-    "grantee_rows": 228,
-    "owner_mailing_hits": 270,
-    "motivated": 143,
-    "free_and_clear": 156,
-    "with_tenure": 270
+    "parcels_matched": 340,
+    "doc_ids": 2740,
+    "master_rows": 2740,
+    "grantee_rows": 246,
+    "owner_mailing_hits": 281,
+    "motivated": 169,
+    "free_and_clear": 181,
+    "with_tenure": 281
   }
 }
