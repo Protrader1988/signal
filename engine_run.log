@@ -1,13 +1,17 @@
-[04:14:19] fetching equities...
-HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
+[03:13:50] fetching equities...
+Crumb fetch rate-limited (HTTP 429), continuing without crumb
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
 $WBA: possibly delisted; no timezone found
+$MMM: possibly delisted; no price data found  (1d 2015-01-01 -> 2026-11-17)
 
-2 Failed downloads:
-['XLI']: OperationalError('database is locked')
+3 Failed downloads:
+['CL']: OperationalError('database is locked')
 ['WBA']: possibly delisted; no timezone found
-[04:14:26] fetching crypto...
-[04:14:27] wrote signals.json (13 position, 0 swing)
-[04:14:27] updated ledger: 22 open, 231 closed
-[04:14:27] aggressive mix (tracked): $81,586 · -18.41% since 2026-10-02
-[04:14:30] theme basket (tracked): $112,450 · 12.45% since 2026-10-02
-[04:14:30] done
+['MMM']: possibly delisted; no price data found  (1d 2015-01-01 -> 2026-11-17)
+[03:14:12] fetching crypto...
+[03:14:13] wrote signals.json (11 position, 0 swing)
+[03:14:13] updated ledger: 22 open, 232 closed
+[03:14:13] aggressive mix (tracked): $81,095 · -18.91% since 2026-10-02
+[03:14:18] theme basket (tracked): $109,730 · 9.73% since 2026-10-02
+[03:14:18] done
