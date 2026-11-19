@@ -11,13 +11,13 @@
         "INTC": 0.1,
         "PSX": 0.1,
         "AMD": 0.1,
-        "TGT": 0.1,
         "MRK": 0.1,
+        "TGT": 0.1,
         "COP": 0.1,
         "XOM": 0.1,
         "TXN": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -115,30 +115,37 @@
           "spread": 0.01009,
           "ic": 0.2,
           "cost": 0.0
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.015481,
+          "spread": -0.004581,
+          "ic": -0.1588,
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0.0,
       "stats": {
-        "days": 14,
-        "cum_pct": -14.31,
-        "needs_days": 6,
+        "days": 15,
+        "cum_pct": -15.64,
+        "needs_days": 5,
         "too_early": true
       },
       "signal": {
-        "days": 14,
+        "days": 15,
         "kind": "spread vs universe",
-        "mean": -0.00602,
-        "t_stat": -1.07,
-        "hit_pct": 35.7,
+        "mean": -0.00592,
+        "t_stat": -1.13,
+        "hit_pct": 33.3,
         "too_early": true
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.05708,
-        "t_stat": -0.81,
-        "hit_pct": 38.5,
+        "mean": -0.06434,
+        "t_stat": -0.98,
+        "hit_pct": 35.7,
         "too_early": true
       }
     },
@@ -152,13 +159,13 @@
         "VLO": 0.1,
         "PSX": 0.1,
         "ABBV": 0.1,
-        "INTC": 0.1,
         "LLY": 0.1,
-        "CRM": 0.1,
-        "TMO": 0.1,
-        "V": 0.1
+        "INTC": 0.1,
+        "MRK": 0.1,
+        "V": 0.1,
+        "TMO": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -298,39 +305,46 @@
           "spread": -0.001251,
           "ic": 0.0441,
           "cost": 0.0001
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.013193,
+          "spread": -0.002193,
+          "ic": -0.103,
+          "cost": 0.0001
         }
       ],
       "retired_reason": null,
       "turnover": 0.2,
       "stats": {
-        "days": 21,
-        "cum_pct": -17.07,
-        "ann_pct": -89.42,
-        "vol_pct": 45.44,
-        "sharpe": -4.7,
+        "days": 22,
+        "cum_pct": -18.17,
+        "ann_pct": -89.94,
+        "vol_pct": 44.37,
+        "sharpe": -4.93,
         "max_dd_pct": -18.14,
-        "hit_pct": 19.0,
-        "t_stat": -1.36,
+        "hit_pct": 18.2,
+        "t_stat": -1.46,
         "years_to_prove": 0.4,
         "proven": false
       },
       "signal": {
-        "days": 21,
+        "days": 22,
         "kind": "spread vs universe",
-        "mean": -0.00537,
-        "t_stat": -1.2,
-        "hit_pct": 19.0,
-        "days_for_proof": 125,
+        "mean": -0.00523,
+        "t_stat": -1.23,
+        "hit_pct": 18.2,
+        "days_for_proof": 126,
         "days_remaining": 104,
         "would_prove": false,
         "beyond_horizon": false
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.08112,
-        "t_stat": -1.03,
-        "hit_pct": 38.5,
+        "mean": -0.08269,
+        "t_stat": -1.13,
+        "hit_pct": 35.7,
         "too_early": true
       }
     },
@@ -339,18 +353,18 @@
       "why": "Weekly losers inside long-term uptrends.",
       "status": "live",
       "positions": {
-        "DE": 0.1,
         "GM": 0.1,
-        "MSFT": 0.1,
-        "AMZN": 0.1,
-        "EMR": 0.1,
-        "TMO": 0.1,
-        "MMM": 0.1,
-        "UNH": 0.1,
-        "WFC": 0.1,
-        "JPM": 0.1
+        "DE": 0.1,
+        "MRK": 0.1,
+        "JPM": 0.1,
+        "TXN": 0.1,
+        "VLO": 0.1,
+        "PSX": 0.1,
+        "BMY": 0.1,
+        "LMT": 0.1,
+        "AMGN": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -526,39 +540,46 @@
           "spread": 0.009087,
           "ic": 0.1765,
           "cost": 0.0003
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.010818,
+          "spread": 0.000782,
+          "ic": 0.0735,
+          "cost": 0.0007
         }
       ],
       "retired_reason": null,
-      "turnover": 0.6,
+      "turnover": 1.4,
       "stats": {
-        "days": 27,
-        "cum_pct": -10.38,
-        "ann_pct": -64.05,
-        "vol_pct": 21.63,
-        "sharpe": -4.61,
-        "max_dd_pct": -9.24,
-        "hit_pct": 14.8,
-        "t_stat": -1.51,
-        "years_to_prove": 0.4,
+        "days": 28,
+        "cum_pct": -11.35,
+        "ann_pct": -66.19,
+        "vol_pct": 21.32,
+        "sharpe": -4.97,
+        "max_dd_pct": -10.23,
+        "hit_pct": 14.3,
+        "t_stat": -1.66,
+        "years_to_prove": 0.3,
         "proven": false
       },
       "signal": {
-        "days": 27,
+        "days": 28,
         "kind": "spread vs universe",
-        "mean": -0.00122,
-        "t_stat": -0.68,
-        "hit_pct": 25.9,
-        "days_for_proof": 511,
-        "days_remaining": 484,
+        "mean": -0.00115,
+        "t_stat": -0.66,
+        "hit_pct": 28.6,
+        "days_for_proof": 556,
+        "days_remaining": 528,
         "would_prove": false,
         "beyond_horizon": false
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.01385,
-        "t_stat": -0.23,
-        "hit_pct": 46.2,
+        "mean": -0.00761,
+        "t_stat": -0.13,
+        "hit_pct": 50.0,
         "too_early": true
       }
     },
@@ -568,17 +589,17 @@
       "status": "live",
       "positions": {
         "KO": 0.1,
-        "ABBV": 0.1,
         "PFE": 0.1,
         "COST": 0.1,
+        "ABBV": 0.1,
+        "AXP": 0.1,
         "PG": 0.1,
         "JPM": 0.1,
-        "AXP": 0.1,
-        "V": 0.1,
         "AAPL": 0.1,
-        "DIS": 0.1
+        "V": 0.1,
+        "MA": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -712,39 +733,46 @@
           "spread": 0.002283,
           "ic": -0.0559,
           "cost": 0.0002
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.004097,
+          "spread": 0.006903,
+          "ic": 0.0427,
+          "cost": 0.0001
         }
       ],
       "retired_reason": null,
-      "turnover": 0.4,
+      "turnover": 0.2,
       "stats": {
-        "days": 20,
-        "cum_pct": 1.23,
-        "ann_pct": 16.69,
-        "vol_pct": 17.06,
-        "sharpe": 0.99,
-        "max_dd_pct": -3.54,
-        "hit_pct": 40.0,
-        "t_stat": 0.28,
-        "years_to_prove": 8.8,
+        "days": 21,
+        "cum_pct": 0.82,
+        "ann_pct": 10.27,
+        "vol_pct": 16.71,
+        "sharpe": 0.66,
+        "max_dd_pct": -3.94,
+        "hit_pct": 38.1,
+        "t_stat": 0.19,
+        "years_to_prove": 19.8,
         "proven": false
       },
       "signal": {
-        "days": 20,
+        "days": 21,
         "kind": "spread vs universe",
-        "mean": 0.0039,
-        "t_stat": 1.63,
-        "hit_pct": 45.0,
-        "days_for_proof": 65,
-        "days_remaining": 45,
+        "mean": 0.00404,
+        "t_stat": 1.78,
+        "hit_pct": 47.6,
+        "days_for_proof": 57,
+        "days_remaining": 36,
         "would_prove": true,
         "beyond_horizon": false
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": 0.05685,
-        "t_stat": 1.29,
-        "hit_pct": 61.5,
+        "mean": 0.05584,
+        "t_stat": 1.37,
+        "hit_pct": 64.3,
         "too_early": true
       }
     },
@@ -758,13 +786,13 @@
         "INTC": 0.1,
         "PSX": 0.1,
         "AMD": 0.1,
-        "TGT": 0.1,
         "MRK": 0.1,
+        "TGT": 0.1,
         "COP": 0.1,
         "XOM": 0.1,
         "TXN": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -862,30 +890,37 @@
           "spread": 0.01009,
           "ic": 0.2,
           "cost": 0.0
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.015481,
+          "spread": -0.004581,
+          "ic": -0.1588,
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0.0,
       "stats": {
-        "days": 14,
-        "cum_pct": -14.31,
-        "needs_days": 6,
+        "days": 15,
+        "cum_pct": -15.64,
+        "needs_days": 5,
         "too_early": true
       },
       "signal": {
-        "days": 14,
+        "days": 15,
         "kind": "spread vs universe",
-        "mean": -0.00602,
-        "t_stat": -1.07,
-        "hit_pct": 35.7,
+        "mean": -0.00592,
+        "t_stat": -1.13,
+        "hit_pct": 33.3,
         "too_early": true
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.05708,
-        "t_stat": -0.81,
-        "hit_pct": 38.5,
+        "mean": -0.06434,
+        "t_stat": -0.98,
+        "hit_pct": 35.7,
         "too_early": true
       }
     },
@@ -899,13 +934,13 @@
         "INTC": 0.1,
         "PSX": 0.1,
         "AMD": 0.1,
-        "TGT": 0.1,
         "MRK": 0.1,
+        "TGT": 0.1,
         "COP": 0.1,
         "XOM": 0.1,
         "TXN": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -1003,30 +1038,37 @@
           "spread": 0.01009,
           "ic": 0.2,
           "cost": 0.0
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.015481,
+          "spread": -0.004581,
+          "ic": -0.1588,
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0.0,
       "stats": {
-        "days": 14,
-        "cum_pct": -14.31,
-        "needs_days": 6,
+        "days": 15,
+        "cum_pct": -15.64,
+        "needs_days": 5,
         "too_early": true
       },
       "signal": {
-        "days": 14,
+        "days": 15,
         "kind": "spread vs universe",
-        "mean": -0.00602,
-        "t_stat": -1.07,
-        "hit_pct": 35.7,
+        "mean": -0.00592,
+        "t_stat": -1.13,
+        "hit_pct": 33.3,
         "too_early": true
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.05708,
-        "t_stat": -0.81,
-        "hit_pct": 38.5,
+        "mean": -0.06434,
+        "t_stat": -0.98,
+        "hit_pct": 35.7,
         "too_early": true
       }
     },
@@ -1035,7 +1077,7 @@
       "why": "Momentum only while breadth is expanding.",
       "status": "warming up",
       "positions": {},
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -1122,7 +1164,7 @@
           "cost": 0.0005
         },
         {
-          "date": "2026-11-17",
+          "date": "2026-11-18",
           "ret": 0.0,
           "cost": 0.0
         }
@@ -1157,18 +1199,18 @@
       "why": "Pullbacks within names above their 200-day.",
       "status": "live",
       "positions": {
-        "OXY": 0.1,
         "VLO": 0.1,
         "PSX": 0.1,
-        "UNH": 0.1,
-        "MSFT": 0.1,
         "XOM": 0.1,
-        "PFE": 0.1,
-        "EMR": 0.1,
         "CVX": 0.1,
-        "JPM": 0.1
+        "MRK": 0.1,
+        "COP": 0.1,
+        "PFE": 0.1,
+        "LMT": 0.1,
+        "JPM": 0.1,
+        "BMY": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -1338,39 +1380,46 @@
           "spread": -0.000733,
           "ic": 0.0265,
           "cost": 0.0003
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.03465,
+          "spread": -0.02335,
+          "ic": -0.2838,
+          "cost": 0.0004
         }
       ],
       "retired_reason": null,
-      "turnover": 0.6,
+      "turnover": 0.8,
       "stats": {
-        "days": 26,
-        "cum_pct": -11.51,
-        "ann_pct": -69.44,
-        "vol_pct": 24.7,
-        "sharpe": -4.67,
-        "max_dd_pct": -11.5,
-        "hit_pct": 19.2,
-        "t_stat": -1.5,
-        "years_to_prove": 0.4,
+        "days": 27,
+        "cum_pct": -14.58,
+        "ann_pct": -77.02,
+        "vol_pct": 25.9,
+        "sharpe": -5.53,
+        "max_dd_pct": -14.56,
+        "hit_pct": 18.5,
+        "t_stat": -1.81,
+        "years_to_prove": 0.3,
         "proven": false
       },
       "signal": {
-        "days": 26,
+        "days": 27,
         "kind": "spread vs universe",
-        "mean": -0.00192,
-        "t_stat": -1.21,
-        "hit_pct": 19.2,
-        "days_for_proof": 153,
-        "days_remaining": 127,
+        "mean": -0.00271,
+        "t_stat": -1.58,
+        "hit_pct": 18.5,
+        "days_for_proof": 93,
+        "days_remaining": 66,
         "would_prove": false,
         "beyond_horizon": false
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": 0.01957,
-        "t_stat": 0.36,
-        "hit_pct": 61.5,
+        "mean": -0.0021,
+        "t_stat": -0.04,
+        "hit_pct": 57.1,
         "too_early": true
       }
     },
@@ -1379,18 +1428,18 @@
       "why": "Proximity to the high as its own signal.",
       "status": "live",
       "positions": {
-        "COST": 0.1,
-        "KO": 0.1,
-        "ABBV": 0.1,
-        "PG": 0.1,
-        "AAPL": 0.1,
-        "CL": 0.1,
+        "DIS": 0.1,
         "SBUX": 0.1,
-        "MO": 0.1,
-        "LLY": 0.1,
-        "DIS": 0.1
+        "AAPL": 0.1,
+        "KO": 0.1,
+        "COST": 0.1,
+        "PG": 0.1,
+        "TGT": 0.1,
+        "CL": 0.1,
+        "UPS": 0.1,
+        "ABBV": 0.1
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -1554,39 +1603,46 @@
           "spread": 0.006433,
           "ic": 0.0721,
           "cost": 0.0
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.003613,
+          "spread": 0.007486,
+          "ic": 0.0324,
+          "cost": 0.0002
         }
       ],
       "retired_reason": null,
-      "turnover": 0.0,
+      "turnover": 0.4,
       "stats": {
-        "days": 25,
-        "cum_pct": -4.03,
-        "ann_pct": -33.92,
-        "vol_pct": 14.81,
-        "sharpe": -2.72,
-        "max_dd_pct": -5.13,
-        "hit_pct": 20.0,
-        "t_stat": -0.86,
-        "years_to_prove": 1.2,
+        "days": 26,
+        "cum_pct": -4.37,
+        "ann_pct": -35.17,
+        "vol_pct": 14.53,
+        "sharpe": -2.91,
+        "max_dd_pct": -5.47,
+        "hit_pct": 19.2,
+        "t_stat": -0.93,
+        "years_to_prove": 1.0,
         "proven": false
       },
       "signal": {
-        "days": 25,
+        "days": 26,
         "kind": "spread vs universe",
-        "mean": 0.00125,
-        "t_stat": 0.72,
-        "hit_pct": 32.0,
-        "days_for_proof": 419,
-        "days_remaining": 394,
+        "mean": 0.00149,
+        "t_stat": 0.88,
+        "hit_pct": 34.6,
+        "days_for_proof": 289,
+        "days_remaining": 263,
         "would_prove": true,
         "beyond_horizon": false
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.00453,
-        "t_stat": -0.1,
-        "hit_pct": 53.8,
+        "mean": -0.00189,
+        "t_stat": -0.04,
+        "hit_pct": 57.1,
         "too_early": true
       }
     },
@@ -1595,18 +1651,18 @@
       "why": "Momentum names sized inverse to volatility.",
       "status": "live",
       "positions": {
-        "MU": 0.0557,
-        "VLO": 0.0919,
-        "INTC": 0.0441,
-        "PSX": 0.1149,
-        "AMD": 0.0495,
-        "TGT": 0.1251,
-        "MRK": 0.1397,
-        "COP": 0.1274,
-        "XOM": 0.1515,
-        "TXN": 0.1002
+        "MU": 0.0574,
+        "VLO": 0.091,
+        "INTC": 0.045,
+        "PSX": 0.1132,
+        "AMD": 0.0502,
+        "MRK": 0.1392,
+        "TGT": 0.1241,
+        "COP": 0.1293,
+        "XOM": 0.1483,
+        "TXN": 0.1023
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -1782,39 +1838,46 @@
           "spread": 0.010339,
           "ic": 0.2005,
           "cost": 3.1e-05
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.021056,
+          "spread": -0.010149,
+          "ic": -0.1709,
+          "cost": 7e-06
         }
       ],
       "retired_reason": null,
-      "turnover": 0.063,
+      "turnover": 0.015,
       "stats": {
-        "days": 27,
-        "cum_pct": -11.08,
-        "ann_pct": -66.59,
-        "vol_pct": 28.55,
-        "sharpe": -3.69,
-        "max_dd_pct": -12.38,
-        "hit_pct": 14.8,
-        "t_stat": -1.21,
-        "years_to_prove": 0.6,
+        "days": 28,
+        "cum_pct": -12.96,
+        "ann_pct": -71.32,
+        "vol_pct": 28.47,
+        "sharpe": -4.23,
+        "max_dd_pct": -12.91,
+        "hit_pct": 14.3,
+        "t_stat": -1.41,
+        "years_to_prove": 0.5,
         "proven": false
       },
       "signal": {
-        "days": 27,
+        "days": 28,
         "kind": "spread vs universe",
-        "mean": -0.00182,
-        "t_stat": -0.87,
-        "hit_pct": 18.5,
-        "days_for_proof": 309,
-        "days_remaining": 282,
+        "mean": -0.00212,
+        "t_stat": -1.04,
+        "hit_pct": 17.9,
+        "days_for_proof": 224,
+        "days_remaining": 196,
         "would_prove": false,
         "beyond_horizon": false
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.05174,
-        "t_stat": -0.76,
-        "hit_pct": 46.2,
+        "mean": -0.06025,
+        "t_stat": -0.94,
+        "hit_pct": 42.9,
         "too_early": true
       }
     },
@@ -1828,13 +1891,13 @@
         "INTC": 0.1429,
         "PSX": 0.0952,
         "AMD": 0.0952,
-        "TGT": 0.0952,
         "MRK": 0.0952,
+        "TGT": 0.0952,
         "COP": 0.0952,
         "XOM": 0.0952,
         "TXN": 0.0952
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -1938,30 +2001,37 @@
           "spread": 0.010115,
           "ic": 0.2008,
           "cost": 0.0
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.01517,
+          "spread": -0.00427,
+          "ic": -0.1572,
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0.0,
       "stats": {
-        "days": 15,
-        "cum_pct": -15.98,
-        "needs_days": 5,
+        "days": 16,
+        "cum_pct": -17.25,
+        "needs_days": 4,
         "too_early": true
       },
       "signal": {
-        "days": 15,
+        "days": 16,
         "kind": "spread vs universe",
-        "mean": -0.00686,
-        "t_stat": -1.2,
-        "hit_pct": 33.3,
+        "mean": -0.0067,
+        "t_stat": -1.25,
+        "hit_pct": 31.2,
         "too_early": true
       },
       "ic": {
-        "days": 13,
+        "days": 14,
         "kind": "rank IC",
-        "mean": -0.05934,
-        "t_stat": -0.83,
-        "hit_pct": 38.5,
+        "mean": -0.06633,
+        "t_stat": -1.0,
+        "hit_pct": 35.7,
         "too_early": true
       }
     },
@@ -1973,7 +2043,7 @@
         "XLB": 0.5,
         "XLI": 0.5
       },
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
           "date": "2026-10-08",
@@ -2052,22 +2122,28 @@
           "ret": -0.008867,
           "spread": 0.007106,
           "cost": 0.0
+        },
+        {
+          "date": "2026-11-18",
+          "ret": -0.00401,
+          "spread": 0.006889,
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0.0,
       "stats": {
-        "days": 13,
-        "cum_pct": -5.48,
-        "needs_days": 7,
+        "days": 14,
+        "cum_pct": -5.86,
+        "needs_days": 6,
         "too_early": true
       },
       "signal": {
-        "days": 13,
+        "days": 14,
         "kind": "spread vs universe",
-        "mean": 0.0007,
-        "t_stat": 0.21,
-        "hit_pct": 38.5,
+        "mean": 0.00115,
+        "t_stat": 0.37,
+        "hit_pct": 42.9,
         "too_early": true
       },
       "ic": {
@@ -2080,10 +2156,10 @@
       "why": "Holds nothing. The null hypothesis.",
       "status": "warming up",
       "positions": {},
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-18",
       "live": [
         {
-          "date": "2026-11-17",
+          "date": "2026-11-18",
           "ret": 0.0,
           "cost": 0.0
         }
@@ -2158,8 +2234,12 @@
         "ret": -0.006844
       },
       {
-        "date": "2026-11-16",
-        "ret": -0.006493
+        "date": "2026-11-18",
+        "ret": -0.006827
+      },
+      {
+        "date": "2026-11-17",
+        "ret": -0.012332
       }
     ],
     "weights": {
@@ -2178,7 +2258,7 @@
     }
   },
   "phantom_purge": {
-    "removed": 1,
-    "on": "2026-11-18"
+    "removed": 2,
+    "on": "2026-11-19"
   }
 }

@@ -1,8 +1,6 @@
-Crumb fetch rate-limited (HTTP 429), continuing without crumb
-HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
-HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
 $WBA: possibly delisted; no timezone found
 
 1 Failed download:
 ['WBA']: possibly delisted; no timezone found
-wrote curve.json points: 396
+wrote curve.json points: 397
