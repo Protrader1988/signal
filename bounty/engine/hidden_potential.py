@@ -60,9 +60,11 @@ MUNIS = {
 GSF_PER_UNIT = 900          # gross building area per apartment incl. halls, stairs, walls
 SF_PER_STALL = 330          # surface stall incl. drive aisle
 MAX_OFF_MARKET = 400        # keep the board file small
+DEADLINE_S = 12 * 60        # hard cap so a slow county server never stalls the daily run
+T0 = time.time()
 
 
-def post(url, data, timeout=120, tries=3):
+def post(url, data, timeout=40, tries=2):
     body = urllib.parse.urlencode(data).encode()
     last = None
     for i in range(tries):
@@ -172,9 +174,15 @@ def scan(code, rule, watch):
                        "outFields": "ZONING", "returnGeometry": "true", "outSR": "4326", "f": "json"})
     polys = zq.get("features", [])
     print(f"{rule['name']}: {len(polys)} zone polygons")
-    seen, rows = set(), []
+    seen, rows, fails = set(), [], 0
     cls = "(" + ",".join(f"'{c}'" for c in CLASSES) + ")"
     for z in polys:
+        if time.time() - T0 > DEADLINE_S:
+            print("  deadline reached; writing partial results")
+            break
+        if fails >= 4:
+            print("  county server not responding; stopping this municipality")
+            break
         zone = z["attributes"]["ZONING"]
         if zone in rule["subdivide"]:
             min_sf = 2 * rule["subdivide"][zone][0]
@@ -189,8 +197,10 @@ def scan(code, rule, watch):
                 "outFields": "PRINTKEY,PROPADDRESS,PROPERTYCLASS,SHAPE.AREA,OWNERNAME,OWNERADDRESS,OWNERCITY,OWNERSTATE,OWNERZIP",
                 "returnGeometry": "true", "outSR": "4326", "f": "json"})
         except Exception as e:
+            fails += 1
             print("  parcel query failed for a", zone, "polygon:", e)
             continue
+        fails = 0
         for f in pr.get("features", []):
             a = f["attributes"]
             pk = a.get("PRINTKEY")
@@ -244,6 +254,9 @@ def main():
         "on_market": on,
         "off_market": off[:MAX_OFF_MARKET],
     }
+    if not allrows and os.path.exists(OUT):
+        print("no rows this run (county server unreachable?); keeping the previous file")
+        return
     json.dump(out, open(OUT, "w"), indent=1)
     print("hidden potential:", out["counts"])
 
