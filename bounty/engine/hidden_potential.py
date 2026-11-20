@@ -59,6 +59,12 @@ MUNIS = {
 }
 GSF_PER_UNIT = 900          # gross building area per apartment incl. halls, stairs, walls
 SF_PER_STALL = 330          # surface stall incl. drive aisle
+# Off-market letter list skips what an owner won't sell as land: existing apartment buildings,
+# co-ops/condos and public or institutional-public owners. They still show if actually listed.
+SKIP_CLASSES_OFF = {"411"}
+SKIP_OWNERS = ("CITY OF", "COUNTY OF", "STATE OF", "MHACY", "HOUSING AUTH", "MUNICIPAL HOUSING", "IDA",
+               "INDUSTRIAL DEV", "OWNERS CORP", "OWNERS INC", "COOP", "CO-OP", "CONDOMINIUM", "BOARD OF ED",
+               "SCHOOL DIST", "UNITED STATES", "METRO-NORTH", "MTA ")
 MAX_OFF_MARKET = 400        # keep the board file small
 DEADLINE_S = 12 * 60        # hard cap so a slow county server never stalls the daily run
 T0 = time.time()
@@ -215,6 +221,9 @@ def scan(code, rule, watch):
                 continue
             r["muni"] = rule["name"]
             w = watch.get(pk)
+            own = (r.get("owner") or "").upper()
+            if not w and (str(r.get("class")) in SKIP_CLASSES_OFF or any(k in own for k in SKIP_OWNERS)):
+                continue
             if w:
                 r["listing"] = {k: w.get(k) for k in ("price", "status", "url", "checked", "broker", "note")}
                 if w.get("price") and r["units"]:
