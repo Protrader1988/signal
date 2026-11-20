@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-19T02:56:32.686333+00:00",
+  "generated_utc": "2026-11-20T02:48:13.632016+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -523,7 +523,7 @@
       "basis": null,
       "structure": "Section 232 drone tariffs \u2014 100% on large drones and critical components \u2014 signed the evening of 13 August, so day 0 is the first session that could trade it.",
       "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-drones-and-their-parts-and-components/",
-      "price": 30.24,
+      "price": 29.65,
       "car": {
         "day0": 3.2,
         "w1": -9.2,
@@ -614,8 +614,8 @@
         "beta": 1.7,
         "beta_raw": 2.04,
         "alpha_bp": -19.8,
-        "sessions_since": 67,
-        "raw_since_pct": -53.2,
+        "sessions_since": 68,
+        "raw_since_pct": -54.1,
         "resid_vol_pct": 4.25
       },
       "testable": true
@@ -629,7 +629,7 @@
       "basis": null,
       "structure": "Same proclamation; protection of domestic small-UAS production.",
       "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-drones-and-their-parts-and-components/",
-      "price": 101.11,
+      "price": 95.91,
       "car": {
         "day0": 2.1,
         "w1": -14.7,
@@ -720,8 +720,8 @@
         "beta": 1.61,
         "beta_raw": 1.91,
         "alpha_bp": -28.2,
-        "sessions_since": 67,
-        "raw_since_pct": -47.6,
+        "sessions_since": 68,
+        "raw_since_pct": -50.3,
         "resid_vol_pct": 4.53
       },
       "testable": true
@@ -1053,7 +1053,7 @@
       "basis": null,
       "structure": "Two executive orders on quantum innovation and post-quantum cryptography. No money, no equity \u2014 pure policy signal.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/",
-      "price": 228.53,
+      "price": 223.88,
       "car": {
         "day0": 1.6,
         "w1": 10.7,
@@ -1144,8 +1144,8 @@
         "beta": 1.0,
         "beta_raw": 1.0,
         "alpha_bp": -16.6,
-        "sessions_since": 105,
-        "raw_since_pct": -8.1,
+        "sessions_since": 106,
+        "raw_since_pct": -10.0,
         "resid_vol_pct": 2.01
       },
       "testable": true
@@ -1795,20 +1795,20 @@
       "basis": null,
       "structure": "$1B toward a 300mm quantum wafer foundry venture for a minority non-controlling stake, reported at letter-of-intent stage.",
       "source_url": "https://www.datacenterdynamics.com/en/news/us-dept-of-commerce-awards-nine-quantum-computing-companies-2bn-in-exchange-for-non-controlling-equity-stakes/",
-      "price": 228.53,
+      "price": 223.88,
       "car": {
         "day0": 12.2,
         "w1": 15.8,
         "m1": 5.7,
         "q1": -9.6,
-        "h1": null
+        "h1": -7.0
       },
       "raw": {
         "day0": 12.4,
         "w1": 17.7,
         "m1": 4.7,
         "q1": -6.2,
-        "h1": null
+        "h1": -10.2
       },
       "path": {
         "-5": 0.93,
@@ -1886,8 +1886,8 @@
         "beta": 1.03,
         "beta_raw": 1.04,
         "alpha_bp": -7.4,
-        "sessions_since": 125,
-        "raw_since_pct": -8.4,
+        "sessions_since": 126,
+        "raw_since_pct": -10.2,
         "resid_vol_pct": 1.89
       },
       "testable": true
@@ -2113,7 +2113,7 @@
       "basis": null,
       "structure": "$1B convertible preferred in the Missile Solutions unit, auto-converting at its spin-off IPO, tied to multi-year solid rocket motor procurement. Conversion is subject to appropriations.",
       "source_url": "https://www.cato.org/blog/trump-administration-takes-equity-stake-defense-contractor",
-      "price": 256.36,
+      "price": 256.54,
       "car": {
         "day0": 0.3,
         "w1": 2.6,
@@ -2204,7 +2204,7 @@
         "beta": 0.59,
         "beta_raw": 0.38,
         "alpha_bp": 11.2,
-        "sessions_since": 214,
+        "sessions_since": 215,
         "raw_since_pct": -23.9,
         "resid_vol_pct": 1.3
       },
@@ -2219,7 +2219,7 @@
       "basis": null,
       "structure": "EO 14372 lets the Secretary of War restrict buybacks, dividends and executive pay at contractors judged to be underperforming on critical programmes. HII halted buybacks.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2026/01/prioritizing-the-warfighter-in-defense-contracting/",
-      "price": 287.89,
+      "price": 286.56,
       "car": {
         "day0": -2.8,
         "w1": 16.5,
@@ -2310,8 +2310,8 @@
         "beta": 0.7,
         "beta_raw": 0.55,
         "alpha_bp": 22.9,
-        "sessions_since": 218,
-        "raw_since_pct": -18.3,
+        "sessions_since": 219,
+        "raw_since_pct": -18.6,
         "resid_vol_pct": 2.27
       },
       "testable": true
@@ -2325,7 +2325,7 @@
       "basis": null,
       "structure": "Same order; capital returns become conditional on delivery performance.",
       "source_url": "https://www.cnbc.com/2026/01/07/trump-dividends-stock-buybacks-defense-companies.html",
-      "price": 349.04,
+      "price": 347.34,
       "car": {
         "day0": -4.0,
         "w1": 5.8,
@@ -2416,8 +2416,8 @@
         "beta": 0.68,
         "beta_raw": 0.52,
         "alpha_bp": 10.3,
-        "sessions_since": 218,
-        "raw_since_pct": 2.8,
+        "sessions_since": 219,
+        "raw_since_pct": 2.3,
         "resid_vol_pct": 1.19
       },
       "testable": true
@@ -2431,7 +2431,7 @@
       "basis": null,
       "structure": "Same order. No company is named in the text; the names came from the President's remarks that day.",
       "source_url": "https://www.cnbc.com/2026/01/07/trump-dividends-stock-buybacks-defense-companies.html",
-      "price": 578.19,
+      "price": 571.85,
       "car": {
         "day0": -4.7,
         "w1": 15.2,
@@ -2522,8 +2522,8 @@
         "beta": 0.46,
         "beta_raw": 0.19,
         "alpha_bp": -0.3,
-        "sessions_since": 218,
-        "raw_since_pct": 18.5,
+        "sessions_since": 219,
+        "raw_since_pct": 17.2,
         "resid_vol_pct": 1.68
       },
       "testable": true
@@ -2537,7 +2537,7 @@
       "basis": null,
       "structure": "Same order; defence primes sold off that session.",
       "source_url": "https://news.usni.org/2026/01/08/trump-executive-order-puts-pressure-on-defense-companies-seeks-to-halt-stock-buybacks",
-      "price": 197.45,
+      "price": 193.44,
       "car": {
         "day0": -2.2,
         "w1": 7.0,
@@ -2628,8 +2628,8 @@
         "beta": 0.7,
         "beta_raw": 0.55,
         "alpha_bp": 16.1,
-        "sessions_since": 218,
-        "raw_since_pct": 7.5,
+        "sessions_since": 219,
+        "raw_since_pct": 5.3,
         "resid_vol_pct": 1.62
       },
       "testable": true
@@ -2643,7 +2643,7 @@
       "basis": null,
       "structure": "Same order.",
       "source_url": "https://news.usni.org/2026/01/08/trump-executive-order-puts-pressure-on-defense-companies-seeks-to-halt-stock-buybacks",
-      "price": 542.99,
+      "price": 542.31,
       "car": {
         "day0": -5.4,
         "w1": 13.2,
@@ -2734,8 +2734,8 @@
         "beta": 0.36,
         "beta_raw": 0.05,
         "alpha_bp": 10.5,
-        "sessions_since": 218,
-        "raw_since_pct": -4.7,
+        "sessions_since": 219,
+        "raw_since_pct": -4.9,
         "resid_vol_pct": 1.76
       },
       "testable": true
@@ -2855,7 +2855,7 @@
       "basis": null,
       "structure": "Read-through to the $80B Westinghouse AP1000 partnership. The government's warrants sit in Westinghouse, which is private \u2014 holders own the partner, not the instrument.",
       "source_url": "https://www.cameco.com/media/news/united-states-government-brookfield-and-cameco-announce-transformational-partnership",
-      "price": 62.44,
+      "price": 61.42,
       "car": {
         "day0": -3.0,
         "w1": 16.7,
@@ -2946,8 +2946,8 @@
         "beta": 1.09,
         "beta_raw": 1.13,
         "alpha_bp": 17.2,
-        "sessions_since": 267,
-        "raw_since_pct": -27.8,
+        "sessions_since": 268,
+        "raw_since_pct": -29.0,
         "resid_vol_pct": 2.68
       },
       "testable": true
@@ -3175,7 +3175,7 @@
       "basis": 20.47,
       "structure": "9.9% of common (433M shares) at $20.47, converting $8.9B of unpaid CHIPS and Secure Enclave money. Additional 5% warrant only if Intel sells majority control of Foundry. No board seat, no stated exit.",
       "source_url": "https://www.intc.com/news-events/press-releases/detail/1748/intel-and-trump-administration-reach-historic-agreement-to",
-      "price": 54.67,
+      "price": 55.72,
       "car": {
         "day0": 3.4,
         "w1": -1.8,
@@ -3256,7 +3256,7 @@
         "57": 43.0,
         "58": 40.09,
         "59": 39.03,
-        "60": 38.04,
+        "60": 38.05,
         "61": 38.12,
         "62": 39.85,
         "63": 37.74
@@ -3266,12 +3266,12 @@
         "beta": 1.39,
         "beta_raw": 1.59,
         "alpha_bp": 0.0,
-        "sessions_since": 312,
-        "raw_since_pct": 120.4,
+        "sessions_since": 313,
+        "raw_since_pct": 124.7,
         "resid_vol_pct": 3.11
       },
       "testable": true,
-      "vs_basis_pct": 167.1
+      "vs_basis_pct": 172.2
     },
     {
       "ticker": "NVDA",
@@ -3282,7 +3282,7 @@
       "basis": null,
       "structure": "15% of China H20 revenue paid to the government for export licences, later 25% on H200. Value flows out of the company, not in.",
       "source_url": "https://www.cbsnews.com/news/nvidia-amd-chip-sales-china-15-percent-h20-mi308/",
-      "price": 150.96,
+      "price": 145.98,
       "car": {
         "day0": -0.0,
         "w1": -1.9,
@@ -3334,7 +3334,7 @@
         "28": -9.09,
         "29": -5.94,
         "30": -7.87,
-        "31": -8.16,
+        "31": -8.17,
         "32": -7.0,
         "33": -7.66,
         "34": -6.07,
@@ -3373,8 +3373,8 @@
         "beta": 1.64,
         "beta_raw": 1.96,
         "alpha_bp": 8.7,
-        "sessions_since": 321,
-        "raw_since_pct": -16.9,
+        "sessions_since": 322,
+        "raw_since_pct": -19.6,
         "resid_vol_pct": 2.34
       },
       "testable": true
@@ -3388,7 +3388,7 @@
       "basis": null,
       "structure": "15% of China MI308 revenue in exchange for export licences. Same structure as Nvidia: a levy presented as a partnership.",
       "source_url": "https://www.pbs.org/newshour/politics/under-new-unusual-agreement-u-s-will-get-a-15-cut-of-nvidia-and-amd-chip-sales-to-china",
-      "price": 530.14,
+      "price": 489.19,
       "car": {
         "day0": 0.0,
         "w1": 0.3,
@@ -3418,7 +3418,7 @@
         "6": -7.07,
         "7": -7.44,
         "8": -7.68,
-        "9": -7.74,
+        "9": -7.75,
         "10": -9.64,
         "11": -8.34,
         "12": -8.41,
@@ -3479,8 +3479,8 @@
         "beta": 1.66,
         "beta_raw": 1.98,
         "alpha_bp": -9.1,
-        "sessions_since": 321,
-        "raw_since_pct": 207.7,
+        "sessions_since": 322,
+        "raw_since_pct": 184.0,
         "resid_vol_pct": 2.14
       },
       "testable": true
@@ -3648,16 +3648,16 @@
       "raw_pos": 11
     },
     "h1": {
-      "n": 15,
-      "median": -0.8,
-      "lo": -26.1,
-      "hi": 23.1,
-      "p": 1.0,
+      "n": 16,
+      "median": -3.9,
+      "lo": -21.2,
+      "hi": 12.5,
+      "p": 0.804,
       "pos": 7,
-      "raw_median": 6.3,
-      "raw_lo": -19.1,
-      "raw_hi": 32.2,
-      "raw_n": 15,
+      "raw_median": 5.0,
+      "raw_lo": -16.0,
+      "raw_hi": 24.0,
+      "raw_n": 16,
       "raw_pos": 9
     }
   },
@@ -4125,17 +4125,17 @@
           "raw_n": 5
         },
         "h1": {
-          "n": 2,
-          "median": null,
-          "lo": null,
-          "hi": null,
-          "p": null,
+          "n": 3,
+          "median": -7.0,
+          "lo": -50.6,
+          "hi": 94.8,
+          "p": 1.0,
           "pos": 1,
-          "raw_median": null,
-          "raw_lo": null,
-          "raw_hi": null,
+          "raw_median": -10.2,
+          "raw_lo": -47.4,
+          "raw_hi": 96.2,
           "raw_pos": 1,
-          "raw_n": 2
+          "raw_n": 3
         }
       },
       "reportable": true
@@ -5358,7 +5358,7 @@
         43.0,
         40.09,
         39.03,
-        38.04,
+        38.05,
         38.12,
         39.85,
         37.74
@@ -5953,9 +5953,9 @@
       "thesis": null,
       "recipient": "LOCKHEED MARTIN",
       "federal": {
-        "total": 49288805843.0,
+        "total": 49263708474.0,
         "count": 300,
-        "last_action": "2026-11-16",
+        "last_action": "2026-11-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -5970,7 +5970,7 @@
       "thesis": null,
       "recipient": "RTX",
       "federal": {
-        "total": 16984843645.0,
+        "total": 16983335293.0,
         "count": 300,
         "last_action": "2026-11-13",
         "top_agency": "Department of Defense",
@@ -5987,9 +5987,9 @@
       "thesis": null,
       "recipient": "GENERAL DYNAMICS",
       "federal": {
-        "total": 9536766018.0,
+        "total": 9529059466.0,
         "count": 300,
-        "last_action": "2026-11-12",
+        "last_action": "2026-11-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6004,9 +6004,9 @@
       "thesis": null,
       "recipient": "HUNTINGTON INGALLS",
       "federal": {
-        "total": 8006178605.0,
+        "total": 8004880274.0,
         "count": 300,
-        "last_action": "2026-11-16",
+        "last_action": "2026-11-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6055,9 +6055,9 @@
       "thesis": null,
       "recipient": "INTERNATIONAL BUSINESS MACHINES",
       "federal": {
-        "total": 1693710905.0,
+        "total": 1695608736.0,
         "count": 300,
-        "last_action": "2026-11-16",
+        "last_action": "2026-11-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6089,9 +6089,9 @@
       "thesis": null,
       "recipient": "KRATOS",
       "federal": {
-        "total": 300507516.0,
-        "count": 174,
-        "last_action": "2026-11-16",
+        "total": 300512323.0,
+        "count": 172,
+        "last_action": "2026-11-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6175,7 +6175,7 @@
       "recipient": "PERPETUA",
       "federal": {
         "total": 5181868.0,
-        "count": 10,
+        "count": 7,
         "last_action": "2026-09-03",
         "top_agency": "Department of Defense",
         "truncated": false,
@@ -6193,7 +6193,7 @@
       "federal": {
         "total": 1579930.0,
         "count": 3,
-        "last_action": "2026-11-13",
+        "last_action": "2026-11-17",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6602,12 +6602,12 @@
         },
         {
           "period": "FY2027 Q1",
-          "amount": 7608156.17
+          "amount": 32808156.17
         }
       ],
-      "last4": 4197554647.67,
+      "last4": 4222754647.67,
       "prior4": 5886323364.25,
-      "yoy_pct": -28.7,
+      "yoy_pct": -28.3,
       "link": "https://www.usaspending.gov/search?keywords=shipbuilding"
     },
     {
@@ -6652,10 +6652,10 @@
         },
         {
           "period": "FY2027 Q1",
-          "amount": -13309650.82
+          "amount": -13199525.44
         }
       ],
-      "last4": 3146768096.72,
+      "last4": 3146878222.1,
       "prior4": 2861502128.58,
       "yoy_pct": 10.0,
       "link": "https://www.usaspending.gov/search?keywords=unmanned%20aircraft"
@@ -6720,7 +6720,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 121206345.03
+          "amount": 121178784.35
         },
         {
           "period": "FY2025 Q2",
@@ -6752,10 +6752,10 @@
         },
         {
           "period": "FY2027 Q1",
-          "amount": 675631.74
+          "amount": 713131.74
         }
       ],
-      "last4": 891085964.33,
+      "last4": 891123464.33,
       "prior4": 1374853744.2,
       "yoy_pct": -35.2,
       "link": "https://www.usaspending.gov/search?keywords=semiconductor"
@@ -6804,12 +6804,12 @@
         },
         {
           "period": "FY2027 Q1",
-          "amount": 867347.17
+          "amount": 890293.27
         }
       ],
-      "last4": 233678436.04,
+      "last4": 233701382.14000002,
       "prior4": 114247990.63,
-      "yoy_pct": 104.5,
+      "yoy_pct": 104.6,
       "link": "https://www.usaspending.gov/search?keywords=rare%20earth"
     },
     {
@@ -6963,7 +6963,7 @@
   ],
   "pipeline": [
     {
-      "id": "10",
+      "id": "8",
       "companies": [
         "LeoLabs, Inc."
       ],
@@ -6983,7 +6983,7 @@
       "already_tracked": false
     },
     {
-      "id": "8",
+      "id": "6",
       "companies": [
         "6K Inc."
       ],
@@ -7003,29 +7003,27 @@
       "already_tracked": false
     },
     {
-      "id": "5",
+      "id": "4",
       "companies": [
-        "Rocket Lab"
+        "Atom Computing"
       ],
-      "tickers": [
-        "RKLB"
-      ],
-      "sector": "aerospace",
-      "instrument": "loan",
-      "stage": "letter of intent",
-      "amount_usd": 150000000.0,
-      "agency": "Department of War",
-      "summary": "The Department of War's Office of Strategic Capital signed a $150 million conditional loan commitment with Rocket Lab.",
-      "quote": "Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With Rocket Lab",
+      "tickers": [],
+      "sector": "quantum computing",
+      "instrument": "grant",
+      "stage": "closed",
+      "amount_usd": 100000000.0,
+      "agency": "Department of Commerce",
+      "summary": "Atom Computing signed a $100 million research award with the Department of Commerce.",
+      "quote": "Atom Computing signs its $100 million Commerce Department research award",
       "confidence": "high",
-      "date": "2026-11-09",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4644766/the-department-of-wars-office-of-strategic-capital-signs-150-million-conditiona/",
-      "source": "Dept. of War",
-      "title": "The Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With Rocket Lab",
+      "date": "2026-11-14",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOWZWdGxQckd2TXd5MDA1UFNqUGhoamFVaDkxbFNzZXJrbURaZTd4dzNLUWx4SUFZT2Z2SFJQR1J5V3FrejlkQlA0VU9FT3VGekZCb19rQjYzcXZtMnFBUDRHdGdVRWJFWmlwZTF0Ny1sYklkOHlpQkw0MHRNVm95NHhBRXhhajhQY0tnUzZkZGdJeXlFcGhJ?oc=5",
+      "source": "MLQ.ai",
+      "title": "Atom Computing signs its $100 million Commerce Department research award - MLQ.ai",
       "already_tracked": false
     },
     {
-      "id": "13",
+      "id": "11",
       "companies": [],
       "tickers": [],
       "sector": "robotics and industrial machinery",
@@ -7033,7 +7031,7 @@
       "stage": "announced",
       "amount_usd": null,
       "agency": "Department of Commerce",
-      "summary": "President Trump signed a proclamation under Section 232 to adjust imports of robotics and industrial machinery.",
+      "summary": "President Trump signed a Section 232 proclamation to regulate imports of robotics and industrial machinery to protect national security.",
       "quote": "signed a Proclamation pursuant to Section 232 of the Trade Expansion Act of 1962 (Section 232) to address the threatened impairment of national security with respect to imports of robotics",
       "confidence": "medium",
       "date": "2026-10-28",
@@ -7043,7 +7041,7 @@
       "already_tracked": false
     },
     {
-      "id": "9",
+      "id": "7",
       "companies": [],
       "tickers": [],
       "sector": null,
@@ -7061,7 +7059,25 @@
       "already_tracked": false
     },
     {
-      "id": "11",
+      "id": "2",
+      "companies": [],
+      "tickers": [],
+      "sector": null,
+      "instrument": "none",
+      "stage": "announced",
+      "amount_usd": 17000000000.0,
+      "agency": "White House",
+      "summary": "President Trump announced over $17 billion in commercial deals and strategic investments during a visit to the Philippines.",
+      "quote": "announced over $17 billion in commercial deals and strategic investments for U.S. companies",
+      "confidence": "medium",
+      "date": "2026-11-18",
+      "link": "https://www.whitehouse.gov/fact-sheets/2026/11/fact-sheet-president-donald-j-trump-secures-historic-economic-deals-for-american-workers-and-strengthens-americas-leadership-in-asia/",
+      "source": "White House",
+      "title": "Fact sheet president donald j trump secures historic economic deals for american workers and strengthens americas leadership in asia",
+      "already_tracked": false
+    },
+    {
+      "id": "9",
       "companies": [],
       "tickers": [],
       "sector": null,
@@ -7083,12 +7099,34 @@
     "ok": true,
     "model": "gemini-3.6-flash",
     "stats": {
-      "not_a_deal": 7
+      "not_a_deal": 4
     },
-    "note": "6 records from 13 documents \u2014 not a deal 7",
-    "generated_utc": "2026-11-19T02:55:07+00:00"
+    "note": "7 records from 11 documents \u2014 not a deal 4",
+    "generated_utc": "2026-11-20T02:46:30+00:00"
   },
   "detection": [
+    {
+      "company": "Department of War Advances Orchestration for Unmanned Vehicle Fleets",
+      "title": "Department of War Advances Orchestration for Unmanned Vehicle Fleets",
+      "link": "https://www.war.gov/News/Releases/Release/Article/4655108/department-of-war-advances-orchestration-for-unmanned-vehicle-fleets/",
+      "date": "2026-11-19",
+      "source": "Dept. of War",
+      "evidence": {
+        "industry": [
+          "unmanned"
+        ],
+        "instrument": [],
+        "money": [],
+        "tickers": [],
+        "score": 2
+      },
+      "matched": "unmanned",
+      "ticker": null,
+      "quality": "agency release",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
     {
       "title": "Fact sheet president donald j trump secures historic economic deals for american workers and strengthens americas leadership in asia",
       "company": "Fact sheet president donald j trump secures historic economic deals for american workers and strengthens americas leadership in asia",
@@ -7154,6 +7192,72 @@
       "status": "unverified"
     },
     {
+      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+      "amount": 27995864149.1,
+      "date": "2026-11-17",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [
+        "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC"
+      ],
+      "status": "unverified"
+    },
+    {
+      "company": "UCHICAGO ARGONNE, LLC",
+      "amount": 17738629471.77,
+      "date": "2026-11-17",
+      "agency": "Department of Energy",
+      "desc": "PERFORMANCE-BASED CONTRACT FOR MANAGEMENT AND OPERATION OF ARGONNE NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
+      "company": "MISSION SUPPORT & TEST SERVICES LLC",
+      "amount": 7933559692.74,
+      "date": "2026-11-17",
+      "agency": "Department of Energy",
+      "desc": "IGF::CL,CT::IGF CONTRACT AWARD DE-NA0003624 TO THE MISSION SUPPORT AND TEST SERVICES LLC (MSTS) FOR THE MANAGEMENT AND OPERATION OF THE DEPARTMENT OF ENERGY NAT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [
+        "TEST SERVICES LLC",
+        "SUPPORT AND TEST SERVICES LLC"
+      ],
+      "status": "unverified"
+    },
+    {
+      "company": "Atom Computing signs its $100 million Commerce Department research award - MLQ.ai",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOWZWdGxQckd2TXd5MDA1UFNqUGhoamFVaDkxbFNzZXJrbURaZTd4dzNLUWx4SUFZT2Z2SFJQR1J5V3FrejlkQlA0VU9FT3VGekZCb19rQjYzcXZtMnFBUDRHdGdVRWJFWmlwZTF0Ny1sYklkOHlpQkw0MHRNVm95NHhBRXhhajhQY0tnUzZkZGdJeXlFcGhJ?oc=5",
+      "date": "2026-11-14",
+      "source": "MLQ.ai",
+      "matched": "equity stake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
       "company": "Department of War Redesignates CDAO as Super Intelligence Office",
       "title": "Department of War Redesignates CDAO as Super Intelligence Office",
       "link": "https://www.war.gov/News/Releases/Release/Article/4647618/department-of-war-redesignates-cdao-as-super-intelligence-office/",
@@ -7175,25 +7279,6 @@
       "status": "in registry"
     },
     {
-      "company": "MISSION SUPPORT & TEST SERVICES LLC",
-      "amount": 7933559692.74,
-      "date": "2026-11-13",
-      "agency": "Department of Energy",
-      "desc": "IGF::CL,CT::IGF CONTRACT AWARD DE-NA0003624 TO THE MISSION SUPPORT AND TEST SERVICES LLC (MSTS) FOR THE MANAGEMENT AND OPERATION OF THE DEPARTMENT OF ENERGY NAT",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "named": [],
-      "candidates": [
-        "TEST SERVICES LLC",
-        "SUPPORT AND TEST SERVICES LLC"
-      ],
-      "status": "unverified"
-    },
-    {
       "company": "BECHTEL NATIONAL, INC.",
       "amount": 17956041439.14,
       "date": "2026-11-12",
@@ -7205,122 +7290,6 @@
       "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC2701RV14136_8900_-NONE-_-NONE-",
       "ticker": null,
       "quality": "award record",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "title": "Presidential message on national diabetes month a726",
-      "company": "Presidential message on national diabetes month a726",
-      "link": "https://www.whitehouse.gov/briefings-statements/2026/11/presidential-message-on-national-diabetes-month-a726/",
-      "date": "2026-11-10",
-      "date_precision": "day",
-      "source": "White House",
-      "kind": "briefings statements",
-      "matched": "most-favored-nation \u00b7 $1,800, $3,000",
-      "evidence": {
-        "industry": [],
-        "instrument": [
-          "most-favored-nation"
-        ],
-        "money": [
-          "$1,800",
-          "$3,000"
-        ],
-        "tickers": [
-          "F"
-        ],
-        "score": 5
-      },
-      "desc": "Presidential Message on National Diabetes Month &#8211; The White House Skip to content Briefings & Statements Presidential Message on National Diabetes Month The White House November 10, 2026 Nearly every American family has been touched by diabetes\u2014a parent, a grandparent, a child, or a neighbor whose daily life is shaped by this disease. This National Diabetes Month, we recognize the millions of Americans struggling with diabetes, and we reaffirm our commitment to reverse the chronic disease epidemic in our Nation and Make America Healthy Again. In recent decades, the number of adults diagnosed with diabetes has doubled, with more than 40 million men and women in the United States living with the disease. An estimated 25 percent of adults living with diabetes are unaware they have it, putting their health at serious risk every single day. For too long, the Federal Government accepted these numbers as the cost of modern life. My Administration refuses to accept that answer, and we are fighting every day to help patients and families receive the care and medicine they need to stay healthy, including insulin. When I returned to office, I made a promise to pursue groundbreaking medi",
-      "form": "white house",
-      "ticker": null,
-      "quality": "white house",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "UCHICAGO ARGONNE, LLC",
-      "amount": 17730321030.51,
-      "date": "2026-11-10",
-      "agency": "Department of Energy",
-      "desc": "PERFORMANCE-BASED CONTRACT FOR MANAGEMENT AND OPERATION OF ARGONNE NATIONAL LABORATORY",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "The Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With Rocket Lab",
-      "title": "The Department of War's Office of Strategic Capital Signs $150 Million Conditional Loan Commitment With Rocket Lab",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4644766/the-department-of-wars-office-of-strategic-capital-signs-150-million-conditiona/",
-      "date": "2026-11-09",
-      "source": "Dept. of War",
-      "evidence": {
-        "industry": [],
-        "instrument": [
-          "strategic capital"
-        ],
-        "money": [
-          "$150 Million"
-        ],
-        "tickers": [
-          "RKLB"
-        ],
-        "score": 5
-      },
-      "matched": "strategic capital \u00b7 $150 Million",
-      "ticker": "RKLB",
-      "quality": "agency release",
-      "named": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Trump Administration Deepens Interagency Collaboration to Protect the Nation's Skies From Unmanned Threats",
-      "title": "Trump Administration Deepens Interagency Collaboration to Protect the Nation's Skies From Unmanned Threats",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4644512/trump-administration-deepens-interagency-collaboration-to-protect-the-nations-s/",
-      "date": "2026-11-09",
-      "source": "Dept. of War",
-      "evidence": {
-        "industry": [
-          "unmanned"
-        ],
-        "instrument": [],
-        "money": [],
-        "tickers": [],
-        "score": 2
-      },
-      "matched": "unmanned",
-      "ticker": null,
-      "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "Readout of Assistant Secretary of War for Nuclear Deterrence, Chemical, and Biological Defense, Policy, and Programs Robert Kadlec's Visit to Japan",
-      "title": "Readout of Assistant Secretary of War for Nuclear Deterrence, Chemical, and Biological Defense, Policy, and Programs Robert Kadlec's Visit to Japan",
-      "link": "https://www.war.gov/News/Releases/Release/Article/4652392/readout-of-assistant-secretary-of-war-for-nuclear-deterrence-chemical-and-biolo/",
-      "date": "2026-11-08",
-      "source": "Dept. of War",
-      "evidence": {
-        "industry": [
-          "nuclear"
-        ],
-        "instrument": [],
-        "money": [],
-        "tickers": [],
-        "score": 2
-      },
-      "matched": "nuclear",
-      "ticker": null,
-      "quality": "agency release",
       "named": [],
       "candidates": [],
       "status": "unverified"
@@ -7377,24 +7346,6 @@
       "quality": "headline",
       "named": [],
       "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
-      "amount": 27995864149.1,
-      "date": "2026-11-03",
-      "agency": "Department of Energy",
-      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE SAVANNAH RIVER SITE.",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "named": [],
-      "candidates": [
-        "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC"
-      ],
       "status": "unverified"
     },
     {
@@ -7567,9 +7518,58 @@
       "named": [],
       "candidates": [],
       "status": "unverified"
+    },
+    {
+      "company": "FERMI FORWARD DISCOVERY GROUP, LLC",
+      "amount": 2681061033.12,
+      "date": "2026-10-27",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATING CONTRACT FOR THE FERMI NATIONAL ACCELERATOR LABORATORY (FNAL)",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89243024CSC000002_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
+      "company": "FLUOR MARINE PROPULSION, LLC",
+      "amount": 15126647249.13,
+      "date": "2026-10-21",
+      "agency": "Department of Energy",
+      "desc": "MANAGEMENT AND OPERATION OF THE NAVAL NUCLEAR LABORATORY AND NAVAL NUCLEAR PROPULSION PROGRAM SUPPORT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-",
+      "ticker": "FLR",
+      "quality": "award record",
+      "named": [],
+      "status": "unverified"
     }
   ],
   "documents": [
+    {
+      "title": "Addressing Remote Access to Advanced Semiconductors",
+      "link": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+      "date": "2026-11-19",
+      "source": "Commerce Department, Industry and Security Bureau",
+      "kind": "Rule",
+      "matched": "semiconductor"
+    },
+    {
+      "title": "Contracts for Nov. 19, 2026",
+      "company": "Contracts for Nov. 19, 2026",
+      "link": "https://www.war.gov/News/Contracts/Contract/Article/4653606/contracts-for-nov-19-2026/",
+      "date": "2026-11-19",
+      "source": "DoW contracts",
+      "kind": "contracts digest",
+      "matched": "daily contracts",
+      "form": "contract"
+    },
     {
       "title": "Contracts for Nov. 18, 2026",
       "company": "Contracts for Nov. 18, 2026",
@@ -7629,16 +7629,6 @@
       "matched": "shipbuilding"
     },
     {
-      "title": "Contracts for Nov. 10, 2026",
-      "company": "Contracts for Nov. 10, 2026",
-      "link": "https://www.war.gov/News/Contracts/Contract/Article/4645969/contracts-for-nov-10-2026/",
-      "date": "2026-11-10",
-      "source": "DoW contracts",
-      "kind": "contracts digest",
-      "matched": "daily contracts",
-      "form": "contract"
-    },
-    {
       "title": "Request for Comments on Further Suspension of Section 301 Action: China's Targeting of the Maritime, Logistics, and Shipbuilding Sectors for Dominance",
       "link": "https://www.federalregister.gov/documents/2026/10/26/2026-21755/request-for-comments-on-further-suspension-of-section-301-action-chinas-targeting-of-the-maritime",
       "date": "2026-10-26",
@@ -7664,7 +7654,7 @@
         "backfilled": false,
         "return_since_seen_pct": -11.5,
         "last_price": 20.34,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7676,7 +7666,7 @@
         "backfilled": true,
         "return_since_seen_pct": -43.3,
         "last_price": 1.85,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7688,7 +7678,7 @@
         "backfilled": true,
         "return_since_seen_pct": -47.1,
         "last_price": 8.33,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7700,7 +7690,7 @@
         "backfilled": true,
         "return_since_seen_pct": -55.1,
         "last_price": 7.69,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "AA:2026-08-31",
@@ -7712,7 +7702,7 @@
         "backfilled": true,
         "return_since_seen_pct": -18.1,
         "last_price": 36.37,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7722,9 +7712,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 47.46,
         "backfilled": true,
-        "return_since_seen_pct": -36.3,
-        "last_price": 30.24,
-        "last_update": "2026-11-19"
+        "return_since_seen_pct": -37.5,
+        "last_price": 29.65,
+        "last_update": "2026-11-20"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7734,9 +7724,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 159.95,
         "backfilled": true,
-        "return_since_seen_pct": -36.8,
-        "last_price": 101.11,
-        "last_update": "2026-11-19"
+        "return_since_seen_pct": -40.0,
+        "last_price": 95.91,
+        "last_update": "2026-11-20"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7748,7 +7738,7 @@
         "backfilled": true,
         "return_since_seen_pct": -66.7,
         "last_price": 2.25,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7760,7 +7750,7 @@
         "backfilled": true,
         "return_since_seen_pct": -40.2,
         "last_price": 4.42,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7772,7 +7762,7 @@
         "backfilled": true,
         "return_since_seen_pct": -16.7,
         "last_price": 39.83,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7782,9 +7772,9 @@
         "first_seen": "2026-09-19",
         "price_at_first_seen": 229.55,
         "backfilled": true,
-        "return_since_seen_pct": -0.4,
-        "last_price": 228.53,
-        "last_update": "2026-11-19"
+        "return_since_seen_pct": -2.5,
+        "last_price": 223.88,
+        "last_update": "2026-11-20"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7796,7 +7786,7 @@
         "backfilled": true,
         "return_since_seen_pct": -55.1,
         "last_price": 7.69,
-        "last_update": "2026-11-19"
+        "last_update": "2026-11-20"
       }
     ]
   },
@@ -7804,62 +7794,62 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-11-19T02:53:17+00:00"
+      "checked_utc": "2026-11-20T02:45:02+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-11-19T02:53:26+00:00"
+      "checked_utc": "2026-11-20T02:45:11+00:00"
     },
     "whitehouse": {
       "ok": true,
-      "note": "5 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-11-19T02:53:49+00:00"
+      "note": "4 of 30 posts cleared the evidence bar (24 bodies read)",
+      "checked_utc": "2026-11-20T02:45:36+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-11-19T02:53:49+00:00"
+      "checked_utc": "2026-11-20T02:45:36+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-11-19T02:54:21+00:00"
+      "checked_utc": "2026-11-20T02:46:09+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "14 of 80 awards over $50M kept (14 facility operators dropped)",
-      "checked_utc": "2026-11-19T02:54:24+00:00"
+      "checked_utc": "2026-11-20T02:46:10+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-11-19T02:54:26+00:00"
+      "checked_utc": "2026-11-20T02:46:12+00:00"
     },
     "federal_register": {
       "ok": true,
-      "note": "2 documents",
-      "checked_utc": "2026-11-19T02:54:29+00:00"
+      "note": "3 documents",
+      "checked_utc": "2026-11-20T02:46:15+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-11-19T02:54:29+00:00"
+      "checked_utc": "2026-11-20T02:46:15+00:00"
     },
     "reading": {
       "ok": true,
-      "note": "6 records from 13 documents \u2014 not a deal 7",
-      "checked_utc": "2026-11-19T02:55:07+00:00"
+      "note": "7 records from 11 documents \u2014 not a deal 4",
+      "checked_utc": "2026-11-20T02:46:30+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-11-19T02:56:32+00:00"
+      "checked_utc": "2026-11-20T02:48:13+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-11-19T02:56:32+00:00"
+      "checked_utc": "2026-11-20T02:48:13+00:00"
     }
   },
   "counts": {
@@ -7867,8 +7857,8 @@
     "testable": 34,
     "radar": 9,
     "detection": 24,
-    "documents": 8,
-    "pipeline": 6,
+    "documents": 9,
+    "pipeline": 7,
     "flow": 8
   }
 }
