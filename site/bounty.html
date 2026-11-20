@@ -249,6 +249,7 @@
     <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
     <a class="fkey" href="#hidden"><b>F3+</b>HIDDEN POTENTIAL</a>
     <a class="fkey" href="#rezone"><b>F3++</b>NYC UPZONED</a>
+    <a class="fkey" href="#regional"><b>F3+++</b>REGIONAL SCAN</a>
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
     <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
     <a class="fkey" href="#tsmap"><b>F6</b>TRI-STATE MAP</a>
@@ -321,6 +322,24 @@
     <div class="card">
       <div class="card-head"><span class="code">NYC</span><span class="t">Upzoned lots, ranked</span><span class="expo" id="rezoneMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search (try: TRANSIT, Astoria)" oninput="__bq('rezoneTbl',this.value)"></div>
       <div id="rezoneTbl"><div class="loading">loading…</div></div>
+    </div>
+  </section>
+
+  <section id="regional">
+    <div class="eyebrow"><span class="no">03+++</span><h2>Regional Zoning Scan</h2>
+      <span class="hint">every Westchester municipality, every Fairfield County town, six North Jersey counties</span></div>
+    <div class="subnote"><span class="badge b-mkt">Official GIS</span> <b>Westchester:</b> county parcels x the county's compiled municipal zoning layer: multifamily and downtown districts (units from the district's FAR or density where the layer has it, otherwise "per code"), subdividable house lots (area only, frontage not checked), and industrial land near rail. <b>Fairfield County:</b> CT 2025 assessor parcels with each town's zone code, 8-30g status and rail distance. <b>North NJ:</b> vacant, commercial and industrial lots in designated Areas in Need of Redevelopment or within half a mile of rail, with each town's zoning map and ordinance. <b class="warn">Confirm every district on the municipal zoning map and code before an offer.</b></div>
+    <div class="card">
+      <div class="card-head"><span class="code">WCH</span><span class="t">Westchester, all municipalities</span><span class="expo" id="wchMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search (town, TRANSIT, SUBDIVIDE)" oninput="__bq('wchTbl',this.value)"></div>
+      <div id="wchTbl"><div class="loading">loading…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">FFD</span><span class="t">Fairfield County, CT</span><span class="expo" id="ffdMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search (town, 8-30g, TRANSIT)" oninput="__bq('ffdTbl',this.value)"></div>
+      <div id="ffdTbl"><div class="loading">loading…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">NNJ</span><span class="t">North New Jersey</span><span class="expo" id="nnjMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search (town, REDEVELOPMENT, TRANSIT)" oninput="__bq('nnjTbl',this.value)"></div>
+      <div id="nnjTbl"><div class="loading">loading…</div></div>
     </div>
   </section>
 
@@ -952,8 +971,45 @@ function onePager(i){
   try{
     const [deals,briefs,progs,subs,pb,ct,nj,radar,listings,hidden]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null),j('hidden_potential.json').catch(()=>null)]);
     const rezone=await j('nyc_rezone.json').catch(()=>null);
+    const [wch,ffd,nnj]=await Promise.all([j('westchester_all.json').catch(()=>null),j('ct_fairfield.json').catch(()=>null),j('nj_north.json').catch(()=>null)]);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
 
+    // regional zoning scan
+    try{
+      const tg2=x=>(x.tags||[]).map(t=>`<span class="badge ${t==='TRANSIT'?'b-mkt':'b-prog'}" style="font-size:9px">${t}</span>`).join(' ')+(x.station?`<br><span class="neu" style="font-size:10px">${x.station} · ${x.station_mi} mi</span>`:'');
+      const addr=(x,sub)=>`<span class="chip">${x.address||'—'}</span><br><span class="mono" style="font-size:10px;color:var(--dim)">${sub}</span>`;
+      const own={key:'owner',label:'Owner',get:x=>x.owner,html:x=>`<span style="font-size:11px">${x.owner||'—'}</span>${x.owner_mailing?'<br><span class="neu" style="font-size:10px">'+x.owner_mailing+'</span>':''}`};
+      const board=(id,meta,rows,cols,region,txt)=>{const sc=x=>((x.tags||[]).includes('TRANSIT')?2:0)+(x.tags||[]).length; rows.sort((a,b)=>sc(b)-sc(a)||((b.units||b.acres||0)-(a.units||a.acres||0))); rows.forEach((x,i)=>x.__i=i+1); cols=[{key:'rank',label:'#',num:1,sort:x=>x.__i,get:x=>x.__i,style:'font-size:11px;color:var(--dim)'}].concat(cols); window.__D[region]=rows; $(meta).innerHTML=`<span class="mono">${txt}</span>`; if(rows.length) buildBoard(id,rows,cols.concat([pipeCol(region)]),{q:'',key:'rank',dir:1,region})(); else $(id).innerHTML='<div class="empty">Appears after the next engine run.</div>';};
+      if(wch&&wch.munis){const rows=Object.values(wch.munis).flatMap(m=>m.rows||[]);
+        board('wchTbl','wchMeta',rows,[
+          {key:'address',label:'Address',get:x=>x.address+' '+x.muni+' '+(x.tags||[]).join(' '),html:x=>addr(x,x.muni+' · '+x.printkey)},
+          {key:'zone',label:'District',get:x=>x.zone+' '+x.zone_name,html:x=>`${x.zone}<br><span class="neu" style="font-size:10px">${x.zone_name||''} (${x.zone_year||'?'})</span>`},
+          {key:'lot',label:'Lot sf',num:1,sort:x=>x.lot_sf,get:x=>x.lot_sf,html:x=>x.lot_sf.toLocaleString()},
+          {key:'units',label:'Yield',num:1,sort:x=>x.units||0,get:x=>x.units,html:x=>`<span class="em">${x.est_units}</span><br><span class="neu" style="font-size:10px" title="${(x.basis||'').replace(/"/g,'')}">${(x.basis||'').slice(0,46)}</span>`},
+          {key:'tags',label:'Tags',get:x=>(x.tags||[]).join(' '),html:tg2}, own],'wch',
+          `${rows.length} parcels · ${Object.keys(wch.munis).length} municipalities scanned · ${(wch.generated_utc||'').slice(0,10)}`);}
+      else $('wchTbl').innerHTML='<div class="empty">Appears after the next engine run.</div>';
+      if(ffd&&ffd.towns){const rows=Object.values(ffd.towns).flatMap(t=>t.rows||[]);
+        board('ffdTbl','ffdMeta',rows,[
+          {key:'address',label:'Address',get:x=>x.address+' '+x.muni+' '+(x.tags||[]).join(' '),html:x=>addr(x,x.muni+' · '+(x.parcel||''))},
+          {key:'use',label:'Now',get:x=>x.use,style:'font-size:11px'},
+          {key:'zone',label:'Zone',get:x=>x.zone,style:'font-size:12px'},
+          {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres,html:x=>x.acres},
+          {key:'ct',label:'8-30g',get:x=>x.ct_8_30g,html:x=>`<span style="font-size:10px">${x.ct_8_30g}</span>`},
+          {key:'tags',label:'Tags',get:x=>(x.tags||[]).join(' '),html:tg2}, own],'ffd',
+          `${rows.length} parcels · ${Object.keys(ffd.towns).length} of 23 towns · ${(ffd.generated_utc||'').slice(0,10)}`);}
+      else $('ffdTbl').innerHTML='<div class="empty">Appears after the next engine run.</div>';
+      if(nnj&&nnj.rows){
+        board('nnjTbl','nnjMeta',nnj.rows,[
+          {key:'address',label:'Address',get:x=>x.address+' '+x.muni+' '+x.county+' '+(x.tags||[]).join(' '),html:x=>addr(x,x.muni+', '+x.county)},
+          {key:'use',label:'Now',get:x=>x.use,style:'font-size:11px'},
+          {key:'acres',label:'Acres',num:1,sort:x=>x.acres,get:x=>x.acres,html:x=>x.acres},
+          {key:'ctx',label:'Why',get:x=>x.context,html:x=>`<span style="font-size:10px">${x.context||''}</span>`},
+          {key:'zlink',label:'Zoning',get:()=>'',html:x=>(x.zoning_map?`<a href="${x.zoning_map}" target="_blank" rel="noopener">map</a>`:'')+(x.zoning_code?` · <a href="${x.zoning_code}" target="_blank" rel="noopener">code</a>`:'')},
+          {key:'tags',label:'Tags',get:x=>(x.tags||[]).join(' '),html:tg2}, own],'nnj',
+          `${nnj.total} parcels · ${(nnj.generated_utc||'').slice(0,10)}`);}
+      else $('nnjTbl').innerHTML='<div class="empty">Appears after the next engine run.</div>';
+    }catch(e){console.warn('regional',e)}
     // NYC upzoned & underbuilt
     try{ if(rezone&&rezone.rows){
       window.__D.rezone=rezone.rows;
