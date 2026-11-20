@@ -42,6 +42,11 @@ jobs:
       - name: NYC upzoned and underbuilt (MapPLUTO)
         continue-on-error: true
         run: python bounty/engine/nyc_rezone.py 2>&1 | tee bounty/data/nyc_rezone_run.log
+      - name: Regional zoning scan (all Westchester, Fairfield County, North NJ)
+        continue-on-error: true
+        env:
+          REGION_DEADLINE_S: "1800"
+        run: python bounty/engine/region_scan.py 2>&1 | tee bounty/data/region_run.log
       - name: Hidden potential (Westchester GIS, zoning-checked)
         continue-on-error: true
         run: python bounty/engine/hidden_potential.py 2>&1 | tee bounty/data/hidden_run.log
