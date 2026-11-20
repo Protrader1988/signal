@@ -6,7 +6,12 @@ name: bounty-daily
 on:
   schedule:
     - cron: "30 10 * * 1-5"     # 10:30 UTC weekdays (~6:30am ET)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      regions:
+        description: "region_scan regions (westchester,fairfield,nj); blank = weekday default"
+        required: false
+        default: ""
   push:
     paths:
       - "bounty/engine/**"
@@ -46,6 +51,7 @@ jobs:
         continue-on-error: true
         env:
           REGION_DEADLINE_S: "2700"
+          REGIONS: ${{ github.event.inputs.regions }}
         run: python bounty/engine/region_scan.py 2>&1 | tee bounty/data/region_run.log
       - name: Hidden potential (Westchester GIS, zoning-checked)
         continue-on-error: true

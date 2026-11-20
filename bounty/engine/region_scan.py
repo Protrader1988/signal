@@ -185,70 +185,100 @@ def wdensity(mun, code, name, far, min_lot):
     return None, None, "density per municipal code"
 
 
+def in_poly(lat, lon, rings):
+    inside = False
+    for ring in rings:
+        j = len(ring) - 1
+        for i in range(len(ring)):
+            xi, yi = ring[i]; xj, yj = ring[j]
+            if (yi > lat) != (yj > lat) and lon < (xj - xi) * (lat - yi) / ((yj - yi) or 1e-12) + xi:
+                inside = not inside
+            j = i
+    return inside
+
+
 def scan_westchester(state):
+    """Per municipality: one id query + chunked parcel fetches, zones assigned locally (point in polygon)."""
     zones = page(WZ, {"where": "MUN IS NOT NULL", "outFields": "MUN,ZONING,ZONE_NAME,MIN_LOT,MAX_FAR,YEARUPDATED",
-                      "returnGeometry": "true", "outSR": "4326"}, 5000)
+                      "returnGeometry": "true", "outSR": "4326", "maxAllowableOffset": "0.00005"}, 5000)
     layers = req(WP + "?f=json").get("layers", [])
+
     def layer_for(mun):
         want = (WLAYER_ALIAS.get(mun) or WNAMES[mun]).lower()
         for l in layers:
-            nm = l["name"].lower()
-            if nm.startswith(want) and "parcel" in nm:
+            if l["name"].lower().startswith(want) and "parcel" in l["name"].lower():
                 return l["id"]
         for l in layers:
             if want.split()[0] in l["name"].lower() and "parcel" in l["name"].lower():
                 return l["id"]
         return None
+
     out = load("westchester_all.json") or {}
     munis = out.get("munis", {})
-    order = sorted([m for m in WNAMES if m != "YON"], key=lambda m: (munis.get(m, {}).get("complete", False), munis.get(m, {}).get("scanned", "")))
+    order = sorted([m for m in WNAMES if m != "YON"],
+                   key=lambda m: (munis.get(m, {}).get("complete", False), munis.get(m, {}).get("scanned", "")))
     for mun in order:
-        if time_left() < 120:
+        if time_left() < 180:
             break
         lid = layer_for(mun)
-        mz = [z for z in zones if z["attributes"]["MUN"] == mun]
-        rows, fails, seen = [], 0, set()
-        print(f"Westchester {WNAMES[mun]}: {len(mz)} zone polygons, parcel layer {lid}")
-        if lid is None:
-            continue
-        for z in mz:
-            if time_left() < 60 or fails >= 4:
-                break
+        mz = []
+        for z in zones:
             a = z["attributes"]
+            if a["MUN"] != mun or not z.get("geometry"):
+                continue
             cls = wclass(a["ZONE_NAME"], a["ZONING"])
             if cls not in ("MF", "MIX", "IND", "SF", "2F"):
                 continue
-            min_lot = a.get("MIN_LOT") or 0
-            if cls in ("SF", "2F"):
-                if not min_lot or min_lot > 40000:
-                    continue
-                min_sf = 2.5 * min_lot
-            else:
-                min_sf = 10000
-            geom = json.dumps({"rings": z["geometry"]["rings"], "spatialReference": {"wkid": 4326}})
+            rings = z["geometry"]["rings"]
+            xs = [p[0] for r in rings for p in r]; ys = [p[1] for r in rings for p in r]
+            mz.append((a, cls, rings, (min(xs), min(ys), max(xs), max(ys))))
+        print(f"Westchester {WNAMES[mun]}: {len(mz)} relevant zone polygons, parcel layer {lid}")
+        if lid is None or not mz:
+            munis[mun] = {"name": WNAMES[mun], "scanned": datetime.now(timezone.utc).isoformat(), "rows": [], "count": 0,
+                          "complete": True}
+            continue
+        url = f"{WP}/{lid}/query"
+        where = f'"SHAPE.AREA">=5000 AND PROPERTYCLASS IN ({",".join(repr(c) for c in RES_CLASSES)})'
+        try:
+            ids = req(url, {"where": where, "returnIdsOnly": "true", "f": "json"}, timeout=90).get("objectIds") or []
+        except Exception as e:
+            print("  id query failed:", e)
+            continue
+        rows, seen, done, fails = [], set(), 0, 0
+        for i in range(0, len(ids), 250):
+            if time_left() < 90 or fails >= 4:
+                break
             try:
-                pr = req(f"{WP}/{lid}/query", {
-                    "geometry": geom, "geometryType": "esriGeometryPolygon", "inSR": "4326",
-                    "spatialRel": "esriSpatialRelIntersects",
-                    "where": f'"SHAPE.AREA">={int(min_sf)} AND PROPERTYCLASS IN ({",".join(repr(c) for c in RES_CLASSES)})',
-                    "outFields": "PRINTKEY,PROPADDRESS,PROPERTYCLASS,SHAPE.AREA,OWNERNAME,OWNERADDRESS,OWNERCITY,OWNERSTATE,OWNERZIP",
-                    "returnGeometry": "true", "outSR": "4326", "f": "json"}, timeout=45, tries=2)
+                pr = req(url, {"objectIds": ",".join(map(str, ids[i:i + 250])),
+                               "outFields": "PRINTKEY,PROPADDRESS,PROPERTYCLASS,SHAPE.AREA,OWNERNAME,OWNERADDRESS,OWNERCITY,OWNERSTATE,OWNERZIP",
+                               "returnGeometry": "true", "outSR": "4326", "maxAllowableOffset": "0.0001", "f": "json"},
+                         timeout=60, tries=2)
                 fails = 0
             except Exception as e:
                 fails += 1
-                print("  parcel query failed:", e)
+                print("  chunk failed:", e)
                 continue
+            done += 250
             for f in pr.get("features", []):
                 p = f["attributes"]
                 pk = p.get("PRINTKEY")
-                if not pk or pk in seen or not f.get("geometry"):
+                if not pk or pk in seen or not f.get("geometry") or not f["geometry"].get("rings"):
                     continue
                 seen.add(pk)
                 own = p.get("OWNERNAME") or ""
                 if PUBLIC.search(own):
                     continue
-                area = p.get("SHAPE.AREA") or 0
                 lat, lon = centroid(f["geometry"]["rings"][0])
+                hit = None
+                for a, cls, rings, bb in mz:
+                    if bb[0] <= lon <= bb[2] and bb[1] <= lat <= bb[3] and in_poly(lat, lon, rings):
+                        hit = (a, cls)
+                        break
+                if not hit:
+                    continue
+                a, cls = hit
+                area = p.get("SHAPE.AREA") or 0
+                min_lot = a.get("MIN_LOT") or 0
                 st, mi = nearest_rail(lat, lon)
                 row = {"muni": WNAMES[mun], "printkey": pk, "address": (p.get("PROPADDRESS") or "").strip(),
                        "class": p.get("PROPERTYCLASS"), "lot_sf": round(area), "zone": a["ZONING"],
@@ -259,21 +289,23 @@ def scan_westchester(state):
                 if mi is not None and mi <= 0.5:
                     row["tags"].append("TRANSIT")
                 if cls in ("SF", "2F"):
-                    if str(p.get("PROPERTYCLASS")) not in ("210", "215", "220", "311", "312", "314"):
+                    if not min_lot or min_lot > 40000 or str(p.get("PROPERTYCLASS")) not in ("210", "215", "220", "311", "312", "314"):
                         continue
                     lots = int(area // min_lot)
-                    if lots < 2:
-                        continue
+                    if lots < 3 and not (lots >= 2 and str(p.get("PROPERTYCLASS")).startswith("31")):
+                        continue  # a house lot needs room for 2 new lots; vacant land needs 2 lots
                     row.update(play="subdivide", lots=lots, units=lots, est_units=f"{lots} lots",
                                basis=f"min lot {int(min_lot):,} sf (county layer); street frontage not checked")
                     row["tags"].append("SUBDIVIDE")
                 elif cls == "IND":
-                    if not (mi is not None and mi <= 0.75):
+                    if not (mi is not None and mi <= 0.75) or area < 20000:
                         continue
                     row.update(play="industrial near rail", units=None, est_units="rezone",
-                               basis="industrial district within 3/4 mile of rail: candidate for a TOD rezoning or PUD")
+                               basis="industrial district within 3/4 mile of rail: TOD rezoning or PUD candidate")
                     row["tags"].append("REZONE INDUSTRIAL")
                 else:
+                    if area < 10000:
+                        continue
                     upsf, far, basis = wdensity(mun, a["ZONING"], a["ZONE_NAME"], a.get("MAX_FAR"), min_lot)
                     units = int(area * far / GSF) if far else (int(area * upsf) if upsf else None)
                     if units is not None and units < 6:
@@ -281,17 +313,20 @@ def scan_westchester(state):
                     row.update(play="apartments", units=units, est_units=(f"~{units}" if units else "per code"), basis=basis)
                     row["tags"].append("MULTIFAMILY ZONE" if cls == "MF" else "MIXED-USE / DOWNTOWN")
                 rows.append(row)
-        rows.sort(key=lambda r: (("TRANSIT" in r["tags"]), r.get("units") or 0, r["lot_sf"]), reverse=True)
-        munis[mun] = {"name": WNAMES[mun], "scanned": datetime.now(timezone.utc).isoformat(), "rows": rows[:250],
-                      "count": len(rows), "complete": fails < 4 and time_left() >= 60}
-        print(f"  {len(rows)} candidates")
+        complete = done >= len(ids)
+        rows.sort(key=lambda r: (("TRANSIT" in r["tags"]) + ("REZONE INDUSTRIAL" in r["tags"]) + (r.get("play") == "apartments"),
+                                 r.get("units") or 0, r["lot_sf"]), reverse=True)
+        munis[mun] = {"name": WNAMES[mun], "scanned": datetime.now(timezone.utc).isoformat(), "rows": rows[:120],
+                      "count": len(rows), "complete": complete, "parcels_checked": min(done, len(ids))}
+        print(f"  {len(ids)} parcels, {len(rows)} candidates, complete={complete}")
     allrows = [r for m in munis.values() for r in m["rows"]]
     save("westchester_all.json", {"generated_utc": datetime.now(timezone.utc).isoformat(), "munis": munis,
                                   "total": len(allrows),
                                   "method": "County parcels x Westchester County compiled municipal zoning layer (districts, min lot, max FAR). "
                                             "Yonkers is scanned separately with its verified code. Unit counts use the district's FAR or "
                                             "density from the county layer or district name at 900 gsf per unit; otherwise 'per code'. "
-                                            "The county layer is a compilation dated by municipality; confirm on the municipal zoning map."})
+                                            "Subdivision counts are by area only. The county layer is a compilation dated by municipality; "
+                                            "confirm on the municipal zoning map."})
 
 # ---------------------------------------------------------------- FAIRFIELD COUNTY, CT
 CT = "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer_2025/FeatureServer/0/query"
@@ -311,7 +346,7 @@ CT_MF_ZONE = re.compile(r"(MF|RM|R-?MF|DD|CDD|TOD|MU|MX|CBD|DT|DV|VB|VC|CC|C-?C|
 def scan_fairfield():
     out = load("ct_fairfield.json") or {}
     towns = out.get("towns", {})
-    order = sorted(FAIRFIELD, key=lambda t: towns.get(t, {}).get("scanned", ""))
+    order = sorted(FAIRFIELD, key=lambda t: towns.get(t, {}).get("scanned", ""))  # oldest first if time runs short
     for town in order:
         if time_left() < 120:
             break
@@ -370,7 +405,7 @@ def scan_fairfield():
         score = lambda r: (("TRANSIT" in r["tags"]) * 2 + ("8-30g" in r["tags"]) + ("REZONE INDUSTRIAL" in r["tags"])
                            + ("ZONE MAY ALLOW MF" in r["tags"]), r["acres"])
         rows.sort(key=score, reverse=True)
-        towns[town] = {"scanned": datetime.now(timezone.utc).isoformat(), "rows": rows[:250], "count": len(rows),
+        towns[town] = {"scanned": datetime.now(timezone.utc).isoformat(), "rows": rows[:150], "count": len(rows),
                        "status_8_30g": status}
         print(f"Fairfield {town}: {len(feats)} parcels >= 1/4 acre, {len(rows)} candidates")
     save("ct_fairfield.json", {"generated_utc": datetime.now(timezone.utc).isoformat(), "towns": towns,
@@ -399,8 +434,7 @@ def scan_nj():
             links[(a.get("Municipali") or "").upper()] = {"map": a.get("Map"), "ordinance": a.get("Ordinance")}
     except Exception:
         traceback.print_exc()
-    work = out.get("work", {})
-    rows_by = out.get("areas", {})
+    work, rows_by = {}, {}
     # 1) Areas in Need of Redevelopment in the six counties
     tasks = []
     try:
@@ -419,7 +453,6 @@ def scan_nj():
             tasks.append(("rail", "rail:" + (f["attributes"].get("STATION") or "") + ":" + (f["attributes"].get("RAIL_LINE") or ""), f))
     except Exception:
         traceback.print_exc()
-    tasks.sort(key=lambda t: work.get(t[1], ""))
     print(f"NJ: {len(tasks)} redevelopment areas and stations to scan")
     for kind, key, f in tasks:
         if time_left() < 90:
@@ -428,7 +461,12 @@ def scan_nj():
         if kind == "anir":
             geom = json.dumps({"rings": f["geometry"]["rings"], "spatialReference": {"wkid": 4326}})
             gq = {"geometry": geom, "geometryType": "esriGeometryPolygon"}
-            label = f"Redevelopment area ({a.get('MUN_LABEL')}, {a.get('APPROVAL') or 'designated'}{', condemnation' if a.get('CONDEMN') in ('Y', 'Yes', 'YES') else ''})"
+            yr = ""
+            for fld in ("APPROVAL", "RES_DATE"):
+                v = a.get(fld)
+                if isinstance(v, (int, float)) and v > 0:
+                    yr = " " + datetime.fromtimestamp(v / 1000, timezone.utc).strftime("%Y"); break
+            label = f"Redevelopment area ({a.get('MUN_LABEL')}, designated{yr}{'; condemnation authorized' if str(a.get('CONDEMN') or '').upper().startswith('Y') else ''})"
         else:
             g = f["geometry"]
             gq = {"geometry": f"{g['x']},{g['y']}", "geometryType": "esriGeometryPoint", "distance": 805, "units": "esriSRUnit_Meter"}
@@ -448,6 +486,8 @@ def scan_nj():
             own = b.get("OWNER_NAME") or ""
             if PUBLIC.search(own):
                 continue
+            if (b.get("CALC_ACRE") or 0) > 150:
+                continue  # bad acreage in the composite
             land, imp = b.get("LAND_VAL") or 0, b.get("IMPRVT_VAL") or 0
             if b.get("PROP_CLASS") != "1" and imp > land * 0.75:
                 continue  # building worth more than the dirt: not a redevelopment play
@@ -479,8 +519,11 @@ def scan_nj():
                 merged[k] = dict(r)
     allrows = sorted(merged.values(), key=lambda r: (("REDEVELOPMENT AREA" in r["tags"]) + ("TRANSIT" in r["tags"]) +
                                                      ("REZONE INDUSTRIAL" in r["tags"]), r["acres"]), reverse=True)
-    save("nj_north.json", {"generated_utc": datetime.now(timezone.utc).isoformat(), "work": work, "areas": rows_by,
-                           "total": len(allrows), "rows": allrows[:1500],
+    if len(work) < len(tasks) * 0.8 and out.get("rows"):
+        print(f"NJ: only {len(work)} of {len(tasks)} areas scanned; keeping the previous file")
+        return
+    save("nj_north.json", {"generated_utc": datetime.now(timezone.utc).isoformat(), "areas_scanned": len(work),
+                           "total": len(allrows), "rows": allrows[:2000],
                            "method": "NJ statewide parcels + MOD-IV. Kept: vacant, commercial and industrial lots of 0.15 acre or more "
                                      "(buildings worth under 75% of the land) inside a designated Area in Need of Redevelopment or "
                                      "within half a mile of a passenger rail station, in Bergen, Hudson, Essex, Passaic, Union and "
@@ -491,7 +534,12 @@ def scan_nj():
 def main():
     global DEADLINE_S
     load_rail()
-    which = [r.strip() for r in os.environ.get("REGIONS", "westchester,fairfield,nj").split(",") if r.strip()]
+    env = os.environ.get("REGIONS", "").strip()
+    if env:
+        which = [r.strip() for r in env.split(",") if r.strip()]
+    else:  # weekly cadence keeps runs short: Mon NJ, Tue Fairfield, Wed-Fri Westchester (rotating towns)
+        which = {0: ["nj"], 1: ["fairfield"]}.get(datetime.now(timezone.utc).weekday(), ["westchester"])
+    print("regions:", which)
     weight = {"westchester": 0.5, "fairfield": 0.15, "nj": 0.35}
     total = DEADLINE_S
     tw = sum(weight.get(r, 0.3) for r in which)
