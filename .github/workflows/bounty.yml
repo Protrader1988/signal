@@ -45,7 +45,7 @@ jobs:
       - name: Regional zoning scan (all Westchester, Fairfield County, North NJ)
         continue-on-error: true
         env:
-          REGION_DEADLINE_S: "1800"
+          REGION_DEADLINE_S: "2700"
         run: python bounty/engine/region_scan.py 2>&1 | tee bounty/data/region_run.log
       - name: Hidden potential (Westchester GIS, zoning-checked)
         continue-on-error: true
@@ -63,7 +63,11 @@ jobs:
         run: |
           git config user.name "bounty-actions"
           git config user.email "actions@github.com"
-          git pull --rebase origin main || true
           git add bounty/data || true
-          if git diff --cached --quiet; then echo "no changes"; else
-            git commit -m "bounty: daily scan [skip ci]"; git push; fi
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -q -m "bounty: daily scan [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1

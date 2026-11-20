@@ -201,7 +201,7 @@ def scan_westchester(state):
         return None
     out = load("westchester_all.json") or {}
     munis = out.get("munis", {})
-    order = sorted([m for m in WNAMES if m != "YON"], key=lambda m: munis.get(m, {}).get("scanned", ""))
+    order = sorted([m for m in WNAMES if m != "YON"], key=lambda m: (munis.get(m, {}).get("complete", False), munis.get(m, {}).get("scanned", "")))
     for mun in order:
         if time_left() < 120:
             break
@@ -330,6 +330,11 @@ def scan_fairfield():
             a = f["attributes"]
             use = a.get("State_Use_Description") or ""
             own = a.get("Owner") or ""
+            zone0 = (a.get("Zone") or "").upper()
+            if not use:  # some towns submit only the use code: fall back to code / zone
+                code = str(a.get("State_Use") or "")
+                if re.match(r"^(3|4)\d\d", code) or re.match(r"^(I|IP|LI|M|GI|IG)\b|^(I|M)-", zone0):
+                    use = "Commercial/industrial (use code %s)" % code
             if not CT_USE_KEEP.search(use) or PUBLIC.search(own):
                 continue
             acres = a.get("Land_Acres") or 0
@@ -486,12 +491,14 @@ def scan_nj():
 def main():
     global DEADLINE_S
     load_rail()
-    which = os.environ.get("REGIONS", "westchester,fairfield,nj").split(",")
-    share = DEADLINE_S / max(1, len(which))
+    which = [r.strip() for r in os.environ.get("REGIONS", "westchester,fairfield,nj").split(",") if r.strip()]
+    weight = {"westchester": 0.5, "fairfield": 0.15, "nj": 0.35}
+    total = DEADLINE_S
+    tw = sum(weight.get(r, 0.3) for r in which)
     for i, r in enumerate(which):
-        DEADLINE_S = (time.time() - T0) + share  # each region gets an equal slice of the run
+        DEADLINE_S = (time.time() - T0) + total * weight.get(r, 0.3) / tw  # weighted slice of the run
         try:
-            {"westchester": scan_westchester, "fairfield": scan_fairfield, "nj": scan_nj}[r.strip()](*([{}] if r.strip() == "westchester" else []))
+            {"westchester": scan_westchester, "fairfield": scan_fairfield, "nj": scan_nj}[r](*([{}] if r == "westchester" else []))
         except Exception:
             traceback.print_exc()
 
