@@ -1,19 +1,98 @@
 {
  "_meta": {
-  "updated": "2026-11-19",
-  "how": "Listings verified by hand / weekly listings check. Joined to hidden_potential.json by tax print key. Status must be re-confirmed with the listing broker before an offer."
+  "updated": "2026-11-20",
+  "how": "Status = newest dated evidence from public listing sites, which lag the MLS by weeks. Removed 2026-11-20: 25 Radford St (delisted 2026-03-23), 34 Vineyard Ave (sold 2025-02). Always confirm with the listing agent or on OneKey/SmartMLS before an offer."
  },
  "listings": [
-  {"printkey": "1.-117-23.25", "address": "25 Radford St, Yonkers", "price": 400000, "status": "Active, short sale (OneKey 963506, listed 2026-02-19)", "broker": "Globalized Realty Group (William Dennis)", "url": "https://www.onekeymls.com/address/25-Radford-Street-Yonkers-NY-10705/963506", "checked": "2026-11-19", "note": "Same house also listed at $950K (OneKey 931998). Short sale needs lender approval."},
-  {"printkey": "2.-2079-49", "address": "34 Vineyard Ave, Yonkers", "price": 299000, "status": "Active per LandSearch; confirm on MLS", "broker": "", "url": "https://www.landsearch.com/properties/34-vineyard-ave-yonkers-ny-10703/3891146", "checked": "2026-11-19", "note": "Listing itself says A zone (apartments)."},
-  {"printkey": "1.-445-10", "address": "94 William St, Yonkers", "price": 849000, "status": "Active (listed 2026-05-12, cut from $1,125,000)", "broker": "see Elliman / OneKey listing", "url": "https://realmo.com/listing-m/94-william-st-yonkers-ny-10701/1606103475858627999", "checked": "2026-11-19", "note": "Occupied 3-family; next door 79-85 William St won approval for 15 apartments on 0.3 ac."},
-  {"printkey": "1.-124-58.59", "address": "251 Valentine Ln, Yonkers", "price": 1350000, "status": "Active (OneKey 949827, listed 2026-01-22)", "broker": "Keller Williams NY Realty (Crystal Hawkins Syska, Marco Vasile)", "url": "https://www.coldwellbanker.com/ny/yonkers/251-valentine-ln/lid-P00800000H59FDLjemqGymbFG3VWOVSC6uJVKsLZ", "checked": "2026-11-19", "note": "Listing says 7,841 sf lot; county parcel (lots 58+59 merged) is ~22,000 sf. Survey decides the deal. 4 occupied units."},
-  {"printkey": "1.-176-29", "address": "127 Downing St, Yonkers", "price": 1700000, "status": "Active (OneKey 903028)", "broker": "Fleetwood Realty (Rosalie Rose)", "url": "https://www.bhgre.com/home/detail/ny/yonkers/127-downing-st/lid-P00800000GxEIYfD4qEFtzBiets2XNx8ywmGb0fc", "checked": "2026-11-19", "note": ""},
-  {"printkey": "1.-211-66", "address": "223 Glenbrook Ave, Yonkers", "price": 499999, "status": "Active (OneKey 1009423)", "broker": "Borrani Realty Corp (Grace Borrani)", "url": "https://www.onekeymls.com/address/223-Glenbrook-Avenue-Yonkers-NY-10705/887941", "checked": "2026-11-19", "note": "Marketed as one homesite. Park Hill slopes: get topo before counting lots."},
-  {"printkey": "6.-6038-240.242", "address": "63-65 Wilcox Ave, Yonkers", "price": 700000, "status": "Active (OneKey 916111, listed 2025-09-26)", "broker": "Motivated Access Realty Corp (Janet Trujillo)", "url": "https://www.onekeymls.com/address/63-65-Wilcox-Avenue-Yonkers-NY-10705/916111", "checked": "2026-11-19", "note": "Two old tax lots merged; confirm where the house sits."},
-  {"printkey": "4.-4652-56", "address": "101 Cresthill Rd, Yonkers", "price": 745000, "status": "Active (OneKey 1029304, relisted 2026-07-22)", "broker": "DeSimone Real Estate (John Quartararo, 914-563-5989)", "url": "https://www.houzeo.com/homes/101-cresthill-rd-yonkers-ny-10710/hzid_ed1a1cd9", "checked": "2026-11-19", "note": "Agent calls it a double lot but prices it as one ranch."},
-  {"printkey": "4.-4651-86", "address": "81 Avondale Rd, Yonkers", "price": 1199000, "status": "Active (OneKey 1060631, Oct 2026)", "broker": "", "url": "https://www.zoocasa.com/yonkers-ny-real-estate/81-avondale-rd", "checked": "2026-11-19", "note": "Sold Sep 2025 for $1.1M; relisted."},
-  {"printkey": "1.-509-42", "address": "134 Buena Vista Ave, Yonkers", "price": 1325000, "status": "Active", "broker": "", "url": "https://www.homes.com/yonkers-ny/under-1-5m/p2/", "checked": "2026-11-19", "note": "3-family in BA zone."},
-  {"printkey": "1.-447-32", "address": "79-85 William St, Yonkers", "price": 750000, "status": "Under contract (approved for 15 apartments)", "broker": "Houlihan Lawrence", "url": "https://www.williampitt.com/search/real-estate-sales/79-85-william-street-yonkers-ny-10701-905702-42808579/", "checked": "2026-11-19", "note": "Backup-offer only."}
+  {
+   "printkey": "1.-445-10",
+   "address": "94 William St, Yonkers",
+   "price": 849000,
+   "status": "Last seen listed at $849,000 (early Oct 2026); confirm with agent",
+   "broker": "see Elliman / OneKey listing",
+   "url": "https://realmo.com/listing-m/94-william-st-yonkers-ny-10701/1606103475858627999",
+   "checked": "2026-11-19",
+   "note": "Occupied 3-family; next door 79-85 William St won approval for 15 apartments on 0.3 ac."
+  },
+  {
+   "printkey": "1.-124-58.59",
+   "address": "251 Valentine Ln, Yonkers",
+   "price": 1350000,
+   "status": "Listed 2026-01-22; newest dated update May 2026; may have expired",
+   "broker": "Keller Williams NY Realty (Crystal Hawkins Syska, Marco Vasile)",
+   "url": "https://www.coldwellbanker.com/ny/yonkers/251-valentine-ln/lid-P00800000H59FDLjemqGymbFG3VWOVSC6uJVKsLZ",
+   "checked": "2026-11-19",
+   "note": "Listing says 7,841 sf lot; county parcel (lots 58+59 merged) is ~22,000 sf. Survey decides the deal. 4 occupied units."
+  },
+  {
+   "printkey": "1.-176-29",
+   "address": "127 Downing St, Yonkers",
+   "price": 1600000,
+   "status": "Shown for sale at $1,600,000 (cut from $1.7M); confirm",
+   "broker": "Fleetwood Realty (Rosalie Rose)",
+   "url": "https://www.bhgre.com/home/detail/ny/yonkers/127-downing-st/lid-P00800000GxEIYfD4qEFtzBiets2XNx8ywmGb0fc",
+   "checked": "2026-11-19",
+   "note": ""
+  },
+  {
+   "printkey": "1.-211-66",
+   "address": "223 Glenbrook Ave, Yonkers",
+   "price": 499999,
+   "status": "Listed 2026 at $499,999; confirm",
+   "broker": "Borrani Realty Corp (Grace Borrani)",
+   "url": "https://www.onekeymls.com/address/223-Glenbrook-Avenue-Yonkers-NY-10705/887941",
+   "checked": "2026-11-19",
+   "note": "Marketed as one homesite. Park Hill slopes: get topo before counting lots."
+  },
+  {
+   "printkey": "6.-6038-240.242",
+   "address": "63-65 Wilcox Ave, Yonkers",
+   "price": 700000,
+   "status": "Listed 2025-09-26; no update in ~4 months; confirm",
+   "broker": "Motivated Access Realty Corp (Janet Trujillo)",
+   "url": "https://www.onekeymls.com/address/63-65-Wilcox-Avenue-Yonkers-NY-10705/916111",
+   "checked": "2026-11-19",
+   "note": "Two old tax lots merged; confirm where the house sits."
+  },
+  {
+   "printkey": "4.-4652-56",
+   "address": "101 Cresthill Rd, Yonkers",
+   "price": 745000,
+   "status": "Active (OneKey 1029304, relisted 2026-07-22)",
+   "broker": "DeSimone Real Estate (John Quartararo, 914-563-5989)",
+   "url": "https://www.houzeo.com/homes/101-cresthill-rd-yonkers-ny-10710/hzid_ed1a1cd9",
+   "checked": "2026-11-19",
+   "note": "Agent calls it a double lot but prices it as one ranch."
+  },
+  {
+   "printkey": "4.-4651-86",
+   "address": "81 Avondale Rd, Yonkers",
+   "price": 1199000,
+   "status": "Active (OneKey 1060631, Oct 2026)",
+   "broker": "",
+   "url": "https://www.zoocasa.com/yonkers-ny-real-estate/81-avondale-rd",
+   "checked": "2026-11-19",
+   "note": "Sold Sep 2025 for $1.1M; relisted."
+  },
+  {
+   "printkey": "1.-509-42",
+   "address": "134 Buena Vista Ave, Yonkers",
+   "price": 1325000,
+   "status": "Active",
+   "broker": "",
+   "url": "https://www.homes.com/yonkers-ny/under-1-5m/p2/",
+   "checked": "2026-11-19",
+   "note": "3-family in BA zone."
+  },
+  {
+   "printkey": "1.-447-32",
+   "address": "79-85 William St, Yonkers",
+   "price": 750000,
+   "status": "Under contract (approved for 15 apartments)",
+   "broker": "Houlihan Lawrence",
+   "url": "https://www.williampitt.com/search/real-estate-sales/79-85-william-street-yonkers-ny-10701-905702-42808579/",
+   "checked": "2026-11-19",
+   "note": "Backup-offer only."
+  }
  ]
 }
