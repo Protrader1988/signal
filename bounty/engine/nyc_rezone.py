@@ -75,7 +75,7 @@ def main():
     for a in rows:
         fa = round(a["LotArea"] * a["ResidFAR"])
         lo, hi = fa // 900, fa // 680
-        if lo < 10:
+        if lo < 10 or hi > 150:  # BOUNTY target: 10 to ~100 units
             continue
         z = a["ZoneDist1"] or ""
         tags = []
