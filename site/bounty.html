@@ -248,6 +248,7 @@
     <a class="fkey" href="#board"><b>F2</b>NYC BOARD</a>
     <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
     <a class="fkey" href="#hidden"><b>F3+</b>HIDDEN POTENTIAL</a>
+    <a class="fkey" href="#rezone"><b>F3++</b>NYC UPZONED</a>
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
     <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
     <a class="fkey" href="#tsmap"><b>F6</b>TRI-STATE MAP</a>
@@ -310,6 +311,16 @@
     <div class="card">
       <div class="card-head"><span class="code">LETTERS</span><span class="t">Off-market: owners to write to</span><span class="expo" id="hiddenOffMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('hiddenOffTbl',this.value)"></div>
       <div id="hiddenOffTbl"><div class="loading">loading…</div></div>
+    </div>
+  </section>
+
+  <section id="rezone">
+    <div class="eyebrow"><span class="no">03++</span><h2>NYC Upzoned &amp; Underbuilt</h2>
+      <span class="hint">vacant, parking, industrial and low commercial lots where apartments are already allowed</span></div>
+    <div class="subnote"><span class="badge b-mkt">MapPLUTO</span> Private lots in the Bronx, Astoria/LIC, Williamsburg/Greenpoint and DUMBO/Downtown Brooklyn using under 30% of the residential floor area their zoning allows. <b>REZONED INDUSTRIAL</b> = industrial use on land now mapped residential, or a mixed M/R (MX) district. <b>UAP</b> = R6-equivalent or denser, where City of Yes adds floor area for permanently affordable units. <b>TRANSIT</b> = within half a mile of a subway station. Units: 900 gsf each (low) to the 680 sf dwelling unit factor (high). <b class="warn">Most are not listed: these are owners to write to. Check DOB NOW for an active new-building permit first.</b></div>
+    <div class="card">
+      <div class="card-head"><span class="code">NYC</span><span class="t">Upzoned lots, ranked</span><span class="expo" id="rezoneMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search (try: TRANSIT, Astoria)" oninput="__bq('rezoneTbl',this.value)"></div>
+      <div id="rezoneTbl"><div class="loading">loading…</div></div>
     </div>
   </section>
 
@@ -940,8 +951,27 @@ function onePager(i){
 (async()=>{
   try{
     const [deals,briefs,progs,subs,pb,ct,nj,radar,listings,hidden]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null),j('hidden_potential.json').catch(()=>null)]);
+    const rezone=await j('nyc_rezone.json').catch(()=>null);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
 
+    // NYC upzoned & underbuilt
+    try{ if(rezone&&rezone.rows){
+      window.__D.rezone=rezone.rows;
+      const tg=x=>(x.tags||[]).map(t=>`<span class="badge ${t==='TRANSIT'?'b-mkt':'b-prog'}" style="font-size:9px">${t}</span>`).join(' ')+(x.station?`<br><span class="neu" style="font-size:10px">${x.station} · ${x.station_mi} mi</span>`:'');
+      const rcols=[
+        {key:'address',label:'Address',get:x=>x.address+' '+x.area+' '+(x.tags||[]).join(' '),html:x=>`<span class="chip">${x.address}</span><br><span class="mono" style="font-size:10px;color:var(--dim)">${x.area} · BBL ${x.bbl}</span>`},
+        {key:'use',label:'Now',get:x=>x.use,style:'font-size:12px'},
+        {key:'zone',label:'Zone',get:x=>x.zone+' '+x.special,html:x=>`${x.zone}${x.special?'<br><span class="neu" style="font-size:10px">'+x.special+'</span>':''}`},
+        {key:'lot',label:'Lot sf',num:1,sort:x=>x.lot_sf,get:x=>x.lot_sf,html:x=>x.lot_sf.toLocaleString()},
+        {key:'fa',label:'Floor area',num:1,sort:x=>x.floor_area,get:x=>x.floor_area,html:x=>`${x.floor_area.toLocaleString()}<br><span class="neu" style="font-size:10px">FAR ${x.far}</span>`},
+        {key:'units',label:'Units',num:1,sort:x=>x.units_hi,get:x=>x.units_hi,html:x=>`<span class="em">${x.units_lo}–${x.units_hi}</span>`},
+        {key:'tags',label:'Tags',get:x=>(x.tags||[]).join(' '),html:tg},
+        {key:'owner',label:'Owner',get:x=>x.owner,html:x=>`<span style="font-size:11px">${x.owner||'—'}</span>${x.check?'<br><span class="warn" style="font-size:10px">'+x.check+'</span>':''}`},
+      ].concat([pipeCol('rezone')]);
+      const cnt=Object.entries(rezone.counts||{}).map(([k,v])=>`${k} ${v.lots}`).join(' · ');
+      $('rezoneMeta').innerHTML=`<span class="mono">${rezone.total} lots · ${cnt} · ${(rezone.generated_utc||'').slice(0,10)}</span>`;
+      buildBoard('rezoneTbl',rezone.rows,rcols,{q:'',key:'units',dir:-1,region:'rezone'})();
+    } else { $('rezoneTbl').innerHTML='<div class="empty">Appears after the next engine run.</div>'; } }catch(e){console.warn('rezone',e)}
     // hidden potential (zoning-checked, Westchester)
     try{ if(hidden&&(hidden.on_market||hidden.off_market)){
       const hp=x=>x.play==='subdivide'?`<span class="badge b-mkt">Subdivide</span>`:`<span class="badge b-prog">Apartments</span>`;
