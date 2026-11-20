@@ -1,72 +1,19 @@
 {
   "stages": {
-    "legals_sample": {
-      "document_id": [
-        "str",
-        "2026102800715001"
-      ],
-      "record_type": [
-        "str",
-        "L"
-      ],
-      "borough": [
-        "str",
-        "5"
-      ],
-      "block": [
-        "str",
-        "631"
-      ],
-      "lot": [
-        "str",
-        "117"
-      ],
-      "easement": [
-        "str",
-        "N"
-      ],
-      "partial_lot": [
-        "str",
-        "E"
-      ],
-      "air_rights": [
-        "str",
-        "N"
-      ],
-      "subterranean_rights": [
-        "str",
-        "N"
-      ],
-      "property_type": [
-        "str",
-        "D1"
-      ],
-      "street_number": [
-        "str",
-        "140"
-      ],
-      "street_name": [
-        "str",
-        "LONGVIEW ROAD"
-      ],
-      "good_through_date": [
-        "str",
-        "2026-10-31T00:00:00.000"
-      ]
-    },
+    "legals_probe_error": "The read operation timed out",
     "legals_types": {
-      "borough": false,
-      "block": false,
-      "lot": false
+      "borough": true,
+      "block": true,
+      "lot": true
     },
     "legals_rows": 200000,
     "parcels_matched": 340,
     "doc_ids": 2740,
-    "master_rows": 2740,
-    "grantee_rows": 246,
-    "owner_mailing_hits": 281,
-    "motivated": 169,
-    "free_and_clear": 181,
-    "with_tenure": 281
+    "master_rows": 2620,
+    "grantee_rows": 242,
+    "owner_mailing_hits": 275,
+    "motivated": 166,
+    "free_and_clear": 176,
+    "with_tenure": 275
   }
 }
