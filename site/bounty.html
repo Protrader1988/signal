@@ -247,6 +247,7 @@
     <a class="fkey" href="#brief"><b>F1</b>DESK BRIEF</a>
     <a class="fkey" href="#board"><b>F2</b>NYC BOARD</a>
     <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
+    <a class="fkey" href="#hidden"><b>F3+</b>HIDDEN POTENTIAL</a>
     <a class="fkey" href="#ct"><b>F4</b>CONNECTICUT</a>
     <a class="fkey" href="#nj"><b>F5</b>NEW JERSEY</a>
     <a class="fkey" href="#tsmap"><b>F6</b>TRI-STATE MAP</a>
@@ -295,6 +296,20 @@
     <div class="card">
       <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('subTbl',this.value)"><button class="expbtn" onclick="exportBoard('subs')">⬇ Outreach CSV</button></div>
       <div id="subTbl"><div class="loading">loading suburban screens…</div></div>
+    </div>
+  </section>
+
+  <section id="hidden">
+    <div class="eyebrow"><span class="no">03+</span><h2>Hidden Potential</h2>
+      <span class="hint">lots worth more than the listing says: subdivide, or build apartments the zoning already allows</span></div>
+    <div class="subnote"><span class="badge b-mkt">Zoning-checked</span> Every county parcel in a municipality whose zoning rules have been verified from its own code (Yonkers Table 43-3 so far), tested two ways: <b>Subdivide</b> = the lot holds 2+ conforming lots by BOTH area and width; <b>Apartments</b> = the A, BA, M or MG zone allows far more units than what stands there (900 gross sf per unit, capped by the lot-area-per-unit rule). Parking is checked against Table 43-4. <b>On market</b> rows are listings matched by tax print key, with price per buildable unit. <b class="warn">Confirm survey, slopes, sewer and the municipal zoning map before an offer.</b> <span id="hiddenRules" class="mono" style="font-size:11px"></span></div>
+    <div class="card">
+      <div class="card-head"><span class="code">LISTED</span><span class="t">On the market now</span><span class="expo" id="hiddenOnMeta"></span></div>
+      <div id="hiddenOnTbl"><div class="loading">loading…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="code">LETTERS</span><span class="t">Off-market: owners to write to</span><span class="expo" id="hiddenOffMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('hiddenOffTbl',this.value)"></div>
+      <div id="hiddenOffTbl"><div class="loading">loading…</div></div>
     </div>
   </section>
 
@@ -924,8 +939,34 @@ function onePager(i){
 
 (async()=>{
   try{
-    const [deals,briefs,progs,subs,pb,ct,nj,radar,listings]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null)]);
+    const [deals,briefs,progs,subs,pb,ct,nj,radar,listings,hidden]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null),j('hidden_potential.json').catch(()=>null)]);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
+
+    // hidden potential (zoning-checked, Westchester)
+    try{ if(hidden&&(hidden.on_market||hidden.off_market)){
+      const hp=x=>x.play==='subdivide'?`<span class="badge b-mkt">Subdivide</span>`:`<span class="badge b-prog">Apartments</span>`;
+      const hu=x=>x.play==='subdivide'?`${x.lots} lots <span class="neu" style="font-size:10px">(+${x.new_lots} new)</span>`:`${x.units} units <span class="neu" style="font-size:10px">${(x.zfa||0).toLocaleString()} sf</span>`;
+      const hnote=x=>`<span style="font-size:11px;color:var(--muted)" title="${(x.rule||'').replace(/"/g,'')}">${x.play==='subdivide'?x.fit:x.parking}</span>`;
+      const hcols=(region,listed)=>[
+        {key:'address',label:'Address',get:x=>x.address,html:x=>`<span class="chip">${x.address}</span><br><span class="mono" style="font-size:10px;color:var(--dim)">${x.muni} · ${x.printkey}</span>`},
+        {key:'play',label:'Play',get:x=>x.play,html:hp},
+        {key:'zone',label:'Zone',get:x=>x.zone,style:'font-size:12px'},
+        {key:'lot',label:'Lot sf',num:1,sort:x=>x.lot_sf,get:x=>x.lot_sf,html:x=>`${x.lot_sf.toLocaleString()}<br><span class="neu" style="font-size:10px">${x.dims_ft} ft</span>`},
+        {key:'units',label:'Yield',num:1,sort:x=>x.units,get:x=>x.units,html:hu},
+        {key:'note',label:'Check',get:x=>x.play==='subdivide'?x.fit:x.parking,html:hnote},
+      ].concat(listed?[
+        {key:'price',label:'Ask',num:1,sort:x=>x.listing&&x.listing.price,get:x=>x.listing&&x.listing.price,html:x=>`<a href="${x.listing.url||'#'}" target="_blank" rel="noopener">${usd(x.listing.price)}</a>`},
+        {key:'ppu',label:'$ / unit',num:1,sort:x=>x.price_per_unit||9e9,get:x=>x.price_per_unit,html:x=>`<span class="em">${usd(x.price_per_unit)}</span>`},
+        {key:'status',label:'Status',get:x=>x.listing.status,html:x=>`<span style="font-size:11px" title="${(x.listing.note||'').replace(/"/g,'')}">${x.listing.status||'—'}</span>`},
+      ]:[ownerCol]).concat([pipeCol(region)]);
+      window.__D.hidden_on=hidden.on_market||[]; window.__D.hidden_off=hidden.off_market||[];
+      const c=hidden.counts||{};
+      $('hiddenOnMeta').innerHTML=`<span class="mono">${c.on_market||0} listed · checked ${(hidden.generated_utc||'').slice(0,10)}</span>`;
+      $('hiddenOffMeta').innerHTML=`<span class="mono">${c.candidates||0} parcels · ${c.subdivide||0} subdivide · ${c.multifamily||0} apartments (top ${window.__D.hidden_off.length} shown)</span>`;
+      $('hiddenRules').textContent=Object.entries(hidden.rules||{}).map(([k,v])=>k+': '+v.source).join(' · ');
+      if(window.__D.hidden_on.length) buildBoard('hiddenOnTbl',window.__D.hidden_on,hcols('hidden_on',true),{q:'',key:'ppu',dir:1,region:'hidden_on'})(); else $('hiddenOnTbl').innerHTML='<div class="empty">No matched listings this week.</div>';
+      buildBoard('hiddenOffTbl',window.__D.hidden_off,hcols('hidden_off',false),{q:'',key:'units',dir:-1,region:'hidden_off'})();
+    } else { $('hiddenOnTbl').innerHTML=$('hiddenOffTbl').innerHTML='<div class="empty">Hidden-potential data appears after the next engine run.</div>'; } }catch(e){console.warn('hidden',e)}
     // suburban screens
     if(subs&&subs.deals&&subs.deals.length){
       $('subMeta').innerHTML=`<span class="mono">${subs.counts.qualified} qualified · roll ${subs.roll_year}</span>`;
