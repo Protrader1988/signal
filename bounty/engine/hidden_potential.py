@@ -63,7 +63,7 @@ SF_PER_STALL = 330          # surface stall incl. drive aisle
 # co-ops/condos and public or institutional-public owners. They still show if actually listed.
 SKIP_CLASSES_OFF = {"411"}
 SKIP_OWNERS = ("CITY OF", "COUNTY OF", "STATE OF", "MHACY", "HOUSING AUTH", "MUNICIPAL HOUSING", "IDA",
-               "INDUSTRIAL DEV", "OWNERS CORP", "OWNERS INC", "COOP", "CO-OP", "CONDOMINIUM", "BOARD OF ED",
+               "INDUSTRIAL DEV", "OWNERS CORP", "OWNER'S CORP", "OWNERS' CORP", "OWNERS INC", "COOP", "CO-OP", "CONDOMINIUM", "BOARD OF ED",
                "SCHOOL DIST", "UNITED STATES", "METRO-NORTH", "MTA ")
 MAX_OFF_MARKET = 400        # keep the board file small
 DEADLINE_S = 12 * 60        # hard cap so a slow county server never stalls the daily run
@@ -242,6 +242,29 @@ def main():
             allrows += scan(code, rule, watch)
         except Exception:
             traceback.print_exc()
+    # A partial run (county server timed out) must not shrink the board:
+    # carry forward last run's rows for parcels this run did not reach.
+    if os.path.exists(OUT):
+        try:
+            prev = json.load(open(OUT))
+            got = {r["printkey"] for r in allrows}
+            for r in prev.get("on_market", []) + prev.get("off_market", []):
+                pk = r.get("printkey")
+                if not pk or pk in got:
+                    continue
+                own = (r.get("owner") or "").upper()
+                w = watch.get(pk)
+                r.pop("listing", None); r.pop("price_per_unit", None)
+                if not w and (str(r.get("class")) in SKIP_CLASSES_OFF or any(k in own for k in SKIP_OWNERS)):
+                    continue
+                if w:
+                    r["listing"] = {k: w.get(k) for k in ("price", "status", "url", "checked", "broker", "note")}
+                    if w.get("price") and r.get("units"):
+                        r["price_per_unit"] = round(w["price"] / r["units"])
+                r["carried"] = True
+                allrows.append(r); got.add(pk)
+        except Exception:
+            traceback.print_exc()
     on = [r for r in allrows if r.get("listing")]
     on.sort(key=lambda r: (r.get("price_per_unit") or 9e9))
     off = [r for r in allrows if not r.get("listing")]
@@ -263,7 +286,7 @@ def main():
         "on_market": on,
         "off_market": off[:MAX_OFF_MARKET],
     }
-    if not allrows and os.path.exists(OUT):
+    if False:
         print("no rows this run (county server unreachable?); keeping the previous file")
         return
     json.dump(out, open(OUT, "w"), indent=1)
