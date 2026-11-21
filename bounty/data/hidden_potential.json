@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-20T23:49:07.916409+00:00",
+ "generated_utc": "2026-11-21T00:54:43.307433+00:00",
  "region": "Westchester (municipalities with verified zoning rules)",
  "method": "County parcels x county zoning layer, checked against the municipality's own dimensional schedule. Units: apartments at 900 gross sf each, capped by the zone's lot-area-per-unit rule; subdivision: lot count limited by BOTH area and width. Survey, slopes, rock, sewer and the municipal zoning map must be confirmed before an offer.",
  "rules": {
@@ -64,9 +64,9 @@
   }
  },
  "counts": {
-  "candidates": 405,
-  "subdivide": 3,
-  "multifamily": 402,
+  "candidates": 681,
+  "subdivide": 111,
+  "multifamily": 570,
   "on_market": 5
  },
  "on_market": [
@@ -89,6 +89,7 @@
    "parking_spaces": 75,
    "parking": "needs structured parking or a parking variance",
    "muni": "Yonkers",
+   "carried": true,
    "listing": {
     "price": 1600000,
     "status": "Active (OneKey MLS)",
@@ -97,8 +98,7 @@
     "broker": "Fleetwood Realty (Rosalie Rose)",
     "note": ""
    },
-   "price_per_unit": 30189,
-   "carried": true
+   "price_per_unit": 30189
   },
   {
    "printkey": "1.-445-10",
@@ -119,6 +119,7 @@
    "parking_spaces": 28,
    "parking": "fits on site (surface)",
    "muni": "Yonkers",
+   "carried": true,
    "listing": {
     "price": 849000,
     "status": "Pending (OneKey MLS)",
@@ -127,8 +128,7 @@
     "broker": "see Elliman / OneKey listing",
     "note": "Occupied 3-family; next door 79-85 William St won approval for 15 apartments on 0.3 ac."
    },
-   "price_per_unit": 42450,
-   "carried": true
+   "price_per_unit": 42450
   },
   {
    "printkey": "1.-211-66",
@@ -148,6 +148,7 @@
    "rule": "S-50: min 5,000 sf and 50 ft wide per lot",
    "units": 4,
    "muni": "Yonkers",
+   "carried": true,
    "listing": {
     "price": 499000,
     "status": "Active (OneKey MLS); listing says 1 acre",
@@ -156,8 +157,7 @@
     "broker": "Borrani Realty Corp (Grace Borrani)",
     "note": "Marketed as one homesite. Park Hill slopes: get topo before counting lots."
    },
-   "price_per_unit": 124750,
-   "carried": true
+   "price_per_unit": 124750
   },
   {
    "printkey": "4.-4652-56",
@@ -177,6 +177,7 @@
    "rule": "S-75: min 7,500 sf and 75 ft wide per lot",
    "units": 2,
    "muni": "Yonkers",
+   "carried": true,
    "listing": {
     "price": 745000,
     "status": "Active (OneKey MLS)",
@@ -185,8 +186,7 @@
     "broker": "DeSimone Real Estate (John Quartararo, 914-563-5989)",
     "note": "Agent calls it a double lot but prices it as one ranch."
    },
-   "price_per_unit": 372500,
-   "carried": true
+   "price_per_unit": 372500
   },
   {
    "printkey": "4.-4651-86",
@@ -206,6 +206,7 @@
    "rule": "S-75: min 7,500 sf and 75 ft wide per lot",
    "units": 2,
    "muni": "Yonkers",
+   "carried": true,
    "listing": {
     "price": 1190000,
     "status": "Pending (OneKey MLS)",
@@ -214,8 +215,7 @@
     "broker": "",
     "note": "Sold Sep 2025 for $1.1M; relisted."
    },
-   "price_per_unit": 595000,
-   "carried": true
+   "price_per_unit": 595000
   }
  ],
  "off_market": [
@@ -384,8 +384,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 174,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-183-55",
@@ -468,8 +467,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 129,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-493-18",
@@ -489,8 +487,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 126,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6308-1.25",
@@ -510,8 +507,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 122,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-169-1",
@@ -552,8 +548,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 115,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5345-40",
@@ -594,8 +589,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 112,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3615-31",
@@ -636,8 +630,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 110,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-125-1",
@@ -657,8 +650,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 104,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2014-21",
@@ -741,8 +733,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 86,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3570-11.13",
@@ -804,8 +795,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 83,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2141-52",
@@ -951,8 +941,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 73,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3570-20",
@@ -1035,8 +1024,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 72,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-33-51",
@@ -1056,8 +1044,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 72,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6342-5",
@@ -1224,8 +1211,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 65,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2030-155.159",
@@ -1308,8 +1294,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 58,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-41-24.28",
@@ -1329,8 +1314,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 58,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-447-77",
@@ -1434,8 +1418,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 56,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-493-100",
@@ -1455,8 +1438,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 56,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-184-26",
@@ -1581,8 +1563,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 52,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6315-50",
@@ -1602,8 +1583,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 52,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3570-16",
@@ -1644,8 +1624,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 52,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2452-43",
@@ -1728,8 +1707,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 51,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-174",
@@ -1791,8 +1769,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 49,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2024-1.3",
@@ -1875,8 +1852,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 48,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-48-74.76",
@@ -1896,8 +1872,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 48,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-18",
@@ -1938,8 +1913,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 48,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-184-41",
@@ -2064,8 +2038,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 47,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2018-8",
@@ -2148,8 +2121,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 45,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-177-13.14",
@@ -2211,8 +2183,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 44,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-508-9",
@@ -2253,8 +2224,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 44,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2118-43.44",
@@ -2295,8 +2265,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 44,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-176-36",
@@ -2379,8 +2348,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 42,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-133-20.21",
@@ -2400,8 +2368,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 41,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6340-63.66",
@@ -2526,8 +2493,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 40,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-176-1",
@@ -2631,8 +2597,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 40,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-170",
@@ -2673,8 +2638,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 40,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-162-31",
@@ -2736,8 +2700,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 38,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-168",
@@ -2862,8 +2825,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 37,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6248-40.41",
@@ -2883,8 +2845,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 37,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-43",
@@ -2946,8 +2907,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 37,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-430-56",
@@ -3009,8 +2969,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 37,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2116-28",
@@ -3114,8 +3073,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 35,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-175-16.17",
@@ -3177,8 +3135,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 35,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-112-51.68",
@@ -3198,8 +3155,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 35,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-415-170",
@@ -3240,8 +3196,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 35,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-41",
@@ -3303,8 +3258,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 35,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-509-15",
@@ -3429,8 +3383,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-137-20",
@@ -3450,8 +3403,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6383-15.16",
@@ -3471,8 +3423,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-42-9.11",
@@ -3492,8 +3443,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3570-9",
@@ -3597,8 +3547,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-35",
@@ -3639,8 +3588,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-63",
@@ -3744,8 +3692,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 33,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-49-22",
@@ -3765,8 +3712,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 33,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2079-55",
@@ -3870,8 +3816,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 31,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-184-69",
@@ -3912,8 +3857,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 31,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-45",
@@ -4038,8 +3982,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 31,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-77",
@@ -4059,8 +4002,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 31,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6383-19.20",
@@ -4080,8 +4022,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 31,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2167-54",
@@ -4290,8 +4231,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 30,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-14",
@@ -4311,8 +4251,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 30,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-29",
@@ -4395,8 +4334,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 30,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2021-22",
@@ -4437,8 +4375,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 30,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-36.37",
@@ -4458,8 +4395,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 30,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-38.39",
@@ -4479,8 +4415,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 30,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2161-42",
@@ -4542,8 +4477,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 28,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-36-30",
@@ -4605,8 +4539,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 28,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-445-28.34",
@@ -4668,8 +4601,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-196-11.12",
@@ -4689,8 +4621,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-103-130",
@@ -4710,8 +4641,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-34.35",
@@ -4731,8 +4661,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-32.33",
@@ -4752,8 +4681,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-49-31.32",
@@ -4773,8 +4701,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-48-38",
@@ -4794,8 +4721,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-5",
@@ -4857,8 +4783,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-37-31.32",
@@ -4878,8 +4803,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-48-61.62",
@@ -4899,8 +4823,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-415-160",
@@ -4941,8 +4864,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-61",
@@ -4983,8 +4905,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-123-27.28",
@@ -5004,8 +4925,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2079-39",
@@ -5046,8 +4966,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-112-41.42",
@@ -5067,8 +4986,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-481-3",
@@ -5109,8 +5027,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-85",
@@ -5130,8 +5047,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6320-39.40",
@@ -5151,8 +5067,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-172-86.87",
@@ -5214,8 +5129,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-94",
@@ -5256,8 +5170,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-131-35",
@@ -5277,8 +5190,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-184-68",
@@ -5634,8 +5546,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-24-51",
@@ -5655,8 +5566,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-24",
@@ -5697,8 +5607,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-208-30.31",
@@ -5739,8 +5648,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-49-7.8",
@@ -5760,8 +5668,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-112-44.45",
@@ -5781,8 +5688,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-37-38.39",
@@ -5802,8 +5708,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2021-17",
@@ -5865,8 +5770,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-481-5",
@@ -5907,8 +5811,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2159-34",
@@ -6117,8 +6020,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5250-58",
@@ -6180,8 +6082,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-24-49",
@@ -6201,8 +6102,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-125-16.17",
@@ -6222,8 +6122,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-125-9.10",
@@ -6243,8 +6142,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-125-11.12",
@@ -6264,8 +6162,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-86",
@@ -6306,8 +6203,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-193-9.10",
@@ -6327,8 +6223,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3192-1",
@@ -6411,8 +6306,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6383-3",
@@ -6432,8 +6326,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-112-35",
@@ -6453,8 +6346,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-16",
@@ -6474,8 +6366,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-112",
@@ -6600,8 +6491,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2094-29",
@@ -6705,8 +6595,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.9-9300-20",
@@ -6789,8 +6678,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-185-29",
@@ -6831,8 +6719,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-67",
@@ -6852,8 +6739,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2051-71",
@@ -6936,8 +6822,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2013-50",
@@ -6978,8 +6863,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-39-24.25",
@@ -6999,8 +6883,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2079-53",
@@ -7041,8 +6924,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-509-19",
@@ -7083,8 +6965,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-39-43",
@@ -7104,8 +6985,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6279-20",
@@ -7146,8 +7026,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6383-6",
@@ -7167,8 +7046,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2115-39",
@@ -7209,8 +7087,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2161-44",
@@ -7398,8 +7275,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 23,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-124-69",
@@ -7419,8 +7295,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-41-7.8",
@@ -7440,8 +7315,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-42-17.18",
@@ -7461,8 +7335,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-174-23",
@@ -7545,8 +7418,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-41-3.4",
@@ -7566,8 +7438,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2013-65",
@@ -7608,8 +7479,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2116-14",
@@ -7671,8 +7541,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-125-46.47",
@@ -7692,8 +7561,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6303-16.17",
@@ -7713,8 +7581,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-49-9",
@@ -7734,8 +7601,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-127.128",
@@ -7776,8 +7642,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-39-61.62",
@@ -7797,8 +7662,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-41-31.32",
@@ -7818,8 +7682,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-113-42.43",
@@ -7839,8 +7702,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6303-36.37",
@@ -7860,8 +7722,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-111-10.11",
@@ -7881,8 +7742,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-48-49.50",
@@ -7902,8 +7762,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-30-39",
@@ -7923,8 +7782,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6303-14.15",
@@ -7944,8 +7802,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-134-23.24",
@@ -7965,8 +7822,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-30-41",
@@ -7986,8 +7842,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-509-21",
@@ -8280,8 +8135,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 21,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2376-19.21",
@@ -8469,8 +8323,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 20,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-443-29.33",
