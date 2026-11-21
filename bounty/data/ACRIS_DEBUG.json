@@ -47,18 +47,25 @@
       ]
     },
     "legals_types": {
-      "borough": true,
-      "block": true,
-      "lot": true
+      "borough": false,
+      "block": false,
+      "lot": false
     },
-    "legals_rows": 200000,
-    "parcels_matched": 340,
-    "doc_ids": 2740,
-    "master_rows": 2380,
-    "grantee_rows": 240,
-    "owner_mailing_hits": 274,
-    "motivated": 172,
-    "free_and_clear": 178,
-    "with_tenure": 274
+    "legals_errors": [
+      "HTTP Error 500: Server Error"
+    ],
+    "legals_rows": 150000,
+    "parcels_matched": 213,
+    "doc_ids": 1883,
+    "master_rows": 1643,
+    "parties_errors": [
+      "HTTP Error 503: Service Unavailable",
+      "HTTP Error 503: Service Unavailable"
+    ],
+    "grantee_rows": 0,
+    "owner_mailing_hits": 0,
+    "motivated": 89,
+    "free_and_clear": 92,
+    "with_tenure": 162
   }
 }

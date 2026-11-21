@@ -1,15 +1,16 @@
 rolling-sales fields: ['borough', 'neighborhood', 'building_class_category', 'tax_class_at_present', 'block', 'lot', 'building_class_at_present', 'address', 'zip_code', 'residential_units', 'commercial_units', 'total_units', 'land_square_feet', 'gross_square_feet', 'year_built', 'tax_class_at_time_of_sale', 'building_class_at_time_of', 'sale_price', 'sale_date']
 land comps $/SF: {'BX': 328.0, 'BK': 467.0, 'QN': 302.0} (347 usable sales of 1218 fetched)
-zoning radar: 914 lots inside rezonings, 89 blocks with upzonings
+zoning radar: 5007 lots inside rezonings, 84 blocks with upzonings
 PLUTO 1307 parcels fetched
 excluded 507 non-acquirable owners; underwrote 732
+  ACRIS legals boro 2 chunk failed: HTTP Error 500: Server Error
   ACRIS master chunk failed: HTTP Error 503: Service Unavailable
   ACRIS master chunk failed: HTTP Error 503: Service Unavailable
-  ACRIS master chunk failed: HTTP Error 503: Service Unavailable
-  ACRIS: 172 motivated (178 free-and-clear), 274 with tenure
-  streets: 317 resolved · wide 50 · 33 re-underwritten at wide-street FAR
-  ECB chunk failed: HTTP Error 503: Service Unavailable
-  ECB chunk failed: HTTP Error 503: Service Unavailable
-  diligence: DOB 132 lots w/ violations · ECB 80 · lien sale 22 · DEC sites 39692
+  ACRIS parties chunk failed: HTTP Error 503: Service Unavailable
+  ACRIS parties chunk failed: HTTP Error 503: Service Unavailable
+  ACRIS: 89 motivated (92 free-and-clear), 162 with tenure
+  streets: 301 resolved · wide 50 · 33 re-underwritten at wide-street FAR
+  DOB violations chunk failed: HTTP Error 500: Server Error
+  diligence: DOB 114 lots w/ violations · ECB 118 · lien sale 22 · DEC sites 39692
   diligence: 57 lots with red flags, 23 flipped to pass, 22 on the lien sale list
-qualified 732 | actionable 273 (offer 220 / negotiate 53) | program 251 | pass 63 | rfp 145 | mailing 137 | new 0 | emitted 340
+qualified 732 | actionable 273 (offer 220 / negotiate 53) | program 251 | pass 63 | rfp 145 | mailing 0 | new 0 | emitted 340
