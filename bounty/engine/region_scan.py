@@ -250,9 +250,11 @@ def scan_westchester(state):
                 break
             try:
                 pr = req(url, {"objectIds": ",".join(map(str, ids[i:i + 250])),
-                               "outFields": "PRINTKEY,PROPADDRESS,PROPERTYCLASS,SHAPE.AREA,OWNERNAME,OWNERADDRESS,OWNERCITY,OWNERSTATE,OWNERZIP",
+                               "outFields": "*",  # some municipal layers have no owner fields; a named list fails there
                                "returnGeometry": "true", "outSR": "4326", "maxAllowableOffset": "0.0001", "f": "json"},
                          timeout=60, tries=2)
+                if pr.get("error"):
+                    raise RuntimeError(pr["error"].get("message"))
                 fails = 0
             except Exception as e:
                 fails += 1
