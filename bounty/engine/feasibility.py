@@ -112,6 +112,10 @@ def yonkers_facts(site):
         f["lots_by_area"] = lot // min_a
         f["lots_by_frontage"] = (fr // min_w) if fr is not None else None
         f["lots_allowed"] = min(f["lots_by_area"], f["lots_by_frontage"]) if fr is not None else None
+        if f["lots_allowed"] == 0:
+            f["lots_allowed"] = 1
+            f["existing_lot_note"] = ("Street frontage is below the width one new lot needs, so the existing lot is nonconforming; "
+                                      "whether it is buildable as a preexisting lot (Yonkers 43-33) must be confirmed with the Building Department")
     elif zone in rule["multifamily"]:
         mf = rule["multifamily"][zone]
         fa = round(lot * mf["far"])
