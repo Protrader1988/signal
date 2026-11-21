@@ -140,8 +140,10 @@ def num(v):
 def sheet_hits():
     cfg = json.load(open(os.path.join(DATA, "hunter_config.json"))) if os.path.exists(os.path.join(DATA, "hunter_config.json")) else {}
     hits = []
-    if cfg.get("muse_csv"):
-        for r in fetch_csv(cfg["muse_csv"]):
+    inbox = os.path.join(ROOT, "inbox", "listings.csv")
+    rows_local = list(csv.DictReader(open(inbox, encoding="utf-8"))) if os.path.exists(inbox) else []
+    for r in rows_local + (fetch_csv(cfg["muse_csv"]) if cfg.get("muse_csv") else []):
+        if True:
             if r.get("address") and str(r.get("url", "")).startswith("http"):
                 hits.append({"address": r["address"].strip(), "town": (r.get("town") or "").strip(), "state": (r.get("state") or "").strip().upper(),
                              "price": num(r.get("price")), "lot_sf": num(r.get("lot_sf")), "zoning": r.get("zoning") or None,
@@ -161,7 +163,7 @@ def sheet_hits():
             hits.append({"address": m.group(1).strip(), "town": (m.group(2) or "").strip(), "state": (m.group(3) or "").upper(),
                          "price": price, "url": url, "source": src.group(1).title() if src else "alert email",
                          "updated": r.get("received"), "headline": (r.get("subject") or "")[:90], "via": "saved-search alert"})
-    return hits, bool(cfg)
+    return hits, bool(cfg.get("muse_csv") or cfg.get("alerts_csv") or rows_local)
 
 
 def main():
@@ -198,7 +200,7 @@ def main():
     n_sheet = sum(add(h, "sheet") for h in sh)
     status["sheet"] = {"configured": has_cfg, "rows": len(sh), "new": n_sheet}
     added += n_sheet
-    status["engine"] = "Google Sheet (Muse + alert emails)" if has_cfg else None
+    status["engine"] = "BOUNTY inbox (Muse + alert emails)" if has_cfg else None
     print("sheet:", status["sheet"])
     search_on = os.environ.get("HUNTER_SEARCH", "0") == "1"
     for area, juris, boro in (AREAS if search_on else []):

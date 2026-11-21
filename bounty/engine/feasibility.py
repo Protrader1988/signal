@@ -138,22 +138,24 @@ ZCOLS = ["id", "date", "address", "town", "parcel_id", "lot_sf", "frontage_ft", 
 
 def muse_checks():
     """Independent zoning checks written by the owner's Muse agent into the 'zoning' tab of the BOUNTY Listings sheet."""
+    raws = []
+    local = os.path.join(ROOT, "inbox", "zoning.csv")
+    if os.path.exists(local):
+        raws.append(open(local, encoding="utf-8").read())
     try:
-        cfg = json.load(open(os.path.join(DATA, "hunter_config.json")))
+        url = json.load(open(os.path.join(DATA, "hunter_config.json"))).get("zoning_csv")
     except Exception:
-        return {}
-    url = cfg.get("zoning_csv")
-    if not url:
-        return {}
-    try:
-        raw = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read().decode("utf-8", "ignore")
-    except Exception as e:
-        print("zoning tab fetch failed:", e)
-        return {}
+        url = None
+    if url:
+        try:
+            raws.append(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read().decode("utf-8", "ignore"))
+        except Exception as e:
+            print("zoning tab fetch failed:", e)
     out = {}
-    for r in csv.DictReader(io.StringIO(raw)):
-        if r.get("id"):
-            out[r["id"].strip()] = {k: (v or "").strip() for k, v in r.items() if k}
+    for raw in raws:
+        for r in csv.DictReader(io.StringIO(raw)):
+            if r.get("id"):
+                out[r["id"].strip()] = {k: (v or "").strip() for k, v in r.items() if k}
     return out
 
 
