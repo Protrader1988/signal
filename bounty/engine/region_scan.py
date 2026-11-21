@@ -374,7 +374,7 @@ def scan_fairfield():
             if not use:  # some towns submit only the use code: fall back to code / zone
                 code = str(a.get("State_Use") or "")
                 if re.match(r"^(3|4)\d\d", code) or re.match(r"^(I|IP|LI|M|GI|IG)\b|^(I|M)-", zone0):
-                    use = "Commercial/industrial (use code %s)" % code
+                    use = ("Commercial/industrial (use code %s)" % code) if code else ("Industrial/commercial zone %s (no use code)" % zone0)
             if not CT_USE_KEEP.search(use) or PUBLIC.search(own):
                 continue
             acres = a.get("Land_Acres") or 0
