@@ -247,6 +247,8 @@
     <a class="fkey" href="#brief"><b>F1</b>DESK BRIEF</a>
     <a class="fkey" href="#board"><b>F2</b>NYC BOARD</a>
     <a class="fkey" href="#suburbs"><b>F3</b>NY SUBURBS</a>
+    <a class="fkey" href="#memos"><b>F2+</b>MEMOS</a>
+    <a class="fkey" href="#letters"><b>F2++</b>LETTERS</a>
     <a class="fkey" href="#hidden"><b>F3+</b>HIDDEN POTENTIAL</a>
     <a class="fkey" href="#rezone"><b>F3++</b>NYC UPZONED</a>
     <a class="fkey" href="#regional"><b>F3+++</b>REGIONAL SCAN</a>
@@ -298,6 +300,23 @@
     <div class="card">
       <div class="card-head"><span class="code">NYS</span><span class="t">Development-shaped parcels</span><span class="expo" id="subMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search" oninput="__bq('subTbl',this.value)"><button class="expbtn" onclick="exportBoard('subs')">⬇ Outreach CSV</button></div>
       <div id="subTbl"><div class="loading">loading suburban screens…</div></div>
+    </div>
+  </section>
+
+  <section id="memos">
+    <div class="eyebrow"><span class="no">02+</span><h2>Feasibility Memos</h2>
+      <span class="hint">land-use attorney + architect read on every listed site and the best off-market targets</span></div>
+    <div class="subnote"><span class="badge b-mkt">Facts, then memo</span> Parcel facts and zoning math come from official GIS and the zoning text (NYC ZR 23-22, Yonkers Tables 43-3/43-4), street frontage measured edge by edge, approvals with their public sources. The memo is written from those facts only; anything not verified is listed under diligence. <b class="warn">A memo is a screening opinion, not a legal opinion: confirm with counsel and the municipality before an offer.</b></div>
+    <div id="memoList"><div class="loading">loading…</div></div>
+  </section>
+
+  <section id="letters">
+    <div class="eyebrow"><span class="no">02++</span><h2>Letter List</h2>
+      <span class="hint">off-market owners with the biggest zoning upside, all regions, with mailing addresses</span></div>
+    <div class="subnote"><span class="badge b-prog">Off market</span> Ranked by an upside score (buildable units, vacant or parking land, transit, rezoned industrial, redevelopment areas, 8-30g towns; institutional owners pushed down). NYC mailing addresses come from the latest deed in ACRIS. <a href="../bounty/data/letters.csv" download>Download the mail-merge CSV</a>.</div>
+    <div class="card">
+      <div class="card-head"><span class="code">MAIL</span><span class="t">Owners to contact</span><span class="expo" id="lettersMeta"></span><input class="searchbox" style="min-width:170px" placeholder="⌕ search (town, region, owner)" oninput="__bq('lettersTbl',this.value)"></div>
+      <div id="lettersTbl"><div class="loading">loading…</div></div>
     </div>
   </section>
 
@@ -971,9 +990,41 @@ function onePager(i){
   try{
     const [deals,briefs,progs,subs,pb,ct,nj,radar,listings,hidden]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null),j('hidden_potential.json').catch(()=>null)]);
     const rezone=await j('nyc_rezone.json').catch(()=>null);
+    const [feas,letters]=await Promise.all([j('feasibility.json').catch(()=>null),j('letters.json').catch(()=>null)]);
     const [wch,ffd,nnj]=await Promise.all([j('westchester_all.json').catch(()=>null),j('ct_fairfield.json').catch(()=>null),j('nj_north.json').catch(()=>null)]);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
 
+    // feasibility memos
+    try{ const box=$('memoList'); if(feas&&feas.memos&&feas.memos.length){
+      const esc=t=>String(t==null?'':t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+      const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join('');
+      box.innerHTML=feas.memos.map(m=>{const f=m.facts||{},p=f.parcel||{},mm=m.memo||{},ap=f.approval||{};
+        const sc=Object.entries(f.scenarios_units||{}).map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td><td>${esc((f.ask_per_unit||{})[k]||'')}</td></tr>`).join('');
+        return `<details class="card" style="padding:12px 16px;margin:10px 0"><summary style="cursor:pointer"><b>${esc(m.address)}</b>, ${esc(m.muni)} <span class="neu" style="font-size:12px">· ${m.ask?usd(m.ask):'off market'} · ${esc(m.status||'')}</span><br><span style="font-size:13px">${esc(mm.verdict||'Facts compiled; memo pending.')}</span></summary>
+        <div style="font-size:13px;line-height:1.5;margin-top:8px">
+        ${sc?`<table class="mono" style="font-size:12px;margin:6px 0"><tr><th style="text-align:left">Scenario</th><th style="text-align:left">Units</th><th style="text-align:left">Ask per unit</th></tr>${sc}</table>`:''}
+        ${p.far_rule||p.rule?`<p><b>Zoning:</b> ${esc(p.far_rule||p.rule)}${p.lot_sf?` · lot ${Number(p.lot_sf).toLocaleString()} sf`:''}${p.street_frontage_ft!=null?` · street frontage ${p.street_frontage_ft} ft`:''}${p.frontage_ft?` · frontage ${p.frontage_ft} ft`:''}${p.lot_discrepancy?` · <span class="warn">${esc(p.lot_discrepancy)}</span>`:''}</p>`:''}
+        ${ap.status?`<p><b>Approval:</b> ${esc(ap.status)} · ${esc(ap.body||'')} · ${esc(ap.date||'')}. ${esc(ap.detail||'')} ${(ap.sources||[]).map((u,i)=>`<a href="${u}" target="_blank" rel="noopener">[${i+1}]</a>`).join(' ')}</p>`:''}
+        ${mm.as_of_right?`<p><b>As of right:</b> ${esc(mm.as_of_right)}</p>`:''}
+        ${mm.approval_path?`<p><b>Approval path:</b> ${esc(mm.approval_path)}</p>`:''}
+        ${mm.test_fit?`<p><b>Test fit:</b> ${esc(mm.test_fit)}</p>`:''}
+        ${mm.value?`<p><b>Value:</b> ${esc(mm.value)}</p>`:''}
+        ${(mm.legal_issues||[]).length?`<p><b>Legal issues</b></p><ul>${li(mm.legal_issues)}</ul>`:''}
+        ${(mm.diligence||f.issues||[]).length?`<p><b>Before an offer</b></p><ul>${li(mm.diligence||f.issues)}</ul>`:''}
+        ${mm.letter_angle?`<p><b>Owner approach:</b> ${esc(mm.letter_angle)}</p>`:''}
+        </div></details>`;}).join('');
+    } else box.innerHTML='<div class="empty">Memos appear after the next memo run.</div>'; }catch(e){console.warn('memos',e)}
+    // letter list
+    try{ if(letters&&letters.rows){ const rows=letters.rows; window.__D.letters=rows;
+      $('lettersMeta').innerHTML=`<span class="mono">${letters.total} owners · ${Object.entries(letters.by_region||{}).map(([k,v])=>k+' '+v).join(' · ')}</span>`;
+      buildBoard('lettersTbl',rows,[
+        {key:'score',label:'Score',num:1,sort:x=>x.score,get:x=>x.score,html:x=>`<span class="em">${x.score}</span>`},
+        {key:'address',label:'Site',get:x=>x.address+' '+x.town+' '+x.region,html:x=>`<span class="chip">${x.address}</span><br><span class="mono" style="font-size:10px;color:var(--dim)">${x.town} · ${x.region}</span>`},
+        {key:'zone',label:'Zone',get:x=>x.zone,style:'font-size:11px'},
+        {key:'upside',label:'Upside',get:x=>x.upside,html:x=>`${x.upside||''}<br><span class="neu" style="font-size:10px">${(x.tags||[]).join(' · ')}</span>`},
+        {key:'owner',label:'Owner and mailing',get:x=>(x.deed_owner||x.owner||'')+' '+(x.mailing||''),html:x=>`<span style="font-size:11px">${x.deed_owner||x.owner||'—'}</span><br><span class="neu" style="font-size:10px">${x.mailing||'mailing address: check tax bill'}</span>`},
+      ].concat([pipeCol('letters')]),{q:'',key:'score',dir:-1,region:'letters'})();
+    } else $('lettersTbl').innerHTML='<div class="empty">Appears after the next memo run.</div>'; }catch(e){console.warn('letters',e)}
     // regional zoning scan
     try{
       const tg2=x=>(x.tags||[]).map(t=>`<span class="badge ${t==='TRANSIT'?'b-mkt':'b-prog'}" style="font-size:9px">${t}</span>`).join(' ')+(x.station?`<br><span class="neu" style="font-size:10px">${x.station} · ${x.station_mi} mi</span>`:'');

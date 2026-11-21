@@ -41,9 +41,9 @@ def gemini(key, prompt):
                 text = "".join(p.get("text", "") for p in j["candidates"][0]["content"]["parts"])
                 return text, m
             except urllib.error.HTTPError as e:
-                try: body = e.read().decode()[:300]
-                except Exception: body = ""
-                print(f"{m} attempt {attempt}: HTTP {e.code} {body}"); last = e
+                try: err = e.read().decode()[:300]
+                except Exception: err = ""
+                print(f"{m} attempt {attempt}: HTTP {e.code} {err}"); last = e
                 if e.code == 429 and attempt < 3: time.sleep(70 * attempt); continue
                 break
             except Exception as e:

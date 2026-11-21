@@ -1,0 +1,50 @@
+name: bounty-memos
+
+# Feasibility memos for listed and top off-market sites, and the combined letter list.
+# Light job (a few minutes); runs after the daily scan and whenever its inputs change.
+on:
+  schedule:
+    - cron: "40 12 * * 1-5"
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "bounty/engine/feasibility.py"
+      - "bounty/engine/letters.py"
+      - "bounty/data/feasibility_sites.json"
+      - "bounty/data/onmarket_watch.json"
+
+concurrency:
+  group: bounty-memos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  memos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Feasibility memos
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python bounty/engine/feasibility.py 2>&1 | tee bounty/data/feasibility_run.log
+      - name: Letter list
+        continue-on-error: true
+        run: python bounty/engine/letters.py 2>&1 | tee bounty/data/letters_run.log
+      - name: Commit data
+        run: |
+          git config user.name "bounty-actions"
+          git config user.email "actions@github.com"
+          git add bounty/data || true
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -q -m "bounty: memos and letters [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
