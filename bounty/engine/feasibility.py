@@ -205,6 +205,37 @@ def write_queue(memos, checks):
                         f.get("listing_url") or "", "yes" if m["id"] in checks else "no"])
 
 
+def inbox(name):
+    p = os.path.join(ROOT, "inbox", name)
+    try:
+        return [{k: (v or "").strip() for k, v in r.items() if k} for r in csv.DictReader(open(p, encoding="utf-8"))]
+    except Exception:
+        return []
+
+
+def local_context(site, district):
+    """Rows Muse collected for this town: verified district rules, board precedents, land comps,
+    new-building rents and sale prices, and pending rezonings or incentives."""
+    town = (site.get("muni") or "").lower().strip()
+    if not town:
+        return {}
+    same = lambda r: (r.get("town") or "").lower().strip() == town
+    d = (district or "").upper().replace(" ", "")
+    rules = [r for r in inbox("rules.csv") if same(r)]
+    match = [r for r in rules if d and (r.get("district") or "").upper().replace(" ", "") in d]
+    out = {}
+    if match:
+        out["district_rules_verified"] = match[:2]
+    if rules and not match:
+        out["town_districts_on_file"] = [r.get("district") for r in rules][:40]
+    for name, key, n in (("precedents.csv", "board_precedents", 8), ("comps.csv", "land_comps", 8),
+                         ("market.csv", "market_rents_and_prices", 10), ("pipeline.csv", "rezonings_and_incentives", 8)):
+        rows = [r for r in inbox(name) if same(r)]
+        if rows:
+            out[key] = rows[-n:]
+    return out
+
+
 def gemini(key, prompt):
     body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
                        "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}}).encode()
@@ -231,7 +262,11 @@ def gemini(key, prompt):
 
 MEMO_PROMPT = """You are a New York / Connecticut land-use attorney working with a registered architect.
 Write a development feasibility memo for the site below for a developer-buyer.
-Use ONLY the FACTS. FACTS may include "independent_check" (a second researcher's reading of the official zoning map and code,
+Use ONLY the FACTS. FACTS may include "local_context": verified district rules for the town (use them for the
+as-of-right math, with the code section), board precedents (what relief boards have actually granted nearby: use them
+to judge what is achievable beyond as-of-right), land comps (price per buildable sf and per unit), new-building rents
+and sale prices (use them to choose the highest and best use: rental, condo, townhouses or subdivision), and pending
+rezonings or incentives. FACTS may include "independent_check" (a second researcher's reading of the official zoning map and code,
 with sources) and "conflicts_with_independent_check": where the two agree, say the point is confirmed; where they conflict,
 say so plainly, do not pick a side, and put the conflict first in "diligence". Do not add approvals, dates, unit counts, FARs, programs, rents or prices that are not in FACTS.
 If something a buyer needs is not in FACTS, put it in "diligence". Plain language, no em dashes, short sentences.
@@ -244,6 +279,7 @@ Return ONLY JSON with these keys:
  "value": land cost per buildable unit at the ask using FACTS, and how that compares across the site's scenarios,
  "diligence": list of the 3-6 specific documents or checks to get before an offer,
  "enablers": what makes more density possible here (overlay, TOD, UAP/MIH, 8-30g, redevelopment plan, special permit, variance), only if in FACTS,
+ "highest_and_best_use": the product and size that maximize value here (rental, condo, townhouses, lots, mixed use), why, and what it depends on; say "not enough data" if FACTS lack rents, prices or comps,
  "letter_angle": one sentence on how to approach the owner if the site is off market (empty if listed).
 FACTS:
 """
@@ -304,6 +340,9 @@ def main():
         if ask:
             facts["ask_per_unit"] = {k: (f"${round(ask / hi):,} to ${round(ask / lo):,}" if lo and lo != hi else (f"${round(ask / hi):,}" if hi else "n/a"))
                                      for k, (lo, hi) in scen.items()}
+        ctx = local_context(s, (facts.get("parcel") or {}).get("zoning") or s.get("zone") or s.get("listing_zoning"))
+        if ctx:
+            facts["local_context"] = ctx
         chk = checks.get(s["id"])
         if chk:
             facts["independent_check"] = {k: v for k, v in chk.items() if v and k not in ("id",)}
