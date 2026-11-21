@@ -21,7 +21,7 @@ DATA = os.path.join(ROOT, "data")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 UA = {"User-Agent": "Mozilla/5.0 (compatible; BountyEngine/1.0)"}
 PLUTO = "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0/query"
-MODELS = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-2.5-flash"]
+MODELS = ["gemini-3.6-flash", "gemini-flash-latest"]
 API = "https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
 GSF, DUF = 900, 680
 MAX_MEMOS = int(os.environ.get("FEAS_MAX_MEMOS", 40))
@@ -140,8 +140,8 @@ def gemini(key, prompt):
             except urllib.error.HTTPError as e:
                 print(f"{m}: HTTP {e.code}")
                 last = e
-                if e.code == 429 and attempt == 1:
-                    time.sleep(40)
+                if e.code in (429, 503) and attempt == 1:
+                    time.sleep(45)
                     continue
                 break
             except Exception as e:

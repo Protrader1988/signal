@@ -137,6 +137,7 @@ def frontage_ft(layer, pk):
     if not feats:
         return None
     ring = feats[0]["geometry"]["rings"][0]
+    sr = (d.get("spatialReference") or {}).get("wkid", 2260)
     total = 0.0
     for i in range(len(ring) - 1):
         (x1, y1), (x2, y2) = ring[i][:2], ring[i + 1][:2]
@@ -151,9 +152,24 @@ def frontage_ft(layer, pk):
             keys = [f["attributes"]["PRINTKEY"] for f in q.get("features", [])]
             if not keys:
                 open_side = True
-        if open_side:
+        if open_side and near_road(mx, my, sr):
             total += L
     return round(total)
+
+
+ROADS = GIS + "/MappingWestchesterCounty_Roads/MapServer/11/query"
+
+
+def near_road(x, y, sr):
+    """True if a mapped road centerline runs within 60 ft of the point (state-plane feet).
+    An open edge with no road nearby is a paper street, railroad, park or water, not frontage."""
+    try:
+        q = post(ROADS, {"geometry": f"{x},{y}", "geometryType": "esriGeometryPoint", "inSR": str(sr),
+                         "distance": "60", "units": "esriSRUnit_Foot", "spatialRel": "esriSpatialRelIntersects",
+                         "returnCountOnly": "true", "f": "json"})
+        return (q.get("count") or 0) > 0
+    except Exception:
+        return True  # cannot tell: count it, and the memo flags frontage for survey
 
 
 def analyze(rule, zone, a, ring):
