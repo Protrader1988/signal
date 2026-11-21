@@ -312,7 +312,10 @@ def scan_westchester(state):
                     units = int(area * far / GSF) if far else (int(area * upsf) if upsf else None)
                     if units is not None and units < 6:
                         continue
-                    row.update(play="apartments", units=units, est_units=(f"~{units}" if units else "per code"), basis=basis)
+                    if cls == "MIX":
+                        basis = "confirm apartments are permitted in this district; " + basis
+                    row.update(play="apartments", units=units,
+                               est_units=(("up to ~%d" % units if cls == "MIX" else "~%d" % units) if units else "per code"), basis=basis)
                     row["tags"].append("MULTIFAMILY ZONE" if cls == "MF" else "MIXED-USE / DOWNTOWN")
                 rows.append(row)
         complete = done >= len(ids)
