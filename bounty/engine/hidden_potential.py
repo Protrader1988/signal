@@ -128,6 +128,34 @@ def load_watch():
         return {}
 
 
+def frontage_ft(layer, pk):
+    """Sum of lot edges that abut no other tax parcel (a street or other right-of-way), in feet.
+    Uses the parcel's native state-plane geometry; tests a point 6 ft outside each edge."""
+    url = PARCELS.format(layer=layer)
+    d = post(url, {"where": f"PRINTKEY='{pk}'", "outFields": "PRINTKEY", "returnGeometry": "true", "f": "json"})
+    feats = d.get("features") or []
+    if not feats:
+        return None
+    ring = feats[0]["geometry"]["rings"][0]
+    total = 0.0
+    for i in range(len(ring) - 1):
+        (x1, y1), (x2, y2) = ring[i][:2], ring[i + 1][:2]
+        L = math.hypot(x2 - x1, y2 - y1)
+        if L < 0.5:
+            continue
+        mx, my, nx, ny = (x1 + x2) / 2, (y1 + y2) / 2, -(y2 - y1) / L, (x2 - x1) / L
+        open_side = False
+        for sgn in (6, -6):
+            q = post(url, {"geometry": f"{mx + nx * sgn},{my + ny * sgn}", "geometryType": "esriGeometryPoint",
+                           "spatialRel": "esriSpatialRelIntersects", "outFields": "PRINTKEY", "returnGeometry": "false", "f": "json"})
+            keys = [f["attributes"]["PRINTKEY"] for f in q.get("features", [])]
+            if not keys:
+                open_side = True
+        if open_side:
+            total += L
+    return round(total)
+
+
 def analyze(rule, zone, a, ring):
     sf = round(a.get("SHAPE.AREA") or 0)
     short, long_ = dims_ft(ring)
@@ -143,7 +171,7 @@ def analyze(rule, zone, a, ring):
         min_a, min_w = rule["subdivide"][zone]
         by_area = sf // min_a
         if short >= 2 * min_w:
-            fit, by_w = "frontage likely works", short // min_w
+            fit, by_w = "lot shape allows it; street frontage not yet measured", short // min_w
         elif long_ >= 2 * min_w:
             fit, by_w = "check which side fronts the street", long_ // min_w
         else:
@@ -225,6 +253,20 @@ def scan(code, rule, watch):
             if not w and (str(r.get("class")) in SKIP_CLASSES_OFF or any(k in own for k in SKIP_OWNERS)):
                 continue
             if w:
+                try:  # listed sites get a real street-frontage measurement
+                    fr = frontage_ft(rule["layer"], pk)
+                except Exception:
+                    fr = None
+                r["frontage_ft"] = fr
+                if fr is not None and r["play"] == "subdivide":
+                    min_a, min_w = rule["subdivide"][zone]
+                    lots = int(min(r["lot_sf"] // min_a, fr // min_w))
+                    r["fit"] = f"{fr} ft of street frontage measured; {min_w} ft needed per lot"
+                    r["lots"], r["units"], r["new_lots"] = max(lots, 1), max(lots, 1), max(lots - 1, 0)
+                    if lots < 2:
+                        r["fit"] = f"1 lot only: {fr} ft of street frontage, {2 * min_w} ft needed for two"
+                elif fr is not None:
+                    r["parking"] = (r.get("parking") or "") + f"; street frontage {fr} ft"
                 r["listing"] = {k: w.get(k) for k in ("price", "status", "url", "checked", "broker", "note")}
                 if w.get("price") and r["units"]:
                     r["price_per_unit"] = round(w["price"] / r["units"])
