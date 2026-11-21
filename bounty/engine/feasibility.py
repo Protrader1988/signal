@@ -13,7 +13,7 @@ Two layers, kept separate on purpose:
 
 Output: bounty/data/feasibility.json
 """
-import hashlib, json, math, os, re, sys, time, traceback, urllib.error, urllib.parse, urllib.request
+import csv, io, hashlib, json, math, os, re, sys, time, traceback, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -131,6 +131,62 @@ def yonkers_facts(site):
     return f
 
 
+ZCOLS = ["id", "date", "address", "town", "parcel_id", "lot_sf", "frontage_ft", "district", "overlays", "multifamily",
+         "far", "density_rule", "max_height", "lot_coverage", "min_lot_area", "min_lot_width", "parking", "affordable_rule",
+         "flood_zone", "constraints", "approvals_found", "enablers", "max_units_estimate", "sources", "confidence"]
+
+
+def muse_checks():
+    """Independent zoning checks written by the owner's Muse agent into the 'zoning' tab of the BOUNTY Listings sheet."""
+    try:
+        cfg = json.load(open(os.path.join(DATA, "hunter_config.json")))
+    except Exception:
+        return {}
+    url = cfg.get("zoning_csv")
+    if not url:
+        return {}
+    try:
+        raw = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read().decode("utf-8", "ignore")
+    except Exception as e:
+        print("zoning tab fetch failed:", e)
+        return {}
+    out = {}
+    for r in csv.DictReader(io.StringIO(raw)):
+        if r.get("id"):
+            out[r["id"].strip()] = {k: (v or "").strip() for k, v in r.items() if k}
+    return out
+
+
+def nums(v):
+    m = re.findall(r"\d[\d,]*\.?\d*", str(v or ""))
+    return [float(x.replace(",", "")) for x in m]
+
+
+def compare(ours, theirs):
+    """Disagreements between BOUNTY's facts and Muse's independent check."""
+    out = []
+    p = ours.get("parcel") or {}
+    lot_o, lot_t = p.get("lot_sf"), nums(theirs.get("lot_sf"))
+    if lot_o and lot_t and abs(lot_t[0] - lot_o) > 0.1 * lot_o:
+        out.append(f"Lot size: BOUNTY {int(lot_o):,} sf vs Muse {int(lot_t[0]):,} sf")
+    fr_o = p.get("street_frontage_ft") or p.get("frontage_ft")
+    fr_t = nums(theirs.get("frontage_ft"))
+    if fr_o and fr_t and abs(fr_t[0] - fr_o) > max(10, 0.15 * fr_o):
+        out.append(f"Street frontage: BOUNTY {int(fr_o)} ft vs Muse {int(fr_t[0])} ft")
+    z_o = (p.get("zoning") or ours.get("zone") or "").upper().replace(" ", "")
+    z_t = (theirs.get("district") or "").upper().replace(" ", "")
+    if z_o and z_t and z_o.split("/")[0][:4] not in z_t and z_t[:4] not in z_o:
+        out.append(f"District: BOUNTY {p.get('zoning') or ours.get('zone')} vs Muse {theirs.get('district')}")
+    sc = ours.get("scenarios_units") or {}
+    hi = max([n for v in sc.values() for n in nums(v)] or [0])
+    mu = nums(theirs.get("max_units_estimate"))
+    if hi and mu and (mu[0] > hi * 1.3 or mu[0] < hi * 0.6):
+        out.append(f"Units: BOUNTY up to {int(hi)} vs Muse {int(mu[0])}")
+    if re.search(r"\bno\b|not permitted|prohibited", theirs.get("multifamily", ""), re.I) and hi:
+        out.append("Muse reports multifamily is not permitted in this district")
+    return out
+
+
 def gemini(key, prompt):
     body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
                        "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}}).encode()
@@ -157,7 +213,9 @@ def gemini(key, prompt):
 
 MEMO_PROMPT = """You are a New York / Connecticut land-use attorney working with a registered architect.
 Write a development feasibility memo for the site below for a developer-buyer.
-Use ONLY the FACTS. Do not add approvals, dates, unit counts, FARs, programs, rents or prices that are not in FACTS.
+Use ONLY the FACTS. FACTS may include "independent_check" (a second researcher's reading of the official zoning map and code,
+with sources) and "conflicts_with_independent_check": where the two agree, say the point is confirmed; where they conflict,
+say so plainly, do not pick a side, and put the conflict first in "diligence". Do not add approvals, dates, unit counts, FARs, programs, rents or prices that are not in FACTS.
 If something a buyer needs is not in FACTS, put it in "diligence". Plain language, no em dashes, short sentences.
 Return ONLY JSON with these keys:
  "verdict": one sentence: what can realistically be built and whether it is worth pursuing at the ask,
@@ -167,6 +225,7 @@ Return ONLY JSON with these keys:
  "test_fit": architect's notes: building envelope, likely unit count range, parking, what limits density first,
  "value": land cost per buildable unit at the ask using FACTS, and how that compares across the site's scenarios,
  "diligence": list of the 3-6 specific documents or checks to get before an offer,
+ "enablers": what makes more density possible here (overlay, TOD, UAP/MIH, 8-30g, redevelopment plan, special permit, variance), only if in FACTS,
  "letter_angle": one sentence on how to approach the owner if the site is off market (empty if listed).
 FACTS:
 """
@@ -198,6 +257,7 @@ def main():
                       "ask": w.get("price"), "status": w.get("status"), "issues": [w["note"]] if w.get("note") else []})
     sites += offmarket_targets(int(os.environ.get("FEAS_OFFMARKET", 12)))
     prev = {m["id"]: m for m in (load("feasibility.json", {}) or {}).get("memos", [])}
+    checks = muse_checks()
     memos, n_ai = [], 0
     for s in sites:
         facts = {k: v for k, v in s.items() if k not in ("id",)}
@@ -225,6 +285,10 @@ def main():
         if ask:
             facts["ask_per_unit"] = {k: (f"${round(ask / hi):,} to ${round(ask / lo):,}" if lo and lo != hi else (f"${round(ask / hi):,}" if hi else "n/a"))
                                      for k, (lo, hi) in scen.items()}
+        chk = checks.get(s["id"])
+        if chk:
+            facts["independent_check"] = {k: v for k, v in chk.items() if v and k not in ("id",)}
+            facts["conflicts_with_independent_check"] = compare(facts, chk)
         fp = json.dumps(facts, sort_keys=True, default=str)
         old = prev.get(s["id"])
         fh = hashlib.sha1(fp.encode()).hexdigest()[:12]
@@ -242,6 +306,17 @@ def main():
                       "status": s.get("status"), "ask": ask, "facts": facts, "facts_hash": fh,
                       "memo": memo, "checked_utc": datetime.now(timezone.utc).isoformat()})
         print(s["id"], "ok" if memo else "facts only")
+    with open(os.path.join(DATA, "zoning_queue.csv"), "w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["id", "address", "town", "state", "parcel_id", "bounty_district", "bounty_lot_sf", "bounty_frontage_ft",
+                    "bounty_units", "listing_url", "already_checked"])
+        for m in memos:
+            p = m["facts"].get("parcel") or {}
+            w.writerow([m["id"], m["address"], m.get("muni"), m.get("state"), p.get("bbl") or p.get("printkey") or m["facts"].get("printkey") or "",
+                        p.get("zoning") or m["facts"].get("zone") or "", p.get("lot_sf") or m["facts"].get("lot_sf") or "",
+                        p.get("street_frontage_ft") or p.get("frontage_ft") or "",
+                        "; ".join(f"{k}: {v}" for k, v in (m["facts"].get("scenarios_units") or {}).items()),
+                        m["facts"].get("listing_url") or "", "yes" if m["id"] in checks else "no"])
     json.dump({"generated_utc": datetime.now(timezone.utc).isoformat(), "memos": memos,
                "method": __doc__.strip()}, open(os.path.join(DATA, "feasibility.json"), "w"), indent=1)
 
