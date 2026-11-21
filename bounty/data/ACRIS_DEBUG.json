@@ -1,75 +1,19 @@
 {
   "stages": {
-    "legals_sample": {
-      "document_id": [
-        "str",
-        "2026102101018001"
-      ],
-      "record_type": [
-        "str",
-        "L"
-      ],
-      "borough": [
-        "str",
-        "3"
-      ],
-      "block": [
-        "str",
-        "7430"
-      ],
-      "lot": [
-        "str",
-        "53"
-      ],
-      "easement": [
-        "str",
-        "N"
-      ],
-      "partial_lot": [
-        "str",
-        "E"
-      ],
-      "air_rights": [
-        "str",
-        "N"
-      ],
-      "subterranean_rights": [
-        "str",
-        "N"
-      ],
-      "property_type": [
-        "str",
-        "CR"
-      ],
-      "street_number": [
-        "str",
-        "2803"
-      ],
-      "street_name": [
-        "str",
-        "CONEY ISLAND AVENUE"
-      ],
-      "good_through_date": [
-        "str",
-        "2026-10-31T00:00:00.000"
-      ]
-    },
+    "legals_probe_error": "The read operation timed out",
     "legals_types": {
-      "borough": false,
-      "block": false,
-      "lot": false
+      "borough": true,
+      "block": true,
+      "lot": true
     },
-    "legals_errors": [
-      "The read operation timed out"
-    ],
-    "legals_rows": 150000,
-    "parcels_matched": 273,
-    "doc_ids": 1926,
-    "master_rows": 1926,
-    "grantee_rows": 191,
-    "owner_mailing_hits": 219,
-    "motivated": 136,
-    "free_and_clear": 145,
-    "with_tenure": 219
+    "legals_rows": 200000,
+    "parcels_matched": 340,
+    "doc_ids": 2740,
+    "master_rows": 2620,
+    "grantee_rows": 245,
+    "owner_mailing_hits": 280,
+    "motivated": 171,
+    "free_and_clear": 183,
+    "with_tenure": 280
   }
 }
