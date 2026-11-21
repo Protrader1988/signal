@@ -187,6 +187,22 @@ def compare(ours, theirs):
     return out
 
 
+def write_queue(memos, checks):
+    """Worklist for the independent zoning review (Muse): one row per site, BOUNTY's readings for comparison."""
+    with open(os.path.join(DATA, "zoning_queue.csv"), "w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["id", "address", "town", "state", "parcel_id", "bounty_district", "bounty_lot_sf", "bounty_frontage_ft",
+                    "bounty_units", "listing_url", "already_checked"])
+        for m in memos:
+            f = m.get("facts") or {}
+            p = f.get("parcel") or {}
+            w.writerow([m["id"], m["address"], m.get("muni"), m.get("state"), p.get("bbl") or p.get("printkey") or f.get("printkey") or "",
+                        p.get("zoning") or f.get("zone") or "", p.get("lot_sf") or f.get("lot_sf") or "",
+                        p.get("street_frontage_ft") or p.get("frontage_ft") or "",
+                        "; ".join(f"{k}: {v}" for k, v in (f.get("scenarios_units") or {}).items()),
+                        f.get("listing_url") or "", "yes" if m["id"] in checks else "no"])
+
+
 def gemini(key, prompt):
     body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
                        "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}}).encode()
@@ -258,6 +274,7 @@ def main():
     sites += offmarket_targets(int(os.environ.get("FEAS_OFFMARKET", 12)))
     prev = {m["id"]: m for m in (load("feasibility.json", {}) or {}).get("memos", [])}
     checks = muse_checks()
+    write_queue(list(prev.values()), checks)  # publish the worklist first; refreshed again after the memos
     memos, n_ai = [], 0
     for s in sites:
         facts = {k: v for k, v in s.items() if k not in ("id",)}
@@ -306,7 +323,9 @@ def main():
                       "status": s.get("status"), "ask": ask, "facts": facts, "facts_hash": fh,
                       "memo": memo, "checked_utc": datetime.now(timezone.utc).isoformat()})
         print(s["id"], "ok" if memo else "facts only")
-    with open(os.path.join(DATA, "zoning_queue.csv"), "w", newline="") as fh:
+    write_queue(memos, checks)
+    if False:
+     with open(os.path.join(DATA, "zoning_queue.csv"), "w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["id", "address", "town", "state", "parcel_id", "bounty_district", "bounty_lot_sf", "bounty_frontage_ft",
                     "bounty_units", "listing_url", "already_checked"])
