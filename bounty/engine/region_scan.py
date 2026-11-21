@@ -115,7 +115,7 @@ def nearest_rail(lat, lon):
 
 PUBLIC = re.compile(r"\b(CITY OF|TOWN OF|VILLAGE OF|COUNTY OF|STATE OF|BOARD OF ED|SCHOOL DIST|HOUSING AUTH|UNITED STATES|"
                     r"METRO-NORTH|MTA\b|NJ TRANSIT|PORT AUTHORITY|OWNERS CORP|CONDOMINIUM|CO-?OP\b|CEMETERY|CHURCH|"
-                    r"DIOCESE|SYNAGOGUE|TEMPLE|PARISH|STATE OF NEW JERSEY|STATE OF CONNECTICUT)", re.I)
+                    r"DIOCESE|SYNAGOGUE|TEMPLE|PARISH|STATE OF NEW JERSEY|STATE OF CONNECTICUT|LAND TRUST|CONSERVANCY|AUDUBON|NATURE)", re.I)
 
 # ---------------------------------------------------------------- WESTCHESTER
 WGIS = "https://giswww.westchestergov.com/ArcGIS/rest/services"
@@ -375,7 +375,7 @@ def scan_fairfield():
                 code = str(a.get("State_Use") or "")
                 if re.match(r"^(3|4)\d\d", code) or re.match(r"^(I|IP|LI|M|GI|IG)\b|^(I|M)-", zone0):
                     use = ("Commercial/industrial (use code %s)" % code) if code else ("Industrial/commercial zone %s (no use code)" % zone0)
-            if not CT_USE_KEEP.search(use) or PUBLIC.search(own):
+            if not CT_USE_KEEP.search(use) or PUBLIC.search(own) or re.search(r"WETLAND|OPEN SPACE|CONSERV", use, re.I):
                 continue
             acres = a.get("Land_Acres") or 0
             bldg = a.get("Assessed_Building") or 0
