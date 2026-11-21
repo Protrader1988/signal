@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-21T16:47:05.466953+00:00",
+ "generated_utc": "2026-11-21T17:24:35.837758+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -38,30 +38,60 @@
     },
     "ask_per_unit": {
      "approved": "$31,667"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "15 N Main St",
+     "town": "Port Chester",
+     "parcel_id": "142.31-1-19",
+     "lot_sf": "2151",
+     "district": "CD-5 Urban Center",
+     "multifamily": "as of right",
+     "far": "Not regulated (form-based CD-5; no FAR in Table 345.405.A-6)",
+     "density_rule": "No units/acre density rule and no min lot area in CD-5; units capped by 6-story height, 100% impervious coverage and massing",
+     "max_height": "6 stories max (2 min); no ft limit stated - ceiling caps (ground floor 11-25 ft, upper residential 9-11 ft) imply approx 80 ft max",
+     "lot_coverage": "100% impervious max (no separate building coverage stated)",
+     "min_lot_area": "Not regulated",
+     "min_lot_width": "18 ft",
+     "parking": "1/unit in transit-oriented parking district plus 0.25 per bedroom over 1 (Table 345.405.N-1); lots <=12000 sf may buy out up to 100% at $30000/space per 345-405N(1)(h)",
+     "affordable_rule": "At least 10% Affordable AFFH units per Sec 345-405.U (60% AMI per Village approvals applying that section) plus GEIS fair share mitigation payments for CD-5 site plans",
+     "constraints": "Front 0 ft min/15 ft max, side 0 ft min/24 ft max per side, rear not regulated - setbacks do not shrink footprint; tiny 2151 sf lot is binding constraint with 6-story cap; frontage_ft not stated in official source consulted - gap; flood zone not retrieved from FEMA NFHL via text fetch - gap, verify on FEMA MSC before closing; lot_sf 2151 taken from queue/listing and not independently confirmed on Town of Rye tax map - gap; final unit count differs by source (AKRF Apr 2022 review and Village 2023 DRI: 16 units; Board of Trustees 2025-2026 extension records: 15 units)",
+     "approvals_found": "Site plan approved by Planning Commission Apr 25 2022 for 6-story mixed-use (AKRF Village review Apr 22 2022: 16 units - 5 studio/11 1BR - plus 691 sf retail, only 4 parking spaces required with reductions); approval extended by Local Law I-14 of 2025 and again to Apr 25 2027; 2009 ZBA Case 1470 and Planning Commission site plan/special exception for predecessor 4-story building on same parcel (Sec 142.31 Block 1 Lot 19)",
+     "enablers": "12+ units: yes - multifamily/mixed-use redevelopment as of right in CD-5 (Multifamily, Townhouse, Mixed Use and Mid-Rise building types permitted), proven by the approved 15-16 unit scheme on this lot; winning path: multifamily redevelopment (approved plans); market-rate: no affordability mandate beyond the 10% AFFH set-aside and fair share mitigation, so a conventional market-rate mixed-use deal is the natural read and is what was approved; affordable upside: mandatory 10% AFFH is a set-aside not a bonus - no as-of-right density/height bonus found in CD-5, but small-lot parking buy-out (up to 100% at $30000/space) and counting of public/off-site parking materially cut cost, and Port Chester IDA PILOTs on nearby North Main projects show a PILOT route; program family: NY HCR, Westchester County housing funds, federal LIHTC (scale is small for competitive LIHTC); rezoning unlikely - CD-5 already allows 6 stories as of right, the Village CD-5/CD-6 committee direction discussed in 2026 was to DOWNZONE parts of CD-6/CD-6T toward CD-5, and no site-specific upzoning application or plan provision for this lot was found; deal type: either - market-rate with mandatory 10% AFFH is proven, affordable-program stacking is possible but scale-limited",
+     "max_units_estimate": "Path 1 multifamily redevelopment: footprint = 2151 sf x 100% impervious = 2151 sf (front 0/side 0/rear NR setbacks do not reduce it); floors = 6 max; FAR not regulated so gross = footprint x floors = 2151 x 6 = 12906 sf; ground floor retail/lobby leaves 5 residential floors = 10755 sf gross, at approx 800 sf gross/unit arithmetic = approx 13-16 units - approved scheme is 15-16 units, capped by height (6 stories) and tiny footprint, NOT parking (buy-out/public parking; only 4 spaces required for approved scheme) and NOT density (none). Path 2 subdivision: lot width min 18 ft and lot area not regulated, but frontage is unverified and no official source shows the 36+ ft needed for two 18 ft lots - yields 1 lot, no added units. Path 3 second home/added unit: House and Duplex building types are NOT permitted in CD-5 and accessory buildings are limited to 2 stories in the third lot layer - 0 separate units; added units come only via Path 1. Headline lawful max: ~15 units (approved; massing ceiling ~16). No rezoning scenario added - rezoning assessed unlikely.",
+     "sources": "https://ecode360.com/45360926 https://www.portchesterny.gov/AgendaCenter/ViewFile/Item/149?fileID=605 https://www.portchesterny.gov/AgendaCenter/ViewFile/ArchivedAgenda/_04212025-1849 https://portchesterny.gov/DocumentCenter/View/1573/Port-Chester-2023-DRI-Draft?bidId= https://po0100.zoninghub.com/zoningmap.aspx?district=CD-5",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": [
+     "Units: BOUNTY up to 15 vs Muse 1"
+    ]
    },
-   "facts_hash": "1103758367c3",
+   "facts_hash": "eaadbd9e13c8",
    "memo": {
-    "verdict": "The approved 15-unit mixed-use project is worth pursuing at the $475,000 ask price, subject to verifying the unknown in-lieu fee amounts and confirming the approval timeline.",
-    "as_of_right": "The provided facts do not detail as-of-right FAR, height, or density limits for the CD-5 zone, providing only the approved 15-unit site plan details for the 2,151 square foot lot.",
-    "approval_path": "Existing approval. The project has an approved site plan for 15 units, offering low entitlement risk and a shorter timeline if the broker's reported April 2027 extension is confirmed.",
+    "verdict": "The site is worth pursuing at the $475,000 ask ($31,667 per unit) for a 6-story mixed-use building if the approval extension through April 2027 and required in-lieu fee amounts are verified.",
+    "as_of_right": "Multifamily and mixed-use are allowed as-of-right in the CD-5 district up to 6 stories (approx 80 ft max height) with 100% max impervious coverage and no FAR cap per Table 345.405.A-6. A 2,151 sf footprint across 6 floors yields up to 12,906 gross sf, allowing an estimated 13 to 16 units as-of-right depending on layout.",
+    "approval_path": "Existing site plan approval. The Planning Commission approved a 6-story mixed-use site plan on April 25, 2022, extended through April 25, 2027 by Local Law I-14 of 2025. Time and entitlement risk are low if written confirmation is obtained.",
     "legal_issues": [
-     "Approval extension through April 2027 must be formally confirmed in writing with the municipality.",
-     "The required buyer-paid in-lieu fee amount is not stated in the offering memo and remains an unknown liability.",
-     "Lack of on-site parking on the 2,151 square foot lot requires confirmation of municipal parking compliance."
+     "Written confirmation of the site plan approval extension through April 25, 2027 is required.",
+     "The dollar amount for additional in-lieu fees and GEIS fair share mitigation payments is unstated.",
+     "Mandatory 10% AFFH affordable housing set-aside at 60% AMI applies under Sec 345-405.U.",
+     "Zero on-site parking is provided on a 2,151 sf lot, requiring compliance with the approved 4-space parking reduction or buy-out."
     ],
-    "test_fit": "The approved plans detail a six-story building on a 2,151 square foot lot with ground-floor commercial and 15 apartments (10 one-bedrooms and 5 studios) on floors 2 through 6. Density is constrained by the 2,151 square foot lot size and the total lack of on-site parking.",
-    "value": "The land cost is $31,667 per buildable unit at the $475,000 ask price based on the approved 15-unit scenario, which is the only scenario provided.",
+    "test_fit": "The 2,151 sf footprint and 6-story height cap set a maximum envelope of 12,906 gross sf (ground floor retail/lobby plus 10,755 gross sf residential). Likely unit yield is 15 to 16 units (5 studios and 10 to 11 one-bedrooms). Density is constrained first by the small lot footprint and 6-story height cap, not by FAR or parking.",
+    "value": "Land cost is $31,667 per buildable unit at the $475,000 ask for the approved 15-unit scenario ($29,688 per unit if 16 units are built).",
     "diligence": [
-     "Obtain written confirmation from the Village of Port Chester verifying that approvals run through April 2027.",
-     "Request calculation of the exact in-lieu fees owed by the buyer.",
-     "Review the complete Planning Commission site plan resolution and approved plan set.",
-     "Verify municipal parking regulations regarding zero on-site parking for the lot."
+     "Resolve the unit count conflict between sources (offering memo lists 15 units; AKRF review lists 16 units; prompt conflict notes BOUNTY up to 15 vs Muse 1).",
+     "Obtain written resolution or letter from Port Chester confirming site plan validity through April 25, 2027.",
+     "Calculate the exact total of required GEIS fair share mitigation fees and parking buyout fees.",
+     "Confirm parcel footprint and frontage on official Town of Rye tax maps.",
+     "Check FEMA flood maps to verify flood zone status."
     ],
+    "enablers": "CD-5 zoning allows mixed-use as-of-right, 100% impervious coverage, no FAR limit, and a parking buyout option at $30,000 per space for lots under 12,000 sf under Sec 345-405N(1)(h).",
+    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:08.625595+00:00"
+   "checked_utc": "2026-11-21T16:49:03.267057+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -99,31 +129,38 @@
     },
     "ask_per_unit": {
      "approved": "$20,000"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "439 E Main St",
+     "town": "Bridgeport",
+     "lot_sf": "13068",
+     "frontage_ft": "110",
+     "district": "RX2 Residential-Office Centers",
+     "overlays": "Coastal boundary - Pequonnock River coastal boundary line per City Master Coastal Boundary Map (CAM/coastal site plan review); federal Opportunity Zone claimed in listing (not a zoning overlay)",
+     "multifamily": "as of right",
+     "far": "none stated in 2021 form-based code (derived envelope ratio ~4.3)",
+     "density_rule": "none - no units-per-acre or min lot area per unit; density controlled by building type (General Building Sec 3.50), site coverage and height; principal units 3 min, no max stated",
+     "max_height": "5.5 stories max, 2 min (General Building in RX2, Sec 3.50.6); no ft cap stated - ground story 10-18 ft, upper stories 10-14 ft",
+     "lot_coverage": "85% max site coverage (General Building RX2)",
+     "min_lot_area": "none stated",
+     "min_lot_width": "none stated (lot width in Sec 3.50.4)",
+     "parking": "no minimum - Sec 8.20.1 code establishes no minimum off-street parking; bicycle parking 1 per 2 units for 13+ units (Sec 8.30)",
+     "affordable_rule": "no local inclusionary mandate found in 2021 code for RX2; CT 8-30g set-aside (30% deed-restricted 40 yrs, 15% of all units at 60% median) defines affordable applications generally, but Bridgeport listed exempt (over 10% assisted, 17.44% on DOH 2008 appeals list - current-year list not verified)",
+     "constraints": "Setbacks (General Building RX2): primary build-to 0-25 ft, side 3 ft min, rear 20 ft min, primary streetwall 80% min; coastal (CAM) review applies; flood zone not parcel-verified from FEMA NFHL in this search - city plan shows low elevations (rim ~14-15 ft) by Pequonnock River, verify FIRM panel before closing; parcel_id not retrieved - Vision GIS assessor portal requires interactive query unavailable via text fetch; lot_sf/frontage from city-hosted Nov 2024 site plans (110 ft dimension) consistent with queue 13068 sf but not assessor-verified; 74-unit approval decision letter not located in official sources searched; queue hint IHI does not exist in 2021 code - superseded by RX2",
+     "approvals_found": "City-hosted PZC packet (Mar 2025) contains Nov 13 2024 site improvement plans for 439 East Main St (Beechcrest Management) showing RX2 zoning data - evidence of a filed site/coastal plan, decision letter not found; nearby precedent: Steelpointe Harbor 420-unit mixed-use at 137 East Main St (CT DECD scoping, portal.ct.gov)",
+     "enablers": "12+ units: yes - General Building as of right in RX2 with no FAR, density or parking-minimum cap; winning path: multifamily redevelopment; market-rate: no affordability mandate applies - conventional market-rate deal is the natural read; affordable upside: CHFA 9%/4% LIHTC + CT DOH funds active in Bridgeport and Opportunity Zone location supports equity, but no as-of-right density/height bonus found in code and 8-30g appeal leverage likely unavailable in exempt Bridgeport; rezoning plausible but not needed - MX1 directly across East Main, RX1 adjacent, Plan Bridgeport directs high-density to corridors; deal type: either - market-rate works as of right with no mandate, affordable-program candidate via CHFA LIHTC/DOH if a set-aside is voluntarily deed-restricted",
+     "max_units_estimate": "Multifamily: footprint = min(coverage 85% x 13068 = 11108 sf, setback envelope (110-6) x (118.8-20) = ~10275 sf) = ~10275 sf; floors 5.5; gross = 10275 x 5.5 = ~56500 sf (no FAR limit stated); ~56500 / 800 sf per unit = ~70 units - height (5.5 stories) caps, with setback-reduced footprint. Subdivision: House types not allowed in RX2, so 0 single-family lots; split into 2 General Building lots possible but total envelope unchanged. Second-home: accessory apartments and backyard cottages not allowed for General Building in RX2 - 0 added units. Headline lawful max ~70 units. Rezoning scenario: not quantified - RX2 already clears target",
+     "sources": "https://de84u3xi40u1.cloudfront.net/code.zonebridgeport.com/s3fs-private/pdf/replaced_BPT%20Zoning%202026%20amendments%202024.01-compressed.pdf https://www.BridgeportCT.gov/sites/default/files/2025-03/PZC_Applications_20250331.pdf https://cga.ct.gov/2022/sup/chap_126a.htm https://www.chfa.org/assets/1/16/2022_LIHTC_Awards_Release_final.pdf?11789 https://portal.ct.gov/CEQ/DECD/Scoping-Notice/Steelpointe-Harbor---Mixed-use-Development-Project",
+     "confidence": "low"
+    },
+    "conflicts_with_independent_check": [
+     "District: BOUNTY per Bridgeport zoning map (listing cites IHI) vs Muse RX2 Residential-Office Centers"
+    ]
    },
-   "facts_hash": "8c854137a2b9",
-   "memo": {
-    "verdict": "A five-story building with 74 market-rate apartments and 900 sf of commercial space is approved, making the project worth pursuing at the $1,480,000 ask subject to plan verification.",
-    "as_of_right": "The lot contains 13,068 sf in the IHI zone, but specific as-of-right bulk and density math are not provided in the facts.",
-    "approval_path": "Existing approval. Case 25-10 was approved by the Bridgeport Planning & Zoning Commission on April 28, 2025, which significantly reduces entitlement time and zoning risk.",
-    "legal_issues": [
-     "Parking count and garage design are not public.",
-     "Verification of potential appeals or conditions following the 5-3 PZC approval vote.",
-     "Bridgeport is exempt from 8-30g, making this a market-rate project approval."
-    ],
-    "test_fit": "The approved plans call for a 5-story building with 74 units and 900 sf of commercial space on a 13,068 sf lot. Parking design and count are unknown and limit density analysis.",
-    "value": "At the $1,480,000 ask, the land cost is $20,000 per approved unit across 74 units. The property was previously bought for $645,000 in 2021.",
-    "diligence": [
-     "Bridgeport PZC Case 25-10 final approval resolution and list of conditions.",
-     "Architectural plans showing parking count and garage layout.",
-     "Approved coastal site plan documentation.",
-     "Title commitment and appeal status for the April 28, 2025 decision.",
-     "IHI zoning text to confirm underlying as-of-right bulk standards."
-    ],
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-21T16:20:08.625733+00:00"
+   "facts_hash": "9c98f303d5f3",
+   "memo": null,
+   "checked_utc": "2026-11-21T16:52:20.752744+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -161,31 +198,56 @@
     },
     "ask_per_unit": {
      "approved": "$25,000"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "225 Lordship Blvd",
+     "town": "Stratford",
+     "lot_sf": "206316",
+     "frontage_ft": "360",
+     "district": "LBHZ (Lordship Boulevard Housing Zone)",
+     "overlays": "Coastal Management Area",
+     "multifamily": "special permit",
+     "density_rule": "No density or FAR stated for LBHZ in published code (Sec. 3.3.4 incorporates the site-specific 8-30g regulation by reference; copy only at Planning and Zoning Office); approved LBHZ program is 100 units on 206316 sf = 1 unit per 2063 sf (arithmetic)",
+     "max_height": "No ft limit stated for LBHZ in published code; approved building is 4 stories above ground-floor parking per ARB narrative",
+     "parking": "Multifamily 3+: efficiency/1-BR 1.0/unit; 2-BR 1.5/unit; 3+BR 2.0/unit + 10% guest (Secs. 5.1.5E and 6.8.4); approved plan provides 120 new spaces for 100 units (1.2/unit) plus ground-floor parking; 254 spaces site total",
+     "affordable_rule": "30% set-aside per CGS 8-30g: 30 of 100 units deed-restricted 40 years; 15 units at 60% median income and 15 at 80% per Affordability Plan; general Sec. 5.1.5C 10% protected affordable units for net +8 units is superseded by the LBHZ 30% for this district",
+     "flood_zone": "AE",
+     "constraints": "Setbacks, FAR, lot coverage, min lot area and min lot width for LBHZ are not stated in any published official source - the site-specific LBHZ text is held only at Stratford Town Hall per Sec. 3.3.4; flood mitigation/drainage required in AE floodplain (staff report); parcel_id not retrieved - Vision GIS assessor database is interactive; frontage from recorded deed courses along Lordship Blvd (30.89+86.53+242.33=359.75 ft) plus 513.01 ft on Watson Blvd (corner lot); queue lot_sf of 60113 is NOT confirmed by any official source - official lot is 206316 sf (deed Schedule A: 206313 sf / 4.736 ac; ARB narrative: 206316 sf); FEMA NFHL panel not directly retrieved - AE is per Town staff report; no wetlands or watercourses per ARB narrative; existing buildings disregarded (lot evaluated as if vacant)",
+     "approvals_found": "Section 31 LBHZ text amendment + CA-to-LBHZ map change for this parcel (Planning Commission staff review 2022-03-04); 100-unit 8-30g set-aside development with Affordability Plan dated 2021-11-01 (30 affordable units) and ARB review narrative 2022-01-10; prior 2019 mixed-use approval for a 69-unit building + 120000 sf self-storage on the same lot",
+     "enablers": "12+ units: yes - approved 100-unit multifamily path under site-specific LBHZ; winning path: multifamily redevelopment via adopted text amendment + map change (rezoning already obtained) under CGS 8-30g; market-rate note: 70 of the 100 approved units are market-rate but the market-rate product rides on the LBHZ approval; affordable upside: 8-30g set-aside status in a non-exempt town (6.34% affordable stock) plus CT DOH/CHFA program family - CHFA LIHTC 9%/4%, HTCC, DOH Affordable Housing Program; no density/FAR/height bonus or PILOT stated for LBHZ in an official source; rezoning verdict: rezoning plausible but unnecessary - POCD supports increased density, adjoining districts are MA/MB industrial, site is on arterial CT Route 113 near I-95, and the CA-to-LBHZ rezoning is itself the precedent; deal type: affordable-program candidate - CT CHFA/DOH (LIHTC)",
+     "max_units_estimate": "100 units - Path 1 multifamily (winning): approved LBHZ program 100 units (34 studio + 32 1-BR + 34 2-BR); envelope math from the approved plan only because LBHZ publishes no FAR/coverage/height: net unit area 34x465 + 32x680 + 34x1000-1220 = 71570-79050 sf over 4 residential floors above ground-floor parking = ~17893-19763 sf per floor plate, ~9% of the 206316 sf lot (arithmetic, not a code coverage); implied FAR 0.35-0.38 net (arithmetic, not a code FAR); cap is the site-specific LBHZ/8-30g approval itself, not parking and not a published density rule; Path 2 subdivision: 0 demonstrated - LBHZ applies only to this parcel, no min lot area/width published, and Stratford subdivision rules bar subdividing land subject to inundation (lot is in AE floodplain); Path 3 second home: 0 incremental - accessory apartment is 1 per single-family lot and this is not a single-family lot; Comparison: former CA density of 1 per 3500 sf would give ~59 units; Rezoning scenario: not quantified",
+     "sources": "https://core-docs.s3.amazonaws.com/documents/asset/uploaded_file/3632/Stratford/2768418/Section_31_LBHZ_Text_Amendment_Staff_Report.pdf.pdf https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/3632/Stratford/39c2b0ad-426e-43a0-9f65-67eeeea5f497/Final_Adopted_Zoning_Regulations_2025.pdf?disposition=inline https://gis.vgsi.com/stratfordct/ https://www.chfa.org/developers/tax-credit-program/lihtc/ https://portal.ct.gov/doh/knowledge-base/articles/all-programs/developer-affordable-housing-programs https://ecode360.com/9207602",
+     "confidence": "low"
+    },
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "d4b66dd70759",
+   "facts_hash": "96b3e28c9b33",
    "memo": {
-    "verdict": "A 93,057 square foot mixed-use project with 100 apartments and one commercial space can realistically be built if the reported approval is valid, making it worth pursuing at the $2,500,000 asking price.",
-    "as_of_right": "The facts do not state as-of-right zoning limits or math for the 60,113 square foot lot without the site-specific 8-30g overlay.",
-    "approval_path": "Existing approval via an 8-30g application and LBHZ overlay. Time and risk depend on verifying the unlisted approval date, expiration, and satisfaction of approval conditions.",
+    "verdict": "The site can realistically be developed with the approved 100-unit mixed-use 8-30g project, making it worth pursuing at the $2,500,000 asking price.",
+    "as_of_right": "Published zoning code Section 3.3.4 contains no published density, FAR, height, or setback rules for the LBHZ district because it incorporates site-specific regulations held only at Town Hall. Under the former CA zoning density of 1 unit per 3,500 sq ft, the 206,316 sq ft lot would allow approximately 59 units as-of-right.",
+    "approval_path": "Existing approval / CGS 8-30g. The site has an approved site-specific LBHZ text amendment and map change for a 100-unit 8-30g development, which significantly reduces entitlement time and risk once approval expiration dates are confirmed.",
     "legal_issues": [
-     "Affordability covenant under 8-30g is likely 30 percent for 40 years and must be confirmed.",
-     "Approval date and expiration date are not public and must be verified.",
-     "Approval status currently relies on broker representations."
+     "Affordability covenant requires 30% of units (30 of 100) to be deed-restricted for 40 years under CGS 8-30g (15 units at 60% AMI and 15 units at 80% AMI).",
+     "Approval date and expiration status are not public record and must be verified with Stratford Town Hall.",
+     "Lot size discrepancy exists between the listed 60,113 sq ft figure and the 206,316 sq ft deed lot size.",
+     "Location in an AE flood zone requires flood mitigation and stormwater compliance."
     ],
-    "test_fit": "The envelope allows 93,057 square feet featuring 100 apartments and one commercial unit on a 60,113 square foot lot. Parking limits and density factors are not detailed in the facts.",
-    "value": "At the $2,500,000 ask, the cost is $25,000 per buildable unit based on the 100-unit approved scenario. No other unit scenarios are provided.",
+    "test_fit": "The approved plan includes a 4-story building over ground-floor parking with 100 apartments (34 studios, 32 one-bedrooms, 34 two-bedrooms) totaling 71,570 to 79,050 net sq ft. Floor plates run approximately 17,893 to 19,763 sq ft (~9% lot coverage on 206,316 sq ft). Parking provides 120 new spaces (1.2 per unit) with 254 site total spaces. The site-specific 8-30g approval itself limits density rather than parking or published code FAR.",
+    "value": "Land cost at the $2,500,000 ask is $25,000 per buildable unit for the 100-unit approved plan. Under the former CA zone density scenario of ~59 units, land cost rises to approximately $42,373 per buildable unit.",
     "diligence": [
-     "Obtain the Stratford Zoning Commission approval resolution.",
-     "Confirm the official approval date and expiration timeline.",
-     "Review the recorded 8-30g affordability covenant terms.",
-     "Request the full set of completed construction drawings.",
-     "Verify underlying base zone bulk and density regulations."
+     "Review deed Schedule A and assessor records to resolve the conflict between the 60,113 sq ft listing figure and the 206,316 sq ft official lot size.",
+     "Obtain the site-specific LBHZ zoning text regulations and approved site plans directly from the Stratford Planning and Zoning Office.",
+     "Confirm the official approval date, expiration timeline, and status of construction drawings with town staff.",
+     "Inspect the recorded CGS 8-30g Affordability Plan dated 2021-11-01 and deed restriction terms.",
+     "Verify FEMA flood map details and staff reports regarding AE floodplain mitigation requirements."
     ],
+    "enablers": "Density is enabled by the site-specific Lordship Boulevard Housing Zone (LBHZ) overlay, the adopted CGS 8-30g set-aside approval, and potential access to CT CHFA and DOH affordable housing financing programs.",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:08.625828+00:00"
+   "checked_utc": "2026-11-21T16:52:56.506931+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -225,30 +287,61 @@
     },
     "ask_per_unit": {
      "approved": "$29,412"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "382 Ferry Blvd",
+     "town": "Stratford",
+     "lot_sf": "108464",
+     "frontage_ft": "272.19",
+     "district": "RS-4/CA",
+     "overlays": "TOD Overlay District; Coastal Area Management (CAM) review required",
+     "multifamily": "special permit",
+     "density_rule": "50 bedrooms per 40,000 sf of lot area; at least 70% efficiency/1BR units, balance max 2BR",
+     "max_height": "45 ft or 4 stories (Commission may allow 60 ft in TOD; approved Building A is 5 stories per 2018 settlement)",
+     "lot_coverage": "40%",
+     "min_lot_area": "7500 sf",
+     "min_lot_width": "60 ft",
+     "parking": "1.0/unit efficiency/1BR + 0.25 per bedroom over 1 (TOD); 2025 Sec 5.1: 1.0 eff/1BR, 1.5 2BR + 10% guest",
+     "affordable_rule": "No mandatory set-aside under TOD; CGS 8-30g set-aside (30% deed-restricted 40 yrs, 15% of units at 60% median) withdrawn per 2018 settlement - condition 8 bars deviating 8-30g filing for this property",
+     "constraints": "TOD setbacks front 10 ft, side 10 ft, rear 25 ft; approval setbacks 20 ft east, 25 ft south, 48 ft SE passive open space; no construction in RS-4 portion except parking; lot per court record 2.49 ac - queue figure 111949 sf not used; split zone CA ~77% / RS-4 ~23%; 242.18 ft frontage on Willow St; CAM/coastal review required; no FAR stated in TOD regs; parcel ID and parcel-specific FEMA zone not verified in text-accessible official sources; 15% min usable open space",
+     "approvals_found": "Zoning Commission 1/30/2018 unanimous Special Case approval under TOD overlay (Rolling Thunder II LLC settlement): 119 units - 115 1BR + 4 studio; Building A 5 stories 67 units + 1254 sf commercial on Ferry Blvd, Building B 4 stories 52 units; commercial convertible to 2 addl units after 2 yrs; applicant withdrew pending 143-unit 8-30g application; town FY25 report and 2025 update treat 2018 approval as live",
+     "enablers": "12+ units: yes - approved TOD multifamily path; winning path: multifamily redevelopment via TOD Special Case approval (special permit, already granted 2018); market-rate: no affordability mandate applies - conventional product is the approved 119 units + 1254 sf retail at 1.0 space/unit parking, parking does not cap; affordable upside: no TOD density/height/parking bonus stated - voluntary CT DOH/CHFA financing (LIHTC 9%/4%, Build for CT) only, and 8-30g leverage barred by approval condition 8; rezoning unlikely - already TOD overlay with Ferry Blvd TOD precedents (335 Ferry 71 units, 211 Ferry 45, 252 Ferry 40); deal type: market-rate",
+     "max_units_estimate": "Multifamily/TOD: footprint 108464 x 40% coverage = 43386 sf (coverage caps, setback envelope larger); x 4 floors = 173544 sf gross, no FAR cap; density 108464/40000 x 50 = ~135 bedrooms = ~135 units all-1BR theoretical, but binding lawful total is approved Special Case 119 units (121 if retail converts) - approval/RS-4 no-build condition caps; Subdivision: 108464/7500 = 14 by area but frontage caps at ~8 lots = ~8 homes; Second-home: no as-of-right second dwelling on one RS-4/CA lot - 0 addl units standalone; Headline lawful max without rezoning: 119 units (approved)",
+     "sources": "https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/3632/Stratford/39c2b0ad-426e-43a0-9f65-67eeeea5f497/Final_Adopted_Zoning_Regulations_2025.pdf?disposition=inline https://core-docs.s3.us-east-1.amazonaws.com/documents/asset/uploaded_file/3632/Stratford/4051613/TOD_from_Zoning_Regs.pdf https://Cga.Ct.gov/2026/sup/chap_126a.htm https://www.chfa.org/developers/tax-credit-program/lihtc/ https://portal.ct.gov/doh/knowledge-base/articles/all-programs/developer-affordable-housing-programs https://gis.vgsi.com/stratfordct/",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": [
+     "District: BOUNTY Transit Oriented Development approval vs Muse RS-4/CA",
+     "Units: BOUNTY up to 119 vs Muse 108464"
+    ]
    },
-   "facts_hash": "97997982e316",
+   "facts_hash": "042955dd82ec",
    "memo": {
-    "verdict": "The site is approved for 119 units and listed for $3,500,000, making it worth pursuing if the 2018 approval remains valid.",
-    "as_of_right": "Base as-of-right zoning math is not provided in FACTS, though the total lot area is 111,949 square feet. The site was granted approval for 119 units under Transit Oriented Development rules.",
-    "approval_path": "The site uses an existing approval path, which offers low time and entitlement risk if valid. If the approval has expired, an 8-30g filing is a potential alternative path.",
+    "verdict": "A 119-unit apartment project with ground-floor retail is approved for the site, making it worth pursuing at the $3,500,000 ask ($29,412 per approved unit) if the 2018 approval remains valid.",
+    "as_of_right": "Base RS-4/CA split zoning allows a single-family subdivision yielding about 8 lots based on 272.19 feet of frontage. Under TOD overlay rules, density allows 50 bedrooms per 40,000 square feet of lot area, yielding a theoretical cap of 135 bedrooms on a 108,464 square foot lot. Maximum lot coverage is 40% (43,386 square foot footprint) with a 45-foot or 4-story height limit. No construction is permitted in the RS-4 portion except parking.",
+    "approval_path": "Existing approval / Special Permit. The site secured a 5-0 Special Case approval in 2018 under the TOD overlay. The developer stated in 2025 that only a building permit remains. Coastal Area Management review is required. Approval Condition 8 bars 8-30g filings.",
     "legal_issues": [
-     "Confirm if the 2018 site plan approval remains valid under CT completion deadline rules.",
-     "Verify the current status of the building permit.",
-     "Review flood zone and coastal requirements due to proximity to the Housatonic."
+     "Expiration and legal validity of the 2018 Special Case approval under Connecticut statutory deadlines.",
+     "Condition 8 covenant barring future 8-30g affordable housing applications.",
+     "Coastal Area Management review and flood zone constraints near the Housatonic River.",
+     "Split-zone restriction prohibiting building construction in the RS-4 portion except for parking."
     ],
-    "test_fit": "The approved layout places 119 apartments (mostly one-bedrooms) in two buildings with about 1,254 square feet of ground-floor retail on a 111,949 square foot lot. Reduced parking is permitted under TOD rules, while flood zones limit density envelope expansion.",
-    "value": "At the $3,500,000 asking price, the land cost is $29,412 per buildable unit for the 119-unit approved plan. No other unit scenarios are provided.",
+    "test_fit": "Building footprint is capped at 40% lot coverage (43,386 square feet). Approved layout contains 119 units (115 1BR, 4 studio) across Building A (5 stories, 67 units, 1,254 sf retail) and Building B (4 stories, 52 units). Commercial space can convert to 2 units after two years. Parking requires 1.0 space per unit (119 spaces) and does not limit density. Density is limited first by the RS-4 no-build zone, required 15% usable open space, and site setbacks.",
+    "value": "At the $3,500,000 ask, land cost is $29,412 per unit for the approved 119-unit scenario. If retail converts to 2 additional units (121 total), land cost drops to $28,926 per unit. If built as an 8-lot single-family subdivision, land cost is $437,500 per lot.",
     "diligence": [
-     "Zoning Commission 2018 approval documents and extension records",
-     "Current building permit application status",
-     "FEMA flood zone and coastal review documents",
-     "Title search"
+     "Resolve conflict between sources regarding zoning district designation (TOD approval vs RS-4/CA split) and lot area (111,949 sf vs 108,464 sf).",
+     "Verify building permit status and confirm 2018 Special Case approval validity under CT statutory extension rules.",
+     "Review 2018 settlement terms and Condition 8 restrictions barring 8-30g filings.",
+     "Obtain parcel-specific FEMA flood zone determination and Coastal Area Management submission requirements.",
+     "Verify boundary survey to confirm RS-4 no-build area limits and required setback buffers."
     ],
+    "enablers": "Transit Oriented Development (TOD) Overlay District Special Case approval.",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:08.625913+00:00"
+   "checked_utc": "2026-11-21T16:53:58.930267+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -287,31 +380,59 @@
     },
     "ask_per_unit": {
      "approved": "$60,000"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "467 Tunxis Hill Rd & 80 Soundview Ave",
+     "town": "Fairfield",
+     "lot_sf": "24829",
+     "district": "NDD",
+     "multifamily": "special permit",
+     "far": "1.0",
+     "density_rule": "No units-per-acre density in NDD; total floor area capped at 100% of lot area and residential limited to 50% of total floor area - 66 2/3% if units above 50% are contracted with the Town as affordable; no single building over 14000 GSF (Sec 6.3Z and 6.4)",
+     "max_height": "3 stories or 30 ft whichever is less",
+     "lot_coverage": "75%",
+     "min_lot_area": "No minimum",
+     "min_lot_width": "20",
+     "parking": "2.5/unit for 5+ families (Sec 25.4.1L) plus commercial 1 per 200 GSF; Commission may at its discretion reduce dwelling parking up to 50% in a Sec 6 district (Sec 25.4.2A)",
+     "affordable_rule": "Sec 30.7.I: Special Permit project with net increase of 10+ units must set aside at least 10% BMR at 80% AMI or less (Bridgeport CT HUD HMFA); inclusionary fee $5 per $1000 construction value (Sec 29.6.1) unless 8-30g approved or 10% BMR or more; CGS 8-30g set-aside path requires 30% affordable for 40 years with 15% of all units at 60% median or less",
+     "constraints": "Street setback 10 ft; side 0 ft one side / min 10 ft other; rear 10 ft; adjacent Residence District boundary 10 ft or adjacent district setback whichever is greater (Sec 6.5.1); residential not permitted on ground floor in NDD; FAR and residential-share cap the envelope and parking is co-binding; parcel_id and frontage_ft not found in a fetchable official assessor/GIS record - left blank; flood zone not verified from a FIRM panel for this parcel - left blank; no overlay found in official sources",
+     "approvals_found": "46-unit 5-story CGS 8-30g set-aside application for this combined 0.57-acre lot heard by TPZ Dec 3 2024 and continued Jan 14 2025; Affordable Housing Committee minutes 7/9/2025 record a proposed litigation settlement for 467 Tunxis Hill awaiting court approval after added screening - no final TPZ approval document found in official sources",
+     "enablers": "12+ units: yes - multifamily/mixed-use redevelopment by Special Permit is the winning path; market-rate note: 10% BMR rule triggered at 10+ units; affordable upside: codified residential share rises from 50% to 66 2/3% when excess units are Town-contracted affordable (Sec 6.3Z) and the CGS 8-30g route is demonstrated on this lot - program family CT DOH/CHFA and federal LIHTC; rezoning unlikely - no evidence found of a pending Tunxis Hill upzoning; deal type: either - market-rate mixed-use works at ~12 units and the affordable-program track is proven by the site's own 8-30g application",
+     "max_units_estimate": "Multifamily/mixed-use: envelope = lower of FAR 1.0 x 24829 = 24829 GSF and footprint 18622 sf (75% coverage) x 3 floors = 55866 sf so FAR caps at 24829 GSF in at least 2 buildings (14000 GSF max each); residential 50% = 12415 GSF / ~1000 sf per unit = ~12 units market-rate; with Sec 6.3Z affordable share 66 2/3% = 16553 GSF = ~16 units - headline ~16 units capped by FAR x residential share with parking co-binding; Subdivision: 0 additional homes credited - NDD is a business district with no verified residential subdivision path; Second-home/ADU: 0 additive - Sec 13 ADUs apply to single-family residence districts not a vacant NDD lot; 8-30g scenario (not in headline): 46 units in 5 stories per the site's own set-aside application - settlement awaiting court approval",
+     "sources": "https://cms3.revize.com/revize/fairfield/FairfieldZoningRegulations-090625.pdf https://fairfieldct.gov/service/town_plan___zoning/zoning_regulations.php https://fairfieldct.gov/government/boards___commissions/affordable_housing_committee/8-30g_faqs.php https://Cga.Ct.gov/2026/sup/chap_126a.htm https://gis.vgsi.com/FairfieldCT/Default.aspx",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": [
+     "District: BOUNTY NDBD vs Muse NDD",
+     "Units: BOUNTY up to 46 vs Muse 1"
+    ]
    },
-   "facts_hash": "8b68fded7f3e",
+   "facts_hash": "0b5763c5e916",
    "memo": {
-    "verdict": "The site is approved for a 46-unit development at $2,760,000 ($60,000 per unit) and is worth pursuing if diligence confirms the settled litigation and vested rights.",
-    "as_of_right": "FACTS do not specify the underlying NDBD zone base bulk or density math. The total lot area is 24,829 square feet.",
-    "approval_path": "Existing approval under C.G.S. 8-30g. Litigation is settled with no remaining appeals, lowering approval time and risk if fully verified.",
+    "verdict": "The site is worth pursuing at the $2,760,000 ask ($60,000 per unit) only if the 46-unit C.G.S. 8-30g court settlement is fully executed and final.",
+    "as_of_right": "Under NDD zoning (Sec 6.3Z, 6.4), standard zoning allows a 1.0 FAR (24,829 GSF total across buildings capped at 14,000 GSF each) with 75% lot coverage (18,622 sf footprint) and 3 stories/30 ft max height. Ground floor residential is not permitted. Residential floor area is limited to 50% of total floor area (12,415 GSF, or ~12 market-rate units). Sec 6.3Z increases the residential cap to 66 2/3% (16,553 GSF, or ~16 units) if excess units are town-contracted affordable.",
+    "approval_path": "8-30g / existing approval / special permit. As-of-right or standard special permit allows only 12 to 16 units over commercial space. Achieving 46 units relies on the C.G.S. 8-30g process, which carries court settlement timing and litigation risks until final orders are verified.",
     "legal_issues": [
-     "Verification of the neighbor litigation settlement agreement and any conditions added.",
-     "Affordable rent restrictions capping revenue on 14 units (30.4%) for 40 years.",
-     "Confirmation of vested rights status despite the Fairfield moratorium."
+     "Discrepancy between listing claim of settled litigation and town records showing settlement awaiting court approval.",
+     "Affordability covenant requiring 14 units (30.4%) to remain affordable for 40 years, with 15% at 60% AMI or less.",
+     "Underlying NDD district prohibition of ground-floor residential and 14,000 GSF single-building limit.",
+     "Unverified parcel frontage, property boundaries, and flood zone status in official records."
     ],
-    "test_fit": "The site plan includes 3 residential levels over 54 garage spaces with 24 storage lockers on a 24,829 SF lot. Total unit area is about 44,665 SF. The approved unit count is 46 units (39 one-bedroom, 7 two-bedroom). Base zoning density limits are not provided in FACTS.",
-    "value": "Land cost is $60,000 per buildable unit based on the $2,760,000 ask for the 46 approved units. FACTS provide no alternative development scenarios for comparison.",
+    "test_fit": "Standard NDD envelope allows 3 stories (30 ft max height), 75% coverage, and max 14,000 GSF per building, yielding ~12 market-rate or ~16 mixed-affordable units over ground-floor commercial. The 8-30g fit includes 5 stories, 46 units (39 one-bed, 7 two-bed), 44,665 sf of unit area, 54 garage spaces, and 24 storage lockers. Under standard zoning, FAR and the residential percentage cap limit density first.",
+    "value": "At the $2,760,000 ask, land cost is $60,000 per unit for the 46-unit 8-30g scenario. Land cost rises to $230,000 per unit under the 12-unit market-rate scenario and $172,500 per unit under the 16-unit affordable-mix scenario.",
     "diligence": [
-     "Settlement agreement and final court appeal withdrawal documents.",
-     "Fairfield Town Plan and Zoning Commission C.G.S. 8-30g approval resolution and site plans.",
-     "Draft 40-year affordability covenant and restriction terms.",
-     "Title search and site boundary survey.",
-     "Underlying NDBD zone regulations to determine base as-of-right density."
+     "Resolve conflict: listing states district is NDBD and 46 units are fully approved with settled appeals, while independent check shows district as NDD and 46-unit settlement awaiting court approval with no final TPZ approval document.",
+     "Obtain fully executed litigation settlement agreement and final court approval order.",
+     "Review 40-year affordability restriction terms and administration rules for the 14 set-aside units.",
+     "Commission a boundary survey to verify acreage, frontage, and FIRM flood zone status."
     ],
+    "enablers": "C.G.S. 8-30g affordable housing set-aside path, Sec 6.3Z residential share expansion to 66 2/3% for affordable units, and Sec 25.4.2A discretionary residential parking reduction up to 50%.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack rents, sale prices, and land comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:08.625995+00:00"
+   "checked_utc": "2026-11-21T16:56:14.133956+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -371,7 +492,7 @@
     "letter_angle": "Contact developer Joseph DaSilva directly to see if he is open to an acquisition or recapitalization while site clearing is underway.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:08.626074+00:00"
+   "checked_utc": "2026-11-21T16:56:14.134309+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -453,7 +574,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:08.902377+00:00"
+   "checked_utc": "2026-11-21T16:56:14.278778+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -534,7 +655,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:09.029886+00:00"
+   "checked_utc": "2026-11-21T16:56:14.385378+00:00"
   },
   {
    "id": "bx-927-home",
@@ -613,7 +734,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:09.144353+00:00"
+   "checked_utc": "2026-11-21T16:56:14.451617+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -693,7 +814,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:09.273642+00:00"
+   "checked_utc": "2026-11-21T16:56:14.577217+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -773,7 +894,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:20:09.489258+00:00"
+   "checked_utc": "2026-11-21T16:56:14.694713+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -838,28 +959,28 @@
    },
    "facts_hash": "b6107258cae8",
    "memo": {
-    "verdict": "The site allows a 2 to 3 unit residential project of 2,500 square feet as-of-right, or 4 to 5 units with the UAP bonus, but pursuit depends on verifying market rents and construction costs.",
-    "as_of_right": "Under ZR 23-22 in an R4 zone, the 2,500 square foot lot (25 by 100 feet) allows a standard FAR of 1.0 yielding 2,500 square feet of floor area for 2 to 3 units. Qualifying affordable housing under UAP allows an FAR of 1.5 yielding 3,750 square feet of floor area for 4 to 5 units.",
-    "approval_path": "As-of-right development path requiring standard Department of Buildings plan review and permits, avoiding discretionary land-use approvals and public hearings.",
+    "verdict": "The site allows a 2 to 3 unit standard development or up to 4 to 5 units under UAP, but feasibility at the $600,000 ask requires market verification.",
+    "as_of_right": "Under ZR 23-22 in an R4 zone, standard FAR is 1.0, yielding 2,500 square feet of floor area for 2 to 3 units on the 2,500 square foot lot. With qualifying affordable housing under UAP, FAR is 1.5, yielding 3,750 square feet of floor area for 4 to 5 units.",
+    "approval_path": "As-of-right development path under standard R4 rules or UAP affordable provisions. This reduces entitlement time and risk.",
     "legal_issues": [
-     "Verify listing information, lot dimensions, and zoning details with the broker and official city records.",
-     "Confirm occupancy and lease status of the existing 1,512 square foot two-family home.",
-     "Review regulatory requirements and affordability covenants attached to utilizing the UAP floor area bonus."
+     "Affordability covenants required if utilizing the UAP FAR 1.5 bonus.",
+     "Verification of existing 2-family residential structure occupancy and tenant rights.",
+     "Broker confirmation of listing details, lot size, and zoning status."
     ],
-    "test_fit": "The 25-foot by 100-foot lot supports a building envelope of 2,500 square feet for 2 to 3 units under standard FAR 1.0, or 3,750 square feet for 4 to 5 units under UAP FAR 1.5. Density is limited first by lot size and standard FAR rules.",
-    "value": "At the $600,000 asking price, land cost is $200,000 to $300,000 per unit under the standard scenario of 2 to 3 units, and $120,000 to $150,000 per unit under the UAP scenario of 4 to 5 units.",
+    "test_fit": "The 25 ft by 100 ft lot allows a building envelope of 2,500 standard floor area sf or 3,750 UAP sf. Unit count ranges from 2 to 3 standard units up to 4 to 5 UAP units. Lot size and FAR limit density first.",
+    "value": "At the $600,000 asking price, land cost is $200,000 to $300,000 per unit under the standard scenario and $120,000 to $150,000 per unit under the UAP scenario.",
     "diligence": [
-     "Confirm lot dimensions, zoning, and parcel data with the listing broker and NYC DCP records.",
-     "Perform structural and physical inspection of the existing two-family structure.",
-     "Verify legal occupancy and tenant status of the existing building.",
-     "Review specific UAP program guidelines to confirm compliance requirements for the FAR bonus."
+     "Confirm lot dimensions, zoning, and listing status with the broker.",
+     "Verify occupancy, tenant rights, and lease status of the existing 2-family home.",
+     "Review municipal title records and tax status.",
+     "Inspect the existing 1,512 sq ft 1935 brick structure for renovation viability."
     ],
-    "enablers": "Universal Affordability Preference (UAP) qualifying affordable housing bonus.",
-    "highest_and_best_use": "not enough data",
+    "enablers": "Universal Affordability Preference (UAP) qualifying affordable bonus increases allowed FAR from 1.0 to 1.5.",
+    "highest_and_best_use": "Not enough data, as FACTS lack local rents, sales prices, or comparable land sales.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:21:05.093579+00:00"
+   "checked_utc": "2026-11-21T16:56:56.637963+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -924,28 +1045,28 @@
    },
    "facts_hash": "568ba2ff2db8",
    "memo": {
-    "verdict": "The site allows an as-of-right residential build of 7 to 10 standard units or 10 to 13 units with UAP, but pursuing the $799,000 asking price requires verifying market rents and comps.",
-    "as_of_right": "Under ZR 23-22 for R5 zoning, standard FAR is 1.5 on a 4,750 SF lot. This allows 7,125 SF of floor area and 7 to 10 units. With UAP, FAR is 2.0, allowing 9,500 SF of floor area and 10 to 13 units.",
-    "approval_path": "As-of-right development path. This requires standard Department of Buildings plan approval and permits without discretionary board reviews, resulting in low entitlement risk and a faster timeline.",
+    "verdict": "The site allows a 7 to 10 unit standard residential building or up to 13 units with UAP, making it worth pursuing at the $799,000 ask subject to rent and cost checks.",
+    "as_of_right": "Under ZR 23-22 for R5 zoning, the 4,750 sq ft lot allows a standard FAR of 1.5, yielding 7,125 floor area sq ft and 7 to 10 units without discretionary approvals.",
+    "approval_path": "As-of-right development path under standard R5 or UAP rules, which means minimal entitlement risk and fast timeline.",
     "legal_issues": [
-     "Verification of listing details including lot size, zoning, and status with the broker.",
-     "Confirmation of vacant status for the existing 1925 two-family structure to ensure no tenant claims.",
-     "Verification of clean title and owner of record (Roger Bombace) without unrecorded encumbrances."
+     "Verification of affordability covenants required to unlock the UAP bonus FAR",
+     "Confirmation of vacant status for existing 2-family building and garage",
+     "Verification of lot size and zoning details directly with the broker and NYC DCP"
     ],
-    "test_fit": "The 50 ft by 95 ft lot (4,750 SF) currently contains a 2,520 SF building and a 5-car garage. Standard envelope allows 7,125 SF (7 to 10 units), while UAP allows 9,500 SF (10 to 13 units). Bulk regulations, height, and parking limits restrict density first.",
-    "value": "At the $799,000 ask, land cost is $79,900 to $114,143 per unit for standard development (7 to 10 units). With the UAP affordable bonus (10 to 13 units), land cost drops to $61,462 to $79,900 per unit.",
+    "test_fit": "The 50 by 95 foot lot supports up to 7,125 zsf standard or 9,500 zsf with UAP. Likely unit count ranges from 7 to 13 units. R5 bulk rules and parking requirements limit density first.",
+    "value": "Land cost at ask is $79,900 to $114,143 per unit for standard development (7 to 10 units). The UAP bonus lowers land cost to $61,462 to $79,900 per unit (10 to 13 units).",
     "diligence": [
-     "Confirm lot size, zoning, and property status directly with the listing broker.",
-     "Obtain a full title search to verify ownership by Roger Bombace and check for open liens.",
-     "Verify vacancy status of the existing two-family residence and 5-car garage.",
-     "Review NYC Department of Buildings records for BBL 2040440033 for active violations or restrictions."
+     "Confirm lot size, zoning, and standard rules with the broker and NYC DOB",
+     "Obtain title search to verify ownership and check for encumbrances on BBL 2040440033",
+     "Verify existing structure vacancy and environmental condition of the 5-car garage",
+     "Gather local rental and sales comps to run detailed financial model"
     ],
-    "enablers": "Universal Affordable Preference (UAP) bonus under ZR 23-22 increases allowable FAR from 1.5 to 2.0.",
-    "highest_and_best_use": "not enough data",
+    "enablers": "Qualifying affordable housing bonus (UAP) under ZR 23-22 increases FAR from 1.5 to 2.0.",
+    "highest_and_best_use": "Not enough data. FACTS lack market rents, condo sale prices, and land comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:21:41.479596+00:00"
+   "checked_utc": "2026-11-21T16:57:37.371485+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -978,31 +1099,8 @@
     "ask_per_unit": {}
    },
    "facts_hash": "284e51b4e4f7",
-   "memo": {
-    "verdict": "Feasibility cannot be confirmed at the $899,000 ask price because zoning district and buildable square footage are missing from the facts.",
-    "as_of_right": "As-of-right calculations cannot be completed because the zoning district is not provided in the facts. The listing notes a lot size of 2,500 square feet.",
-    "approval_path": "The approval path requires Department of Buildings approval and zoning review, but the specific path is unknown until zoning is confirmed.",
-    "legal_issues": [
-     "The tax parcel was not found in MapPLUTO records.",
-     "Listing details and zoning status must be confirmed with the broker.",
-     "Vacant delivery of the existing two-family residence must be legally verified.",
-     "Ownership and legal status of the adjoining 25x100 lot require title search."
-    ],
-    "test_fit": "The site has a listed lot area of 2,500 square feet. Building envelope, unit count, parking, and density limits cannot be determined without zoning data.",
-    "value": "The ask price is $899,000. Land cost per buildable unit or per buildable square foot cannot be calculated because buildable area and unit scenarios are missing.",
-    "diligence": [
-     "Confirm the official NYC zoning map and district rules.",
-     "Resolve the MapPLUTO tax lot identification error.",
-     "Verify the title and ownership of the adjoining 25x100 lot.",
-     "Confirm vacant delivery terms with the listing broker.",
-     "Obtain a full title report and property survey."
-    ],
-    "enablers": "None provided in FACTS.",
-    "highest_and_best_use": "Not enough data.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-21T16:23:11.604277+00:00"
+   "memo": null,
+   "checked_utc": "2026-11-21T16:59:41.456148+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1036,28 +1134,28 @@
    },
    "facts_hash": "4362bc30a1e2",
    "memo": {
-    "verdict": "The 1,960 square foot lot in Westchester Square is listed for $99,000 in an R5A zone, but pursuing it depends on verifying why MapPLUTO cannot find the parcel.",
-    "as_of_right": "The property is listed with R5A zoning on a 1,960 square foot lot, but the facts do not provide FAR or buildable square footage to complete as-of-right calculations.",
-    "approval_path": "As-of-right building path if compliant with R5A rules, though tax lot verification adds research time and potential legal risk.",
+    "verdict": "The site is a low-cost residential opportunity at a $99,000 ask, worth pursuing subject to verifying the tax lot status and zoning data.",
+    "as_of_right": "The listing states R5A zoning on a 1,960 square foot lot. Exact buildable area and unit math cannot be calculated because FAR is omitted from FACTS.",
+    "approval_path": "As-of-right filing through the NYC Department of Buildings, which carries standard permitting timeline and low discretionary risk.",
     "legal_issues": [
-     "Parcel error: lot was not found in the NYC MapPLUTO database.",
-     "Zoning district R5A and 1,960 lot area rely entirely on listing details.",
-     "Property status and listing facts require direct verification with the broker."
+     "Parcel error in MapPLUTO means tax lot status and title boundaries must be confirmed.",
+     "Zoning district R5A relies on listing broker details and requires official verification.",
+     "Small lot size of 25 by 81 feet may limit building envelope and yard compliance."
     ],
-    "test_fit": "The site measures approximately 25 by 81 feet for 1,960 square feet of lot area. Unit count range, parking requirements, and envelope limits are not provided in the facts.",
-    "value": "The total ask price is $99,000 for 1,960 lot square feet. Cost per buildable unit or per buildable square foot cannot be calculated because buildable area and unit scenarios are not provided.",
+    "test_fit": "The lot is 25 feet wide by 81 feet deep totaling 1,960 square feet. Narrow lot width limits envelope and design first. Unit count range and parking capacity cannot be determined without FAR and code math from FACTS.",
+    "value": "The asking price is $99,000 total. Land cost per buildable unit or square foot cannot be calculated because buildable square footage and unit counts are missing from FACTS.",
     "diligence": [
-     "Verify tax lot and parcel records with the city to resolve the MapPLUTO error.",
-     "Confirm official zoning district classification and code rules.",
-     "Obtain a certified land survey and title search.",
-     "Confirm listing details and availability with the listing broker."
+     "Confirm tax lot designation and resolve MapPLUTO lot search error with the broker and NYC Department of Finance.",
+     "Verify official NYC zoning designation and applicable FAR for the address.",
+     "Obtain a certified boundary survey to confirm lot area and dimensions.",
+     "Research local rent, sales, and land comps to establish financial feasibility."
     ],
-    "enablers": "None provided in the facts.",
+    "enablers": "",
     "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:23:53.448371+00:00"
+   "checked_utc": "2026-11-21T17:00:14.039574+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1091,7 +1189,7 @@
    },
    "facts_hash": "107b00932364",
    "memo": null,
-   "checked_utc": "2026-11-21T16:30:29.064964+00:00"
+   "checked_utc": "2026-11-21T17:03:29.728419+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1121,28 +1219,28 @@
    },
    "facts_hash": "05ee128ed427",
    "memo": {
-    "verdict": "The site is listed for $269,000 as a two-family lot, but feasibility is uncertain because the seller makes no representation that the lot is buildable.",
-    "as_of_right": "FACTS indicate potential for a two-family home on a 4,991 SF lot (50x100 feet) in a two-family zoning district. Exact dimensional rules, FAR, and code sections are not provided in FACTS.",
-    "approval_path": "Unknown. It will depend on whether a two-family home meets dimensional requirements as-of-right or requires variances from the City of Mount Vernon.",
+    "verdict": "The property is listed as a vacant lot with potential for a two-family home, but pursuing it at the $269,000 ask requires confirming buildability since the seller makes no representations.",
+    "as_of_right": "The listing notes a 4,991 square foot lot within a two-family zoning district. Specific code sections, set-back rules, and FAR math are not provided in the facts.",
+    "approval_path": "Path depends on confirmation of zoning compliance. Standard construction requires building permit and site plan review, but variances may be required if the lot does not meet minimum district dimensions.",
     "legal_issues": [
-     "Seller explicitly makes no representations that the lot is buildable and is selling as-is.",
-     "Zoning district designation and lot status must be confirmed with the municipality.",
-     "Property boundary, frontage, and utility access require title and survey verification."
+     "Sellers explicitly make no representations that the lot is legally buildable and are selling as-is.",
+     "Zoning district designation, frontage requirements, and dimensional rules are unverified.",
+     "Title restrictions, easements, or municipal encumbrances are unknown."
     ],
-    "test_fit": "The site is 50x100 feet (4,991 SF) with potential for a two-family home. Maximum building envelope, parking requirements, and density limits cannot be determined without specific local code data.",
-    "value": "At the $269,000 ask price, land cost is $134,500 per unit assuming a 2-unit yield. Comparisons across scenarios cannot be performed due to missing buildable area and comp data.",
+    "test_fit": "The site is 4,991 square feet (50x100 lot). The listing suggests a potential two-family home. Height, parking requirements, and coverage limits cannot be determined without municipal code data.",
+    "value": "The asking price is $269,000 for the lot. The facts do not provide land comps or buildable square footage to calculate cost per unit or compare scenarios.",
     "diligence": [
-     "Confirm lot zoning district, status, and listing details with the broker and City of Mount Vernon.",
-     "Obtain an official zoning confirmation letter from the City of Mount Vernon to verify if the 4,991 SF lot is buildable as-of-right.",
-     "Order a boundary survey and title search to confirm exact dimensions, easements, and frontage.",
-     "Verify availability and connection capacity for municipal water, sewer, and utilities."
+     "Confirm lot area, zoning district, and buildability with the Mount Vernon Building Department.",
+     "Obtain an official boundary and topographic survey to confirm lot dimensions and frontages.",
+     "Verify listing details, property status, and seller disclosures with the listing broker.",
+     "Order a title report to check for existing covenants, liens, or encumbrances."
     ],
-    "enablers": "None provided in FACTS.",
+    "enablers": "None identified in the provided facts.",
     "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:31:10.326615+00:00"
+   "checked_utc": "2026-11-21T17:04:01.009352+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1172,7 +1270,7 @@
    },
    "facts_hash": "f99d38919e90",
    "memo": null,
-   "checked_utc": "2026-11-21T16:34:34.972866+00:00"
+   "checked_utc": "2026-11-21T17:07:16.368503+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1201,29 +1299,8 @@
     "ask_per_unit": {}
    },
    "facts_hash": "9113bc21bf1d",
-   "memo": {
-    "verdict": "The site is an existing turn key 3-family building listed for $600,000, but further redevelopment cannot be evaluated without local zoning rules.",
-    "as_of_right": "The listing identifies the zone as RB with 3 existing units on 0.06 acres. Specific as-of-right bulk math, FAR, and lot coverage limits are not provided in FACTS.",
-    "approval_path": "Continued use of the existing 3-family structure is as-of-right. Any expansion or new construction path depends on verifying Bridgeport RB zoning rules.",
-    "legal_issues": [
-     "Verification of legal 3-family occupancy status and Certificate of Occupancy with the city.",
-     "Validation of property boundary lines and exact lot area on the 0.06-acre parcel.",
-     "Confirmation of listing details and property status with the listing broker."
-    ],
-    "test_fit": "The 0.06-acre lot currently holds a 3-unit building. Small lot size and parking constraints will limit further physical density first.",
-    "value": "At the $600,000 asking price, the acquisition cost is $200,000 per existing unit across 3 units. Comparative scenarios cannot be calculated without zoning buildable area data.",
-    "diligence": [
-     "Confirm listing details, lot area, zoning, and status with the broker.",
-     "Obtain municipal zoning code rules for the Bridgeport RB district.",
-     "Review city records for legal 3-family occupancy and active building code violations.",
-     "Order a property survey to verify exact lot lines and dimensions."
-    ],
-    "enablers": "Not specified in FACTS.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-21T16:35:12.169725+00:00"
+   "memo": null,
+   "checked_utc": "2026-11-21T17:10:15.823364+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1252,27 +1329,8 @@
     "ask_per_unit": {}
    },
    "facts_hash": "e92bfe3563c2",
-   "memo": {
-    "verdict": "The site contains an existing multi-family building listed for $575,000 in an RB zone, but development feasibility cannot be evaluated without local zoning rules.",
-    "as_of_right": "The property is in an RB zone on a 0.06-acre lot. FACTS do not include local zoning code sections, FAR, height limits, lot coverage, or density math.",
-    "approval_path": "The approval path cannot be determined without local zoning code rules and a proposed development scope.",
-    "legal_issues": [
-     "Conflict between listing headline claiming 3 units and property description stating 2-family with a finished upper level.",
-     "Unverified lot size, zoning status, and existing legal use."
-    ],
-    "test_fit": "The lot area is 0.06 acres with an existing multi-family building. Envelope limits, unit capacity range, and parking constraints cannot be calculated from FACTS.",
-    "value": "The ask is $575,000. Land cost per buildable unit or buildable square foot cannot be calculated because buildable square footage and scenario unit counts are missing from FACTS.",
-    "diligence": [
-     "Confirm lot size, zoning district, and actual legal unit count with the municipal zoning authority and listing broker.",
-     "Obtain tax records, building permits, and Certificate of Occupancy to clarify 2-family versus 3-family legal status.",
-     "Request title report, property survey, and existing tenant lease agreements."
-    ],
-    "enablers": "None provided in FACTS.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-21T16:36:14.603972+00:00"
+   "memo": null,
+   "checked_utc": "2026-11-21T17:14:48.526951+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1301,8 +1359,28 @@
     "ask_per_unit": {}
    },
    "facts_hash": "59e7a614a370",
-   "memo": null,
-   "checked_utc": "2026-11-21T16:39:43.903128+00:00"
+   "memo": {
+    "verdict": "The site is listed for $699,000 as vacant land with conceptual plans for 5 units and 1 commercial space, but pursuability cannot be confirmed without official zoning math.",
+    "as_of_right": "FACTS do not provide the exact code section, FAR, height, setback, or density math for the Neighborhood Commercial zoning district.",
+    "approval_path": "The required approval path, timeline, and risk level cannot be determined until municipal zoning standards are verified.",
+    "legal_issues": [
+     "Listing details must be verified directly with the broker and municipal records.",
+     "Conceptual plans for a 5-story building lack documentation of any formal municipal approvals or board conditions."
+    ],
+    "test_fit": "The lot is 2,379 SF of vacant land. Conceptual plans show a 5-story mixed-use building with 1 commercial space and 5 residential units. Specific limits on density and parking are not provided.",
+    "value": "At the ask of $699,000, the land cost is $139,800 per conceptual residential unit across 5 units. Buildable square footage is not specified in FACTS.",
+    "diligence": [
+     "Confirm lot boundaries, zoning district, and listing status with the broker and Jersey City planning department.",
+     "Obtain official Jersey City Neighborhood Commercial zoning code rules for FAR, height, lot coverage, and parking.",
+     "Check if the conceptual 5-story building plan has existing municipal approvals.",
+     "Collect local land comps, rents, and sale prices to analyze financial viability."
+    ],
+    "enablers": "None listed in FACTS.",
+    "highest_and_best_use": "Not enough data. FACTS lack local rents, sale prices, and land comps to evaluate highest and best use.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T17:16:06.284724+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -1368,7 +1446,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:39:56.546303+00:00"
+   "checked_utc": "2026-11-21T17:16:15.090601+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -1433,7 +1511,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:40:07.368627+00:00"
+   "checked_utc": "2026-11-21T17:16:23.807418+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -1484,7 +1562,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:42:30.728369+00:00"
+   "checked_utc": "2026-11-21T17:16:35.274626+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -1512,29 +1590,8 @@
     "ask_per_unit": {}
    },
    "facts_hash": "94a9553ac9f7",
-   "memo": {
-    "verdict": "The site supports one single-family home as-of-right in the S-75 zone, making the $745,000 ask dependent on obtaining a variance to yield additional density.",
-    "as_of_right": "S-75 zoning allows 1 lot as-of-right. The site has approximately 85 feet of frontage on Cresthill Rd, but two S-75 lots require 150 feet.",
-    "approval_path": "As-of-right for 1 home with low risk and short timeline. Subdividing into two lots requires a frontage variance, adding moderate risk and longer review time.",
-    "legal_issues": [
-     "Frontage deficit: site has ~85 ft of frontage on Cresthill Rd, while two S-75 lots require 150 ft.",
-     "Subdivision requires discretionary area variance approval.",
-     "Parcel search timed out, leaving property boundaries and title encumbrances unverified."
-    ],
-    "test_fit": "Street frontage limits density first. The ~85 ft frontage fits 1 single-family home. Unit count ranges and parking details are not provided in FACTS.",
-    "value": "Land cost at the $745,000 ask is $745,000 per buildable unit for 1 single-family lot. FACTS lack unit data for alternative scenarios.",
-    "diligence": [
-     "Obtain a current property survey to verify frontage and acreage for printkey 4.-4652-56.",
-     "Confirm Yonkers S-75 bulk standards and zoning board variance procedures.",
-     "Review title report for restrictive covenants or utility easements.",
-     "Check local zoning board records for nearby frontage variance decisions."
-    ],
-    "enablers": "Variance",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-21T16:44:50.240073+00:00"
+   "memo": null,
+   "checked_utc": "2026-11-21T17:22:01.570320+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -1563,29 +1620,29 @@
    },
    "facts_hash": "2823c249a240",
    "memo": {
-    "verdict": "The site is listed at $1,190,000 in Yonkers S-75 zone, but feasibility at ask cannot be confirmed without code standards and financial market comps.",
-    "as_of_right": "The site comprises 2 lots totaling 17,096 sq ft with approximately 168 feet of frontage in the S-75 zone. As-of-right density math cannot be calculated because bulk rules are not provided in FACTS.",
-    "approval_path": "Approval path depends on the final design, but site plan review or variances may be needed due to the steep 50-foot grade change.",
+    "verdict": "The site consists of two lots in the S-75 zone asking $1,190,000, but feasibility cannot be confirmed without zoning code rules and market comps.",
+    "as_of_right": "The property spans 17,096 square feet across two lots with approximately 168 feet of frontage in the S-75 zone. Specific as-of-right density math and bulk rules are not provided in FACTS.",
+    "approval_path": "Development likely requires site plan approval and potential variance or steep slope relief due to the 50-foot grade change, adding time and entitlement risk.",
     "legal_issues": [
-     "Steep site topography with a ~50 ft grade change creates slope and structural engineering constraints.",
-     "Property consists of 2 separate lots that may require formal merger or lot line adjustments.",
-     "Current status is listed as Pending on OneKey MLS, creating availability risk."
+     "Development constraints across two separate lots totaling 17,096 square feet with 168 feet of frontage.",
+     "Significant steep slope and engineering challenges caused by a 50-foot grade change.",
+     "Unconfirmed S-75 bulk, setback, and density limitations."
     ],
-    "test_fit": "The site offers 17,096 sq ft of land and ~168 feet of frontage across 2 lots. The steep ~50 ft grade change limits density and site layout first, while parking and unit yield remain subject to missing S-75 bulk rules.",
-    "value": "Asking price is $1,190,000 for 17,096 sq ft. Cost per buildable unit or per buildable square foot cannot be calculated because target buildable area and unit counts are missing from FACTS.",
+    "test_fit": "Density is limited first by the severe 50-foot grade change across the 17,096 square foot site. Building envelope, parking, and unit counts cannot be determined without S-75 bulk standards.",
+    "value": "At the $1,190,000 asking price, land cost per buildable unit cannot be calculated because unit scenarios are not provided in FACTS.",
     "diligence": [
-     "Obtain Yonkers S-75 code bulk standards including FAR, height, setbacks, lot coverage, and unit limits.",
-     "Verify seller contract status given the Pending listing status on OneKey MLS.",
-     "Commission a topographic and boundary survey to evaluate the ~50 ft grade change.",
-     "Gather land comps, new-construction sales prices, and rents to establish project viability.",
-     "Confirm parcel title details for printkey 4.-4651-86 and both constituent lots."
+     "Obtain official Yonkers S-75 zoning ordinance to confirm bulk and density limits.",
+     "Commission a boundary and topographic survey to map the 50-foot grade change.",
+     "Perform a title search to review lot merger history and frontage encumbrances.",
+     "Verify parcel data and tax map details for printkey 4.-4651-86.",
+     "Gather local sales comps and rent data to evaluate project economics."
     ],
     "enablers": "None provided in FACTS.",
-    "highest_and_best_use": "Not enough data. FACTS lack rents, sale prices, land comps, and S-75 bulk standards required to determine the highest and best use.",
+    "highest_and_best_use": "Not enough data.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:04.290257+00:00"
+   "checked_utc": "2026-11-21T17:24:35.122708+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -1654,7 +1711,7 @@
     "letter_angle": "Contact A&C International Management Group, LLC with an unpriced inquiry to purchase the 7,711 square foot site at 21 Street for full-density residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:04.546049+00:00"
+   "checked_utc": "2026-11-21T17:24:35.299117+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -1724,7 +1781,7 @@
     "letter_angle": "Approach Public Storage directly to inquire about acquiring their off-market corner parcel on Gerard Avenue for redevelopment.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:04.782597+00:00"
+   "checked_utc": "2026-11-21T17:24:35.404935+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -1796,7 +1853,7 @@
     "letter_angle": "Contact Mott Haven Holdings, LLC directly with an inquiry to acquire the 11,500 square foot site for mid-density development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:04.991236+00:00"
+   "checked_utc": "2026-11-21T17:24:35.512563+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -1867,7 +1924,7 @@
     "letter_angle": "Contact BAKTIDY ASSOCIATES directly to express interest in purchasing the off-market property.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:05.146615+00:00"
+   "checked_utc": "2026-11-21T17:24:35.627478+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -1936,7 +1993,7 @@
     "letter_angle": "Directly express interest to SEVENTY WEST REALTY LLC in acquiring the off-market West Street parcel for a standard residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:05.356155+00:00"
+   "checked_utc": "2026-11-21T17:24:35.733607+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -2007,7 +2064,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC to explore an off-market acquisition for an as-of-right residential build.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-21T16:47:05.466531+00:00"
+   "checked_utc": "2026-11-21T17:24:35.837277+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
