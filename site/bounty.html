@@ -990,12 +990,13 @@ function onePager(i){
   try{
     const [deals,briefs,progs,subs,pb,ct,nj,radar,listings,hidden]=await Promise.all([j('nyc_deals.json').catch(()=>null),j('briefs.json').catch(()=>null),j('programs.json').catch(()=>null),j('nys_deals.json').catch(()=>null),j('playbook.json').catch(()=>null),j('ct_deals.json').catch(()=>null),j('nj_deals.json').catch(()=>null),j('zoning_radar.json').catch(()=>null),j('listings.json').catch(()=>null),j('hidden_potential.json').catch(()=>null)]);
     const rezone=await j('nyc_rezone.json').catch(()=>null);
-    const [feas,letters]=await Promise.all([j('feasibility.json').catch(()=>null),j('letters.json').catch(()=>null)]);
+    const [feas,letters,hunt]=await Promise.all([j('feasibility.json').catch(()=>null),j('letters.json').catch(()=>null),j('hunter_status.json').catch(()=>null)]);
     const [wch,ffd,nnj]=await Promise.all([j('westchester_all.json').catch(()=>null),j('ct_fairfield.json').catch(()=>null),j('nj_north.json').catch(()=>null)]);
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
 
     // feasibility memos
-    try{ const box=$('memoList'); if(feas&&feas.memos&&feas.memos.length){
+    try{ if(hunt){const el=document.createElement('div');el.className='subnote';el.innerHTML=`<span class="badge b-prog">Listing hunter</span> ${hunt.engine?('Last search '+(hunt.generated_utc||'').slice(0,10)+' via '+hunt.engine+': '+(hunt.added||0)+' new listings added. '+Object.entries(hunt.areas||{}).map(([k,v])=>k+': '+v).join(' · ')):'Not running: '+((hunt.errors||[])[0]||'no search engine key')}`;$('memoList').before(el);}
+      const box=$('memoList'); if(feas&&feas.memos&&feas.memos.length){
       const esc=t=>String(t==null?'':t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
       const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join('');
       box.innerHTML=feas.memos.map(m=>{const f=m.facts||{},p=f.parcel||{},mm=m.memo||{},ap=f.approval||{};

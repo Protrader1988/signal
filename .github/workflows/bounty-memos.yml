@@ -10,6 +10,7 @@ on:
     paths:
       - "bounty/engine/feasibility.py"
       - "bounty/engine/letters.py"
+      - "bounty/engine/listing_hunter.py"
       - "bounty/data/feasibility_sites.json"
       - "bounty/data/onmarket_watch.json"
 
@@ -28,6 +29,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Listing hunter (AI web search for new listings)
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python bounty/engine/listing_hunter.py 2>&1 | tee bounty/data/hunter_run.log
       - name: Feasibility memos
         continue-on-error: true
         env:
