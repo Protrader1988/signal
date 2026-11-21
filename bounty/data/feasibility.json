@@ -1,0 +1,1382 @@
+{
+ "generated_utc": "2026-11-21T02:37:01.367974+00:00",
+ "memos": [
+  {
+   "id": "pch-15-n-main",
+   "address": "15 N Main St",
+   "muni": "Port Chester",
+   "state": "NY",
+   "status": "Listed (offering memo, reduced)",
+   "ask": 475000,
+   "facts": {
+    "address": "15 N Main St",
+    "muni": "Port Chester",
+    "state": "NY",
+    "jurisdiction": "Port Chester",
+    "ask": 475000,
+    "status": "Listed (offering memo, reduced)",
+    "lot_sf": 2151,
+    "zone": "CD-5 Urban Center Character District",
+    "approval": {
+     "status": "approved",
+     "body": "Village of Port Chester Planning Commission",
+     "date": "site plan referred to County Planning Jan 2022; broker says approvals run through April 2027",
+     "units": 15,
+     "detail": "Six-story mixed use: ground-floor commercial, floors 2-6 three apartments each (10 one-bedroom, 5 studio). Buyer pays additional in-lieu fees (amount not stated in the offering memo).",
+     "sources": [
+      "https://planning.westchestercountyny.gov/images/archive/stories/PlanningBoard/Referrals/2022Letters/pch22003.pdf",
+      "https://images.loopnet.ca/d2/1qLRWvqHw5GDXclW3kHwuVWqNp8vxg5kMPvmzpflgA4/Reduced%20%20OM%2015%20North%20Main%20Street.pdf"
+     ]
+    },
+    "issues": [
+     "In-lieu fee amount unknown",
+     "No on-site parking on a 2,151 sf lot",
+     "Approval extension must be confirmed in writing"
+    ],
+    "scenarios_units": {
+     "approved": "15"
+    },
+    "ask_per_unit": {
+     "approved": "$31,667"
+    }
+   },
+   "facts_hash": "1103758367c3",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:19:09.608012+00:00"
+  },
+  {
+   "id": "bpt-439-e-main",
+   "address": "439 E Main St",
+   "muni": "Bridgeport",
+   "state": "CT",
+   "status": "Listed",
+   "ask": 1480000,
+   "facts": {
+    "address": "439 E Main St",
+    "muni": "Bridgeport",
+    "state": "CT",
+    "jurisdiction": "CT",
+    "ask": 1480000,
+    "status": "Listed",
+    "lot_sf": 13068,
+    "zone": "per Bridgeport zoning map (listing cites IHI)",
+    "approval": {
+     "status": "approved",
+     "body": "Bridgeport Planning & Zoning Commission, case 25-10",
+     "date": "April 28, 2025 (5-3)",
+     "units": 74,
+     "detail": "Five-story building, 74 apartments and 900 sf commercial; coastal site plan approved per listing; site bought for $645,000 in 2021.",
+     "sources": [
+      "https://www.bridgeportct.gov/sites/default/files/2025-04/PZC_Minutes_20250428.pdf",
+      "https://hartfordbusiness.com/article/proposal-for-74-unit-apartment-building-in-bridgeport-receives-go-ahead/"
+     ]
+    },
+    "issues": [
+     "Parking count and garage design not public",
+     "Bridgeport is exempt from 8-30g, so this is a market-rate approval"
+    ],
+    "scenarios_units": {
+     "approved": "74"
+    },
+    "ask_per_unit": {
+     "approved": "$20,000"
+    }
+   },
+   "facts_hash": "8c854137a2b9",
+   "memo": {
+    "verdict": "A five-story building with 74 market-rate apartments and 900 sf of commercial space is approved, making the project worth pursuing at the $1,480,000 ask subject to plan verification.",
+    "as_of_right": "The lot contains 13,068 sf in the IHI zone, but specific as-of-right bulk and density math are not provided in the facts.",
+    "approval_path": "Existing approval. Case 25-10 was approved by the Bridgeport Planning & Zoning Commission on April 28, 2025, which significantly reduces entitlement time and zoning risk.",
+    "legal_issues": [
+     "Parking count and garage design are not public.",
+     "Verification of potential appeals or conditions following the 5-3 PZC approval vote.",
+     "Bridgeport is exempt from 8-30g, making this a market-rate project approval."
+    ],
+    "test_fit": "The approved plans call for a 5-story building with 74 units and 900 sf of commercial space on a 13,068 sf lot. Parking design and count are unknown and limit density analysis.",
+    "value": "At the $1,480,000 ask, the land cost is $20,000 per approved unit across 74 units. The property was previously bought for $645,000 in 2021.",
+    "diligence": [
+     "Bridgeport PZC Case 25-10 final approval resolution and list of conditions.",
+     "Architectural plans showing parking count and garage layout.",
+     "Approved coastal site plan documentation.",
+     "Title commitment and appeal status for the April 28, 2025 decision.",
+     "IHI zoning text to confirm underlying as-of-right bulk standards."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:19:48.716827+00:00"
+  },
+  {
+   "id": "str-225-lordship",
+   "address": "225 Lordship Blvd",
+   "muni": "Stratford",
+   "state": "CT",
+   "status": "Listed",
+   "ask": 2500000,
+   "facts": {
+    "address": "225 Lordship Blvd",
+    "muni": "Stratford",
+    "state": "CT",
+    "jurisdiction": "CT",
+    "ask": 2500000,
+    "status": "Listed",
+    "lot_sf": 60113,
+    "zone": "Lordship Boulevard Housing Zone (LBHZ) overlay",
+    "approval": {
+     "status": "approved per broker",
+     "body": "Stratford Zoning Commission",
+     "date": "not public",
+     "units": 100,
+     "detail": "Phase II of a campus with a self-storage building; 93,057 sf mixed use, 100 apartments plus 1 commercial; construction drawings complete per broker. The LBHZ overlay was adopted as part of a site-specific 8-30g application.",
+     "sources": [
+      "https://ecode360.com/39206300",
+      "https://realmo.com/listing/225-lordship-blvd-stratford-ct-06615/12372365"
+     ]
+    },
+    "issues": [
+     "Affordability covenant (8-30g: 30% for 40 years) likely; confirm",
+     "Approval date and expiration not public"
+    ],
+    "scenarios_units": {
+     "approved": "100"
+    },
+    "ask_per_unit": {
+     "approved": "$25,000"
+    }
+   },
+   "facts_hash": "d4b66dd70759",
+   "memo": {
+    "verdict": "A 93,057 square foot mixed-use project with 100 apartments and one commercial space can realistically be built if the reported approval is valid, making it worth pursuing at the $2,500,000 asking price.",
+    "as_of_right": "The facts do not state as-of-right zoning limits or math for the 60,113 square foot lot without the site-specific 8-30g overlay.",
+    "approval_path": "Existing approval via an 8-30g application and LBHZ overlay. Time and risk depend on verifying the unlisted approval date, expiration, and satisfaction of approval conditions.",
+    "legal_issues": [
+     "Affordability covenant under 8-30g is likely 30 percent for 40 years and must be confirmed.",
+     "Approval date and expiration date are not public and must be verified.",
+     "Approval status currently relies on broker representations."
+    ],
+    "test_fit": "The envelope allows 93,057 square feet featuring 100 apartments and one commercial unit on a 60,113 square foot lot. Parking limits and density factors are not detailed in the facts.",
+    "value": "At the $2,500,000 ask, the cost is $25,000 per buildable unit based on the 100-unit approved scenario. No other unit scenarios are provided.",
+    "diligence": [
+     "Obtain the Stratford Zoning Commission approval resolution.",
+     "Confirm the official approval date and expiration timeline.",
+     "Review the recorded 8-30g affordability covenant terms.",
+     "Request the full set of completed construction drawings.",
+     "Verify underlying base zone bulk and density regulations."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:20:10.264100+00:00"
+  },
+  {
+   "id": "str-382-ferry",
+   "address": "382 Ferry Blvd",
+   "muni": "Stratford",
+   "state": "CT",
+   "status": "Listed",
+   "ask": 3500000,
+   "facts": {
+    "address": "382 Ferry Blvd",
+    "muni": "Stratford",
+    "state": "CT",
+    "jurisdiction": "CT",
+    "ask": 3500000,
+    "status": "Listed",
+    "lot_sf": 111949,
+    "zone": "Transit Oriented Development approval",
+    "approval": {
+     "status": "approved 2018",
+     "body": "Stratford Zoning Commission (5-0)",
+     "date": "2018; developer said in 2025 only a building permit remained",
+     "units": 119,
+     "detail": "119 apartments in two buildings with about 1,254 sf of ground-floor retail; approved as a Transit Oriented Development with reduced parking; mostly one-bedroom units. Applicant Rolling Thunder II had threatened an 8-30g project if denied.",
+     "sources": [
+      "https://www.ctpost.com/local/article/Apartments-headed-for-Stratford-s-Ferry-Blvd-12558881.php",
+      "https://www.ctpost.com/news/article/stratford-ferry-blvd-apartments-20337120.php",
+      "https://stratfordcrier.com/affordable-housing-update-for-stratford/"
+     ]
+    },
+    "issues": [
+     "2018 approval: confirm it is still valid (Connecticut site plan approvals carry a completion deadline unless extended)",
+     "Building permit status",
+     "Flood zone and coastal review near the Housatonic"
+    ],
+    "scenarios_units": {
+     "approved": "119"
+    },
+    "ask_per_unit": {
+     "approved": "$29,412"
+    }
+   },
+   "facts_hash": "97997982e316",
+   "memo": {
+    "verdict": "The site is approved for 119 units and listed for $3,500,000, making it worth pursuing if the 2018 approval remains valid.",
+    "as_of_right": "Base as-of-right zoning math is not provided in FACTS, though the total lot area is 111,949 square feet. The site was granted approval for 119 units under Transit Oriented Development rules.",
+    "approval_path": "The site uses an existing approval path, which offers low time and entitlement risk if valid. If the approval has expired, an 8-30g filing is a potential alternative path.",
+    "legal_issues": [
+     "Confirm if the 2018 site plan approval remains valid under CT completion deadline rules.",
+     "Verify the current status of the building permit.",
+     "Review flood zone and coastal requirements due to proximity to the Housatonic."
+    ],
+    "test_fit": "The approved layout places 119 apartments (mostly one-bedrooms) in two buildings with about 1,254 square feet of ground-floor retail on a 111,949 square foot lot. Reduced parking is permitted under TOD rules, while flood zones limit density envelope expansion.",
+    "value": "At the $3,500,000 asking price, the land cost is $29,412 per buildable unit for the 119-unit approved plan. No other unit scenarios are provided.",
+    "diligence": [
+     "Zoning Commission 2018 approval documents and extension records",
+     "Current building permit application status",
+     "FEMA flood zone and coastal review documents",
+     "Title search"
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:20:32.672167+00:00"
+  },
+  {
+   "id": "ffd-467-tunxis",
+   "address": "467 Tunxis Hill Rd & 80 Soundview Ave",
+   "muni": "Fairfield",
+   "state": "CT",
+   "status": "Listed (Crexi, LoopNet, Oct 2026)",
+   "ask": 2760000,
+   "facts": {
+    "address": "467 Tunxis Hill Rd & 80 Soundview Ave",
+    "muni": "Fairfield",
+    "state": "CT",
+    "jurisdiction": "CT",
+    "ask": 2760000,
+    "status": "Listed (Crexi, LoopNet, Oct 2026)",
+    "lot_sf": 24829,
+    "zone": "NDBD",
+    "approval": {
+     "status": "approved, appeals settled",
+     "body": "Fairfield Town Plan and Zoning Commission (C.G.S. 8-30g)",
+     "date": "January 2025",
+     "units": 46,
+     "detail": "46 units (39 one-bedroom, 7 two-bedroom), 14 affordable (30.4%) for 40 years, 3 residential levels over 54 garage spaces, 24 storage lockers, about 44,665 sf of unit area. Listing states neighbor litigation is settled with no remaining appeals and rights are vested despite Fairfield's moratorium.",
+     "sources": [
+      "https://www.crexi.com/properties/2726667/connecticut-467-tunxis-hill-road",
+      "https://hartfordbusiness.com/article/fairfield-development-site-approved-46-units-hits-market/",
+      "https://patch.com/connecticut/fairfield/opposition-grows-against-proposed-tunxis-hill-complex-fairfield"
+     ]
+    },
+    "issues": [
+     "Get the settlement agreement and any conditions it added",
+     "Affordable rents cap revenue on 14 units for 40 years"
+    ],
+    "scenarios_units": {
+     "approved": "46"
+    },
+    "ask_per_unit": {
+     "approved": "$60,000"
+    }
+   },
+   "facts_hash": "8b68fded7f3e",
+   "memo": {
+    "verdict": "The site is approved for a 46-unit development at $2,760,000 ($60,000 per unit) and is worth pursuing if diligence confirms the settled litigation and vested rights.",
+    "as_of_right": "FACTS do not specify the underlying NDBD zone base bulk or density math. The total lot area is 24,829 square feet.",
+    "approval_path": "Existing approval under C.G.S. 8-30g. Litigation is settled with no remaining appeals, lowering approval time and risk if fully verified.",
+    "legal_issues": [
+     "Verification of the neighbor litigation settlement agreement and any conditions added.",
+     "Affordable rent restrictions capping revenue on 14 units (30.4%) for 40 years.",
+     "Confirmation of vested rights status despite the Fairfield moratorium."
+    ],
+    "test_fit": "The site plan includes 3 residential levels over 54 garage spaces with 24 storage lockers on a 24,829 SF lot. Total unit area is about 44,665 SF. The approved unit count is 46 units (39 one-bedroom, 7 two-bedroom). Base zoning density limits are not provided in FACTS.",
+    "value": "Land cost is $60,000 per buildable unit based on the $2,760,000 ask for the 46 approved units. FACTS provide no alternative development scenarios for comparison.",
+    "diligence": [
+     "Settlement agreement and final court appeal withdrawal documents.",
+     "Fairfield Town Plan and Zoning Commission C.G.S. 8-30g approval resolution and site plans.",
+     "Draft 40-year affordability covenant and restriction terms.",
+     "Title search and site boundary survey.",
+     "Underlying NDBD zone regulations to determine base as-of-right density."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:21:05.343772+00:00"
+  },
+  {
+   "id": "dbr-56-town-hill",
+   "address": "56 Town Hill Ave",
+   "muni": "Danbury",
+   "state": "CT",
+   "status": "Likely off market: construction began Feb 2025",
+   "ask": 1350000,
+   "facts": {
+    "address": "56 Town Hill Ave",
+    "muni": "Danbury",
+    "state": "CT",
+    "jurisdiction": "CT",
+    "ask": 1350000,
+    "status": "Likely off market: construction began Feb 2025",
+    "lot_sf": 27443,
+    "zone": "RMF-4",
+    "approval": {
+     "status": "approved; under construction",
+     "body": "Danbury Planning Department",
+     "date": "January 15, 2025",
+     "units": 24,
+     "detail": "24 apartments (3 studios, 16 one-bedroom, 5 two-bedroom), 39 parking spaces. Developer Joseph DaSilva began site clearing in February 2025; the 2024 listing appears stale.",
+     "sources": [
+      "https://www.newstimes.com/news/article/danbury-construction-apartment-town-hill-ave-start-20140909.php",
+      "https://www.loopnet.com/Listing/56-Town-Hill-Ave-Danbury-CT/32338226/"
+     ]
+    },
+    "issues": [
+     "Treat as unavailable unless the owner confirms a sale"
+    ],
+    "scenarios_units": {
+     "approved": "24"
+    },
+    "ask_per_unit": {
+     "approved": "$56,250"
+    }
+   },
+   "facts_hash": "2644df33df6e",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:23:35.820610+00:00"
+  },
+  {
+   "id": "bx-3848-bailey",
+   "address": "3848 Bailey Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Crexi, not updated in 117 days)",
+   "ask": 1150000,
+   "facts": {
+    "address": "3848 Bailey Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "ask": 1150000,
+    "status": "Listed (Crexi, not updated in 117 days)",
+    "listing_lot_sf": 3134,
+    "issues": [
+     "Listing says 3,134 sf; tax lot is 6,268 sf vacant. Confirm what is for sale",
+     "3846 Bailey next door completed 32 units in 2025 on a 6,268 sf lot"
+    ],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2032630037",
+     "zoning": "R7-1",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 6268,
+     "frontage_ft": 54.75,
+     "depth_ft": 115,
+     "corner_lot": false,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 0,
+     "owner": "3852 BAILEY AVE PROPERTY LLC",
+     "far_rule": "ZR 23-22: R7-1 standard FAR 3.44, qualifying affordable (UAP) FAR 5.01",
+     "standard_floor_area": 21562,
+     "uap_floor_area": 31403,
+     "units_standard": [
+      23,
+      31
+     ],
+     "units_uap": [
+      34,
+      46
+     ],
+     "note_far": "ZR 23-22 lists a 4.00 standard FAR for R7-1/R7-2 lots meeting its footnote conditions (location relative to a wide street); confirm with an architect.",
+     "lot_discrepancy": "listing says 3,134 sf; tax lot is 6,268 sf"
+    },
+    "scenarios_units": {
+     "standard": "23 to 31",
+     "with UAP affordable bonus": "34 to 46"
+    },
+    "ask_per_unit": {
+     "standard": "$37,097 to $50,000",
+     "with UAP affordable bonus": "$25,000 to $33,824"
+    }
+   },
+   "facts_hash": "4dae19b22dac",
+   "memo": {
+    "verdict": "The site allows a multi-family residential building of 23 to 46 units depending on UAP affordable bonus utilization, making it worth pursuing at the $1,150,000 ask if title and lot size discrepancies are resolved.",
+    "as_of_right": "Under R7-1 zoning, standard FAR 3.44 permits 21,562 sf of floor area for 23 to 31 units on a 6,268 sf lot. Qualifying affordable UAP increases FAR to 5.01, allowing 31,403 sf of floor area for 34 to 46 units. Footnote conditions under ZR 23-22 may allow a standard 4.00 FAR.",
+    "approval_path": "As-of-right. This path requires standard departmental building permits, which reduces discretionary review risk and shortens project timelines.",
+    "legal_issues": [
+     "Listing lot size of 3,134 sf conflicts with the tax lot size of 6,268 sf.",
+     "Title verification of true boundary lines and confirm ownership by 3852 BAILEY AVE PROPERTY LLC.",
+     "Compliance and covenant requirements for UAP qualifying affordable floor area bonus."
+    ],
+    "test_fit": "The site features 54.75 feet of frontage and 115 feet of depth. Building envelope limits density first via total floor area ratio. Standard yield is 23 to 31 units, while UAP yields 34 to 46 units. The adjacent lot at 3846 Bailey completed 32 units on a 6,268 sf lot.",
+    "value": "At the $1,150,000 ask, land cost is $37,097 to $50,000 per buildable unit under standard zoning. Utilizing the UAP affordable bonus reduces land cost to $25,000 to $33,824 per buildable unit.",
+    "diligence": [
+     "Boundary survey to confirm whether lot area is 3,134 sf or 6,268 sf.",
+     "Zoning analysis from an architect to confirm wide street standard FAR of 4.00 under ZR 23-22.",
+     "Title commitment and deed review for BBL 2032630037.",
+     "Updated status check with seller on the Crexi listing."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:24:23.323362+00:00"
+  },
+  {
+   "id": "bx-1901-harrison",
+   "address": "1901 Harrison Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Crexi, Oct 2026)",
+   "ask": 999000,
+   "facts": {
+    "address": "1901 Harrison Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "ask": 999000,
+    "status": "Listed (Crexi, Oct 2026)",
+    "issues": [
+     "Vacant 1-family; broker offers a survey"
+    ],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2028680164",
+     "zoning": "R7-1",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 2800,
+     "frontage_ft": 30,
+     "depth_ft": 99.5,
+     "corner_lot": false,
+     "existing_bldg_sf": 2329,
+     "existing_units": 1,
+     "year_built": 1920,
+     "owner": "1901 HARRISON AVE CORP.",
+     "far_rule": "ZR 23-22: R7-1 standard FAR 3.44, qualifying affordable (UAP) FAR 5.01",
+     "standard_floor_area": 9632,
+     "uap_floor_area": 14028,
+     "units_standard": [
+      10,
+      14
+     ],
+     "units_uap": [
+      15,
+      20
+     ],
+     "note_far": "ZR 23-22 lists a 4.00 standard FAR for R7-1/R7-2 lots meeting its footnote conditions (location relative to a wide street); confirm with an architect."
+    },
+    "scenarios_units": {
+     "standard": "10 to 14",
+     "with UAP affordable bonus": "15 to 20"
+    },
+    "ask_per_unit": {
+     "standard": "$71,357 to $99,900",
+     "with UAP affordable bonus": "$49,950 to $66,600"
+    }
+   },
+   "facts_hash": "358506ff4195",
+   "memo": {
+    "verdict": "A 10 to 14 unit standard residential project or a 15 to 20 unit UAP affordable project can be built, making it worth pursuing at the $999,000 asking price.",
+    "as_of_right": "Under R7-1 zoning on a 2,800 square foot lot, a standard 3.44 FAR allows 9,632 square feet for 10 to 14 units. Qualifying UAP affordable housing allows a 5.01 FAR yielding 14,028 square feet for 15 to 20 units. A standard 4.00 FAR yielding up to 11,200 square feet may apply if footnote location conditions are met.",
+    "approval_path": "As-of-right approval. Development requires standard building department plan review, carrying low entitlement risk and faster timelines than discretionary permits.",
+    "legal_issues": [
+     "Confirmation of wide street location footnote to achieve 4.00 standard FAR.",
+     "Affordability covenant compliance required to secure UAP bonus floor area.",
+     "Demolition and vacancy status of the existing 1920 single-family residence.",
+     "Review of the broker-offered survey for lot boundary and frontage verification."
+    ],
+    "test_fit": "The 2,800 square foot lot has 30 feet of frontage and 99.5 feet of depth, supporting 9,632 to 14,028 square feet. Building envelope density is limited first by the narrow 30-foot lot frontage. Unit counts range from 10 to 14 standard units, or 15 to 20 units with UAP.",
+    "value": "At the $999,000 ask, land cost is $71,357 to $99,900 per unit for standard development. With the UAP affordable bonus, land cost drops to $49,950 to $66,600 per unit.",
+    "diligence": [
+     "Broker-offered property survey",
+     "Architectural analysis of ZR 23-22 wide street footnote conditions",
+     "Title search for 1901 HARRISON AVE CORP.",
+     "Phase I Environmental Site Assessment",
+     "DOB record search for existing building demolition requirements"
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:25:02.581989+00:00"
+  },
+  {
+   "id": "bx-927-home",
+   "address": "927 Home St",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (LoopNet, Apr 2026)",
+   "ask": 1100000,
+   "facts": {
+    "address": "927 Home St",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "ask": 1100000,
+    "status": "Listed (LoopNet, Apr 2026)",
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2029740177",
+     "zoning": "R7-1",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 2920,
+     "frontage_ft": 27.76,
+     "depth_ft": 107.48,
+     "corner_lot": false,
+     "existing_bldg_sf": 1188,
+     "existing_units": 1,
+     "year_built": 1991,
+     "owner": "ADELA MALDONADO",
+     "far_rule": "ZR 23-22: R7-1 standard FAR 3.44, qualifying affordable (UAP) FAR 5.01",
+     "standard_floor_area": 10045,
+     "uap_floor_area": 14629,
+     "units_standard": [
+      11,
+      14
+     ],
+     "units_uap": [
+      16,
+      21
+     ],
+     "note_far": "ZR 23-22 lists a 4.00 standard FAR for R7-1/R7-2 lots meeting its footnote conditions (location relative to a wide street); confirm with an architect."
+    },
+    "scenarios_units": {
+     "standard": "11 to 14",
+     "with UAP affordable bonus": "16 to 21"
+    },
+    "ask_per_unit": {
+     "standard": "$78,571 to $100,000",
+     "with UAP affordable bonus": "$52,381 to $68,750"
+    }
+   },
+   "facts_hash": "ee33c2b10c9c",
+   "memo": {
+    "verdict": "The site supports an 11 to 14 unit standard building or a 16 to 21 unit UAP affordable building, making it worth pursuing at the $1,100,000 ask price depending on your target program.",
+    "as_of_right": "Zoning R7-1 on a 2,920 square foot lot allows a standard FAR of 3.44 yielding 10,045 square feet for 11 to 14 units. Qualifying affordable UAP allows an FAR of 5.01 yielding 14,629 square feet for 16 to 21 units. ZR 23-22 notes a potential 4.00 standard FAR if wide street conditions are met.",
+    "approval_path": "Development is as-of-right under standard or UAP zoning rules. This path carries minimal zoning risk and a fast timeline because discretionary approvals are not required.",
+    "legal_issues": [
+     "Tenancy status and lease terms for the existing 1-unit, 1,188 square foot building built in 1991.",
+     "Affordability covenants and restrictions required to utilize the UAP bonus FAR.",
+     "Title review to confirm ownership under Adela Maldonado and check for easements.",
+     "Verification of ZR 23-22 footnote conditions to confirm if standard FAR is 3.44 or 4.00."
+    ],
+    "test_fit": "The envelope sits on a 27.76 foot by 107.48 foot lot totaling 2,920 square feet. Unit yield is 11 to 14 units under standard zoning, or 16 to 21 units under UAP. Maximum floor area is 10,045 square feet standard or 14,629 square feet with UAP. Small frontage width and FAR limits restrict overall density first.",
+    "value": "At the $1,100,000 ask price, standard development land cost is $78,571 to $100,000 per buildable unit. The UAP affordable bonus lowers the land cost to $52,381 to $68,750 per buildable unit.",
+    "diligence": [
+     "Architectural zoning study to confirm ZR 23-22 footnote street eligibility and exact FAR.",
+     "Property survey to confirm lot area, frontage, and depth dimensions.",
+     "Title search and review of any liens or encumbrances.",
+     "Tenant occupancy verification for the existing residential unit.",
+     "Phase I Environmental Site Assessment."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:25:23.047976+00:00"
+  },
+  {
+   "id": "bx-1185-grant",
+   "address": "1185 Grant Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (MLS #1034341)",
+   "ask": 1000000,
+   "facts": {
+    "address": "1185 Grant Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "ask": 1000000,
+    "status": "Listed (MLS #1034341)",
+    "issues": [
+     "Occupied 3-family: vacancy and buyout cost"
+    ],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2024520066",
+     "zoning": "R7-1",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 2500,
+     "frontage_ft": 25,
+     "depth_ft": 100,
+     "corner_lot": false,
+     "existing_bldg_sf": 4152,
+     "existing_units": 3,
+     "year_built": 1935,
+     "owner": "WEINBERGER, LEAH",
+     "far_rule": "ZR 23-22: R7-1 standard FAR 3.44, qualifying affordable (UAP) FAR 5.01",
+     "standard_floor_area": 8600,
+     "uap_floor_area": 12525,
+     "units_standard": [
+      9,
+      12
+     ],
+     "units_uap": [
+      13,
+      18
+     ],
+     "note_far": "ZR 23-22 lists a 4.00 standard FAR for R7-1/R7-2 lots meeting its footnote conditions (location relative to a wide street); confirm with an architect."
+    },
+    "scenarios_units": {
+     "standard": "9 to 12",
+     "with UAP affordable bonus": "13 to 18"
+    },
+    "ask_per_unit": {
+     "standard": "$83,333 to $111,111",
+     "with UAP affordable bonus": "$55,556 to $76,923"
+    }
+   },
+   "facts_hash": "6317be8a95be",
+   "memo": {
+    "verdict": "The site allows residential development of 9 to 18 units, making it worth pursuing at the $1,000,000 ask subject to addressing tenant buyout costs.",
+    "as_of_right": "Zoning R7-1 on a 2,500 sq ft lot allows a standard FAR of 3.44 yielding 8,600 sq ft of floor area (9 to 12 units). Qualifying affordable UAP yields a 5.01 FAR allowing 12,525 sq ft of floor area (13 to 18 units). ZR 23-22 lists a 4.00 standard FAR option for lots meeting wide street location conditions.",
+    "approval_path": "As-of-right path. Standard Department of Buildings plan examination carries lower land-use risk and faster execution than discretionary approvals.",
+    "legal_issues": [
+     "Occupied 3-family structure requiring tenant buyouts and vacancy management.",
+     "Affordability covenants required to unlock the UAP floor area bonus.",
+     "Narrow 25-foot frontage impacts design compliance and title access."
+    ],
+    "test_fit": "Building envelope is constrained by a 25-foot frontage and 100-foot depth. Unit yield ranges from 9 to 12 standard units or 13 to 18 UAP units. Narrow 25-foot lot width limits density first. Parking requirements are not detailed in FACTS.",
+    "value": "At the $1,000,000 ask price, standard development costs $83,333 to $111,111 per buildable unit. Developing with the UAP affordable bonus lowers land cost to $55,556 to $76,923 per buildable unit.",
+    "diligence": [
+     "Tenant leases, rent rolls, and buyout agreement histories for existing 3 units.",
+     "Architectural analysis of ZR 23-22 wide street conditions to confirm standard FAR eligibility.",
+     "Title search and review of existing building encumbrances.",
+     "Phase 1 environmental site assessment.",
+     "Confirmation of applicable zoning parking requirements."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:25:45.035485+00:00"
+  },
+  {
+   "id": "bx-2411-poplar",
+   "address": "2411 Poplar St",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed",
+   "ask": 1150000,
+   "facts": {
+    "address": "2411 Poplar St",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "ask": 1150000,
+    "status": "Listed",
+    "issues": [
+     "Occupied 2-family",
+     "Mandatory Inclusionary Housing area"
+    ],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2040620023",
+     "zoning": "R6-1",
+     "commercial_overlay": null,
+     "special_district": "ETC",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 2500,
+     "frontage_ft": 25,
+     "depth_ft": 100,
+     "corner_lot": false,
+     "existing_bldg_sf": 1497,
+     "existing_units": 2,
+     "year_built": 1910,
+     "owner": "POPKEY REALTY LLC",
+     "far_rule": "ZR 23-22: R6-1 standard FAR 3.0, qualifying affordable (UAP) FAR 3.9",
+     "standard_floor_area": 7500,
+     "uap_floor_area": 9750,
+     "units_standard": [
+      8,
+      11
+     ],
+     "units_uap": [
+      10,
+      14
+     ]
+    },
+    "scenarios_units": {
+     "standard": "8 to 11",
+     "with UAP affordable bonus": "10 to 14"
+    },
+    "ask_per_unit": {
+     "standard": "$104,545 to $143,750",
+     "with UAP affordable bonus": "$82,143 to $115,000"
+    }
+   },
+   "facts_hash": "b319ab21674b",
+   "memo": {
+    "verdict": "An 8 to 14 unit residential project can be built under R6-1 zoning, making it worth pursuing at the $1,150,000 ask if tenant relocation and affordability rules are acceptable.",
+    "as_of_right": "On a 2,500 square foot lot, ZR 23-22 R6-1 standard FAR 3.0 allows 7,500 square feet of floor area for 8 to 11 units. The qualifying affordable UAP bonus at FAR 3.9 allows 9,750 square feet of floor area for 10 to 14 units.",
+    "approval_path": "As-of-right development path. This minimizes discretionary risk and review time, though Mandatory Inclusionary Housing compliance is required.",
+    "legal_issues": [
+     "Existing occupied 2-family residential building requires tenant lease review and clearance.",
+     "Mandatory Inclusionary Housing area designation requires compliance with affordability covenants.",
+     "Special district (ETC) rules must be reviewed for specific zoning restrictions."
+    ],
+    "test_fit": "The lot is 25 feet wide by 100 feet deep with 2,500 square feet. Standard zoning fits 7,500 square feet (8 to 11 units), and UAP fits 9,750 square feet (10 to 14 units). The narrow 25-foot frontage limits layout and density first.",
+    "value": "At the $1,150,000 asking price, land cost is $104,545 to $143,750 per unit for the standard scenario (8 to 11 units). With the UAP affordable bonus scenario (10 to 14 units), land cost drops to $82,143 to $115,000 per unit.",
+    "diligence": [
+     "Tenant leases and rent roll for the existing occupied 2-family home.",
+     "Title search and survey to check easements, encumbrances, and exact boundaries.",
+     "Phase I Environmental Site Assessment.",
+     "Zoning confirmation for UAP bonus eligibility and MIH affordable set-aside rules.",
+     "DOB property profile check for existing violations or active permits."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:26:22.293172+00:00"
+  },
+  {
+   "id": "yon-1.-445-10",
+   "address": "94 William St",
+   "muni": "Yonkers",
+   "state": "NY",
+   "status": "Pending (OneKey MLS)",
+   "ask": 849000,
+   "facts": {
+    "address": "94 William St",
+    "muni": "Yonkers",
+    "state": "NY",
+    "jurisdiction": "Yonkers",
+    "printkey": "1.-445-10",
+    "zone": "M",
+    "ask": 849000,
+    "status": "Pending (OneKey MLS)",
+    "issues": [
+     "20 units on paper (M). 187 ft on Van Buren St. ~56 ft grade change: steep-slope review."
+    ],
+    "parcel": {
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "1.-445-10",
+     "zoning": "M",
+     "lot_sf": 16534,
+     "street_frontage_ft": 297,
+     "property_class": "230",
+     "owner": "Christian, Nathaniel",
+     "rule": "M: FAR 1.25, 800 sf of lot per unit, height 65 ft, multifamily lot coverage 40%",
+     "floor_area": 20668,
+     "units_paper": 20,
+     "parking_rule": "1 space per unit + 0.33 per bedroom (Table 43-4)",
+     "parking_spaces_at_paper_units": 28,
+     "surface_parking_capacity": 24
+    },
+    "scenarios_units": {
+     "zoning maximum on paper": "20"
+    },
+    "ask_per_unit": {
+     "zoning maximum on paper": "$42,450"
+    }
+   },
+   "facts_hash": "f689d5d87db9",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:29:00.217042+00:00"
+  },
+  {
+   "id": "yon-1.-176-29",
+   "address": "127 Downing St",
+   "muni": "Yonkers",
+   "state": "NY",
+   "status": "Active (OneKey MLS)",
+   "ask": 1600000,
+   "facts": {
+    "address": "127 Downing St",
+    "muni": "Yonkers",
+    "state": "NY",
+    "jurisdiction": "Yonkers",
+    "printkey": "1.-176-29",
+    "zone": "A",
+    "ask": 1600000,
+    "status": "Active (OneKey MLS)",
+    "issues": [
+     "Paper max 53 (FAR 3.0); ~45-49 after 40% coverage + height cap (1.5x street width); ~30 if parking must be at grade. 69 ft frontage. Ludlow station 0.23 mi."
+    ],
+    "parcel": {
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "1.-176-29",
+     "zoning": "A",
+     "lot_sf": 16001,
+     "street_frontage_ft": 69,
+     "property_class": "482",
+     "owner": "Baj International LLC",
+     "rule": "A: FAR 3.0, no per-unit cap, height 1.5 x width of fronting street, multifamily lot coverage 40%",
+     "floor_area": 48003,
+     "units_paper": 53,
+     "parking_rule": "1 space per unit + 0.33 per bedroom (Table 43-4)",
+     "parking_spaces_at_paper_units": 75,
+     "surface_parking_capacity": 23
+    },
+    "scenarios_units": {
+     "zoning maximum on paper": "53"
+    },
+    "ask_per_unit": {
+     "zoning maximum on paper": "$30,189"
+    }
+   },
+   "facts_hash": "4a5d54a995cb",
+   "memo": {
+    "verdict": "The site realistically supports 30 to 49 units depending on parking layout, making it worth pursuing at the $1,600,000 asking price if structured parking is viable.",
+    "as_of_right": "Zone A allows FAR 3.0 on a 16,001 sq ft lot. This yields a maximum paper floor area of 48,003 sq ft and 53 paper units with no per-unit density cap. Bulk rules require 40% maximum lot coverage, height capped at 1.5 times the street width, and parking at 1 space per unit plus 0.33 per bedroom.",
+    "approval_path": "Development is permitted as-of-right under Zone A rules. Site plan approval will be required, and any variance needed for height or parking will add processing time and discretionary risk.",
+    "legal_issues": [
+     "Parking mandates require 75 spaces for the 53-unit paper max, but surface parking capacity is limited to 23 spaces.",
+     "Street frontage is restricted to 69 feet, which may complicate access layout and curb cuts.",
+     "Strict 40% lot coverage and a height cap of 1.5 times the fronting street width constrain the usable building envelope."
+    ],
+    "test_fit": "The lot area is 16,001 sq ft with a 48,003 sq ft maximum floor area. Envelope caps of 40% coverage and height of 1.5 times street width reduce yield to 45-49 units. Parking limits density first, dropping yield to approximately 30 units if parking remains strictly at grade.",
+    "value": "At the $1,600,000 ask, land cost per buildable unit is $30,189 for the paper maximum scenario of 53 units. Per-unit land cost increases if buildout is reduced to 45-49 units or 30 units due to parking limits.",
+    "diligence": [
+     "Measure exact fronting street width to establish the absolute building height limit.",
+     "Order a site survey to confirm the 69 ft street frontage and boundary lines.",
+     "Perform a subsurface geotechnical study to evaluate structured or underground parking costs.",
+     "Review property class 482 records and title for existing liens or encumbrances.",
+     "Verify Yonkers Planning Department site plan review submittal requirements."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:29:30.827761+00:00"
+  },
+  {
+   "id": "yon-1.-211-66",
+   "address": "223 Glenbrook Ave",
+   "muni": "Yonkers",
+   "state": "NY",
+   "status": "Active (OneKey MLS); listing says 1 acre",
+   "ask": 499000,
+   "facts": {
+    "address": "223 Glenbrook Ave",
+    "muni": "Yonkers",
+    "state": "NY",
+    "jurisdiction": "Yonkers",
+    "printkey": "1.-211-66",
+    "zone": "S-50",
+    "ask": 499000,
+    "status": "Active (OneKey MLS); listing says 1 acre",
+    "issues": [
+     "NOT CONFIRMED: county map shows ~35 ft frontage on Glenbrook (flag lot); S-50 needs 50 ft at the street line and frontage on a mapped street. North edge may be a paper street: check Official City Map + survey."
+    ],
+    "parcel": {
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "1.-211-66",
+     "zoning": "S-50",
+     "lot_sf": 45695,
+     "street_frontage_ft": 187,
+     "property_class": "330",
+     "owner": "223 Glenbrook LLC",
+     "rule": "S-50: 5,000 sf and 50 ft of width at the street line per lot; every lot must front a mapped street",
+     "lots_by_area": 9,
+     "lots_by_frontage": 3,
+     "lots_allowed": 3
+    },
+    "scenarios_units": {
+     "lots allowed": "3"
+    },
+    "ask_per_unit": {
+     "lots allowed": "$166,333"
+    }
+   },
+   "facts_hash": "48acb73ff886",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:29:44.490467+00:00"
+  },
+  {
+   "id": "yon-4.-4652-56",
+   "address": "101 Cresthill Rd",
+   "muni": "Yonkers",
+   "state": "NY",
+   "status": "Active (OneKey MLS)",
+   "ask": 745000,
+   "facts": {
+    "address": "101 Cresthill Rd",
+    "muni": "Yonkers",
+    "state": "NY",
+    "jurisdiction": "Yonkers",
+    "printkey": "4.-4652-56",
+    "zone": "S-75",
+    "ask": 745000,
+    "status": "Active (OneKey MLS)",
+    "issues": [
+     "1 lot only: ~85 ft frontage on Cresthill Rd; two S-75 lots need 150 ft."
+    ],
+    "parcel": {
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "4.-4652-56",
+     "zoning": "S-75",
+     "lot_sf": 22018,
+     "street_frontage_ft": 83,
+     "property_class": "210",
+     "owner": "Rego, Michael",
+     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
+     "lots_by_area": 2,
+     "lots_by_frontage": 1,
+     "lots_allowed": 1
+    },
+    "scenarios_units": {
+     "lots allowed": "1"
+    },
+    "ask_per_unit": {
+     "lots allowed": "$745,000"
+    }
+   },
+   "facts_hash": "e4982ddc5f90",
+   "memo": {
+    "verdict": "The site realistically supports only one lot as-of-right, making the $745,000 ask high unless a frontage variance for a second lot is obtained.",
+    "as_of_right": "S-75 zoning requires 7,500 sf and 75 ft of street frontage per lot. The 22,018 sf lot area yields 2 lots by size. However, the site has only 83 ft of frontage, so only 1 lot is allowed as-of-right because 2 lots require 150 ft.",
+    "approval_path": "As-of-right for 1 lot carries low risk and standard building permit timelines. Creating 2 lots requires an area variance for frontage, adding zoning board approval risk and timeline delays.",
+    "legal_issues": [
+     "Frontage deficiency: 83 ft exists where 150 ft is required for two S-75 lots.",
+     "Mapped street requirement: Every created lot must front a mapped street under S-75 rules.",
+     "Variance approval risk: Creating a second lot depends entirely on discretionary zoning board relief."
+    ],
+    "test_fit": "Street frontage limits density first. The site envelope fits 1 single-family lot as-of-right or 2 lots if variance relief is granted. Off-street parking must comply with Yonkers Code Table 43-4.",
+    "value": "Land cost at the ask is $745,000 per unit for the single as-of-right lot scenario. Under a potential 2-lot scenario, land cost drops to $372,500 per lot.",
+    "diligence": [
+     "Certified property survey confirming exact street frontage and property boundaries.",
+     "Title search to verify property ownership, easements, and covenants.",
+     "Zoning variance history for similar S-75 frontage relief in Yonkers.",
+     "Confirmation of public utility connection availability along Cresthill Rd.",
+     "Environmental site inspection report."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:30:53.179429+00:00"
+  },
+  {
+   "id": "yon-4.-4651-86",
+   "address": "81 Avondale Rd",
+   "muni": "Yonkers",
+   "state": "NY",
+   "status": "Pending (OneKey MLS)",
+   "ask": 1190000,
+   "facts": {
+    "address": "81 Avondale Rd",
+    "muni": "Yonkers",
+    "state": "NY",
+    "jurisdiction": "Yonkers",
+    "printkey": "4.-4651-86",
+    "zone": "S-75",
+    "ask": 1190000,
+    "status": "Pending (OneKey MLS)",
+    "issues": [
+     "2 lots: ~168 ft frontage, 17,096 sf. ~50 ft grade change."
+    ],
+    "parcel": {
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "4.-4651-86",
+     "zoning": "S-75",
+     "lot_sf": 17096,
+     "street_frontage_ft": 167,
+     "property_class": "210",
+     "owner": "Rodrigues, Jose",
+     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
+     "lots_by_area": 2,
+     "lots_by_frontage": 2,
+     "lots_allowed": 2
+    },
+    "scenarios_units": {
+     "lots allowed": "2"
+    },
+    "ask_per_unit": {
+     "lots allowed": "$595,000"
+    }
+   },
+   "facts_hash": "f567057d407b",
+   "memo": {
+    "verdict": "The site supports a 2-lot single-family subdivision under zoning rules, but the asking price of $1,190,000 ($595,000 per lot) presents significant risk given the severe 50 ft grade change.",
+    "as_of_right": "The S-75 zone requires 7,500 sf of lot area and 75 ft of street frontage per lot. The 17,096 sf lot provides enough area for 2 lots (17,096 / 7,500 = 2 lots), and the 167 ft frontage provides enough width for 2 lots (167 / 75 = 2 lots).",
+    "approval_path": "Subdivision approval is required for 2 lots as-of-right under S-75 bulk rules, but the 50 ft grade change adds development risk and time for engineering review.",
+    "legal_issues": [
+     "Severe site topography with a 50 ft grade change.",
+     "Verification that both proposed lots front a mapped street pursuant to Yonkers S-75 rules.",
+     "Potential slope or site constraints impacting structural work and utility connections.",
+     "Property status is currently listed as pending on OneKey MLS."
+    ],
+    "test_fit": "The site yields a maximum of 2 units across 2 lots. The steep 50 ft grade change limits the building envelope and parking design before zoning density limits are reached.",
+    "value": "At the $1,190,000 ask, the land cost is $595,000 per buildable lot for the 2 allowed lots.",
+    "diligence": [
+     "Topographic and boundary survey to map exact elevation lines and frontage.",
+     "Geotechnical engineering study to assess slope stability and foundation costs.",
+     "Title search to verify encumbrances, easements, and property lines.",
+     "Yonkers municipal check regarding steep slope regulations and subdivision requirements.",
+     "Utility map review for sewer and water connections to both proposed lots."
+    ],
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:31:20.192164+00:00"
+  },
+  {
+   "id": "nyc-4004110018",
+   "address": "21 STREET",
+   "muni": "Astoria / LIC",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "21 STREET",
+    "muni": "Astoria / LIC",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "QN",
+    "bbl": "4004110018",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "4004110018",
+     "zoning": "M1-6A/R10",
+     "commercial_overlay": null,
+     "special_district": "LIC",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 7711,
+     "frontage_ft": 88.64,
+     "depth_ft": 107.32,
+     "corner_lot": false,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 0,
+     "owner": "A&C INTERNATIONAL MANAGEMENT GROUP, LLC",
+     "far_rule": "ZR 23-22: M1-6A/R10 standard FAR 10",
+     "standard_floor_area": 77110,
+     "uap_floor_area": null,
+     "units_standard": [
+      85,
+      113
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "85 to 113"
+    }
+   },
+   "facts_hash": "bf9f09f7215e",
+   "memo": {
+    "verdict": "A standard residential development of 77,110 floor area square feet and 85 to 113 units can realistically be built, but feasibility relative to ask cannot be evaluated because there is no asking price.",
+    "as_of_right": "Under ZR 23-22 for M1-6A/R10 zoning, a standard FAR of 10 on a 7,711 square foot lot permits 77,110 standard floor area square feet and 85 to 113 residential units.",
+    "approval_path": "As-of-right path. Standard NYC Department of Buildings plan review applies, offering low entitlement risk and a standard permitting timeline.",
+    "legal_issues": [
+     "Off-market status requiring direct acquisition negotiations with owner A&C International Management Group, LLC.",
+     "Compliance with Special Long Island City District regulations and M1-6A/R10 bulk rules.",
+     "Verification of title and clean deed status for BBL 4004110018."
+    ],
+    "test_fit": "The site dimensions are 88.64 feet of frontage by 107.32 feet of depth on a 7,711 square foot lot. The maximum allowable building envelope is 77,110 square feet. The likely unit yield is 85 to 113 units, with density limited first by the standard FAR 10 limit.",
+    "value": "Land cost per buildable unit cannot be calculated because the property is off market and has no listed asking price.",
+    "diligence": [
+     "Title report for BBL 4004110018 to confirm ownership and encumbrances.",
+     "Phase I Environmental Site Assessment given M1 manufacturing zoning history.",
+     "Certified boundary and topographic survey confirming the 7,711 square foot lot area and 88.64 feet of frontage.",
+     "NYC Department of Buildings property profile review."
+    ],
+    "letter_angle": "Contact A&C International Management Group, LLC with an unpriced inquiry to purchase the 7,711 square foot site at 21 Street for full-density residential development.",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:32:02.554070+00:00"
+  },
+  {
+   "id": "nyc-2023490080",
+   "address": "GERARD AVENUE",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "GERARD AVENUE",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "bbl": "2023490080",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2023490080",
+     "zoning": "M1-4/R8A",
+     "commercial_overlay": null,
+     "special_district": "MX-13",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 11837,
+     "frontage_ft": 214.38,
+     "depth_ft": 216.67,
+     "corner_lot": true,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 0,
+     "owner": "PUBLIC STORAGE",
+     "far_rule": "ZR 23-22: M1-4/R8A standard FAR 6.02",
+     "standard_floor_area": 71259,
+     "uap_floor_area": null,
+     "units_standard": [
+      79,
+      104
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "79 to 104"
+    }
+   },
+   "facts_hash": "8249a3553830",
+   "memo": {
+    "verdict": "You can build a standard residential project of 71,259 square feet with 79 to 104 units as-of-right, but feasibility cannot be fully evaluated because there is no asking price.",
+    "as_of_right": "The M1-4/R8A zoning with standard FAR 6.02 on an 11,837 square foot lot allows 71,259 square feet of standard floor area and 79 to 104 units without discretionary approval.",
+    "approval_path": "This is an as-of-right development path under M1-4/R8A zoning, which minimizes approval risk and requires standard Department of Buildings plan reviews.",
+    "legal_issues": [
+     "Special district MX-13 regulations must be verified for specific use and design constraints.",
+     "Title search is needed to confirm clear title and absence of encumbrances from current owner Public Storage.",
+     "Boundary verification is required for the corner lot dimensions of 214.38 feet frontage and 216.67 feet depth."
+    ],
+    "test_fit": "The site allows a maximum floor area of 71,259 square feet on an 11,837 square foot corner lot, yielding between 79 and 104 standard units. Density is primarily constrained by the 6.02 standard FAR.",
+    "value": "Land cost per buildable unit cannot be calculated because the asking price is null.",
+    "diligence": [
+     "Obtain target asking price from owner to perform financial evaluation.",
+     "Order a preliminary title report to confirm ownership and encumbrances.",
+     "Commission a Phase I Environmental Site Assessment given the M1-4 light manufacturing context.",
+     "Verify MX-13 special district zoning rules and applicable parking requirements.",
+     "Obtain a certified boundary survey of the 11,837 square foot corner lot."
+    ],
+    "letter_angle": "Approach Public Storage directly to inquire about acquiring their off-market corner parcel on Gerard Avenue for redevelopment.",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:32:26.642676+00:00"
+  },
+  {
+   "id": "nyc-2023200066",
+   "address": "250 EAST 138 STREET",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "250 EAST 138 STREET",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "bbl": "2023200066",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2023200066",
+     "zoning": "M1-4/R7X",
+     "commercial_overlay": null,
+     "special_district": "MX-13",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 11500,
+     "frontage_ft": 150,
+     "depth_ft": 75,
+     "corner_lot": true,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 1931,
+     "owner": "MOTT HAVEN HOLDINGS, LLC",
+     "far_rule": "ZR 23-22: M1-4/R7X standard FAR 5",
+     "standard_floor_area": 57500,
+     "uap_floor_area": null,
+     "units_standard": [
+      63,
+      84
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "63 to 84"
+    }
+   },
+   "facts_hash": "87aa764078e7",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:32:38.236018+00:00"
+  },
+  {
+   "id": "nyc-2030550047",
+   "address": "4632 3 AVENUE",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "4632 3 AVENUE",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BX",
+    "bbl": "2030550047",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2030550047",
+     "zoning": "M1-4/R7A",
+     "commercial_overlay": null,
+     "special_district": "MX-14",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 13512,
+     "frontage_ft": 130.33,
+     "depth_ft": 145,
+     "corner_lot": false,
+     "existing_bldg_sf": 13512,
+     "existing_units": 0,
+     "year_built": 1931,
+     "owner": "BAKTIDY ASSOCIATES",
+     "far_rule": "ZR 23-22: M1-4/R7A standard FAR 4",
+     "standard_floor_area": 54048,
+     "uap_floor_area": null,
+     "units_standard": [
+      60,
+      79
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "60 to 79"
+    }
+   },
+   "facts_hash": "d8f26e5be7d0",
+   "memo": {
+    "verdict": "The site permits a standard development of 54,048 square feet with 60 to 79 units, but feasibility cannot be fully evaluated because there is no asking price.",
+    "as_of_right": "Under M1-4/R7A zoning, the site has a standard FAR of 4. On a 13,512 square foot lot, this allows 54,048 square feet of standard floor area and 60 to 79 units as-of-right.",
+    "approval_path": "This project follows an as-of-right path, which minimizes entitlement risk and avoids discretionary board approvals.",
+    "legal_issues": [
+     "Requirements for demolishing the existing 13,512 square foot building constructed in 1931.",
+     "Compliance with special district MX-14 zoning provisions.",
+     "Title verification and ownership confirmation with BAKTIDY ASSOCIATES.",
+     "Status of current occupants or leases in the existing building."
+    ],
+    "test_fit": "The lot measures 130.33 feet of frontage by 145 feet of depth for 13,512 square feet total. A standard FAR of 4 limits density to 54,048 square feet of floor area. The expected unit count is 60 to 79 units.",
+    "value": "Land cost per buildable unit cannot be calculated because the asking price is null.",
+    "diligence": [
+     "Order a title report to verify ownership by BAKTIDY ASSOCIATES.",
+     "Obtain a certified property survey of the lot dimensions.",
+     "Perform a Phase I Environmental Site Assessment on the 1931 structure.",
+     "Review MX-14 special district zoning rules and parking requirements.",
+     "Audit existing leases or occupancy status for the existing structure."
+    ],
+    "letter_angle": "Contact BAKTIDY ASSOCIATES directly to express interest in purchasing the off-market property.",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-21T02:33:08.485177+00:00"
+  },
+  {
+   "id": "nyc-3025650060",
+   "address": "WEST STREET",
+   "muni": "Williamsburg / Greenpoint",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "WEST STREET",
+    "muni": "Williamsburg / Greenpoint",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BK",
+    "bbl": "3025650060",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "3025650060",
+     "zoning": "M1-2/R6A",
+     "commercial_overlay": null,
+     "special_district": "MX-8",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 18125,
+     "frontage_ft": 0,
+     "depth_ft": 0,
+     "corner_lot": false,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 0,
+     "owner": "SEVENTY WEST REALTY LLC",
+     "far_rule": "ZR 23-22: M1-2/R6A standard FAR 3",
+     "standard_floor_area": 54375,
+     "uap_floor_area": null,
+     "units_standard": [
+      60,
+      79
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "60 to 79"
+    }
+   },
+   "facts_hash": "0cad4dfeb6f2",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:36:19.328674+00:00"
+  },
+  {
+   "id": "nyc-3024820009",
+   "address": "19 CLAY STREET",
+   "muni": "Williamsburg / Greenpoint",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "19 CLAY STREET",
+    "muni": "Williamsburg / Greenpoint",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "BK",
+    "bbl": "3024820009",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "3024820009",
+     "zoning": "M1-2/R6",
+     "commercial_overlay": null,
+     "special_district": "MX-8",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 19747,
+     "frontage_ft": 105,
+     "depth_ft": 151.54,
+     "corner_lot": false,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 0,
+     "owner": "CLAY PROPERTIES LLC",
+     "far_rule": "ZR 23-22: M1-2/R6 standard FAR 2.43",
+     "standard_floor_area": 47985,
+     "uap_floor_area": null,
+     "units_standard": [
+      53,
+      70
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "53 to 70"
+    }
+   },
+   "facts_hash": "5788c79651a7",
+   "memo": null,
+   "checked_utc": "2026-11-21T02:37:01.367949+00:00"
+  }
+ ],
+ "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
+}
