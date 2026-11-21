@@ -6,13 +6,17 @@ asking only for listings it can cite with a URL. Every hit is appended to
 bounty/data/feasibility_sites.json, so the next memo run gives it the full
 land-use / test-fit review automatically, and it shows on the board as "found by search".
 
-Engines (first that works is used):
+Free inputs (always read first):
+  Google Sheet "BOUNTY Listings", published as CSV (URLs in bounty/data/hunter_config.json):
+    tab "muse"   - clean rows added by the owner's Muse agent from its daily listing search
+    tab "alerts" - raw rows from saved-search alert emails (Gmail -> Apps Script, bounty/tools/gmail_to_sheet.gs)
+Paid search engines (only if HUNTER_SEARCH=1, first that works is used):
   Gemini with Google Search grounding   (GEMINI_API_KEY; grounding is billed per prompt on paid keys)
   Claude with the web search tool        (ANTHROPIC_API_KEY, optional)
 
 Budget: one prompt per area per day (10 areas) and up to 15 results each.
 """
-import json, os, re, time, urllib.error, urllib.request
+import csv, io, json, os, re, time, urllib.error, urllib.request
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -102,6 +106,64 @@ def norm(a, town):
     return re.sub(r"\s+", " ", s).strip()
 
 
+ADDR = re.compile(r"\b(\d{1,5}(?:-\d{1,5})?\s+[A-Z0-9][A-Za-z0-9.' ]{2,40}?\s(?:St|Street|Ave|Avenue|Rd|Road|Blvd|Boulevard|Pl|Place|Ln|Lane|Dr|Drive|Ter|Terrace|Ct|Court|Pkwy|Parkway|Way|Hwy|Highway|Tpke|Turnpike))\b\.?,?\s*([A-Z][A-Za-z .]{2,30})?,?\s*(NY|NJ|CT)?", re.I)
+PRICE = re.compile(r"\$\s?([0-9][0-9,]{4,})(?:\.\d+)?\s*(K|M)?", re.I)
+JURIS = [(r"bronx", "NYC", "BX"), (r"astoria|long island city|\blic\b|queens", "NYC", "QN"),
+         (r"brooklyn|williamsburg|greenpoint|dumbo", "NYC", "BK"), (r"yonkers", "Yonkers", None)]
+
+
+def fetch_csv(url):
+    try:
+        raw = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "BountyEngine/1.0"}), timeout=60).read().decode("utf-8", "ignore")
+        return list(csv.DictReader(io.StringIO(raw)))
+    except Exception as e:
+        print("  sheet fetch failed:", e)
+        return []
+
+
+def juris_for(town, state):
+    t = (town or "").lower()
+    for pat, j, b in JURIS:
+        if re.search(pat, t):
+            return j, b
+    return {"CT": "CT", "NJ": "NJ"}.get((state or "").upper(), "Westchester" if (state or "").upper() == "NY" else "Other"), None
+
+
+def num(v):
+    try:
+        v = str(v).replace(",", "").replace("$", "").strip()
+        return float(v) if v else None
+    except Exception:
+        return None
+
+
+def sheet_hits():
+    cfg = json.load(open(os.path.join(DATA, "hunter_config.json"))) if os.path.exists(os.path.join(DATA, "hunter_config.json")) else {}
+    hits = []
+    if cfg.get("muse_csv"):
+        for r in fetch_csv(cfg["muse_csv"]):
+            if r.get("address") and str(r.get("url", "")).startswith("http"):
+                hits.append({"address": r["address"].strip(), "town": (r.get("town") or "").strip(), "state": (r.get("state") or "").strip().upper(),
+                             "price": num(r.get("price")), "lot_sf": num(r.get("lot_sf")), "zoning": r.get("zoning") or None,
+                             "approved_units": num(r.get("approved_units")), "url": r["url"].strip(),
+                             "source": (r.get("source") or "Muse").strip(), "updated": r.get("date"), "headline": r.get("notes"), "via": "Muse"})
+    if cfg.get("alerts_csv"):
+        for r in fetch_csv(cfg["alerts_csv"]):
+            text, url = r.get("text") or "", r.get("url") or ""
+            m = ADDR.search(text)
+            if not m or not url.startswith("http"):
+                continue
+            p = PRICE.search(text)
+            price = None
+            if p:
+                price = float(p.group(1).replace(",", "")) * ({"K": 1e3, "M": 1e6}.get((p.group(2) or "").upper(), 1))
+            src = re.search(r"(loopnet|crexi|zillow|streeteasy|realtor|redfin|onekey|showcase|commercialcafe|cityfeet|propertyshark|trulia|homes)", url, re.I)
+            hits.append({"address": m.group(1).strip(), "town": (m.group(2) or "").strip(), "state": (m.group(3) or "").upper(),
+                         "price": price, "url": url, "source": src.group(1).title() if src else "alert email",
+                         "updated": r.get("received"), "headline": (r.get("subject") or "")[:90], "via": "saved-search alert"})
+    return hits, bool(cfg)
+
+
 def main():
     gkey, ckey = os.environ.get("GEMINI_API_KEY", ""), os.environ.get("ANTHROPIC_API_KEY", "")
     sites = json.load(open(SITES))
@@ -109,7 +171,37 @@ def main():
     known = {norm(s["address"], s.get("muni", "")) for s in sites["sites"]} | set(seen)
     status = {"generated_utc": datetime.now(timezone.utc).isoformat(), "areas": {}, "engine": None, "errors": []}
     added = 0
-    for area, juris, boro in AREAS:
+
+    def add(h, engine, juris=None, boro=None):
+        key = norm(h["address"], h.get("town", ""))
+        if key in known:
+            return 0
+        known.add(key)
+        if juris is None:
+            juris, boro = juris_for(h.get("town"), h.get("state"))
+        seen[key] = {"first_seen": datetime.now(timezone.utc).date().isoformat(), "url": h["url"]}
+        site = {"id": "hunt-" + re.sub(r"[^a-z0-9]+", "-", key.lower())[:60], "address": h["address"], "muni": h.get("town"),
+                "state": h.get("state"), "jurisdiction": juris, "ask": h.get("price"),
+                "status": f"Listed ({h.get('source') or 'web'}{', ' + str(h['updated'])[:10] if h.get('updated') else ''}); via {h.get('via') or engine}, verify",
+                "listing_url": h["url"], "headline": h.get("headline"), "listing_lot_sf": h.get("lot_sf"),
+                "listing_zoning": h.get("zoning"), "listing_buildable_sf": h.get("buildable_sf"), "found_by": h.get("via") or engine,
+                "issues": ["Listing details come from the listing page; confirm lot, zoning and status with the broker"]}
+        if boro:
+            site["borough"] = boro
+        if h.get("approved_units"):
+            site["approval"] = {"status": "claimed by listing", "body": "unverified", "date": None, "units": int(h["approved_units"]),
+                                "detail": "The listing claims approvals; get the resolution before relying on it.", "sources": [h["url"]]}
+        sites["sites"].append(site)
+        return 1
+
+    sh, has_cfg = sheet_hits()
+    n_sheet = sum(add(h, "sheet") for h in sh)
+    status["sheet"] = {"configured": has_cfg, "rows": len(sh), "new": n_sheet}
+    added += n_sheet
+    status["engine"] = "Google Sheet (Muse + alert emails)" if has_cfg else None
+    print("sheet:", status["sheet"])
+    search_on = os.environ.get("HUNTER_SEARCH", "0") == "1"
+    for area, juris, boro in (AREAS if search_on else []):
         text, engine = None, None
         for name, k, fn in (("gemini", gkey, ask_gemini), ("claude", ckey, ask_claude)):
             if not k:
@@ -124,26 +216,7 @@ def main():
             continue
         status["engine"] = engine
         hits = [h for h in parse(text) if h.get("address") and str(h.get("url", "")).startswith("http")]
-        new = 0
-        for h in hits:
-            key = norm(h["address"], h.get("town", ""))
-            if key in known:
-                continue
-            known.add(key)
-            seen[key] = {"first_seen": datetime.now(timezone.utc).date().isoformat(), "url": h["url"]}
-            site = {"id": "hunt-" + re.sub(r"[^a-z0-9]+", "-", key.lower())[:60], "address": h["address"], "muni": h.get("town"),
-                    "state": h.get("state"), "jurisdiction": juris if juris in ("NYC", "Yonkers") else juris,
-                    "ask": h.get("price"), "status": f"Listed ({h.get('source') or 'web'}{', updated ' + h['updated'] if h.get('updated') else ''}); found by search, verify",
-                    "listing_url": h["url"], "headline": h.get("headline"), "listing_lot_sf": h.get("lot_sf"),
-                    "listing_zoning": h.get("zoning"), "listing_buildable_sf": h.get("buildable_sf"),
-                    "found_by": engine, "issues": ["Listing details come from the listing page; confirm lot, zoning and status with the broker"]}
-            if boro:
-                site["borough"] = boro
-            if h.get("approved_units"):
-                site["approval"] = {"status": "claimed by listing", "body": "unverified", "date": None, "units": h["approved_units"],
-                                    "detail": "The listing claims approvals; get the resolution before relying on it.", "sources": [h["url"]]}
-            sites["sites"].append(site)
-            new += 1
+        new = sum(add(h, engine, juris, boro) for h in hits)
         added += new
         status["areas"][area] = f"{len(hits)} found, {new} new"
         print(area, status["areas"][area])

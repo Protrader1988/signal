@@ -995,7 +995,7 @@ function onePager(i){
     if(!deals){throw new Error('primary data unavailable (network/rate-limit) — retrying on reload');}
 
     // feasibility memos
-    try{ if(hunt){const el=document.createElement('div');el.className='subnote';el.innerHTML=`<span class="badge b-prog">Listing hunter</span> ${hunt.engine?('Last search '+(hunt.generated_utc||'').slice(0,10)+' via '+hunt.engine+': '+(hunt.added||0)+' new listings added. '+Object.entries(hunt.areas||{}).map(([k,v])=>k+': '+v).join(' · ')):'Not running: '+((hunt.errors||[])[0]||'no search engine key')}`;$('memoList').before(el);}
+    try{ if(hunt){const el=document.createElement('div');el.className='subnote';el.innerHTML=`<span class="badge b-prog">Listing hunter</span> ${hunt.engine?('Last run '+(hunt.generated_utc||'').slice(0,10)+' via '+hunt.engine+': '+(hunt.added||0)+' new listings added'+(hunt.sheet?(' ('+hunt.sheet.rows+' rows in the BOUNTY Listings sheet)'):'')+'. '+Object.entries(hunt.areas||{}).map(([k,v])=>k+': '+v).join(' · ')):'Waiting for the BOUNTY Listings sheet (Muse + saved-search alerts) to be connected.'}`;$('memoList').before(el);}
       const box=$('memoList'); if(feas&&feas.memos&&feas.memos.length){
       const esc=t=>String(t==null?'':t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
       const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join('');
