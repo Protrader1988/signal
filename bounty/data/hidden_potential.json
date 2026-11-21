@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-21T02:37:29.014744+00:00",
+ "generated_utc": "2026-11-21T03:11:58.208414+00:00",
  "region": "Westchester (municipalities with verified zoning rules)",
  "method": "County parcels x county zoning layer, checked against the municipality's own dimensional schedule. Units: apartments at 900 gross sf each, capped by the zone's lot-area-per-unit rule; subdivision: lot count limited by BOTH area and width. Survey, slopes, rock, sewer and the municipal zoning map must be confirmed before an offer.",
  "rules": {
@@ -64,9 +64,9 @@
   }
  },
  "counts": {
-  "candidates": 405,
-  "subdivide": 3,
-  "multifamily": 402,
+  "candidates": 2743,
+  "subdivide": 1562,
+  "multifamily": 1181,
   "on_market": 5
  },
  "on_market": [
@@ -87,16 +87,16 @@
    "far": 3.0,
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 75,
-   "parking": "needs structured parking or a parking variance",
+   "parking": "needs structured parking or a parking variance; street frontage 69 ft",
    "muni": "Yonkers",
-   "carried": true,
+   "frontage_ft": 69,
    "listing": {
     "price": 1600000,
     "status": "Active (OneKey MLS)",
     "url": "https://www.bhgre.com/home/detail/ny/yonkers/127-downing-st/lid-P00800000GxEIYfD4qEFtzBiets2XNx8ywmGb0fc",
     "checked": "2026-11-20",
     "broker": "Fleetwood Realty (Rosalie Rose)",
-    "note": ""
+    "note": "Paper max 53 (FAR 3.0); ~45-49 after 40% coverage + height cap (1.5x street width); ~30 if parking must be at grade. 69 ft frontage. Ludlow station 0.23 mi."
    },
    "price_per_unit": 30189
   },
@@ -117,16 +117,16 @@
    "far": 1.25,
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 28,
-   "parking": "fits on site (surface)",
+   "parking": "fits on site (surface); street frontage 297 ft",
    "muni": "Yonkers",
-   "carried": true,
+   "frontage_ft": 297,
    "listing": {
     "price": 849000,
     "status": "Pending (OneKey MLS)",
     "url": "https://realmo.com/listing-m/94-william-st-yonkers-ny-10701/1606103475858627999",
     "checked": "2026-11-20",
     "broker": "see Elliman / OneKey listing",
-    "note": "Occupied 3-family; next door 79-85 William St won approval for 15 apartments on 0.3 ac."
+    "note": "20 units on paper (M). 187 ft on Van Buren St. ~56 ft grade change: steep-slope review."
    },
    "price_per_unit": 42450
   },
@@ -142,51 +142,22 @@
    "lat": 40.927024,
    "lng": -73.891092,
    "play": "subdivide",
-   "lots": 4,
-   "new_lots": 3,
-   "fit": "frontage likely works",
+   "lots": 3,
+   "new_lots": 2,
+   "fit": "187 ft of street frontage measured; 50 ft needed per lot",
    "rule": "S-50: min 5,000 sf and 50 ft wide per lot",
-   "units": 4,
+   "units": 3,
    "muni": "Yonkers",
-   "carried": true,
+   "frontage_ft": 187,
    "listing": {
     "price": 499000,
     "status": "Active (OneKey MLS); listing says 1 acre",
     "url": "https://www.onekeymls.com/address/223-Glenbrook-Avenue-Yonkers-NY-10705/887941",
     "checked": "2026-11-20",
     "broker": "Borrani Realty Corp (Grace Borrani)",
-    "note": "Marketed as one homesite. Park Hill slopes: get topo before counting lots."
+    "note": "NOT CONFIRMED: county map shows ~35 ft frontage on Glenbrook (flag lot); S-50 needs 50 ft at the street line and frontage on a mapped street. North edge may be a paper street: check Official City Map + survey."
    },
-   "price_per_unit": 124750
-  },
-  {
-   "printkey": "4.-4652-56",
-   "address": "101 Cresthill Rd",
-   "class": "210",
-   "zone": "S-75",
-   "lot_sf": 22018,
-   "dims_ft": "155x167",
-   "owner": "Rego, Michael",
-   "owner_mailing": "101 Cresthill Rd, Yonkers, NY, 107102626",
-   "lat": 40.964339,
-   "lng": -73.831024,
-   "play": "subdivide",
-   "lots": 2,
-   "new_lots": 1,
-   "fit": "frontage likely works",
-   "rule": "S-75: min 7,500 sf and 75 ft wide per lot",
-   "units": 2,
-   "muni": "Yonkers",
-   "carried": true,
-   "listing": {
-    "price": 745000,
-    "status": "Active (OneKey MLS)",
-    "url": "https://www.houzeo.com/homes/101-cresthill-rd-yonkers-ny-10710/hzid_ed1a1cd9",
-    "checked": "2026-11-20",
-    "broker": "DeSimone Real Estate (John Quartararo, 914-563-5989)",
-    "note": "Agent calls it a double lot but prices it as one ranch."
-   },
-   "price_per_unit": 372500
+   "price_per_unit": 166333
   },
   {
    "printkey": "4.-4651-86",
@@ -202,20 +173,49 @@
    "play": "subdivide",
    "lots": 2,
    "new_lots": 1,
-   "fit": "frontage likely works",
+   "fit": "167 ft of street frontage measured; 75 ft needed per lot",
    "rule": "S-75: min 7,500 sf and 75 ft wide per lot",
    "units": 2,
    "muni": "Yonkers",
-   "carried": true,
+   "frontage_ft": 167,
    "listing": {
     "price": 1190000,
     "status": "Pending (OneKey MLS)",
     "url": "https://www.zoocasa.com/yonkers-ny-real-estate/81-avondale-rd",
     "checked": "2026-11-20",
     "broker": "",
-    "note": "Sold Sep 2025 for $1.1M; relisted."
+    "note": "2 lots: ~168 ft frontage, 17,096 sf. ~50 ft grade change."
    },
    "price_per_unit": 595000
+  },
+  {
+   "printkey": "4.-4652-56",
+   "address": "101 Cresthill Rd",
+   "class": "210",
+   "zone": "S-75",
+   "lot_sf": 22018,
+   "dims_ft": "155x167",
+   "owner": "Rego, Michael",
+   "owner_mailing": "101 Cresthill Rd, Yonkers, NY, 107102626",
+   "lat": 40.964339,
+   "lng": -73.831024,
+   "play": "subdivide",
+   "lots": 1,
+   "new_lots": 0,
+   "fit": "1 lot only: 83 ft of street frontage, 150 ft needed for two",
+   "rule": "S-75: min 7,500 sf and 75 ft wide per lot",
+   "units": 1,
+   "muni": "Yonkers",
+   "frontage_ft": 83,
+   "listing": {
+    "price": 745000,
+    "status": "Active (OneKey MLS)",
+    "url": "https://www.houzeo.com/homes/101-cresthill-rd-yonkers-ny-10710/hzid_ed1a1cd9",
+    "checked": "2026-11-20",
+    "broker": "DeSimone Real Estate (John Quartararo, 914-563-5989)",
+    "note": "1 lot only: ~85 ft frontage on Cresthill Rd; two S-75 lots need 150 ft."
+   },
+   "price_per_unit": 745000
   }
  ],
  "off_market": [
@@ -317,8 +317,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 233,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5345-1",
@@ -338,8 +337,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 226,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-132",
@@ -440,8 +438,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 140,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-121-19",
@@ -565,8 +562,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 114,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-496-22",
@@ -669,8 +665,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 101,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-161-30",
@@ -690,8 +685,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 97,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3570-200",
@@ -833,8 +827,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 80,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5250-91",
@@ -874,8 +867,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 76,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-172-94.98",
@@ -976,8 +968,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 73,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2021-6",
@@ -1059,8 +1050,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 69,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6120-58",
@@ -1080,8 +1070,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 69,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-202-9",
@@ -1101,8 +1090,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 69,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-101",
@@ -1243,8 +1231,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 61,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "6.-6340-57.62",
@@ -1264,8 +1251,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 61,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-118-29.32",
@@ -1367,8 +1353,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 56,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2018-75",
@@ -1470,8 +1455,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 54,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2021-1",
@@ -1531,8 +1515,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 54,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5125-55",
@@ -1655,8 +1638,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 51,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-164",
@@ -2062,8 +2044,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 45,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-186-39",
@@ -2369,8 +2350,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 41,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-208-34",
@@ -2430,8 +2410,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 40,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2091-72",
@@ -2552,8 +2531,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 40,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-49-13.14",
@@ -2635,8 +2613,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 38,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3570-78",
@@ -2777,8 +2754,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 37,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2198-15",
@@ -2982,8 +2958,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 35,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-157-54",
@@ -3003,8 +2978,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 35,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-124",
@@ -3453,8 +3427,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 34,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2078-21",
@@ -3860,8 +3833,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 31,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-176-46",
@@ -4719,8 +4691,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 28,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-48-59.60",
@@ -5354,8 +5325,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-115.116",
@@ -5435,8 +5405,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-172-84",
@@ -5703,8 +5672,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 27,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-125-37.38",
@@ -5826,8 +5794,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 26,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2167-12",
@@ -5887,8 +5854,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 26,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "3.-3002-11.13",
@@ -6009,8 +5975,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-117-14.15",
@@ -6197,8 +6162,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5655-7",
@@ -6218,8 +6182,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2174-28",
@@ -6363,8 +6326,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 26,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "5.-5390-77",
@@ -6384,8 +6346,7 @@
    "rule": "MG: FAR 1.2, 1000 sf of lot per unit, 40% coverage, height 3 stories / 35 ft",
    "parking_spaces": 24,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2167-51",
@@ -6425,8 +6386,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 24,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-39-44",
@@ -6751,8 +6711,7 @@
    "rule": "BA: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-39-45",
@@ -6793,8 +6752,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-32-10",
@@ -6959,8 +6917,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 24,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-131-31",
@@ -7347,8 +7304,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-62-15.16",
@@ -7410,8 +7366,7 @@
    "rule": "A: FAR 3.0, no per-unit cap, 40% coverage, height 1.5 x width of fronting street",
    "parking_spaces": 23,
    "parking": "needs structured parking or a parking variance",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "1.-42-15.16",
@@ -8108,8 +8063,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 21,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2121-15",
@@ -8149,8 +8103,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 21,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2080-3.126",
@@ -8311,8 +8264,7 @@
    "rule": "M: FAR 1.25, 800 sf of lot per unit, 40% coverage, height 65 ft",
    "parking_spaces": 20,
    "parking": "fits on site (surface)",
-   "muni": "Yonkers",
-   "carried": true
+   "muni": "Yonkers"
   },
   {
    "printkey": "2.-2146-29",
