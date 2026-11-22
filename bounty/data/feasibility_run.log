@@ -7,8 +7,14 @@ dbr-56-town-hill ok
 bx-3848-bailey ok
 bx-1901-harrison ok
 bx-927-home ok
-bx-1185-grant ok
-gemini-3.6-flash: The read operation timed out
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
+gemini-flash-latest: HTTP 503
+gemini-flash-latest: HTTP 503
+memo failed bx-1185-grant HTTP Error 503: Service Unavailable
+bx-1185-grant facts only
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 503
 gemini-flash-latest: HTTP 503
 memo failed bx-2411-poplar HTTP Error 503: Service Unavailable
@@ -23,14 +29,18 @@ hunt-652654-noble-ave-bridgeport ok
 hunt-111-calhoun-pl-bridgeport ok
 hunt-203205-lenox-ave-bridgeport ok
 hunt-556-westside-ave-jersey-city ok
-gemini-3.6-flash: HTTP 503
-yon-1.-445-10 ok
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
+gemini-flash-latest: HTTP 503
+gemini-flash-latest: HTTP 503
+memo failed yon-1.-445-10 HTTP Error 503: Service Unavailable
+yon-1.-445-10 facts only
 yon-1.-176-29 ok
+gemini-3.6-flash: HTTP 429
 yon-1.-211-66 ok
 yon-4.-4652-56 ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
 gemini-flash-latest: The read operation timed out
 memo failed yon-4.-4651-86 The read operation timed out
 yon-4.-4651-86 facts only
