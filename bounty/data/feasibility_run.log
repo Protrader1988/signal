@@ -3,16 +3,21 @@ bpt-439-e-main ok
 str-225-lordship ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 503
-memo failed str-382-ferry HTTP Error 503: Service Unavailable
+gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 429
+memo failed str-382-ferry HTTP Error 429: Too Many Requests
 str-382-ferry facts only
-ffd-467-tunxis ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 503
-memo failed dbr-56-town-hill HTTP Error 503: Service Unavailable
+gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 429
+memo failed ffd-467-tunxis HTTP Error 429: Too Many Requests
+ffd-467-tunxis facts only
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
+gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 429
+memo failed dbr-56-town-hill HTTP Error 429: Too Many Requests
 dbr-56-town-hill facts only
 bx-3848-bailey ok
 bx-1901-harrison ok
@@ -21,12 +26,17 @@ bx-1185-grant ok
 bx-2411-poplar ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 503
 gemini-flash-latest: HTTP 429
 memo failed hunt-1815-schieffelin-ave-bronx HTTP Error 429: Too Many Requests
 hunt-1815-schieffelin-ave-bronx facts only
 hunt-1716-barnes-ave-bronx ok
-hunt-1831-paulding-ave-bronx ok
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
+gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 429
+memo failed hunt-1831-paulding-ave-bronx HTTP Error 429: Too Many Requests
+hunt-1831-paulding-ave-bronx facts only
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 429
@@ -55,19 +65,13 @@ memo failed hunt-203205-lenox-ave-bridgeport HTTP Error 429: Too Many Requests
 hunt-203205-lenox-ave-bridgeport facts only
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 429
-memo failed hunt-556-westside-ave-jersey-city HTTP Error 429: Too Many Requests
-hunt-556-westside-ave-jersey-city facts only
-gemini-3.6-flash: HTTP 429
-gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed yon-1.-445-10 HTTP Error 429: Too Many Requests
 yon-1.-445-10 facts only
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 503
 gemini-flash-latest: HTTP 429
 memo failed yon-1.-176-29 HTTP Error 429: Too Many Requests
 yon-1.-176-29 facts only
@@ -91,7 +95,7 @@ nyc-2030550047 ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 429
-gemini-flash-latest: HTTP 503
-memo failed nyc-3025650060 HTTP Error 503: Service Unavailable
+gemini-flash-latest: HTTP 429
+memo failed nyc-3025650060 HTTP Error 429: Too Many Requests
 nyc-3025650060 facts only
 nyc-3024820009 ok
