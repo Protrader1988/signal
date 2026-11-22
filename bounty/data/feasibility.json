@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-22T13:24:58.544757+00:00",
+ "generated_utc": "2026-11-22T14:03:23.703505+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -93,7 +93,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T12:56:22.748851+00:00"
+   "checked_utc": "2026-11-22T13:25:30.599484+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -163,8 +163,31 @@
     ]
    },
    "facts_hash": "6cb92496917c",
-   "memo": null,
-   "checked_utc": "2026-11-22T12:57:53.173786+00:00"
+   "memo": {
+    "verdict": "A five-story building with 74 apartments and 900 square feet of commercial space is approved on site, making the project worth pursuing at the $1,480,000 ask price ($20,000 per approved unit) subject to verifying the decision letter.",
+    "as_of_right": "Zoning district RX2 allows General Building multifamily development as of right with no FAR cap, no density cap, and no off-street vehicle parking minimum (Sec 8.20.1). Envelope is limited by 85% max site coverage (11,108 sf on a 13,068 sf lot), 5.5 max stories (Sec 3.50.6), and setbacks (0-25 ft front build-to, 3 ft min side, 20 ft min rear), resulting in a ~10,275 sf footprint and total building area of ~56,500 gross sf (~70 units at 800 sf per unit).",
+    "approval_path": "Existing approval / Coastal site plan. The Bridgeport Planning & Zoning Commission approved Case 25-10 on April 28, 2025 by a 5-3 vote for 74 apartments and 900 sf commercial space. Coastal site plan review applies due to the Pequonnock River coastal boundary. An existing approval reduces entitlement risk and time, but approval conditions must be confirmed.",
+    "legal_issues": [
+     "Zoning district conflict: listing cites IHI while official city assessor records and current code specify RX2.",
+     "The official Bridgeport PZC decision letter for Case 25-10 was not located in public records.",
+     "Bridgeport is exempt from CT 8-30g appeals, making this standard market-rate development without local inclusionary mandates.",
+     "Parking counts and garage layout under the approved plan are not public in the record."
+    ],
+    "test_fit": "Density is limited first by height (5.5 stories max) and setback-reduced footprint (~10,275 sf based on 85% max coverage and rear/side setbacks). This yields an estimated ~70 units as-of-right versus 74 units in the approved plan. Code requires zero vehicle parking minimums (Sec 8.20.1) and bicycle parking at 1 space per 2 units for 13+ units (Sec 8.30).",
+    "value": "At the $1,480,000 asking price, land cost is $20,000 per buildable unit under the approved 74-unit scenario. Based on as-of-right capacity (~70 units), land cost is approximately $21,143 per unit. The site previously sold for $645,000 in 2021.",
+    "diligence": [
+     "Resolve district zoning conflict: listing cites IHI while official assessor records and 2021 code specify RX2.",
+     "Resolve lot size and dimension conflict: assessor card and site plans state 13,068 sf (110 ft frontage x 118.8 ft depth) while City GIS polygon measures 16,651 sf.",
+     "Obtain official Bridgeport PZC decision letter for Case 25-10 to confirm approval conditions and expiration dates.",
+     "Commission a certified boundary and topographic survey to verify exact lot lines and dimensions.",
+     "Review complete approved architectural plans to confirm parking count, commercial layout, and unit mix."
+    ],
+    "enablers": "As-of-right General Building standard in RX2 with no FAR limit, no units-per-acre cap, and no off-street parking minimums (Sec 8.20.1); location in a federal Opportunity Zone.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack market rents, condo sale prices, and comparable land sales.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T13:26:26.806472+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -251,7 +274,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T12:57:53.174194+00:00"
+   "checked_utc": "2026-11-22T13:26:26.807043+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -325,7 +348,7 @@
    },
    "facts_hash": "af2c8ab3f2af",
    "memo": null,
-   "checked_utc": "2026-11-22T12:59:23.593134+00:00"
+   "checked_utc": "2026-11-22T13:27:59.865379+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -396,8 +419,35 @@
     ]
    },
    "facts_hash": "9bc4991de0de",
-   "memo": null,
-   "checked_utc": "2026-11-22T13:00:53.983665+00:00"
+   "memo": {
+    "verdict": "The site is realistic to pursue at the $2,760,000 ask ($60,000 per unit) only if the 46-unit C.G.S. 8-30g approval and court-approved litigation settlement are fully verified.",
+    "as_of_right": "Under NDD zoning, total floor area is capped at FAR 1.0 or 24,829 GSF on the 24,829 SF lot, with height capped at 3 stories or 30 ft (Sec 6.3Z, 6.4). Residential area is restricted to 50% of total floor area (12,415 GSF, ~12 units) or up to 66 2/3% (16,553 GSF, ~16 units) if excess units are town-contracted as affordable (Sec 6.3Z). Ground floor residential is prohibited, and single buildings cannot exceed 14,000 GSF (Sec 6.3Z, 6.5.1).",
+    "approval_path": "Existing approval / C.G.S. 8-30g path. The 46-unit plan was approved by the Town Plan and Zoning Commission under 8-30g, but requires court approval of the litigation settlement, carrying low execution risk if settled and moderate timing delay.",
+    "legal_issues": [
+     "Verification of court approval for the litigation settlement agreement and official TPZ approval documents.",
+     "Affordability covenant restricting 14 units (30.4%) for 40 years.",
+     "Zoning district boundary conflict across parcels (NDD/NDBD on 467 Tunxis Hill Rd vs Residence B on 80 Soundview Ave).",
+     "Ground floor residential prohibition in NDD requiring commercial or garage space at ground level."
+    ],
+    "test_fit": "Standard zoning allows 24,829 GSF total across at least 2 buildings (14,000 GSF max per building) up to 3 stories, yielding 12 to 16 residential units over ground-floor commercial or parking. The approved 8-30g design fits 46 units (39 one-bedroom, 7 two-bedroom) in 3 residential stories over 54 garage spaces. Density under base code is capped first by FAR and residential floor area limits, along with 2.5 parking spaces per unit (Sec 25.4.1L).",
+    "value": "Land cost is $60,000 per buildable unit at the $2,760,000 ask under the approved 46-unit scenario. Under base market-rate zoning (12 units), land cost rises to $230,000 per unit, or $172,500 per unit under the 16-unit town-contracted affordable scenario.",
+    "diligence": [
+     "Resolve conflict between independent check and listing regarding district designation (NDBD/NDD vs Residence B) and unit counts (46-unit 8-30g vs 12-16 unit base zoning).",
+     "Obtain executed copy of the court-approved litigation settlement agreement and TPZ notice of decision.",
+     "Review 40-year affordability covenant terms for the 14 set-aside units.",
+     "Verify combined property boundary survey and exact acreage (24,829 SF application lot area vs 25,547 SF GIS layer).",
+     "Confirm FEMA Zone X flood status with local engineering."
+    ],
+    "enablers": [
+     "C.G.S. 8-30g affordable housing set-aside application path",
+     "Sec 6.3Z floor area expansion to 66 2/3% residential for town-contracted affordable units",
+     "Special Permit process for multi-family redevelopment"
+    ],
+    "highest_and_best_use": "Not enough data because FACTS lack market rents, sale prices, and comparable land sales.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T13:27:59.865888+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -464,7 +514,7 @@
    },
    "facts_hash": "7bb3458d2885",
    "memo": null,
-   "checked_utc": "2026-11-22T13:02:24.361613+00:00"
+   "checked_utc": "2026-11-22T13:30:18.283546+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -577,7 +627,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:02:24.589824+00:00"
+   "checked_utc": "2026-11-22T13:30:18.617180+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -687,7 +737,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:02:24.753184+00:00"
+   "checked_utc": "2026-11-22T13:30:18.861549+00:00"
   },
   {
    "id": "bx-927-home",
@@ -796,7 +846,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:02:24.915132+00:00"
+   "checked_utc": "2026-11-22T13:30:18.977128+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -906,7 +956,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:02:25.094348+00:00"
+   "checked_utc": "2026-11-22T13:30:19.193856+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1017,7 +1067,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:02:25.250975+00:00"
+   "checked_utc": "2026-11-22T13:30:19.301977+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1110,8 +1160,30 @@
     ]
    },
    "facts_hash": "14a647d4203d",
-   "memo": null,
-   "checked_utc": "2026-11-22T13:06:25.631322+00:00"
+   "memo": {
+    "verdict": "A 2 to 3 unit residential building can realistically be built as-of-right, but the property is likely not worth pursuing at the $600,000 asking price due to high per-unit land costs.",
+    "as_of_right": "Standard R4 zoning allows 1.00 FAR (ZR 23-21) on a 2,500 sf lot, yielding 2,500 sf of floor area. Applying the 680 dwelling unit factor (ZR 23-52) allows 3.68 units, which rounds to 3 units max (2 to 3 units standard). Yards require a 10 ft front yard (ZR 23-321) and a 30 ft rear yard (ZR 23-342). Maximum building height is 35 ft (ZR 23-422). Parking requirements are 0 spaces because the calculated total of 3 or fewer spaces is waived under ZR 25-232 and ZR 25-241.",
+    "approval_path": "As-of-right multifamily redevelopment, which requires standard DOB plan review with minimal legal risk and predictable timelines.",
+    "legal_issues": [
+     "Conflict regarding availability of UAP density bonus under ZR 12-10 lot area rules.",
+     "Grandfathered lot area and width limits under ZR 23-11 preventing lot split for detached homes.",
+     "Occupancy status and lease terms for tenants in the existing two-family structure."
+    ],
+    "test_fit": "The yard envelope allows a 1,500 sf building footprint (25 ft by 60 ft) over 3 stories up to 35 ft height. Gross floor area is limited first by FAR 1.00 to 2,500 sf. Expected unit count is 2 to 3 units. Zero parking spaces are required. FAR limits density first.",
+    "value": "At the $600,000 ask, land cost is $200,000 to $300,000 per buildable unit for a standard 2 to 3 unit plan. If a 4 to 5 unit UAP bonus applied, land cost would drop to $120,000 to $150,000 per unit, but independent analysis indicates UAP is unavailable.",
+    "diligence": [
+     "Resolve conflict between main UAP bonus assumption (4 to 5 units) and independent check finding that 2,500 sf fails the 5,000 sf minimum lot requirement under ZR 12-10.",
+     "Verify listing details and property status directly with the broker.",
+     "Inspect the existing 1,512 sf two-family home to assess renovation costs versus demolition.",
+     "Confirm tenant status and obtain lease documentation for the existing residential units.",
+     "Run title search to verify ownership by 1815S LLC and check for recorded encumbrances."
+    ],
+    "enablers": "FRESH Zone location per ZoLa.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T13:30:19.519314+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1227,7 +1299,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:06:25.782322+00:00"
+   "checked_utc": "2026-11-22T13:30:19.785410+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -1286,8 +1358,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "40e15318b29c",
-   "memo": null,
-   "checked_utc": "2026-11-22T13:07:56.250594+00:00"
+   "memo": {
+    "verdict": "A single two-family detached home can realistically be built as-of-right, but at $449,500 per unit for land alone, it is not worth pursuing unless the $899,000 asking price includes the adjoining lot to allow a four-unit assemblage.",
+    "as_of_right": "Under R4A zoning (ZR 23-11, ZR 23-21), the 2,500 sq ft lot allows an FAR of 1.00 for up to 2,500 sq ft of floor area. R4A restricts use strictly to single-family or two-family detached residences, capping maximum density at 2 units for the lot regardless of floor area.",
+    "approval_path": "As-of-right path through DOB plan examination and building permits, carrying minimal discretionary risk and standard municipal review timelines.",
+    "legal_issues": [
+     "Verification of whether the $899,000 asking price covers only Lot 23 or includes the adjoining 25x100 lot.",
+     "Confirmation of legal mechanics and timeline for delivering the existing two-family structure vacant.",
+     "Title search to confirm clean title and separate deed status for the adjoining lot if assembled."
+    ],
+    "test_fit": "The architectural envelope permits 60% max lot coverage (1,500 sq ft footprint) set back by a 10 ft front yard, 20 ft rear yard, and required side yards on both sides. Building height is limited to a 25 ft perimeter wall and 35 ft peak ridge. Single lot allows 1 to 2 detached units; assembling the adjacent lot allows 2 detached homes for up to 4 units total. Density is constrained first by R4A use regulations, not by parking or FAR.",
+    "value": "At the $899,000 ask on the single lot, land cost is $449,500 per unit for the 2-unit maximum. If the ask includes the adjoining lot to yield 4 units across two subdivided lots, land cost drops to $224,750 per buildable unit.",
+    "diligence": [
+     "Confirm with the listing broker whether the adjoining 25x100 parcel is included in the $899,000 asking price.",
+     "Review property survey and title search for Block 4127 Lot 23 and the adjacent parcel.",
+     "Verify occupancy status and secure seller agreement terms for vacant delivery.",
+     "Obtain DOB property profile overview to check for existing open violations or unpermitted work."
+    ],
+    "enablers": "Assembling the adjacent 25x100 lot creates a 5,000 sq ft zoning lot, enabling a standard subdivision into two conforming R4A lots (2,375 sq ft min lot area, 25 ft min lot width) for up to 4 total units across two detached buildings.",
+    "highest_and_best_use": "Not enough data, as FACTS lack area rental rates, new-construction sales prices, and comparable land sales.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T13:30:19.893059+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1348,7 +1441,7 @@
    },
    "facts_hash": "9fe80748d09d",
    "memo": null,
-   "checked_utc": "2026-11-22T13:09:26.792122+00:00"
+   "checked_utc": "2026-11-22T13:31:56.445199+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1429,7 +1522,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:09:27.020287+00:00"
+   "checked_utc": "2026-11-22T13:31:56.694056+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1485,7 +1578,7 @@
    },
    "facts_hash": "27716f82fa87",
    "memo": null,
-   "checked_utc": "2026-11-22T13:11:01.203745+00:00"
+   "checked_utc": "2026-11-22T13:33:27.262673+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1540,8 +1633,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "b23b14e77107",
-   "memo": null,
-   "checked_utc": "2026-11-22T13:12:31.565779+00:00"
+   "memo": {
+    "verdict": "A 7-unit residential development is provisionally achievable as-of-right at $107,143 per unit, but pursuing the site at the $750,000 ask depends on resolving a major lot size discrepancy.",
+    "as_of_right": "Under NX2 zoning, density is set by building type rather than FAR. House A (35 ft min width) allows up to 4 principal units plus 1 backyard cottage at 80% lot coverage across 2.5 stories. Double House A (50 ft min width) allows up to 6 principal units plus 1 backyard cottage at 90% lot coverage across 2.5 stories.",
+    "approval_path": "As-of-right site plan review for up to 7 units under Double House A, representing low discretionary risk and standard administrative timing. Expanding to 8 principal units plus 1 cottage requires a special permit.",
+    "legal_issues": [
+     "Lot area discrepancy of 38% to 48% between the assessor record (3,049 sf) and GIS parcel polygon (4,205 sf), which directly impacts coverage and envelope calculations.",
+     "Zoning district mismatch between the listing (superseded RC classification) and official City GIS (NX2 district).",
+     "Tenant lease terms and occupancy status for the existing renovated 3-family dwelling."
+    ],
+    "test_fit": "Density is limited first by building-type unit caps and minimum lot width, not FAR or parking. Off-street parking has no minimum requirement under Sec 8.20.1. With an estimated 60 ft of frontage, the envelope allows 80% to 90% site coverage across 2.5 stories, supporting 5 to 7 units as-of-right.",
+    "value": "At the $750,000 ask, land cost is $150,000 per unit under the 5-unit House A scenario and $107,143 per unit under the 7-unit Double House A scenario.",
+    "diligence": [
+     "Certified boundary survey to resolve the 3,049 sf versus 4,205 sf lot area gap.",
+     "Recorded tax map and plat for Bridgeport PID 14165.",
+     "Existing lease agreements and tenant estoppel certificates for the 3-family building.",
+     "Title search to confirm Noble Ave frontage and any recorded encumbrances."
+    ],
+    "enablers": "Special permit approval allows up to 8 principal units (9 total including a cottage) under the Double House A or Small General building types.",
+    "highest_and_best_use": "Not enough data because FACTS lack rents, prices or comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T13:33:27.263073+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1597,7 +1711,7 @@
    },
    "facts_hash": "3c2ff871de56",
    "memo": null,
-   "checked_utc": "2026-11-22T13:14:01.942036+00:00"
+   "checked_utc": "2026-11-22T13:34:57.808327+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1653,7 +1767,7 @@
    },
    "facts_hash": "14ebce932dae",
    "memo": null,
-   "checked_utc": "2026-11-22T13:15:35.109806+00:00"
+   "checked_utc": "2026-11-22T13:36:28.299036+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1710,7 +1824,503 @@
    },
    "facts_hash": "6a2b4ceda9eb",
    "memo": null,
-   "checked_utc": "2026-11-22T13:17:05.460419+00:00"
+   "checked_utc": "2026-11-22T13:37:58.906626+00:00"
+  },
+  {
+   "id": "hunt-145-beverly-rd-white-plains",
+   "address": "145 Beverly Rd",
+   "muni": "White Plains",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 325000.0,
+   "facts": {
+    "address": "145 Beverly Rd",
+    "muni": "White Plains",
+    "state": "NY",
+    "jurisdiction": "Westchester",
+    "ask": 325000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/white-plains/145-beverly-rd/pid_74825341/",
+    "headline": "existing: vacant land, vacant 7500 square foot parcel in R1-5 single family zoning district, oversized for the district",
+    "listing_lot_sf": 7618.0,
+    "listing_zoning": "R1-5",
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "scenarios_units": {},
+    "ask_per_unit": {}
+   },
+   "facts_hash": "81108f0a9403",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:39:29.443686+00:00"
+  },
+  {
+   "id": "hunt-89-neptune-ave-jersey-city",
+   "address": "89 Neptune Ave",
+   "muni": "Jersey City",
+   "state": "NJ",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 499000.0,
+   "facts": {
+    "address": "89 Neptune Ave",
+    "muni": "Jersey City",
+    "state": "NJ",
+    "jurisdiction": "NJ",
+    "ask": 499000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/nj/jersey-city/89-neptune-ave/pid_74844625/",
+    "headline": "existing: vacant land, vacant land 25x100 with approvals to construct a 4 story building consisting of 8 residential units with 1 commercial space",
+    "listing_lot_sf": 2500.0,
+    "listing_zoning": "Neighborhood Mixed-Use",
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "approval": {
+     "status": "claimed by listing",
+     "body": "unverified",
+     "date": null,
+     "units": 8,
+     "detail": "The listing claims approvals; get the resolution before relying on it.",
+     "sources": [
+      "https://www.coldwellbankerhomes.com/nj/jersey-city/89-neptune-ave/pid_74844625/"
+     ]
+    },
+    "scenarios_units": {
+     "approved": "8"
+    },
+    "ask_per_unit": {
+     "approved": "$62,375"
+    }
+   },
+   "facts_hash": "d6e4b6257702",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:40:59.979807+00:00"
+  },
+  {
+   "id": "hunt-753-den-rd-stamford",
+   "address": "753 Den Rd",
+   "muni": "Stamford",
+   "state": "CT",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 899000.0,
+   "facts": {
+    "address": "753 Den Rd",
+    "muni": "Stamford",
+    "state": "CT",
+    "jurisdiction": "CT",
+    "ask": 899000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ct/stamford/753-den-rd/pid_74829212/",
+    "headline": "existing: single-family, situated on over an acre of level property, lot size 1.03 acres",
+    "listing_lot_sf": null,
+    "listing_zoning": "RA1",
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "scenarios_units": {},
+    "ask_per_unit": {}
+   },
+   "facts_hash": "929dea6ab99a",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:42:30.530129+00:00"
+  },
+  {
+   "id": "hunt-3729-paulding-ave-bronx",
+   "address": "3729 Paulding Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 600000.0,
+   "facts": {
+    "address": "3729 Paulding Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "ask": 600000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/bronx/3729-paulding-ave/pid_74841087/",
+    "headline": "existing: single-family, Investment opportunity, tri-level single-family home with first-level bonus apartment, lot 54.67 x 37.59",
+    "listing_lot_sf": 2055.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "borough": "BX",
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2046880072",
+     "zoning": "R4",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 2039,
+     "frontage_ft": 54.67,
+     "depth_ft": 37.59,
+     "corner_lot": false,
+     "existing_bldg_sf": 1980,
+     "existing_units": 1,
+     "year_built": 1955,
+     "owner": "WILKERSON, TANYA",
+     "far_rule": "ZR 23-22: R4 standard FAR 1.0, qualifying affordable (UAP) FAR 1.5",
+     "standard_floor_area": 2039,
+     "uap_floor_area": 3058,
+     "units_standard": [
+      2,
+      2
+     ],
+     "units_uap": [
+      3,
+      4
+     ]
+    },
+    "scenarios_units": {
+     "standard": "2",
+     "with UAP affordable bonus": "3 to 4"
+    },
+    "ask_per_unit": {
+     "standard": "$300,000",
+     "with UAP affordable bonus": "$150,000 to $200,000"
+    }
+   },
+   "facts_hash": "7891ba5de63f",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:44:01.331363+00:00"
+  },
+  {
+   "id": "hunt-182184-lincoln-ave-yonkers",
+   "address": "182-184 Lincoln Ave",
+   "muni": "Yonkers",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 929000.0,
+   "facts": {
+    "address": "182-184 Lincoln Ave",
+    "muni": "Yonkers",
+    "state": "NY",
+    "jurisdiction": "Yonkers",
+    "ask": 929000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/yonkers/182-184-lincoln-ave/pid_74842763/",
+    "headline": "existing: multi-family, listed as 3 units, described as Legal Two-Family home with two three-bedroom apartments",
+    "listing_lot_sf": 4934.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "scenarios_units": {},
+    "ask_per_unit": {}
+   },
+   "facts_hash": "adb82496657e",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:45:31.801914+00:00"
+  },
+  {
+   "id": "hunt-1001-summit-ave-bronx",
+   "address": "1001 Summit Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 575000.0,
+   "facts": {
+    "address": "1001 Summit Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "ask": 575000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/bronx/1001-summit-ave/pid_74853088/",
+    "headline": "existing: two-family, attached two-family home in Highbridge, 6 bedrooms and 4 bathrooms",
+    "listing_lot_sf": 1750.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "borough": "BX",
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2025230257",
+     "zoning": "R7-1",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 1750,
+     "frontage_ft": 20,
+     "depth_ft": 87.5,
+     "corner_lot": false,
+     "existing_bldg_sf": 1306,
+     "existing_units": 2,
+     "year_built": 2003,
+     "owner": "HOSSAIN, KAZI A",
+     "far_rule": "ZR 23-22: R7-1 standard FAR 3.44, qualifying affordable (UAP) FAR 5.01",
+     "standard_floor_area": 6020,
+     "uap_floor_area": 8768,
+     "units_standard": [
+      6,
+      8
+     ],
+     "units_uap": [
+      9,
+      12
+     ],
+     "note_far": "ZR 23-22 lists a 4.00 standard FAR for R7-1/R7-2 lots meeting its footnote conditions (location relative to a wide street); confirm with an architect."
+    },
+    "scenarios_units": {
+     "standard": "6 to 8",
+     "with UAP affordable bonus": "9 to 12"
+    },
+    "ask_per_unit": {
+     "standard": "$71,875 to $95,833",
+     "with UAP affordable bonus": "$47,917 to $63,889"
+    }
+   },
+   "facts_hash": "b810f0bd69a6",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:47:02.657976+00:00"
+  },
+  {
+   "id": "hunt-1730-hunt-ave-bronx",
+   "address": "1730 Hunt Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 550000.0,
+   "facts": {
+    "address": "1730 Hunt Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "ask": 550000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/bronx/1730-hunt-ave/pid_74853038/",
+    "headline": "existing: two-family, detached two-family frame home, investment opportunity for investors and contractors to renovate and add value",
+    "listing_lot_sf": 1916.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "borough": "BX",
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2040340039",
+     "zoning": "R5",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 1916,
+     "frontage_ft": 42.58,
+     "depth_ft": 45,
+     "corner_lot": false,
+     "existing_bldg_sf": 2533,
+     "existing_units": 2,
+     "year_built": 1901,
+     "owner": "MOUMOUNI, GAIL",
+     "far_rule": "ZR 23-22: R5 standard FAR 1.5, qualifying affordable (UAP) FAR 2.0",
+     "standard_floor_area": 2874,
+     "uap_floor_area": 3832,
+     "units_standard": [
+      3,
+      4
+     ],
+     "units_uap": [
+      4,
+      5
+     ]
+    },
+    "scenarios_units": {
+     "standard": "3 to 4",
+     "with UAP affordable bonus": "4 to 5"
+    },
+    "ask_per_unit": {
+     "standard": "$137,500 to $183,333",
+     "with UAP affordable bonus": "$110,000 to $137,500"
+    }
+   },
+   "facts_hash": "650f965bd7c5",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:48:33.410320+00:00"
+  },
+  {
+   "id": "hunt-1074-university-ave-bronx",
+   "address": "1074 University Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 999000.0,
+   "facts": {
+    "address": "1074 University Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "ask": 999000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/bronx/1074-university-ave/pid_74861661/",
+    "headline": "existing: two-family, fully occupied two-family home in Highbridge, excellent opportunity for investors owner-users or developers, lot 25 x 100",
+    "listing_lot_sf": 2500.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "borough": "BX",
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2025260048",
+     "zoning": "R7-1",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 5000,
+     "frontage_ft": 50,
+     "depth_ft": 100,
+     "corner_lot": false,
+     "existing_bldg_sf": 2499,
+     "existing_units": 2,
+     "year_built": 1901,
+     "owner": "WATER STREET GROUP, LLC",
+     "far_rule": "ZR 23-22: R7-1 standard FAR 3.44, qualifying affordable (UAP) FAR 5.01",
+     "standard_floor_area": 17200,
+     "uap_floor_area": 25050,
+     "units_standard": [
+      19,
+      25
+     ],
+     "units_uap": [
+      27,
+      36
+     ],
+     "note_far": "ZR 23-22 lists a 4.00 standard FAR for R7-1/R7-2 lots meeting its footnote conditions (location relative to a wide street); confirm with an architect.",
+     "lot_discrepancy": "listing says 2,500.0 sf; tax lot is 5,000 sf"
+    },
+    "scenarios_units": {
+     "standard": "19 to 25",
+     "with UAP affordable bonus": "27 to 36"
+    },
+    "ask_per_unit": {
+     "standard": "$39,960 to $52,579",
+     "with UAP affordable bonus": "$27,750 to $37,000"
+    }
+   },
+   "facts_hash": "d1c3048b7aeb",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:50:04.247735+00:00"
+  },
+  {
+   "id": "hunt-4165-laconia-ave-bronx",
+   "address": "4165 Laconia Ave",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+   "ask": 549000.0,
+   "facts": {
+    "address": "4165 Laconia Ave",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "ask": 549000.0,
+    "status": "Listed (Coldwell Banker, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.coldwellbankerhomes.com/ny/bronx/4165-laconia-ave/pid_74861969/",
+    "headline": "existing: 2 family, 2 family semi-detached, first time on the market, sold as-is below market value",
+    "listing_lot_sf": 1300.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "borough": "BX",
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "2048780082",
+     "zoning": "R5D",
+     "commercial_overlay": null,
+     "special_district": null,
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 1300,
+     "frontage_ft": 20,
+     "depth_ft": 65,
+     "corner_lot": false,
+     "existing_bldg_sf": 1184,
+     "existing_units": 2,
+     "year_built": 1925,
+     "owner": "RAMSEY BARBARA",
+     "far_rule": "ZR 23-22: R5D standard FAR 2.0, qualifying affordable (UAP) FAR 2.0",
+     "standard_floor_area": 2600,
+     "uap_floor_area": 2600,
+     "units_standard": [
+      2,
+      3
+     ],
+     "units_uap": [
+      2,
+      3
+     ]
+    },
+    "scenarios_units": {
+     "standard": "2 to 3",
+     "with UAP affordable bonus": "2 to 3"
+    },
+    "ask_per_unit": {
+     "standard": "$183,000 to $274,500",
+     "with UAP affordable bonus": "$183,000 to $274,500"
+    }
+   },
+   "facts_hash": "39fb9dd76835",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:51:35.079631+00:00"
+  },
+  {
+   "id": "hunt-1148-e-211th-st-bronx",
+   "address": "1148 E 211th St",
+   "muni": "Bronx",
+   "state": "NY",
+   "status": "Listed (Redfin, 2026-11-22); via Muse, verify",
+   "ask": 899000.0,
+   "facts": {
+    "address": "1148 E 211th St",
+    "muni": "Bronx",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "ask": 899000.0,
+    "status": "Listed (Redfin, 2026-11-22); via Muse, verify",
+    "listing_url": "https://www.redfin.com/NY/Bronx/1148-E-211th-St-10469/home/44606943",
+    "headline": "existing: 2-family, detached duplex 2-family residence in Williamsbridge, lot size stated as 4045 sq ft in details and 2023-square-foot lot in description",
+    "listing_lot_sf": 4045.0,
+    "listing_zoning": null,
+    "listing_buildable_sf": null,
+    "found_by": "Muse",
+    "issues": [
+     "Listing details come from the listing page; confirm lot, zoning and status with the broker"
+    ],
+    "borough": "BX",
+    "parcel": {
+     "error": "lot not found in MapPLUTO"
+    },
+    "scenarios_units": {},
+    "ask_per_unit": {}
+   },
+   "facts_hash": "581525b76010",
+   "memo": null,
+   "checked_utc": "2026-11-22T13:53:05.753399+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -1805,7 +2415,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:17:08.098203+00:00"
+   "checked_utc": "2026-11-22T13:53:17.278250+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -1878,7 +2488,7 @@
    },
    "facts_hash": "3ef65ed75f40",
    "memo": null,
-   "checked_utc": "2026-11-22T13:18:41.108433+00:00"
+   "checked_utc": "2026-11-22T13:54:58.313765+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -1950,7 +2560,7 @@
    },
    "facts_hash": "fb502727592c",
    "memo": null,
-   "checked_utc": "2026-11-22T13:20:14.508415+00:00"
+   "checked_utc": "2026-11-22T13:56:45.060901+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -2021,7 +2631,7 @@
    },
    "facts_hash": "1a5e7ec32245",
    "memo": null,
-   "checked_utc": "2026-11-22T13:21:54.260252+00:00"
+   "checked_utc": "2026-11-22T13:58:51.456887+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -2043,24 +2653,10 @@
      "2 lots: ~168 ft frontage, 17,096 sf. ~50 ft grade change."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "4.-4651-86",
-     "zoning": "S-75",
-     "lot_sf": 17096,
-     "street_frontage_ft": 167,
-     "property_class": "210",
-     "owner": "Rodrigues, Jose",
-     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
-     "lots_by_area": 2,
-     "lots_by_frontage": 2,
-     "lots_allowed": 2
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "lots allowed": "2"
-    },
-    "ask_per_unit": {
-     "lots allowed": "$595,000"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-22",
      "address": "81 Avondale Rd",
@@ -2086,14 +2682,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://geocoding.geo.census.gov/geocoder/locations/onelineaddress https://services6.arcgis.com/EbVsqZ18sv1kVJ3k/ArcGIS/rest/services/Westchester_County_Parcels/FeatureServer https://ecode360.com/attachment/339639/YO0144-043d%20Table%2043-4.pdf https://services.arcgis.com/XKEHpOulfycN9cGC/ArcGIS/rest/services/Zoning_ecode/FeatureServer",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 2 vs Muse 1",
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "980d681b3f96",
+   "facts_hash": "432e1b157f55",
    "memo": null,
-   "checked_utc": "2026-11-22T13:23:27.182829+00:00"
+   "checked_utc": "2026-11-22T14:01:51.898646+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -2194,7 +2787,7 @@
     "letter_angle": "Contact owner A&C International Management Group, LLC directly to express interest in acquiring the off-market parcel for an as-of-right development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:23:27.344082+00:00"
+   "checked_utc": "2026-11-22T14:01:52.190821+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -2295,7 +2888,7 @@
     "letter_angle": "Approach Public Storage with an off-market offer focused on a straightforward, as-of-right acquisition of this underutilized parcel.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:23:27.496460+00:00"
+   "checked_utc": "2026-11-22T14:01:52.417915+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -2396,7 +2989,7 @@
     "letter_angle": "Approach Mott Haven Holdings, LLC directly to inquire about their willingness to sell 250 East 138 Street for an as-of-right multifamily development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:23:27.656093+00:00"
+   "checked_utc": "2026-11-22T14:01:52.635371+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -2497,7 +3090,7 @@
     "letter_angle": "Approach owner BAKTIDY ASSOCIATES directly to inquire about an off-market acquisition of the 13,512 sf redevelopment lot.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:23:27.807817+00:00"
+   "checked_utc": "2026-11-22T14:01:52.858101+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -2575,7 +3168,7 @@
    },
    "facts_hash": "d58250bf27d3",
    "memo": null,
-   "checked_utc": "2026-11-22T13:24:58.310215+00:00"
+   "checked_utc": "2026-11-22T14:03:23.454630+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -2677,7 +3270,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC directly to inquire if they are open to an offer for 19 Clay Street based on an as-of-right residential development program.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:24:58.544303+00:00"
+   "checked_utc": "2026-11-22T14:03:23.703000+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
