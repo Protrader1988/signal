@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-22T09:49:00.589593+00:00",
+ "generated_utc": "2026-11-22T10:13:27.429972+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -69,8 +69,31 @@
     ]
    },
    "facts_hash": "a9914b27b05c",
-   "memo": null,
-   "checked_utc": "2026-11-22T09:33:19.153870+00:00"
+   "memo": {
+    "verdict": "A 6-story mixed-use building with 15 to 16 units and ground-floor retail can realistically be built, making the site worth pursuing at the $475,000 ask ($31,667 per approved unit) subject to confirming approval extensions and fee amounts.",
+    "as_of_right": "CD-5 permits multifamily and mixed-use development as of right. Height is capped at 6 stories with 100% impervious coverage and no FAR limit. On a 2,235 sf lot, 6 stories yield 13,410 gross sf. Five residential floors (11,175 gross sf) over ground-floor retail allow up to 16 units at 700 gross sf per unit. Setbacks are 0-15 ft front and 0-24 ft side. Parking permits a 100% buy-out at $30,000 per space for lots under 12,000 sf. At least 10% AFFH affordable units are required.",
+    "approval_path": "Existing approval. The Planning Commission approved a site plan on April 25, 2022 for a 6-story mixed-use building. Local Law I-14 of 2025 extended approval through April 25, 2027. This path minimizes approval time and land-use risk if confirmed in writing.",
+    "legal_issues": [
+     "Written confirmation of site plan approval validity through April 25, 2027.",
+     "Unspecified buyer-paid in-lieu fees and GEIS fair share mitigation payments.",
+     "Mandatory 10% AFFH affordable housing compliance under Section 345-405.U.",
+     "Flood zone AE compliance and flood insurance requirements."
+    ],
+    "test_fit": "The 2,235 sf footprint at 100% coverage allows a 6-story envelope totaling 13,410 gross sf. The building includes ground-floor retail (approx. 691 sf) and 5 residential floors. Unit count ranges from 15 to 16 units (studios and 1-bedrooms). Four parking spaces are required after reductions, using off-site options or a 100% parking buy-out. Density is constrained first by small lot area and the 6-story height limit.",
+    "value": "At the $475,000 ask, land cost is $31,667 per unit for the 15-unit approved scenario. Land cost is $29,688 per unit if developed to the 16-unit massing maximum.",
+    "diligence": [
+     "Resolve conflict: Units: BOUNTY up to 15 vs Muse 1.",
+     "Obtain written confirmation of site plan approval extension through April 25, 2027.",
+     "Verify the exact amounts for buyer-paid in-lieu fees and GEIS mitigation payments.",
+     "Confirm lot area (2,151 sf listing vs 2,235 sf assessor) and 29 ft frontage.",
+     "Review FEMA flood hazard zone AE regulations and insurance costs."
+    ],
+    "enablers": "CD-5 zoning permits 6-story mixed-use as of right. Lots up to 12,000 sf can buy out 100% of required parking at $30,000 per space under Section 345-405N(1)(h).",
+    "highest_and_best_use": "Not enough data. FACTS lack rents, sales prices, and land comps needed to evaluate financial returns across product types.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T09:50:24.784961+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -128,43 +151,20 @@
      "parking": "no minimum - Sec 8.20.1 code establishes no minimum off-street parking; bicycle parking 1 per 2 units for 13+ units (Sec 8.30)",
      "affordable_rule": "no local inclusionary mandate found in 2021 code for RX2; CT 8-30g set-aside (30% deed-restricted 40 yrs, 15% of all units at 60% median) defines affordable applications generally, but Bridgeport listed exempt (over 10% assisted, 17.44% on DOH 2008 appeals list - current-year list not verified)",
      "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL point query at CT State Parcel Layer parcel centroid (41.18073, -73.18155), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
-     "constraints": "Setbacks (General Building RX2): primary build-to 0-25 ft, side 3 ft min, rear 20 ft min, primary streetwall 80% min; coastal (CAM) review applies; flood zone verified in reaudit 2026-11-22 - see flood_zone (Zone X, SFHA F, despite low elevations by the Pequonnock River); parcel_id resolved in reaudit 2026-11-22 - CT State Parcel Layer Link 08070-809-11A and Bridgeport Vision GIS assessor card PID 5338 (Mblu 36/809/11/A, Acct RT-0053488, owner 2068 MAIN LLC); assessor Zone is RX2, confirming the current district, and assessor Size (Acres) 0.30 = 13068 sf, confirming lot_sf; reaudit 2026-11-22 geometry check: the CT State Parcel Layer polygon area computed in CT State Plane ft (EPSG:2234) is 16651 sf, 27% above the assessor 13068 sf, and its principal edges measure approx 124 ft (north), 109 ft (east) and 128 ft (south) plus northern jog segments - no edge pair reconciles the site plans' 110 ft frontage x 118.8 ft depth with the assessor area; STILL BLOCKING a high rating: (1) frontage_ft 110 ft rests only on the city-hosted Nov 2024 site improvement plans - the assessor card records Frontage 0 and Depth 0, and the parcel polygon does not reconcile with the assessor lot area, so no second official source confirms the 110 ft frontage or the 118.8 ft depth used in the setback-envelope math - resolving source: Bridgeport Vision GIS tax map / assessor lot dimensions, or a survey; (2) the 74-unit approval decision letter was not located in official sources searched - resolving source: Bridgeport PZC decision letter for 439 East Main St; queue hint IHI does not exist in 2021 code - superseded by RX2",
+     "constraints": "Setbacks (General Building RX2): primary build-to 0-25 ft, side 3 ft min, rear 20 ft min, primary streetwall 80% min; coastal (CAM) review applies; flood zone verified in reaudit 2026-11-22 - see flood_zone (Zone X, SFHA F, despite low elevations by the Pequonnock River); parcel_id resolved in reaudit 2026-11-22 - CT State Parcel Layer Link 08070-809-11A and Bridgeport Vision GIS assessor card PID 5338 (Mblu 36/809/11/A, Acct RT-0053488, owner 2068 MAIN LLC); assessor Zone is RX2, confirming the current district, and assessor Size (Acres) 0.30 = 13068 sf, confirming lot_sf; reaudit 2026-11-22 geometry check: the CT State Parcel Layer polygon area computed in CT State Plane ft (EPSG:2234) is 16651 sf, 27% above the assessor 13068 sf, and its principal edges measure approx 124 ft (north), 109 ft (east) and 128 ft (south) plus northern jog segments - no edge pair reconciles the site plans' 110 ft frontage x 118.8 ft depth with the assessor area; STILL BLOCKING a high rating: (1) frontage_ft 110 ft rests only on the city-hosted Nov 2024 site improvement plans - the assessor card records Frontage 0 and Depth 0, and the parcel polygon does not reconcile with the assessor lot area, so no second official source confirms the 110 ft frontage or the 118.8 ft depth used in the setback-envelope math - resolving source: Bridgeport Vision GIS tax map / assessor lot dimensions, or a survey; (2) the 74-unit approval decision letter was not located in official sources searched - resolving source: Bridgeport PZC decision letter for 439 East Main St; queue hint IHI does not exist in 2021 code - superseded by RX2; reaudit batch 7 2026-11-22: the City of Bridgeport Parcels 2025 layer (official City GIS) was queried at the parcel centroid and returns the same polygon as the CT State Parcel Layer - its Shape_Area field is 16650.5 sf and its ring measures approx 124 ft (north) by approx 109 ft (east) - so two official GIS layers agree on a ~16651 sf polygon that does not reconcile with the assessor 13068 sf (110 x 118.8 ft plat dimensions), and the blocker is now the assessor-vs-GIS lot dimension conflict itself - resolving source remains a survey or the Bridgeport tax map lot dimensions for PID 5338, plus the PZC decision letter",
      "approvals_found": "City-hosted PZC packet (Mar 2025) contains Nov 13 2024 site improvement plans for 439 East Main St (Beechcrest Management) showing RX2 zoning data - evidence of a filed site/coastal plan, decision letter not found; nearby precedent: Steelpointe Harbor 420-unit mixed-use at 137 East Main St (CT DECD scoping, portal.ct.gov)",
      "enablers": "12+ units: yes - General Building as of right in RX2 with no FAR, density or parking-minimum cap; winning path: multifamily redevelopment; market-rate: no affordability mandate applies - conventional market-rate deal is the natural read; affordable upside: CHFA 9%/4% LIHTC + CT DOH funds active in Bridgeport and Opportunity Zone location supports equity, but no as-of-right density/height bonus found in code and 8-30g appeal leverage likely unavailable in exempt Bridgeport; rezoning plausible but not needed - MX1 directly across East Main, RX1 adjacent, Plan Bridgeport directs high-density to corridors; deal type: either - market-rate works as of right with no mandate, affordable-program candidate via CHFA LIHTC/DOH if a set-aside is voluntarily deed-restricted",
      "max_units_estimate": "Multifamily: footprint = min(coverage 85% x 13068 = 11108 sf, setback envelope (110-6) x (118.8-20) = ~10275 sf) = ~10275 sf; floors 5.5; gross = 10275 x 5.5 = ~56500 sf (no FAR limit stated); ~56500 / 800 sf per unit = ~70 units - height (5.5 stories) caps, with setback-reduced footprint. Subdivision: House types not allowed in RX2, so 0 single-family lots; split into 2 General Building lots possible but total envelope unchanged. Second-home: accessory apartments and backyard cottages not allowed for General Building in RX2 - 0 added units. Headline lawful max ~70 units. Rezoning scenario: not quantified - RX2 already clears target",
-     "sources": "https://de84u3xi40u1.cloudfront.net/code.zonebridgeport.com/s3fs-private/pdf/replaced_BPT%20Zoning%202026%20amendments%202024.01-compressed.pdf https://www.BridgeportCT.gov/sites/default/files/2025-03/PZC_Applications_20250331.pdf https://cga.ct.gov/2022/sup/chap_126a.htm https://www.chfa.org/assets/1/16/2022_LIHTC_Awards_Release_final.pdf?11789 https://portal.ct.gov/CEQ/DECD/Scoping-Notice/Steelpointe-Harbor---Mixed-use-Development-Project https://gis.vgsi.com/bridgeportct/Parcel.aspx?pid=5338 https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/ArcGIS/rest/services/Connecticut_State_Parcel_Layer_2023/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "sources": "https://de84u3xi40u1.cloudfront.net/code.zonebridgeport.com/s3fs-private/pdf/replaced_BPT%20Zoning%202026%20amendments%202024.01-compressed.pdf https://www.BridgeportCT.gov/sites/default/files/2025-03/PZC_Applications_20250331.pdf https://cga.ct.gov/2022/sup/chap_126a.htm https://www.chfa.org/assets/1/16/2022_LIHTC_Awards_Release_final.pdf?11789 https://portal.ct.gov/CEQ/DECD/Scoping-Notice/Steelpointe-Harbor---Mixed-use-Development-Project https://gis.vgsi.com/bridgeportct/Parcel.aspx?pid=5338 https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/ArcGIS/rest/services/Connecticut_State_Parcel_Layer_2023/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0",
      "confidence": "low"
     },
     "conflicts_with_independent_check": [
      "District: BOUNTY per Bridgeport zoning map (listing cites IHI) vs Muse RX2 Residential-Office Centers"
     ]
    },
-   "facts_hash": "ee07d6561acb",
-   "memo": {
-    "verdict": "A 5-story 74-unit apartment building with 900 sf of commercial space is approved, making the site worth pursuing at the $1,480,000 ask price.",
-    "as_of_right": "In the RX2 district under General Building rules (Sec 3.50), there is no FAR or density cap. On a 13,068 sf lot, 85% max coverage allows up to 11,108 sf, reduced by setbacks to a ~10,275 sf footprint. At 5.5 stories max height, gross area is ~56,500 sf, yielding ~70 units at 800 sf per unit with zero off-street parking required.",
-    "approval_path": "Existing approval. The site has an approved PZC application (case 25-10, April 28, 2025) for 74 units with an approved coastal site plan, eliminating initial entitlement risk.",
-    "legal_issues": [
-     "Discrepancy between listing zoning (IHI) and city map/assessor records (RX2).",
-     "Missing official PZC written decision letter to confirm final conditions and appeal status.",
-     "Discrepancy between assessor lot dimensions (13,068 sf, 0 ft frontage) and GIS parcel polygon geometry (16,651 sf).",
-     "Ongoing compliance with coastal site plan review (CAM) standards due to Pequonnock River proximity."
-    ],
-    "test_fit": "The building envelope allows an 85% max site coverage capped at ~10,275 sf by setbacks. Max height of 5.5 stories yields a range of ~70 as-of-right units up to 74 approved units. Zero off-street parking is required by code, but 1 bicycle space per 2 units is mandated. Height and setback limits cap density first.",
-    "value": "Land cost at the $1,480,000 ask is $20,000 per buildable unit for the 74-unit approved plan and ~$21,143 per unit for the 70-unit as-of-right scenario. The site previously sold for $645,000 in 2021.",
-    "diligence": [
-     "Resolve the zoning district conflict between the listing (IHI) and official records (RX2).",
-     "Obtain the official Bridgeport PZC decision letter for case 25-10 to confirm approval terms and conditions.",
-     "Obtain a certified boundary survey to confirm frontage and reconcile lot area discrepancies.",
-     "Review approved architectural plans for garage layout and bicycle parking compliance.",
-     "Verify coastal boundary line (CAM) filings and environmental compliance."
-    ],
-    "enablers": "General Building designation in RX2 allows multifamily development as-of-right with no FAR limit, no density cap, and no off-street parking minimums. The site is in a federal Opportunity Zone.",
-    "highest_and_best_use": "not enough data. FACTS lack new-building rents, sale prices, and local land comps necessary to calculate project returns.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T09:33:59.022053+00:00"
+   "facts_hash": "e58818266161",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:51:55.695069+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -251,7 +251,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:33:59.022614+00:00"
+   "checked_utc": "2026-11-22T09:51:55.695488+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -325,7 +325,7 @@
    },
    "facts_hash": "af2c8ab3f2af",
    "memo": null,
-   "checked_utc": "2026-11-22T09:35:29.826275+00:00"
+   "checked_utc": "2026-11-22T09:53:26.481975+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -369,57 +369,35 @@
      "date": "2026-11-21",
      "address": "467 Tunxis Hill Rd & 80 Soundview Ave",
      "town": "Fairfield",
-     "parcel_id": "26620-2747 (CT State Parcel Layer Link at the combined-lot midpoint - see constraints)",
-     "lot_sf": "24829",
-     "district": "NDD",
-     "multifamily": "special permit",
-     "far": "1.0",
-     "density_rule": "No units-per-acre density in NDD; total floor area capped at 100% of lot area and residential limited to 50% of total floor area - 66 2/3% if units above 50% are contracted with the Town as affordable; no single building over 14000 GSF (Sec 6.3Z and 6.4)",
-     "max_height": "3 stories or 30 ft whichever is less",
-     "lot_coverage": "75%",
-     "min_lot_area": "No minimum",
-     "min_lot_width": "20",
-     "parking": "2.5/unit for 5+ families (Sec 25.4.1L) plus commercial 1 per 200 GSF; Commission may at its discretion reduce dwelling parking up to 50% in a Sec 6 district (Sec 25.4.2A)",
-     "affordable_rule": "Sec 30.7.I: Special Permit project with net increase of 10+ units must set aside at least 10% BMR at 80% AMI or less (Bridgeport CT HUD HMFA); inclusionary fee $5 per $1000 construction value (Sec 29.6.1) unless 8-30g approved or 10% BMR or more; CGS 8-30g set-aside path requires 30% affordable for 40 years with 15% of all units at 60% median or less",
-     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded combined-lot midpoint (-73.23179, 41.17633), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
-     "constraints": "Street setback 10 ft; side 0 ft one side / min 10 ft other; rear 10 ft; adjacent Residence District boundary 10 ft or adjacent district setback whichever is greater (Sec 6.5.1); residential not permitted on ground floor in NDD; FAR and residential-share cap the envelope and parking is co-binding; reaudit 2026-11-22 resolved: flood zone from a direct FEMA NFHL query (Zone X, see flood_zone) and a CT State Parcel Layer 2023 point query at the combined-lot midpoint returned Link 26620-2747 (Fairfield); STILL BLOCKING a high rating: the site is a combined two-address lot (467 Tunxis Hill Rd & 80 Soundview Ave, 0.57 ac per the 8-30g application documents) and neither the full set of parcel IDs for the combined lot, nor frontage_ft, nor an assessor/GIS confirmation of the combined 24829 sf lot area could be retrieved - the Fairfield Vision GIS assessor database is interactive and not text-fetchable, and the single CT parcel polygon at the midpoint covers only part of the combined site - resolving source: Fairfield Vision GIS assessor cards / tax map for the parcels comprising the combined lot; no overlay found in official sources",
-     "approvals_found": "46-unit 5-story CGS 8-30g set-aside application for this combined 0.57-acre lot heard by TPZ Dec 3 2024 and continued Jan 14 2025; Affordable Housing Committee minutes 7/9/2025 record a proposed litigation settlement for 467 Tunxis Hill awaiting court approval after added screening - no final TPZ approval document found in official sources",
-     "enablers": "12+ units: yes - multifamily/mixed-use redevelopment by Special Permit is the winning path; market-rate note: 10% BMR rule triggered at 10+ units; affordable upside: codified residential share rises from 50% to 66 2/3% when excess units are Town-contracted affordable (Sec 6.3Z) and the CGS 8-30g route is demonstrated on this lot - program family CT DOH/CHFA and federal LIHTC; rezoning unlikely - no evidence found of a pending Tunxis Hill upzoning; deal type: either - market-rate mixed-use works at ~12 units and the affordable-program track is proven by the site's own 8-30g application",
-     "max_units_estimate": "Multifamily/mixed-use: envelope = lower of FAR 1.0 x 24829 = 24829 GSF and footprint 18622 sf (75% coverage) x 3 floors = 55866 sf so FAR caps at 24829 GSF in at least 2 buildings (14000 GSF max each); residential 50% = 12415 GSF / ~1000 sf per unit = ~12 units market-rate; with Sec 6.3Z affordable share 66 2/3% = 16553 GSF = ~16 units - headline ~16 units capped by FAR x residential share with parking co-binding; Subdivision: 0 additional homes credited - NDD is a business district with no verified residential subdivision path; Second-home/ADU: 0 additive - Sec 13 ADUs apply to single-family residence districts not a vacant NDD lot; 8-30g scenario (not in headline): 46 units in 5 stories per the site's own set-aside application - settlement awaiting court approval",
-     "sources": "https://cms3.revize.com/revize/fairfield/FairfieldZoningRegulations-090625.pdf https://fairfieldct.gov/service/town_plan___zoning/zoning_regulations.php https://fairfieldct.gov/government/boards___commissions/affordable_housing_committee/8-30g_faqs.php https://Cga.Ct.gov/2026/sup/chap_126a.htm https://gis.vgsi.com/FairfieldCT/Default.aspx https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/ArcGIS/rest/services/Connecticut_State_Parcel_Layer_2023/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
-     "confidence": "medium"
+     "parcel_id": "26620-2742 (467 Tunxis Hill Rd) and 26620-2741 (80 Soundview Ave) - CT State Parcel Layer Links",
+     "lot_sf": "reaudit batch 7 2026-11-22",
+     "frontage_ft": "24829",
+     "district": "172",
+     "overlays": "NDD",
+     "far": "special permit",
+     "density_rule": "1.0",
+     "max_height": "No units-per-acre density in NDD; total floor area capped at 100% of lot area and residential limited to 50% of total floor area - 66 2/3% if units above 50% are contracted with the Town as affordable; no single building over 14000 GSF (Sec 6.3Z and 6.4)",
+     "lot_coverage": "3 stories or 30 ft whichever is less",
+     "min_lot_area": "75%",
+     "min_lot_width": "No minimum",
+     "parking": "20",
+     "affordable_rule": "2.5/unit for 5+ families (Sec 25.4.1L) plus commercial 1 per 200 GSF; Commission may at its discretion reduce dwelling parking up to 50% in a Sec 6 district (Sec 25.4.2A)",
+     "flood_zone": "Sec 30.7.I: Special Permit project with net increase of 10+ units must set aside at least 10% BMR at 80% AMI or less (Bridgeport CT HUD HMFA); inclusionary fee $5 per $1000 construction value (Sec 29.6.1) unless 8-30g approved or 10% BMR or more; CGS 8-30g set-aside path requires 30% affordable for 40 years with 15% of all units at 60% median or less",
+     "constraints": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded combined-lot midpoint (-73.23179, 41.17633), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
+     "approvals_found": "Street setback 10 ft; side 0 ft one side / min 10 ft other; rear 10 ft; adjacent Residence District boundary 10 ft or adjacent district setback whichever is greater (Sec 6.5.1); residential not permitted on ground floor in NDD; FAR and residential-share cap the envelope and parking is co-binding; reaudit 2026-11-22 resolved: flood zone from a direct FEMA NFHL query (Zone X, see flood_zone) and a CT State Parcel Layer 2023 point query at the combined-lot midpoint returned Link 26620-2747 (Fairfield); Reaudit batch 7 2026-11-22 RESOLVED: the combined lot parcels are identified in the CT State Parcel Layer 2023 - Link 26620-2742 (467 Tunxis Hill Road, CAMA zone NDBD) and Link 26620-2741 (80 Soundview Avenue, CAMA zone B), which share a boundary and form one L-shaped corner site; frontage_ft is set to 172 ft from the 467 Tunxis parcel polygon west chain along Tunxis Hill Rd (approx 72.0 ft + approx 99.9 ft, measured in CT State Plane ft), and the site also has approx 81 ft of frontage on Soundview Ave (the 80 Soundview parcel south edge); the two CT parcel polygons measure approx 18627 sf (2742) + approx 6920 sf (2741) = approx 25547 sf combined in CT State Plane ft. STILL BLOCKING a high rating: (1) the GIS combined area of approx 25547 sf is 2.9% above the 24829 sf (0.57 ac) stated in the site own 8-30g application documents, and the conservative 24829 sf is retained for the unit math until the discrepancy is reconciled - resolving source: Fairfield Vision GIS assessor cards / tax map for Links 26620-2742 and 26620-2741; (2) the NDD zoning district was not verified parcel-by-parcel on the official Fairfield zoning map in a text-readable source (the CAMA zone fields above are assessor zones, not zoning) - resolving source: Fairfield zoning map / TPZ verification for the two parcels; no overlay found in official sources",
+     "enablers": "46-unit 5-story CGS 8-30g set-aside application for this combined 0.57-acre lot heard by TPZ Dec 3 2024 and continued Jan 14 2025; Affordable Housing Committee minutes 7/9/2025 record a proposed litigation settlement for 467 Tunxis Hill awaiting court approval after added screening - no final TPZ approval document found in official sources",
+     "max_units_estimate": "12+ units: yes - multifamily/mixed-use redevelopment by Special Permit is the winning path; market-rate note: 10% BMR rule triggered at 10+ units; affordable upside: codified residential share rises from 50% to 66 2/3% when excess units are Town-contracted affordable (Sec 6.3Z) and the CGS 8-30g route is demonstrated on this lot - program family CT DOH/CHFA and federal LIHTC; rezoning unlikely - no evidence found of a pending Tunxis Hill upzoning; deal type: either - market-rate mixed-use works at ~12 units and the affordable-program track is proven by the site's own 8-30g application",
+     "sources": "Multifamily/mixed-use: envelope = lower of FAR 1.0 x 24829 = 24829 GSF and footprint 18622 sf (75% coverage) x 3 floors = 55866 sf so FAR caps at 24829 GSF in at least 2 buildings (14000 GSF max each); residential 50% = 12415 GSF / ~1000 sf per unit = ~12 units market-rate; with Sec 6.3Z affordable share 66 2/3% = 16553 GSF = ~16 units - headline ~16 units capped by FAR x residential share with parking co-binding; Subdivision: 0 additional homes credited - NDD is a business district with no verified residential subdivision path; Second-home/ADU: 0 additive - Sec 13 ADUs apply to single-family residence districts not a vacant NDD lot; 8-30g scenario (not in headline): 46 units in 5 stories per the site's own set-aside application - settlement awaiting court approval",
+     "confidence": "https://cms3.revize.com/revize/fairfield/FairfieldZoningRegulations-090625.pdf https://fairfieldct.gov/service/town_plan___zoning/zoning_regulations.php https://fairfieldct.gov/government/boards___commissions/affordable_housing_committee/8-30g_faqs.php https://Cga.Ct.gov/2026/sup/chap_126a.htm https://gis.vgsi.com/FairfieldCT/Default.aspx https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/ArcGIS/rest/services/Connecticut_State_Parcel_Layer_2023/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query"
     },
     "conflicts_with_independent_check": [
-     "District: BOUNTY NDBD vs Muse NDD",
-     "Units: BOUNTY up to 46 vs Muse 1"
+     "District: BOUNTY NDBD vs Muse 172",
+     "Units: BOUNTY up to 46 vs Muse 12"
     ]
    },
-   "facts_hash": "ed5c81798f29",
-   "memo": {
-    "verdict": "A 46-unit residential project may be achievable via C.G.S. 8-30g, but pursuing the site at the $2,760,000 ask is only viable if final court approval of the litigation settlement is verified.",
-    "as_of_right": "Under NDD zoning rules, total floor area is capped at FAR 1.0 (24,829 GSF on the 24,829 sf lot) with 75% lot coverage (18,622 sf) and a height limit of 3 stories or 30 feet. Residential area is capped at 50% of total GSF (12,415 GSF, yielding roughly 12 market-rate units at 1,000 sf each) and is prohibited on the ground floor, with parking required at 2.5 spaces per unit plus commercial spaces.",
-    "approval_path": "8-30g / existing approval path. The 46-unit project uses C.G.S. 8-30g to bypass NDD height, FAR, density, and ground-floor residential restrictions. This path relies on a pending litigation settlement awaiting court approval, creating timeline and legal risks.",
-    "legal_issues": [
-     "Court approval status of the proposed litigation settlement for the 46-unit 8-30g application.",
-     "Binding 40-year affordability covenant requiring 14 units (30.4%) to remain affordable.",
-     "Verification of official TPZ approval documents and any conditions imposed by the commission.",
-     "Lack of verified parcel IDs, frontage, and tax assessor confirmation for the combined 0.57-acre lot."
-    ],
-    "test_fit": "As-of-right NDD zoning limits density first via the 50% residential floor area cap and FAR 1.0, allowing ~12 market-rate units (or ~16 units if 66 2/3% residential area is allowed under Sec 6.3Z) in two buildings up to 14,000 GSF each. The 8-30g plan fits 46 units (39 one-bedroom, 7 two-bedroom) across 3 residential stories (~44,665 sf unit area) over 54 garage spaces and 24 storage lockers.",
-    "value": "At the $2,760,000 asking price, the land cost is $60,000 per buildable unit for the 46-unit approved 8-30g plan. If built as-of-right, land cost increases to $172,500 per unit for a 16-unit Sec 6.3Z scenario and $230,000 per unit for a 12-unit market-rate scenario.",
-    "diligence": [
-     "Verify the conflict between listing sources (NDBD district, 46 approved units) and independent check sources (NDD district, no final TPZ approval document found in official records, settlement awaiting court approval).",
-     "Obtain the executed litigation settlement agreement and court approval decree.",
-     "Review final TPZ decision documents and public hearing minutes from December 2024 and January 2025.",
-     "Confirm combined parcel acreage, parcel IDs, and street frontage with Fairfield Vision GIS assessor cards and tax maps.",
-     "Obtain new-construction rental rates, sale prices, and local land comps to establish project financial viability."
-    ],
-    "enablers": "C.G.S. 8-30g affordable housing set-aside path and Section 6.3Z affordable residential share expansion to 66 2/3%.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T09:35:29.826693+00:00"
+   "facts_hash": "e26add5ebe27",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:54:57.315195+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -473,7 +451,7 @@
      "parking": "Sec 8.C.4.f as amended eff 07/01/2026: developments <17 units outside Conservation and Traffic Mitigation districts - no minimum; 17+ units - 1/studio-1BR, 2 per 2BR+ unit, plus 1 visitor per 5 units (Parking Needs Assessment reduction available)",
      "affordable_rule": "No mandatory set-aside for base RMF-4 development; Housing Incentive Option (Sec 4.B.7) requires at least 1 affordable unit (<=80% AMI, 40 years, per CGS 8-2g) for each unit above base density; CGS 8-30g set-aside path (30% deed-restricted 40 yrs, 15% of units at 60% median) available generally",
      "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.44489, 41.39166), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
-     "constraints": "Front 20 ft, side 30 ft (apartment house principal), rear 25 ft setbacks (Sec 4.B.3.a); usable open space 500 sf/unit; frontage_ft and parcel_id not retrieved - Danbury assessor eQuality/AxisGIS is interactive and not text-fetchable - gap, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage; flood zone not parcel-verified from FEMA NFHL - gap (Resilient CT notes chronic flooding in the Main St/Town Hill Ave area from East Ditch - verify FIRM panel before closing); lot_sf 27443 taken from queue and not independently confirmed on an assessor card - gap; no FAR in district so envelope is coverage x height only Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F). STILL BLOCKING a high rating: frontage_ft and parcel_id are not stated in a text-accessible official source - the Danbury assessor eQuality/AxisGIS record is interactive, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage and lot_sf 27443 (queue) is not independently confirmed on an assessor card - resolving source: Danbury assessor card / tax map for 56 Town Hill Ave.",
+     "constraints": "Front 20 ft, side 30 ft (apartment house principal), rear 25 ft setbacks (Sec 4.B.3.a); usable open space 500 sf/unit; frontage_ft and parcel_id not retrieved - Danbury assessor eQuality/AxisGIS is interactive and not text-fetchable - gap, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage; flood zone not parcel-verified from FEMA NFHL - gap (Resilient CT notes chronic flooding in the Main St/Town Hill Ave area from East Ditch - verify FIRM panel before closing); lot_sf 27443 taken from queue and not independently confirmed on an assessor card - gap; no FAR in district so envelope is coverage x height only Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F). STILL BLOCKING a high rating: frontage_ft and parcel_id are not stated in a text-accessible official source - the Danbury assessor eQuality/AxisGIS record is interactive, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage and lot_sf 27443 (queue) is not independently confirmed on an assessor card - resolving source: Danbury assessor card / tax map for 56 Town Hill Ave. Reaudit batch 7 2026-11-22: the CT State Parcel Layer 2023 was queried at the Census-geocoded site point and returns no parcel record for Danbury at that point - the feature returned has Link, Location, Zone and all CAMA fields null (Danbury parcel/CAMA data was not submitted to the state layer), so the state layer cannot supply the parcel ID, frontage or lot area either; the blocker stands and the resolving source remains the Danbury assessor card / tax map (or a survey)",
      "approvals_found": "City Council minutes Dec 5 2018 refer a Housing Redevelopment proposal for 54, 56 & 58 Town Hill Avenue to City Engineer and Planning for a report - referral only, no final approval document found in official sources searched; no Planning/Zoning Commission approval for a multifamily scheme on this lot found",
      "enablers": "12+ units: no - caps at 9 because the density rule (1 unit/3000 sf even with the Housing Incentive bonus; 1/4000 sf base); winning path: multifamily redevelopment (apartment house permitted as of right at base density; Housing Incentive density is by special exception); market-rate: no affordability mandate applies on the base path - conventional product is ~6 units; affordable upside: Housing Incentive Option adds 3 units (6 to 9) in exchange for at least 3 affordable units at <=80% AMI for 40 years, and the CGS 8-30g / CT DOH / CHFA LIHTC program family applies in Danbury; rezoning unlikely - no evidence found: RMF-4 is already Danbury's medium-high density multifamily district and the 2023 POCD supports multifamily and affordable housing generally, but no site-specific upzoning, pending rezoning or adjacent higher-density district for Town Hill Ave was found; deal type: either - market-rate works at base density, affordable-program candidate via Housing Incentive / 8-30g / CHFA",
      "max_units_estimate": "Path 1 multifamily: footprint = 27443 x 30% coverage = 8233 sf; floors = 4 (45 ft apartment max); no FAR so gross envelope = 8233 x 4 = 32932 sf (setback envelope cannot be computed - frontage/dimensions unverified; side 30 ft setbacks would shrink it); density caps first: 27443 / 4000 = 6.86 -> 6 units as of right; with Housing Incentive Option (special exception): 27443 / 3000 = 9.14 -> 9 units (envelope at ~900 sf gross/unit arithmetic would support ~36, so density, not massing or parking, is the binding cap). Path 2 subdivision: one-family lots need 5000 sf and 50 ft width - area alone allows 27443/5000 = 5 lots / 5 homes, frontage unverified so 5 is an area ceiling only. Path 3 second home: 1 accessory apartment allowed on a one-family lot (Sec 3.G.15 / state mandate) - +1 unit on the subdivision path only, 0 standalone on a multifamily lot. Headline lawful max without rezoning: 9 units (Housing Incentive special exception); 6 as of right. 8-30g scenario (not in headline): a 30% set-aside application could seek more via the CGS 8-30g appeals procedure - no site-specific figure in an official source",
@@ -484,32 +462,9 @@
      "Units: BOUNTY up to 24 vs Muse 1"
     ]
    },
-   "facts_hash": "55ac19532b2e",
-   "memo": {
-    "verdict": "Active construction on a 24-unit project reportedly began in February 2025, but standard zoning caps density at 6 to 9 units, making this off-market site unviable at the $1,350,000 ask unless an existing valid approval transfers.",
-    "as_of_right": "The RMF-4 district allows 1 apartment unit per 4,000 sf of lot area (Sec 4.B.3.a). For this 27,443 sf lot, the math allows 6 units as-of-right (27,443 / 4,000 = 6.86). Maximum building height is 45 ft or 4 stories, with maximum building coverage capped at 30% (8,233 sf footprint).",
-    "approval_path": "Existing approval or site plan approval. News sources indicate Danbury Planning Department approved a 24-unit plan on January 15, 2025. If that approval is invalid or unrecorded, standard path options include as-of-right site plan review for 6 units, a special exception under the Housing Incentive Option for 9 units, or a CGS 8-30g affordable housing appeal. Discretionary special permits or 8-30g appeals add significant public hearing time and legal risk.",
-    "legal_issues": [
-     "Approval status discrepancy: News sources state 24 units were approved in January 2025, but official records searched only confirm a 2018 referral without a final Planning and Zoning Commission approval document.",
-     "Site control and construction status: Developer Joseph DaSilva began site clearing in February 2025, indicating the property is likely off-market or under active development.",
-     "Lot frontage verification: Danbury zoning requires a 125 ft minimum lot width for apartment buildings, which cannot be verified without an official tax card.",
-     "Affordability requirements: Utilizing the Housing Incentive Option requires at least 1 affordable unit (<=80% AMI) for 40 years for each bonus unit above base density."
-    ],
-    "test_fit": "The 30% lot coverage permits an 8,233 sf footprint. At 4 stories, the maximum structural volume is 32,932 gross sf. Density rules limit building size long before massing or height. Setbacks require 20 ft in front, 30 ft on sides, and 25 ft in rear. Unit counts range from 6 as-of-right to 9 via Housing Incentive, or 24 under the reported approval. Parking rules effective July 2026 require zero spaces for under 17 units, while 17+ units require 1 space per 1BR, 2 per 2BR+, and visitor parking (reported 24-unit plan includes 39 spaces).",
-    "value": "At the $1,350,000 ask price, land cost is $56,250 per buildable unit under the reported 24-unit approved plan. On the 6-unit as-of-right baseline, land cost rises to $225,000 per unit. On the 9-unit Housing Incentive option, land cost is $150,000 per unit.",
-    "diligence": [
-     "Resolve the conflict between reported 24-unit Planning Department approval (Jan 2025) and independent findings showing a base cap of 6 to 9 units with no official P&Z approval on file.",
-     "Obtain Danbury Assessor property card and tax map to confirm exact lot area (27,443 sf) and lot frontage against the 125 ft minimum requirement.",
-     "Verify active site clearing, property title, and current developer site control with Joseph DaSilva.",
-     "Request official copies of all approved site plans, architectural drawings, and zoning decision notices from the Danbury Planning Department.",
-     "Confirm FEMA FIRM map details for Zone X flood classification and inspect local East Ditch stormwater infrastructure."
-    ],
-    "enablers": "Density can be increased beyond 6 units via the Housing Incentive Option (Sec 4.B.7.c) to 9 units (1 unit per 3,000 sf) with affordable set-asides, or expanded further using a CGS 8-30g set-aside application.",
-    "highest_and_best_use": "Not enough data. FACTS lack local market rents, sale prices, and recent land sales comparisons.",
-    "letter_angle": "Inquire whether the current owner or developer is open to a joint venture, contract assignment, or outright sale given ongoing site clearing and development activity.",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T09:35:29.826970+00:00"
+   "facts_hash": "469da6edf47c",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:56:28.112189+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -622,7 +577,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:29.984400+00:00"
+   "checked_utc": "2026-11-22T09:56:28.265290+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -732,7 +687,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:30.136619+00:00"
+   "checked_utc": "2026-11-22T09:56:28.451843+00:00"
   },
   {
    "id": "bx-927-home",
@@ -841,7 +796,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:30.287980+00:00"
+   "checked_utc": "2026-11-22T09:56:28.648883+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -951,7 +906,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:30.449881+00:00"
+   "checked_utc": "2026-11-22T09:56:28.822521+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1062,7 +1017,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:30.611110+00:00"
+   "checked_utc": "2026-11-22T09:56:28.955007+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1177,7 +1132,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:30.762285+00:00"
+   "checked_utc": "2026-11-22T09:56:29.152193+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1293,7 +1248,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:30.919317+00:00"
+   "checked_utc": "2026-11-22T09:56:29.297340+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -1374,7 +1329,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:31.001592+00:00"
+   "checked_utc": "2026-11-22T09:56:29.463144+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1457,7 +1412,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:31.081410+00:00"
+   "checked_utc": "2026-11-22T09:56:29.641450+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1537,7 +1492,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:31.269076+00:00"
+   "checked_utc": "2026-11-22T09:56:29.776286+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1615,7 +1570,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:31.269383+00:00"
+   "checked_utc": "2026-11-22T09:56:29.776526+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1691,7 +1646,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:35:31.269656+00:00"
+   "checked_utc": "2026-11-22T09:56:29.776740+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1746,7 +1701,7 @@
    },
    "facts_hash": "2aa4d27e5122",
    "memo": null,
-   "checked_utc": "2026-11-22T09:37:02.031585+00:00"
+   "checked_utc": "2026-11-22T09:58:00.631610+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1801,7 +1756,7 @@
    },
    "facts_hash": "b0bf88ed65c7",
    "memo": null,
-   "checked_utc": "2026-11-22T09:38:34.012743+00:00"
+   "checked_utc": "2026-11-22T09:59:31.464463+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1855,30 +1810,8 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "1056da704c20",
-   "memo": {
-    "verdict": "A 5-story mixed-use building with 1 commercial space and 5 residential units is achievable as-of-right, but viability at the $699,000 ask depends on missing market pricing data.",
-    "as_of_right": "Under Jersey City NC-1 Sec 345-46, residential above ground-floor commercial is permitted as-of-right. A 15 percent rear yard setback on the 2,379 SF lot yields a footprint of 2,022 SF. With a 5-story / 55 ft height limit, the envelope allows 1 commercial ground floor and 4 residential floors totaling 8,088 gross residential SF. This yields ~5 units at 1,400 gross SF per unit. Zero parking is required under Sec 345-46F.6 for lots under 5,000 SF.",
-    "approval_path": "As-of-right / site plan approval. This involves low zoning risk and standard processing time because the proposed use and scale require no variances or affordability set-asides.",
-    "legal_issues": [
-     "Unverified applicability of the West Side Avenue Redevelopment Plan to this parcel.",
-     "Lack of explicit lot coverage percentage in retrieved NC-1 bulk standards.",
-     "Missing official parcel ID (block/lot) and frontage width from tax map records.",
-     "Prohibition of curb cuts on West Side Avenue restricting vehicle access."
-    ],
-    "test_fit": "Architect notes a building footprint of ~2,022 SF with zero front and side yards and a 15 percent rear yard. Max height allows 5 stories / 55 ft, producing a gross envelope of ~10,110 SF (1 commercial floor and 4 residential floors). Density is capped at ~5 residential units by lot area and height. Zero parking spaces are required.",
-    "value": "Land cost is $139,800 per unit based on the $699,000 ask and a 5-unit baseline. Subdivision is unfeasible because the 2,379 SF lot cannot be split below the 2,500 SF minimum lot area.",
-    "diligence": [
-     "Retrieve Hudson County / Jersey City tax map records to verify parcel ID (block/lot) and actual frontage width.",
-     "Check the official Jersey City redevelopment plan area map to confirm if the West Side Avenue Redevelopment Plan applies.",
-     "Review full text of Jersey City Land Development Ordinance Sec 345-46 for lot coverage limits.",
-     "Verify conceptual plans and listing details directly with the broker."
-    ],
-    "enablers": "As-of-right NC-1 zoning allowing 5 stories / 55 ft for mixed-use with residential above commercial, combined with a parking exemption for lots under 5,000 SF.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T09:38:56.365121+00:00"
+   "memo": null,
+   "checked_utc": "2026-11-22T10:02:01.896523+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -1938,7 +1871,7 @@
      "parking": "Table 43-4 (Sec 43-128): multifamily parking as summarized in the City's parking analysis of the code - 1 space/unit plus 0.33 space per bedroom beyond the first, modified to 1 space/unit for new apartments within 1/4 mile of an active train station (Sec 43-138; station distance for this lot not verified); at 20 units that is approx 20-27 spaces depending on bedroom mix and station distance; parking is provided on site plan and is not shown to cap the FAR/density count",
      "affordable_rule": "City Affordable Housing Ordinance, Ch 43 Article XV (Secs 43-190 et seq): all newly constructed or substantially rehabilitated multifamily developments are required to include affordable housing units (30-100% of Westchester County AMI in the ordinance as adopted; the specific percentage for this district/size was not retrieved - gap); no as-of-right density/FAR bonus for affordability found in Table 43-3",
      "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.88171, 40.99179), DFIRM 36119C, SFHA = F (reaudit 2026-11-22)",
-     "constraints": "Multifamily yards verified in reaudit 2026-11-22 from Table 43-3: front 15 ft, side 12 ft one / 25 ft both, rear 25 ft (single/two-family row is front 20 ft / rear 25 ft) - yards shrink the footprint but FAR caps first; flood zone resolved in reaudit 2026-11-22 (see flood_zone); second-pass recomputation confirms FAR gross 20668 sf and ~20 units, consistent with the 800 sf-per-family density cap (20 families); reaudit 2026-11-22: lot_sf is now cross-checked - the Westchester County Parcels service (NYS ITS Geospatial Services) record for PRINT_KEY 1.-445-10 (94 William St) gives CALC_ACRES 0.3796 = 16537 sf from the county parcel polygon, within 0.1% of the 16534 sf used (its assessor ACRES 0.25, FRONT 0 and SQ_FT 0 fields are unpopulated and are not used); the Table 43-4 parking figure is resolved in the parking field (Sec 43-128 / Table 43-4, with the Sec 43-138 station reduction); STILL BLOCKING a high rating: frontage_ft - the assessor FRONT field is 0, and the county parcel polygon's William St (west) edge chain measures approx 87 ft with long side edges of approx 173 ft, neither of which reconciles with the queue frontage of 211 ft, so the 211 ft figure is unverified and the subdivision width math is provisional - resolving source: City of Yonkers tax map frontage annotation or a survey for parcel 1.-445-10",
+     "constraints": "Multifamily yards verified in reaudit 2026-11-22 from Table 43-3: front 15 ft, side 12 ft one / 25 ft both, rear 25 ft (single/two-family row is front 20 ft / rear 25 ft) - yards shrink the footprint but FAR caps first; flood zone resolved in reaudit 2026-11-22 (see flood_zone); second-pass recomputation confirms FAR gross 20668 sf and ~20 units, consistent with the 800 sf-per-family density cap (20 families); reaudit 2026-11-22: lot_sf is now cross-checked - the Westchester County Parcels service (NYS ITS Geospatial Services) record for PRINT_KEY 1.-445-10 (94 William St) gives CALC_ACRES 0.3796 = 16537 sf from the county parcel polygon, within 0.1% of the 16534 sf used (its assessor ACRES 0.25, FRONT 0 and SQ_FT 0 fields are unpopulated and are not used); the Table 43-4 parking figure is resolved in the parking field (Sec 43-128 / Table 43-4, with the Sec 43-138 station reduction); STILL BLOCKING a high rating: frontage_ft - the assessor FRONT field is 0, and the county parcel polygon's William St (west) edge chain measures approx 87 ft with long side edges of approx 173 ft, neither of which reconciles with the queue frontage of 211 ft, so the 211 ft figure is unverified and the subdivision width math is provisional - resolving source: City of Yonkers tax map frontage annotation or a survey for parcel 1.-445-10; reaudit batch 7 2026-11-22 re-queried the Westchester County Parcels service for PRINT_KEY 1.-445-10 and re-measured the polygon: the west edge chain is approx 87 ft and the two long edges are approx 173 ft each, and the assessor FRONT and SQ_FT fields remain 0 - no edge or field yields the queue figure of 211 ft, so the blocker stands unchanged",
      "approvals_found": "None found in official sources searched (no Planning Board or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: yes - multifamily redevelopment as of right in M at FAR 1.25; winning path: multifamily redevelopment; market-rate: the Article XV affordable set-aside applies to new multifamily, so a conventional deal carries that set-aside - no purely mandate-free market-rate path at this scale; affordable upside: no as-of-right FAR/density bonus found - program family NY HCR, Westchester County housing funds, federal LIHTC, 485-x; rezoning unlikely - M already allows 65 ft multifamily and no site-specific upzoning or pending rezoning for William St was found; deal type: either - market-rate with the Article XV set-aside works at ~20 units, affordable-program stacking is available",
      "max_units_estimate": "Path 1 multifamily: footprint = 16534 x 40% coverage = 6614 sf; floors approx 6 within 65 ft; gross = LOWER of FAR 1.25 x 16534 = 20668 sf and footprint x floors 6614 x 6 = 39684 sf = 20668 sf - FAR caps; units = 20668 / approx 1000 sf gross per unit arithmetic = approx 20 units. Path 2 subdivision: single-family lots by area 16534/5000 = 3 and by width 211/50 = 4, so 3 lots = up to 3 single-family homes (6 units if two-family), below Path 1. Path 3 second home/added unit: an accessory apartment in a single-family home adds 1 unit per lot on the subdivision path only - below Path 1. Headline lawful max without rezoning: ~20 units (multifamily, FAR-capped)",
@@ -1949,9 +1882,9 @@
      "Units: BOUNTY up to 20 vs Muse 1"
     ]
    },
-   "facts_hash": "10d133c7117e",
+   "facts_hash": "9781d2cb5240",
    "memo": null,
-   "checked_utc": "2026-11-22T09:40:38.164150+00:00"
+   "checked_utc": "2026-11-22T10:03:40.078135+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -2008,10 +1941,10 @@
      "lot_coverage": "40% for multifamily and for single- and two-family dwellings (Table 43-3)",
      "min_lot_area": "5000 (single- and two-family); no minimum lot area stated for multifamily dwellings in the A district (Table 43-3, verified in reaudit 2026-11-22)",
      "min_lot_width": "50 (single- and two-family); no minimum lot width stated for multifamily dwellings in the A district (Table 43-3, verified in reaudit 2026-11-22) - actual frontage is 69 ft",
-     "parking": "Table 43-4 per-unit figure not retrieved in this review - gap; Sec 43-132 rule retrieved: 1/unit for new apartments within 1/4 mile of an active train station (station distance for this lot not verified); parking is not shown to cap the FAR count but must be accommodated on the site plan",
+     "parking": "Table 43-4 per-unit figure resolved in reaudit batch 7 2026-11-22: the City parking analysis of Ch 43 cited in sources summarizes the multifamily requirement as 1 space per unit plus 0.33 space per bedroom beyond the first, modified to 1 space per unit for new apartments within 1/4 mile of an active train station (Sec 43-132 rule in this row); station distance for this lot not verified, so the higher figure is carried - at ~53 units approx 53-70 spaces depending on bedroom mix, provided on the site plan and not shown to cap the FAR count",
      "affordable_rule": "City Affordable Housing Ordinance, Ch 43 Article XV (Secs 43-190 et seq): all newly constructed or substantially rehabilitated multifamily developments are required to include affordable housing units (30-100% of Westchester County AMI in the ordinance as adopted; the specific percentage for this district/size was not retrieved - gap); no as-of-right density/FAR bonus for affordability found in Table 43-3",
      "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.90134, 40.92582), DFIRM 36119C, SFHA = F (reaudit 2026-11-22)",
-     "constraints": "Multifamily yards verified in reaudit 2026-11-22 from Table 43-3: front 25 ft, side 16 ft one / 32 ft both, rear 25 ft (single/two-family row is front 20 ft / rear 25 ft) - yards shrink the footprint but FAR caps first; flood zone resolved in reaudit 2026-11-22 (see flood_zone); STILL BLOCKING a high rating: (1) A-district multifamily height is 1.5 times the street right-of-way width (Table 43-3 note 3) and the Downing St right-of-way width was not retrieved from an official source, so the achievable floor count under the FAR ceiling is unverified - resolving source: City of Yonkers street/ROW records or tax map for Downing St at 127 Downing St; (2) lot_sf 16001, frontage_ft 69 and parcel 1.-176-29 rest only on the queue (City tax map reference) with no independent official tax-map/assessor cross-check retrieved, and the Table 43-4 per-unit parking figure was not retrieved - resolving sources: City of Yonkers tax map / Westchester County GIS parcel record for 1.-176-29 and Yonkers Code Table 43-4",
+     "constraints": "Multifamily yards verified in reaudit 2026-11-22 from Table 43-3: front 25 ft, side 16 ft one / 32 ft both, rear 25 ft (single/two-family row is front 20 ft / rear 25 ft) - yards shrink the footprint but FAR caps first; flood zone resolved in reaudit 2026-11-22 (see flood_zone); STILL BLOCKING a high rating: (1) A-district multifamily height is 1.5 times the street right-of-way width (Table 43-3 note 3) and the Downing St right-of-way width was not retrieved from an official source, so the achievable floor count under the FAR ceiling is unverified - resolving source: City of Yonkers street/ROW records or tax map for Downing St at 127 Downing St; (2) RESOLVED in reaudit batch 7 2026-11-22: lot_sf and frontage are now cross-checked in the Westchester County Parcels service (NYS ITS Geospatial Services, 2025 assessment roll) for PRINT_KEY 1.-176-29 (127 Downing St) - assessor ACRES 0.37 and polygon CALC_ACRES 0.36739 (= approx 16003 sf) confirm the 16001 sf used (assessor FRONT, DEPTH and SQ_FT fields are 0 and are not used), and the county polygon southwest (Downing St) edge segment measures approx 69 ft, corroborating frontage_ft 69; the Table 43-4 parking figure is also resolved (see parking field). The single remaining blocker for a high rating is item (1) above, the Downing St right-of-way width, which no official public source retrieved states - resolving source: City of Yonkers street/ROW records or tax map for Downing St at 127 Downing St",
      "approvals_found": "None found in official sources searched (no Planning Board or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: yes - multifamily redevelopment as of right in A at FAR 3.00, the highest residential FAR in Table 43-3 outside designated development sites; winning path: multifamily redevelopment; market-rate: the Article XV affordable set-aside applies to new multifamily, so a conventional deal carries that set-aside; affordable upside: no as-of-right FAR bonus found beyond the 3.00 base - program family NY HCR, Westchester County housing funds, federal LIHTC, 485-x; rezoning unlikely - A is already the high-density apartment district and no site-specific upzoning or pending rezoning for Downing St was found; deal type: either - market-rate with the Article XV set-aside works at ~53 units, affordable-program stacking is available",
      "max_units_estimate": "Path 1 multifamily: footprint = 16001 x 40% coverage = 6400 sf; floors from the 1.5x ROW height rule cannot be fixed (ROW width gap) but at 4-5 floors the footprint product is 25600-32000 sf; gross = LOWER of FAR 3.00 x 16001 = 48003 sf and footprint x floors - on a 4-5 floor reading the footprint product would cap below the FAR, so the ~53-unit figure is the FAR ceiling at approx 900 sf gross per unit arithmetic (48003/900 = 53) and the achievable count depends on the ROW-height verification noted in constraints; FAR/height together cap, not parking and not density. Path 2 subdivision: by area 16001/5000 = 3 lots but by street frontage 69/50 = 1 conforming single-family lot on the frontage given, so 1 lot / up to 2 units (two-family) on a frontage-verified basis, area ceiling 3 lots noted only. Path 3 second home/added unit: an accessory apartment adds 1 unit on a single-family path only - below Path 1. Headline lawful max without rezoning: ~53 units (FAR ceiling, multifamily)",
@@ -2022,32 +1955,9 @@
      "Units: BOUNTY up to 53 vs Muse 1"
     ]
    },
-   "facts_hash": "70fca5a88a0c",
-   "memo": {
-    "verdict": "The site supports an as-of-right multifamily building of 30 to 49 realistic units on a 16,001 square foot lot, making it worth pursuing at the $1,600,000 ask price.",
-    "as_of_right": "Multifamily is an as-of-right use in the A district. Under Table 43-3, a 3.00 FAR on 16,001 square feet allows 48,003 gross square feet, which translates to a paper maximum of 53 units based on an average 900 square foot unit size. Lot coverage is capped at 40 percent (6,400 square feet). Single and two-family options allow 1 to 2 units at a 1.00 FAR.",
-    "approval_path": "As-of-right development subject to site plan approval. Site plan review requires moderate time and carries public hearing risk around parking layout, setbacks, and building height.",
-    "legal_issues": [
-     "Compliance with City Affordable Housing Ordinance Ch 43 Article XV mandatory set-aside rules for new multifamily.",
-     "Unverified Downing Street right-of-way width determining legal building height under Table 43-3 Note 3.",
-     "Parking compliance under Table 43-4 requiring 75 spaces at paper maximum, exceeding surface capacity.",
-     "Narrow street frontage of 69 feet restricting site egress and layout."
-    ],
-    "test_fit": "Maximum footprint is 6,400 square feet based on 40 percent lot coverage. Setbacks require 25 feet front, 25 feet rear, and 16 feet single or 32 feet combined side yards. Height is capped at 1.5 times the street right-of-way width, limiting the envelope to 4-5 stories and ~45-49 units. Surface parking holds only 23 spaces, capping yield at ~30 units unless structured parking is built. Height and parking limit density before FAR.",
-    "value": "At the $1,600,000 ask price, land cost is $30,189 per unit at the 53-unit paper maximum. Land cost rises to $35,556 per unit at 45 units, and $53,333 per unit if limited to 30 units on surface parking.",
-    "diligence": [
-     "Resolve unit discrepancy: independent check notes 1 unit while zoning paper max allows up to 53 units.",
-     "Obtain official Downing Street right-of-way width from City of Yonkers engineering records to fix max height.",
-     "Verify parcel boundaries, 16,001 lot square footage, and 69-foot frontage against official tax map 1.-176-29.",
-     "Confirm walking distance to Ludlow train station (noted at 0.23 miles) to apply Sec 43-132 1 space per unit parking rule.",
-     "Review Ch 43 Article XV affordable set-aside percentage and AMI targets."
-    ],
-    "enablers": "Sec 43-132 TOD parking reduction to 1 space per unit for sites within 0.25 miles of an active train station, and affordable funding stacking such as LIHTC, 485-x, or Westchester County housing funds.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T09:40:48.957649+00:00"
+   "facts_hash": "3da946777af5",
+   "memo": null,
+   "checked_utc": "2026-11-22T10:05:18.331318+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -2141,7 +2051,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:41:02.065134+00:00"
+   "checked_utc": "2026-11-22T10:05:27.948933+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -2195,7 +2105,7 @@
    },
    "facts_hash": "3f6c9afab821",
    "memo": null,
-   "checked_utc": "2026-11-22T09:44:27.609282+00:00"
+   "checked_utc": "2026-11-22T10:08:55.275667+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -2250,7 +2160,7 @@
    },
    "facts_hash": "efebdb44475f",
    "memo": null,
-   "checked_utc": "2026-11-22T09:47:28.802661+00:00"
+   "checked_utc": "2026-11-22T10:11:55.411081+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -2351,7 +2261,7 @@
     "letter_angle": "Contact owner A&C International Management Group, LLC directly to express interest in acquiring the off-market parcel for an as-of-right development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:47:28.987239+00:00"
+   "checked_utc": "2026-11-22T10:11:55.580100+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -2452,7 +2362,7 @@
     "letter_angle": "Approach Public Storage with an off-market offer focused on a straightforward, as-of-right acquisition of this underutilized parcel.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:47:29.148863+00:00"
+   "checked_utc": "2026-11-22T10:11:55.779530+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -2553,7 +2463,7 @@
     "letter_angle": "Approach Mott Haven Holdings, LLC directly to inquire about their willingness to sell 250 East 138 Street for an as-of-right multifamily development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:47:29.299837+00:00"
+   "checked_utc": "2026-11-22T10:11:55.924296+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -2654,7 +2564,7 @@
     "letter_angle": "Approach owner BAKTIDY ASSOCIATES directly to inquire about an off-market acquisition of the 13,512 sf redevelopment lot.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:47:29.456963+00:00"
+   "checked_utc": "2026-11-22T10:11:56.101802+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -2732,7 +2642,7 @@
    },
    "facts_hash": "d58250bf27d3",
    "memo": null,
-   "checked_utc": "2026-11-22T09:49:00.398638+00:00"
+   "checked_utc": "2026-11-22T10:13:27.240263+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -2834,7 +2744,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC directly to inquire if they are open to an offer for 19 Clay Street based on an as-of-right residential development program.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:49:00.589069+00:00"
+   "checked_utc": "2026-11-22T10:13:27.429498+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
