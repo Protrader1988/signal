@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-22T14:03:23.703505+00:00",
+ "generated_utc": "2026-11-22T16:02:12.856861+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -93,7 +93,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:25:30.599484+00:00"
+   "checked_utc": "2026-11-22T15:08:13.946989+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -187,7 +187,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:26:26.806472+00:00"
+   "checked_utc": "2026-11-22T15:08:13.947273+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -274,7 +274,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:26:26.807043+00:00"
+   "checked_utc": "2026-11-22T15:08:13.947505+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -348,7 +348,7 @@
    },
    "facts_hash": "af2c8ab3f2af",
    "memo": null,
-   "checked_utc": "2026-11-22T13:27:59.865379+00:00"
+   "checked_utc": "2026-11-22T15:09:44.716837+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -447,7 +447,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:27:59.865888+00:00"
+   "checked_utc": "2026-11-22T15:09:44.717295+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -514,7 +514,7 @@
    },
    "facts_hash": "7bb3458d2885",
    "memo": null,
-   "checked_utc": "2026-11-22T13:30:18.283546+00:00"
+   "checked_utc": "2026-11-22T15:11:15.286724+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -574,6 +574,55 @@
      "standard": "$37,097 to $50,000",
      "with UAP affordable bonus": "$25,000 to $33,824"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "3848 Bailey Ave",
@@ -603,31 +652,9 @@
      "Units: BOUNTY up to 46 vs Muse 1"
     ]
    },
-   "facts_hash": "e078c84c1f5b",
-   "memo": {
-    "verdict": "An as-of-right residential development yielding between 23 and 46 units is feasible in this R7-1 zone, making it worth pursuing at the $1,150,000 asking price.",
-    "as_of_right": "Zoning R7-1 on a 6,268 sf lot allows standard residential FAR of 3.44 (21,562 sf, yielding ~24 units or 23 to 31 units). Universal Affordability Preference (UAP) increases FAR to 4.13 (25,874 sf, ~29 units). Qualifying affordable housing allows up to 5.01 FAR (31,403 sf, ~35 units or 34 to 46 units). Lot coverage allows up to 80% (5,014 sf footprint) with a 20 ft rear yard. Heights range from 75-85 ft standard to 105-115 ft for UAP/qualifying affordable on a wide street. Required parking is 0 spaces under ZR 25-232.",
-    "approval_path": "As-of-right development. No discretionary CPC, BSA, or special permit approvals are required, leading to shorter timelines and lower risk. Utilizing the full 5.01 FAR requires an HPD/HDC regulatory agreement.",
-    "legal_issues": [
-     "Discrepancy in parcel size: listing states 3,134 sf while tax lot records indicate 6,268 sf vacant land.",
-     "Requirement of an HPD or HDC regulatory agreement to unlock the 5.01 qualifying affordable housing FAR.",
-     "UAP compliance requirements under ZR Ch 27 requiring permanent affordability at a weighted average of 60% AMI or less."
-    ],
-    "test_fit": "Building envelope allows an 80% coverage footprint of 5,014 sf with no front or side yards and a 20 ft rear yard. Height supports ~7 floors standard (up to 75-85 ft) or ~10 floors for UAP/qualifying affordable (up to 105-115 ft). Unit counts range from 23 to 31 standard, 29 under UAP, and 34 to 46 under qualifying affordable. Parking requires 0 spaces. Density is limited first by FAR caps, not height, coverage, or parking.",
-    "value": "At the $1,150,000 asking price, land cost is $37,097 to $50,000 per buildable unit under standard zoning (23 to 31 units), and drops to $25,000 to $33,824 per unit with the UAP affordable bonus (34 to 46 units).",
-    "diligence": [
-     "Resolve conflict between unit calculations: BOUNTY allows up to 46 units while independent analysis yields ~24 standard, ~29 UAP, and ~35 qualifying units.",
-     "Verify exact lot area being sold to resolve the listing discrepancy of 3,134 sf versus the tax lot size of 6,268 sf.",
-     "Perform title search and boundary survey for BBL 2032630037 to confirm frontage and wide-street designation on Bailey Avenue.",
-     "Review DOB filings for adjacent 3846 Bailey Ave, which completed 32 units on a 6,268 sf lot in 2025.",
-     "Confirm HPD and HDC regulatory agreement terms for qualifying affordable housing FAR rules."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) bonus under ZR Ch 27; qualifying affordable housing tier under ZR 23-22 up to 5.01 FAR; wide-street location rules on Bailey Avenue permitting increased building height.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:18.617180+00:00"
+   "facts_hash": "b425d9c1adb9",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:12:46.016694+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -684,6 +711,55 @@
      "standard": "$71,357 to $99,900",
      "with UAP affordable bonus": "$49,950 to $66,600"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1901 Harrison Ave",
@@ -713,31 +789,9 @@
      "Units: BOUNTY up to 20 vs Muse 1"
     ]
    },
-   "facts_hash": "1bdb07632af1",
-   "memo": {
-    "verdict": "The site allows an as-of-right multifamily building of 10 to 16 units, or up to 20 units with UAP, making it worth pursuing at the $999,000 ask subject to yield verification.",
-    "as_of_right": "R7-1 zoning allows multifamily development as of right under ZR 23-22. Standard FAR 3.44 on the 2,800 sf lot permits 9,632 sf of floor area. This yields 10 to 14 units. Under UAP, FAR 4.13 to 5.01 yields 11,558 sf to 14,028 sf.",
-    "approval_path": "As-of-right. Development requires no discretionary approvals, variances, or special permits, keeping approval risk low.",
-    "legal_issues": [
-     "Demolition requirements for the existing vacant 1-family house built in 1920.",
-     "Drafting and execution of an HPD/HDC regulatory agreement if utilizing UAP or qualifying affordable FAR up to 5.01.",
-     "Title review for encumbrances on BBL 2028680164."
-    ],
-    "test_fit": "Footprint is capped at 1,900 sf by the 30 ft rear yard requirement (ZR 23-342) and 80 percent max coverage (ZR 23-362). Max building height is 75 ft for standard tier (~7 floors) and 105 ft for UAP tier (~10 floors). Likely yield is 10 to 14 units standard, or 13 to 20 units under UAP. Zero parking spaces are required under ZR 25-232. FAR caps density first.",
-    "value": "Land cost at the $999,000 ask is $71,357 to $99,900 per unit under the standard scenario. Land cost falls to $49,950 to $66,600 per unit under the UAP affordable bonus scenario.",
-    "diligence": [
-     "Resolve conflict between unit calculations: independent check caps yield at 11 standard / 16 qualifying affordable units, while parcel data allows 10 to 14 standard / 15 to 20 UAP units.",
-     "Review property survey offered by broker to confirm 30 ft frontage and 99.5 ft depth.",
-     "Verify ZoLa data regarding proximity to a wide street to confirm if standard FAR 4.00 applies.",
-     "Confirm HPD regulatory agreement requirements for UAP affordable floor area set-asides.",
-     "Order standard title report and environmental screening."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) FAR bonus and Greater Transit Zone parking waiver (ZR 25-232).",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:18.861549+00:00"
+   "facts_hash": "e60e59619e52",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:14:16.814188+00:00"
   },
   {
    "id": "bx-927-home",
@@ -792,6 +846,55 @@
      "standard": "$78,571 to $100,000",
      "with UAP affordable bonus": "$52,381 to $68,750"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "927 Home St",
@@ -822,31 +925,9 @@
      "Units: BOUNTY up to 21 vs Muse 1"
     ]
    },
-   "facts_hash": "1a90c8e3fd07",
-   "memo": {
-    "verdict": "An 11-unit standard or 16-unit UAP affordable residential development is achievable as-of-right, but pursuing the site at the $1,100,000 ask depends on utilizing affordable bonuses to lower land cost per unit.",
-    "as_of_right": "Under ZR 23-22, R7-1 zoning allows a standard FAR of 3.44 on the 2,920 sf lot, yielding 10,045 sf of gross floor area (~11 units at 900 sf gross per unit). ZR 23-432 caps narrow-street building height at 75 ft with a 65 ft base. Lot coverage is capped at 80% (2,336 sf) by ZR 23-362. Under ZR 25-232, required parking is 0 spaces because the calculated total is 10 or fewer.",
-    "approval_path": "As-of-right path requiring standard building permits without discretionary BSA, CPC, or HPD land-use approvals, ensuring lower timeline risk and predictable development steps.",
-    "legal_issues": [
-     "Demolition and vacating requirements for the existing 1,188 sf single-family structure built in 1991.",
-     "Execution of an HPD/HDC regulatory agreement enforcing permanent affordability covenants (weighted average <=60% AMI) to access the 5.01 UAP FAR.",
-     "Narrow street height cap of 75 ft for standard construction versus 105 ft for qualifying affordable tiers."
-    ],
-    "test_fit": "The lot measures 27.76 ft wide by 107.48 ft deep (2,920 sf). A 30 ft rear yard yields an envelope footprint of ~2,151 sf with no front or side yards required. FAR is the binding cap on density rather than height, coverage, or parking. Standard FAR allows 11 to 14 units across ~7 floors, while UAP yields 16 to 21 units across up to 10 floors. Zero parking spaces are required.",
-    "value": "At the $1,100,000 ask, land cost is $78,571 to $100,000 per unit for standard scenarios (11 to 14 units) and decreases to $52,381 to $68,750 per unit under UAP affordable bonus scenarios (16 to 21 units).",
-    "diligence": [
-     "Resolve the conflict between independent checks regarding maximum unit yield (BOUNTY up to 21 units vs Muse 1 unit base).",
-     "Confirm title history, occupancy status, and lease terms for the existing 1,188 sf structure.",
-     "Verify HPD and HDC regulatory agreement terms for UAP FAR 5.01 compliance.",
-     "Obtain a certified boundary and topographic lot survey to confirm the 2,920 sf lot area and 27.76 ft frontage.",
-     "Complete a Phase I Environmental Site Assessment and utility access review."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) under ZR Chapter 27, qualifying affordable housing FAR bonuses under ZR 23-22 (up to 5.01 FAR), and FRESH Zone overlay inclusion.",
-    "highest_and_best_use": "Not enough data. FACTS do not include new-building rents, sale prices, or local land comps required to determine the financial return of standard market-rate units versus UAP affordable housing.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:18.977128+00:00"
+   "facts_hash": "e3ae398150e3",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:15:47.610914+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -903,6 +984,55 @@
      "standard": "$83,333 to $111,111",
      "with UAP affordable bonus": "$55,556 to $76,923"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1185 Grant Ave",
@@ -933,30 +1063,9 @@
      "Units: BOUNTY up to 18 vs Muse 1"
     ]
    },
-   "facts_hash": "0a9f74be9ea8",
-   "memo": {
-    "verdict": "A 9 to 18 unit residential development can be built as of right on this R7-1 lot, making it worth pursuing at the $1,000,000 ask subject to tenant buyout costs and affordable housing bonus execution.",
-    "as_of_right": "Standard as-of-right zoning allows an FAR of 3.44 on the 2,500 sf lot, yielding 8,600 sf of floor area for 9 to 12 units (or ~10 units per independent check) at a maximum height of 75 ft. UAP and qualifying affordable housing options increase FAR to 4.13 or 5.01, allowing 10,320 sf to 12,525 sf of floor area for 13 to 18 units (or 11 to 14 units per independent check) with height up to 105 ft.",
-    "approval_path": "The development is as-of-right and requires no discretionary land-use approvals. Accessing the UAP or 5.01 FAR qualifying affordable housing tier requires executing an HPD or HDC regulatory agreement, which introduces administrative processing time but low land-use risk.",
-    "legal_issues": [
-     "The site contains an occupied 3-family residential building from 1935, creating vacancy and tenant buyout obligations.",
-     "Accessing the maximum 5.01 FAR requires entering into a binding affordable housing regulatory agreement with HPD or HDC.",
-     "Zoning footprint rules under ZR 23-22 require verification to determine whether a standard 4.00 FAR tier applies based on street proximity."
-    ],
-    "test_fit": "The 25 ft by 100 ft lot provides a 1,750 sf footprint after accounting for the mandatory 30 ft rear yard. Building heights permit ~7 stories standard (75 ft) or ~10 stories under qualifying affordable tiers (105 ft). Total capacity ranges from 9 to 18 units. Floor area ratio (FAR) is the binding limit on density. Zero parking spaces are required because the calculated requirement is 10 spaces or fewer.",
-    "value": "At the $1,000,000 ask price, land cost is $83,333 to $111,111 per buildable unit under the standard scenario (9 to 12 units) and $55,556 to $76,923 per buildable unit under the UAP affordable bonus scenario (13 to 18 units).",
-    "diligence": [
-     "Resolve the conflict between data sources regarding unit counts: scenario estimates indicate 9 to 12 standard units and 13 to 18 UAP units, while independent check estimates 10 standard units, 11 UAP units, and 14 qualifying affordable units.",
-     "Obtain lease documents, rent history, and tenant occupancy status for the existing 3-family building to determine buyout costs.",
-     "Confirm with an architect whether the lot qualifies for the 4.00 standard FAR footnote under ZR 23-22.",
-     "Review HPD and HDC regulatory agreement requirements for UAP permanently affordable housing units."
-    ],
-    "enablers": "Universal Affordable Housing (UAP) under ZR Chapter 27, qualifying affordable housing FAR up to 5.01 under ZR 23-22, and FRESH Zone overlay status.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:19.193856+00:00"
+   "facts_hash": "2e035e67c007",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:17:18.494484+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1013,6 +1122,55 @@
      "standard": "$104,545 to $143,750",
      "with UAP affordable bonus": "$82,143 to $115,000"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "2411 Poplar St",
@@ -1043,31 +1201,9 @@
      "Units: BOUNTY up to 14 vs Muse 1"
     ]
    },
-   "facts_hash": "177ddfc16be3",
-   "memo": {
-    "verdict": "A 14-unit qualifying affordable multifamily development is realistically buildable as-of-right, but pursuing it at the $1,150,000 asking price depends on resolving tenant occupancy and affordable program compliance.",
-    "as_of_right": "Under ZR 23-22, the R6-1 district allows a standard FAR of 3.00 (7,500 sf on the 2,500 sf lot) yielding 8 to 11 units based on the 680 dwelling unit factor (ZR 23-52). The qualifying affordable tier allows an FAR of 3.90 (9,750 sf) yielding 10 to 14 units.",
-    "approval_path": "As-of-right development path. This path requires no discretionary land-use approvals, minimizing approval time and legal entitlement risk.",
-    "legal_issues": [
-     "Mandatory Inclusionary Housing set-aside covenants under MIH Option 2 (ZR Appendix I).",
-     "Occupied two-family existing structure requiring tenant relocation.",
-     "Special El Tremont District (ETC) compliance requirements."
-    ],
-    "test_fit": "The building footprint is 1,750 sf based on a 25 ft width by 70 ft depth after a 30 ft rear yard (ZR 23-342) and 80% lot coverage (ZR 23-362). Max height is 75 ft (7 floors) standard or 95 ft (9 floors) for qualifying affordable (ZR 23-432). Likely unit counts range from 8 to 11 standard units or 10 to 14 affordable units. Vehicle parking is 0 required spaces under ZR 25-222. FAR via the dwelling unit factor limits density first.",
-    "value": "At the $1,150,000 ask, land cost is $104,545 to $143,750 per buildable unit for the standard scenario (8 to 11 units) and $82,143 to $115,000 per buildable unit with the UAP affordable bonus (10 to 14 units).",
-    "diligence": [
-     "Address conflict between BOUNTY unit estimate (up to 14 units) and Muse estimate (1 unit).",
-     "Verify existing tenant leases and occupancy status in the 2-family building.",
-     "Confirm Mandatory Inclusionary Housing Option 2 set-aside and program terms with NYC HPD.",
-     "Review title report for BBL 2040620023 for restrictions or encumbrances.",
-     "Verify Special El Tremont District (ETC) zoning regulations."
-    ],
-    "enablers": "Mandatory Inclusionary Housing (MIH) area mapping and UAP qualifying affordable housing FAR bonus.",
-    "highest_and_best_use": "Not enough data because FACTS lack market rents, sale prices, and land comps.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:19.301977+00:00"
+   "facts_hash": "5b853ad854a3",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:18:49.402179+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1129,6 +1265,55 @@
      "standard": "$200,000 to $300,000",
      "with UAP affordable bonus": "$120,000 to $150,000"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1815 Schieffelin Ave",
@@ -1159,31 +1344,9 @@
      "Units: BOUNTY up to 5 vs Muse 1"
     ]
    },
-   "facts_hash": "14a647d4203d",
-   "memo": {
-    "verdict": "A 2 to 3 unit residential building can realistically be built as-of-right, but the property is likely not worth pursuing at the $600,000 asking price due to high per-unit land costs.",
-    "as_of_right": "Standard R4 zoning allows 1.00 FAR (ZR 23-21) on a 2,500 sf lot, yielding 2,500 sf of floor area. Applying the 680 dwelling unit factor (ZR 23-52) allows 3.68 units, which rounds to 3 units max (2 to 3 units standard). Yards require a 10 ft front yard (ZR 23-321) and a 30 ft rear yard (ZR 23-342). Maximum building height is 35 ft (ZR 23-422). Parking requirements are 0 spaces because the calculated total of 3 or fewer spaces is waived under ZR 25-232 and ZR 25-241.",
-    "approval_path": "As-of-right multifamily redevelopment, which requires standard DOB plan review with minimal legal risk and predictable timelines.",
-    "legal_issues": [
-     "Conflict regarding availability of UAP density bonus under ZR 12-10 lot area rules.",
-     "Grandfathered lot area and width limits under ZR 23-11 preventing lot split for detached homes.",
-     "Occupancy status and lease terms for tenants in the existing two-family structure."
-    ],
-    "test_fit": "The yard envelope allows a 1,500 sf building footprint (25 ft by 60 ft) over 3 stories up to 35 ft height. Gross floor area is limited first by FAR 1.00 to 2,500 sf. Expected unit count is 2 to 3 units. Zero parking spaces are required. FAR limits density first.",
-    "value": "At the $600,000 ask, land cost is $200,000 to $300,000 per buildable unit for a standard 2 to 3 unit plan. If a 4 to 5 unit UAP bonus applied, land cost would drop to $120,000 to $150,000 per unit, but independent analysis indicates UAP is unavailable.",
-    "diligence": [
-     "Resolve conflict between main UAP bonus assumption (4 to 5 units) and independent check finding that 2,500 sf fails the 5,000 sf minimum lot requirement under ZR 12-10.",
-     "Verify listing details and property status directly with the broker.",
-     "Inspect the existing 1,512 sf two-family home to assess renovation costs versus demolition.",
-     "Confirm tenant status and obtain lease documentation for the existing residential units.",
-     "Run title search to verify ownership by 1815S LLC and check for recorded encumbrances."
-    ],
-    "enablers": "FRESH Zone location per ZoLa.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:19.519314+00:00"
+   "facts_hash": "4becd765b771",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:20:20.237468+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1245,6 +1408,55 @@
      "standard": "$79,900 to $114,143",
      "with UAP affordable bonus": "$61,462 to $79,900"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1716 Barnes Ave",
@@ -1275,31 +1487,9 @@
      "Units: BOUNTY up to 13 vs Muse 1"
     ]
    },
-   "facts_hash": "af067d633122",
-   "memo": {
-    "verdict": "A market-rate multifamily development of up to 10 units is achievable as-of-right, making the site worth pursuing at the $799,000 asking price subject to full diligence.",
-    "as_of_right": "Zoning R5 allows standard FAR 1.50 per ZR 23-21 on this 4,750 SF lot, allowing 7,125 SF of floor area. Dividing floor area by the 680 dwelling unit factor under ZR 23-52 yields a maximum of 10 units. Building height caps at 45 feet under ZR 23-422. Required parking is waived under ZR 25-222 in the Outer Transit Zone.",
-    "approval_path": "As-of-right. The project requires standard DOB plan examination and building permits without discretionary zoning board approvals, minimizing approval time and risk.",
-    "legal_issues": [
-     "UAP density eligibility: lot area of 4,750 SF falls below the 5,000 SF qualifying site threshold for standard transit-oriented bonus FAR.",
-     "Property occupancy: confirm former tenancy and complete vacant delivery of the existing two-family structure and 5-car garage.",
-     "Title verification: confirm clear title and absence of unrecorded easements or restrictions."
-    ],
-    "test_fit": "Max footprint is 3,250 SF (50 ft width by 65 ft depth after 10 ft front yard and 20 ft rear yard). Up to 4 stories within the 45 ft height limit. Total standard gross floor area is capped at 7,125 SF, supporting 7 to 10 units. Density is capped first by the 1.50 standard FAR limit.",
-    "value": "At the $799,000 asking price, land cost is $79,900 to $114,143 per unit for standard zoning (7 to 10 units), and $61,462 to $79,900 per unit if UAP affordable bonus capacity is realized (10 to 13 units).",
-    "diligence": [
-     "Resolve unit count conflict: standard lot area rules cap density at ~10 units (FAR 1.50), whereas secondary parcel sources reflect a UAP scenario up to 13 units (FAR 2.00).",
-     "Obtain market data for local apartment rents, condo sales, and land comps to verify project underwriting.",
-     "Order full title search, tax search, and boundary survey for BBL 2040440033.",
-     "Confirm vacant possession status of the existing residential building and detached 5-car garage with listing broker.",
-     "Confirm DOB zoning interpretation regarding qualifying site lot area requirements under ZR 12-10."
-    ],
-    "enablers": "UAP affordable bonus allows FAR 2.00 and up to 9,500 SF of floor area (10 to 13 units) if qualifying site criteria are met or through assemblage with an adjoining lot.",
-    "highest_and_best_use": "Not enough data. FACTS lack residential rents, end-unit pricing, and land comps required to determine highest and best use.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:19.785410+00:00"
+   "facts_hash": "13a1399ee55c",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:21:50.992608+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -1330,6 +1520,55 @@
     },
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1831 Paulding Avenue",
@@ -1357,30 +1596,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "40e15318b29c",
-   "memo": {
-    "verdict": "A single two-family detached home can realistically be built as-of-right, but at $449,500 per unit for land alone, it is not worth pursuing unless the $899,000 asking price includes the adjoining lot to allow a four-unit assemblage.",
-    "as_of_right": "Under R4A zoning (ZR 23-11, ZR 23-21), the 2,500 sq ft lot allows an FAR of 1.00 for up to 2,500 sq ft of floor area. R4A restricts use strictly to single-family or two-family detached residences, capping maximum density at 2 units for the lot regardless of floor area.",
-    "approval_path": "As-of-right path through DOB plan examination and building permits, carrying minimal discretionary risk and standard municipal review timelines.",
-    "legal_issues": [
-     "Verification of whether the $899,000 asking price covers only Lot 23 or includes the adjoining 25x100 lot.",
-     "Confirmation of legal mechanics and timeline for delivering the existing two-family structure vacant.",
-     "Title search to confirm clean title and separate deed status for the adjoining lot if assembled."
-    ],
-    "test_fit": "The architectural envelope permits 60% max lot coverage (1,500 sq ft footprint) set back by a 10 ft front yard, 20 ft rear yard, and required side yards on both sides. Building height is limited to a 25 ft perimeter wall and 35 ft peak ridge. Single lot allows 1 to 2 detached units; assembling the adjacent lot allows 2 detached homes for up to 4 units total. Density is constrained first by R4A use regulations, not by parking or FAR.",
-    "value": "At the $899,000 ask on the single lot, land cost is $449,500 per unit for the 2-unit maximum. If the ask includes the adjoining lot to yield 4 units across two subdivided lots, land cost drops to $224,750 per buildable unit.",
-    "diligence": [
-     "Confirm with the listing broker whether the adjoining 25x100 parcel is included in the $899,000 asking price.",
-     "Review property survey and title search for Block 4127 Lot 23 and the adjacent parcel.",
-     "Verify occupancy status and secure seller agreement terms for vacant delivery.",
-     "Obtain DOB property profile overview to check for existing open violations or unpermitted work."
-    ],
-    "enablers": "Assembling the adjacent 25x100 lot creates a 5,000 sq ft zoning lot, enabling a standard subdivision into two conforming R4A lots (2,375 sq ft min lot area, 25 ft min lot width) for up to 4 total units across two detached buildings.",
-    "highest_and_best_use": "Not enough data, as FACTS lack area rental rates, new-construction sales prices, and comparable land sales.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:30:19.893059+00:00"
+   "facts_hash": "bb68e8ec1aa2",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:23:21.794218+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1411,6 +1629,55 @@
     },
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "2468 St Raymonds Avenue",
@@ -1439,9 +1706,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "9fe80748d09d",
+   "facts_hash": "59680a8c4d30",
    "memo": null,
-   "checked_utc": "2026-11-22T13:31:56.445199+00:00"
+   "checked_utc": "2026-11-22T15:24:52.626636+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1472,6 +1739,55 @@
     },
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "129 E 233rd Street",
@@ -1499,30 +1815,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "50f12eb7fd42",
-   "memo": {
-    "verdict": "A 4-unit multifamily building can realistically be built as-of-right, but pursuing the site at the $399,000 ask requires verifying market revenues since no rent or sale comps are provided in FACTS.",
-    "as_of_right": "Under R5 zoning (ZR 23-21), standard FAR 1.50 permits 2,687 buildable square feet on the 1,791 sf lot. The lot meets the minimum 1,700 sf area and 18 ft width requirements for multiple dwellings (ZR 23-11). The dwelling unit factor of 680 (ZR 23-52) allows max 4 units (2,687 / 680 = 3.95).",
-    "approval_path": "As-of-right path. Development requires standard Department of Buildings plan examination, which carries low discretionary risk and minimal timeline delay.",
-    "legal_issues": [
-     "The seller disclaims lot buildability, making no representations that the lot is buildable.",
-     "Lot width of 25.17 ft is below the 30 ft minimum for detached single or two-family homes under ZR 23-11, restricting development to attached or multiple dwelling structures.",
-     "The 1,791 sf lot size falls below the 5,000 sf transit-oriented qualifying site threshold under ZR 12-10, making the 2.00 FAR column unavailable."
-    ],
-    "test_fit": "The lot footprint is limited to approximately 1,036 sf (25.17 ft by 41.17 ft) after deducting a 10 ft front yard (ZR 23-321) and a 20 ft rear yard (ZR 23-342). Building height is capped at 45 ft across up to 4 stories (ZR 23-422). FAR 1.50 limits density first to 2,687 sf, yielding 3 to 4 units. Required parking of 2 spaces under ZR 25-232 is fully waived.",
-    "value": "At the $399,000 ask, land cost is $99,750 per unit for the as-of-right 4-unit scenario, compared to $133,000 per unit under the listing's 3-unit description.",
-    "diligence": [
-     "Conflict: Listing advertises FAR 1.25 and 3 units, while standard R5 code allows FAR 1.50 and 4 units under ZR 23-21; verify official zoning cap with DOB.",
-     "Obtain a current boundary survey and title report to confirm parcel boundaries, easements, and legal status.",
-     "Verify utility connections, water/sewer access, and street status given the seller's disclaimer regarding buildability.",
-     "Perform geotechnical soil testing to confirm foundation feasibility."
-    ],
-    "enablers": "None available in FACTS; the site does not meet qualifying site criteria for the 2.00 FAR bonus under ZR 12-10, and no MIH or special overlay incentives exist.",
-    "highest_and_best_use": "not enough data; FACTS contain no rent rates, sale prices, or land comps to choose between rental, condo, or townhouse products.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T13:31:56.694056+00:00"
+   "facts_hash": "646525b4f247",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:26:23.333677+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1578,7 +1873,7 @@
    },
    "facts_hash": "27716f82fa87",
    "memo": null,
-   "checked_utc": "2026-11-22T13:33:27.262673+00:00"
+   "checked_utc": "2026-11-22T15:27:53.965218+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1655,7 +1950,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:33:27.263073+00:00"
+   "checked_utc": "2026-11-22T15:27:53.965640+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1711,7 +2006,7 @@
    },
    "facts_hash": "3c2ff871de56",
    "memo": null,
-   "checked_utc": "2026-11-22T13:34:57.808327+00:00"
+   "checked_utc": "2026-11-22T15:29:24.449326+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1767,7 +2062,7 @@
    },
    "facts_hash": "14ebce932dae",
    "memo": null,
-   "checked_utc": "2026-11-22T13:36:28.299036+00:00"
+   "checked_utc": "2026-11-22T15:30:55.021009+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1794,6 +2089,25 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-09-24",
+       "town": "Jersey City",
+       "state": "NJ",
+       "address": "414-432 Hoboken Avenue",
+       "type": "development site",
+       "price": "26000000",
+       "lot_sf": "",
+       "buildable_sf": "",
+       "units": "524",
+       "price_per_buildable_sf": "",
+       "price_per_unit": "49618",
+       "source": "Jersey Digs",
+       "source_url": "https://jerseydigs.com/bergen-arch-plaza-jersey-city-sold/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "556 Westside Ave",
@@ -1822,9 +2136,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "6a2b4ceda9eb",
+   "facts_hash": "da01337a755e",
    "memo": null,
-   "checked_utc": "2026-11-22T13:37:58.906626+00:00"
+   "checked_utc": "2026-11-22T15:32:25.596556+00:00"
   },
   {
    "id": "hunt-145-beverly-rd-white-plains",
@@ -1854,7 +2168,7 @@
    },
    "facts_hash": "81108f0a9403",
    "memo": null,
-   "checked_utc": "2026-11-22T13:39:29.443686+00:00"
+   "checked_utc": "2026-11-22T15:33:56.078556+00:00"
   },
   {
    "id": "hunt-89-neptune-ave-jersey-city",
@@ -1894,11 +2208,30 @@
     },
     "ask_per_unit": {
      "approved": "$62,375"
+    },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-09-24",
+       "town": "Jersey City",
+       "state": "NJ",
+       "address": "414-432 Hoboken Avenue",
+       "type": "development site",
+       "price": "26000000",
+       "lot_sf": "",
+       "buildable_sf": "",
+       "units": "524",
+       "price_per_buildable_sf": "",
+       "price_per_unit": "49618",
+       "source": "Jersey Digs",
+       "source_url": "https://jerseydigs.com/bergen-arch-plaza-jersey-city-sold/"
+      }
+     ]
     }
    },
-   "facts_hash": "d6e4b6257702",
+   "facts_hash": "f683ab23dd71",
    "memo": null,
-   "checked_utc": "2026-11-22T13:40:59.979807+00:00"
+   "checked_utc": "2026-11-22T15:35:26.618274+00:00"
   },
   {
    "id": "hunt-753-den-rd-stamford",
@@ -1928,7 +2261,7 @@
    },
    "facts_hash": "929dea6ab99a",
    "memo": null,
-   "checked_utc": "2026-11-22T13:42:30.530129+00:00"
+   "checked_utc": "2026-11-22T15:36:57.123134+00:00"
   },
   {
    "id": "hunt-3729-paulding-ave-bronx",
@@ -1989,11 +2322,60 @@
     "ask_per_unit": {
      "standard": "$300,000",
      "with UAP affordable bonus": "$150,000 to $200,000"
+    },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
     }
    },
-   "facts_hash": "7891ba5de63f",
+   "facts_hash": "841d5148971d",
    "memo": null,
-   "checked_utc": "2026-11-22T13:44:01.331363+00:00"
+   "checked_utc": "2026-11-22T15:38:27.738682+00:00"
   },
   {
    "id": "hunt-182184-lincoln-ave-yonkers",
@@ -2023,7 +2405,7 @@
    },
    "facts_hash": "adb82496657e",
    "memo": null,
-   "checked_utc": "2026-11-22T13:45:31.801914+00:00"
+   "checked_utc": "2026-11-22T15:39:58.360405+00:00"
   },
   {
    "id": "hunt-1001-summit-ave-bronx",
@@ -2085,11 +2467,60 @@
     "ask_per_unit": {
      "standard": "$71,875 to $95,833",
      "with UAP affordable bonus": "$47,917 to $63,889"
+    },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
     }
    },
-   "facts_hash": "b810f0bd69a6",
+   "facts_hash": "ce80cae52567",
    "memo": null,
-   "checked_utc": "2026-11-22T13:47:02.657976+00:00"
+   "checked_utc": "2026-11-22T15:41:29.018490+00:00"
   },
   {
    "id": "hunt-1730-hunt-ave-bronx",
@@ -2150,11 +2581,60 @@
     "ask_per_unit": {
      "standard": "$137,500 to $183,333",
      "with UAP affordable bonus": "$110,000 to $137,500"
+    },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
     }
    },
-   "facts_hash": "650f965bd7c5",
+   "facts_hash": "121d262969e5",
    "memo": null,
-   "checked_utc": "2026-11-22T13:48:33.410320+00:00"
+   "checked_utc": "2026-11-22T15:42:59.715904+00:00"
   },
   {
    "id": "hunt-1074-university-ave-bronx",
@@ -2217,11 +2697,60 @@
     "ask_per_unit": {
      "standard": "$39,960 to $52,579",
      "with UAP affordable bonus": "$27,750 to $37,000"
+    },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
     }
    },
-   "facts_hash": "d1c3048b7aeb",
+   "facts_hash": "80776d51986c",
    "memo": null,
-   "checked_utc": "2026-11-22T13:50:04.247735+00:00"
+   "checked_utc": "2026-11-22T15:44:30.456755+00:00"
   },
   {
    "id": "hunt-4165-laconia-ave-bronx",
@@ -2282,11 +2811,60 @@
     "ask_per_unit": {
      "standard": "$183,000 to $274,500",
      "with UAP affordable bonus": "$183,000 to $274,500"
+    },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
     }
    },
-   "facts_hash": "39fb9dd76835",
+   "facts_hash": "ac5d5007420b",
    "memo": null,
-   "checked_utc": "2026-11-22T13:51:35.079631+00:00"
+   "checked_utc": "2026-11-22T15:46:01.178521+00:00"
   },
   {
    "id": "hunt-1148-e-211th-st-bronx",
@@ -2316,11 +2894,60 @@
      "error": "lot not found in MapPLUTO"
     },
     "scenarios_units": {},
-    "ask_per_unit": {}
+    "ask_per_unit": {},
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    }
    },
-   "facts_hash": "581525b76010",
+   "facts_hash": "334a13bcbd59",
    "memo": null,
-   "checked_utc": "2026-11-22T13:53:05.753399+00:00"
+   "checked_utc": "2026-11-22T15:47:32.018815+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -2415,7 +3042,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T13:53:17.278250+00:00"
+   "checked_utc": "2026-11-22T15:47:43.081424+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -2488,7 +3115,7 @@
    },
    "facts_hash": "3ef65ed75f40",
    "memo": null,
-   "checked_utc": "2026-11-22T13:54:58.313765+00:00"
+   "checked_utc": "2026-11-22T15:49:24.516594+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -2560,7 +3187,7 @@
    },
    "facts_hash": "fb502727592c",
    "memo": null,
-   "checked_utc": "2026-11-22T13:56:45.060901+00:00"
+   "checked_utc": "2026-11-22T15:51:11.542503+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -2631,7 +3258,7 @@
    },
    "facts_hash": "1a5e7ec32245",
    "memo": null,
-   "checked_utc": "2026-11-22T13:58:51.456887+00:00"
+   "checked_utc": "2026-11-22T15:53:18.901552+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -2686,7 +3313,7 @@
    },
    "facts_hash": "432e1b157f55",
    "memo": null,
-   "checked_utc": "2026-11-22T14:01:51.898646+00:00"
+   "checked_utc": "2026-11-22T15:56:09.140564+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -2787,7 +3414,7 @@
     "letter_angle": "Contact owner A&C International Management Group, LLC directly to express interest in acquiring the off-market parcel for an as-of-right development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T14:01:52.190821+00:00"
+   "checked_utc": "2026-11-22T15:56:09.411919+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -2834,6 +3461,55 @@
     "scenarios_units": {
      "standard": "79 to 104"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "GERARD AVENUE",
@@ -2864,31 +3540,9 @@
      "Units: BOUNTY up to 104 vs Muse 1"
     ]
    },
-   "facts_hash": "f2ab488619cf",
-   "memo": {
-    "verdict": "An as-of-right multifamily building of 79 to 104 standard units or 94 qualifying affordable units can be developed, but feasibility cannot be determined without an asking price or market data.",
-    "as_of_right": "Under M1-4/R8A with MX-13, standard residential FAR is 6.02 on an 11,837 sq ft lot (ZR 123-62, ZR 23-22), allowing 71,259 sq ft of floor area and 79 to 104 units. Qualifying affordable housing under UAP allows a 7.20 FAR, providing 85,226 sq ft of floor area and approximately 94 units. Building height is capped at 125 ft for standard construction (max base 95 ft) and 145 ft for qualifying affordable construction (max base 105 ft) under ZR 23-432.",
-    "approval_path": "The project follows an as-of-right approval path under Special Mixed Use District MX-13 rules (ZR 123-20). Time and discretionary land-use risk are low. The qualifying affordable tier requires an HPD or HDC regulatory agreement.",
-    "legal_issues": [
-     "Requirement of an HPD or HDC regulatory agreement to access the 7.20 UAP FAR.",
-     "Permanent affordability covenants requiring a weighted average of <=60% AMI, with >=20% of affordable floor area at <=40% AMI for projects with >=10,000 sq ft of affordable floor area.",
-     "Commercial or manufacturing floor area under ZR 123-62 directly displaces residential floor area."
-    ],
-    "test_fit": "The maximum building footprint is 9,470 sq ft based on 80% coverage for interior portions and 100% for corner portions (ZR 23-362). Envelope math supports 11 stories (125 ft) standard or 13 stories (145 ft) qualifying affordable. Floor area ratio (FAR) limits density first, before height, lot coverage, or Outer Transit Zone parking requirements. Upper-floor setbacks and a 20-ft rear yard shrink upper levels below the footprint.",
-    "value": "Asking price is missing from FACTS, so buildable unit land cost cannot be calculated.",
-    "diligence": [
-     "Resolve the conflict between unit count estimates: BOUNTY estimates up to 104 standard units, whereas independent check calculates 79 units at 6.02 FAR.",
-     "Obtain the owner's asking price and target deal terms.",
-     "Gather Bronx residential market rents, sale prices, and land comps to assess financial feasibility.",
-     "Order Phase I environmental testing and title search given the M1-4 paired designation.",
-     "Obtain a certified boundary survey to verify irregular lot lines, corner boundaries, and exact lot area."
-    ],
-    "enablers": "Universal Affordability Preference (UAP / ZR Ch 27) increases allowable FAR from 6.02 to 7.20 and building height from 125 ft to 145 ft. Special Mixed Use District MX-13 permits as-of-right residential development.",
-    "highest_and_best_use": "Not enough data.",
-    "letter_angle": "Approach Public Storage with an off-market offer focused on a straightforward, as-of-right acquisition of this underutilized parcel.",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T14:01:52.417915+00:00"
+   "facts_hash": "4f7ca01a9cbf",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:57:40.059607+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -2935,6 +3589,55 @@
     "scenarios_units": {
      "standard": "63 to 84"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "250 EAST 138 STREET",
@@ -2965,31 +3668,9 @@
      "Units: BOUNTY up to 84 vs Muse 1"
     ]
    },
-   "facts_hash": "aa3e58485e82",
-   "memo": {
-    "verdict": "A multifamily development yielding 63 to 84 units as-of-right can realistically be built, but valuation against an ask cannot be determined because no asking price is provided.",
-    "as_of_right": "The site is zoned M1-4/R7X in Special Mixed Use District MX-13 on an 11,500 square foot lot. Under ZR 123-62 and ZR 23-22, standard residential FAR is 5.00, allowing 57,500 square feet of gross floor area and approximately 63 units. Under Universal Affordability Preference rules (ZR Ch 27), qualifying affordable housing increases FAR to 6.00, allowing 69,000 square feet of floor area and approximately 76 units.",
-    "approval_path": "As-of-right development under MX-13 paired district rules. This requires standard DOB plan examination without discretionary land-use approvals, keeping approval risk low and timeframes standard.",
-    "legal_issues": [
-     "E-Designation E-227 requires environmental review and OER sign-off before DOB permit issuance.",
-     "Using the 6.00 FAR qualifying affordable tier requires an HPD or HDC regulatory agreement capping weighted average income at <=60% AMI.",
-     "Any manufacturing or commercial floor area developed under M1-4 rules directly displaces allowable residential floor area."
-    ],
-    "test_fit": "The 11,500 square foot lot measures 150 feet of frontage by 75 feet of depth. Footprint after the 20-foot rear yard is 8,250 square feet. Max height is 125 feet (approx 11 floors) for standard construction and 145 feet (approx 13 floors) for qualifying affordable construction. FAR caps density first before height or coverage limits bind. Unit range is 63 to 84 units, subject to reduced Outer Transit Zone parking rules.",
-    "value": "Land cost per buildable unit cannot be calculated because the property is off market and no asking price is provided in the facts.",
-    "diligence": [
-     "Resolve the conflict between standard unit projections of 63 units and 84 units.",
-     "Obtain OER E-Designation E-227 documentation and environmental reports.",
-     "Confirm wide versus narrow street classification and lot coverage rules with NYC DCP.",
-     "Verify UAP regulatory terms with HPD or HDC for the 6.00 FAR tier.",
-     "Order a title search for Mott Haven Holdings, LLC to confirm ownership and review liens or encumbrances."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) / qualifying affordable housing tier under ZR Ch 27 increases residential FAR from 5.00 to 6.00 and max building height from 125 feet to 145 feet.",
-    "highest_and_best_use": "Not enough data, as FACTS lack local rents, sale prices, and land comps.",
-    "letter_angle": "Approach Mott Haven Holdings, LLC directly to inquire about their willingness to sell 250 East 138 Street for an as-of-right multifamily development.",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T14:01:52.635371+00:00"
+   "facts_hash": "caa36c27f1a6",
+   "memo": null,
+   "checked_utc": "2026-11-22T15:59:10.919720+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -3036,6 +3717,55 @@
     "scenarios_units": {
      "standard": "60 to 79"
     },
+    "local_context": {
+     "land_comps": [
+      {
+       "date": "2026-11-10",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "2302 Andrews Avenue North",
+       "type": "development site",
+       "price": "4950000",
+       "lot_sf": "11300",
+       "buildable_sf": "38872",
+       "units": "",
+       "price_per_buildable_sf": "127",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-2302-andrews-avenue-north/"
+      },
+      {
+       "date": "2026-10-29",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "1077 Intervale Avenue",
+       "type": "redevelopment",
+       "price": "1850000",
+       "lot_sf": "",
+       "buildable_sf": "10992",
+       "units": "",
+       "price_per_buildable_sf": "168",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-1077-intervale-avenue/"
+      },
+      {
+       "date": "2026-10-09",
+       "town": "Bronx",
+       "state": "NY",
+       "address": "4057 White Plains Road",
+       "type": "development site",
+       "price": "2200000",
+       "lot_sf": "",
+       "buildable_sf": "16875",
+       "units": "",
+       "price_per_buildable_sf": "130",
+       "price_per_unit": "",
+       "source": "IPRG",
+       "source_url": "https://www.iprg.com/deal-story-4057-white-plains-road/"
+      }
+     ]
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "4632 3 AVENUE",
@@ -3066,31 +3796,9 @@
      "Units: BOUNTY up to 79 vs Muse 1"
     ]
    },
-   "facts_hash": "f447352e56a4",
-   "memo": {
-    "verdict": "An as-of-right multifamily building of 60 to 75 units is realistic, but feasibility cannot be determined without an asking price.",
-    "as_of_right": "Standard R7A zoning under ZR 23-22 allows a residential FAR of 4.00 on the 13,512 sf lot. This yields 54,048 gross square feet of buildable area for approximately 60 units without discretionary approvals.",
-    "approval_path": "As-of-right. The project requires standard DOB site plan review only, which minimizes entitlement risk and timeline.",
-    "legal_issues": [
-     "E-Designation E-255 requires environmental audit and remediation clearance prior to building permit issuance.",
-     "Utilizing UAP FAR 5.01 requires an executed regulatory agreement with HPD or HDC for permanent affordability.",
-     "Commercial or manufacturing GSF built under ZR 123-62 directly reduces available residential floor area."
-    ],
-    "test_fit": "Max footprint is 10,810 sf based on 80 percent lot coverage. Envelope allows 7 stories (85 ft max height) for ~60 standard units, or 10 stories (115 ft max height) for ~75 UAP units. FAR caps density first, not height or parking. Outer Transit Zone rules apply.",
-    "value": "Not enough data. Asking price is not provided in FACTS.",
-    "diligence": [
-     "Reconcile unit yield conflict between BOUNTY estimate of up to 79 units and independent check estimate of ~60 standard units.",
-     "Verify wide versus narrow street status to confirm setback depth under ZR 23-433.",
-     "Review E-Designation E-255 hazardous materials requirements with NYC OER.",
-     "Perform environmental and structural assessment of the existing 13,512 sf structure built in 1931.",
-     "Confirm HPD regulatory requirements for the UAP 5.01 FAR affordable housing path."
-    ],
-    "enablers": "Special Mixed Use District MX-14 permits residential use as-of-right. Universal Affordability Preference (UAP) increases FAR to 5.01 and building height to 115 ft for qualifying affordable housing.",
-    "highest_and_best_use": "Not enough data. FACTS lack market rents, sale prices, and financial comps.",
-    "letter_angle": "Approach owner BAKTIDY ASSOCIATES directly to inquire about an off-market acquisition of the 13,512 sf redevelopment lot.",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T14:01:52.858101+00:00"
+   "facts_hash": "0cb832b79677",
+   "memo": null,
+   "checked_utc": "2026-11-22T16:00:41.829416+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -3168,7 +3876,7 @@
    },
    "facts_hash": "d58250bf27d3",
    "memo": null,
-   "checked_utc": "2026-11-22T14:03:23.454630+00:00"
+   "checked_utc": "2026-11-22T16:02:12.573164+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -3270,7 +3978,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC directly to inquire if they are open to an offer for 19 Clay Street based on an as-of-right residential development program.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T14:03:23.703000+00:00"
+   "checked_utc": "2026-11-22T16:02:12.856131+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
