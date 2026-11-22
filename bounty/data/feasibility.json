@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-22T08:03:17.655014+00:00",
+ "generated_utc": "2026-11-22T08:22:03.927980+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -55,7 +55,8 @@
      "min_lot_width": "18 ft",
      "parking": "1/unit in transit-oriented parking district plus 0.25 per bedroom over 1 (Table 345.405.N-1); lots <=12000 sf may buy out up to 100% at $30000/space per 345-405N(1)(h)",
      "affordable_rule": "At least 10% Affordable AFFH units per Sec 345-405.U (60% AMI per Village approvals applying that section) plus GEIS fair share mitigation payments for CD-5 site plans",
-     "constraints": "Front 0 ft min/15 ft max, side 0 ft min/24 ft max per side, rear not regulated - setbacks do not shrink footprint; tiny 2151 sf lot is binding constraint with 6-story cap; frontage_ft not stated in official source consulted - gap; flood zone not retrieved from FEMA NFHL via text fetch - gap, verify on FEMA MSC before closing; lot_sf 2151 taken from queue/listing and not independently confirmed on Town of Rye tax map - gap; final unit count differs by source (AKRF Apr 2022 review and Village 2023 DRI: 16 units; Board of Trustees 2025-2026 extension records: 15 units)",
+     "flood_zone": "AE (special flood hazard area) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.66354, 41.00046), DFIRM 36119C, SFHA = T (reaudit 2026-11-22)",
+     "constraints": "Front 0 ft min/15 ft max, side 0 ft min/24 ft max per side, rear not regulated - setbacks do not shrink footprint; tiny 2151 sf lot is binding constraint with 6-story cap; flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone AE, special flood hazard area: floodplain compliance and flood insurance are closing diligence items for the approved scheme; the unit math is unchanged); STILL BLOCKING a high rating: frontage_ft is not stated in an official source retrieved and lot_sf 2151 (queue/listing) is not independently confirmed on the Town of Rye tax map - resolving source: Town of Rye assessor/tax map record or Westchester County GIS parcel record for SBL 142.31-1-19; final unit count differs by source (AKRF Apr 2022 review and Village 2023 DRI: 16 units; Board of Trustees 2025-2026 extension records: 15 units)",
      "approvals_found": "Site plan approved by Planning Commission Apr 25 2022 for 6-story mixed-use (AKRF Village review Apr 22 2022: 16 units - 5 studio/11 1BR - plus 691 sf retail, only 4 parking spaces required with reductions); approval extended by Local Law I-14 of 2025 and again to Apr 25 2027; 2009 ZBA Case 1470 and Planning Commission site plan/special exception for predecessor 4-story building on same parcel (Sec 142.31 Block 1 Lot 19)",
      "enablers": "12+ units: yes - multifamily/mixed-use redevelopment as of right in CD-5 (Multifamily, Townhouse, Mixed Use and Mid-Rise building types permitted), proven by the approved 15-16 unit scheme on this lot; winning path: multifamily redevelopment (approved plans); market-rate: no affordability mandate beyond the 10% AFFH set-aside and fair share mitigation, so a conventional market-rate mixed-use deal is the natural read and is what was approved; affordable upside: mandatory 10% AFFH is a set-aside not a bonus - no as-of-right density/height bonus found in CD-5, but small-lot parking buy-out (up to 100% at $30000/space) and counting of public/off-site parking materially cut cost, and Port Chester IDA PILOTs on nearby North Main projects show a PILOT route; program family: NY HCR, Westchester County housing funds, federal LIHTC (scale is small for competitive LIHTC); rezoning unlikely - CD-5 already allows 6 stories as of right, the Village CD-5/CD-6 committee direction discussed in 2026 was to DOWNZONE parts of CD-6/CD-6T toward CD-5, and no site-specific upzoning application or plan provision for this lot was found; deal type: either - market-rate with mandatory 10% AFFH is proven, affordable-program stacking is possible but scale-limited",
      "max_units_estimate": "Path 1 multifamily redevelopment: footprint = 2151 sf x 100% impervious = 2151 sf (front 0/side 0/rear NR setbacks do not reduce it); floors = 6 max; FAR not regulated so gross = footprint x floors = 2151 x 6 = 12906 sf; ground floor retail/lobby leaves 5 residential floors = 10755 sf gross, at approx 800 sf gross/unit arithmetic = approx 13-16 units - approved scheme is 15-16 units, capped by height (6 stories) and tiny footprint, NOT parking (buy-out/public parking; only 4 spaces required for approved scheme) and NOT density (none). Path 2 subdivision: lot width min 18 ft and lot area not regulated, but frontage is unverified and no official source shows the 36+ ft needed for two 18 ft lots - yields 1 lot, no added units. Path 3 second home/added unit: House and Duplex building types are NOT permitted in CD-5 and accessory buildings are limited to 2 stories in the third lot layer - 0 separate units; added units come only via Path 1. Headline lawful max: ~15 units (approved; massing ceiling ~16). No rezoning scenario added - rezoning assessed unlikely.",
@@ -66,32 +67,33 @@
      "Units: BOUNTY up to 15 vs Muse 1"
     ]
    },
-   "facts_hash": "eaadbd9e13c8",
+   "facts_hash": "72a05f939e5f",
    "memo": {
-    "verdict": "The site is worth pursuing at the $475,000 ask ($31,667 per unit) for a 6-story mixed-use building if the approval extension through April 2027 and required in-lieu fee amounts are verified.",
-    "as_of_right": "Multifamily and mixed-use are allowed as-of-right in the CD-5 district up to 6 stories (approx 80 ft max height) with 100% max impervious coverage and no FAR cap per Table 345.405.A-6. A 2,151 sf footprint across 6 floors yields up to 12,906 gross sf, allowing an estimated 13 to 16 units as-of-right depending on layout.",
-    "approval_path": "Existing site plan approval. The Planning Commission approved a 6-story mixed-use site plan on April 25, 2022, extended through April 25, 2027 by Local Law I-14 of 2025. Time and entitlement risk are low if written confirmation is obtained.",
+    "verdict": "A 6-story mixed-use building with 15 to 16 units is realistic under an approved site plan extended to April 2027, making the site worth pursuing at the $475,000 ask.",
+    "as_of_right": "Under CD-5 zoning (Sec 345-405), multifamily is allowed as-of-right up to 6 stories with 100% max coverage on the 2,151 sf lot (12,906 gross sf max). With 1 ground floor commercial level, 5 residential floors yield 10,755 gross sf, allowing 13 to 16 units at 800 sf gross per unit. Density per acre and FAR are not regulated.",
+    "approval_path": "Existing approval path: Planning Commission approved site plan on April 25, 2022, extended by Local Law I-14 of 2025 to April 25, 2027. This carries low entitlement risk and low time delay if conditions and fee obligations are met.",
     "legal_issues": [
-     "Written confirmation of the site plan approval extension through April 25, 2027 is required.",
-     "The dollar amount for additional in-lieu fees and GEIS fair share mitigation payments is unstated.",
-     "Mandatory 10% AFFH affordable housing set-aside at 60% AMI applies under Sec 345-405.U.",
-     "Zero on-site parking is provided on a 2,151 sf lot, requiring compliance with the approved 4-space parking reduction or buy-out."
+     "Written confirmation of site plan approval extension through April 25, 2027 is required.",
+     "Buyer must pay GEIS fair share mitigation payments and additional in-lieu fees of an unstated amount.",
+     "Mandatory 10% AFFH affordable unit set-aside at 60% AMI per Sec 345-405.U.",
+     "Parcel is located in FEMA Flood Zone AE, requiring floodplain compliance and flood insurance.",
+     "Lot area of 2,151 sf and frontage feet are not verified on the Town of Rye tax map."
     ],
-    "test_fit": "The 2,151 sf footprint and 6-story height cap set a maximum envelope of 12,906 gross sf (ground floor retail/lobby plus 10,755 gross sf residential). Likely unit yield is 15 to 16 units (5 studios and 10 to 11 one-bedrooms). Density is constrained first by the small lot footprint and 6-story height cap, not by FAR or parking.",
-    "value": "Land cost is $31,667 per buildable unit at the $475,000 ask for the approved 15-unit scenario ($29,688 per unit if 16 units are built).",
+    "test_fit": "Architect's notes: Footprint is 2,151 sf with 0 ft front/side setbacks. Maximum height is 6 stories (approx 80 ft). Approved scheme provides 15-16 units (10 1BR, 5 studio, 691 sf retail). Parking requires 4 spaces after reductions, which can be satisfied via a $30,000 per space buy-out option. Density is constrained first by the 2,151 sf lot footprint and the 6-story height cap.",
+    "value": "At the $475,000 ask, land cost is $31,667 per buildable unit based on the approved 15-unit count ($29,688 per unit for 16 units).",
     "diligence": [
-     "Resolve the unit count conflict between sources (offering memo lists 15 units; AKRF review lists 16 units; prompt conflict notes BOUNTY up to 15 vs Muse 1).",
-     "Obtain written resolution or letter from Port Chester confirming site plan validity through April 25, 2027.",
-     "Calculate the exact total of required GEIS fair share mitigation fees and parking buyout fees.",
-     "Confirm parcel footprint and frontage on official Town of Rye tax maps.",
-     "Check FEMA flood maps to verify flood zone status."
+     "Conflict check: Resolve discrepancy between 15 units (offering memo and Board of Trustees extension) vs 16 units (AKRF April 2022 review).",
+     "Obtain written confirmation from Port Chester Planning Commission/Village Clerk of site plan extension through April 25, 2027.",
+     "Obtain exact dollar figures for additional in-lieu fees and GEIS fair share mitigation payments.",
+     "Confirm lot size, SBL 142.31-1-19, and frontage on the Town of Rye tax map.",
+     "Perform FEMA Zone AE flood elevation and compliance review."
     ],
-    "enablers": "CD-5 zoning allows mixed-use as-of-right, 100% impervious coverage, no FAR limit, and a parking buyout option at $30,000 per space for lots under 12,000 sf under Sec 345-405N(1)(h).",
-    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps.",
+    "enablers": "CD-5 form-based district permitting 6-story mid-rise as-of-right, small-lot parking buy-out up to 100% at $30,000/space, and transit-oriented parking reductions.",
+    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps to determine the highest and best use.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:15.200848+00:00"
+   "checked_utc": "2026-11-22T08:11:41.399612+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -185,7 +187,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:33.825206+00:00"
+   "checked_utc": "2026-11-22T08:11:41.400116+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -272,7 +274,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:33.825636+00:00"
+   "checked_utc": "2026-11-22T08:11:41.400309+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -368,7 +370,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:58.588921+00:00"
+   "checked_utc": "2026-11-22T08:11:41.400454+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -459,7 +461,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:58.589333+00:00"
+   "checked_utc": "2026-11-22T08:11:41.400576+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -548,7 +550,7 @@
     "letter_angle": "Inquire if the developer is interested in an assignment or sale of the property and approved 24-unit plan given ongoing site work.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:58.589488+00:00"
+   "checked_utc": "2026-11-22T08:11:41.400699+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -625,42 +627,43 @@
      "min_lot_width": "18",
      "parking": "ZR 25-20 to 25-23 as amended 12/5/2024: no parking required in the Greater Transit Zone; beyond it R7-1 is 50% per unit standard, reduced to 30% per unit on lots <=10000 sf, 12% for income-restricted units, and waived entirely when the calculated total is <=10 spaces (ZR 25-232) - the calculated total for this lot is <=10, so 0 required either way; parking does not cap",
      "affordable_rule": "No mandatory set-aside for a standard market-rate development outside an MIH area (MIH status for this lot not verified in ZoLa via text fetch - gap); UAP (ZR Ch 27 / HPD): floor area above the base must be permanently affordable at a weighted average <=60% AMI, max 3 income bands, none >100% AMI, and >=20% of the affordable floor area at <=40% AMI when affordable floor area is >=10000 sf; qualifying affordable housing FAR 5.01 requires an HPD/HDC regulatory agreement",
-     "constraints": "Front yard none (ZR 23-322); side yards none required for multifamily, any side open area >=5 ft (ZR 23-335); rear yard 20 ft used in envelope math (ZR 23-342); wide-street status of this street not verified in ZoLa via text fetch - conservative narrow-street FAR/height tier used, the wide-street tier would raise standard FAR to 4.00 and max height to 85 ft; flood zone not retrieved from FEMA NFHL via text fetch - gap, verify on FEMA MSC before closing; lot_sf/frontage from the queue (NYC tax lot record); parcel_id is the BBL",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the PLUTO lot centroid (40.88495, -73.89593), DFIRM 360497, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Front yard none (ZR 23-322); side yards none required for multifamily, any side open area >=5 ft (ZR 23-335); rear yard 20 ft used in envelope math (ZR 23-342); reaudit 2026-11-22: ZoLa/PLUTO verification - NYC DCP MapPLUTO 26v2 for BBL 2032630037 confirms district R7-1, lot area 6268 sf, frontage 54.75 ft, depth 115 ft, residential FAR 3.44 and qualifying FAR 5.01, no special district, overlay, limited height district, historic district, landmark or E-designation, Outer Transit Zone; MIH does not apply (R7-1 is not an MIH area); wide/narrow street: Bailey Avenue is labeled 100 ft wide on ZoLa (wide street); flood zone resolved (see flood_zone); second-pass recomputation confirms footprint 5014 sf (coverage caps), FAR gross 21562/25874/31403 sf and units ~24/~29/~35 - no unit change; no input still blocks the 90% gate",
      "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
      "enablers": "12+ units: yes - standard market-rate tier alone reaches ~24 units, UAP ~29, qualifying affordable ~35; winning path: multifamily redevelopment as of right in R7-1; market-rate: no affordability mandate applies on the standard path - conventional product is ~24 units at FAR 3.44; affordable upside: UAP is as-of-right in R6-R10 outside MIH areas and adds 20% floor area (to ~29 units) with the extra floor area permanently affordable at avg <=60% AMI, and a qualifying 100% affordable project under an HPD/HDC regulatory agreement reaches FAR 5.01 (~35 units) - program family NYC HPD/HDC, NY HCR, federal LIHTC, 485-x tax exemption; rezoning unlikely - no evidence found: R7-1 is already a medium-high density district and City of Yes (adopted Dec 5 2024) just raised R7-1 bulk citywide, and no pending site-specific rezoning was found; deal type: either - market-rate works at the standard tier, affordable-program candidate at the UAP/qualifying tiers",
      "max_units_estimate": "Path 1 multifamily: footprint = lower of coverage 5014 sf (80% x 6268) and setback envelope 5172 sf (no front/side yards, 20 ft rear yard) = 5014 sf; floors ~7 standard (75 ft) / ~10 qualifying (105 ft); gross = LOWER of FAR x lot and footprint x floors - FAR caps in every tier: standard 21562 sf (3.44 x 6268) / ~900 sf gross per unit arithmetic = ~24 units; with UAP: 25874 sf (4.13 x 6268) = ~29 units; with qualifying affordable housing: 31403 sf (5.01 x 6268) = ~35 units - FAR, not height, coverage or parking, is the binding cap. Path 2 subdivision: min lot 1700 sf / 18 ft width for other residences allows up to 3 zoning lots by both area (6268/1700=3) and width (54.75/18=3), or 2 detached one/two-family lots (2375 sf / 25 ft) = 2 homes - aggregate FAR is unchanged, so no unit gain over Path 1. Path 3 second home/added unit: 0 standalone - ADU provisions do not add a separate dwelling on an R7 multifamily zoning lot; added units come only via Path 1. Headline lawful max without rezoning: ~35 units (qualifying affordable tier); ~29 with UAP; ~24 standard market-rate",
-     "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov",
-     "confidence": "medium"
+     "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2032630037 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "high"
     },
     "conflicts_with_independent_check": [
      "Units: BOUNTY up to 46 vs Muse 1"
     ]
    },
-   "facts_hash": "0c1a7e2d6820",
+   "facts_hash": "e078c84c1f5b",
    "memo": {
-    "verdict": "A 24 to 35 unit residential project can realistically be built as of right on this lot, making it worth pursuing at the $1,150,000 ask subject to lot size verification.",
-    "as_of_right": "R7-1 zoning allows multifamily development as of right. On a 6,268 sf lot, the standard 3.44 FAR yields 21,562 sf of floor area (~24 units). A wide-street designation could raise standard FAR to 4.00. Standard height allows a 65 ft max base and 75 ft max building height. Lot coverage is capped at 80% (5,014 sf footprint). Parking is 0 required spaces under ZR 25-232.",
-    "approval_path": "The development path is as-of-right, which minimizes approval risk and project timeline. Utilizing the maximum 5.01 FAR requires executing an HPD or HDC regulatory agreement for affordable housing.",
+    "verdict": "An as-of-right residential development yielding between 23 and 46 units is feasible in this R7-1 zone, making it worth pursuing at the $1,150,000 asking price.",
+    "as_of_right": "Zoning R7-1 on a 6,268 sf lot allows standard residential FAR of 3.44 (21,562 sf, yielding ~24 units or 23 to 31 units). Universal Affordability Preference (UAP) increases FAR to 4.13 (25,874 sf, ~29 units). Qualifying affordable housing allows up to 5.01 FAR (31,403 sf, ~35 units or 34 to 46 units). Lot coverage allows up to 80% (5,014 sf footprint) with a 20 ft rear yard. Heights range from 75-85 ft standard to 105-115 ft for UAP/qualifying affordable on a wide street. Required parking is 0 spaces under ZR 25-232.",
+    "approval_path": "As-of-right development. No discretionary CPC, BSA, or special permit approvals are required, leading to shorter timelines and lower risk. Utilizing the full 5.01 FAR requires an HPD/HDC regulatory agreement.",
     "legal_issues": [
-     "Lot size discrepancy between the Crexi listing (3,134 sf) and NYC tax lot records (6,268 sf).",
-     "Affordability covenant required via HPD/HDC regulatory agreement to access the 5.01 FAR qualifying affordable tier.",
-     "Street width designation requires confirmation to establish whether standard FAR is 3.44 or 4.00."
+     "Discrepancy in parcel size: listing states 3,134 sf while tax lot records indicate 6,268 sf vacant land.",
+     "Requirement of an HPD or HDC regulatory agreement to unlock the 5.01 qualifying affordable housing FAR.",
+     "UAP compliance requirements under ZR Ch 27 requiring permanent affordability at a weighted average of 60% AMI or less."
     ],
-    "test_fit": "The footprint is 5,014 sf based on 80% interior lot coverage with a 20 ft rear yard. Standard height allows ~7 floors (75 ft), while UAP/affordable tiers allow ~10 floors (105 ft). Unit counts range from 23 to 31 standard units up to 34 to 46 units with UAP bonuses. Parking requires 0 spaces. FAR caps density first.",
-    "value": "At the $1,150,000 ask price, land cost is $37,097 to $50,000 per buildable unit under standard zoning (23 to 31 units). Cost drops to $25,000 to $33,824 per buildable unit under the UAP affordable bonus (34 to 46 units).",
+    "test_fit": "Building envelope allows an 80% coverage footprint of 5,014 sf with no front or side yards and a 20 ft rear yard. Height supports ~7 floors standard (up to 75-85 ft) or ~10 floors for UAP/qualifying affordable (up to 105-115 ft). Unit counts range from 23 to 31 standard, 29 under UAP, and 34 to 46 under qualifying affordable. Parking requires 0 spaces. Density is limited first by FAR caps, not height, coverage, or parking.",
+    "value": "At the $1,150,000 asking price, land cost is $37,097 to $50,000 per buildable unit under standard zoning (23 to 31 units), and drops to $25,000 to $33,824 per unit with the UAP affordable bonus (34 to 46 units).",
     "diligence": [
-     "Resolve conflict in unit count capacity: dataset indicates 23 to 31 standard and 34 to 46 UAP units, whereas independent check estimates ~24 standard, ~29 UAP, and ~35 qualifying affordable units.",
-     "Verify exact lot area being sold to resolve the listing claim of 3,134 sf against the tax lot record of 6,268 sf.",
-     "Confirm wide-street versus narrow-street status on ZoLa to establish standard FAR tier.",
-     "Check FEMA MSC flood zone status.",
-     "Review DOB records for the adjacent 3846 Bailey Ave project (32 units built on 6,268 sf in 2025)."
+     "Resolve conflict between unit calculations: BOUNTY allows up to 46 units while independent analysis yields ~24 standard, ~29 UAP, and ~35 qualifying units.",
+     "Verify exact lot area being sold to resolve the listing discrepancy of 3,134 sf versus the tax lot size of 6,268 sf.",
+     "Perform title search and boundary survey for BBL 2032630037 to confirm frontage and wide-street designation on Bailey Avenue.",
+     "Review DOB filings for adjacent 3846 Bailey Ave, which completed 32 units on a 6,268 sf lot in 2025.",
+     "Confirm HPD and HDC regulatory agreement terms for qualifying affordable housing FAR rules."
     ],
-    "enablers": "Universal Affordability Preference (UAP / ZR Ch 27) increases FAR to 4.13 (~29 units). Qualifying 100% affordable projects under HPD/HDC agreements reach 5.01 FAR (~35 units). City of Yes rules and ZR 25-232 waive parking entirely.",
-    "highest_and_best_use": "Not enough data because FACTS lack market rents, sale prices, and land comps.",
+    "enablers": "Universal Affordability Preference (UAP) bonus under ZR Ch 27; qualifying affordable housing tier under ZR 23-22 up to 5.01 FAR; wide-street location rules on Bailey Avenue permitting increased building height.",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:58.784317+00:00"
+   "checked_utc": "2026-11-22T08:12:23.190229+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -734,42 +737,43 @@
      "min_lot_width": "18",
      "parking": "ZR 25-20 to 25-23 as amended 12/5/2024: no parking required in the Greater Transit Zone; beyond it R7-1 is 50% per unit standard, reduced to 30% per unit on lots <=10000 sf, 12% for income-restricted units, and waived entirely when the calculated total is <=10 spaces (ZR 25-232) - the calculated total for this lot is <=10, so 0 required either way; parking does not cap",
      "affordable_rule": "No mandatory set-aside for a standard market-rate development outside an MIH area (MIH status for this lot not verified in ZoLa via text fetch - gap); UAP (ZR Ch 27 / HPD): floor area above the base must be permanently affordable at a weighted average <=60% AMI, max 3 income bands, none >100% AMI, and >=20% of the affordable floor area at <=40% AMI when affordable floor area is >=10000 sf; qualifying affordable housing FAR 5.01 requires an HPD/HDC regulatory agreement",
-     "constraints": "Front yard none (ZR 23-322); side yards none required for multifamily, any side open area >=5 ft (ZR 23-335); rear yard 30 ft used in envelope math (ZR 23-342); wide-street status of this street not verified in ZoLa via text fetch - conservative narrow-street FAR/height tier used, the wide-street tier would raise standard FAR to 4.00 and max height to 85 ft; flood zone not retrieved from FEMA NFHL via text fetch - gap, verify on FEMA MSC before closing; lot_sf/frontage from the queue (NYC tax lot record); parcel_id is the BBL",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the PLUTO lot centroid (40.85296, -73.91143), DFIRM 360497, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Front yard none (ZR 23-322); side yards none required for multifamily, any side open area >=5 ft (ZR 23-335); rear yard 30 ft used in envelope math (ZR 23-342); reaudit 2026-11-22: ZoLa/PLUTO verification - NYC DCP MapPLUTO 26v2 for BBL 2028680164 confirms district R7-1, lot area 2800 sf, frontage 30 ft, depth 99.5 ft (irregular lot), residential FAR 3.44 and qualifying FAR 5.01, no special district, overlay, limited height district, historic district, landmark or E-designation, Outer Transit Zone; MIH does not apply (R7-1 is not an MIH area); wide/narrow street: Harrison Avenue is labeled 60 ft wide on ZoLa (narrow street); flood zone resolved (see flood_zone); second-pass recomputation confirms footprint 1900 sf (rear-yard envelope caps), FAR gross 9632/11558/14028 sf and units ~11/~13/~16 - no unit change; no input still blocks the 90% gate",
      "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
      "enablers": "12+ units: yes - with UAP (~13 units) and with qualifying affordable housing (~16 units); standard tier caps at ~11 because FAR 3.44 on a 2800 sf lot; winning path: multifamily redevelopment as of right in R7-1; market-rate: no affordability mandate applies on the standard path - conventional product is ~11 units at FAR 3.44; affordable upside: UAP is as-of-right in R6-R10 outside MIH areas and adds 20% floor area (to ~13 units) with the extra floor area permanently affordable at avg <=60% AMI, and a qualifying 100% affordable project under an HPD/HDC regulatory agreement reaches FAR 5.01 (~16 units) - program family NYC HPD/HDC, NY HCR, federal LIHTC, 485-x tax exemption; rezoning unlikely - no evidence found: R7-1 is already a medium-high density district and City of Yes (adopted Dec 5 2024) just raised R7-1 bulk citywide, and no pending site-specific rezoning was found; deal type: either - market-rate works at the standard tier, affordable-program candidate at the UAP/qualifying tiers",
      "max_units_estimate": "Path 1 multifamily: footprint = lower of coverage 2240 sf (80% x 2800) and setback envelope 1900 sf (no front/side yards, 30 ft rear yard) = 1900 sf; floors ~7 standard (75 ft) / ~10 qualifying (105 ft); gross = LOWER of FAR x lot and footprint x floors - FAR caps in every tier: standard 9632 sf (3.44 x 2800) / ~900 sf gross per unit arithmetic = ~11 units; with UAP: 11558 sf (4.13 x 2800) = ~13 units; with qualifying affordable housing: 14028 sf (5.01 x 2800) = ~16 units - FAR, not height, coverage or parking, is the binding cap. Path 2 subdivision: width caps subdivision at 1 zoning lot (30 ft / 18 ft min = 1; a second lot would need 36 ft) and 1 detached one/two-family home (2800/2375 and 30/25 both = 1) - no gain over Path 1. Path 3 second home/added unit: 0 standalone - ADU provisions do not add a separate dwelling on an R7 multifamily zoning lot; added units come only via Path 1. Headline lawful max without rezoning: ~16 units (qualifying affordable tier); ~13 with UAP; ~11 standard market-rate",
-     "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov",
-     "confidence": "medium"
+     "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2028680164 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "high"
     },
     "conflicts_with_independent_check": [
      "Units: BOUNTY up to 20 vs Muse 1"
     ]
    },
-   "facts_hash": "b6bcbdb6261c",
+   "facts_hash": "1bdb07632af1",
    "memo": {
-    "verdict": "The site allows an as-of-right multifamily building of 10 to 16 units (or up to 20 units under maximum UAP estimates) at an ask of $999,000, but feasibility depends on verifying wide-street FAR rules and development costs.",
-    "as_of_right": "R7-1 zoning permits a standard residential FAR of 3.44 on a 2,800 sf lot, yielding 9,632 sf of floor area. Wide-street status could raise standard FAR to 4.00. The UAP bonus allows FAR 4.13 (11,558 sf), and qualifying affordable housing allows FAR 5.01 (14,028 sf). Zero parking spaces are required.",
-    "approval_path": "As-of-right. The project requires standard DOB architectural plan review without discretionary BSA or CPC approvals, keeping risk and approval timelines low.",
+    "verdict": "The site allows an as-of-right multifamily building of 10 to 16 units, or up to 20 units with UAP, making it worth pursuing at the $999,000 ask subject to yield verification.",
+    "as_of_right": "R7-1 zoning allows multifamily development as of right under ZR 23-22. Standard FAR 3.44 on the 2,800 sf lot permits 9,632 sf of floor area. This yields 10 to 14 units. Under UAP, FAR 4.13 to 5.01 yields 11,558 sf to 14,028 sf.",
+    "approval_path": "As-of-right. Development requires no discretionary approvals, variances, or special permits, keeping approval risk low.",
     "legal_issues": [
-     "Existing vacant single-family building requires demolition clearances and title review.",
-     "Wide-street zoning status requires confirmation to determine if standard FAR is 3.44 or 4.00.",
-     "UAP FAR of 4.13 or qualifying affordable FAR of 5.01 requires an HPD or HDC regulatory agreement for permanent affordability."
+     "Demolition requirements for the existing vacant 1-family house built in 1920.",
+     "Drafting and execution of an HPD/HDC regulatory agreement if utilizing UAP or qualifying affordable FAR up to 5.01.",
+     "Title review for encumbrances on BBL 2028680164."
     ],
-    "test_fit": "The site envelope supports an adjusted footprint of 1,900 sf after applying the 30 ft rear yard requirement. Heights range from 75 ft standard (7 floors) to 105 ft for affordable tiers (10 floors). Yield ranges from 10 to 14 standard units, or 15 to 20 units with UAP. FAR is the primary limit on density.",
-    "value": "At the $999,000 ask price, land cost is $71,357 to $99,900 per unit for standard development (10 to 14 units). Under the UAP bonus scenario (15 to 20 units), land cost decreases to $49,950 to $66,600 per unit.",
+    "test_fit": "Footprint is capped at 1,900 sf by the 30 ft rear yard requirement (ZR 23-342) and 80 percent max coverage (ZR 23-362). Max building height is 75 ft for standard tier (~7 floors) and 105 ft for UAP tier (~10 floors). Likely yield is 10 to 14 units standard, or 13 to 20 units under UAP. Zero parking spaces are required under ZR 25-232. FAR caps density first.",
+    "value": "Land cost at the $999,000 ask is $71,357 to $99,900 per unit under the standard scenario. Land cost falls to $49,950 to $66,600 per unit under the UAP affordable bonus scenario.",
     "diligence": [
-     "Resolve conflict in unit yield estimates between BOUNTY (up to 20 units) and Muse 1 (1 to 16 units).",
-     "Obtain and review the property survey offered by the broker to verify lot dimensions.",
-     "Verify wide-street status in ZoLa to establish whether base FAR is 3.44 or 4.00.",
-     "Check FEMA MSC flood maps to confirm flood zone status.",
-     "Confirm HPD regulatory agreement terms for UAP affordability compliance."
+     "Resolve conflict between unit calculations: independent check caps yield at 11 standard / 16 qualifying affordable units, while parcel data allows 10 to 14 standard / 15 to 20 UAP units.",
+     "Review property survey offered by broker to confirm 30 ft frontage and 99.5 ft depth.",
+     "Verify ZoLa data regarding proximity to a wide street to confirm if standard FAR 4.00 applies.",
+     "Confirm HPD regulatory agreement requirements for UAP affordable floor area set-asides.",
+     "Order standard title report and environmental screening."
     ],
-    "enablers": "Universal Affordability Preference (UAP) adding 20 percent floor area, qualifying affordable housing FAR up to 5.01 under ZR 23-22, and parking exemption under Greater Transit Zone rules.",
-    "highest_and_best_use": "Not enough data. FACTS lack market rents, unit sale prices, and land comps needed to calculate financial returns for rental versus condo product.",
+    "enablers": "Universal Affordability Preference (UAP) FAR bonus and Greater Transit Zone parking waiver (ZR 25-232).",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:58.912512+00:00"
+   "checked_utc": "2026-11-22T08:12:40.113822+00:00"
   },
   {
    "id": "bx-927-home",
@@ -876,7 +880,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.036676+00:00"
+   "checked_utc": "2026-11-22T08:12:40.293585+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -986,7 +990,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-22T07:56:59.169691+00:00"
+   "checked_utc": "2026-11-22T08:12:40.431997+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1095,7 +1099,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.289737+00:00"
+   "checked_utc": "2026-11-22T08:12:40.502009+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1210,7 +1214,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.357909+00:00"
+   "checked_utc": "2026-11-22T08:12:40.618624+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1324,7 +1328,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.475033+00:00"
+   "checked_utc": "2026-11-22T08:12:40.682438+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -1405,7 +1409,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.602607+00:00"
+   "checked_utc": "2026-11-22T08:12:40.822733+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1488,7 +1492,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.728717+00:00"
+   "checked_utc": "2026-11-22T08:12:40.942139+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1568,7 +1572,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.799893+00:00"
+   "checked_utc": "2026-11-22T08:12:41.010521+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1646,7 +1650,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.800023+00:00"
+   "checked_utc": "2026-11-22T08:12:41.010657+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1721,7 +1725,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.800137+00:00"
+   "checked_utc": "2026-11-22T08:12:41.010775+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1798,7 +1802,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.800243+00:00"
+   "checked_utc": "2026-11-22T08:12:41.010889+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1873,7 +1877,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.800482+00:00"
+   "checked_utc": "2026-11-22T08:12:41.010999+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1949,7 +1953,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:56:59.800585+00:00"
+   "checked_utc": "2026-11-22T08:12:41.011104+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -1971,26 +1975,10 @@
      "20 units on paper (M). 187 ft on Van Buren St. ~56 ft grade change: steep-slope review."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "1.-445-10",
-     "zoning": "M",
-     "lot_sf": 16534,
-     "street_frontage_ft": 211,
-     "property_class": "230",
-     "owner": "Christian, Nathaniel",
-     "rule": "M: FAR 1.25, 800 sf of lot per unit, height 65 ft, multifamily lot coverage 40%",
-     "floor_area": 20668,
-     "units_paper": 20,
-     "parking_rule": "1 space per unit + 0.33 per bedroom (Table 43-4)",
-     "parking_spaces_at_paper_units": 28,
-     "surface_parking_capacity": 24
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "zoning maximum on paper": "20"
-    },
-    "ask_per_unit": {
-     "zoning maximum on paper": "$42,450"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-21",
      "address": "94 William St",
@@ -2001,50 +1989,47 @@
      "district": "M Medium-Density Apartment House",
      "multifamily": "as of right",
      "far": "1.25 for multifamily dwellings (Table 43-3); 1.00 for single- and two-family dwellings",
-     "density_rule": "Average lot area per family and 350 sf minimum gross floor area per apartment in Table 43-3 control with FAR; no units-per-acre rule stated separately",
+     "density_rule": "Average lot area per family for multifamily dwellings in the M district is 800 sf per family (Table 43-3, verified in reaudit 2026-11-22): 16534/800 = 20.6 so 20 families max by density, consistent with the FAR count; plus 350 sf minimum gross floor area per apartment; no units-per-acre rule stated separately",
      "max_height": "Multifamily: no story limit stated in Table 43-3 excerpt / 65 ft; single- and two-family: 2.5 stories / 35 ft",
      "lot_coverage": "40% for multifamily and for single- and two-family dwellings (Table 43-3)",
-     "min_lot_area": "5000 (single- and two-family); multifamily minimum in Table 43-3 not cleanly retrieved - gap",
-     "min_lot_width": "50 (single- and two-family); multifamily lot width in Table 43-3 not cleanly retrieved - actual 211 ft exceeds any width in the table",
+     "min_lot_area": "5000 (single- and two-family); no minimum lot area stated for multifamily dwellings in the M district (Table 43-3, verified in reaudit 2026-11-22)",
+     "min_lot_width": "50 (single- and two-family); no minimum lot width stated for multifamily dwellings in the M district (Table 43-3, verified in reaudit 2026-11-22) - actual frontage 211 ft",
      "parking": "Table 43-4 per-unit figure not retrieved in this review - gap; Sec 43-132 rule retrieved: 1/unit for new apartments within 1/4 mile of an active train station (station distance for this lot not verified); parking must be provided on site plan but is not shown to cap the FAR count",
      "affordable_rule": "City Affordable Housing Ordinance, Ch 43 Article XV (Secs 43-190 et seq): all newly constructed or substantially rehabilitated multifamily developments are required to include affordable housing units (30-100% of Westchester County AMI in the ordinance as adopted; the specific percentage for this district/size was not retrieved - gap); no as-of-right density/FAR bonus for affordability found in Table 43-3",
-     "constraints": "Front yard 20 ft (single/two-family row, Table 43-3), rear yard 25 ft; multifamily front/side yard columns in Table 43-3 are not cleanly text-extractable - side yards shrink the footprint but FAR caps first, so the gap does not change the count; flood zone not retrieved from FEMA NFHL - gap, verify on FEMA MSC before closing; lot_sf/frontage/parcel from the queue (City tax map reference 1.-445-10)",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.88171, 40.99179), DFIRM 36119C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Multifamily yards verified in reaudit 2026-11-22 from Table 43-3: front 15 ft, side 12 ft one / 25 ft both, rear 25 ft (single/two-family row is front 20 ft / rear 25 ft) - yards shrink the footprint but FAR caps first; flood zone resolved in reaudit 2026-11-22 (see flood_zone); second-pass recomputation confirms FAR gross 20668 sf and ~20 units, consistent with the 800 sf-per-family density cap (20 families); STILL BLOCKING a high rating: lot_sf 16534, frontage_ft 211 and parcel 1.-445-10 rest only on the queue (City tax map reference) with no independent official tax-map/assessor cross-check retrieved, and the Table 43-4 per-unit parking figure was not retrieved from the code text - resolving sources: City of Yonkers tax map / Westchester County GIS parcel record for 1.-445-10 and Yonkers Code Table 43-4",
      "approvals_found": "None found in official sources searched (no Planning Board or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: yes - multifamily redevelopment as of right in M at FAR 1.25; winning path: multifamily redevelopment; market-rate: the Article XV affordable set-aside applies to new multifamily, so a conventional deal carries that set-aside - no purely mandate-free market-rate path at this scale; affordable upside: no as-of-right FAR/density bonus found - program family NY HCR, Westchester County housing funds, federal LIHTC, 485-x; rezoning unlikely - M already allows 65 ft multifamily and no site-specific upzoning or pending rezoning for William St was found; deal type: either - market-rate with the Article XV set-aside works at ~20 units, affordable-program stacking is available",
      "max_units_estimate": "Path 1 multifamily: footprint = 16534 x 40% coverage = 6614 sf; floors approx 6 within 65 ft; gross = LOWER of FAR 1.25 x 16534 = 20668 sf and footprint x floors 6614 x 6 = 39684 sf = 20668 sf - FAR caps; units = 20668 / approx 1000 sf gross per unit arithmetic = approx 20 units. Path 2 subdivision: single-family lots by area 16534/5000 = 3 and by width 211/50 = 4, so 3 lots = up to 3 single-family homes (6 units if two-family), below Path 1. Path 3 second home/added unit: an accessory apartment in a single-family home adds 1 unit per lot on the subdivision path only - below Path 1. Headline lawful max without rezoning: ~20 units (multifamily, FAR-capped)",
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://www.yonkersparkingauthority.com/home/showpublisheddocument/18751/636794345973300000",
-     "confidence": "low"
+     "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 20 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "505660a84a47",
+   "facts_hash": "00451e3a69d8",
    "memo": {
-    "verdict": "The site allows a maximum of 20 paper multifamily units under M zoning at an ask of $849,000 ($42,450 per unit), but steep slopes and unconfirmed market rents require further diligence.",
-    "as_of_right": "Yonkers M zoning permits multifamily as-of-right with an FAR of 1.25, 40% lot coverage, 800 sf lot area per unit, and a 65 ft height limit. On a 16,534 sf lot, FAR 1.25 yields 20,668 sf gross floor area, allowing up to 20 units. Maximum lot footprint is 6,614 sf.",
-    "approval_path": "Site plan review. Multifamily is an as-of-right use, but site plan approval is required for development, layout, and steep-slope review due to site topography.",
+    "verdict": "A 20-unit multifamily building is allowed as-of-right under M zoning, making the site worth pursuing at the $849,000 ask price if steep slopes and parking rules check out.",
+    "as_of_right": "The site is in the M Medium-Density Apartment House district. Under Table 43-3, maximum FAR is 1.25 and minimum lot area per family is 800 sf. On a 16,534 sf lot, 1.25 FAR allows up to 20,668 gross sf. Dividing 16,534 sf by 800 sf per family caps density at 20 units. Maximum lot coverage is 40 percent (6,614 sf). Maximum height is 65 ft. Required yards are 15 ft front, 12 ft one side or 25 ft both sides, and 25 ft rear.",
+    "approval_path": "As-of-right with site plan approval. This route carries standard timeline and risk, though the steep-slope review will add processing time.",
     "legal_issues": [
-     "City Affordable Housing Ordinance Chapter 43 Article XV mandates affordable units for new multifamily, but specific AMI and percentage set-asides for this site size are unconfirmed.",
-     "A ~56 ft grade change along Van Buren St triggers steep-slope review.",
-     "Required parking under Table 43-4 is 28 spaces for 20 paper units, exceeding the surface parking capacity of 24 spaces.",
-     "No official Planning Board or Zoning Board of Appeals approvals are on record for this parcel."
+     "Compliance with City Affordable Housing Ordinance Chapter 43 Article XV is mandatory for new multifamily builds.",
+     "Steep-slope review is required due to an approximate 56 ft grade change on site.",
+     "Lot area of 16,534 sf, frontage of 211 ft, and parcel ID 1.-445-10 require formal tax map verification."
     ],
-    "test_fit": "The envelope allows a 6,614 sf footprint and 20,668 sf gross area across up to 65 ft in height, capped at 20 paper units by FAR 1.25. Surface parking holds 24 spaces, but Table 43-4 requires 28 spaces (1 space per unit plus 0.33 per bedroom). Site topography with a ~56 ft grade change and parking capacity limit buildable density before FAR caps.",
-    "value": "At the $849,000 asking price, land cost is $42,450 per buildable unit based on the 20-unit paper zoning maximum.",
+    "test_fit": "Max footprint is 6,614 sf based on 40 percent lot coverage. Building envelope allows up to 65 ft in height, but gross floor area caps out at 20,668 sf under 1.25 FAR. Density is limited first by the 800 sf per family rule, capping the program at 20 units. Off-street parking layout will depend on specific Table 43-4 requirements.",
+    "value": "At the $849,000 ask price, land cost is $42,450 per buildable unit for the 20-unit multifamily scenario.",
     "diligence": [
-     "Resolve unit count conflict: zoning math yields up to 20 paper units, while alternate model data lists 1 unit.",
-     "Verify specific affordable housing set-aside percentage and AMI levels required under City Code Chapter 43 Article XV.",
-     "Perform a FEMA flood zone search on MSC as flood status was not retrieved.",
-     "Verify proximity to an active train station to confirm if Section 43-132 reduced parking (1 space per unit) applies.",
-     "Commission a topographic survey to assess engineering constraints for the ~56 ft grade change."
+     "Retrieve Table 43-4 from Yonkers Code to verify per-unit parking ratios and check distance to the nearest active train station for Section 43-132 relief.",
+     "Order a boundary and topographic survey to confirm the 16,534 sf lot area, 211 ft frontage, and 56 ft grade change.",
+     "Verify official parcel records with the City of Yonkers Assessor and Westchester County GIS.",
+     "Confirm specific affordable unit percentage and AMI set-aside rules under Chapter 43 Article XV."
     ],
-    "enablers": "Section 43-132 allows a reduced parking rule of 1 space per unit for new apartments within 1/4 mile of an active train station. Affordable programs (NY HCR, Westchester County housing funds, LIHTC, 485-x) are available.",
+    "enablers": "As-of-right multifamily development in the M district at 1.25 FAR, plus potential parking reductions under Section 43-132 if near transit.",
     "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:57:06.210883+00:00"
+   "checked_utc": "2026-11-22T08:14:52.265851+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -2066,26 +2051,10 @@
      "Paper max 53 (FAR 3.0); ~45-49 after 40% coverage + height cap (1.5x street width); ~30 if parking must be at grade. 69 ft frontage. Ludlow station 0.23 mi."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "1.-176-29",
-     "zoning": "A",
-     "lot_sf": 16001,
-     "street_frontage_ft": 69,
-     "property_class": "482",
-     "owner": "Baj International LLC",
-     "rule": "A: FAR 3.0, no per-unit cap, height 1.5 x width of fronting street, multifamily lot coverage 40%",
-     "floor_area": 48003,
-     "units_paper": 53,
-     "parking_rule": "1 space per unit + 0.33 per bedroom (Table 43-4)",
-     "parking_spaces_at_paper_units": 75,
-     "surface_parking_capacity": 23
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "zoning maximum on paper": "53"
-    },
-    "ask_per_unit": {
-     "zoning maximum on paper": "$30,189"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-21",
      "address": "127 Downing St",
@@ -2096,50 +2065,48 @@
      "district": "A High-Density Apartment House",
      "multifamily": "as of right",
      "far": "3.00 for multifamily dwellings (Table 43-3); 1.00 for single- and two-family dwellings",
-     "density_rule": "Average lot area per family and 350 sf minimum gross floor area per apartment in Table 43-3 control with FAR; no units-per-acre rule stated separately",
+     "density_rule": "No average-lot-area-per-family figure is stated for multifamily dwellings in the A district (Table 43-3 shows --, verified in reaudit 2026-11-22), so density is controlled by FAR 3.00 plus the 350 sf minimum gross floor area per apartment; no units-per-acre rule stated separately",
      "max_height": "A district maximum height is 1.5 times the width of the street right-of-way it fronts (Table 43-3 note) - street ROW width not retrieved, so no fixed ft/story cap is stated for this lot; single- and two-family: 2.5 stories / 35 ft",
      "lot_coverage": "40% for multifamily and for single- and two-family dwellings (Table 43-3)",
-     "min_lot_area": "5000 (single- and two-family); multifamily minimum in Table 43-3 not cleanly retrieved - gap",
-     "min_lot_width": "50 (single- and two-family); multifamily lot width in Table 43-3 not cleanly retrieved - gap, actual frontage is 69 ft",
+     "min_lot_area": "5000 (single- and two-family); no minimum lot area stated for multifamily dwellings in the A district (Table 43-3, verified in reaudit 2026-11-22)",
+     "min_lot_width": "50 (single- and two-family); no minimum lot width stated for multifamily dwellings in the A district (Table 43-3, verified in reaudit 2026-11-22) - actual frontage is 69 ft",
      "parking": "Table 43-4 per-unit figure not retrieved in this review - gap; Sec 43-132 rule retrieved: 1/unit for new apartments within 1/4 mile of an active train station (station distance for this lot not verified); parking is not shown to cap the FAR count but must be accommodated on the site plan",
      "affordable_rule": "City Affordable Housing Ordinance, Ch 43 Article XV (Secs 43-190 et seq): all newly constructed or substantially rehabilitated multifamily developments are required to include affordable housing units (30-100% of Westchester County AMI in the ordinance as adopted; the specific percentage for this district/size was not retrieved - gap); no as-of-right density/FAR bonus for affordability found in Table 43-3",
-     "constraints": "Front yard 20 ft (single/two-family row, Table 43-3), rear yard 25 ft; multifamily front/side yard columns in Table 43-3 are not cleanly text-extractable - yards shrink the footprint but FAR caps first; A-district height cannot be fixed without the Downing St right-of-way width - gap; flood zone not retrieved from FEMA NFHL - gap, verify on FEMA MSC before closing; lot_sf/frontage/parcel from the queue (City tax map reference 1.-176-29)",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.90134, 40.92582), DFIRM 36119C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Multifamily yards verified in reaudit 2026-11-22 from Table 43-3: front 25 ft, side 16 ft one / 32 ft both, rear 25 ft (single/two-family row is front 20 ft / rear 25 ft) - yards shrink the footprint but FAR caps first; flood zone resolved in reaudit 2026-11-22 (see flood_zone); STILL BLOCKING a high rating: (1) A-district multifamily height is 1.5 times the street right-of-way width (Table 43-3 note 3) and the Downing St right-of-way width was not retrieved from an official source, so the achievable floor count under the FAR ceiling is unverified - resolving source: City of Yonkers street/ROW records or tax map for Downing St at 127 Downing St; (2) lot_sf 16001, frontage_ft 69 and parcel 1.-176-29 rest only on the queue (City tax map reference) with no independent official tax-map/assessor cross-check retrieved, and the Table 43-4 per-unit parking figure was not retrieved - resolving sources: City of Yonkers tax map / Westchester County GIS parcel record for 1.-176-29 and Yonkers Code Table 43-4",
      "approvals_found": "None found in official sources searched (no Planning Board or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: yes - multifamily redevelopment as of right in A at FAR 3.00, the highest residential FAR in Table 43-3 outside designated development sites; winning path: multifamily redevelopment; market-rate: the Article XV affordable set-aside applies to new multifamily, so a conventional deal carries that set-aside; affordable upside: no as-of-right FAR bonus found beyond the 3.00 base - program family NY HCR, Westchester County housing funds, federal LIHTC, 485-x; rezoning unlikely - A is already the high-density apartment district and no site-specific upzoning or pending rezoning for Downing St was found; deal type: either - market-rate with the Article XV set-aside works at ~53 units, affordable-program stacking is available",
      "max_units_estimate": "Path 1 multifamily: footprint = 16001 x 40% coverage = 6400 sf; floors from the 1.5x ROW height rule cannot be fixed (ROW width gap) but at 4-5 floors the footprint product is 25600-32000 sf; gross = LOWER of FAR 3.00 x 16001 = 48003 sf and footprint x floors - on a 4-5 floor reading the footprint product would cap below the FAR, so the ~53-unit figure is the FAR ceiling at approx 900 sf gross per unit arithmetic (48003/900 = 53) and the achievable count depends on the ROW-height verification noted in constraints; FAR/height together cap, not parking and not density. Path 2 subdivision: by area 16001/5000 = 3 lots but by street frontage 69/50 = 1 conforming single-family lot on the frontage given, so 1 lot / up to 2 units (two-family) on a frontage-verified basis, area ceiling 3 lots noted only. Path 3 second home/added unit: an accessory apartment adds 1 unit on a single-family path only - below Path 1. Headline lawful max without rezoning: ~53 units (FAR ceiling, multifamily)",
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://www.yonkersparkingauthority.com/home/showpublisheddocument/18751/636794345973300000",
-     "confidence": "low"
+     "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 53 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "76874f19bdfa",
+   "facts_hash": "3e7910184161",
    "memo": {
-    "verdict": "A multifamily development of roughly 30 to 49 units is achievable at 127 Downing St, making the $1,600,000 ask worth pursuing if height and parking layout checks pass.",
-    "as_of_right": "Multifamily is allowed as-of-right in the A district at a 3.00 FAR on a 16,001 square foot lot. The math allows up to 48,003 gross square feet, which equals 53 paper units at an average of 900 square feet per unit, capped by 40 percent lot coverage.",
-    "approval_path": "As-of-right with site plan review. This path carries low land-use risk but requires time for standard planning site plan review and parking design approval.",
+    "verdict": "A multifamily development of up to 53 units is allowed as-of-right at the $1,600,000 asking price, but practical constraints will likely reduce the buildable count.",
+    "as_of_right": "Zoning district A permits multifamily dwellings as-of-right. Maximum FAR is 3.00 on a 16,001 sf lot, yielding 48,003 gross sf. Based on an average 900 sf unit size, the FAR caps density at 53 units (with a 350 sf minimum unit floor area). Lot coverage is capped at 40% (6,400 sf footprint). Required yards are 25 ft front, 25 ft rear, 16 ft single side, and 32 ft combined side yards.",
+    "approval_path": "As-of-right development requiring site plan review by the Planning Board. This path carries low land-use risk and predictable timing because no rezoning or use variance is needed.",
     "legal_issues": [
-     "Mandatory affordable housing set-aside under City Chapter 43 Article XV with no as-of-right FAR bonus.",
-     "Maximum height is restricted to 1.5 times the unverified Downing Street right-of-way width.",
-     "Narrow street frontage of 69 feet restricts site access and surface parking capacity.",
-     "No prior Planning Board or Zoning Board of Appeals approvals are on record for parcel 1.-176-29."
+     "Mandatory affordable housing set-aside under City Affordable Housing Ordinance Ch 43 Article XV applies to new multifamily units.",
+     "Maximum height is restricted to 1.5 times the Downing Street right-of-way width, which is not verified in official records.",
+     "Frontage of 69 feet is narrow for multi-family vehicular access and site layout.",
+     "Parcel 1.-176-29 area and boundaries lack an official tax map cross-check."
     ],
-    "test_fit": "The 40 percent lot coverage caps the building footprint at 6,400 square feet. Surface parking capacity of 23 spaces limits density first to around 30 units, while structured parking and height limits could allow 45 to 49 units up to the 53-unit FAR ceiling.",
-    "value": "At the $1,600,000 ask, land cost is $30,189 per buildable unit at the 53-unit paper maximum. Cost per unit increases to approximately $32,653 at 49 units and $53,333 at a 30-unit surface-parked scenario.",
+    "test_fit": "Lot coverage of 40% limits the footprint to 6,400 sf. Height controls (1.5x street ROW width) reduce realistic yield from the 53-unit FAR ceiling to 45-49 units. If off-street parking is provided strictly at grade, capacity limits the yield to approximately 30 units. The site is 0.23 miles from Ludlow station, qualifying for a 1 space per unit parking rule under Section 43-132.",
+    "value": "At the $1,600,000 asking price, land cost is $30,189 per unit for the 53-unit FAR ceiling. At 45 to 49 units, land cost is $32,653 to $35,556 per unit. If restricted to 30 units due to surface parking, land cost is $53,333 per unit.",
     "diligence": [
-     "Resolve the conflict between unit potential sources showing up to 53 units versus Muse 1.",
-     "Obtain official Downing Street right-of-way width to fix the exact maximum height limit in feet and stories.",
-     "Confirm specific affordable set-aside percentage and AMI requirements under Article XV for this district.",
-     "Verify distance to Ludlow train station to confirm eligibility for the 1 space per unit parking rule under Section 43-132.",
-     "Check FEMA NFHL flood maps to confirm flood zone status before closing."
+     "Verify Downing Street right-of-way width with City of Yonkers street records to calculate exact building height.",
+     "Obtain Yonkers tax map and Westchester County GIS records for parcel 1.-176-29 to confirm 16,001 sf area and 69 ft frontage.",
+     "Review Yonkers Code Table 43-4 to confirm exact off-street parking ratios.",
+     "Confirm the specific affordable set-aside percentage and AMI breakdown under Chapter 43 Article XV."
     ],
-    "enablers": "As-of-right 3.00 FAR in the A district and potential parking reduction for sites within one-quarter mile of an active train station.",
+    "enablers": "High-density A district zoning provides a base FAR of 3.00. Distance of 0.23 miles to Ludlow station enables a reduced parking ratio of 1 space per unit. Article XV affordable housing requirements allow program stacking with LIHTC, Westchester County funds, NY HCR, and 485-x.",
     "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:57:11.912180+00:00"
+   "checked_utc": "2026-11-22T08:16:42.324233+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -2161,25 +2128,10 @@
      "NOT CONFIRMED: county map shows ~35 ft frontage on Glenbrook (flag lot); S-50 needs 50 ft at the street line and frontage on a mapped street. North edge may be a paper street: check Official City Map + survey."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "1.-211-66",
-     "zoning": "S-50",
-     "lot_sf": 45695,
-     "street_frontage_ft": 35,
-     "property_class": "330",
-     "owner": "223 Glenbrook LLC",
-     "rule": "S-50: 5,000 sf and 50 ft of width at the street line per lot; every lot must front a mapped street",
-     "lots_by_area": 9,
-     "lots_by_frontage": 0,
-     "lots_allowed": 1,
-     "existing_lot_note": "Street frontage is below the width one new lot needs, so the existing lot is nonconforming; whether it is buildable as a preexisting lot (Yonkers 43-33) must be confirmed with the Building Department"
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "lots allowed": "1"
-    },
-    "ask_per_unit": {
-     "lots allowed": "$499,000"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-21",
      "address": "223 Glenbrook Ave",
@@ -2204,36 +2156,33 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892",
      "confidence": "low"
     },
-    "conflicts_with_independent_check": [
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "d9069c2ebaf5",
+   "facts_hash": "dc06785826cc",
    "memo": {
-    "verdict": "The site realistically allows only 1 single-family home due to frontage constraints, making it questionable to pursue at the $499,000 ask price.",
-    "as_of_right": "Under Yonkers S-50 rules (Table 43-3), single-family homes require 5,000 sf of lot area and 50 ft of street width. The 45,695 sf lot allows 9 lots by area math (45,695 / 5,000), but 35 ft of frontage yields 0 additional conforming lots. Multifamily is not permitted, capping as-of-right development at 1 home.",
-    "approval_path": "As-of-right for 1 single-family home. Development requires Building Department verification of existing nonconforming lot status under Yonkers Code 43-33. Any subdivision or added units require area variances for frontage, introducing high risk and extended timelines.",
+    "verdict": "The site realistically allows only 1 single-family home as-of-right due to frontage rules, making it high risk at the $499,000 ask unless frontage variance or subdivision access is secured.",
+    "as_of_right": "S-50 zoning permits single-family homes with 5000 sf minimum lot area and 50 ft minimum frontage (Table 43-3). The 45,695 sf lot area allows up to 9 lots by area ceiling (45,695 / 5000 sf), but the 35 ft actual frontage fails the 50 ft width minimum, limiting as-of-right development to 1 single-family home. Maximum lot coverage is 40% (18,278 sf footprint), maximum height is 2.5 stories or 35 ft, and base FAR is 0.75.",
+    "approval_path": "As-of-right for 1 single-family home with minimal approval time and risk; variance or subdivision approval is required for additional lots, adding substantial time and legal risk.",
     "legal_issues": [
-     "Street frontage of 35 ft is below the 50 ft minimum, requiring confirmation of buildability under Yonkers Code 43-33.",
-     "The north property edge may be a paper street requiring review on the Official City Map and survey.",
-     "Interior lot width at the building line is unverified on official tax maps."
+     "Frontage deficit: The site has ~35 ft of frontage, failing the 50 ft minimum lot width required in S-50.",
+     "Paper street status: The north edge may be an unbuilt paper street requiring check of the Official City Map.",
+     "Lack of prior relief: No Planning Board subdivision or Zoning Board of Appeals approvals exist in official records."
     ],
-    "test_fit": "Maximum building footprint is 18,278 sf based on 40% coverage. Base FAR of 0.75 yields roughly 34,271 sf gross floor area with a max height of 2.5 stories or 35 ft. Density is limited first by the single-family use restriction and 35 ft street frontage, yielding a cap of 1 home.",
-    "value": "Land cost is $499,000 per buildable unit based on 1 allowed lot at the $499,000 ask. By area alone, 9 lots would equal $55,444 per lot, but frontage limits restrict the site to 1 lot.",
+    "test_fit": "The maximum building footprint is 18,278 sf (40% coverage) with up to 2.5 stories and 35 ft in height. The likely unit count is 1 single-family home. Density is limited first by single-family use restrictions and the 35 ft frontage limit, not floor area or parking.",
+    "value": "At the $499,000 ask, the land cost is $499,000 per buildable unit under the 1-home as-of-right scenario. If discretionary relief allows subdivision up to the 9-lot area ceiling, land cost drops to $55,444 per buildable lot.",
     "diligence": [
-     "Conflict to review: Muse reports multifamily is not permitted in this district, which restricts density to single-family use.",
-     "Confirm buildability of the existing nonconforming lot with the Yonkers Building Department under Code 43-33.",
-     "Obtain a certified boundary survey to verify the 35 ft frontage, interior width, and paper street status on the north edge.",
-     "Verify street mapping status on the Official City Map.",
-     "Check FEMA NFHL maps for flood zone constraints.",
-     "Verify applicable single-family parking requirements under Yonkers Table 43-4."
+     "Obtain an official boundary survey to verify 35 ft frontage and interior lot width at the building line.",
+     "Check the Official City Map to confirm if the north boundary is an unbuilt paper street.",
+     "Verify flood zone status on the FEMA Map Service Center.",
+     "Confirm single-family parking requirements under Table 43-4.",
+     "Verify accessory apartment eligibility under Yonkers S-50 rules."
     ],
-    "enablers": "None found in FACTS.",
-    "highest_and_best_use": "not enough data",
+    "enablers": "Area ceiling for up to 9 single-family lots if a variance or street extension relief is granted.",
+    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps to determine the highest and best use.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:57:19.165006+00:00"
+   "checked_utc": "2026-11-22T08:18:28.361177+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -2255,24 +2204,10 @@
      "1 lot only: ~85 ft frontage on Cresthill Rd; two S-75 lots need 150 ft."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "4.-4652-56",
-     "zoning": "S-75",
-     "lot_sf": 22018,
-     "street_frontage_ft": 83,
-     "property_class": "210",
-     "owner": "Rego, Michael",
-     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
-     "lots_by_area": 2,
-     "lots_by_frontage": 1,
-     "lots_allowed": 1
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "lots allowed": "1"
-    },
-    "ask_per_unit": {
-     "lots allowed": "$745,000"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-21",
      "address": "101 Cresthill Rd",
@@ -2297,35 +2232,33 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892",
      "confidence": "low"
     },
-    "conflicts_with_independent_check": [
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "33f16633fb6a",
+   "facts_hash": "3f6c9afab821",
    "memo": {
-    "verdict": "The site realistically yields only 1 single-family home as-of-right at $745,000 per allowed lot, making it an unviable pursuit at the ask unless a subdivision variance is achieved.",
-    "as_of_right": "Under Yonkers S-75 zoning (Table 43-3), single-family dwellings require a minimum lot area of 7,500 sf and a minimum lot width of 75 ft. The 22,018 sf lot area mathematically yields 2 lots by area (22,018 / 7,500 = 2). However, street frontage is 83 ft, which fails the 150 ft required for two side-by-side 75 ft lots. As-of-right yield is 1 single-family home with a 0.60 FAR, 35% maximum lot coverage, and 2.5 stories / 35 ft maximum height.",
-    "approval_path": "Developing 1 single-family home is as-of-right, which carries minimal timeline and regulatory risk. Pursuing a 2-lot subdivision requires discretionary area variance and subdivision approval from the Planning Board and Zoning Board of Appeals, adding substantial entitlement risk and timeline.",
+    "verdict": "The site realistically supports one single-family home as-of-right or two homes via subdivision if lot width rules are satisfied, but evaluating the $745,000 ask requires local market comps.",
+    "as_of_right": "The S-75 district allows single-family homes and prohibits multifamily or townhouse uses. Table 43-3 requires a minimum lot area of 7,500 square feet and minimum lot width of 75 feet. Dividing total lot area of 22,018 square feet by 7,500 square feet yields 2.93, allowing up to 2 lots by area.",
+    "approval_path": "Building one single-family home is as-of-right with standard building permits. Splitting the property into two lots requires Planning Board subdivision approval and potential ZBA variance relief due to lot width, which increases development timeline and land-use risk.",
     "legal_issues": [
-     "Frontage restriction: 83 ft of frontage is insufficient for two side-by-side 75 ft lots.",
-     "Use restriction: Multifamily and townhouse developments are not permitted in the S-75 district.",
-     "No existing approvals: Official records show no prior Planning Board or ZBA approvals on file."
+     "Frontage deficit: Total frontage is 83 feet, which is short of the 150 feet required for two standard 75-foot side-by-side lots.",
+     "Subdivision approval: Creating a second parcel requires discretionary Planning Board approval.",
+     "Interior lot width: Lot viability for a two-lot split depends on interior lot width at the building line under Table 43-3."
     ],
-    "test_fit": "The single-family building envelope permits up to 35% lot coverage, 2.5 stories / 35 ft in height, with setbacks of 25 ft front, 11 ft single side / 23 ft both sides, and 25 ft rear. Street frontage limits density first, restricting yield to 1 unit. Single-family parking counts per Table 43-4 were not retrieved.",
-    "value": "At the $745,000 ask price, land cost is $745,000 per buildable lot under the 1-lot as-of-right scenario. If a 2-lot subdivision is achieved, land cost drops to $372,500 per buildable lot.",
+    "test_fit": "Max lot coverage is 35 percent and max height is 2.5 stories or 35 feet. FAR is 0.60, allowing up to 4,500 gross square feet of envelope for a 7,500 square foot lot. Single-family district rules and lot frontage limit density first, capping the site at 1 to 2 single-family units.",
+    "value": "At the $745,000 asking price, land cost is $745,000 for a single single-family home scenario, or $372,500 per lot under a two-lot subdivision scenario.",
     "diligence": [
-     "Review conflict: Muse reports multifamily is not permitted in this district; confirm zoning restrictions.",
-     "Verify interior lot width at the building line on an official City tax map to evaluate 2-lot subdivision feasibility.",
-     "Check FEMA MSC to confirm flood zone status.",
-     "Retrieve required parking counts for single-family homes under Table 43-4.",
-     "Check eligibility for accessory apartments on undivided S-75 lots."
+     "Verify interior lot width at the building line on an official Yonkers tax map.",
+     "Check FEMA flood zone status on the FEMA MSC portal.",
+     "Review Yonkers Code Table 43-4 for single-family parking requirements.",
+     "Verify eligibility and rules for accessory dwelling units in the S-75 district.",
+     "Obtain land comps and new single-family home sale prices to evaluate deal feasibility."
     ],
-    "enablers": "None. FACTS confirm no density bonuses, overlays, 8-30g applicability, or rezoning precedents apply to this site.",
-    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps required to determine highest and best use.",
+    "enablers": "Subdivision of the 22,018 square foot lot under S-75 area rules is the only mechanism identified in FACTS to achieve 2 units.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack end-product sale prices, rents, and land comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T07:59:03.885286+00:00"
+   "checked_utc": "2026-11-22T08:20:33.789624+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -2402,7 +2335,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:01:07.349062+00:00"
+   "checked_utc": "2026-11-22T08:22:03.093063+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -2503,7 +2436,7 @@
     "letter_angle": "Contact owner A&C International Management Group, LLC directly to express interest in acquiring the off-market parcel for an as-of-right development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:01:07.532102+00:00"
+   "checked_utc": "2026-11-22T08:22:03.286305+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -2604,7 +2537,7 @@
     "letter_angle": "Approach Public Storage with an off-market offer focused on a straightforward, as-of-right acquisition of this underutilized parcel.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:01:07.671030+00:00"
+   "checked_utc": "2026-11-22T08:22:03.417424+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -2705,7 +2638,7 @@
     "letter_angle": "Approach Mott Haven Holdings, LLC directly to inquire about their willingness to sell 250 East 138 Street for an as-of-right multifamily development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:01:23.347173+00:00"
+   "checked_utc": "2026-11-22T08:22:03.536487+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -2806,7 +2739,7 @@
     "letter_angle": "Approach owner BAKTIDY ASSOCIATES directly to inquire about an off-market acquisition of the 13,512 sf redevelopment lot.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:01:45.781579+00:00"
+   "checked_utc": "2026-11-22T08:22:03.656551+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -2907,7 +2840,7 @@
     "letter_angle": "Approach the owner directly to express interest in acquiring the property off market for a straightforward as-of-right residential project.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:02:21.135321+00:00"
+   "checked_utc": "2026-11-22T08:22:03.801141+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -3009,7 +2942,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC directly to inquire if they are open to an offer for 19 Clay Street based on an as-of-right residential development program.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:03:17.654500+00:00"
+   "checked_utc": "2026-11-22T08:22:03.927443+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
