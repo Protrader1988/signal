@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-22T09:08:23.109906+00:00",
+ "generated_utc": "2026-11-22T09:27:52.369355+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -93,7 +93,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:51:28.022337+00:00"
+   "checked_utc": "2026-11-22T09:08:45.432447+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -187,7 +187,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:51:28.022525+00:00"
+   "checked_utc": "2026-11-22T09:08:45.432767+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -274,7 +274,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:51:28.022657+00:00"
+   "checked_utc": "2026-11-22T09:08:45.433024+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -370,7 +370,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:51:28.022776+00:00"
+   "checked_utc": "2026-11-22T09:08:45.433314+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -464,7 +464,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:52:10.715664+00:00"
+   "checked_utc": "2026-11-22T09:08:45.433711+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -517,43 +517,44 @@
      "min_lot_width": "125 ft for apartment house/garden apt/row house; 50 ft one-family",
      "parking": "Sec 8.C.4.f as amended eff 07/01/2026: developments <17 units outside Conservation and Traffic Mitigation districts - no minimum; 17+ units - 1/studio-1BR, 2 per 2BR+ unit, plus 1 visitor per 5 units (Parking Needs Assessment reduction available)",
      "affordable_rule": "No mandatory set-aside for base RMF-4 development; Housing Incentive Option (Sec 4.B.7) requires at least 1 affordable unit (<=80% AMI, 40 years, per CGS 8-2g) for each unit above base density; CGS 8-30g set-aside path (30% deed-restricted 40 yrs, 15% of units at 60% median) available generally",
-     "constraints": "Front 20 ft, side 30 ft (apartment house principal), rear 25 ft setbacks (Sec 4.B.3.a); usable open space 500 sf/unit; frontage_ft and parcel_id not retrieved - Danbury assessor eQuality/AxisGIS is interactive and not text-fetchable - gap, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage; flood zone not parcel-verified from FEMA NFHL - gap (Resilient CT notes chronic flooding in the Main St/Town Hill Ave area from East Ditch - verify FIRM panel before closing); lot_sf 27443 taken from queue and not independently confirmed on an assessor card - gap; no FAR in district so envelope is coverage x height only",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.44489, 41.39166), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Front 20 ft, side 30 ft (apartment house principal), rear 25 ft setbacks (Sec 4.B.3.a); usable open space 500 sf/unit; frontage_ft and parcel_id not retrieved - Danbury assessor eQuality/AxisGIS is interactive and not text-fetchable - gap, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage; flood zone not parcel-verified from FEMA NFHL - gap (Resilient CT notes chronic flooding in the Main St/Town Hill Ave area from East Ditch - verify FIRM panel before closing); lot_sf 27443 taken from queue and not independently confirmed on an assessor card - gap; no FAR in district so envelope is coverage x height only Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F). STILL BLOCKING a high rating: frontage_ft and parcel_id are not stated in a text-accessible official source - the Danbury assessor eQuality/AxisGIS record is interactive, so the 125 ft min lot width for an apartment house cannot be verified against actual frontage and lot_sf 27443 (queue) is not independently confirmed on an assessor card - resolving source: Danbury assessor card / tax map for 56 Town Hill Ave.",
      "approvals_found": "City Council minutes Dec 5 2018 refer a Housing Redevelopment proposal for 54, 56 & 58 Town Hill Avenue to City Engineer and Planning for a report - referral only, no final approval document found in official sources searched; no Planning/Zoning Commission approval for a multifamily scheme on this lot found",
      "enablers": "12+ units: no - caps at 9 because the density rule (1 unit/3000 sf even with the Housing Incentive bonus; 1/4000 sf base); winning path: multifamily redevelopment (apartment house permitted as of right at base density; Housing Incentive density is by special exception); market-rate: no affordability mandate applies on the base path - conventional product is ~6 units; affordable upside: Housing Incentive Option adds 3 units (6 to 9) in exchange for at least 3 affordable units at <=80% AMI for 40 years, and the CGS 8-30g / CT DOH / CHFA LIHTC program family applies in Danbury; rezoning unlikely - no evidence found: RMF-4 is already Danbury's medium-high density multifamily district and the 2023 POCD supports multifamily and affordable housing generally, but no site-specific upzoning, pending rezoning or adjacent higher-density district for Town Hill Ave was found; deal type: either - market-rate works at base density, affordable-program candidate via Housing Incentive / 8-30g / CHFA",
      "max_units_estimate": "Path 1 multifamily: footprint = 27443 x 30% coverage = 8233 sf; floors = 4 (45 ft apartment max); no FAR so gross envelope = 8233 x 4 = 32932 sf (setback envelope cannot be computed - frontage/dimensions unverified; side 30 ft setbacks would shrink it); density caps first: 27443 / 4000 = 6.86 -> 6 units as of right; with Housing Incentive Option (special exception): 27443 / 3000 = 9.14 -> 9 units (envelope at ~900 sf gross/unit arithmetic would support ~36, so density, not massing or parking, is the binding cap). Path 2 subdivision: one-family lots need 5000 sf and 50 ft width - area alone allows 27443/5000 = 5 lots / 5 homes, frontage unverified so 5 is an area ceiling only. Path 3 second home: 1 accessory apartment allowed on a one-family lot (Sec 3.G.15 / state mandate) - +1 unit on the subdivision path only, 0 standalone on a multifamily lot. Headline lawful max without rezoning: 9 units (Housing Incentive special exception); 6 as of right. 8-30g scenario (not in headline): a 30% set-aside application could seek more via the CGS 8-30g appeals procedure - no site-specific figure in an official source",
-     "sources": "https://danbury-ct.gov/DocumentCenter/View/309/Zoning-Regulations-PDF https://www.danbury-ct.gov/DocumentCenter/View/1268/Innovate-ADOPTED-COD-2023-Plan-of-Conservation-and-Development https://www.danbury-ct.gov/AgendaCenter/ViewFile/Minutes/_12052018-342 https://www.chfa.org/developers/tax-credit-program/lihtc/ https://cga.ct.gov/2026/sup/chap_126a.htm",
-     "confidence": "low"
+     "sources": "https://danbury-ct.gov/DocumentCenter/View/309/Zoning-Regulations-PDF https://www.danbury-ct.gov/DocumentCenter/View/1268/Innovate-ADOPTED-COD-2023-Plan-of-Conservation-and-Development https://www.danbury-ct.gov/AgendaCenter/ViewFile/Minutes/_12052018-342 https://www.chfa.org/developers/tax-credit-program/lihtc/ https://cga.ct.gov/2026/sup/chap_126a.htm https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "medium"
     },
     "conflicts_with_independent_check": [
      "Units: BOUNTY up to 24 vs Muse 1"
     ]
    },
-   "facts_hash": "debb55cb8d4e",
+   "facts_hash": "55ac19532b2e",
    "memo": {
-    "verdict": "The site is currently under construction for a 24-unit project and appears off-market, so it is only worth pursuing if buying out the active developer at an acceptable valuation.",
-    "as_of_right": "Base RMF-4 zoning allows 6 units as-of-right based on 1 unit per 4,000 square feet of lot area (27,443 square feet divided by 4,000 equals 6.86 units).",
-    "approval_path": "Existing approval path for 24 units, or site plan for 6 as-of-right units, or special exception for 9 units via the Housing Incentive Option; existing approvals carry low entitlement time if valid, while special exceptions add moderate time and discretionary risk.",
+    "verdict": "Active construction on a 24-unit project reportedly began in February 2025, but standard zoning caps density at 6 to 9 units, making this off-market site unviable at the $1,350,000 ask unless an existing valid approval transfers.",
+    "as_of_right": "The RMF-4 district allows 1 apartment unit per 4,000 sf of lot area (Sec 4.B.3.a). For this 27,443 sf lot, the math allows 6 units as-of-right (27,443 / 4,000 = 6.86). Maximum building height is 45 ft or 4 stories, with maximum building coverage capped at 30% (8,233 sf footprint).",
+    "approval_path": "Existing approval or site plan approval. News sources indicate Danbury Planning Department approved a 24-unit plan on January 15, 2025. If that approval is invalid or unrecorded, standard path options include as-of-right site plan review for 6 units, a special exception under the Housing Incentive Option for 9 units, or a CGS 8-30g affordable housing appeal. Discretionary special permits or 8-30g appeals add significant public hearing time and legal risk.",
     "legal_issues": [
-     "Discrepancy in public records regarding official Planning and Zoning Commission approval for 24 units versus referral-only records.",
-     "Site is under active construction by another developer, creating acquisition and contract status issues.",
-     "Unverified site frontage against the 125-foot minimum requirement for apartment houses.",
-     "Potential chronic flood risk from East Ditch in the Town Hill Avenue corridor."
+     "Approval status discrepancy: News sources state 24 units were approved in January 2025, but official records searched only confirm a 2018 referral without a final Planning and Zoning Commission approval document.",
+     "Site control and construction status: Developer Joseph DaSilva began site clearing in February 2025, indicating the property is likely off-market or under active development.",
+     "Lot frontage verification: Danbury zoning requires a 125 ft minimum lot width for apartment buildings, which cannot be verified without an official tax card.",
+     "Affordability requirements: Utilizing the Housing Incentive Option requires at least 1 affordable unit (<=80% AMI) for 40 years for each bonus unit above base density."
     ],
-    "test_fit": "The envelope allows 30 percent coverage (8,233 square feet footprint) up to 4 stories or 45 feet (32,932 gross square feet). Density limits the site first to 6 units as-of-right or 9 units under the incentive option, though the reported approval allows 24 units with 39 parking spaces. No parking is required for projects under 17 units.",
-    "value": "At the $1,350,000 ask, land cost is $56,250 per unit for the 24-unit approved plan, compared to $225,000 per unit for 6 as-of-right units and $150,000 per unit for 9 incentive units.",
+    "test_fit": "The 30% lot coverage permits an 8,233 sf footprint. At 4 stories, the maximum structural volume is 32,932 gross sf. Density rules limit building size long before massing or height. Setbacks require 20 ft in front, 30 ft on sides, and 25 ft in rear. Unit counts range from 6 as-of-right to 9 via Housing Incentive, or 24 under the reported approval. Parking rules effective July 2026 require zero spaces for under 17 units, while 17+ units require 1 space per 1BR, 2 per 2BR+, and visitor parking (reported 24-unit plan includes 39 spaces).",
+    "value": "At the $1,350,000 ask price, land cost is $56,250 per buildable unit under the reported 24-unit approved plan. On the 6-unit as-of-right baseline, land cost rises to $225,000 per unit. On the 9-unit Housing Incentive option, land cost is $150,000 per unit.",
     "diligence": [
-     "Resolve conflict between the reported 24-unit approval and the independent check finding a maximum density of 9 units under current RMF-4 rules.",
-     "Verify current construction and ownership status with developer Joseph DaSilva.",
-     "Obtain official Planning Department approval documents and final approved site plans for the 24-unit scheme.",
-     "Check Danbury assessor map to confirm parcel frontage meets the 125-foot requirement.",
-     "Inspect FEMA FIRM panels to check flood zone boundaries related to East Ditch."
+     "Resolve the conflict between reported 24-unit Planning Department approval (Jan 2025) and independent findings showing a base cap of 6 to 9 units with no official P&Z approval on file.",
+     "Obtain Danbury Assessor property card and tax map to confirm exact lot area (27,443 sf) and lot frontage against the 125 ft minimum requirement.",
+     "Verify active site clearing, property title, and current developer site control with Joseph DaSilva.",
+     "Request official copies of all approved site plans, architectural drawings, and zoning decision notices from the Danbury Planning Department.",
+     "Confirm FEMA FIRM map details for Zone X flood classification and inspect local East Ditch stormwater infrastructure."
     ],
-    "enablers": "Housing Incentive Option (Sec 4.B.7) allows increased density via special exception, and CGS 8-30g provides a state affordable housing appeals path.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "Inquire if the developer is interested in an assignment or sale of the property and approved 24-unit plan given ongoing site work.",
+    "enablers": "Density can be increased beyond 6 units via the Housing Incentive Option (Sec 4.B.7.c) to 9 units (1 unit per 3,000 sf) with affordable set-asides, or expanded further using a CGS 8-30g set-aside application.",
+    "highest_and_best_use": "Not enough data. FACTS lack local market rents, sale prices, and recent land sales comparisons.",
+    "letter_angle": "Inquire whether the current owner or developer is open to a joint venture, contract assignment, or outright sale given ongoing site clearing and development activity.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:52:10.716179+00:00"
+   "checked_utc": "2026-11-22T09:09:16.658258+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -666,7 +667,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:52:10.956931+00:00"
+   "checked_utc": "2026-11-22T09:09:16.809846+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -776,7 +777,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:52:11.103621+00:00"
+   "checked_utc": "2026-11-22T09:09:16.924105+00:00"
   },
   {
    "id": "bx-927-home",
@@ -863,29 +864,29 @@
    },
    "facts_hash": "1a90c8e3fd07",
    "memo": {
-    "verdict": "An as-of-right 11 to 21 unit residential building can be developed on the site, making it worth pursuing at the $1,100,000 ask price.",
-    "as_of_right": "R7-1 zoning on a 2,920 sf lot allows multifamily development as of right. Standard FAR of 3.44 yields 10,045 sf of floor area for 11 to 14 units. UAP increases FAR to 4.13 (12,054 sf) for 13 units, and qualifying affordable housing permits FAR 5.01 (14,629 sf) for 16 to 21 units under ZR 23-22. Standard building height caps at 75 ft (ZR 23-432), while qualifying affordable tiers allow 105 ft. Zero parking spaces are required per ZR 25-232.",
-    "approval_path": "As-of-right. The project requires standard DOB plan examination without discretionary land use approvals, minimizing time and legal risk. Achieving the 5.01 FAR tier requires an HPD or HDC regulatory agreement.",
+    "verdict": "An 11-unit standard or 16-unit UAP affordable residential development is achievable as-of-right, but pursuing the site at the $1,100,000 ask depends on utilizing affordable bonuses to lower land cost per unit.",
+    "as_of_right": "Under ZR 23-22, R7-1 zoning allows a standard FAR of 3.44 on the 2,920 sf lot, yielding 10,045 sf of gross floor area (~11 units at 900 sf gross per unit). ZR 23-432 caps narrow-street building height at 75 ft with a 65 ft base. Lot coverage is capped at 80% (2,336 sf) by ZR 23-362. Under ZR 25-232, required parking is 0 spaces because the calculated total is 10 or fewer.",
+    "approval_path": "As-of-right path requiring standard building permits without discretionary BSA, CPC, or HPD land-use approvals, ensuring lower timeline risk and predictable development steps.",
     "legal_issues": [
-     "Requirement of an HPD or HDC regulatory agreement for permanent affordability covenants under UAP or qualifying affordable tiers.",
-     "Verification of vacant possession and tenant status for the existing 1,188 sf single-family home built in 1991.",
-     "Confirmation of wide-street footprint allowance versus narrow-street height rules under ZR 23-22."
+     "Demolition and vacating requirements for the existing 1,188 sf single-family structure built in 1991.",
+     "Execution of an HPD/HDC regulatory agreement enforcing permanent affordability covenants (weighted average <=60% AMI) to access the 5.01 UAP FAR.",
+     "Narrow street height cap of 75 ft for standard construction versus 105 ft for qualifying affordable tiers."
     ],
-    "test_fit": "The 2,920 sf lot (27.76 ft by 107.48 ft) yields a maximum buildable footprint of ~2,151 sf after deducting the mandatory 30 ft rear yard. Max height allows 7 stories standard (75 ft) or up to 10 stories for qualifying affordable schemes (105 ft). Density ranges from 11 to 14 standard units up to 16 to 21 units with UAP or affordable bonuses. Zero parking spaces are required under ZR 25-232. FAR limits density first.",
-    "value": "At the $1,100,000 ask price, land cost is $78,571 to $100,000 per buildable unit for standard development (11 to 14 units). Land cost drops to $52,381 to $68,750 per unit under UAP and affordable bonus scenarios (16 to 21 units).",
+    "test_fit": "The lot measures 27.76 ft wide by 107.48 ft deep (2,920 sf). A 30 ft rear yard yields an envelope footprint of ~2,151 sf with no front or side yards required. FAR is the binding cap on density rather than height, coverage, or parking. Standard FAR allows 11 to 14 units across ~7 floors, while UAP yields 16 to 21 units across up to 10 floors. Zero parking spaces are required.",
+    "value": "At the $1,100,000 ask, land cost is $78,571 to $100,000 per unit for standard scenarios (11 to 14 units) and decreases to $52,381 to $68,750 per unit under UAP affordable bonus scenarios (16 to 21 units).",
     "diligence": [
-     "Resolve conflict between datasets: BOUNTY lists up to 21 units while Muse lists 1 unit standard.",
-     "Order an updated property survey to verify the 27.76 ft frontage, lot depth of 107.48 ft, and lot area of 2,920 sf.",
-     "Conduct a title search to confirm current ownership by Adela Maldonado and review any existing encumbrances.",
-     "Verify vacancy status and structural condition of the existing 1,188 sf building.",
-     "Confirm eligibility for UAP and HPD regulatory terms for FAR 5.01 bonus calculation."
+     "Resolve the conflict between independent checks regarding maximum unit yield (BOUNTY up to 21 units vs Muse 1 unit base).",
+     "Confirm title history, occupancy status, and lease terms for the existing 1,188 sf structure.",
+     "Verify HPD and HDC regulatory agreement terms for UAP FAR 5.01 compliance.",
+     "Obtain a certified boundary and topographic lot survey to confirm the 2,920 sf lot area and 27.76 ft frontage.",
+     "Complete a Phase I Environmental Site Assessment and utility access review."
     ],
-    "enablers": "Universal Affordability Preference (UAP) under ZR Ch 27 and qualifying affordable housing provisions under ZR 23-22 allow FAR expansion from 3.44 up to 5.01 and raise maximum building height from 75 ft to 105 ft.",
-    "highest_and_best_use": "Not enough data. FACTS do not provide new-building rents, condo sale prices, or local land comps required to determine the optimal product type.",
+    "enablers": "Universal Affordability Preference (UAP) under ZR Chapter 27, qualifying affordable housing FAR bonuses under ZR 23-22 (up to 5.01 FAR), and FRESH Zone overlay inclusion.",
+    "highest_and_best_use": "Not enough data. FACTS do not include new-building rents, sale prices, or local land comps required to determine the financial return of standard market-rate units versus UAP affordable housing.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:52:55.131820+00:00"
+   "checked_utc": "2026-11-22T09:11:02.534586+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -973,8 +974,29 @@
     ]
    },
    "facts_hash": "0a9f74be9ea8",
-   "memo": null,
-   "checked_utc": "2026-11-22T08:55:19.740534+00:00"
+   "memo": {
+    "verdict": "A 9 to 18 unit residential development can be built as of right on this R7-1 lot, making it worth pursuing at the $1,000,000 ask subject to tenant buyout costs and affordable housing bonus execution.",
+    "as_of_right": "Standard as-of-right zoning allows an FAR of 3.44 on the 2,500 sf lot, yielding 8,600 sf of floor area for 9 to 12 units (or ~10 units per independent check) at a maximum height of 75 ft. UAP and qualifying affordable housing options increase FAR to 4.13 or 5.01, allowing 10,320 sf to 12,525 sf of floor area for 13 to 18 units (or 11 to 14 units per independent check) with height up to 105 ft.",
+    "approval_path": "The development is as-of-right and requires no discretionary land-use approvals. Accessing the UAP or 5.01 FAR qualifying affordable housing tier requires executing an HPD or HDC regulatory agreement, which introduces administrative processing time but low land-use risk.",
+    "legal_issues": [
+     "The site contains an occupied 3-family residential building from 1935, creating vacancy and tenant buyout obligations.",
+     "Accessing the maximum 5.01 FAR requires entering into a binding affordable housing regulatory agreement with HPD or HDC.",
+     "Zoning footprint rules under ZR 23-22 require verification to determine whether a standard 4.00 FAR tier applies based on street proximity."
+    ],
+    "test_fit": "The 25 ft by 100 ft lot provides a 1,750 sf footprint after accounting for the mandatory 30 ft rear yard. Building heights permit ~7 stories standard (75 ft) or ~10 stories under qualifying affordable tiers (105 ft). Total capacity ranges from 9 to 18 units. Floor area ratio (FAR) is the binding limit on density. Zero parking spaces are required because the calculated requirement is 10 spaces or fewer.",
+    "value": "At the $1,000,000 ask price, land cost is $83,333 to $111,111 per buildable unit under the standard scenario (9 to 12 units) and $55,556 to $76,923 per buildable unit under the UAP affordable bonus scenario (13 to 18 units).",
+    "diligence": [
+     "Resolve the conflict between data sources regarding unit counts: scenario estimates indicate 9 to 12 standard units and 13 to 18 UAP units, while independent check estimates 10 standard units, 11 UAP units, and 14 qualifying affordable units.",
+     "Obtain lease documents, rent history, and tenant occupancy status for the existing 3-family building to determine buyout costs.",
+     "Confirm with an architect whether the lot qualifies for the 4.00 standard FAR footnote under ZR 23-22.",
+     "Review HPD and HDC regulatory agreement requirements for UAP permanently affordable housing units."
+    ],
+    "enablers": "Universal Affordable Housing (UAP) under ZR Chapter 27, qualifying affordable housing FAR up to 5.01 under ZR 23-22, and FRESH Zone overlay status.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T09:11:46.893022+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1062,8 +1084,30 @@
     ]
    },
    "facts_hash": "177ddfc16be3",
-   "memo": null,
-   "checked_utc": "2026-11-22T08:58:09.338949+00:00"
+   "memo": {
+    "verdict": "A 14-unit qualifying affordable multifamily development is realistically buildable as-of-right, but pursuing it at the $1,150,000 asking price depends on resolving tenant occupancy and affordable program compliance.",
+    "as_of_right": "Under ZR 23-22, the R6-1 district allows a standard FAR of 3.00 (7,500 sf on the 2,500 sf lot) yielding 8 to 11 units based on the 680 dwelling unit factor (ZR 23-52). The qualifying affordable tier allows an FAR of 3.90 (9,750 sf) yielding 10 to 14 units.",
+    "approval_path": "As-of-right development path. This path requires no discretionary land-use approvals, minimizing approval time and legal entitlement risk.",
+    "legal_issues": [
+     "Mandatory Inclusionary Housing set-aside covenants under MIH Option 2 (ZR Appendix I).",
+     "Occupied two-family existing structure requiring tenant relocation.",
+     "Special El Tremont District (ETC) compliance requirements."
+    ],
+    "test_fit": "The building footprint is 1,750 sf based on a 25 ft width by 70 ft depth after a 30 ft rear yard (ZR 23-342) and 80% lot coverage (ZR 23-362). Max height is 75 ft (7 floors) standard or 95 ft (9 floors) for qualifying affordable (ZR 23-432). Likely unit counts range from 8 to 11 standard units or 10 to 14 affordable units. Vehicle parking is 0 required spaces under ZR 25-222. FAR via the dwelling unit factor limits density first.",
+    "value": "At the $1,150,000 ask, land cost is $104,545 to $143,750 per buildable unit for the standard scenario (8 to 11 units) and $82,143 to $115,000 per buildable unit with the UAP affordable bonus (10 to 14 units).",
+    "diligence": [
+     "Address conflict between BOUNTY unit estimate (up to 14 units) and Muse estimate (1 unit).",
+     "Verify existing tenant leases and occupancy status in the 2-family building.",
+     "Confirm Mandatory Inclusionary Housing Option 2 set-aside and program terms with NYC HPD.",
+     "Review title report for BBL 2040620023 for restrictions or encumbrances.",
+     "Verify Special El Tremont District (ETC) zoning regulations."
+    ],
+    "enablers": "Mandatory Inclusionary Housing (MIH) area mapping and UAP qualifying affordable housing FAR bonus.",
+    "highest_and_best_use": "Not enough data because FACTS lack market rents, sale prices, and land comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T09:12:35.926349+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1178,7 +1222,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:09.558622+00:00"
+   "checked_utc": "2026-11-22T09:12:36.091004+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1294,7 +1338,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:33.083576+00:00"
+   "checked_utc": "2026-11-22T09:12:36.206061+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -1375,7 +1419,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:33.373587+00:00"
+   "checked_utc": "2026-11-22T09:12:36.315002+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1458,7 +1502,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:33.452961+00:00"
+   "checked_utc": "2026-11-22T09:12:36.458732+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1538,7 +1582,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:33.592549+00:00"
+   "checked_utc": "2026-11-22T09:12:36.565776+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1616,7 +1660,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:33.592704+00:00"
+   "checked_utc": "2026-11-22T09:12:36.566027+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1659,39 +1703,40 @@
      "min_lot_width": "35 (House A); 50 (Double House A and Small General); 60 (Row)",
      "parking": "No minimum off-street parking required - the code does not establish minimum off-street parking requirements (Sec 8.20.1); maximums in Table 8-1 list commercial uses only, and no maximums apply to unlisted use types, so residential is uncapped by parking; parking does not cap",
      "affordable_rule": "No mandatory affordability set-aside in the Bridgeport zoning code for NX2 residential building types was found in the provisions retrieved; CT General Statutes Sec 8-30g affordable housing land use appeals procedure exists at state level but is an appeals override, not an as-of-right bonus, so it is not counted in the lawful unit count",
-     "constraints": "Setbacks in NX2 by building type: House A build-to line 10 ft, side 2 ft min / 8 ft min combined, rear 15 ft min; Small General build-to zone 14-20 ft, side 2 ft min / 10 ft total, rear 20 ft min; Row build-to line 15 ft, rear 20 ft min (Secs 3.90.4, 3.60.4, 3.70.4); assessor card (Vision, PID 14165) records Zone NX2 and land size 0.07 acres (3049 sf used) but records frontage and depth as 0, so actual lot width is unverified - gap, and it decides whether the 50 ft and 60 ft minimum-width building types are available; the City zoning GIS layer and the City parcels layer both place the parcel in NX2 only; the listing's RC zoning label is a superseded pre-2022 district name and was not used; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $750000 (listings.csv) = $150000 per lawful unit at the ~5-unit headline - a pass on the land-cost-per-unit metric at this count",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.18405, 41.19054), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Setbacks in NX2 by building type: House A build-to line 10 ft, side 2 ft min / 8 ft min combined, rear 15 ft min; Small General build-to zone 14-20 ft, side 2 ft min / 10 ft total, rear 20 ft min; Row build-to line 15 ft, rear 20 ft min (Secs 3.90.4, 3.60.4, 3.70.4); assessor card (Vision, PID 14165) records Zone NX2 and land size 0.07 acres (3049 sf used) but records frontage and depth as 0, so actual lot width is unverified - gap, and it decides whether the 50 ft and 60 ft minimum-width building types are available; the City zoning GIS layer and the City parcels layer both place the parcel in NX2 only; the listing's RC zoning label is a superseded pre-2022 district name and was not used; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $750000 (listings.csv) = $150000 per lawful unit at the ~5-unit headline - a pass on the land-cost-per-unit metric at this count Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F); district NX2 reconfirmed in reaudit 2026-11-22 by the City parcels 2025 layer (zone field NX2, acreage 0.065 ac). STILL BLOCKING a high rating: frontage/width cannot be reconciled from official sources - the assessor card records frontage and depth as 0, while the City parcels / CT State Parcel Layer polygon (Link 08070-1632-4A) measures approx 61.7 ft x 69.1 ft (approx 4209 sf), which does not reconcile with the assessor 0.065-0.07 ac (2833-3049 sf), so whether the 50 ft and 60 ft minimum-width building types are available is unverified - resolving source: Bridgeport tax map / survey lot dimensions for PID 14165.",
      "approvals_found": "None found in official sources searched (no Planning and Zoning Commission or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: no - caps at ~5 on the verified-width path because the House A building type in NX2 allows up to 4 principal units plus 1 backyard cottage unit, and the higher-count types (Double House A 6+1, Small General 6, Row 8) each require a minimum lot width (50-60 ft) that the assessor card does not record for this lot, so they are shown as conditional in the estimate, not counted in the headline; winning path: multifamily redevelopment as of right via the House A building type (multi-unit house form), evaluated as if vacant; market-rate: no affordability mandate applies - conventional product is a 4-unit house plus a backyard cottage; affordable upside: none as-of-right in the code provisions retrieved; program family for a subsidized deal without a density bonus: CT CHFA/DOH, federal LIHTC; rezoning: no evidence found - no adjacent higher-density district, comprehensive-plan direction, pending rezoning or board precedent for this street was located in official sources searched (NX2 is already a mixed-residential district); deal type: market-rate",
      "max_units_estimate": "Path 1 multifamily redevelopment (House A, as of right, lowest width threshold at 35 ft): footprint = coverage 2439 sf (80% x 3049); floors 2.5 max; gross envelope = footprint x floors = approx 6098 sf (no FAR, so the envelope is coverage x stories) - the building-type unit limit caps first: up to 4 principal units in the house plus 1 unit in a backyard cottage (an allowed accessory structure for House A) = ~5 units. Conditional, width-unverified: if the lot width is at least 50 ft, Double House A allows up to 6 principal units plus 1 backyard cottage = ~7 units as of right (8 plus 1 = ~9 by special permit) and Small General allows 6 (8 by special permit); if at least 60 ft, a Row Building allows up to 8 units. Path 2 subdivision: no conforming split is shown - a split would require each new lot to meet a building-type minimum lot width (35 ft minimum, House A) and the lot's actual frontage is not recorded on the assessor card, so no second lot is counted; counted as 1 lot. Path 3 second home/added unit: the backyard cottage unit is already counted in Path 1; accessory apartments are not an allowed accessory use for these NX2 building types (Sec 3.90.10 table) - no further added units. Headline lawful max without rezoning: ~5 units (House A plus backyard cottage, as of right)",
-     "sources": "https://portal.ct.gov/-/media/CSC/1_Dockets-medialibrary/1_MEDIA_DO500_600/DO516/ApplicantSubmissions/Application/UI---City-of-Bridgeport-Zoning-Code-Amended-July-25-2022.pdf https://services.arcgis.com/IzCLn1q8U511eQsa/ArcGIS/rest/services/Bridgeport_Zoning/FeatureServer/0 https://gis.vgsi.com/bridgeportct/Parcel.aspx?Pid=14165 https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0",
-     "confidence": "low"
+     "sources": "https://portal.ct.gov/-/media/CSC/1_Dockets-medialibrary/1_MEDIA_DO500_600/DO516/ApplicantSubmissions/Application/UI---City-of-Bridgeport-Zoning-Code-Amended-July-25-2022.pdf https://services.arcgis.com/IzCLn1q8U511eQsa/ArcGIS/rest/services/Bridgeport_Zoning/FeatureServer/0 https://gis.vgsi.com/bridgeportct/Parcel.aspx?Pid=14165 https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "medium"
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "c07f7440fbc6",
+   "facts_hash": "29c499376ed0",
    "memo": {
-    "verdict": "A 5-unit residential redevelopment is allowed as of right in the NX2 district, but the $750,000 ask ($150,000 per buildable unit) requires verifying lot width and local market returns before pursuing.",
-    "as_of_right": "Under the NX2 district form-based code, the House A building type allows up to 4 principal units plus 1 backyard cottage unit for 5 total units as of right. Max site coverage is 80 percent (2,439 square feet on the 3,049 square foot lot). Max height is 2.5 stories with eaves up to 20 feet, yielding a gross envelope of approximately 6,098 square feet. There are no FAR restrictions and no minimum parking requirements.",
-    "approval_path": "As-of-right for a 5-unit House A configuration, which minimizes entitlement risk and timeline. Expanding to 8 units under Double House A or Small General building types requires a Special Permit and a minimum lot width of 50 feet.",
+    "verdict": "The site allows an as-of-right redevelopment of 5 units under the House A building type, but pursuing it at the $750,000 ask depends on verifying lot width to unlock higher density.",
+    "as_of_right": "Under NX2 zoning, the House A building type allows 4 principal units plus 1 backyard cottage unit for 5 total units as-of-right with 80 percent maximum lot coverage and 2.5 stories (Sec 3.90). If lot width measures at least 50 feet, Double House A allows 6 principal units plus 1 cottage for 7 total units (Sec 3.80).",
+    "approval_path": "As-of-right for up to 5 units under House A using standard building permits, which carries low risk and standard processing time. A special permit is required to achieve 8 principal units under Double House A or Small General building types.",
     "legal_issues": [
-     "Zoning district discrepancy between the listing label (superseded RC zone) and official municipal GIS (NX2 zone).",
-     "Unverified lot width on assessor records (listed as 0 feet), which controls eligibility for 50-foot and 60-foot building types.",
-     "Verification of current tenant status and occupancy rights for the existing 3-family structure."
+     "Assessor card records frontage and depth as zero, leaving actual lot width unverified against code thresholds.",
+     "Listing labels the property as superseded RC zoning instead of current NX2 zoning.",
+     "Occupancy status and leases for the existing 3-family residential structure must be reviewed."
     ],
-    "test_fit": "The site envelope is capped at 80 percent coverage (2,439 square feet) and 2.5 stories. Unit density is limited first by building-type caps (4 principal units plus 1 cottage). Off-street parking does not limit density because the code requires no residential parking minimums.",
-    "value": "At the $750,000 ask price, land cost is $250,000 per unit for the existing 3 units, or $150,000 per buildable unit under the 5-unit as-of-right scenario.",
+    "test_fit": "An 80 percent maximum site coverage yields a 2,439 square foot footprint on a 3,049 square foot lot, creating an envelope of approximately 6,098 square feet over 2.5 stories. Unit caps per building type limit density first. Municipal code imposes no minimum off-street parking requirement.",
+    "value": "Land cost is $150,000 per buildable unit at the $750,000 ask based on the 5-unit House A scenario.",
     "diligence": [
-     "Boundary survey to confirm actual lot width, depth, and frontage.",
-     "FEMA MSC flood zone determination for the property.",
-     "Title search and verification of existing tenant leases.",
-     "Confirmation of listing details and property status with the listing broker."
+     "Bridgeport tax map and certified boundary survey to verify exact lot width and acreage.",
+     "Title search to confirm encumbrances, easements, and legal status.",
+     "Existing tenant leases, rent roll, and occupancy agreements for the 3-family building.",
+     "Verification of listing details and zoning designation with the listing broker."
     ],
-    "enablers": "Special permit approval to expand to 8 units under Double House A or Small General types, and CT General Statutes Sec 8-30g affordable housing appeals procedure.",
-    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and financial land comps to evaluate highest and best use.",
+    "enablers": "Lot width reaching 50 feet enables Double House A (7 units) or Small General (6 units), while 60 feet enables Row Building (8 units). Special permits allow up to 8 principal units for Double House A and Small General.",
+    "highest_and_best_use": "Not enough data because FACTS lack market rents, sale prices, and land comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T08:58:33.592824+00:00"
+   "checked_utc": "2026-11-22T09:13:09.211794+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1734,41 +1779,19 @@
      "min_lot_width": "35 (House A); 50 (Double House A and Small General); 60 (Row)",
      "parking": "No minimum off-street parking required - the code does not establish minimum off-street parking requirements (Sec 8.20.1); maximums in Table 8-1 list commercial uses only, and no maximums apply to unlisted use types, so residential is uncapped by parking; parking does not cap",
      "affordable_rule": "No mandatory affordability set-aside in the Bridgeport zoning code for NX2 residential building types was found in the provisions retrieved; CT General Statutes Sec 8-30g affordable housing land use appeals procedure exists at state level but is an appeals override, not an as-of-right bonus, so it is not counted in the lawful unit count",
-     "constraints": "Setbacks in NX2 by building type: House A build-to line 10 ft, side 2 ft min / 8 ft min combined, rear 15 ft min; Small General build-to zone 14-20 ft, side 2 ft min / 10 ft total, rear 20 ft min; Row build-to line 15 ft, rear 20 ft min (Secs 3.90.4, 3.60.4, 3.70.4); assessor card (Vision, PID 7402) records Zone NX2 and land size 0.06 acres (2614 sf used) but records frontage and depth as 0, so actual lot width is unverified - gap, and it decides whether the 50 ft and 60 ft minimum-width building types are available; the City zoning GIS layer and the City parcels layer both place the parcel in NX2 only; the listing's RB zoning label is a superseded pre-2022 district name and was not used; whether the lot sits in a local historic district / Historic Overlay (OH) was not verified in this review - gap; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $600000 (listings.csv) = $120000 per lawful unit at the ~5-unit headline",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.19701, 41.17950), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Setbacks in NX2 by building type: House A build-to line 10 ft, side 2 ft min / 8 ft min combined, rear 15 ft min; Small General build-to zone 14-20 ft, side 2 ft min / 10 ft total, rear 20 ft min; Row build-to line 15 ft, rear 20 ft min (Secs 3.90.4, 3.60.4, 3.70.4); assessor card (Vision, PID 7402) records Zone NX2 and land size 0.06 acres (2614 sf used) but records frontage and depth as 0, so actual lot width is unverified - gap, and it decides whether the 50 ft and 60 ft minimum-width building types are available; the City zoning GIS layer and the City parcels layer both place the parcel in NX2 only; the listing's RB zoning label is a superseded pre-2022 district name and was not used; whether the lot sits in a local historic district / Historic Overlay (OH) was not verified in this review - gap; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $600000 (listings.csv) = $120000 per lawful unit at the ~5-unit headline Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F); district NX2 reconfirmed in reaudit 2026-11-22 by the City parcels 2025 layer for 111 Calhoun Pl #115 (zone field NX2, acreage 0.061 ac = 2658 sf, consistent with 2614 sf used). STILL BLOCKING a high rating: (1) frontage/width - the assessor card records frontage and depth as 0 and the City parcel polygon is an irregular pentagon with no single street-front edge that can be read as the lot width, so availability of the 50 ft and 60 ft minimum-width building types is unverified - resolving source: Bridgeport tax map / survey for PID 7402; (2) local historic district / Historic Overlay (OH) status was not verified on an official map - resolving source: Bridgeport zoning map historic overlay layer.",
      "approvals_found": "None found in official sources searched (no Planning and Zoning Commission or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: no - caps at ~5 on the verified-width path because the House A building type in NX2 allows up to 4 principal units plus 1 backyard cottage unit, and the higher-count types (Double House A 6+1, Small General 6, Row 8) each require a minimum lot width (50-60 ft) that the assessor card does not record for this lot, so they are shown as conditional in the estimate, not counted in the headline; winning path: multifamily redevelopment as of right via the House A building type (multi-unit house form), evaluated as if vacant; market-rate: no affordability mandate applies - conventional product is a 4-unit house plus a backyard cottage; affordable upside: none as-of-right in the code provisions retrieved; program family for a subsidized deal without a density bonus: CT CHFA/DOH, federal LIHTC; rezoning: no evidence found - no adjacent higher-density district, comprehensive-plan direction, pending rezoning or board precedent for this street was located in official sources searched (NX2 is already a mixed-residential district); deal type: market-rate",
      "max_units_estimate": "Path 1 multifamily redevelopment (House A, as of right, lowest width threshold at 35 ft): footprint = coverage 2091 sf (80% x 2614); floors 2.5 max; gross envelope = footprint x floors = approx 5228 sf (no FAR, so the envelope is coverage x stories) - the building-type unit limit caps first: up to 4 principal units in the house plus 1 unit in a backyard cottage (an allowed accessory structure for House A) = ~5 units. Conditional, width-unverified: if the lot width is at least 50 ft, Double House A allows up to 6 principal units plus 1 backyard cottage = ~7 units as of right (8 plus 1 = ~9 by special permit) and Small General allows 6 (8 by special permit); if at least 60 ft, a Row Building allows up to 8 units. Path 2 subdivision: no conforming split is shown - a split would require each new lot to meet a building-type minimum lot width (35 ft minimum, House A) and the lot's actual frontage is not recorded on the assessor card, so no second lot is counted; counted as 1 lot. Path 3 second home/added unit: the backyard cottage unit is already counted in Path 1; accessory apartments are not an allowed accessory use for these NX2 building types (Sec 3.90.10 table) - no further added units. Headline lawful max without rezoning: ~5 units (House A plus backyard cottage, as of right)",
-     "sources": "https://portal.ct.gov/-/media/CSC/1_Dockets-medialibrary/1_MEDIA_DO500_600/DO516/ApplicantSubmissions/Application/UI---City-of-Bridgeport-Zoning-Code-Amended-July-25-2022.pdf https://services.arcgis.com/IzCLn1q8U511eQsa/ArcGIS/rest/services/Bridgeport_Zoning/FeatureServer/0 https://gis.vgsi.com/bridgeportct/Parcel.aspx?Pid=7402 https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0",
-     "confidence": "low"
+     "sources": "https://portal.ct.gov/-/media/CSC/1_Dockets-medialibrary/1_MEDIA_DO500_600/DO516/ApplicantSubmissions/Application/UI---City-of-Bridgeport-Zoning-Code-Amended-July-25-2022.pdf https://services.arcgis.com/IzCLn1q8U511eQsa/ArcGIS/rest/services/Bridgeport_Zoning/FeatureServer/0 https://gis.vgsi.com/bridgeportct/Parcel.aspx?Pid=7402 https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "medium"
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "bd6cf7b2b43a",
-   "memo": {
-    "verdict": "A 5-unit residential build is achievable as-of-right under NX2 zoning, but without market rent or sales data, it is unclear if the site is worth pursuing at the $600,000 asking price.",
-    "as_of_right": "Bridgeport NX2 zoning uses form-based controls with no FAR limit. On the 2,614 SF lot, max site coverage is 80% (2,091 SF footprint) and max height is 2.5 stories (approx 5,228 SF gross envelope). Under the House A building type, zoning allows up to 4 principal units in the house plus 1 backyard cottage unit, yielding 5 units as-of-right.",
-    "approval_path": "As-of-right administrative review applies for up to 5 units under the House A building type, presenting low timeline and discretionary risk. Expanding to 8 units via Small General or Double House A building types requires a special permit and proof of a 50-foot minimum lot width.",
-    "legal_issues": [
-     "Discrepancy between the listing zoning label (superseded RB) and official GIS zoning (NX2).",
-     "Unverified lot frontage and depth on the assessor card, which determines whether 50 ft or 60 ft width building types are allowed.",
-     "Unverified Historic Overlay (OH) status and FEMA flood zone classification.",
-     "No official zoning board or planning commission approvals exist on record for the parcel."
-    ],
-    "test_fit": "Max site coverage of 80% allows a 2,091 SF footprint and a 2.5-story gross envelope of approx 5,228 SF. Expected unit count is 4 principal units plus 1 cottage unit (5 units total). Building-type specific unit limits constrain density first. Off-street parking has no minimum requirement under Sec 8.20.1 and does not limit density.",
-    "value": "At the $600,000 ask, land cost is $120,000 per buildable unit for the 5-unit as-of-right baseline. Land cost drops to $100,000 per unit for a 6-unit scenario and $75,000 per unit for an 8-unit special permit scenario.",
-    "diligence": [
-     "Boundary survey to confirm actual lot width, frontage, and depth.",
-     "Zoning verification letter from the City of Bridgeport confirming NX2 zoning and Historic Overlay status.",
-     "FEMA flood zone determination on the MSC viewer.",
-     "Existing lease agreements and tenant occupancy records for the current 3-family structure.",
-     "Title search to confirm encumbrances and easements."
-    ],
-    "enablers": "Special permit approval permits up to 8 units under Double House A or Small General building types if lot width is 50 feet or greater. CT C.G.S. Sec 8-30g provides a state-level affordable housing land use appeals procedure.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T08:58:33.592950+00:00"
+   "facts_hash": "2aa4d27e5122",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:14:56.758041+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1811,39 +1834,19 @@
      "min_lot_width": "35 (House A); 50 (Double House A and Small General); 60 (Row)",
      "parking": "No minimum off-street parking required - the code does not establish minimum off-street parking requirements (Sec 8.20.1); maximums in Table 8-1 list commercial uses only, and no maximums apply to unlisted use types, so residential is uncapped by parking; parking does not cap",
      "affordable_rule": "No mandatory affordability set-aside in the Bridgeport zoning code for NX2 residential building types was found in the provisions retrieved; CT General Statutes Sec 8-30g affordable housing land use appeals procedure exists at state level but is an appeals override, not an as-of-right bonus, so it is not counted in the lawful unit count",
-     "constraints": "Setbacks in NX2 by building type: House A build-to line 10 ft, side 2 ft min / 8 ft min combined, rear 15 ft min; Small General build-to zone 14-20 ft, side 2 ft min / 10 ft total, rear 20 ft min; Row build-to line 15 ft, rear 20 ft min (Secs 3.90.4, 3.60.4, 3.70.4); DISTRICT DISCREPANCY: the assessor card (Vision, PID 9753) records Zone I (Industrial), but the City's official zoning GIS layer intersected with the parcel polygon from the City parcels layer returns NX2 only, and an I district adjoins immediately west of the parcel - this review follows the zoning map (NX2) and flags the assessor field as stale, verify the district with the Zoning Administrator before closing; assessor card records land size 0.09 acres (3920 sf used) but frontage and depth as 0, so actual lot width is unverified - gap; the listing's RB zoning label is a superseded pre-2022 district name and was not used; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $575000 (listings.csv) = $115000 per lawful unit at the ~5-unit headline",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-73.21594, 41.17220), DFIRM 09001C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Setbacks in NX2 by building type: House A build-to line 10 ft, side 2 ft min / 8 ft min combined, rear 15 ft min; Small General build-to zone 14-20 ft, side 2 ft min / 10 ft total, rear 20 ft min; Row build-to line 15 ft, rear 20 ft min (Secs 3.90.4, 3.60.4, 3.70.4); DISTRICT DISCREPANCY: the assessor card (Vision, PID 9753) records Zone I (Industrial), but the City's official zoning GIS layer intersected with the parcel polygon from the City parcels layer returns NX2 only, and an I district adjoins immediately west of the parcel - this review follows the zoning map (NX2) and flags the assessor field as stale, verify the district with the Zoning Administrator before closing; assessor card records land size 0.09 acres (3920 sf used) but frontage and depth as 0, so actual lot width is unverified - gap; the listing's RB zoning label is a superseded pre-2022 district name and was not used; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $575000 (listings.csv) = $115000 per lawful unit at the ~5-unit headline Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F); City parcels 2025 layer in reaudit 2026-11-22 measures the polygon at approx 41 ft x 100 ft (Mercator-corrected) with acreage 0.0918 ac = 3999 sf, consistent with 3920 sf used, and a width of approx 41 ft would support only the House A type (35 ft min), not the 50 ft types - but the polygon front edge was not labeled by street. STILL BLOCKING a high rating: (1) district discrepancy unresolved - the City parcels / assessor zone field records I (Industrial) while the City zoning GIS layer returns NX2, and no Zoning Administrator confirmation was obtained - resolving source: Bridgeport Zoning Administrator district confirmation for PID 9753; (2) frontage_ft is not recorded on the assessor card (frontage and depth 0) - resolving source: Bridgeport tax map / survey lot dimensions.",
      "approvals_found": "None found in official sources searched (no Planning and Zoning Commission or Zoning Board of Appeals approval for this lot located)",
      "enablers": "12+ units: no - caps at ~5 on the verified-width path because the House A building type in NX2 allows up to 4 principal units plus 1 backyard cottage unit, and the higher-count types (Double House A 6+1, Small General 6, Row 8) each require a minimum lot width (50-60 ft) that the assessor card does not record for this lot, so they are shown as conditional in the estimate, not counted in the headline; winning path: multifamily redevelopment as of right via the House A building type (multi-unit house form), evaluated as if vacant; market-rate: no affordability mandate applies - conventional product is a 4-unit house plus a backyard cottage; affordable upside: none as-of-right in the code provisions retrieved; program family for a subsidized deal without a density bonus: CT CHFA/DOH, federal LIHTC; rezoning: no evidence found - no adjacent higher-density district, comprehensive-plan direction, pending rezoning or board precedent for this street was located in official sources searched (NX2 is already a mixed-residential district); deal type: market-rate",
      "max_units_estimate": "Path 1 multifamily redevelopment (House A, as of right, lowest width threshold at 35 ft): footprint = coverage 3136 sf (80% x 3920); floors 2.5 max; gross envelope = footprint x floors = approx 7840 sf (no FAR, so the envelope is coverage x stories) - the building-type unit limit caps first: up to 4 principal units in the house plus 1 unit in a backyard cottage (an allowed accessory structure for House A) = ~5 units. Conditional, width-unverified: if the lot width is at least 50 ft, Double House A allows up to 6 principal units plus 1 backyard cottage = ~7 units as of right (8 plus 1 = ~9 by special permit) and Small General allows 6 (8 by special permit); if at least 60 ft, a Row Building allows up to 8 units. Path 2 subdivision: no conforming split is shown - a split would require each new lot to meet a building-type minimum lot width (35 ft minimum, House A) and the lot's actual frontage is not recorded on the assessor card, so no second lot is counted; counted as 1 lot. Path 3 second home/added unit: the backyard cottage unit is already counted in Path 1; accessory apartments are not an allowed accessory use for these NX2 building types (Sec 3.90.10 table) - no further added units. Headline lawful max without rezoning: ~5 units (House A plus backyard cottage, as of right)",
-     "sources": "https://portal.ct.gov/-/media/CSC/1_Dockets-medialibrary/1_MEDIA_DO500_600/DO516/ApplicantSubmissions/Application/UI---City-of-Bridgeport-Zoning-Code-Amended-July-25-2022.pdf https://services.arcgis.com/IzCLn1q8U511eQsa/ArcGIS/rest/services/Bridgeport_Zoning/FeatureServer/0 https://gis.vgsi.com/bridgeportct/Parcel.aspx?Pid=9753 https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0",
-     "confidence": "low"
+     "sources": "https://portal.ct.gov/-/media/CSC/1_Dockets-medialibrary/1_MEDIA_DO500_600/DO516/ApplicantSubmissions/Application/UI---City-of-Bridgeport-Zoning-Code-Amended-July-25-2022.pdf https://services.arcgis.com/IzCLn1q8U511eQsa/ArcGIS/rest/services/Bridgeport_Zoning/FeatureServer/0 https://gis.vgsi.com/bridgeportct/Parcel.aspx?Pid=9753 https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "medium"
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "28a258ff4294",
-   "memo": {
-    "verdict": "The site realistically supports an as-of-right 5-unit residential build under NX2 zoning, but pursuing it at the $575,000 ask requires confirming zoning and lot frontage first.",
-    "as_of_right": "Under NX2 zoning using the House A building type, 80 percent lot coverage allows a 3,136 square foot footprint on the 3,920 square foot lot. Across 2.5 stories, this creates a 7,840 square foot building envelope allowing 4 principal units plus 1 backyard cottage unit for 5 total units (Sec 3.90). Zoning sets no FAR limit or minimum parking requirement (Sec 8.20.1).",
-    "approval_path": "As-of-right administrative site plan approval for up to 5 units under House A rules, which carries low risk and a fast timeline. Achieving 8 units requires discretionary special permit approval and a minimum 50-foot lot width.",
-    "legal_issues": [
-     "Zoning district discrepancy: The assessor card records Zone I (Industrial), while the official city GIS map returns NX2 (Neighborhood Mix 2).",
-     "Unverified lot width: Assessor records state 0 feet for frontage, leaving lot width unconfirmed.",
-     "Superseded listing label: The listing advertises pre-2022 RB zoning instead of NX2."
-    ],
-    "test_fit": "The 2.5-story envelope yields up to 7,840 gross square feet over an 80 percent maximum footprint. Building-type rules limit density first, capping the build at 4 principal units plus 1 backyard cottage. Off-street parking does not limit density because zero spaces are required.",
-    "value": "Land cost is $115,000 per buildable unit at the $575,000 ask for the baseline 5-unit scenario. If the lot measures 50 feet wide and secures a special permit for 8 units, land cost drops to $71,875 per unit.",
-    "diligence": [
-     "Obtain written district confirmation from the Zoning Administrator to resolve the conflict between the city GIS map (NX2) and the assessor card (Zone I).",
-     "Order a certified property survey to establish actual lot width, frontage, and total acreage.",
-     "Verify flood hazard status on the FEMA Flood Map Service Center.",
-     "Inspect city building and zoning records for existing municipal approvals or violations."
-    ],
-    "enablers": "A special permit combined with verified lot width of 50 to 60 feet enables higher-density building types like Double House A or Small General, yielding up to 8 units.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T08:58:33.593058+00:00"
+   "facts_hash": "b0bf88ed65c7",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:18:12.216597+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1886,40 +1889,19 @@
      "min_lot_width": "25",
      "parking": "No parking required for lots under 5000 sf not on Kennedy Blvd (Sec 345-46F.6); curb cuts are prohibited on West Side Ave so on-site parking is effectively 0 where no other access exists - parking does not cap",
      "affordable_rule": "No mandatory set-aside applies at this scale on the evidence found: Jersey City Ch 187 inclusionary set-aside in NC-1 is tied to former R-1 lots of 7895 sf or more building 15+ units and to other compensatory-benefit triggers - this 2379 sf lot at ~5 units meets none found; NJ HMFA/LIHTC program family applies only to a voluntary affordable deal",
-     "constraints": "Front 0 ft, side 0 ft, rear 15% of lot depth (Sec 345-46E); no coverage/FAR in NC-1 bulk list retrieved - gap; parcel_id (block/lot) and actual frontage_ft not retrieved from an official tax map/assessor source - gap, lot is an existing lot of record and is conforming under Sec 345-46E.1 despite the 2500 sf / 25 ft / 100 ft minimums; flood zone not retrieved from FEMA NFHL - gap, verify on FEMA MSC before closing; listing price $699000 (listings.csv) = $139800 per lawful unit at the ~5-unit headline - a pass on the land-cost-per-unit metric",
+     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the Census-geocoded site point (-74.08215, 40.71980), DFIRM 34017C, SFHA = F (reaudit 2026-11-22)",
+     "constraints": "Front 0 ft, side 0 ft, rear 15% of lot depth (Sec 345-46E); no coverage/FAR in NC-1 bulk list retrieved - gap; parcel_id (block/lot) and actual frontage_ft not retrieved from an official tax map/assessor source - gap, lot is an existing lot of record and is conforming under Sec 345-46E.1 despite the 2500 sf / 25 ft / 100 ft minimums; flood zone not retrieved from FEMA NFHL - gap, verify on FEMA MSC before closing; listing price $699000 (listings.csv) = $139800 per lawful unit at the ~5-unit headline - a pass on the land-cost-per-unit metric Flood zone resolved in reaudit 2026-11-22 (see flood_zone - Zone X, SFHA F). STILL BLOCKING a high rating: (1) parcel_id (block/lot) and actual frontage_ft are not retrieved from an official tax map/assessor source - resolving source: Hudson County / Jersey City tax map record for 556 West Side Ave; (2) no building or lot coverage percentage is stated in the NC-1 bulk standards retrieved (Sec 345-46), so the footprint in the envelope math rests on the rear-yard reduction only - resolving source: Jersey City Land Development Ordinance Sec 345-46 full text on the City code site; (3) West Side Avenue Redevelopment Plan applicability to this parcel was not verified on the official plan map - resolving source: Jersey City redevelopment plan area map.",
      "approvals_found": "City staff memo for Case P23-032, 791-805 West Side Ave (June 7 2024): a 5-story 55 ft 84-unit mixed-use building with ground-floor commercial in the NC zone on the same avenue - corridor precedent for the NC form, not an approval for this lot; no Planning Board or Board of Adjustment approval for this lot found in official sources searched",
      "enablers": "12+ units: no - caps at ~5 because the tiny 2379 sf lot, the 5-story/55 ft height limit and the 15% rear yard leave only ~4 residential floors; winning path: multifamily redevelopment - mixed-use redevelopment as of right in NC-1 (residential above ground floor), matching the listing conceptual plan (5 stories, 1 commercial space, 5 residential units); market-rate: no affordability mandate applies at this scale on the evidence found - conventional product is the ~5-unit mixed-use building; affordable upside: none as-of-right in NC-1 on the evidence found - program family NJ HMFA, federal LIHTC for a voluntary set-aside only; rezoning: no evidence found - NC-1 already allows 5 stories on this corridor and no site-specific upzoning, plan provision or pending rezoning for this lot was located; deal type: market-rate",
      "max_units_estimate": "Path 1 multifamily/mixed-use: footprint approx 2022 sf (2379 sf lot reduced only by the 15% rear yard; no front/side yards and no coverage cap stated) ; floors 5 total (ground commercial + 4 residential); gross envelope = 2022 x 5 = approx 10110 sf (no FAR to take the lower of); residential gross = 2022 x 4 = approx 8088 sf / approx 1400 sf gross per unit in the listing conceptual plan = approx 5 units - height and lot size cap, not parking (0 required) and not density (none). Path 2 subdivision: 1 lot only - 2379 sf is below the 2500 sf minimum for even one new lot and an existing lot of record, so no split. Path 3 second home/added unit: ground-floor residential is conditional only (max 40% of ground floor when commercial is proposed) - 0 added units counted standalone. Headline lawful max without rezoning: ~5 units",
-     "sources": "https://www.zoneomics.com/code/jersey-city-NJ/chapter_5 https://data.jerseycitynj.gov/api/datasets/1.0/p23-032-791-805-west-side-avenue/attachments/staff_memo_p23_032_planning_pdf/ https://data.jerseycitynj.gov/api/explore/v2.1/catalog/datasets/inclusionary-zoning-ordinance-2021/attachments/ord_21_077_inclusionary_zoning_ordinance_and_tier_map_pdf",
-     "confidence": "low"
+     "sources": "https://www.zoneomics.com/code/jersey-city-NJ/chapter_5 https://data.jerseycitynj.gov/api/datasets/1.0/p23-032-791-805-west-side-avenue/attachments/staff_memo_p23_032_planning_pdf/ https://data.jerseycitynj.gov/api/explore/v2.1/catalog/datasets/inclusionary-zoning-ordinance-2021/attachments/ord_21_077_inclusionary_zoning_ordinance_and_tier_map_pdf https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+     "confidence": "medium"
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "8ffdc98569de",
-   "memo": {
-    "verdict": "A 5-story mixed-use building with 1 commercial space and 5 residential units is achievable as-of-right, but pursuing it at the $699,000 ask depends on site plan review and redevelopment plan applicability.",
-    "as_of_right": "NC-1 zoning permits residential above ground-floor commercial as-of-right up to 5 stories and 55 feet (Sec 345-46E). The 2,379 SF lot requires a 15 percent rear yard setback with 0 ft front and side yards, giving a 2,022 SF footprint. Five floors yield a gross envelope of 10,110 SF, with 4 upper residential floors totaling 8,088 SF. At 1,400 SF gross per unit, density caps at 5 units. Sec 345-46F.6 requires zero parking spaces for lots under 5,000 SF off Kennedy Blvd.",
-    "approval_path": "As-of-right approval with site plan review. This path carries low zoning risk and standard municipal review timelines.",
-    "legal_issues": [
-     "Unverified applicability of the West Side Avenue Redevelopment Plan area (Map No. 60) to this specific lot.",
-     "No site-specific Planning Board or Board of Adjustment approvals currently exist on record for this parcel.",
-     "Lot area of 2,379 SF falls below the 2,500 SF district minimum, requiring reliance on existing lot of record status under Sec 345-46E.1."
-    ],
-    "test_fit": "The envelope allows a 2,022 SF footprint after applying the 15 percent rear yard setback. The 5-story 55-foot envelope yields 1 ground-floor commercial space and 4 residential floors totaling 8,088 SF gross residential area. The likely unit count is 5 units at roughly 1,400 SF gross per unit. Zero parking is required. Lot size and height limits constrain density first.",
-    "value": "At the $699,000 ask price, land cost is $139,800 per buildable unit for the 5-unit mixed-use scenario. No alternative buildable scenarios are available to compare due to lot size limits.",
-    "diligence": [
-     "Confirm whether the parcel is subject to the West Side Avenue Redevelopment Plan.",
-     "Obtain tax map records to verify official parcel ID and frontage measurements.",
-     "Perform a FEMA MSC search to check flood zone status before closing.",
-     "Confirm lot coverage and FAR rules directly with Jersey City Planning.",
-     "Verify listing details and conceptual plans with the listing broker."
-    ],
-    "enablers": "As-of-right 5-story/55 ft height limit for mixed-use product and zero required parking for lots under 5,000 SF.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T08:58:33.593166+00:00"
+   "facts_hash": "1056da704c20",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:19:45.561964+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -1991,8 +1973,31 @@
     ]
    },
    "facts_hash": "fd0ffe557632",
-   "memo": null,
-   "checked_utc": "2026-11-22T09:01:33.359332+00:00"
+   "memo": {
+    "verdict": "The site allows up to 20 multifamily units as-of-right, making it worth pursuing at the $849,000 asking price if steep slope and parking constraints can be resolved.",
+    "as_of_right": "Multifamily development is allowed as-of-right in the M district. On a 16,534 sf lot, an FAR of 1.25 allows up to 20,668 gross sf. Density rules require 800 sf of lot per family, capping total capacity at 20 units (16,534 / 800 = 20.6). Max lot coverage is 40 percent (6,614 sf footprint) with a 65-foot height limit.",
+    "approval_path": "As-of-right for use, but requires site plan approval and steep-slope review. This path carries moderate risk and extra time for civil engineering approvals.",
+    "legal_issues": [
+     "Conflict between data sources on unit count (BOUNTY up to 20 vs Muse 1).",
+     "Mandatory affordable housing set-aside under Yonkers Code Chapter 43 Article XV.",
+     "Steep-slope review triggered by a 56-foot grade change across the lot.",
+     "Lot dimensions and parcel ID rest on queue data without official tax map verification."
+    ],
+    "test_fit": "The 1.25 FAR yields up to 20,668 gross sf across a 6,614 sf footprint within 65 feet. Density caps the building at 20 units averaging ~1,000 sf gross. On-site parking limits density first, requiring 28 spaces by rule against a surface capacity of 24 spaces unless a train station reduction applies.",
+    "value": "Land cost is $42,450 per unit at the $849,000 asking price based on the 20-unit paper zoning maximum. Per-unit cost rises if steep slopes or parking constraints reduce unit yield.",
+    "diligence": [
+     "Resolve unit count conflict between sources (BOUNTY up to 20 vs Muse 1).",
+     "Obtain official City of Yonkers tax map and Westchester County GIS records for parcel 1.-445-10.",
+     "Verify distance to the nearest active train station to confirm if the 1 space per unit parking rule applies.",
+     "Perform a topographic survey and geotechnical study for the 56-foot grade change.",
+     "Retrieve full text for Yonkers Code Chapter 43 Article XV to confirm exact set-aside percentage and AMI rules."
+    ],
+    "enablers": "As-of-right multifamily status in the M zone permits 1.25 FAR and 20 units. Proximity within 1/4 mile of an active train station reduces parking requirements to 1 space per unit.",
+    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps to determine highest and best use.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T09:19:54.815524+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -2088,7 +2093,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:02:09.381558+00:00"
+   "checked_utc": "2026-11-22T09:20:03.746654+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -2182,7 +2187,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:03:22.886788+00:00"
+   "checked_utc": "2026-11-22T09:20:16.352494+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -2204,24 +2209,10 @@
      "1 lot only: ~85 ft frontage on Cresthill Rd; two S-75 lots need 150 ft."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "4.-4652-56",
-     "zoning": "S-75",
-     "lot_sf": 22018,
-     "street_frontage_ft": 83,
-     "property_class": "210",
-     "owner": "Rego, Michael",
-     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
-     "lots_by_area": 2,
-     "lots_by_frontage": 1,
-     "lots_allowed": 1
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "lots allowed": "1"
-    },
-    "ask_per_unit": {
-     "lots allowed": "$745,000"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-21",
      "address": "101 Cresthill Rd",
@@ -2246,35 +2237,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892",
      "confidence": "low"
     },
-    "conflicts_with_independent_check": [
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "33f16633fb6a",
-   "memo": {
-    "verdict": "The site realistically yields one single-family home as-of-right or two homes via subdivision relief, making the $745,000 ask expensive unless a two-lot split is approved.",
-    "as_of_right": "Yonkers Code Table 43-3 for S-75 requires 7,500 square feet of lot area and 75 feet of lot width at the street line per lot. The 22,018 square foot lot supports 2 lots by area (22,018 divided by 7,500), but the 83 feet of frontage yields only 1 lot as-of-right because two 75-foot lots require 150 feet of frontage. As-of-right parameters allow 35 percent lot coverage, 2.5 stories or 35 feet in height, and a 0.60 FAR.",
-    "approval_path": "One single-family home is an as-of-right approval path requiring standard building permits. A two-lot subdivision requires Planning Board subdivision approval and potential Zoning Board of Appeals variance relief for frontage and lot width, adding time and discretionary risk.",
-    "legal_issues": [
-     "Frontage restriction: 83 feet of street frontage is less than the 150 feet needed for two standard 75-foot wide lots.",
-     "Use restriction: Multifamily and townhouse developments are strictly prohibited in the S-75 district.",
-     "Absence of prior approvals: No Planning Board subdivision or Zoning Board of Appeals approvals exist on record for this parcel."
-    ],
-    "test_fit": "Density is limited first by single-family zoning and street frontage. Building envelope for each lot allows 35 percent coverage, 2.5 stories/35 feet height, and up to 4,500 square feet of floor area per 7,500 square foot lot share under the 0.60 FAR limit. Unit count range is 1 home as-of-right up to 2 single-family homes if subdivided. Parking schedule count under Table 43-4 was not retrieved in facts.",
-    "value": "At the $745,000 asking price, single-family land cost is $745,000 for the 1 as-of-right lot scenario. If a 2-lot subdivision is successfully approved, the land cost drops to $372,500 per buildable lot.",
-    "diligence": [
-     "Conflict check: Confirm Muse report that multifamily is not permitted in S-75 against single-family zoning rules.",
-     "Official tax map and boundary survey check to verify interior lot width at the building line for a 2-lot split.",
-     "FEMA MSC map check to confirm flood zone status.",
-     "Yonkers Code Table 43-4 schedule check to confirm single-family parking requirements.",
-     "Zoning Board of Appeals and Planning Board history check for prior municipal decisions on Cresthill Rd."
-    ],
-    "enablers": "A subdivision approval with a frontage or lot width variance is the only path to enable two single-family lots. No density bonuses, rezonings, or affordable housing incentives exist for S-75 in FACTS.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T09:05:03.437384+00:00"
+   "facts_hash": "3f6c9afab821",
+   "memo": null,
+   "checked_utc": "2026-11-22T09:24:48.921565+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -2296,24 +2263,10 @@
      "2 lots: ~168 ft frontage, 17,096 sf. ~50 ft grade change."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "4.-4651-86",
-     "zoning": "S-75",
-     "lot_sf": 17096,
-     "street_frontage_ft": 167,
-     "property_class": "210",
-     "owner": "Rodrigues, Jose",
-     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
-     "lots_by_area": 2,
-     "lots_by_frontage": 2,
-     "lots_allowed": 2
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "lots allowed": "2"
-    },
-    "ask_per_unit": {
-     "lots allowed": "$595,000"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "independent_check": {
      "date": "2026-11-22",
      "address": "81 Avondale Rd",
@@ -2339,14 +2292,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://geocoding.geo.census.gov/geocoder/locations/onelineaddress",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 2 vs Muse 1",
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "f50a3cc7caac",
+   "facts_hash": "efebdb44475f",
    "memo": null,
-   "checked_utc": "2026-11-22T09:08:22.183355+00:00"
+   "checked_utc": "2026-11-22T09:27:51.626564+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -2447,7 +2397,7 @@
     "letter_angle": "Contact owner A&C International Management Group, LLC directly to express interest in acquiring the off-market parcel for an as-of-right development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:08:22.472879+00:00"
+   "checked_utc": "2026-11-22T09:27:51.764335+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -2548,7 +2498,7 @@
     "letter_angle": "Approach Public Storage with an off-market offer focused on a straightforward, as-of-right acquisition of this underutilized parcel.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:08:22.616868+00:00"
+   "checked_utc": "2026-11-22T09:27:51.883817+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -2649,7 +2599,7 @@
     "letter_angle": "Approach Mott Haven Holdings, LLC directly to inquire about their willingness to sell 250 East 138 Street for an as-of-right multifamily development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:08:22.692891+00:00"
+   "checked_utc": "2026-11-22T09:27:52.057966+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -2750,7 +2700,7 @@
     "letter_angle": "Approach owner BAKTIDY ASSOCIATES directly to inquire about an off-market acquisition of the 13,512 sf redevelopment lot.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:08:22.836374+00:00"
+   "checked_utc": "2026-11-22T09:27:52.168398+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -2851,7 +2801,7 @@
     "letter_angle": "Approach the owner directly to express interest in acquiring the property off market for a straightforward as-of-right residential project.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:08:22.977002+00:00"
+   "checked_utc": "2026-11-22T09:27:52.230158+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -2953,7 +2903,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC directly to inquire if they are open to an offer for 19 Clay Street based on an as-of-right residential development program.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T09:08:23.109449+00:00"
+   "checked_utc": "2026-11-22T09:27:52.368912+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
