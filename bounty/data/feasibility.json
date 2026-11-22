@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-22T02:51:39.720702+00:00",
+ "generated_utc": "2026-11-22T03:21:48.595379+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -91,7 +91,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:31:40.868327+00:00"
+   "checked_utc": "2026-11-22T03:10:14.204298+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -183,7 +183,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:32:02.582956+00:00"
+   "checked_utc": "2026-11-22T03:10:14.204580+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -270,7 +270,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:32:02.583469+00:00"
+   "checked_utc": "2026-11-22T03:10:14.204834+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -364,7 +364,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:32:02.583695+00:00"
+   "checked_utc": "2026-11-22T03:10:14.205112+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -455,7 +455,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:32:02.583898+00:00"
+   "checked_utc": "2026-11-22T03:10:14.205349+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -544,7 +544,7 @@
     "letter_angle": "Inquire if the developer is interested in an assignment or sale of the property and approved 24-unit plan given ongoing site work.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:33:06.352609+00:00"
+   "checked_utc": "2026-11-22T03:10:14.205593+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -656,7 +656,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:33:29.588843+00:00"
+   "checked_utc": "2026-11-22T03:10:14.398038+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -765,7 +765,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:33:48.674376+00:00"
+   "checked_utc": "2026-11-22T03:10:14.566857+00:00"
   },
   {
    "id": "bx-927-home",
@@ -872,7 +872,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:34:05.014096+00:00"
+   "checked_utc": "2026-11-22T03:10:14.733412+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -982,7 +982,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-22T02:36:28.809626+00:00"
+   "checked_utc": "2026-11-22T03:10:14.835302+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1038,31 +1038,60 @@
     "ask_per_unit": {
      "standard": "$104,545 to $143,750",
      "with UAP affordable bonus": "$82,143 to $115,000"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "2411 Poplar St",
+     "town": "Bronx",
+     "parcel_id": "2040620023",
+     "lot_sf": "2500",
+     "frontage_ft": "25",
+     "district": "R6-1",
+     "overlays": "FRESH Zone; Mandatory Inclusionary Housing (MIH) Area (Appendix I) - both per ZoLa",
+     "multifamily": "as of right",
+     "far": "3.00 standard; 3.90 qualifying affordable housing or qualifying senior housing (ZR 23-22) - in this MIH area the 3.90 tier requires MIH compliance",
+     "density_rule": "Dwelling unit factor 680 for multiple dwelling residences (ZR 23-52): max units = max residential floor area / 680, fractions >=0.75 count as one unit; min lot area 1700 sf and min lot width 18 ft for other residences (ZR 23-12)",
+     "max_height": "Standard: min base 40 ft / max base 65 ft / max building 75 ft; qualifying affordable/senior: max base 65 ft / max building 95 ft (ZR 23-432)",
+     "lot_coverage": "80% interior/through lots, 100% corner lots (ZR 23-362)",
+     "min_lot_area": "1700",
+     "min_lot_width": "18",
+     "parking": "ZR 25-222 (Outer Transit Zone): R6 25% per standard unit, waived if calculated total <=15 spaces; ZR 25-232 (beyond Greater Transit Zone): 50% per unit reduced to 30% on lots <=10000 sf, waived if <=10 spaces - calculated total for 11-14 units is <=10 under either table, so 0 required either way; parking does not cap",
+     "affordable_rule": "MIH area (ZoLa): Mandatory Inclusionary Housing applies to new residential development in this mapped MIH area - a permanent affordable set-aside is mandatory on the multifamily path; the specific MIH option/percentage designated for this area in ZR Appendix I was not retrieved in this review - gap, verify in Appendix I before underwriting; UAP does not apply inside MIH areas",
+     "constraints": "Front yard none (ZR 23-322); side yards none required for multifamily, any side open area >=5 ft; rear yard 30 ft used in envelope math (attached/semi-detached building on a lot <40 ft wide, ZR 23-342); flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; lot_sf/frontage/parcel_id (BBL) and district/overlays verified on ZoLa lot page for Block 4062 Lot 23",
+     "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
+     "enablers": "12+ units: yes - qualifying/MIH tier reaches ~14 units (standard tier caps at ~11 because FAR 3.00 x DU factor on a 2500 sf lot); winning path: multifamily redevelopment as of right in R6-1; market-rate: no purely market-rate path at full bulk - ZoLa maps this lot in an MIH area, so the conventional product carries the MIH set-aside (option in Appendix I not retrieved); affordable upside: the qualifying affordable tier at FAR 3.90 is as-of-right with MIH compliance and reaches ~14 units - program family NYC HPD/HDC, NY HCR, federal LIHTC, 485-x tax exemption; FRESH Zone mapped (food retail incentive, not a residential bonus); rezoning unlikely - no evidence found: R6-1 is already a medium-density district, the lot is already MIH-mapped, City of Yes (adopted Dec 5 2024) just raised R6-1 bulk citywide, and no pending site-specific rezoning was found; deal type: affordable-program candidate - MIH (set-aside mandatory in this MIH area; qualifying tier is the winning path)",
+     "max_units_estimate": "Path 1 multifamily: footprint = lower of coverage 2000 sf (80% x 2500) and yard envelope 1750 sf (25 ft width x 70 ft depth after 30 ft rear yard, no front/side yards) = 1750 sf; floors ~7 standard (75 ft) / ~9 qualifying (95 ft); gross = LOWER of FAR x lot and footprint x floors - FAR caps in both tiers: standard 7500 sf (3.00 x 2500) / DU factor 680 = 11.03 = ~11 units; qualifying/MIH 9750 sf (3.90 x 2500) / 680 = 14.34 = ~14 units - FAR via the DU factor, not height, coverage or parking, is the binding cap. Path 2 subdivision: 1 zoning lot only (2500/1700 area and 25/18 width both = 1 for other residences; 2500/2375 and 25/25 = 1 detached one/two-family lot) - no gain over Path 1. Path 3 second home/added unit: 0 standalone - ancillary dwelling unit provisions do not add a separate dwelling on an R6 multifamily zoning lot; added units come only via Path 1. Headline lawful max without rezoning: ~14 units (qualifying/MIH tier); ~11 standard",
+     "sources": "https://zola.planning.nyc.gov/l/lot/2/4062/23 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": [
+     "Units: BOUNTY up to 14 vs Muse 1"
+    ]
    },
-   "facts_hash": "b319ab21674b",
+   "facts_hash": "432908dba268",
    "memo": {
-    "verdict": "An 8 to 14 unit residential project can be built under R6-1 zoning, making it worth pursuing at the $1,150,000 ask if tenant relocation and affordability rules are acceptable.",
-    "as_of_right": "On a 2,500 square foot lot, ZR 23-22 R6-1 standard FAR 3.0 allows 7,500 square feet of floor area for 8 to 11 units. The qualifying affordable UAP bonus at FAR 3.9 allows 9,750 square feet of floor area for 10 to 14 units.",
-    "approval_path": "As-of-right development path. This minimizes discretionary risk and review time, though Mandatory Inclusionary Housing compliance is required.",
+    "verdict": "A 11 to 14 unit residential project is achievable as of right, but pursuing it at the asking price depends on tenant buyout costs and MIH requirements.",
+    "as_of_right": "R6-1 zoning allows a standard FAR of 3.00 (7,500 sf) for up to 11 units, or a qualifying affordable FAR of 3.90 (9,750 sf) for up to 14 units per ZR 23-22 and ZR 23-52 on a 2,500 sf lot.",
+    "approval_path": "As-of-right path requires standard DOB plan review, carrying low approval risk and short permitting timelines.",
     "legal_issues": [
-     "Existing occupied 2-family residential building requires tenant lease review and clearance.",
-     "Mandatory Inclusionary Housing area designation requires compliance with affordability covenants.",
-     "Special district (ETC) rules must be reviewed for specific zoning restrictions."
+     "Occupied 2-family building built in 1910 requiring tenant vacate agreements.",
+     "Mandatory Inclusionary Housing area requires permanent affordable set-asides for full bulk."
     ],
-    "test_fit": "The lot is 25 feet wide by 100 feet deep with 2,500 square feet. Standard zoning fits 7,500 square feet (8 to 11 units), and UAP fits 9,750 square feet (10 to 14 units). The narrow 25-foot frontage limits layout and density first.",
-    "value": "At the $1,150,000 asking price, land cost is $104,545 to $143,750 per unit for the standard scenario (8 to 11 units). With the UAP affordable bonus scenario (10 to 14 units), land cost drops to $82,143 to $115,000 per unit.",
+    "test_fit": "Lot footprint caps at 1,750 sf after deducting a 30 ft rear yard (ZR 23-342). Max height is 75 ft (~7 stories) standard or 95 ft (~9 stories) for qualifying affordable housing (ZR 23-432). Zero parking spaces are required (ZR 25-222 / ZR 25-232). FAR and the dwelling unit factor cap density first.",
+    "value": "At the $1,150,000 ask, land cost is $104,545 to $143,750 per buildable unit for standard scenarios (8-11 units), dropping to $82,143 to $115,000 per unit under the UAP/MIH bonus (10-14 units).",
     "diligence": [
-     "Tenant leases and rent roll for the existing occupied 2-family home.",
-     "Title search and survey to check easements, encumbrances, and exact boundaries.",
-     "Phase I Environmental Site Assessment.",
-     "Zoning confirmation for UAP bonus eligibility and MIH affordable set-aside rules.",
-     "DOB property profile check for existing violations or active permits."
+     "Resolve unit count conflict: BOUNTY up to 14 vs Muse 1.",
+     "Verify the specific designated MIH option in Appendix I of the Zoning Resolution.",
+     "Inspect existing 2-family structure and verify tenant lease terms, rights, and relocation requirements.",
+     "Verify flood zone status on FEMA MSC.",
+     "Verify boundary survey against ZoLa lot dimensions."
     ],
+    "enablers": "Mandatory Inclusionary Housing (MIH) overlay, FRESH Zone mapping, and qualifying affordable housing FAR bonus (ZR 23-22).",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:36:29.037952+00:00"
+   "checked_utc": "2026-11-22T03:10:31.273316+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1123,32 +1152,61 @@
     "ask_per_unit": {
      "standard": "$200,000 to $300,000",
      "with UAP affordable bonus": "$120,000 to $150,000"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "1815 Schieffelin Ave",
+     "town": "Bronx",
+     "parcel_id": "2049020075",
+     "lot_sf": "2500",
+     "frontage_ft": "25",
+     "district": "R4",
+     "overlays": "FRESH Zone - per ZoLa; no MIH or special district shown on ZoLa",
+     "multifamily": "as of right",
+     "far": "1.00 standard (ZR 23-21); 1.50 qualifying residential site column NOT used - the transit-oriented qualifying test requires a lot of at least 5000 sf in the Greater Transit Zone with wide-street or short-end-of-block frontage (ZR 12-10), this lot is 2500 sf, and no campus, senior-housing or town-center qualifying evidence was found",
+     "density_rule": "Dwelling unit factor 680 for multiple dwelling residences (ZR 23-52): max units = max residential floor area / 680, fractions >=0.75 count as one unit; min lot area/width: 2850 sf / 30 ft for single/two-family detached or zero lot line, 1700 sf / 18 ft for other residences (ZR 23-11)",
+     "max_height": "35 ft max building height for residences not subject to ZR 23-421 (ZR 23-422 R4); single/two-family detached, semi-detached or zero lot line buildings: perimeter wall max 25 ft, ridge 35 ft (ZR 23-421); qualifying-site height column (35/45 ft, ZR 23-424) not used - qualifying status not established",
+     "lot_coverage": "60% interior/through lots for single/two-family residences, 80% corner; 80% interior/through and 100% corner for multiple dwelling residences where permitted (ZR 23-361)",
+     "min_lot_area": "1700 (other residences); 2850 (single/two-family detached)",
+     "min_lot_width": "18 (other residences); 30 (single/two-family detached)",
+     "parking": "ZR 25-222 (Outer Transit Zone): R4 35% per standard unit, waived if <=5 spaces; ZR 25-232 (beyond Greater Transit Zone): 50% per unit, waived if <=3 spaces - calculated total for ~3 units is <=3 under either table, so 0 required either way; transit-zone status of this lot not verified in ZoLa via this review - gap; parking does not cap under either transit-zone table; parking does not cap",
+     "affordable_rule": "No mandatory affordability set-aside applies on the standard market-rate path - ZoLa shows no MIH area for this lot; no as-of-right affordability bonus is available in R4 on this lot because the qualifying residential site tests (ZR 12-10) are not met on the evidence found",
+     "constraints": "Front yard 10 ft (ZR 23-321); rear yard 30 ft used in multifamily envelope math (attached building on a lot <40 ft wide, ZR 23-342), 20 ft for detached buildings; side yards required for detached buildings (ZR 23-33); lot is below the detached minimums (2500 sf / 25 ft vs 2850 sf / 30 ft) - the ZR 23-11 minimums do not apply to a zoning lot in existence on Dec 5 2024 whose area/width has not since decreased, so the existing lot remains buildable, but it cannot be split into conforming detached lots; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; lot_sf/frontage/parcel_id (BBL) and district verified on ZoLa lot page for Block 4902 Lot 75; listing price $600000 (listings.csv) = $200000 per lawful unit at the ~3-unit headline - not a win on the land-cost-per-unit metric",
+     "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
+     "enablers": "12+ units: no - caps at ~3 because standard FAR 1.00 x 2500 sf lot / DU factor 680, and the qualifying FAR column is unavailable on a 2500 sf lot; winning path: multifamily redevelopment as of right in R4 (small multiple dwelling); market-rate: no affordability mandate applies - conventional product is a ~3-unit building at FAR 1.00, or a two-family detached home; affordable upside: none as-of-right on this lot on the evidence found (no MIH, qualifying-site tests not met) - an affordable deal would need a program subsidy without a density bonus, program family NYC HPD/HDC, NY HCR, federal LIHTC; rezoning: no evidence found - no adjacent higher-density district, comprehensive-plan direction, pending rezoning or board precedent for this street was located in official sources searched; deal type: market-rate",
+     "max_units_estimate": "Path 1 multifamily: footprint = lower of coverage 2000 sf (80% x 2500 for multiple dwellings) and yard envelope 1500 sf (25 ft width x 60 ft depth after 10 ft front yard and 30 ft rear yard) = 1500 sf; floors ~3 (35 ft max height); gross = LOWER of FAR x lot and footprint x floors = LOWER of 2500 sf (1.00 x 2500) and 4500 sf (1500 x 3) = 2500 sf - FAR caps; units = 2500 / DU factor 680 = 3.68 = ~3 units. Path 2 subdivision: 0 additional lots - lot fails the detached minimums for even a split (2500/2850 area and 25/30 width both <1 split, and the existing lot is grandfathered only as a single lot); 1 detached one/two-family home = up to 2 units, below Path 1. Path 3 second home/added unit: a second detached building would require the min lot area to be multiplied by the number of buildings - not met; an ancillary dwelling unit accessory to a one-family home could add 1 unit (2 total with the main home), below Path 1. Headline lawful max without rezoning: ~3 units (standard market-rate multifamily)",
+     "sources": "https://zola.planning.nyc.gov/l/lot/2/4902/75 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zola.planning.nyc.gov https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-422 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": [
+     "Units: BOUNTY up to 5 vs Muse 1"
+    ]
    },
-   "facts_hash": "b6107258cae8",
+   "facts_hash": "f56617597630",
    "memo": {
-    "verdict": "The site allows a 2 to 3 unit standard development or up to 4 to 5 units under UAP, but feasibility at the $600,000 ask requires market verification.",
-    "as_of_right": "Under ZR 23-22 in an R4 zone, standard FAR is 1.0, yielding 2,500 square feet of floor area for 2 to 3 units on the 2,500 square foot lot. With qualifying affordable housing under UAP, FAR is 1.5, yielding 3,750 square feet of floor area for 4 to 5 units.",
-    "approval_path": "As-of-right development path under standard R4 rules or UAP affordable provisions. This reduces entitlement time and risk.",
+    "verdict": "A 3-unit market-rate building can realistically be built as-of-right, but land cost is high at $200,000 per unit at the ask unless an affordability bonus applies.",
+    "as_of_right": "R4 standard FAR 1.00 on a 2,500 sf lot allows 2,500 sf of floor area (ZR 23-21). Applying the dwelling unit factor of 680 (ZR 23-52) allows up to 3 units as-of-right.",
+    "approval_path": "As-of-right. This requires standard Department of Buildings plan review and permits, presenting low time and risk.",
     "legal_issues": [
-     "Affordability covenants required if utilizing the UAP FAR 1.5 bonus.",
-     "Verification of existing 2-family residential structure occupancy and tenant rights.",
-     "Broker confirmation of listing details, lot size, and zoning status."
+     "Conflict on whether Universal Affordability Preference (UAP) density bonuses apply to a 2,500 sf lot under ZR 12-10.",
+     "Subdivision is prohibited because the existing 25-foot width and 2,500 sf area fall below detached minimums under ZR 23-11.",
+     "Occupancy status of the existing 1,512 sf two-family home needs verification."
     ],
-    "test_fit": "The 25 ft by 100 ft lot allows a building envelope of 2,500 standard floor area sf or 3,750 UAP sf. Unit count ranges from 2 to 3 standard units up to 4 to 5 UAP units. Lot size and FAR limit density first.",
-    "value": "At the $600,000 asking price, land cost is $200,000 to $300,000 per unit under the standard scenario and $120,000 to $150,000 per unit under the UAP scenario.",
+    "test_fit": "The footprint is limited to 1,500 sf after applying a 10 ft front yard (ZR 23-321) and a 30 ft rear yard (ZR 23-342). Max height is 35 ft (ZR 23-422). Parking requirement is 0 spaces under ZR 25-222/25-232 because the calculated total is 3 or fewer spaces. FAR caps density first.",
+    "value": "Land cost at the $600,000 ask is $200,000 to $300,000 per unit for 2 to 3 standard units. Under a 4 to 5 unit UAP scenario, land cost drops to $120,000 to $150,000 per unit.",
     "diligence": [
-     "Confirm lot dimensions, zoning, and listing status with the broker.",
-     "Verify occupancy, tenant rights, and lease status of the existing 2-family home.",
-     "Review municipal title records and tax status.",
-     "Inspect the existing 1,512 sq ft 1935 brick structure for renovation viability."
+     "Resolve the conflict on unit counts and UAP eligibility between standard R4 math (max 3 units) and the UAP bonus path (up to 5 units).",
+     "Verify flood zone designation on the FEMA Map Service Center.",
+     "Verify transit zone status to confirm zero required parking spaces.",
+     "Confirm lot details, zoning, and property status with the listing broker.",
+     "Inspect the existing two-family structure to assess renovation costs versus demolition."
     ],
-    "enablers": "Universal Affordability Preference (UAP) qualifying affordable bonus increases allowed FAR from 1.0 to 1.5.",
-    "highest_and_best_use": "Not enough data, as FACTS lack local rents, sales prices, or comparable land sales.",
+    "enablers": "FRESH Zone overlay.",
+    "highest_and_best_use": "Not enough data. FACTS lack new-building rents, sale prices, and land comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:36:29.158301+00:00"
+   "checked_utc": "2026-11-22T03:10:45.926845+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1209,32 +1267,60 @@
     "ask_per_unit": {
      "standard": "$79,900 to $114,143",
      "with UAP affordable bonus": "$61,462 to $79,900"
-    }
+    },
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "1716 Barnes Ave",
+     "town": "Bronx",
+     "parcel_id": "2040440033",
+     "lot_sf": "4750",
+     "frontage_ft": "50",
+     "district": "R5",
+     "overlays": "FRESH Zone - per ZoLa; no MIH or special district shown on ZoLa",
+     "multifamily": "as of right",
+     "far": "1.50 standard (ZR 23-21); 2.00 qualifying residential site column NOT used - the transit-oriented qualifying test requires a lot of at least 5000 sf (ZR 12-10) and this lot is 4750 sf, and no campus, senior-housing or town-center qualifying evidence was found",
+     "density_rule": "Dwelling unit factor 680 for multiple dwelling residences (ZR 23-52): max units = max residential floor area / 680, fractions >=0.75 count as one unit; min lot area/width: 2850 sf / 30 ft for single/two-family detached or zero lot line, 1700 sf / 18 ft for other residences (ZR 23-11)",
+     "max_height": "Standard: max base height 35 ft / max building height 45 ft, with a setback above the base height (ZR 23-422 R5); qualifying-site height column (45/55 ft, ZR 23-424) not used - qualifying status not established",
+     "lot_coverage": "60% interior/through lots for single/two-family residences, 80% corner; 80% interior/through and 100% corner for multiple dwelling residences where permitted (ZR 23-361)",
+     "min_lot_area": "1700 (other residences); 2850 (single/two-family detached)",
+     "min_lot_width": "18 (other residences); 30 (single/two-family detached)",
+     "parking": "ZR 25-222 (Outer Transit Zone): R5 35% per standard unit, waived if <=10 spaces; ZR 25-232 (beyond Greater Transit Zone): 50% per unit, waived if <=5 spaces - calculated total for ~10 units is 4 spaces (Outer) or 5 spaces (beyond), waived under either table, so 0 required either way; transit-zone status of this lot not verified in ZoLa via this review - gap; parking does not cap under either transit-zone table; parking does not cap",
+     "affordable_rule": "No mandatory affordability set-aside applies on the standard market-rate path - ZoLa shows no MIH area for this lot; no as-of-right affordability bonus is available in R5 on this lot because the qualifying residential site tests (ZR 12-10) are not met on the evidence found (4750 sf is below the 5000 sf transit-oriented lot-area test)",
+     "constraints": "Front yard 10 ft (ZR 23-321); rear yard 20 ft used in envelope math (attached/detached building at or below 75 ft on a lot 40 ft or wider, ZR 23-342); side yards required for detached buildings (ZR 23-33); flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; lot_sf/frontage/parcel_id (BBL) and district verified on ZoLa lot page for Block 4044 Lot 33; listing price $799000 (listings.csv) = $79900 per lawful unit at the ~10-unit headline",
+     "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
+     "enablers": "12+ units: no - caps at ~10 because standard FAR 1.50 x 4750 sf lot / DU factor 680, and the qualifying FAR 2.00 column is unavailable because the lot is 4750 sf, below the 5000 sf qualifying-site lot-area test; winning path: multifamily redevelopment as of right in R5; market-rate: no affordability mandate applies - conventional product is a ~10-unit building at FAR 1.50; affordable upside: none as-of-right on this lot on the evidence found (no MIH, qualifying-site tests not met) - note the assemblage lever: if an adjoining lot brought the zoning lot to 5000+ sf in the Greater Transit Zone with wide-street or short-end frontage, the qualifying column (FAR 2.00) could come into reach, but no such assemblage is in evidence; program family for a subsidized deal without a density bonus: NYC HPD/HDC, NY HCR, federal LIHTC; rezoning: no evidence found - no adjacent higher-density district, comprehensive-plan direction, pending rezoning or board precedent for this street was located in official sources searched; deal type: market-rate",
+     "max_units_estimate": "Path 1 multifamily: footprint = lower of coverage 3800 sf (80% x 4750 for multiple dwellings) and yard envelope 3250 sf (50 ft width x 65 ft depth after 10 ft front yard and 20 ft rear yard) = 3250 sf; floors ~4 (45 ft max height); gross = LOWER of FAR x lot and footprint x floors = LOWER of 7125 sf (1.50 x 4750) and 13000 sf (3250 x 4) = 7125 sf - FAR caps; units = 7125 / DU factor 680 = 10.48 = ~10 units. Path 2 subdivision: into other-residence zoning lots: 2 lots by both area (4750/1700 = 2) and width (50/18 = 2), but aggregate FAR is unchanged so the same ~10 units in total - no gain over Path 1; into detached lots: 1 only (4750/2850 area and 50/30 width both = 1) = 1 one/two-family home. Path 3 second home/added unit: an ancillary dwelling unit accessory to a one-family home could add 1 unit (2 total with the main home), below Path 1; added units otherwise come only via Path 1. Headline lawful max without rezoning: ~10 units (standard market-rate multifamily)",
+     "sources": "https://zola.planning.nyc.gov/l/lot/2/4044/33 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zola.planning.nyc.gov https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-422 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": [
+     "Units: BOUNTY up to 13 vs Muse 1"
+    ]
    },
-   "facts_hash": "568ba2ff2db8",
+   "facts_hash": "20efd6858430",
    "memo": {
-    "verdict": "The site allows a 7 to 10 unit standard residential building or up to 13 units with UAP, making it worth pursuing at the $799,000 ask subject to rent and cost checks.",
-    "as_of_right": "Under ZR 23-22 for R5 zoning, the 4,750 sq ft lot allows a standard FAR of 1.5, yielding 7,125 floor area sq ft and 7 to 10 units without discretionary approvals.",
-    "approval_path": "As-of-right development path under standard R5 or UAP rules, which means minimal entitlement risk and fast timeline.",
+    "verdict": "The site can realistically support a 7-to-10-unit market-rate multifamily building as of right, making it worth pursuing at the $799,000 asking price ($79,900 to $114,143 per buildable unit).",
+    "as_of_right": "Under R5 zoning on a 4,750 sf lot, the standard residential FAR is 1.50 (ZR 23-21), yielding 7,125 sf of floor area. Dividing 7,125 sf by the dwelling unit factor of 680 (ZR 23-52) allows a maximum of 10 units, yielding a standard range of 7 to 10 units.",
+    "approval_path": "As-of-right. Project requires standard DOB plan examination without discretionary approvals, minimizing entitlement risk and timeline.",
     "legal_issues": [
-     "Verification of affordability covenants required to unlock the UAP bonus FAR",
-     "Confirmation of vacant status for existing 2-family building and garage",
-     "Verification of lot size and zoning details directly with the broker and NYC DCP"
+     "Conflict over UAP affordability bonus applicability due to the 4,750 sf lot area falling below the 5,000 sf qualifying site threshold (ZR 12-10).",
+     "Verification of transit zone status to confirm entitlement to a 100 percent parking waiver.",
+     "Verification of property condition and listing details with the broker and title search."
     ],
-    "test_fit": "The 50 by 95 foot lot supports up to 7,125 zsf standard or 9,500 zsf with UAP. Likely unit count ranges from 7 to 13 units. R5 bulk rules and parking requirements limit density first.",
-    "value": "Land cost at ask is $79,900 to $114,143 per unit for standard development (7 to 10 units). The UAP bonus lowers land cost to $61,462 to $79,900 per unit (10 to 13 units).",
+    "test_fit": "The yard-constrained envelope provides a maximum 3,250 sf footprint after a 10 ft front yard (ZR 23-321) and a 20 ft rear yard (ZR 23-342). Building height is capped at 45 ft with a 35 ft base height (ZR 23-422). Floor area ratio (1.50 FAR) limits density first, yielding 7,125 gross sf across up to 4 stories for 7 to 10 units. Parking requires 4 to 5 spaces based on zone location, but is waived to zero required spaces.",
+    "value": "At the $799,000 ask price, land cost is $79,900 to $114,143 per unit under standard market-rate development (7 to 10 units). Under a UAP bonus scenario (10 to 13 units), land cost would be $61,462 to $79,900 per unit.",
     "diligence": [
-     "Confirm lot size, zoning, and standard rules with the broker and NYC DOB",
-     "Obtain title search to verify ownership and check for encumbrances on BBL 2040440033",
-     "Verify existing structure vacancy and environmental condition of the 5-car garage",
-     "Gather local rental and sales comps to run detailed financial model"
+     "Resolve conflict between listing sources: BOUNTY up to 13 units with UAP vs independent check capping at 10 units due to 4,750 sf lot area.",
+     "Verify official NYC ZoLa transit zone classification to confirm parking waiver under ZR 25-222 or ZR 25-232.",
+     "Check FEMA MSC flood maps to confirm flood hazard zone status.",
+     "Obtain DOB property profile and title report for Block 4044 Lot 33 to confirm lot dimensions and encumbrances."
     ],
-    "enablers": "Qualifying affordable housing bonus (UAP) under ZR 23-22 increases FAR from 1.5 to 2.0.",
-    "highest_and_best_use": "Not enough data. FACTS lack market rents, condo sale prices, and land comps.",
+    "enablers": "FRESH Zone overlay per ZoLa. A future lot assemblage bringing the zoning lot to 5,000 or more square feet could unlock the 2.00 FAR qualifying site bonus.",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:36:29.322872+00:00"
+   "checked_utc": "2026-11-22T03:11:47.178783+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -1264,33 +1350,58 @@
      "error": "lot not found in MapPLUTO"
     },
     "scenarios_units": {},
-    "ask_per_unit": {}
+    "ask_per_unit": {},
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "1831 Paulding Avenue",
+     "town": "Bronx",
+     "parcel_id": "2041270023",
+     "lot_sf": "2500",
+     "frontage_ft": "25",
+     "district": "R4A",
+     "multifamily": "no",
+     "far": "1.00 standard (ZR 23-21); 1.50 qualifying residential site column NOT used - qualifying tests (ZR 12-10) not met on the evidence found (lot 2500 sf, below the 5000 sf transit-oriented test; no campus, senior-housing or town-center evidence)",
+     "density_rule": "No multiple dwelling density rule applies - R4A permits only single- and two-family detached residences, so the unit cap is the use limit of 2 units in one detached building; min lot area 2375 sf and min lot width 25 ft for single/two-family detached or zero lot line residences in R4A (ZR 23-11)",
+     "max_height": "Pitched-roof envelope for single/two-family detached buildings: perimeter wall max 25 ft, ridge line max 35 ft (ZR 23-421, which lists R4A)",
+     "lot_coverage": "60% interior/through lots, 80% corner lots, for single/two-family residences (ZR 23-361)",
+     "min_lot_area": "2375",
+     "min_lot_width": "25",
+     "parking": "No parking required on this lot under either transit-zone table: for zoning lots existing on Dec 5 2024 with lot width of 25 ft or less, no parking shall be required (ZR 25-222 footnote and ZR 25-232 footnote, R4A rows: Outer Transit Zone 50% per standard unit / beyond Greater Transit Zone 100% per standard unit before that waiver); parking does not cap",
+     "affordable_rule": "No mandatory affordability set-aside applies - ZoLa shows no MIH area for this lot, and no as-of-right affordability bonus is available in R4A on the evidence found",
+     "constraints": "Front yard 10 ft (ZR 23-321, R4A row); rear yard 20 ft for detached buildings at or below 75 ft (ZR 23-342); side yards required on both sides for a detached building (ZR 23-33); lot meets the R4A detached minimums exactly (2500 sf / 25 ft vs 2375 sf / 25 ft) with no surplus for a split; the listing (not an official source) mentions an adjoining 25x100 lot as a double-lot opportunity - whether that lot is included in the $899000 listing price is not verified in any official source, so the headline count is for the single ZoLa lot only and the assemblage math is shown separately in max_units_estimate; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; lot_sf/frontage/parcel_id (BBL) and district verified on ZoLa lot page for Block 4127 Lot 23; listing price $899000 (listings.csv) = $449500 per lawful unit at the ~2-unit headline - a clear pass on the land-cost-per-unit metric",
+     "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
+     "enablers": "12+ units: no - caps at 2 because R4A permits only single- and two-family detached residences (use limit, not FAR, height, coverage or parking); winning path: second home / two-family detached redevelopment as of right (one detached two-family home on the lot as if vacant); market-rate: no affordability mandate applies - conventional product is one two-family detached home; affordable upside: none as-of-right on this lot on the evidence found; program family for a subsidized deal without a density bonus: NYC HPD/HDC, NY HCR, federal LIHTC; rezoning: no evidence found - no adjacent higher-density district, comprehensive-plan direction, pending rezoning or board precedent for this street was located in official sources searched; deal type: market-rate",
+     "max_units_estimate": "Path 1 multifamily/townhouse redevelopment: 0 - multifamily and townhouse (attached) forms are not permitted in R4A, which allows only detached single/two-family residences. Envelope for the permitted form: footprint = lower of coverage 1500 sf (60% x 2500) and yard envelope (25 ft width less required side yards, x 70 ft depth after 10 ft front yard and 20 ft rear yard); gross = LOWER of FAR x lot = 2500 sf (1.00 x 2500) and footprint x ~2-3 floors within the 25 ft perimeter / 35 ft ridge envelope - floor area is not the cap, the 2-unit use limit is. Path 2 subdivision: 1 lot only (2500/2375 area and 25/25 width both = 1) = 1 detached home, up to 2 units. Assemblage scenario (separate, not in headline): if the adjoining 25x100 lot mentioned in the listing were assembled, the combined 5000 sf / 50 ft could split into 2 conforming R4A lots (5000/2375 = 2; 50/25 = 2) = 2 detached homes, up to ~4 units total - still detached-only, still far below 12. Path 3 second home/added unit: a second detached building on the same zoning lot would require the min lot area to be multiplied by the number of buildings - not met; an ancillary dwelling unit accessory to a one-family home could add 1 unit (2 total with the main home), equal to the two-family cap, no gain. Headline lawful max without rezoning: ~2 units (one two-family detached home)",
+     "sources": "https://zola.planning.nyc.gov/l/lot/2/4127/23 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zola.planning.nyc.gov https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-421 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232",
+     "confidence": "medium"
+    },
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "284e51b4e4f7",
+   "facts_hash": "449a06c6192b",
    "memo": {
-    "verdict": "Due to unconfirmed zoning and missing MapPLUTO records, development feasibility cannot be verified, making the site high risk at the $899,000 asking price until parcel and zoning data are confirmed.",
-    "as_of_right": "As-of-right density cannot be calculated because zoning, FAR, and buildable square footage are omitted from FACTS, though the current structure is a two-family home on a 2,500 square foot lot.",
-    "approval_path": "Approval path is unknown until zoning is confirmed. Standard Department of Buildings plan examination and permit approval will be required.",
+    "verdict": "A single two-family detached home is the maximum as-of-right development on this single lot, making the $899,000 ask overpriced unless the adjoining lot is included.",
+    "as_of_right": "R4A zoning permits 1.00 FAR (2,500 sq ft) for single- and two-family detached residences only (ZR 23-21). On a 2,500 sq ft lot (25 ft by 100 ft), development is capped at one two-family detached building (2 units total). Minimum lot area is 2,375 sq ft and minimum lot width is 25 ft (ZR 23-11).",
+    "approval_path": "As-of-right building permit through the Department of Buildings for a two-family detached home, which carries minimal discretionary risk and predictable timing.",
     "legal_issues": [
-     "MapPLUTO search returned a parcel error, requiring title and tax lot verification.",
-     "Ownership and title status of the adjoining 25x100 lot referenced in the listing must be confirmed.",
-     "Vacant delivery condition for the existing two-family dwelling must be verified in the contract."
+     "Listing terms must be verified to confirm whether the $899,000 ask includes the adjoining 25x100 lot.",
+     "MapPLUTO error requires verification of official tax lot status for Block 4127 Lot 23.",
+     "Vacant delivery condition must be confirmed in the purchase contract."
     ],
-    "test_fit": "Building envelope and unit counts cannot be modeled without zoning FAR and height limits. Envelope is restricted by the 25x100 foot lot dimensions unless merged with the adjoining lot.",
-    "value": "At an asking price of $899,000, land cost per buildable unit or square foot cannot be calculated because buildable area and unit scenario data are missing from FACTS.",
+    "test_fit": "The envelope allows a 1,500 sq ft footprint (60% coverage per ZR 23-361) subject to a 10 ft front yard (ZR 23-321), 20 ft rear yard (ZR 23-342), and required side yards on both sides (ZR 23-33). Height is limited to a 25 ft perimeter wall and 35 ft ridge line (ZR 23-421). The strict 2-unit use limit caps density first. No parking is required for a 25 ft lot (ZR 25-222).",
+    "value": "At the $899,000 ask, land cost is $449,500 per unit for a single 2-unit detached building. If the adjoining lot is included to allow a 4-unit total across two lots, land cost drops to $224,750 per unit.",
     "diligence": [
-     "Confirm zoning district classification and FAR with NYC Department of City Planning.",
-     "Verify tax lot and MapPLUTO parcel records with NYC Department of Finance.",
-     "Confirm title and acquisition terms for the adjoining 25x100 lot.",
-     "Verify tenant status to ensure vacant delivery at closing.",
-     "Obtain a site survey to confirm frontage and lot square footage."
+     "Verify with the broker and title whether the adjoining 25x100 lot is included in the $899,000 price.",
+     "Check FEMA flood maps to confirm flood zone status.",
+     "Confirm tax lot boundaries and address the MapPLUTO error.",
+     "Obtain local rent and sale comps to analyze financial feasibility.",
+     "Confirm terms for vacant delivery of the existing building."
     ],
-    "enablers": "Assembly with the adjoining 25x100 lot noted in the listing headline.",
-    "highest_and_best_use": "Not enough data. FACTS lack rents, prices, land comps, and zoning FAR.",
+    "enablers": "Assembling the adjoining 25x100 lot mentioned in the listing enables a two-lot subdivision yielding up to 4 units total across two detached homes.",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:37:30.014086+00:00"
+   "checked_utc": "2026-11-22T03:12:04.221240+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -1320,32 +1431,37 @@
      "error": "lot not found in MapPLUTO"
     },
     "scenarios_units": {},
-    "ask_per_unit": {}
+    "ask_per_unit": {},
+    "independent_check": {
+     "date": "2026-11-21",
+     "address": "2468 St Raymonds Avenue",
+     "town": "Bronx",
+     "parcel_id": "2039790064",
+     "lot_sf": "1960",
+     "frontage_ft": "25",
+     "district": "R5A",
+     "overlays": "FRESH Zone; Lower Density Growth Management Area - both per ZoLa",
+     "multifamily": "no",
+     "far": "1.50 standard (ZR 23-21); 2.00 qualifying residential site column NOT used - qualifying tests (ZR 12-10) not met on the evidence found (lot 1960 sf, below the 5000 sf transit-oriented test; no campus, senior-housing or town-center evidence)",
+     "density_rule": "No multiple dwelling density rule applies - R5A permits only single- and two-family detached residences, so the unit cap is the use limit of 2 units in one detached building; min lot area 2375 sf and min lot width 25 ft for single/two-family detached or zero lot line residences in R5A (ZR 23-11)",
+     "max_height": "Pitched-roof envelope for single/two-family detached buildings: perimeter wall max 25 ft, ridge line max 35 ft (ZR 23-421, which lists R5A)",
+     "lot_coverage": "60% interior/through lots, 80% corner lots, for single/two-family residences (ZR 23-361)",
+     "min_lot_area": "2375",
+     "min_lot_width": "25",
+     "parking": "No parking required on this lot under either transit-zone table: for zoning lots existing on Dec 5 2024 with lot width of 25 ft or less, no parking shall be required (ZR 25-222 footnote and ZR 25-232 footnote, R5A rows: Outer Transit Zone 50% per standard unit / beyond Greater Transit Zone 100% per standard unit before that waiver); parking does not cap",
+     "affordable_rule": "No mandatory affordability set-aside applies - ZoLa shows no MIH area for this lot, and no as-of-right affordability bonus is available in R5A on the evidence found",
+     "constraints": "Front yard 10 ft (ZR 23-321, R5A row); rear yard 20 ft for detached buildings at or below 75 ft (ZR 23-342); side yards required on both sides for a detached building (ZR 23-33); lot area 1960 sf is BELOW the R5A detached minimum of 2375 sf (width 25 ft meets the 25 ft minimum) - the ZR 23-11 minimums do not apply to a zoning lot in existence on Dec 5 2024 whose area/width has not since decreased, so the existing vacant lot remains buildable for one home, but no conforming split is possible; Lower Density Growth Management Area provisions may add requirements not worked in this review - gap; ZoLa identification caveat: ZoLa does not print the house number 2468 on this lot's profile - Block 3979 Lot 64 was identified from ZoLa's map sequence (Lot 63 = 2466, Lot 66 = 2472, no Lot 65 exists), so the BBL rests on that sequence, not on a printed address; flood zone not retrieved from FEMA NFHL in this review - gap, verify on FEMA MSC before closing; listing price $99000 (listings.csv) = $49500 per lawful unit at the ~2-unit headline - cheap per unit but only 2 units, so not a win on the pipeline's 12+ unit target",
+     "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
+     "enablers": "12+ units: no - caps at 2 because R5A permits only single- and two-family detached residences (use limit, not FAR, height, coverage or parking); winning path: second home / two-family detached build as of right on the vacant lot (evaluated as if vacant - it is vacant land per ZoLa); market-rate: no affordability mandate applies - conventional product is one two-family detached home; affordable upside: none as-of-right on this lot on the evidence found; program family for a subsidized deal without a density bonus: NYC HPD/HDC, NY HCR, federal LIHTC; rezoning unlikely - the lot sits in a Lower Density Growth Management Area, whose stated direction is to manage and limit low-density growth, and no upzoning evidence for this street was found in official sources searched; deal type: market-rate",
+     "max_units_estimate": "Path 1 multifamily/townhouse redevelopment: 0 - multifamily and attached townhouse forms are not permitted in R5A, which allows only detached single/two-family residences. Envelope for the permitted form: footprint = lower of coverage 1176 sf (60% x 1960) and yard envelope (25 ft width less required side yards, x ~51 ft depth after 10 ft front yard and 20 ft rear yard on the 81.14 ft deep lot); gross = LOWER of FAR x lot = 2940 sf (1.50 x 1960) and footprint x ~2-3 floors within the 25 ft perimeter / 35 ft ridge envelope - floor area is not the cap, the 2-unit use limit is. Path 2 subdivision: 0 additional lots - at 1960 sf the lot is below the 2375 sf minimum for even one new conforming detached lot; the existing lot survives only as a single grandfathered lot = 1 detached home, up to 2 units. Path 3 second home/added unit: a second detached building would require the min lot area to be multiplied by the number of buildings - not met; an ancillary dwelling unit accessory to a one-family home could add 1 unit (2 total with the main home), equal to the two-family cap, no gain. Headline lawful max without rezoning: ~2 units (one two-family detached home)",
+     "sources": "https://zola.planning.nyc.gov/l/lot/2/3979/64 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zola.planning.nyc.gov https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-421 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232",
+     "confidence": "low"
+    },
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "4362bc30a1e2",
-   "memo": {
-    "verdict": "The site is a low-cost residential opportunity at a $99,000 ask, worth pursuing subject to verifying the tax lot status and zoning data.",
-    "as_of_right": "The listing states R5A zoning on a 1,960 square foot lot. Exact buildable area and unit math cannot be calculated because FAR is omitted from FACTS.",
-    "approval_path": "As-of-right filing through the NYC Department of Buildings, which carries standard permitting timeline and low discretionary risk.",
-    "legal_issues": [
-     "Parcel error in MapPLUTO means tax lot status and title boundaries must be confirmed.",
-     "Zoning district R5A relies on listing broker details and requires official verification.",
-     "Small lot size of 25 by 81 feet may limit building envelope and yard compliance."
-    ],
-    "test_fit": "The lot is 25 feet wide by 81 feet deep totaling 1,960 square feet. Narrow lot width limits envelope and design first. Unit count range and parking capacity cannot be determined without FAR and code math from FACTS.",
-    "value": "The asking price is $99,000 total. Land cost per buildable unit or square foot cannot be calculated because buildable square footage and unit counts are missing from FACTS.",
-    "diligence": [
-     "Confirm tax lot designation and resolve MapPLUTO lot search error with the broker and NYC Department of Finance.",
-     "Verify official NYC zoning designation and applicable FAR for the address.",
-     "Obtain a certified boundary survey to confirm lot area and dimensions.",
-     "Research local rent, sales, and land comps to establish financial feasibility."
-    ],
-    "enablers": "",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T02:37:30.246155+00:00"
+   "facts_hash": "bb6d560c94b3",
+   "memo": null,
+   "checked_utc": "2026-11-22T03:15:19.807025+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -1400,7 +1516,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-22T02:40:03.415371+00:00"
+   "checked_utc": "2026-11-22T03:15:19.898618+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -1451,7 +1567,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:40:03.415731+00:00"
+   "checked_utc": "2026-11-22T03:15:19.898805+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -1502,7 +1618,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-22T02:42:02.212730+00:00"
+   "checked_utc": "2026-11-22T03:15:19.898976+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -1553,7 +1669,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-22T02:44:08.855916+00:00"
+   "checked_utc": "2026-11-22T03:15:19.899182+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -1605,7 +1721,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:45:08.305984+00:00"
+   "checked_utc": "2026-11-22T03:15:19.899347+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -1655,7 +1771,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:45:08.306354+00:00"
+   "checked_utc": "2026-11-22T03:15:19.899511+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -1721,7 +1837,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:45:17.884385+00:00"
+   "checked_utc": "2026-11-22T03:15:24.693161+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -1786,7 +1902,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:45:26.902597+00:00"
+   "checked_utc": "2026-11-22T03:15:28.986305+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -1830,7 +1946,7 @@
    },
    "facts_hash": "49bb5f37adbf",
    "memo": null,
-   "checked_utc": "2026-11-22T02:47:10.037436+00:00"
+   "checked_utc": "2026-11-22T03:18:49.628616+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -1852,14 +1968,49 @@
      "1 lot only: ~85 ft frontage on Cresthill Rd; two S-75 lots need 150 ft."
     ],
     "parcel": {
-     "error": "<urlopen error timed out>"
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "4.-4652-56",
+     "zoning": "S-75",
+     "lot_sf": 22018,
+     "street_frontage_ft": 83,
+     "property_class": "210",
+     "owner": "Rego, Michael",
+     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
+     "lots_by_area": 2,
+     "lots_by_frontage": 1,
+     "lots_allowed": 1
     },
-    "scenarios_units": {},
-    "ask_per_unit": {}
+    "scenarios_units": {
+     "lots allowed": "1"
+    },
+    "ask_per_unit": {
+     "lots allowed": "$745,000"
+    }
    },
-   "facts_hash": "94a9553ac9f7",
-   "memo": null,
-   "checked_utc": "2026-11-22T02:50:09.860670+00:00"
+   "facts_hash": "e4982ddc5f90",
+   "memo": {
+    "verdict": "The site realistically supports 1 single-family lot as-of-right, making the site expensive at the $745,000 ask without variance relief for a second lot.",
+    "as_of_right": "Under Yonkers Code Ch. 43 Table 43-3 S-75 zoning, lots require 7,500 sf of area and 75 ft of street frontage. The 22,018 sf parcel has enough area for 2 lots (22,018 sf divided by 7,500 sf equals 2.93), but its 83 ft of frontage limits development to 1 lot as-of-right because 2 lots require 150 ft of frontage.",
+    "approval_path": "As-of-right building permit for 1 lot involves low risk and minimal timeline, whereas a 2-lot subdivision requires a frontage variance involving higher discretionary risk and longer review times.",
+    "legal_issues": [
+     "Frontage deficiency: the parcel has 83 ft of frontage on Cresthill Rd, but two S-75 lots require 150 ft.",
+     "Variance requirement: a 2-lot subdivision requires discretionary approval from the zoning board for reduced frontage.",
+     "Title and encumbrance review for printkey parcel 4.-4652-56."
+    ],
+    "test_fit": "Street frontage limits density first. The 22,018 sf parcel supports 2 lots by area, but the 83 ft frontage limits test fit to 1 single-family lot as-of-right.",
+    "value": "Land cost is $745,000 per buildable lot at the ask for the 1-lot as-of-right scenario.",
+    "diligence": [
+     "Boundary survey to confirm 83 ft of frontage along Cresthill Rd.",
+     "Title search to check for easements, covenants, or deed restrictions.",
+     "Zoning verification letter from the City of Yonkers for parcel 4.-4652-56.",
+     "Variance feasibility review with local land-use counsel."
+    ],
+    "enablers": "Variance for street frontage width.",
+    "highest_and_best_use": "Not enough data. FACTS lack rents, sale prices, and land comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-22T03:20:08.948784+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -1881,36 +2032,28 @@
      "2 lots: ~168 ft frontage, 17,096 sf. ~50 ft grade change."
     ],
     "parcel": {
-     "error": "<urlopen error timed out>"
+     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
+     "printkey": "4.-4651-86",
+     "zoning": "S-75",
+     "lot_sf": 17096,
+     "street_frontage_ft": 167,
+     "property_class": "210",
+     "owner": "Rodrigues, Jose",
+     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
+     "lots_by_area": 2,
+     "lots_by_frontage": 2,
+     "lots_allowed": 2
     },
-    "scenarios_units": {},
-    "ask_per_unit": {}
+    "scenarios_units": {
+     "lots allowed": "2"
+    },
+    "ask_per_unit": {
+     "lots allowed": "$595,000"
+    }
    },
-   "facts_hash": "2823c249a240",
-   "memo": {
-    "verdict": "The site consists of two lots in the S-75 zone asking $1,190,000, but feasibility cannot be confirmed without zoning code rules and market comps.",
-    "as_of_right": "The property spans 17,096 square feet across two lots with approximately 168 feet of frontage in the S-75 zone. Specific as-of-right density math and bulk rules are not provided in FACTS.",
-    "approval_path": "Development likely requires site plan approval and potential variance or steep slope relief due to the 50-foot grade change, adding time and entitlement risk.",
-    "legal_issues": [
-     "Development constraints across two separate lots totaling 17,096 square feet with 168 feet of frontage.",
-     "Significant steep slope and engineering challenges caused by a 50-foot grade change.",
-     "Unconfirmed S-75 bulk, setback, and density limitations."
-    ],
-    "test_fit": "Density is limited first by the severe 50-foot grade change across the 17,096 square foot site. Building envelope, parking, and unit counts cannot be determined without S-75 bulk standards.",
-    "value": "At the $1,190,000 asking price, land cost per buildable unit cannot be calculated because unit scenarios are not provided in FACTS.",
-    "diligence": [
-     "Obtain official Yonkers S-75 zoning ordinance to confirm bulk and density limits.",
-     "Commission a boundary and topographic survey to map the 50-foot grade change.",
-     "Perform a title search to review lot merger history and frontage encumbrances.",
-     "Verify parcel data and tax map details for printkey 4.-4651-86.",
-     "Gather local sales comps and rent data to evaluate project economics."
-    ],
-    "enablers": "None provided in FACTS.",
-    "highest_and_best_use": "Not enough data.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-22T02:51:39.028587+00:00"
+   "facts_hash": "f567057d407b",
+   "memo": null,
+   "checked_utc": "2026-11-22T03:21:47.652530+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -1979,7 +2122,7 @@
     "letter_angle": "Contact A&C International Management Group, LLC with an unpriced inquiry to purchase the 7,711 square foot site at 21 Street for full-density residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:51:39.184008+00:00"
+   "checked_utc": "2026-11-22T03:21:47.765891+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -2049,7 +2192,7 @@
     "letter_angle": "Approach Public Storage directly to inquire about acquiring their off-market corner parcel on Gerard Avenue for redevelopment.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:51:39.324239+00:00"
+   "checked_utc": "2026-11-22T03:21:47.925310+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -2121,7 +2264,7 @@
     "letter_angle": "Contact Mott Haven Holdings, LLC directly with an inquiry to acquire the 11,500 square foot site for mid-density development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:51:39.390026+00:00"
+   "checked_utc": "2026-11-22T03:21:48.086407+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -2192,7 +2335,7 @@
     "letter_angle": "Contact BAKTIDY ASSOCIATES directly to express interest in purchasing the off-market property.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:51:39.496477+00:00"
+   "checked_utc": "2026-11-22T03:21:48.249812+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -2261,7 +2404,7 @@
     "letter_angle": "Directly express interest to SEVENTY WEST REALTY LLC in acquiring the off-market West Street parcel for a standard residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:51:39.614611+00:00"
+   "checked_utc": "2026-11-22T03:21:48.411863+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -2332,7 +2475,7 @@
     "letter_angle": "Approach CLAY PROPERTIES LLC to explore an off-market acquisition for an as-of-right residential build.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-22T02:51:39.720238+00:00"
+   "checked_utc": "2026-11-22T03:21:48.594956+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
