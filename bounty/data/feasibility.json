@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-23T19:32:54.744955+00:00",
+ "generated_utc": "2026-11-23T21:05:31.518092+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -39,6 +39,32 @@
     "ask_per_unit": {
      "approved": "$31,667"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "pch-15-n-main",
+     "address": "15 N Main St",
+     "town": "Port Chester",
+     "state": "NY",
+     "asking_price": "",
+     "units": "15",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "10% AFFH set-aside mandatory (Sec 345-405.U); HCR/Westchester funds + IDA PILOT route - subsidy terms unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Port Chester blended rent - proxy from market.csv New Rochelle The Alary discounted; labeled proxy estimate",
+     "hard_cost_psf": "450",
+     "total_dev_cost": "7543125",
+     "noi_conv": "320100",
+     "yield_on_cost_pct": "4.24",
+     "supportable_loan_conv": "3427264",
+     "max_land_value": "-2618510",
+     "max_land_per_unit": "-174567",
+     "notes": "Better track: conventional. NOI conv $320,100 (15u at $2600/mo + $18,000/yr net commercial); opex $9500/u/yr incl taxes ~$3500/u (est). Max land conv $-2,618,510; Approved 15-unit scheme (6 stories incl 691 sf retail; NOI includes ~$18000/yr net retail - labeled estimate); flood Zone AE; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "15 N Main St",
@@ -64,36 +90,11 @@
      "sources": "https://ecode360.com/45360926 https://www.portchesterny.gov/AgendaCenter/ViewFile/Item/149?fileID=605 https://www.portchesterny.gov/AgendaCenter/ViewFile/ArchivedAgenda/_04212025-1849 https://portchesterny.gov/DocumentCenter/View/1573/Port-Chester-2023-DRI-Draft?bidId= https://po0100.zoninghub.com/zoningmap.aspx?district=CD-5 https://services6.arcgis.com/EbVsqZ18sv1kVJ3k/ArcGIS/rest/services/Westchester_County_Parcels/FeatureServer",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 15 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "a9914b27b05c",
-   "memo": {
-    "verdict": "A 15-unit, 6-story mixed-use development is approved through April 2027 and is worth pursuing at the $475,000 ask.",
-    "as_of_right": "In the CD-5 district, multifamily and mixed-use buildings are permitted as of right up to 6 stories with 100% max impervious coverage and no FAR or unit density caps. On the 2,235 sq ft lot with 29 ft frontage, a 6-story footprint yields 13,410 gross sq ft. Deducting ground-floor commercial space leaves 11,175 gross sq ft over 5 residential floors, allowing about 15 to 16 units as of right.",
-    "approval_path": "Existing approval. The Planning Commission approved the 6-story mixed-use site plan on April 25, 2022, and Local Law I-14 of 2025 extended the approval to April 25, 2027. This path carries low entitlement risk and short time to permits.",
-    "legal_issues": [
-     "Written confirmation of the site plan approval extension through April 25, 2027.",
-     "Unstated total costs for parking in-lieu fees and GEIS fair share mitigation payments.",
-     "Compliance with the mandatory 10% AFFH affordable housing requirement at 60% AMI.",
-     "Floodplain compliance and flood insurance requirements for Flood Zone AE."
-    ],
-    "test_fit": "The small lot size (2,235 sq ft) and 6-story height cap limit density first. Zero setbacks apply, keeping a 100% footprint. The envelope yields 15 to 16 units averaging 700 gross sq ft across 5 residential floors above ground-floor commercial space. No on-site parking is provided, relying on small-lot parking fee reductions and buy-outs.",
-    "value": "At the $475,000 ask price, the land cost is $31,667 per buildable unit based on the 15 approved units.",
-    "diligence": [
-     "Resolve conflicts in lot size (2,151 sq ft listing vs 2,235 sq ft assessor record) and unit count (15 vs 16 units across village records).",
-     "Obtain official written verification of the site plan extension to April 25, 2027 from the Village of Port Chester.",
-     "Calculate exact in-lieu fee amounts for parking buy-out ($30,000 per space) and GEIS fair share mitigation.",
-     "Review FEMA Zone AE flood hazard compliance requirements and insurance costs.",
-     "Confirm final AFFH covenant terms for the mandatory affordable units."
-    ],
-    "enablers": "As-of-right CD-5 form-based zoning permitting 6-story mixed-use development and a small-lot parking buy-out provision of up to 100% at $30,000 per space.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:12:40.920437+00:00"
+   "facts_hash": "c36ea9f762da",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:35:41.713125+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -132,6 +133,32 @@
     "ask_per_unit": {
      "approved": "$20,000"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "bpt-439-e-main",
+     "address": "439 E Main St",
+     "town": "Bridgeport",
+     "state": "CT",
+     "asking_price": "",
+     "units": "70",
+     "zoning_confidence": "low",
+     "conv_verdict": "FAILS",
+     "aff_programs": "CHFA 9%/4% LIHTC + CT DOH possible; no mandate - subsidy terms unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bridgeport blended rent from Apartments.com Nov 2026 (1BR 1743/2BR 2005) plus new-build premium",
+     "hard_cost_psf": "375",
+     "total_dev_cost": "26484375",
+     "noi_conv": "1052100",
+     "yield_on_cost_pct": "3.97",
+     "supportable_loan_conv": "11264680",
+     "max_land_value": "-10298221",
+     "max_land_per_unit": "-147117",
+     "notes": "Better track: conventional. NOI conv $1,052,100 (70u at $1950/mo); opex $7200/u/yr incl taxes ~$2200/u (est). Max land conv $-10,298,221; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "439 E Main St",
@@ -158,36 +185,11 @@
      "sources": "https://de84u3xi40u1.cloudfront.net/code.zonebridgeport.com/s3fs-private/pdf/replaced_BPT%20Zoning%202026%20amendments%202024.01-compressed.pdf https://www.BridgeportCT.gov/sites/default/files/2025-03/PZC_Applications_20250331.pdf https://cga.ct.gov/2022/sup/chap_126a.htm https://www.chfa.org/assets/1/16/2022_LIHTC_Awards_Release_final.pdf?11789 https://portal.ct.gov/CEQ/DECD/Scoping-Notice/Steelpointe-Harbor---Mixed-use-Development-Project https://gis.vgsi.com/bridgeportct/Parcel.aspx?pid=5338 https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/ArcGIS/rest/services/Connecticut_State_Parcel_Layer_2023/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://services6.arcgis.com/OW4xtrE9QlSWSIuq/arcgis/rest/services/City_of_Bridgeport_Parcels_2025/FeatureServer/0",
      "confidence": "low"
     },
-    "conflicts_with_independent_check": [
-     "District: BOUNTY per Bridgeport zoning map (listing cites IHI) vs Muse RX2 Residential-Office Centers"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "6cb92496917c",
-   "memo": {
-    "verdict": "A five-story building with 74 apartments and 900 square feet of commercial space is approved on site, making the project worth pursuing at the $1,480,000 ask price ($20,000 per approved unit) subject to verifying the decision letter.",
-    "as_of_right": "Zoning district RX2 allows General Building multifamily development as of right with no FAR cap, no density cap, and no off-street vehicle parking minimum (Sec 8.20.1). Envelope is limited by 85% max site coverage (11,108 sf on a 13,068 sf lot), 5.5 max stories (Sec 3.50.6), and setbacks (0-25 ft front build-to, 3 ft min side, 20 ft min rear), resulting in a ~10,275 sf footprint and total building area of ~56,500 gross sf (~70 units at 800 sf per unit).",
-    "approval_path": "Existing approval / Coastal site plan. The Bridgeport Planning & Zoning Commission approved Case 25-10 on April 28, 2025 by a 5-3 vote for 74 apartments and 900 sf commercial space. Coastal site plan review applies due to the Pequonnock River coastal boundary. An existing approval reduces entitlement risk and time, but approval conditions must be confirmed.",
-    "legal_issues": [
-     "Zoning district conflict: listing cites IHI while official city assessor records and current code specify RX2.",
-     "The official Bridgeport PZC decision letter for Case 25-10 was not located in public records.",
-     "Bridgeport is exempt from CT 8-30g appeals, making this standard market-rate development without local inclusionary mandates.",
-     "Parking counts and garage layout under the approved plan are not public in the record."
-    ],
-    "test_fit": "Density is limited first by height (5.5 stories max) and setback-reduced footprint (~10,275 sf based on 85% max coverage and rear/side setbacks). This yields an estimated ~70 units as-of-right versus 74 units in the approved plan. Code requires zero vehicle parking minimums (Sec 8.20.1) and bicycle parking at 1 space per 2 units for 13+ units (Sec 8.30).",
-    "value": "At the $1,480,000 asking price, land cost is $20,000 per buildable unit under the approved 74-unit scenario. Based on as-of-right capacity (~70 units), land cost is approximately $21,143 per unit. The site previously sold for $645,000 in 2021.",
-    "diligence": [
-     "Resolve district zoning conflict: listing cites IHI while official assessor records and 2021 code specify RX2.",
-     "Resolve lot size and dimension conflict: assessor card and site plans state 13,068 sf (110 ft frontage x 118.8 ft depth) while City GIS polygon measures 16,651 sf.",
-     "Obtain official Bridgeport PZC decision letter for Case 25-10 to confirm approval conditions and expiration dates.",
-     "Commission a certified boundary and topographic survey to verify exact lot lines and dimensions.",
-     "Review complete approved architectural plans to confirm parking count, commercial layout, and unit mix."
-    ],
-    "enablers": "As-of-right General Building standard in RX2 with no FAR limit, no units-per-acre cap, and no off-street parking minimums (Sec 8.20.1); location in a federal Opportunity Zone.",
-    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack market rents, condo sale prices, and comparable land sales.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:12:40.920822+00:00"
+   "facts_hash": "7fcf7dbf3257",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:37:12.222875+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -226,6 +228,32 @@
     "ask_per_unit": {
      "approved": "$25,000"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "str-225-lordship",
+     "address": "225 Lordship Blvd",
+     "town": "Stratford",
+     "state": "CT",
+     "asking_price": "",
+     "units": "100",
+     "zoning_confidence": "low",
+     "conv_verdict": "FAILS",
+     "aff_programs": "Approved 8-30g program: 30% set-aside (15u at 60% AMI / 15u at 80%); CHFA/DOH terms unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Stratford blended rent - proxy from Apartments.com Bridgeport Nov 2026 plus suburban premium; labeled proxy estimate",
+     "hard_cost_psf": "375",
+     "total_dev_cost": "39843750",
+     "noi_conv": "1530000",
+     "yield_on_cost_pct": "3.84",
+     "supportable_loan_conv": "16381485",
+     "max_land_value": "-16305288",
+     "max_land_per_unit": "-163053",
+     "notes": "Better track: conventional. NOI conv $1,530,000 (100u at $2000/mo); opex $7500/u/yr incl taxes ~$2400/u (est). Max land conv $-16,305,288; Conventional screen at market rents overstates: approved LBHZ program carries a mandatory 30% set-aside (15u at 60% AMI / 15u at 80%); GSF derived from approved net unit areas plus circulation; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "225 Lordship Blvd",
@@ -250,31 +278,36 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "fb7ea127b86f",
+   "facts_hash": "242a981ae903",
    "memo": {
-    "verdict": "The site has an approved 100-unit CGS 8-30g development at $25,000 per buildable unit, which is worth pursuing subject to verifying unpublished town hall zoning records.",
-    "as_of_right": "No explicit FAR, setback, height, or coverage limits for LBHZ are published online per Sec. 3.3.4. Former CA zoning allowed 1 unit per 3,500 sf, which yields about 59 units on the official 206,316 sf lot.",
-    "approval_path": "Existing approval / 8-30g path. Rezoning to LBHZ and 8-30g approvals were obtained. Time and risk depend on confirming approval expiration dates and town sign-offs.",
+    "verdict": "A 100-unit mixed-use 8-30g project is approved per broker, but it is not worth pursuing at the $2,500,000 ask because the analyst pro forma shows a low 3.84% yield on cost and negative land value.",
+    "as_of_right": "Former CA zoning allows 1 unit per 3,500 sf of lot area, yielding 59 units on the 206,316 sf lot. Published zoning code states no FAR, coverage, or height rules for LBHZ because Section 3.3.4 incorporates site-specific text kept only at Town Hall.",
+    "approval_path": "Existing approval under a site-specific LBHZ 8-30g overlay. The rezoning and map change were approved, but approval dates and expiration terms are not public, creating timing risk.",
     "legal_issues": [
-     "A 40-year deed restriction requires 30% of units (30 of 100) to be affordable under CGS 8-30g (15 at 60% AMI, 15 at 80% AMI).",
-     "Approval dates and current status are not public and must be verified with Town Hall.",
-     "The property is in FEMA Flood Zone AE, which requires flood mitigation and prohibits subdivision under town rules."
+     "Approval date and expiration timeline are not public records.",
+     "Mandatory CGS 8-30g affordability covenant requires 30% of units (30 total: 15 at 60% AMI and 15 at 80% AMI) deed-restricted for 40 years.",
+     "Location in FEMA Flood Zone AE triggers mandatory flood mitigation and bars lot subdivision under town rules.",
+     "LBHZ text rules are held only at Town Hall and are not published online."
     ],
-    "test_fit": "The approved plan fits 100 units (34 studio, 32 1-BR, 34 2-BR) across 4 residential stories over ground-floor parking. The plan provides 120 new parking spaces (1.2 per unit) and 254 total spaces site-wide. Implied net FAR is 0.35 to 0.38 with a floor plate of 17,893 to 19,763 sf (~9% lot coverage on 206,316 sf). Density is limited by the site-specific 8-30g approval rather than published code controls.",
-    "value": "Land cost is $25,000 per buildable unit based on the $2,500,000 ask and the 100 approved units. No other unit pricing scenarios or comps exist in FACTS.",
+    "test_fit": "The approved concept features 4 stories of residential over ground-floor parking, totaling 100 units (34 studio, 32 1-BR, 34 2-BR) across 71,570 to 79,050 net sf. Floor plates run ~17,893 to 19,763 sf (~9% coverage on 206,316 sf lot) with an implied net FAR of 0.35 to 0.38. The site-specific 8-30g approval limits density first. Parking includes 120 spaces for residential use and 254 spaces site-wide.",
+    "value": "At the $2,500,000 ask, land cost is $25,000 per unit for the 100-unit approved plan. The underwriting analyst estimates maximum supportable land value is negative (-$16,305,288) under conventional underwriting.",
     "diligence": [
-     "Resolve lot size conflict between listing data (60,113 sf) and official deed/town records (206,316 sf).",
-     "Obtain site-specific LBHZ zoning text and bulk controls held only at the Stratford Planning and Zoning Office.",
-     "Verify 8-30g approval validity, approval date, and expiration timeline.",
-     "Review the recorded CGS 8-30g Affordability Plan dated 2021-11-01.",
-     "Confirm FEMA Zone AE flood hazard compliance and site drainage requirements."
+     "Resolve lot size conflict between the unconfirmed 60,113 sf figure and the 206,316 sf deed/ARB record.",
+     "Obtain unpublished LBHZ text regulations from the Stratford Planning and Zoning Office to confirm dimensional limits.",
+     "Verify exact approval date, expiration date, and approval conditions from official Zoning Commission records.",
+     "Review the 2021-11-01 Affordability Plan and draft deed restrictions for CGS 8-30g compliance.",
+     "Confirm flood mitigation requirements for Zone AE and Coastal Management Area compliance."
     ],
-    "enablers": "CGS 8-30g set-aside development path, site-specific LBHZ text amendment, CA-to-LBHZ map change, and potential CT CHFA/DOH affordable housing financing.",
-    "highest_and_best_use": "Not enough data. FACTS lack rents, sale prices, and land comps needed to calculate financial returns for rentals, condos, or townhouses.",
+    "enablers": [
+     "Adopted site-specific Lordship Boulevard Housing Zone (LBHZ) overlay under CGS 8-30g",
+     "Coastal Management Area overlay",
+     "CT DOH / CHFA affordable housing programs (LIHTC 9%/4%, HTCC)"
+    ],
+    "highest_and_best_use": "Not enough data. FACTS lack local market rents, sale prices, and land comps, relying only on proxy Bridgeport rent estimates.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:12:40.921136+00:00"
+   "checked_utc": "2026-11-23T19:38:51.444683+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -315,6 +348,32 @@
     "ask_per_unit": {
      "approved": "$29,412"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "str-382-ferry",
+     "address": "382 Ferry Blvd",
+     "town": "Stratford",
+     "state": "CT",
+     "asking_price": "",
+     "units": "119",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "No mandate (TOD); 8-30g barred by approval condition 8; DOH/CHFA voluntary - unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Stratford blended rent - proxy from Apartments.com Bridgeport Nov 2026 plus suburban premium; labeled proxy estimate",
+     "hard_cost_psf": "375",
+     "total_dev_cost": "61359375",
+     "noi_conv": "1820700",
+     "yield_on_cost_pct": "2.97",
+     "supportable_loan_conv": "19493967",
+     "max_land_value": "-33348606",
+     "max_land_per_unit": "-280240",
+     "notes": "Better track: conventional. NOI conv $1,820,700 (119u at $2000/mo); opex $7500/u/yr incl taxes ~$2400/u (est). Max land conv $-33,348,606; GSF is program GSF (119 approved units x ~1100 sf) not the 179118 sf coverage envelope; approved TOD program; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "382 Ferry Blvd",
@@ -341,14 +400,34 @@
      "sources": "https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/3632/Stratford/39c2b0ad-426e-43a0-9f65-67eeeea5f497/Final_Adopted_Zoning_Regulations_2025.pdf?disposition=inline https://core-docs.s3.us-east-1.amazonaws.com/documents/asset/uploaded_file/3632/Stratford/4051613/TOD_from_Zoning_Regs.pdf https://Cga.Ct.gov/2026/sup/chap_126a.htm https://www.chfa.org/developers/tax-credit-program/lihtc/ https://portal.ct.gov/doh/knowledge-base/articles/all-programs/developer-affordable-housing-programs https://gis.vgsi.com/stratfordct/ https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/ArcGIS/rest/services/Connecticut_State_Parcel_Layer_2023/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://services.arcgis.com/IzCLn1q8U511eQsa/arcgis/rest/services/Stratford_Zoning_Urban/FeatureServer",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "District: BOUNTY Transit Oriented Development approval vs Muse RS-4/CA",
-     "Units: BOUNTY up to 119 vs Muse 111949"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "af2c8ab3f2af",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:14:11.517590+00:00"
+   "facts_hash": "434300b8ac9d",
+   "memo": {
+    "verdict": "The site has an approved 119-unit TOD plan, but at the $3,500,000 asking price, a second analyst's pro forma projects a 2.97% yield on cost, making the project unviable without significant price reduction.",
+    "as_of_right": "Multifamily development requires a special permit under the TOD overlay. Single-family subdivision is capped at 4 lots based on 242.18 ft of frontage divided by the 60 ft minimum lot width. Density math allows 50 bedrooms per 40,000 sf of lot area, yielding a theoretical max of ~140 bedrooms on the 111,949 sf parcel.",
+    "approval_path": "Existing 2018 Special Case approval under the TOD overlay for 119 units. Using this path requires securing building permits and verifying approval validity, which minimizes entitlement risk but introduces timing risk if completion deadlines have lapsed.",
+    "legal_issues": [
+     "Expiration and validity status of the 2018 Special Case zoning approval.",
+     "Approval condition 8 barring future 8-30g affordable housing filings for the property.",
+     "Required Coastal Area Management (CAM) review near the Housatonic River.",
+     "Prohibition of building construction within the RS-4 portion of the site except for parking."
+    ],
+    "test_fit": "Max footprint coverage is 40% (44,780 sf) with a standard height limit of 4 stories or 45 ft, though Building A is approved for 5 stories. Approved envelope contains 119 units (115 1BR, 4 studio) and 1,254 sf retail. Parking is required at 1.0 space per unit. Density is constrained first by approval terms and the RS-4 no-build zone.",
+    "value": "Land cost at the ask is $29,412 per approved unit across 119 units. A second analyst's pro forma estimates a total development cost of $61,359,375 and a maximum supportable land value of -$33,348,606.",
+    "diligence": [
+     "Obtain written confirmation of 2018 Special Case approval validity and expiration status.",
+     "Check building permit status with the town building department.",
+     "Review court settlement documentation and condition 8 constraints.",
+     "Confirm Coastal Area Management (CAM) review compliance.",
+     "Verify utility connections and capacity for the approved 119-unit program."
+    ],
+    "enablers": "TOD Overlay District permits multifamily via Special Case approval, reduced parking at 1.0 space per unit, and building height up to 60 ft.",
+    "highest_and_best_use": "Not enough data due to a lack of market rents, sale prices, and land comps in the FACTS.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T19:39:28.029512+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -388,6 +467,32 @@
     "ask_per_unit": {
      "approved": "$60,000"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "ffd-467-tunxis",
+     "address": "467 Tunxis Hill Rd & 80 Soundview Ave",
+     "town": "Fairfield",
+     "state": "CT",
+     "asking_price": "",
+     "units": "12",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "Sec 30.7.I 10% BMR at 80% AMI; Sec 6.3Z affordable share raises residential to 16u; 8-30g application on file - subsidy terms unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Fairfield blended rent from Zumper Bridgeport-Stamford Nov 2026 (Fairfield Historic District avg 2950); labeled estimate",
+     "hard_cost_psf": "375",
+     "total_dev_cost": "11638594",
+     "noi_conv": "467360",
+     "yield_on_cost_pct": "4.02",
+     "supportable_loan_conv": "5003955",
+     "max_land_value": "-4448440",
+     "max_land_per_unit": "-370703",
+     "notes": "Better track: conventional. NOI conv $467,360 (12u at $2700/mo + $200,000/yr net commercial); opex $8500/u/yr incl taxes ~$3000/u (est). Max land conv $-4,448,440; Mixed-use: NOI includes ~$200000/yr net commercial income (labeled estimate) on the non-residential half of the 24829 GSF FAR cap; affordable path carries 16 units vs 12 standard; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "467 Tunxis Hill Rd & 80 Soundview Ave",
@@ -414,40 +519,34 @@
      "confidence": "medium"
     },
     "conflicts_with_independent_check": [
-     "District: BOUNTY NDBD vs Muse NDD",
-     "Units: BOUNTY up to 46 vs Muse 1"
+     "District: BOUNTY NDBD vs Muse NDD"
     ]
    },
-   "facts_hash": "9bc4991de0de",
+   "facts_hash": "80fc786324b0",
    "memo": {
-    "verdict": "The site is realistic to pursue at the $2,760,000 ask ($60,000 per unit) only if the 46-unit C.G.S. 8-30g approval and court-approved litigation settlement are fully verified.",
-    "as_of_right": "Under NDD zoning, total floor area is capped at FAR 1.0 or 24,829 GSF on the 24,829 SF lot, with height capped at 3 stories or 30 ft (Sec 6.3Z, 6.4). Residential area is restricted to 50% of total floor area (12,415 GSF, ~12 units) or up to 66 2/3% (16,553 GSF, ~16 units) if excess units are town-contracted as affordable (Sec 6.3Z). Ground floor residential is prohibited, and single buildings cannot exceed 14,000 GSF (Sec 6.3Z, 6.5.1).",
-    "approval_path": "Existing approval / C.G.S. 8-30g path. The 46-unit plan was approved by the Town Plan and Zoning Commission under 8-30g, but requires court approval of the litigation settlement, carrying low execution risk if settled and moderate timing delay.",
+    "verdict": "The site has an approved 46-unit C.G.S. 8-30g plan at an asking price of $60,000 per unit, but pursuing it requires verifying court approval of a litigation settlement.",
+    "as_of_right": "Under NDD district rules (Sec 6.3Z and 6.4), FAR is capped at 1.0 (24,829 GSF on the 24,829 SF lot) across at least two buildings because no single building can exceed 14,000 GSF. Height is limited to 3 stories or 30 feet, and ground-floor residential is prohibited. Market-rate residential is capped at 50% of floor area (12,415 GSF, or approximately 12 units at 1,000 SF average), which can expand to 66 2/3% (16,553 GSF, or approximately 16 units) if excess units are town-contracted affordable.",
+    "approval_path": "8-30g set-aside application. The project bypasses standard NDD FAR and height limits to allow 46 units across 5 levels (3 residential levels over garage), but approval rests on confirming a court-approved litigation settlement.",
     "legal_issues": [
-     "Verification of court approval for the litigation settlement agreement and official TPZ approval documents.",
-     "Affordability covenant restricting 14 units (30.4%) for 40 years.",
-     "Zoning district boundary conflict across parcels (NDD/NDBD on 467 Tunxis Hill Rd vs Residence B on 80 Soundview Ave).",
-     "Ground floor residential prohibition in NDD requiring commercial or garage space at ground level."
+     "TPZ approval document and court settlement approval must be verified in official town and court records.",
+     "14 units (30.4%) must be bound by 40-year affordability covenants under C.G.S. 8-30g.",
+     "Zoning district designation conflicts across source documents (NDBD and Residence B versus NDD)."
     ],
-    "test_fit": "Standard zoning allows 24,829 GSF total across at least 2 buildings (14,000 GSF max per building) up to 3 stories, yielding 12 to 16 residential units over ground-floor commercial or parking. The approved 8-30g design fits 46 units (39 one-bedroom, 7 two-bedroom) in 3 residential stories over 54 garage spaces. Density under base code is capped first by FAR and residential floor area limits, along with 2.5 parking spaces per unit (Sec 25.4.1L).",
-    "value": "Land cost is $60,000 per buildable unit at the $2,760,000 ask under the approved 46-unit scenario. Under base market-rate zoning (12 units), land cost rises to $230,000 per unit, or $172,500 per unit under the 16-unit town-contracted affordable scenario.",
+    "test_fit": "Standard zoning density is limited first by the 1.0 FAR cap, the 14,000 GSF single-building limit, the 30-foot height limit, and the prohibition of ground-floor residential. Standard parking requires 2.5 spaces per unit for 5+ families plus 1 space per 200 GSF of commercial. The approved 8-30g test fit provides 46 units (39 one-bedroom, 7 two-bedroom) totaling 44,665 SF of unit area over 54 garage spaces and 24 storage lockers.",
+    "value": "Land cost at the ask is $60,000 per approved unit ($2,760,000 total for 46 units). For a standard 12-unit scenario, land cost rises to $230,000 per unit. A second analyst's pro forma estimates a yield on cost of 4.02% and a maximum supportable land value of -$4,448,440 for a 12-unit conventional mixed-use project.",
     "diligence": [
-     "Resolve conflict between independent check and listing regarding district designation (NDBD/NDD vs Residence B) and unit counts (46-unit 8-30g vs 12-16 unit base zoning).",
-     "Obtain executed copy of the court-approved litigation settlement agreement and TPZ notice of decision.",
-     "Review 40-year affordability covenant terms for the 14 set-aside units.",
-     "Verify combined property boundary survey and exact acreage (24,829 SF application lot area vs 25,547 SF GIS layer).",
-     "Confirm FEMA Zone X flood status with local engineering."
+     "Resolve zoning district conflict between NDBD/Residence B state parcel designations and NDD town zoning rules.",
+     "Obtain the final court-approved litigation settlement agreement and TPZ resolution confirming vested 8-30g approval status.",
+     "Reconcile lot area discrepancy between the 24,829 SF application figure and the 25,546 SF state GIS parcel layer measurement.",
+     "Review draft 40-year affordable housing deed restriction terms for compliance with C.G.S. 8-30g.",
+     "Confirm frontage measurements along Tunxis Hill Road (172 ft) and Soundview Avenue (81 ft)."
     ],
-    "enablers": [
-     "C.G.S. 8-30g affordable housing set-aside application path",
-     "Sec 6.3Z floor area expansion to 66 2/3% residential for town-contracted affordable units",
-     "Special Permit process for multi-family redevelopment"
-    ],
-    "highest_and_best_use": "Not enough data because FACTS lack market rents, sale prices, and comparable land sales.",
+    "enablers": "C.G.S. 8-30g affordable housing set-aside path, Special Permit redevelopment, Sec 6.3Z residential share expansion to 66 2/3% for affordable housing, and discretionary parking reductions up to 50% under Sec 25.4.2A.",
+    "highest_and_best_use": "Not enough data. FACTS lack verified land comps, market sales prices, and confirmed rent data.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:14:11.518108+00:00"
+   "checked_utc": "2026-11-23T19:39:49.427060+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -485,6 +584,32 @@
     "ask_per_unit": {
      "approved": "$56,250"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "dbr-56-town-hill",
+     "address": "56 Town Hill Ave",
+     "town": "Danbury",
+     "state": "CT",
+     "asking_price": "",
+     "units": "6",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "Housing Incentive Option: 9u with >=3 affordable at <=80% AMI (density only; no subsidy verified)",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Danbury blended rent from average-rent.com Nov 2026 (Danbury all-BR avg 2531); labeled estimate",
+     "hard_cost_psf": "300",
+     "total_dev_cost": "2025000",
+     "noi_conv": "119160",
+     "yield_on_cost_pct": "5.88",
+     "supportable_loan_conv": "1275829",
+     "max_land_value": "-191769",
+     "max_land_per_unit": "-31962",
+     "notes": "Better track: conventional. NOI conv $119,160 (6u at $2400/mo); opex $7500/u/yr incl taxes ~$2400/u (est). Max land conv $-191,769; Density-capped: program GSF = lawful units x ~900 sf (envelope would hold ~36 units but RMF-4 density caps at 6; Housing Incentive Option 9 with >=3 affordable); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "56 Town Hill Ave",
@@ -509,12 +634,12 @@
      "confidence": "medium"
     },
     "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 24 vs Muse 1"
+     "Units: BOUNTY up to 24 vs Muse 9"
     ]
    },
-   "facts_hash": "7bb3458d2885",
+   "facts_hash": "206900e443ac",
    "memo": null,
-   "checked_utc": "2026-11-23T18:15:42.027585+00:00"
+   "checked_utc": "2026-11-23T19:43:04.762106+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -676,6 +801,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "bx-3848-bailey",
+     "address": "3848 Bailey Ave",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "24",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 5.01 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "450",
+     "total_dev_cost": "12128625",
+     "noi_conv": "541440",
+     "yield_on_cost_pct": "4.46",
+     "supportable_loan_conv": "5797118",
+     "max_land_value": "-3798779",
+     "max_land_per_unit": "-158282",
+     "notes": "Better track: conventional. NOI conv $541,440 (24u at $2900/mo); opex $10500/u/yr incl taxes ~$4500/u (est). Max land conv $-3,798,779; max land aff $-7,146,884 on 35 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "3848 Bailey Ave",
@@ -701,34 +852,11 @@
      "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2032630037 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 46 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "3cdc1aa04ff6",
-   "memo": {
-    "verdict": "A 24 to 35 unit rental project is achievable as-of-right and is worth pursuing at the $1,150,000 ask price.",
-    "as_of_right": "Zoning R7-1 permits residential development as-of-right with a standard FAR of 3.44 on a 6,268 square foot lot, allowing 21,562 gross square feet and approximately 24 market-rate units without discretionary approvals.",
-    "approval_path": "As-of-right approval via standard DOB plan submission, carrying low land-use risk and standard construction permitting timeline.",
-    "legal_issues": [
-     "Lot size discrepancy between the listing claim of 3,134 square feet and the tax map lot size of 6,268 square feet.",
-     "Affordability covenant terms required under an HPD or HDC regulatory agreement to utilize UAP or qualifying affordable FAR up to 5.01."
-    ],
-    "test_fit": "The footprint is limited to 5,014 square feet by the 80 percent lot coverage cap (ZR 23-362) and a 20-foot rear yard (ZR 23-342). FAR caps density first, supporting 24 standard units up to 35 qualifying affordable units across 7 to 10 floors. Zero parking spaces are required under ZR 25-232.",
-    "value": "Land cost at the ask is $37,097 to $50,000 per unit for standard scenarios (23 to 31 units) and $25,000 to $33,824 per unit under UAP scenarios (34 to 46 units). This equates to $53 per buildable square foot at base 3.44 FAR and $37 per buildable square foot at 5.01 FAR.",
-    "diligence": [
-     "Resolve conflict between independent check unit count (~24 to 35 units) and scenario bounty estimate (up to 46 units).",
-     "Verify exact lot area being sold to resolve the listing claim of 3,134 square feet against tax records showing 6,268 square feet.",
-     "Obtain title commitment and boundary survey for BBL 2032630037.",
-     "Confirm Bailey Avenue wide street status to determine applicability of 4.00 standard FAR.",
-     "Review HPD regulatory agreement requirements for UAP affordable housing compliance."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) under ZR Chapter 27 increases FAR to 4.13, while qualifying affordable housing under ZR 23-22 allows up to 5.01 FAR.",
-    "highest_and_best_use": "Multifamily rental building, supported by local 2024 rental comps reaching $2,580 for studios, $2,895 for 1-bedroom units, and $3,300 for 2-bedroom units, against land comps of $127 to $168 per buildable square foot.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:15:42.991754+00:00"
+   "facts_hash": "45ba6466a9da",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:44:59.713974+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -887,6 +1015,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "bx-1901-harrison",
+     "address": "1901 Harrison Ave",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "11",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 5.01 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "400",
+     "total_dev_cost": "4816000",
+     "noi_conv": "231660",
+     "yield_on_cost_pct": "4.81",
+     "supportable_loan_conv": "2480350",
+     "max_land_value": "-1252000",
+     "max_land_per_unit": "-113818",
+     "notes": "Better track: conventional. NOI conv $231,660 (11u at $2900/mo); opex $12000/u/yr incl taxes ~$4500/u (est). Max land conv $-1,252,000; max land aff $-2,414,090 on 16 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1901 Harrison Ave",
@@ -912,34 +1066,11 @@
      "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2028680164 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 20 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "1ac53b1bff41",
-   "memo": {
-    "verdict": "An as-of-right multifamily rental development of 11 to 16 units is realistic and worth pursuing at the $999,000 asking price.",
-    "as_of_right": "Standard R7-1 zoning allows multifamily residential development as of right with a standard FAR of 3.44 on a 2,800 square foot lot (9,632 gross square feet) under ZR 23-22. Up to 80 percent lot coverage is allowed under ZR 23-362 with a required 30-foot rear yard under ZR 23-342.",
-    "approval_path": "As-of-right development path requires standard Department of Buildings plan examination and permitting, carrying low land use risk and low approval timing delay.",
-    "legal_issues": [
-     "Vacant 1-family status and demolition requirements must be verified.",
-     "Broker-offered survey must be reviewed for lot boundary lines on this irregular 99.5-foot deep lot.",
-     "HPD or HDC regulatory agreement is legally required if taking advantage of UAP or qualifying affordable FAR above 3.44."
-    ],
-    "test_fit": "The building envelope footprint caps at 1,900 square feet after accounting for the 30-foot rear yard. The site yields approximately 11 units at standard FAR 3.44, 13 units under UAP at FAR 4.13, and 16 units under qualifying affordable housing at FAR 5.01. No parking is required under ZR 25-232 due to the transit zone and small lot waiver. FAR limits density first.",
-    "value": "At the $999,000 asking price, land cost per buildable unit is $71,357 to $99,900 for standard development and $49,950 to $66,600 with the UAP affordable bonus. This translates to about $103.72 per buildable square foot at standard FAR 3.44, which compares favorably to nearby Bronx land comps of $127 to $168 per buildable square foot.",
-    "diligence": [
-     "Conflict check: resolve discrepancy between BOUNTY unit estimate (up to 20 units) and independent check calculation (11 standard, 13 UAP, 16 qualifying max units).",
-     "Obtain and review the property survey offered by the broker.",
-     "Order a title report to verify clear title and confirm existing building vacancy status.",
-     "Verify HPD UAP guidelines and regulatory agreement rules for affordability set-asides."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) under ZR Chapter 27 and qualifying affordable housing provisions under ZR 23-22 allow FAR to increase from 3.44 up to 5.01.",
-    "highest_and_best_use": "Multifamily rental development is the highest and best use, supported by as-of-right R7-1 zoning and strong local 2024 rental comps such as The Bronx Vibe ($2,580 studio, $2,895 1BR, $3,300 2BR).",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:15:43.509970+00:00"
+   "facts_hash": "d07f43a65fd9",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:46:31.705664+00:00"
   },
   {
    "id": "bx-927-home",
@@ -1096,6 +1227,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "bx-927-home",
+     "address": "927 Home St",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "11",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 5.01 (HPD/HDC); FRESH zone; 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "400",
+     "total_dev_cost": "5022500",
+     "noi_conv": "231660",
+     "yield_on_cost_pct": "4.61",
+     "supportable_loan_conv": "2480350",
+     "max_land_value": "-1458500",
+     "max_land_per_unit": "-132591",
+     "notes": "Better track: conventional. NOI conv $231,660 (11u at $2900/mo); opex $12000/u/yr incl taxes ~$4500/u (est). Max land conv $-1,458,500; max land aff $-2,653,919 on 16 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "927 Home St",
@@ -1122,34 +1279,11 @@
      "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/l/lot/2/2974/177 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2029740177 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 21 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "7d05d082264e",
-   "memo": {
-    "verdict": "A 11 to 16 unit residential rental building can realistically be built as of right, making the site worth pursuing at the $1,100,000 asking price.",
-    "as_of_right": "In an R7-1 district under ZR 23-22, standard FAR is 3.44 on a 2,920 sf lot, allowing 10,045 sf of floor area or approximately 11 units. UAP increases FAR to 4.13 (12,054 sf, ~13 units), while qualifying affordable housing reaches FAR 5.01 (14,629 sf, ~16 units).",
-    "approval_path": "The development path is as-of-right, requiring standard DOB plan examination without discretionary approvals, which keeps land-use risk low and timeline short.",
-    "legal_issues": [
-     "Permanent affordability covenants must be recorded if using UAP floor area bonuses under ZR Chapter 27.",
-     "Execution of an HPD or HDC regulatory agreement is required to access the FAR 5.01 qualifying affordable housing bonus.",
-     "Verification of current tenant status and lease terms for the existing 1,188 sf structure built in 1991."
-    ],
-    "test_fit": "The footprint envelope is ~2,151 sf after a 30 ft rear yard setback under ZR 23-342, with building height limits of 75 ft standard to 105 ft under UAP. Unit counts range from 11 to 14 standard units up to 16 to 21 UAP units. Floor area ratio (FAR) limits density first, while zero parking spaces are required under ZR 25-232.",
-    "value": "At the $1,100,000 ask, land cost is $78,571 to $100,000 per buildable unit under standard scenarios (11 to 14 units) and $52,381 to $68,750 per unit under UAP affordable scenarios (16 to 21 units).",
-    "diligence": [
-     "Resolve conflict between data sources on unit capacity (BOUNTY up to 21 units vs Muse 1 unit / standard estimate of 11 to 16 units).",
-     "Obtain a full title report to verify existing encumbrances, easements, and ownership records.",
-     "Inspect the existing 1,188 sf residential building to confirm tenant occupancy and legal status.",
-     "Verify street width classification on Home Street and precise lot boundaries with a certified land survey."
-    ],
-    "enablers": "Density is expanded as-of-right by the Universal Affordability Preference (UAP) under ZR Chapter 27, FRESH Zone overlay, and qualifying affordable housing FAR bonuses under ZR 23-22.",
-    "highest_and_best_use": "Multifamily residential rental is the highest and best use, supported by nearby new-construction rental comps like The Bronx Vibe ($2,580 studio, $2,895 1BR, $3,300 2BR) and land comps of $127 to $168 per buildable sf, depending on securing UAP or HPD/HDC regulatory agreements.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:15:44.537077+00:00"
+   "facts_hash": "da88cf3180a1",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:48:04.485684+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -1308,6 +1442,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "bx-1185-grant",
+     "address": "1185 Grant Ave",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "10",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 5.01 (HPD/HDC); FRESH zone; 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "400",
+     "total_dev_cost": "4300000",
+     "noi_conv": "210600",
+     "yield_on_cost_pct": "4.9",
+     "supportable_loan_conv": "2254863",
+     "max_land_value": "-1060000",
+     "max_land_per_unit": "-106000",
+     "notes": "Better track: conventional. NOI conv $210,600 (10u at $2900/mo); opex $12000/u/yr incl taxes ~$4500/u (est). Max land conv $-1,060,000; max land aff $-2,212,291 on 14 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1185 Grant Ave",
@@ -1334,13 +1494,11 @@
      "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zr.planning.nyc.gov/entityprint/pdf/node/22747 https://zoningresolution.planning.nyc.gov/entityprint/pdf/node/22800 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/l/lot/2/2452/66 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2024520066 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 18 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "b8043172a5dd",
+   "facts_hash": "91656d04c7a6",
    "memo": null,
-   "checked_utc": "2026-11-23T18:17:15.823630+00:00"
+   "checked_utc": "2026-11-23T19:49:35.668225+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1499,6 +1657,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "bx-2411-poplar",
+     "address": "2411 Poplar St",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "11",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "MIH Option 2 (designated per PLUTO 26v2) at FAR 3.90; 485-x; HPD/HDC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "400",
+     "total_dev_cost": "3750000",
+     "noi_conv": "231660",
+     "yield_on_cost_pct": "6.18",
+     "supportable_loan_conv": "2480350",
+     "max_land_value": "-186000",
+     "max_land_per_unit": "-16909",
+     "notes": "Better track: conventional. NOI conv $231,660 (11u at $2900/mo); opex $12000/u/yr incl taxes ~$4500/u (est). Max land conv $-186,000; max land aff $-497,523 on 14 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "2411 Poplar St",
@@ -1525,35 +1709,11 @@
      "sources": "https://zola.planning.nyc.gov/l/lot/2/4062/23 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2040620023 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 14 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "132bf66932e9",
-   "memo": {
-    "verdict": "A 10 to 14-unit affordable multifamily rental building is realistically achievable as-of-right, making the site worth pursuing at the $1,150,000 ask.",
-    "as_of_right": "Under R6-1 zoning on a 2,500 sq ft lot, standard FAR 3.00 permits 7,500 sq ft of floor area or 8 to 11 units (ZR 23-22, ZR 23-52). The qualifying affordable tier permits FAR 3.90, allowing 9,750 sq ft of floor area or 10 to 14 units with MIH compliance.",
-    "approval_path": "As-of-right. Construction requires no discretionary approvals, minimizing entitlement risk and project timeline.",
-    "legal_issues": [
-     "Demolition and relocation requirements for the existing occupied 2-family home.",
-     "Mandatory Inclusionary Housing (MIH Option 2) set-aside covenants and program compliance.",
-     "Verification of tax exemption program eligibility such as 485-x for multifamily construction."
-    ],
-    "test_fit": "Lot coverage allows up to 80% (2,000 sq ft), but a 30 ft rear yard requirement limits the footprint to 1,750 sq ft (25 ft x 70 ft). Height caps at 75 ft (~7 floors) for standard and 95 ft (~9 floors) for the qualifying tier. Zero parking spaces are required under ZR 25-222/25-232. FAR and the 680 dwelling unit factor limit density first.",
-    "value": "At the $1,150,000 ask, land cost is $104,545 to $143,750 per unit for the standard scenario (8 to 11 units) and $82,143 to $115,000 per unit under the affordable bonus scenario (10 to 14 units).",
-    "diligence": [
-     "Resolve conflict between sources regarding unit count: BOUNTY indicates up to 14 units while Muse indicates 1 unit.",
-     "Review occupant leases and tenancy status for the existing 2-family house.",
-     "Verify MIH Option 2 set-aside obligations and tax exemption mechanics.",
-     "Obtain a full title report to confirm ownership and any unrecorded encumbrances.",
-     "Perform phase I environmental assessment and geotechnical soil testing."
-    ],
-    "enablers": "Mandatory Inclusionary Housing (MIH) overlay allowing FAR 3.90 for qualifying affordable housing, FRESH Zone mapping, and zero required parking in the Outer Transit Zone.",
-    "highest_and_best_use": "Multifamily rental building of 10 to 14 units under the MIH affordable tier. New construction rents at The Bronx Vibe reach $2,580 for studios, $2,895 for 1BRs, and $3,300 for 2BRs, supporting rental development dependent on tax exemption execution.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:17:16.559809+00:00"
+   "facts_hash": "d0ac0f64cf67",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:51:06.818808+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1717,6 +1877,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-1815-schieffelin-ave-bronx",
+     "address": "1815 Schieffelin Ave",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "600000",
+     "units": "3",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (R4; no MIH; qualifying tests not met)",
+     "aff_verdict": "",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "1615625",
+     "noi_conv": "61680",
+     "yield_on_cost_pct": "3.82",
+     "supportable_loan_conv": "660399",
+     "max_land_value": "-66702",
+     "max_land_per_unit": "-22234",
+     "notes": "Better track: conventional. NOI conv $61,680 (3u at $2900/mo); opex $12500/u/yr incl taxes ~$4500/u (est). Max land conv $-66,702",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1815 Schieffelin Ave",
@@ -1743,35 +1929,32 @@
      "sources": "https://zola.planning.nyc.gov/l/lot/2/4902/75 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zola.planning.nyc.gov https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-422 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2049020075 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 5 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "eae38c192975",
+   "facts_hash": "8bcb424edf40",
    "memo": {
-    "verdict": "A 3-unit market-rate rental building can realistically be built as-of-right, but the project is not worth pursuing at the $600,000 asking price.",
-    "as_of_right": "In an R4 district, standard FAR is 1.00 (ZR 23-21), allowing 2,500 sf of residential floor area on a 2,500 sf lot. Under ZR 23-52, dividing 2,500 sf by the 680 dwelling unit factor equals 3.68, which rounds to ~3 units maximum as-of-right. Yards require a 10 ft front yard (ZR 23-321) and a 30 ft rear yard (ZR 23-342). Maximum building height is capped at 35 ft (ZR 23-422).",
-    "approval_path": "As-of-right. Development requires standard Department of Buildings plan examination and permitting, involving low entitlement risk and minimal delay.",
+    "verdict": "A 3-unit residential building can be built as-of-right, but the project is financially unfeasible at the $600,000 asking price.",
+    "as_of_right": "Under R4 zoning (ZR 23-21), the standard FAR is 1.00 on a 2,500 sf lot, allowing 2,500 sf of floor area. Applying the dwelling unit factor of 680 (ZR 23-52) allows a maximum of 3 units (2,500 / 680 = 3.68). Yard rules require a 10 ft front yard (ZR 23-321) and a 30 ft rear yard (ZR 23-342).",
+    "approval_path": "As-of-right site plan development with no discretionary board approvals required, minimizing entitlement time and risk.",
     "legal_issues": [
-     "Conflict exists between the 4-5 unit UAP bonus scenario and independent review showing ZR 12-10 qualifying site tests are not met.",
-     "The 2,500 sf lot is below R4 detached lot minimums of 2,850 sf area and 30 ft width (ZR 23-11), preventing lot subdivision.",
-     "Occupancy status and tenant rights of the existing two-family structure must be verified."
+     "The 2,500 sf lot falls below the 5,000 sf threshold required to access Universal Affordability Preference (UAP) density bonuses under ZR 12-10.",
+     "The 25 ft lot width and 2,500 sf lot area prevent any lot subdivision under detached lot minimums (2,850 sf and 30 ft width required per ZR 23-11).",
+     "Listing details must be verified against official DOB and ACRIS records to confirm existing building conditions and title status."
     ],
-    "test_fit": "Building footprint is capped at 1,500 sf (25 ft width by 60 ft depth) after required 10 ft front and 30 ft rear yards. Density is limited first by the 1.00 FAR cap, limiting total building size to 2,500 sf across up to 3 stories. The likely unit count range is 2 to 3 units. Zero parking spaces are required because calculated spaces (<=3 under ZR 25-232 and ZR 25-241) qualify for a waiver.",
-    "value": "At the $600,000 asking price, land cost is $200,000 to $300,000 per unit for the standard 2 to 3 unit scenario ($240 per buildable sf). Under the 4 to 5 unit UAP scenario, land cost would drop to $120,000 to $150,000 per unit.",
+    "test_fit": "The footprint envelope is 1,500 sf (25 ft by 60 ft) across up to 3 stories (35 ft max height per ZR 23-422). Total floor area is capped first by FAR at 2,500 sf, yielding up to 3 units. Under ZR 25-232, required parking is 0 spaces because the calculated requirement for 3 units is 3 spaces or fewer, which qualifies for a full waiver.",
+    "value": "At the $600,000 ask, land cost is $200,000 per unit ($240 per buildable sf) for a 3-unit scheme. The second analyst's underwriting estimate yields a negative maximum land value of -$66,702, which fails financial viability compared to Bronx land comps ranging from $127 to $168 per buildable sf.",
     "diligence": [
-     "Resolve density conflict between the 4-5 unit UAP bonus scenario and independent check finding that ZR 12-10 qualifying site tests are not met on a 2,500 sf lot.",
-     "Verify title, ownership by 1815S LLC, and check for open encumbrances.",
-     "Confirm tenant occupancy status and lease terms for the existing two-family home.",
-     "Perform physical and structural inspection of the existing 1,512 sf building.",
-     "Confirm listing terms and availability directly with the broker."
+     "Verify official lot dimensions and zoning classification on ZoLa.",
+     "Obtain a preliminary title report to confirm ownership and search for encumbrances.",
+     "Inspect the existing two-family building to evaluate structural condition and tenant occupancy status.",
+     "Check NYC Department of Buildings records for open violations or unpermitted work."
     ],
-    "enablers": "FRESH Zone per ZoLa; UAP affordable bonus (FAR 1.5) if qualifying site tests under ZR 12-10 can be met.",
-    "highest_and_best_use": "A 3-unit market-rate rental building maximizing the standard 1.00 FAR (2,500 sf). Nearby new rental comps at The Bronx Vibe show rents of $2,580 for studios, $2,895 for 1BRs, and $3,300 for 2BRs, but achieving project feasibility depends on negotiating a land price closer to regional land comps of $127 to $168 per buildable sf.",
+    "enablers": "No density enablers apply as-of-right because UAP qualifying site tests require a minimum 5,000 sf lot.",
+    "highest_and_best_use": "A 3-unit residential rental building maximizes physical density, but development is not supportable at the current asking price due to high land cost per unit and negative estimated land value.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:17:17.304800+00:00"
+   "checked_utc": "2026-11-23T19:51:42.677997+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -1935,6 +2118,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-1716-barnes-ave-bronx",
+     "address": "1716 Barnes Ave",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "799000",
+     "units": "10",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (R5; no MIH; qualifying tests not met); 485-x/FRESH angle unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "400",
+     "total_dev_cost": "4361500",
+     "noi_conv": "210600",
+     "yield_on_cost_pct": "4.83",
+     "supportable_loan_conv": "2254863",
+     "max_land_value": "-322500",
+     "max_land_per_unit": "-32250",
+     "notes": "Better track: conventional. NOI conv $210,600 (10u at $2900/mo); opex $12000/u/yr incl taxes ~$4500/u (est). Max land conv $-322,500; Levers: assemblage to 5000+ sf zoning lot unlocks qualifying FAR 2.00 (~13-14 units); 485-x/FRESH angle unverified - needs HPD term-sheet confirmation",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1716 Barnes Ave",
@@ -1961,13 +2170,33 @@
      "sources": "https://zola.planning.nyc.gov/l/lot/2/4044/33 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zola.planning.nyc.gov https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-422 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-232 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2040440033 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 13 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "ac4b8f7caf41",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:18:48.864062+00:00"
+   "facts_hash": "41d822bb3a6a",
+   "memo": {
+    "verdict": "The site realistically allows an as-of-right 10-unit residential building, but it is not worth pursuing at the $799,000 asking price based on the underwriting muse analyst's valuation estimate.",
+    "as_of_right": "Under R5 zoning, standard FAR 1.50 allows 7,125 sq ft of residential floor area on the 4,750 sq ft lot (ZR 23-21). Dividing 7,125 sq ft by the 680 dwelling unit factor yields approximately 10 units (ZR 23-52). Independent check confirms the 2.00 FAR qualifying site bonus is unavailable as-of-right because the 4,750 sq ft lot is below the 5,000 sq ft qualifying threshold (ZR 12-10).",
+    "approval_path": "As-of-right. This path requires only standard DOB plan examination and building permits, minimizing entitlement time and discretionary risk.",
+    "legal_issues": [
+     "Verification of broker listing details, lot area, and boundary lines.",
+     "Confirmation of vacant possession of the existing two-family home and 5-car garage at closing.",
+     "Confirmation that no mandatory affordability covenants or special district rules apply to the lot."
+    ],
+    "test_fit": "The 50 ft by 95 ft lot yields a buildable footprint of 3,250 sq ft after applying a 10 ft front yard and 20 ft rear yard. A 4-story, 45 ft tall building achieves 7,125 gross sq ft capped by FAR. Parking is waived under ZR 25-222 Outer Transit Zone rules for 10 units or fewer. FAR caps density first.",
+    "value": "At the $799,000 ask, land cost is $79,900 to $114,143 per buildable unit for a standard 7 to 10 unit program ($112 per buildable sq ft). With a hypothetical UAP affordable bonus scenario (10 to 13 units), land cost drops to $61,462 to $79,900 per unit. Nearby land comps sell for $127 to $168 per buildable sq ft.",
+    "diligence": [
+     "Obtain standard title search and boundary survey to confirm 4,750 sq ft lot size.",
+     "Verify vacancy status and tenant leases for the existing building and garage.",
+     "Conduct Phase I Environmental Site Assessment.",
+     "Check NYC DOB database for open violations or building permits.",
+     "Verify potential HPD term-sheet options or 485-x tax incentives with NYC HPD."
+    ],
+    "enablers": "Assemblage with adjacent property to reach 5,000+ sq ft could unlock the FAR 2.00 qualifying residential site column. The property is also located within a FRESH Zone overlay.",
+    "highest_and_best_use": "A market-rate rental building of ~10 units maximizes value based on local rental comps ($2,580 studio, $2,895 1BR, $3,300 2BR at The Bronx Vibe). Feasibility depends on acquiring the land at a significant discount, as the underwriting muse analyst estimates a negative maximum land value (-$322,500).",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T19:52:24.217015+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -2100,6 +2329,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-1831-paulding-ave-bronx",
+     "address": "1831 Paulding Avenue",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "899000",
+     "units": "2",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (R4A detached only)",
+     "aff_verdict": "",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "1914625",
+     "noi_conv": "55520",
+     "yield_on_cost_pct": "2.9",
+     "supportable_loan_conv": "594444",
+     "max_land_value": "-161471",
+     "max_land_per_unit": "-80736",
+     "notes": "Better track: conventional. NOI conv $55,520 (2u at $3400/mo); opex $11000/u/yr incl taxes ~$4500/u (est). Max land conv $-161,471",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "1831 Paulding Avenue",
@@ -2127,30 +2382,30 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "7de721df2035",
+   "facts_hash": "c7acdd2e242a",
    "memo": {
-    "verdict": "A single detached two-family residence up to 2,500 square feet can realistically be built as of right, but the site is not worth pursuing at the $899,000 ask unless the adjoining lot is included in the price.",
-    "as_of_right": "R4A zoning permits a standard 1.00 FAR (ZR 23-21) on the 2,500 sf lot (25 ft x 100 ft), yielding 2,500 sf of buildable floor area. R4A restricts use strictly to single-family or two-family detached residences (ZR 23-11), capping density at 2 units in one building. Envelope rules require a 10 ft front yard (ZR 23-321), a 20 ft rear yard (ZR 23-342), side yards on both sides (ZR 23-33), and maximum 60% lot coverage (ZR 23-361).",
-    "approval_path": "As-of-right entitlement requiring standard Department of Buildings plan review and permits, presenting low risk and a minimal approval timeline.",
+    "verdict": "A two-family detached home up to 2,500 gross square feet can realistically be built as-of-right, but the site is not worth pursuing at the $899,000 asking price.",
+    "as_of_right": "In the R4A district, zoning permits only single- and two-family detached residences (ZR 23-11). Max FAR is 1.00 (ZR 23-21), allowing up to 2,500 gross square feet on the 2,500 square foot lot (25 ft x 100 ft). Lot coverage is capped at 60% (1,500 square feet) under ZR 23-361. Minimum lot area is 2,375 square feet and minimum lot width is 25 feet (ZR 23-11). The max density is 2 units in one detached building.",
+    "approval_path": "As-of-right, requiring standard NYC Department of Buildings plan examination and building permits with low land-use approval risk and standard construction plan timelines.",
     "legal_issues": [
-     "Unconfirmed listing scope regarding whether the $899,000 asking price includes the adjoining 25x100 lot.",
-     "Verification of vacant delivery for the existing two-family residence.",
-     "Title confirmation of separate tax and zoning lot status for any future lot split or assemblage."
+     "Unverified inclusion of the adjoining 25x100 lot in the $899,000 listing price.",
+     "Verification of vacant delivery status for the existing two-family structure.",
+     "Title search for easements or restrictions that could impact required side yard setbacks."
     ],
-    "test_fit": "The maximum building footprint is capped at 1,500 sf (60% coverage) within the yard envelope. Building height is capped at a 25 ft perimeter wall and 35 ft ridge line (ZR 23-421). Use rules cap density first at 2 units regardless of FAR. Zero parking spaces are required due to the lot width waiver for 25 ft lots existing before December 5, 2024 (ZR 25-222).",
-    "value": "At the $899,000 ask, land cost is $449,500 per unit ($359.60 per buildable sf) for the single-lot 2-unit scenario. If the adjoining 25x100 lot is included to create a 5,000 sf assemblage split into two conforming lots yielding 4 total units, land cost drops to $224,750 per unit ($179.80 per buildable sf).",
+    "test_fit": "The envelope allows a 60% maximum lot coverage (1,500 square foot footprint) with a 10 foot front yard (ZR 23-321), 20 foot rear yard (ZR 23-342), required side yards on both sides (ZR 23-33), a 25 foot max perimeter wall, and a 35 foot max ridge line (ZR 23-421). The unit count ranges from 1 to 2 detached units. Parking is waived for 25-foot wide lots existing on Dec 5, 2024 (ZR 25-222). Density is limited first by the R4A single/two-family detached use cap.",
+    "value": "At the $899,000 ask, land cost is $449,500 per unit for the 2-unit headline scenario on the single lot. If an adjoining 25x100 lot is included to create a 4-unit assemblage across two sub-divided lots, land cost drops to $224,750 per unit. Underwriting muse estimates a negative $161,471 maximum land value with a 2.9% yield on cost, failing underwriting.",
     "diligence": [
-     "Verify with listing broker whether the $899,000 price includes the adjoining 25x100 lot.",
-     "Order boundary survey and title report for Block 4127 Lot 23 and the adjacent parcel.",
-     "Confirm occupancy status and vacant delivery terms for the existing structure.",
-     "Review DOB records for open violations, full build history, and demolition requirements."
+     "Verify whether the adjoining 25x100 parcel is included in the purchase price.",
+     "Confirm vacant delivery terms and verify lease status of existing occupants.",
+     "Review official title report, property survey, and side yard compliance.",
+     "Check NYC Department of Buildings and ECB records for open violations."
     ],
-    "enablers": "None as-of-right; the site is in an R4A district without MIH, transit-oriented FAR bonuses, or redevelopment overlay designations.",
-    "highest_and_best_use": "Development of two-family detached homes, as R4A prohibits multifamily and attached townhouse construction; achieving optimal return depends directly on acquiring the adjoining lot within the same purchase price.",
+    "enablers": "Assemblage of the adjoining 25x100 lot noted in the listing could allow a subdivision into two conforming R4A lots (5,000 sf / 50 ft total), enabling up to 4 units across two detached two-family homes.",
+    "highest_and_best_use": "A market-rate two-family detached home (or 4 units if the adjoining lot is included), because R4A zoning prohibits attached townhouses and multi-family structures. Feasibility depends on securing a substantial price reduction, as market rents ($2,580 to $3,300/month at nearby comps) do not support the current ask.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:18:50.033628+00:00"
+   "checked_utc": "2026-11-23T19:53:46.263299+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -2283,6 +2538,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-2468-st-raymonds-ave-bronx",
+     "address": "2468 St Raymonds Avenue",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "99000",
+     "units": "2",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (R5A detached only)",
+     "aff_verdict": "",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "1293375",
+     "noi_conv": "55520",
+     "yield_on_cost_pct": "4.29",
+     "supportable_loan_conv": "594444",
+     "max_land_value": "-340221",
+     "max_land_per_unit": "-170111",
+     "notes": "Better track: conventional. NOI conv $55,520 (2u at $3400/mo); opex $11000/u/yr incl taxes ~$4500/u (est). Max land conv $-340,221",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "2468 St Raymonds Avenue",
@@ -2311,9 +2592,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "37b54448688f",
+   "facts_hash": "2da9a7768ed9",
    "memo": null,
-   "checked_utc": "2026-11-23T18:20:21.769992+00:00"
+   "checked_utc": "2026-11-23T19:55:17.718028+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -2446,6 +2727,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-129-e-233rd-st-bronx",
+     "address": "129 E 233rd Street",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "399000",
+     "units": "4",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (R5; no MIH; qualifying tests not met)",
+     "aff_verdict": "",
+     "combined_verdict": "FAILS",
+     "offer_price": "173637",
+     "cut_pct_needed": "56.5",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "1490594",
+     "noi_conv": "82240",
+     "yield_on_cost_pct": "5.52",
+     "supportable_loan_conv": "880532",
+     "max_land_value": "173637",
+     "max_land_per_unit": "43409",
+     "notes": "Better track: conventional. NOI conv $82,240 (4u at $2900/mo); opex $12500/u/yr incl taxes ~$4500/u (est). Max land conv $173,637; Only priced site with a positive supportable land value ($173637) but that is a 56.5% cut - not a realistic offer",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "129 E 233rd Street",
@@ -2473,30 +2780,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "8a373fff9d09",
-   "memo": {
-    "verdict": "A 4-unit market-rate residential building totaling 2,687 buildable square feet is achievable as-of-right, making the site worth pursuing at the $399,000 asking price.",
-    "as_of_right": "In an R5 zone on a 1,791 square foot lot, standard residential FAR is 1.50 (ZR 23-21), allowing up to 2,687 square feet of residential floor area. Under ZR 23-52, dividing 2,687 square feet by the dwelling unit factor of 680 yields 3.95, which rounds up to a maximum of 4 lawful units. Required yards are 10 feet in the front (ZR 23-321) and 20 feet in the rear (ZR 23-342). Minimum lot area and width requirements of 1,700 square feet and 18 feet for attached multiple dwellings are met (ZR 23-11). Required parking is 2 spaces (50% per unit under ZR 25-232), which is waived entirely because it is 5 or fewer spaces.",
-    "approval_path": "As-of-right. Development requires standard Department of Buildings plan examination without discretionary CPC or BSA approvals, minimizing timeline and land-use approval risk.",
-    "legal_issues": [
-     "Sellers explicitly make no representations that the lot is legally buildable.",
-     "Lot width of 25.17 feet is below the 30-foot minimum required for detached single- or two-family homes, restricting legal building forms to attached multiple dwellings.",
-     "The listing headline advertises a 3-unit potential, whereas standard zoning math permits up to 4 lawful units."
-    ],
-    "test_fit": "The 25.17 foot lot width and 71.17 foot lot depth leave a building footprint of roughly 1,036 square feet after applying 10-foot front and 20-foot rear yards. The building height is capped at 45 feet with a 35-foot base height limit (ZR 23-422). Density is limited first by the standard 1.50 FAR cap rather than lot coverage or height. The site yields a 3 to 4 unit layout across up to 4 stories. Zero parking spaces are required due to the parking waiver.",
-    "value": "At the $399,000 asking price, land cost is $99,750 per unit (or $148 per buildable square foot) for a 4-unit yield. For a 3-unit yield, land cost rises to $133,000 per unit. This aligns well with local Bronx development site comps, which range from $127 to $168 per buildable square foot.",
-    "diligence": [
-     "Obtain a full title report and boundary survey to confirm lot boundaries and buildability status.",
-     "Perform a DOB and BIS search to verify lot history, tax block/lot status, and open violations.",
-     "Confirm utility connection capacity for water and sewer lines along East 233rd Street.",
-     "Verify listing details and seller representations directly with the broker."
-    ],
-    "enablers": "No as-of-right density enablers apply. The lot is outside the transit zone, has no Mandatory Inclusionary Housing overlay, and fails the qualifying site tests for the higher 2.00 FAR column under ZR 12-10.",
-    "highest_and_best_use": "A market-rate 4-unit residential rental building totaling 2,687 square feet maximizes value. Nearby new-construction rental comps achieve rents of $2,580 for studios, $2,895 for 1-bedrooms, and $3,300 for 2-bedrooms at The Bronx Vibe. Feasibility depends on soft costs and total construction cost per square foot for a small infill parcel.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:20:22.670468+00:00"
+   "facts_hash": "c3512ca1503c",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:56:49.235019+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -2523,6 +2809,32 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-524-n-terrace-ave-mount-vernon",
+     "address": "524 N Terrace Avenue",
+     "town": "Mount Vernon",
+     "state": "NY",
+     "asking_price": "269000",
+     "units": "4",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (RMF-10; no bonus found)",
+     "aff_verdict": "",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Mount Vernon blended rent - proxy from market.csv New Rochelle The Alary discounted for Mt Vernon; labeled proxy estimate",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "2137750",
+     "noi_conv": "63440",
+     "yield_on_cost_pct": "2.97",
+     "supportable_loan_conv": "679243",
+     "max_land_value": "-892750",
+     "max_land_per_unit": "-223188",
+     "notes": "Better track: conventional. NOI conv $63,440 (4u at $2400/mo); opex $11500/u/yr incl taxes ~$5500/u (est). Max land conv $-892,750; Hard pass: 4-unit RMF-10 density cap plus high Mt Vernon taxes - fails even at zero land cost",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "524 N Terrace Avenue",
@@ -2550,30 +2862,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "27716f82fa87",
-   "memo": {
-    "verdict": "A 4-unit multifamily building can realistically be constructed subject to area variances or pre-existing lot relief, making the property worth pursuing at the $269,000 ask.",
-    "as_of_right": "Under Mount Vernon City Code Ch 267 Attachment 1 for the RMF-10 district, density is calculated at 1,200 square feet of lot area per unit. On this 4,991 square foot lot, the density math allows up to 4 units (4,991 / 1,200 = 4.15). However, strict as-of-right development is blocked because the lot falls below the district minimum lot area of 10,000 square feet and minimum lot width of 75 feet.",
-    "approval_path": "Variance or Sec 267-13D pre-existing lot route. The project requires Zoning Board of Appeals (ZBA) area variances for lot area and width, or proof of grandfathering under Sec 267-13D. This introduces entitlement time and discretionary risk.",
-    "legal_issues": [
-     "Dimensional nonconformity: The 4,991 square foot lot area and 50 foot width fail the RMF-10 minimums of 10,000 square feet and 75 feet.",
-     "Entitlement risk: Development requires ZBA area variance approvals or establishing qualifying pre-existing recorded lot status under City Code Sec 267-13D.",
-     "Disclaimers: The seller makes no representations that the lot is buildable and is selling the site as-is."
-    ],
-    "test_fit": "The setback envelope yields a 1,942 square foot footprint ((50-15) ft width x (100.5-20-25) ft depth). At 3 stories (42 ft height limit), max gross space is roughly 5,827 square feet. Density is capped first by the 1,200 square feet per unit lot area rule (4 units max). Off-street parking requires 2 spaces per unit (8 spaces total), which fits alongside the building footprint within the 70 percent max impervious coverage cap (3,494 square feet).",
-    "value": "At the $269,000 ask price, land cost is $67,250 per buildable unit under the 4-unit scenario. If variance relief is restricted to 2 units, land cost increases to $134,500 per unit.",
-    "diligence": [
-     "Verify deed history to confirm if the parcel qualifies as a grandfathered pre-existing lot under City Code Sec 267-13D.",
-     "Review ZBA precedent files, including Case ZB-23-8 at 420 North Terrace Avenue.",
-     "Obtain a certified boundary survey confirming lot dimensions, area, and frontage.",
-     "Request an official zoning verification letter from the Mount Vernon Department of Buildings confirming the RMF-10 designation."
-    ],
-    "enablers": "Zoning Board of Appeals area variances or Sec 267-13D pre-existing lot provisions.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:20:22.670799+00:00"
+   "facts_hash": "0ff5f4458efa",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:58:19.729607+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -2600,6 +2891,32 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-652654-noble-ave-bridgeport",
+     "address": "652-654 Noble Ave",
+     "town": "Bridgeport",
+     "state": "CT",
+     "asking_price": "750000",
+     "units": "7",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "CT 8-30g appeals procedure only - not as-of-right",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bridgeport blended rent from Apartments.com Nov 2026 (1BR 1743/2BR 2005) plus new-build premium",
+     "hard_cost_psf": "300",
+     "total_dev_cost": "3036750",
+     "noi_conv": "99120",
+     "yield_on_cost_pct": "3.26",
+     "supportable_loan_conv": "1061263",
+     "max_land_value": "-761827",
+     "max_land_per_unit": "-108832",
+     "notes": "Better track: conventional. NOI conv $99,120 (7u at $1900/mo); opex $7500/u/yr incl taxes ~$2200/u (est). Max land conv $-761,827",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "652-654 Noble Ave",
@@ -2627,30 +2944,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "b23b14e77107",
-   "memo": {
-    "verdict": "A 7-unit residential development is provisionally achievable as-of-right at $107,143 per unit, but pursuing the site at the $750,000 ask depends on resolving a major lot size discrepancy.",
-    "as_of_right": "Under NX2 zoning, density is set by building type rather than FAR. House A (35 ft min width) allows up to 4 principal units plus 1 backyard cottage at 80% lot coverage across 2.5 stories. Double House A (50 ft min width) allows up to 6 principal units plus 1 backyard cottage at 90% lot coverage across 2.5 stories.",
-    "approval_path": "As-of-right site plan review for up to 7 units under Double House A, representing low discretionary risk and standard administrative timing. Expanding to 8 principal units plus 1 cottage requires a special permit.",
-    "legal_issues": [
-     "Lot area discrepancy of 38% to 48% between the assessor record (3,049 sf) and GIS parcel polygon (4,205 sf), which directly impacts coverage and envelope calculations.",
-     "Zoning district mismatch between the listing (superseded RC classification) and official City GIS (NX2 district).",
-     "Tenant lease terms and occupancy status for the existing renovated 3-family dwelling."
-    ],
-    "test_fit": "Density is limited first by building-type unit caps and minimum lot width, not FAR or parking. Off-street parking has no minimum requirement under Sec 8.20.1. With an estimated 60 ft of frontage, the envelope allows 80% to 90% site coverage across 2.5 stories, supporting 5 to 7 units as-of-right.",
-    "value": "At the $750,000 ask, land cost is $150,000 per unit under the 5-unit House A scenario and $107,143 per unit under the 7-unit Double House A scenario.",
-    "diligence": [
-     "Certified boundary survey to resolve the 3,049 sf versus 4,205 sf lot area gap.",
-     "Recorded tax map and plat for Bridgeport PID 14165.",
-     "Existing lease agreements and tenant estoppel certificates for the 3-family building.",
-     "Title search to confirm Noble Ave frontage and any recorded encumbrances."
-    ],
-    "enablers": "Special permit approval allows up to 8 principal units (9 total including a cottage) under the Double House A or Small General building types.",
-    "highest_and_best_use": "Not enough data because FACTS lack rents, prices or comps.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:20:22.671094+00:00"
+   "facts_hash": "1d4f856dd2c1",
+   "memo": null,
+   "checked_utc": "2026-11-23T19:59:51.391677+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -2677,6 +2973,32 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-111-calhoun-pl-bridgeport",
+     "address": "111 Calhoun Pl",
+     "town": "Bridgeport",
+     "state": "CT",
+     "asking_price": "600000",
+     "units": "5",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "CT 8-30g appeals procedure only - not as-of-right",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bridgeport blended rent from Apartments.com Nov 2026 (1BR 1743/2BR 2005) plus new-build premium",
+     "hard_cost_psf": "300",
+     "total_dev_cost": "2560500",
+     "noi_conv": "70800",
+     "yield_on_cost_pct": "2.77",
+     "supportable_loan_conv": "758045",
+     "max_land_value": "-871269",
+     "max_land_per_unit": "-174254",
+     "notes": "Better track: conventional. NOI conv $70,800 (5u at $1900/mo); opex $7500/u/yr incl taxes ~$2200/u (est). Max land conv $-871,269",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "111 Calhoun Pl",
@@ -2704,30 +3026,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "3c2ff871de56",
-   "memo": {
-    "verdict": "Redevelopment into a 5-unit project is contingent on verifying a 35-foot lot width, making the property questionable to pursue purely for development at the $600,000 ask.",
-    "as_of_right": "Under the NX2 district code, bulk is regulated by building type rather than FAR. On a 2,614 sf lot, the House A building type allows 80% maximum site coverage (2,091 sf footprint) and 2.5 stories, yielding a gross envelope of approximately 5,228 sf. This permits up to 4 principal units plus 1 backyard cottage unit (~5 units total), provided the lot meets the 35-foot minimum width requirement.",
-    "approval_path": "As-of-right if a boundary survey confirms a 35-foot frontage; variance approval is required if frontage remains 34 feet, which increases entitlement time and risk.",
-    "legal_issues": [
-     "Frontage is measured at 34 feet, falling 1 foot short of the 35-foot minimum for House A building types.",
-     "Unverified Historic Overlay (OH) status on municipal zoning maps.",
-     "Listing labels property as pre-2022 superseded RB zoning instead of active NX2 zoning."
-    ],
-    "test_fit": "Max envelope is approximately 5,228 sf based on an 80% footprint (2,091 sf) over 2.5 stories. Unit range is 3 existing units to 5 proposed units (4-unit house plus 1 cottage). Code requires no off-street parking minimums. Lot frontage and building-type unit caps limit density first.",
-    "value": "At the $600,000 ask, land cost is $200,000 per existing unit for the 3-family layout, or $120,000 per buildable unit under the 5-unit redevelopment path.",
-    "diligence": [
-     "Obtain a certified boundary survey to verify if frontage reaches the 35-foot threshold.",
-     "Check Bridgeport zoning map for Historic Overlay (OH) district status.",
-     "Review existing tenant leases, rent roll, and physical condition of the 3-family structure.",
-     "Obtain an official zoning verification letter from Bridgeport Planning and Zoning."
-    ],
-    "enablers": "Special permits allow density up to 8 units for Double House A or Small General types if a 50-foot lot width is present; CT General Statutes Sec 8-30g provides a state-level affordable housing appeals procedure.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:20:22.671380+00:00"
+   "facts_hash": "876af90a48f6",
+   "memo": null,
+   "checked_utc": "2026-11-23T20:01:21.960827+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -2754,6 +3055,32 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-203205-lenox-ave-bridgeport",
+     "address": "203-205 Lenox Ave",
+     "town": "Bridgeport",
+     "state": "CT",
+     "asking_price": "575000",
+     "units": "5",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "CT 8-30g appeals procedure only - not as-of-right",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Bridgeport blended rent from Apartments.com Nov 2026 (1BR 1743/2BR 2005) plus new-build premium",
+     "hard_cost_psf": "300",
+     "total_dev_cost": "2637500",
+     "noi_conv": "70800",
+     "yield_on_cost_pct": "2.68",
+     "supportable_loan_conv": "758045",
+     "max_land_value": "-973269",
+     "max_land_per_unit": "-194654",
+     "notes": "Better track: conventional. NOI conv $70,800 (5u at $1900/mo); opex $7500/u/yr incl taxes ~$2200/u (est). Max land conv $-973,269",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "203-205 Lenox Ave",
@@ -2781,9 +3108,32 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "14ebce932dae",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:21:53.273216+00:00"
+   "facts_hash": "9d2f6b11f000",
+   "memo": {
+    "verdict": "A 5-unit residential development is achievable as-of-right under NX2 zoning, but the project is not financially viable at the $575,000 asking price based on the underwriting muse analyst's estimate.",
+    "as_of_right": "Under Bridgeport NX2 zoning (Sec 3.90), House A permits up to 4 principal units plus 1 backyard cottage as-of-right, yielding 5 units total. The lot allows 80% maximum coverage on 3,920 sf (3,136 sf footprint) across 2.5 stories (max 20 ft eave height), yielding a gross envelope of approximately 7,840 sf. No minimum lot area or FAR applies.",
+    "approval_path": "As-of-right approval for the House A building type. This minimizes entitlement risk and avoids discretionary board reviews, special permits, or variances.",
+    "legal_issues": [
+     "District discrepancy: Assessor card records Zone I (Industrial) while official City GIS zoning map confirms NX2 (Neighborhood Mix 2).",
+     "Listing zoning label references superseded pre-2022 RB zoning code.",
+     "Lot width of 40 ft excludes higher-density building types (Double House A and Small General require 50 ft; Row requires 60 ft).",
+     "Existing multi-family occupancy and lease terms must be reviewed prior to contract execution."
+    ],
+    "test_fit": "The envelope allows a 3,136 sf footprint (80% lot coverage) across 2.5 stories, totaling ~7,840 gross sf. Max density is capped at 5 units (4 principal units + 1 backyard cottage). Off-street parking minimums are zero under Sec 8.20.1, so parking does not restrict density. Density is limited first by lot width and building-type unit caps.",
+    "value": "At the $575,000 ask, land cost is $115,000 per buildable unit for the 5-unit scenario. The underwriting muse analyst estimates a yield on cost of 2.68% and a maximum land value of -$973,269 (-$194,654 per unit), indicating the asking price is unsupportable.",
+    "diligence": [
+     "Obtain written zoning verification from the Zoning Administrator confirming NX2 classification over Assessor Zone I.",
+     "Order a certified boundary survey to confirm exact frontage and parcel area.",
+     "Review current lease agreements and tenant occupancy status for the existing building.",
+     "Verify FEMA flood zone designation (currently indicated as Zone X).",
+     "Confirm utility capacity and connection requirements for 5 residential units."
+    ],
+    "enablers": "None. Higher density building types are blocked by lot width requirements, and no local density bonuses or overlays apply in FACTS.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:02:40.087609+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -2844,6 +3194,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "hunt-556-westside-ave-jersey-city",
+     "address": "556 Westside Ave",
+     "town": "Jersey City",
+     "state": "NJ",
+     "asking_price": "699000",
+     "units": "5",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "NJ HMFA/LIHTC voluntary only - unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "FAILS",
+     "offer_price": "0",
+     "cut_pct_needed": "100.0",
+     "rent_basis": "Jersey City west-side blended rent - discount to RentCafe Downtown JC avg 4264 (Oct 30 2026) for Greenville/West Side; labeled estimate",
+     "hard_cost_psf": "425",
+     "total_dev_cost": "6069938",
+     "noi_conv": "144100",
+     "yield_on_cost_pct": "2.37",
+     "supportable_loan_conv": "1542858",
+     "max_land_value": "-3154014",
+     "max_land_per_unit": "-630803",
+     "notes": "Better track: conventional. NOI conv $144,100 (5u at $2800/mo + $27,000/yr net commercial); opex $8500/u/yr incl taxes ~$2800/u (est). Max land conv $-3,154,014",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "556 Westside Ave",
@@ -2872,30 +3248,9 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "2d53b7a64bed",
-   "memo": {
-    "verdict": "A 5-story mixed-use building with 1 commercial space and 5 residential units can realistically be built as-of-right, but the $699,000 ask price equals $139,800 per unit and requires verifying unread lot coverage rules.",
-    "as_of_right": "NC-1 zoning permits residential apartments above ground-floor commercial as of right. On a 2,379 sf lot (25 ft x 94.20 ft), a 15 percent rear yard requirement leaves a footprint of roughly 2,022 sf with 0 ft front and side setbacks. Max height is 5 stories or 55 ft. Four upper residential floors provide about 8,088 gross residential sf, supporting 5 units of 1,400 sf each plus 1 ground-floor commercial space. Lots under 5,000 sf require 0 parking spaces.",
-    "approval_path": "As-of-right site plan approval. The project requires routine site plan review rather than discretionary variance approvals, minimizing entitlement risk and time.",
-    "legal_issues": [
-     "Section 345-46 NC-1 lot coverage percentage text was unreadable due to access blocks.",
-     "West Side Avenue Redevelopment Plan Boundary Map 2 must be checked to confirm lot exclusion.",
-     "Listing representations and conceptual plans must be confirmed against city records."
-    ],
-    "test_fit": "The envelope allows a 5-story, 55 ft building with 0 ft front/side yards and a 15 percent rear yard setback. Footprint is approx 2,022 sf, creating a total gross building envelope of 10,110 sf. Height limit and lot size restrict density to 1 commercial space and about 5 residential units. Required parking is 0.",
-    "value": "At the $699,000 ask, land cost is $139,800 per unit for 5 residential units. This compares to the land comp at 414-432 Hoboken Avenue which sold at $49,618 per unit.",
-    "diligence": [
-     "Obtain unblocked full text of Jersey City Land Development Ordinance Section 345-46 for lot coverage rules.",
-     "Review Boundary Map 2 of the West Side Avenue Redevelopment Plan.",
-     "Verify tax map details for Block 19301 Lot 68.",
-     "Confirm conceptual plans and listing details with the broker."
-    ],
-    "enablers": "As-of-right NC-1 mixed-use zoning allowing residential above commercial, combined with zero required parking for lots under 5,000 sf.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:21:53.273760+00:00"
+   "facts_hash": "07e5b8014b5d",
+   "memo": null,
+   "checked_utc": "2026-11-23T20:04:10.658406+00:00"
   },
   {
    "id": "hunt-145-beverly-rd-white-plains",
@@ -2947,7 +3302,7 @@
    },
    "facts_hash": "bdc000e5cc6e",
    "memo": null,
-   "checked_utc": "2026-11-23T18:23:23.765189+00:00"
+   "checked_utc": "2026-11-23T20:05:43.214059+00:00"
   },
   {
    "id": "hunt-89-neptune-ave-jersey-city",
@@ -3044,7 +3399,7 @@
    },
    "facts_hash": "4c0e9ddd32eb",
    "memo": null,
-   "checked_utc": "2026-11-23T18:24:54.197788+00:00"
+   "checked_utc": "2026-11-23T20:07:13.760298+00:00"
   },
   {
    "id": "hunt-753-den-rd-stamford",
@@ -3095,8 +3450,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "0fc25a0ecc0a",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:26:24.715170+00:00"
+   "memo": {
+    "verdict": "You can realistically build one single-family home up to 11,217 square feet with one accessory dwelling unit, but pursuing it at the $899,000 ask requires market sales comps.",
+    "as_of_right": "Zoning allows 1 single-family home per lot (Sec 5.X.4) plus 1 ADU (Sec 4.E/5.X.5.c). The 44,867 sf lot meets the 43,560 sf minimum lot size for 1 lot, but lacks the 87,120 sf required to subdivide into 2 lots. Maximum gross building area is 11,217 sf based on a 0.25 FAR. Building coverage is capped at 15% (6,730 sf) and total lot coverage at 30%.",
+    "approval_path": "As-of-right building permit path for a single-family home and ADU, which offers low risk and standard building permit processing time.",
+    "legal_issues": [
+     "Street frontage of 125 feet and the required 125-foot diameter lot circle are unverified on the site.",
+     "Zoning district designation as RA-1 relies on listing data rather than confirmed Stamford GIS records.",
+     "Lot size of 44,867 square feet comes from listing calculations instead of an official assessor record or survey.",
+     "Flood zone designation is unverified due to an incomplete FEMA query."
+    ],
+    "test_fit": "Building envelope allows a 6,730 square foot footprint, up to 11,217 total gross square feet, and a height cap of 35 feet or 3 stories. Setbacks are 40 feet front (65 feet from street center), 15 feet side (35 feet combined), and 60 feet rear. Unit range is 1 principal single-family home plus 1 optional ADU. Parking requires 2 to 3 spaces for the home plus 1 space for the ADU. Density is limited first by the 43,560 square foot minimum lot area rule.",
+    "value": "Land cost at the $899,000 ask is $899,000 per principal buildable unit, or $449,500 per unit if including a permitted ADU. Subdivision to create a second principal lot is not allowed.",
+    "diligence": [
+     "Obtain a certified boundary survey to verify the 44,867 square foot lot area and 125-foot street frontage.",
+     "Confirm official RA-1 zoning designation on the Stamford GIS zoning map.",
+     "Pull the FEMA MSC FIRMette flood map for Fairfield County to verify flood zone status.",
+     "Confirm Map 12.8 parking category designation with the city.",
+     "Review title report for existing structures, easements, restrictions, or deed covenants."
+    ],
+    "enablers": "Section 4.E and 5.X.5.c permit 1 accessory dwelling unit on single-family lots over 10,000 square feet in RA-1.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:07:13.761185+00:00"
   },
   {
    "id": "hunt-3729-paulding-ave-bronx",
@@ -3284,34 +3662,11 @@
      "sources": "https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2046880072 https://zola.planning.nyc.gov/l/lot/2/4688/72 https://zr.planning.nyc.gov/entityprint/pdf/node/18011 https://zoningresolution.planning.nyc.gov/index.php/article-ii/chapter-5/25-241 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 4 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "5a1741ca3c35",
-   "memo": {
-    "verdict": "The site realistically allows 2 to 3 market-rate residential units as-of-right, making it overpriced at the $600,000 asking price ($200,000 to $300,000 per unit).",
-    "as_of_right": "R4 zoning allows an FAR of 1.00, yielding 2,039 sf of floor area on the 2,039 sf lot (1.00 x 2,039 sf). Under ZR 23-52, dividing 2,039 sf by the 680 dwelling unit factor yields 2.998, allowing up to 3 units if shallow-lot rear-yard reduction applies, or 2 units without it.",
-    "approval_path": "As-of-right multifamily redevelopment requires standard DOB plan examination and building permits without discretionary approvals, minimizing approval time and legal risk.",
-    "legal_issues": [
-     "Eligibility for shallow-lot rear-yard reduction under ZR 23-342(b) requiring proof of unchanged lot boundaries prior to December 15, 1961.",
-     "Applicability of UAP affordable density bonuses in R4 zoning districts.",
-     "Existing tenant occupancy and lease terms for the current single-family structure and bonus apartment."
-    ],
-    "test_fit": "Standard 10 ft front and 20 ft rear yards restrict the building footprint to 415 sf (54.67 ft x 7.59 ft), capping envelope at ~2 units over 35 ft height. If shallow-lot reduction applies (10 ft rear yard), footprint expands to ~962 sf (54.67 ft x 17.59 ft), achieving 3 units up to the 2,039 sf FAR cap. Parking requires 0.5 spaces per unit (1.5 spaces for 3 units), which is waived to 0 under ZR 25-241. Yard setbacks and lot depth limit density first.",
-    "value": "At the $600,000 ask, land cost is $300,000 per unit for a 2-unit build, $200,000 per unit for a 3-unit build, or $150,000 to $200,000 per unit under listing UAP bonus assumptions.",
-    "diligence": [
-     "Resolve conflict between listing assessment of 3 to 4 UAP units and independent check finding that UAP does not apply in R4 districts.",
-     "Historical tax maps and boundary survey to confirm lot configuration existed unchanged before December 15, 1961 for ZR 23-342(b) shallow-lot relief.",
-     "Title search and tenant verification to check existing lease terms and legal occupancy.",
-     "ZoLa lot page check to verify wide/narrow street designation and FRESH overlay status."
-    ],
-    "enablers": "Shallow-lot rear-yard reduction under ZR 23-342(b).",
-    "highest_and_best_use": "Small-scale market-rate rental redevelopment (2 to 3 units), supported by local market rents ($2,580 studios, $2,895 1BRs, $3,300 2BRs at The Bronx Vibe), dependent on confirming shallow-lot yard relief.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T18:26:25.316424+00:00"
+   "facts_hash": "b00881a9191d",
+   "memo": null,
+   "checked_utc": "2026-11-23T20:08:44.883890+00:00"
   },
   {
    "id": "hunt-182184-lincoln-ave-yonkers",
@@ -3440,8 +3795,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "ea5c6e2e4b56",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:27:55.837026+00:00"
+   "memo": {
+    "verdict": "Realistically achievable density cannot be computed because the zoning district and dimensional envelope are unverified, making the site unviable to evaluate at the $929,000 ask without basic land-use confirmation.",
+    "as_of_right": "Under Sec 43-193.B, projects under 20 units are exempt from Article XV affordable set-aside rules. Table 43-1 permits two-family units in T, MG, M, A, B, and BA districts, and apartment houses in MG, M, A, B, BA, CB, PMD, and L-MX districts. Specific FAR, height, and unit math are unverified because Table 43-3 standards are unread and the exact parcel district is unconfirmed; however, a 5,000 sq ft minimum lot area recurs for MG, M, A, B, and BA, which would leave the listing lot area of 4,934 sq ft short by 66 sq ft.",
+    "approval_path": "Indeterminate pending zoning district confirmation. If the lot is non-conforming in size or requires discretionary relief, the project will require a variance, increasing timeline and approval risk beyond an as-of-right path.",
+    "legal_issues": [
+     "Parcel zoning district designation is unconfirmed on the official zoning map under Sec 43-12.",
+     "Unverified lot size of 4,934 sq ft may be below the 5,000 sq ft minimum lot area requirement in Table 43-3.",
+     "Legal use status as a two-family or three-family structure must be verified against official municipal records."
+    ],
+    "test_fit": "Building envelope, density cap, and parking requirements under Table 43-4 are indeterminate until district standards are confirmed. Lot area limits density first if the lot falls below municipal minimum area requirements.",
+    "value": "Land cost per buildable unit at the $929,000 ask cannot be computed because lawful buildable units and FAR are unknown in the facts.",
+    "diligence": [
+     "Verify official parcel SBL, lot dimensions, and frontage via Yonkers IMO or Westchester tax maps.",
+     "Confirm adopted zoning district classification for the parcel per Yonkers Sec 43-12 zoning map.",
+     "Retrieve machine-readable Table 43-3 dimensional standards and Table 43-4 parking requirements.",
+     "Confirm flood zone designation via FEMA MSC FIRMette.",
+     "Review municipal building department records for Certificate of Occupancy and legal unit count."
+    ],
+    "enablers": "Sec 43-195 offers a density bonus of up to 40 market units and a parking reduction to 1 space per unit for 40-80% AMI units on discretionary projects of 20 or more units.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because land comps and verified zoning capacity are lacking.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:09:45.901265+00:00"
   },
   {
    "id": "hunt-1001-summit-ave-bronx",
@@ -3632,13 +4009,11 @@
      "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2025230257 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 12 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "95e7a9f27263",
+   "facts_hash": "60494dd4f894",
    "memo": null,
-   "checked_utc": "2026-11-23T18:29:27.017233+00:00"
+   "checked_utc": "2026-11-23T20:11:18.124094+00:00"
   },
   {
    "id": "hunt-1730-hunt-ave-bronx",
@@ -3828,13 +4203,11 @@
      "sources": "https://zola.planning.nyc.gov/l/lot/2/4034/39 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-21 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-11 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-52 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-361 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-321 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-342 https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-422 https://zoningresolution.planning.nyc.gov/article-ii/chapter-5/25-222 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2040340039 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 5 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "c72ce5c42e20",
+   "facts_hash": "5e6a22c1120b",
    "memo": null,
-   "checked_utc": "2026-11-23T18:30:58.360970+00:00"
+   "checked_utc": "2026-11-23T20:12:49.699920+00:00"
   },
   {
    "id": "hunt-1074-university-ave-bronx",
@@ -4026,13 +4399,11 @@
      "sources": "https://zoningresolution.planning.nyc.gov/article-ii/chapter-3/23-22 https://zr.planning.nyc.gov/article-ii/chapter-3/23-432 https://zr.planning.nyc.gov/article-ii/chapter-3/23-362 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2025260048 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 36 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "a6c561000b86",
+   "facts_hash": "dd1cbe466cac",
    "memo": null,
-   "checked_utc": "2026-11-23T18:32:29.644910+00:00"
+   "checked_utc": "2026-11-23T20:14:21.042914+00:00"
   },
   {
    "id": "hunt-4165-laconia-ave-bronx",
@@ -4220,7 +4591,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:32:30.249323+00:00"
+   "checked_utc": "2026-11-23T20:14:21.731779+00:00"
   },
   {
    "id": "hunt-1148-e-211th-st-bronx",
@@ -4356,7 +4727,7 @@
    },
    "facts_hash": "c8ecb1c842a7",
    "memo": null,
-   "checked_utc": "2026-11-23T18:34:01.554755+00:00"
+   "checked_utc": "2026-11-23T20:15:52.857128+00:00"
   },
   {
    "id": "hunt-113-old-bay-st-peekskill",
@@ -4385,8 +4756,30 @@
     "ask_per_unit": {}
    },
    "facts_hash": "0107cf133cd5",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:35:32.116939+00:00"
+   "memo": {
+    "verdict": "The 3,336 square foot site features an existing two-family home near transit, but feasibility cannot be determined without zoning code data and financial comps.",
+    "as_of_right": "Zoning designation and bulk regulations are not provided in FACTS. The existing use is a two-family building on a 3,336 square foot lot.",
+    "approval_path": "Approval path is unknown because zoning district rules are not provided in FACTS.",
+    "legal_issues": [
+     "Tenant occupancy status and lease terms for the fully occupied versus vacant delivery options.",
+     "Unconfirmed municipal zoning classification and permissible land uses.",
+     "Delayed closing terms associated with the $650,000 purchase price option."
+    ],
+    "test_fit": "The lot contains 3,336 square feet with an existing 2-unit building located 0.3 miles from the Metro-North station. Building envelope limits, maximum unit capacity, and parking requirements cannot be calculated without zoning parameters.",
+    "value": "At the $650,000 ask price, land cost is $325,000 per existing unit. At the $625,000 fully occupied price option, land cost is $312,500 per existing unit. Buildable square foot value cannot be computed because buildable area is omitted from FACTS.",
+    "diligence": [
+     "Confirm the official zoning district classification and code requirements with the City of Peekskill.",
+     "Obtain a certified boundary survey to verify the 3,336 square foot lot size.",
+     "Review tenant leases, rent records, and occupancy terms for both units.",
+     "Verify property status, renovation details, and delivery terms with the listing broker.",
+     "Inspect municipal files for outstanding building violations or certificate of occupancy issues."
+    ],
+    "enablers": "The property is located 0.3 miles from a Metro-North station. Additional statutory or local zoning enablers are not specified in FACTS.",
+    "highest_and_best_use": "Not enough data. FACTS lack rents, sale prices, buildable square footage, and financial comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:15:52.857999+00:00"
   },
   {
    "id": "hunt-120-smith-st-peekskill",
@@ -4415,8 +4808,29 @@
     "ask_per_unit": {}
    },
    "facts_hash": "6b82f42c0a04",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:37:02.718985+00:00"
+   "memo": {
+    "verdict": "The site has an existing fully rented triplex on a 6,952 sq ft lot listed for $795,000, but feasibility cannot be determined without zoning data.",
+    "as_of_right": "Zoning regulations and allowable FAR are missing from FACTS, so as-of-right density math cannot be calculated.",
+    "approval_path": "The approval path cannot be determined because zoning classification and project scope are not provided in FACTS.",
+    "legal_issues": [
+     "Zoning designation and land-use allowances must be verified.",
+     "Existing tenant leases and occupancy terms require review.",
+     "Listing facts and site boundaries must be confirmed with municipal records."
+    ],
+    "test_fit": "Architect notes: The site is 6,952 sq ft with an existing triplex and 6 parking spaces. Density limits and envelope cannot be calculated without zoning parameters.",
+    "value": "At the $795,000 asking price, the land cost is $265,000 per existing unit across 3 units. No buildable area comps or redevelopment scenarios are provided in FACTS.",
+    "diligence": [
+     "Confirm lot size, zoning designation, and status with the listing broker.",
+     "Verify Peekskill zoning map and official code rules.",
+     "Obtain and review existing tenant lease agreements and rent rolls.",
+     "Order a professional land survey."
+    ],
+    "enablers": "None listed in FACTS.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:15:52.858665+00:00"
   },
   {
    "id": "hunt-931-2nd-st-peekskill",
@@ -4466,7 +4880,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:37:02.719454+00:00"
+   "checked_utc": "2026-11-23T20:15:52.859300+00:00"
   },
   {
    "id": "hunt-298-bleloch-ave-peekskill",
@@ -4496,7 +4910,7 @@
    },
    "facts_hash": "6136c204a331",
    "memo": null,
-   "checked_utc": "2026-11-23T18:38:33.279550+00:00"
+   "checked_utc": "2026-11-23T20:17:23.400912+00:00"
   },
   {
    "id": "hunt-806-bay-st-peekskill",
@@ -4526,7 +4940,7 @@
    },
    "facts_hash": "f5c3130afb01",
    "memo": null,
-   "checked_utc": "2026-11-23T18:40:03.821690+00:00"
+   "checked_utc": "2026-11-23T20:18:54.274231+00:00"
   },
   {
    "id": "hunt-527-union-ave-peekskill",
@@ -4555,8 +4969,29 @@
     "ask_per_unit": {}
    },
    "facts_hash": "43297b2170e0",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:41:34.412990+00:00"
+   "memo": {
+    "verdict": "The site is worth pursuing at the $199,222 asking price for a single 4-bedroom home based on its reported planning board approval.",
+    "as_of_right": "FACTS do not provide the municipal zoning code section or setback math. The 7,405 square foot lot measuring 50 by 150 feet currently has planning board approved plans for one 4-bedroom single-family home.",
+    "approval_path": "Existing approval. Building plans for a 4-bedroom home are already approved by the planning board, which significantly reduces standard entitlement time and discretionary risk if the approval remains active.",
+    "legal_issues": [
+     "Expiration date and unfulfilled conditions of the existing planning board approval.",
+     "Property boundary lines, access rights, and potential buffer restrictions where the lot abuts Depew Park.",
+     "Verification of lot size, zoning district, and status with the broker and City of Peekskill."
+    ],
+    "test_fit": "The site measures 50 feet by 150 feet for a total of 7,405 square feet. Sample plans show a single 4-bedroom house envelope. The 50-foot lot width and required side setbacks limit the horizontal building footprint first.",
+    "value": "At the asking price of $199,222, the land cost is $199,222 per buildable unit for the single approved 4-bedroom home layout. Other buildable scenarios cannot be calculated because alternative unit counts and square footages are omitted from FACTS.",
+    "diligence": [
+     "Obtain the official planning board approval resolution and active building permit status from the city.",
+     "Review the full land survey and sample building plans referenced in the listing.",
+     "Order a title search to verify boundary encumbrances along the Depew Park border.",
+     "Confirm municipal zoning district rules and utility connections with the Peekskill Building Department."
+    ],
+    "enablers": "None identified in FACTS.",
+    "highest_and_best_use": "Not enough data. FACTS lack local rental rates, unit sale prices, and comparable land sales.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:18:54.275070+00:00"
   },
   {
    "id": "hunt-26-pratt-st-new-rochelle",
@@ -4625,8 +5060,29 @@
     }
    },
    "facts_hash": "369930fc092e",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:43:04.968632+00:00"
+   "memo": {
+    "verdict": "The site is currently a gut-renovated two-family home on a 2,184 square foot lot, but there is not enough zoning data in FACTS to determine if redevelopment at the $959,000 ask is worth pursuing.",
+    "as_of_right": "FACTS do not include the zoning district or code section for this 2,184 square foot lot, so as-of-right density and floor area ratio math cannot be calculated.",
+    "approval_path": "The approval path cannot be determined without zoning classification data in FACTS, so risk and timeline depend on verifying local district rules.",
+    "legal_issues": [
+     "Zoning district classification and allowable density are unconfirmed in FACTS.",
+     "Tenant lease terms and occupancy status for the existing 1BR and 2BR units need verification.",
+     "Listing details must be verified directly with municipal records and the broker."
+    ],
+    "test_fit": "The site is 2,184 square feet with an existing two-family structure and a two-car garage. Small lot area limits site layout, but specific envelope and unit limits cannot be calculated without zoning code data.",
+    "value": "At the $959,000 ask price, the cost for the existing 2 units is $479,500 per unit. Additional buildable unit scenarios are not provided in FACTS.",
+    "diligence": [
+     "Confirm the official zoning map district and municipal code rules for 26 Pratt St.",
+     "Verify existing tenant leases, security deposits, and the stated $5,500 per month gross income.",
+     "Obtain a title report and boundary survey to confirm the 2,184 square foot lot lines.",
+     "Confirm listing details and property tax records directly with the broker and city."
+    ],
+    "enablers": "",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:18:54.275758+00:00"
   },
   {
    "id": "hunt-83-horton-ave-new-rochelle",
@@ -4718,7 +5174,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:43:04.969132+00:00"
+   "checked_utc": "2026-11-23T20:18:54.276423+00:00"
   },
   {
    "id": "hunt-1-bayview-ave-new-rochelle",
@@ -4788,7 +5244,7 @@
    },
    "facts_hash": "9716ac88231c",
    "memo": null,
-   "checked_utc": "2026-11-23T18:44:35.453627+00:00"
+   "checked_utc": "2026-11-23T20:20:24.860762+00:00"
   },
   {
    "id": "hunt-17-3rd-st-new-rochelle",
@@ -4858,7 +5314,7 @@
    },
    "facts_hash": "4298c4db7b03",
    "memo": null,
-   "checked_utc": "2026-11-23T18:46:05.976084+00:00"
+   "checked_utc": "2026-11-23T20:21:55.662008+00:00"
   },
   {
    "id": "hunt-59-crescent-ave-new-rochelle",
@@ -4928,7 +5384,7 @@
    },
    "facts_hash": "61a5dd193e15",
    "memo": null,
-   "checked_utc": "2026-11-23T18:47:36.484354+00:00"
+   "checked_utc": "2026-11-23T20:23:26.217573+00:00"
   },
   {
    "id": "hunt-1-lemke-pl-new-rochelle",
@@ -4998,7 +5454,7 @@
    },
    "facts_hash": "96745b093589",
    "memo": null,
-   "checked_utc": "2026-11-23T18:49:07.020780+00:00"
+   "checked_utc": "2026-11-23T20:24:56.740521+00:00"
   },
   {
    "id": "hunt-292-5th-ave-new-rochelle",
@@ -5068,7 +5524,7 @@
    },
    "facts_hash": "f8993bf962e2",
    "memo": null,
-   "checked_utc": "2026-11-23T18:50:37.542146+00:00"
+   "checked_utc": "2026-11-23T20:26:27.225282+00:00"
   },
   {
    "id": "hunt-27-high-st-crotononhudson",
@@ -5098,7 +5554,7 @@
    },
    "facts_hash": "81b605bf786d",
    "memo": null,
-   "checked_utc": "2026-11-23T18:52:08.129253+00:00"
+   "checked_utc": "2026-11-23T20:27:58.236150+00:00"
   },
   {
    "id": "hunt-73-melrose-ave-crotononhudson",
@@ -5127,8 +5583,29 @@
     "ask_per_unit": {}
    },
    "facts_hash": "614e0738d19a",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:53:38.633874+00:00"
+   "memo": {
+    "verdict": "The site cannot be evaluated for pursuit at the $488,000 asking price until zoning classification and buildable parameters are confirmed.",
+    "as_of_right": "As-of-right density and bulk math cannot be calculated because the zoning district and development standards are not provided in the facts.",
+    "approval_path": "The approval path and associated time or risk cannot be determined without the municipal zoning classification and a specific project proposal.",
+    "legal_issues": [
+     "Zoning district classification and allowable uses are unconfirmed.",
+     "No approved plans are claimed or documented in the listing.",
+     "The listing description is truncated mid-sentence, leaving property conditions and disclosures incomplete."
+    ],
+    "test_fit": "The site is a flat 50-foot by 125-foot lot totaling 6,098 square feet. Building envelope, unit count range, parking requirements, and density limits cannot be calculated without zoning code data.",
+    "value": "The asking price is $488,000 for the 6,098 square foot lot. Land cost per buildable unit cannot be calculated across scenarios because allowable unit counts are not provided.",
+    "diligence": [
+     "Verify the official zoning district and municipal code rules with Croton-on-Hudson.",
+     "Obtain a certified property survey to confirm lot boundaries and 6,098 square foot area.",
+     "Request full listing documentation and disclosures from the broker.",
+     "Check municipal records for title encumbrances, easements, or prior board filings."
+    ],
+    "enablers": "",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:27:58.237000+00:00"
   },
   {
    "id": "hunt-6029-huxley-ave-bronx",
@@ -5278,7 +5755,7 @@
    },
    "facts_hash": "5dcba187b50f",
    "memo": null,
-   "checked_utc": "2026-11-23T18:55:09.843111+00:00"
+   "checked_utc": "2026-11-23T20:29:29.319379+00:00"
   },
   {
    "id": "hunt-2808-palisade-ave-weehawken",
@@ -5308,7 +5785,7 @@
    },
    "facts_hash": "7a367bc69429",
    "memo": null,
-   "checked_utc": "2026-11-23T18:56:40.394553+00:00"
+   "checked_utc": "2026-11-23T20:31:03.960091+00:00"
   },
   {
    "id": "hunt-528-undercliff-ave-edgewater",
@@ -5337,8 +5814,30 @@
     "ask_per_unit": {}
    },
    "facts_hash": "bd9c3ed85f47",
-   "memo": null,
-   "checked_utc": "2026-11-23T18:58:10.952144+00:00"
+   "memo": {
+    "verdict": "The property contains an existing 4-bedroom home asking $925,000, but development feasibility cannot be evaluated without zoning and market data.",
+    "as_of_right": "As-of-right zoning classifications, permitted uses, and density calculations are not provided in the facts.",
+    "approval_path": "The required approval process, timeframe, and risks cannot be determined without municipal zoning data.",
+    "legal_issues": [
+     "Discrepancy between stated 4,500 sq ft lot size and stated 25 x 125 dimensions.",
+     "Property zoning and listing status require direct verification.",
+     "Occupancy status of the existing 4-bedroom home needs verification."
+    ],
+    "test_fit": "Building envelope, unit count range, parking rules, and density limits cannot be calculated without zoning facts.",
+    "value": "The asking price is $925,000 (reduced from $949,000), but cost per buildable unit cannot be computed without unit capacity data.",
+    "diligence": [
+     "Verify official municipal zoning classification and code requirements with Edgewater.",
+     "Obtain a boundary survey to clarify lot dimensions and total square footage.",
+     "Confirm lot details and development status with the listing broker.",
+     "Review title report for easements or property encumbrances.",
+     "Inspect the property and confirm current tenant or occupancy status."
+    ],
+    "enablers": "None specified in the facts.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:31:35.971292+00:00"
   },
   {
    "id": "hunt-107-old-palisade-rd-fort-lee",
@@ -5368,7 +5867,7 @@
    },
    "facts_hash": "80cac4eab99e",
    "memo": null,
-   "checked_utc": "2026-11-23T18:59:41.467476+00:00"
+   "checked_utc": "2026-11-23T20:33:06.418305+00:00"
   },
   {
    "id": "hunt-13311343-intervale-ave-bronx",
@@ -5525,7 +6024,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:59:42.111969+00:00"
+   "checked_utc": "2026-11-23T20:33:36.521123+00:00"
   },
   {
    "id": "hunt-408-e-154th-st-bronx",
@@ -5684,7 +6183,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T18:59:42.615157+00:00"
+   "checked_utc": "2026-11-23T20:33:45.287549+00:00"
   },
   {
    "id": "hunt-757-warburton-ave-yonkers",
@@ -5802,7 +6301,7 @@
    },
    "facts_hash": "16bc8357cd33",
    "memo": null,
-   "checked_utc": "2026-11-23T19:01:13.157848+00:00"
+   "checked_utc": "2026-11-23T20:35:15.886280+00:00"
   },
   {
    "id": "hunt-143-oliver-ave-yonkers",
@@ -5920,7 +6419,7 @@
    },
    "facts_hash": "0cfe5918ac67",
    "memo": null,
-   "checked_utc": "2026-11-23T19:02:43.630605+00:00"
+   "checked_utc": "2026-11-23T20:36:46.388477+00:00"
   },
   {
    "id": "hunt-127-downing-st-yonkers",
@@ -6038,7 +6537,7 @@
    },
    "facts_hash": "9b10454495b8",
    "memo": null,
-   "checked_utc": "2026-11-23T19:04:14.205946+00:00"
+   "checked_utc": "2026-11-23T20:38:16.829760+00:00"
   },
   {
    "id": "hunt-2889-zulette-ave-bronx",
@@ -6205,7 +6704,7 @@
    },
    "facts_hash": "4d0d6a462290",
    "memo": null,
-   "checked_utc": "2026-11-23T19:06:06.951777+00:00"
+   "checked_utc": "2026-11-23T20:39:48.112860+00:00"
   },
   {
    "id": "hunt-1865-barnes-ave-bronx",
@@ -6372,7 +6871,7 @@
    },
    "facts_hash": "d758f6cd5cd8",
    "memo": null,
-   "checked_utc": "2026-11-23T19:07:42.156585+00:00"
+   "checked_utc": "2026-11-23T20:41:20.286453+00:00"
   },
   {
    "id": "hunt-2819-roebling-ave-bronx",
@@ -6539,7 +7038,7 @@
    },
    "facts_hash": "da414619e853",
    "memo": null,
-   "checked_utc": "2026-11-23T19:09:13.303599+00:00"
+   "checked_utc": "2026-11-23T20:42:55.296304+00:00"
   },
   {
    "id": "hunt-127-park-ave-yonkers",
@@ -6657,7 +7156,7 @@
    },
    "facts_hash": "c47f57dbac01",
    "memo": null,
-   "checked_utc": "2026-11-23T19:10:43.785773+00:00"
+   "checked_utc": "2026-11-23T20:44:25.825444+00:00"
   },
   {
    "id": "hunt-526-n-terrace-ave-mount-vernon",
@@ -6686,8 +7185,31 @@
     "ask_per_unit": {}
    },
    "facts_hash": "f4bab7c8777d",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:12:14.291091+00:00"
+   "memo": {
+    "verdict": "The site holds a legal 3-family home on 0.1167 acres for $899,000, but feasibility at this ask cannot be determined without zoning and revenue data.",
+    "as_of_right": "Zoning parameters and FAR are not provided in FACTS. The current lot size is 0.1167 acres (5,083.45 square feet) with an existing 3-family brick structure.",
+    "approval_path": "The approval path is unknown because zoning district rules are not provided in FACTS.",
+    "legal_issues": [
+     "Verification of legal 3-family status and certificate of occupancy",
+     "Confirmation of zoning district and municipal code rules",
+     "Review of title, encumbrances, and frontage rights",
+     "Terms and acquisition structure for the adjacent 50x100 lot available for $269,000"
+    ],
+    "test_fit": "The site is 0.1167 acres containing a 3-family brick home. Max unit count, setbacks, height, and parking limits cannot be calculated without zoning facts.",
+    "value": "At the $899,000 asking price, the cost per existing unit is $299,667. Buildability comps and scenario unit counts are not provided.",
+    "diligence": [
+     "Confirm zoning classification and bulk rules with Mount Vernon building department",
+     "Obtain title search and boundary survey for the parcel and the adjacent 50x100 lot",
+     "Verify existing lease agreements and legal 3-family occupancy status",
+     "Gather market rent and sale comps to perform financial modeling",
+     "Confirm package purchase terms for the adjacent lot"
+    ],
+    "enablers": "None listed in FACTS.",
+    "highest_and_best_use": "Not enough data. FACTS lack rents, sale prices, land comps, and zoning district rules.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:44:25.826281+00:00"
   },
   {
    "id": "hunt-32-terrace-ave-ossining",
@@ -6717,7 +7239,7 @@
    },
    "facts_hash": "b4dabbd306fa",
    "memo": null,
-   "checked_utc": "2026-11-23T19:13:44.759098+00:00"
+   "checked_utc": "2026-11-23T20:45:56.563287+00:00"
   },
   {
    "id": "hunt-187-old-mamaroneck-rd-white-plains",
@@ -6747,7 +7269,7 @@
    },
    "facts_hash": "69612f27a9b2",
    "memo": null,
-   "checked_utc": "2026-11-23T19:15:15.273300+00:00"
+   "checked_utc": "2026-11-23T20:47:27.081645+00:00"
   },
   {
    "id": "hunt-13471351-intervale-ave-3lot-package-1347-1349-1351-bronx",
@@ -6896,8 +7418,29 @@
     }
    },
    "facts_hash": "d7e3d4138bf8",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:16:57.965509+00:00"
+   "memo": {
+    "verdict": "The site allows an as-of-right development of 25,501 SF (~32 units), and pursuing it is worth exploring if the $1,000,000 ask covers all three lots.",
+    "as_of_right": "Under R7-1 zoning, the 6,534 SF lot allows 25,501 SF of lawful floor area using the wide-street blend. This yields approximately 32 units assuming an average unit size of 795 SF.",
+    "approval_path": "Developing 32 units is as-of-right. The listing claims standard approvals for 121 units, which requires verifying the municipal approval resolution to determine risk and timeline.",
+    "legal_issues": [
+     "Unverified listing claim of approvals for 121 units needs resolution documentation.",
+     "Total purchase price is ambiguous in listings ($1,000,000 total versus $3,000,000 across three lots).",
+     "Seller requires all three adjoining lots (1347, 1349, and 1351 Intervale Ave) to be sold together."
+    ],
+    "test_fit": "The combined 54 ft by 121 ft lot (6,534 SF) supports a floor area envelope of 25,501 SF. The as-of-right capacity yields around 32 units at 795 SF per unit, whereas the listing claims a 121-unit design. Zoning FAR limits density first.",
+    "value": "At a $1,000,000 total ask, land cost is $31,250 per unit ($39/buildable SF) for 32 as-of-right units, or $8,264 per unit for 121 units. If the price is $3,000,000 total, land cost rises to $93,750 per unit ($118/buildable SF). Recent Bronx comps sold for $127 to $168 per buildable SF.",
+    "diligence": [
+     "Confirm with the listing broker whether the $1,000,000 asking price applies to the full package or per lot.",
+     "Obtain and inspect official municipal resolution records for the claimed 121-unit approval.",
+     "Verify MapPLUTO lot boundaries and zoning designations for lots 1347 and 1349 Intervale Ave.",
+     "Review title records and lease terms for the three existing single-family homes built in 1989."
+    ],
+    "enablers": "Claimed existing board approval for 121 units.",
+    "highest_and_best_use": "Residential rental building is the highest and best use based on 2024 local market rents ($2,580 studio, $2,895 1BR, $3,300 2BR). Achieving maximum value depends on verifying the 121-unit approval and confirming the total ask.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:47:46.316806+00:00"
   },
   {
    "id": "hunt-1720-boone-ave-bronx",
@@ -6905,16 +7448,16 @@
    "muni": "Bronx",
    "state": "NY",
    "status": "Listed (LoopNet / Greiner-Maltz, 2026-11-23); via Muse, verify",
-   "ask": 1600000.0,
+   "ask": 5600000.0,
    "facts": {
     "address": "1720 Boone Ave",
     "muni": "Bronx",
     "state": "NY",
     "jurisdiction": "NYC",
-    "ask": 1600000.0,
+    "ask": 5600000.0,
     "status": "Listed (LoopNet / Greiner-Maltz, 2026-11-23); via Muse, verify",
     "listing_url": "https://www.loopnet.com/Listing/1720-Boone-Ave-Bronx-NY/42612920/",
-    "headline": "existing: 4,539 SF one-story retail building (1962) on a corner lot (Boone Ave + E 174th St), can be delivered vacant or with month-to-month income per broker copy; PRICE UNVERIFIED IN PUBLIC COPY: $1,600,000 reported by Nikko from LoopNet 2026-11-23, but the live LoopNet page and Crexi/PropertyShark show 'price on request' - written broker confirmation pending; zoning VERIFIED 2026-11-23: R7A + C2-4 overlay, lot 13,209 SF per MapPLUTO (broker flyer understates at 11,605 SF), FAR 4.00 = 52,836 SF lawful = 62 units as-of-right @850 SF avg (66 @795), NOT in an MIH area, FEMA Zone X, parking 0 required, E-designation E-277 (hazmat Phase I/II, gas-only HVAC, noise attenuation), Opportunity Zone; underwriting at the assumed $1.6M pencils in all views (arm's-length 6.80% YoC)",
+    "headline": "existing: 4,539 SF one-story retail building (1962) on a corner lot (Boone Ave + E 174th St), can be delivered vacant or with month-to-month income per broker copy; PRICE CORRECTED 2026-11-23: actual ask is $5,600,000 per Nikko (an earlier $1,600,000 figure was wrong; public pages show 'price on request') - at $5.6M the deal is dead ($90,323/unit at 62 units vs ~$43K ceiling; max supportable land ~$2.68M arm's-length); zoning VERIFIED 2026-11-23: R7A + C2-4 overlay, lot 13,209 SF per MapPLUTO (broker flyer understates at 11,605 SF), FAR 4.00 = 52,836 SF lawful = 62 units as-of-right @850 SF avg (66 @795), NOT in an MIH area, FEMA Zone X, parking 0 required, E-designation E-277 (hazmat Phase I/II, gas-only HVAC, noise attenuation), Opportunity Zone",
     "listing_lot_sf": 13209.0,
     "listing_zoning": "111",
     "listing_buildable_sf": null,
@@ -6967,9 +7510,9 @@
      "approved": "120"
     },
     "ask_per_unit": {
-     "standard": "$20,779 to $27,586",
-     "with UAP affordable bonus": "$16,495 to $21,918",
-     "approved": "$13,333"
+     "standard": "$72,727 to $96,552",
+     "with UAP affordable bonus": "$57,732 to $76,712",
+     "approved": "$46,667"
     },
     "local_context": {
      "land_comps": [
@@ -7074,9 +7617,30 @@
      ]
     }
    },
-   "facts_hash": "adb714b2a59f",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:18:29.022818+00:00"
+   "facts_hash": "da3c1acaa0c4",
+   "memo": {
+    "verdict": "The site realistically supports a 58 to 77 unit standard residential project, but it is not worth pursuing at the $5,600,000 asking price.",
+    "as_of_right": "Under ZR 23-22 in an R7A zone, the 13,209 SF lot allows a standard FAR of 4.00, which equals 52,836 SF of standard floor area and yields 58 to 77 units.",
+    "approval_path": "As-of-right development carries low approval time and risk, whereas pursuing the claimed 120-unit plan requires verifying existing approvals or seeking discretionary relief.",
+    "legal_issues": [
+     "Unverified listing claim of 120-unit approval requiring resolution documentation.",
+     "Environmental E-designation E-277 requiring Phase I/II testing, gas-only HVAC, and noise attenuation.",
+     "Verification of existing commercial tenant lease terms to guarantee vacant delivery."
+    ],
+    "test_fit": "The building envelope on this 13,209 SF corner lot allows 52,836 SF standard (58 to 77 units) or 66,177 SF under UAP (73 to 97 units). Zero parking spaces are required. Zoning FAR limits density first.",
+    "value": "At the $5,600,000 ask, land cost is $72,727 to $96,552 per buildable unit for standard as-of-right, $57,732 to $76,712 per unit under UAP, and $46,667 per unit under the claimed 120-unit approval.",
+    "diligence": [
+     "Zoning resolution or municipal documentation confirming the claimed 120-unit approval.",
+     "Phase I and Phase II environmental reports for E-designation E-277 compliance.",
+     "Tenant lease agreements and estoppel letters for the existing retail building.",
+     "Boundary survey to confirm the 13,209 SF lot size."
+    ],
+    "enablers": "Qualifying affordable UAP bonus increases FAR to 5.01, and C2-4 commercial overlay allows ground-floor commercial uses.",
+    "highest_and_best_use": "Multifamily rental utilizing the UAP bonus for 73 to 97 units maximizes value, supported by nearby rental comps like The Bronx Vibe reaching $3,300 for 2BRs, contingent on acquiring the land well below the ask.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T20:48:05.981606+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -7206,6 +7770,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "yon-1.-445-10",
+     "address": "94 William St",
+     "town": "Yonkers",
+     "state": "NY",
+     "asking_price": "",
+     "units": "20",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "Yonkers Art XV affordable set-aside (percentage not retrieved - gap); HCR/Westchester funds unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Yonkers blended rent from market.csv Hudson Piers and Hudson 44 (studio 2333-2400/1BR 2467-2750/2BR 3450-3756)",
+     "hard_cost_psf": "400",
+     "total_dev_cost": "10334000",
+     "noi_conv": "494000",
+     "yield_on_cost_pct": "4.78",
+     "supportable_loan_conv": "5289185",
+     "max_land_value": "-2734000",
+     "max_land_per_unit": "-136700",
+     "notes": "Better track: conventional. NOI conv $494,000 (20u at $3000/mo); opex $9500/u/yr incl taxes ~$3500/u (est). Max land conv $-2,734,000; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "94 William St",
@@ -7230,13 +7820,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://www.yonkersparkingauthority.com/home/showpublisheddocument/18751/636794345973300000 https://services6.arcgis.com/EbVsqZ18sv1kVJ3k/ArcGIS/rest/services/Westchester_County_Parcels/FeatureServer",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 20 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "057adce12986",
+   "facts_hash": "2d8df0472d0f",
    "memo": null,
-   "checked_utc": "2026-11-23T19:20:07.002555+00:00"
+   "checked_utc": "2026-11-23T20:49:41.046967+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -7366,6 +7954,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "yon-1.-176-29",
+     "address": "127 Downing St",
+     "town": "Yonkers",
+     "state": "NY",
+     "asking_price": "",
+     "units": "50",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "Yonkers Art XV affordable set-aside (percentage not retrieved - gap); HCR/Westchester funds unverified",
+     "aff_verdict": "UNVERIFIED",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Yonkers blended rent from market.csv Hudson Piers and Hudson 44 (studio 2333-2400/1BR 2467-2750/2BR 3450-3756)",
+     "hard_cost_psf": "450",
+     "total_dev_cost": "25200000",
+     "noi_conv": "1250000",
+     "yield_on_cost_pct": "4.96",
+     "supportable_loan_conv": "13383566",
+     "max_land_value": "-5969231",
+     "max_land_per_unit": "-119385",
+     "notes": "Better track: conventional. NOI conv $1,250,000 (50u at $3000/mo); opex $9200/u/yr incl taxes ~$3500/u (est). Max land conv $-5,969,231; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "127 Downing St",
@@ -7391,13 +8005,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://www.yonkersparkingauthority.com/home/showpublisheddocument/18751/636794345973300000 https://services6.arcgis.com/EbVsqZ18sv1kVJ3k/ArcGIS/rest/services/Westchester_County_Parcels/FeatureServer",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 53 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "49cf50497536",
+   "facts_hash": "487ee7cb7617",
    "memo": null,
-   "checked_utc": "2026-11-23T19:21:44.646112+00:00"
+   "checked_utc": "2026-11-23T20:51:17.033860+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -7526,6 +8138,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "yon-1.-211-66",
+     "address": "223 Glenbrook Ave",
+     "town": "Yonkers",
+     "state": "NY",
+     "asking_price": "",
+     "units": "1",
+     "zoning_confidence": "low",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (S-50 single-family)",
+     "aff_verdict": "",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Yonkers blended rent from market.csv Hudson Piers and Hudson 44 (studio 2333-2400/1BR 2467-2750/2BR 3450-3756)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "975000",
+     "noi_conv": "28040",
+     "yield_on_cost_pct": "2.88",
+     "supportable_loan_conv": "300220",
+     "max_land_value": "-543615",
+     "max_land_per_unit": "-543615",
+     "notes": "Better track: conventional. NOI conv $28,040 (1u at $3600/mo); opex $13000/u/yr incl taxes ~$3500/u (est). Max land conv $-543,615; Single-family subdivision product screened as a rental hold - for-sale exit not modeled; rental screen only; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "223 Glenbrook Ave",
@@ -7551,35 +8189,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://ecode360.com/attachment/339639/YO0144-043d%20Table%2043-4.pdf https://services.arcgis.com/XKEHpOulfycN9cGC/ArcGIS/rest/services/Zoning_ecode/FeatureServer https://services6.arcgis.com/EbVsqZ18sv1kVJ3k/ArcGIS/rest/services/Westchester_County_Parcels/FeatureServer https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "low"
     },
-    "conflicts_with_independent_check": [
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "1254fded518a",
-   "memo": {
-    "verdict": "Only one single-family home can realistically be built as-of-right due to frontage and single-family zoning constraints, making the site expensive at the $499,000 ask unless dimensional variances permit subdivision.",
-    "as_of_right": "Yonkers S-50 zoning (Table 43-3) permits single-family detached homes only and prohibits multifamily. Rules require a 5,000 sf minimum lot area, 50 ft minimum lot width at the street line, 40% maximum lot coverage, 2.5 stories / 35 ft maximum height, and a 0.75 base FAR. Based on lot area alone, the site could yield 4 lots under the assessor size of 24,829 sf or 9 lots under the calculated parcel size of 45,695 sf. However, because actual street frontage is 35 ft (below the 50 ft requirement), the as-of-right yield is limited to 1 single-family home.",
-    "approval_path": "As-of-right development for 1 single-family home, provided the existing lot is confirmed buildable under Yonkers Code Sec 43-33. Any subdivision to create additional lots requires area variances from the Zoning Board of Appeals for frontage and lot width, which adds significant time and legal risk.",
-    "legal_issues": [
-     "Street frontage is 35 ft, failing the S-50 requirement of 50 ft lot width at the street line.",
-     "Assessor parcel record lists 0.57 acres (24,829 sf), which directly conflicts with the GIS polygon calculation of 1.049 acres (45,695 sf).",
-     "The existing lot is nonconforming for width, requiring Building Department confirmation of buildability as a preexisting lot under Sec 43-33.",
-     "Potential status of the northern parcel edge as a paper street requires verification against the Official City Map."
-    ],
-    "test_fit": "Density is restricted primarily by S-50 single-family zoning and the 35 ft street frontage. For a single home, maximum lot coverage is 40% (18,278 sf footprint on 45,695 sf) with a gross maximum floor area of 34,271 sf across 2.5 stories/35 ft. Off-street parking requires 2 spaces per dwelling unit under Table 43-4. Yield is capped at 1 single-family unit.",
-    "value": "At the $499,000 ask, land cost is $499,000 per buildable unit under the 1-lot as-of-right scenario. If area variances enabled a subdivision of 4 to 9 lots based on area math, land cost would drop to $55,444 to $124,750 per buildable lot.",
-    "diligence": [
-     "Resolve lot area conflict between Westchester County assessor record (0.57 acres / 24,829 sf) and GIS polygon record (1.049 acres / 45,695 sf).",
-     "Obtain a certified property survey and tax map to confirm boundary dimensions, shape, and exact street frontage.",
-     "Check the Official City Map to determine if the northern edge involves an unmapped paper street.",
-     "Request a formal written determination from the Yonkers Building Department on lot buildability under Sec 43-33."
-    ],
-    "enablers": "No density overlays, TOD incentives, mandatory affordability bonuses, or pending rezonings apply to this site. Expanding unit yield requires obtaining Zoning Board of Appeals area variances for lot frontage and lot width to permit subdivision.",
-    "highest_and_best_use": "Not enough data. While single-family residential is the only permitted use in S-50, FACTS do not include single-family home sale prices or land comps to confirm if a single luxury home supports the $499,000 land price.",
-    "letter_angle": "",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T19:21:53.572582+00:00"
+   "facts_hash": "717dbd0d8021",
+   "memo": null,
+   "checked_utc": "2026-11-23T20:52:52.988993+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -7707,6 +8321,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "yon-4.-4652-56",
+     "address": "101 Cresthill Rd",
+     "town": "Yonkers",
+     "state": "NY",
+     "asking_price": "",
+     "units": "2",
+     "zoning_confidence": "low",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (S-75 single-family)",
+     "aff_verdict": "",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Yonkers blended rent from market.csv Hudson Piers and Hudson 44 (studio 2333-2400/1BR 2467-2750/2BR 3450-3756)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "1950000",
+     "noi_conv": "56080",
+     "yield_on_cost_pct": "2.88",
+     "supportable_loan_conv": "600440",
+     "max_land_value": "-1087231",
+     "max_land_per_unit": "-543615",
+     "notes": "Better track: conventional. NOI conv $56,080 (2u at $3600/mo); opex $13000/u/yr incl taxes ~$3500/u (est). Max land conv $-1,087,231; Two subdivided single-family homes screened as rental holds - for-sale exit not modeled; rental screen only; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "101 Cresthill Rd",
@@ -7733,12 +8373,12 @@
      "confidence": "low"
     },
     "conflicts_with_independent_check": [
-     "Muse reports multifamily is not permitted in this district"
+     "Units: BOUNTY up to 1 vs Muse 2"
     ]
    },
-   "facts_hash": "ceaf115c6760",
+   "facts_hash": "eaa8cda1896a",
    "memo": null,
-   "checked_utc": "2026-11-23T19:23:48.245767+00:00"
+   "checked_utc": "2026-11-23T20:54:47.587727+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -7866,6 +8506,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "yon-4.-4651-86",
+     "address": "81 Avondale Rd",
+     "town": "Yonkers",
+     "state": "NY",
+     "asking_price": "",
+     "units": "2",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "none as-of-right (S-75 single-family)",
+     "aff_verdict": "",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Yonkers blended rent from market.csv Hudson Piers and Hudson 44 (studio 2333-2400/1BR 2467-2750/2BR 3450-3756)",
+     "hard_cost_psf": "325",
+     "total_dev_cost": "1950000",
+     "noi_conv": "56080",
+     "yield_on_cost_pct": "2.88",
+     "supportable_loan_conv": "600440",
+     "max_land_value": "-1087231",
+     "max_land_per_unit": "-543615",
+     "notes": "Better track: conventional. NOI conv $56,080 (2u at $3600/mo); opex $13000/u/yr incl taxes ~$3500/u (est). Max land conv $-1,087,231; Two subdivided single-family homes screened as rental holds - for-sale exit not modeled; rental screen only; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-22",
      "address": "81 Avondale Rd",
@@ -7891,14 +8557,11 @@
      "sources": "https://ecode360.com/print/YO0144?guid=15113784 https://img1.wsimg.com/blobby/go/3024eaf7-0344-48d2-937e-d8196330dfa4/downloads/A-3d_Dimensional%20Requirements%20for%20Certain%20Zoni.pdf?ver=1668115373995 https://ecode360.com/15115892 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://geocoding.geo.census.gov/geocoder/locations/onelineaddress https://services6.arcgis.com/EbVsqZ18sv1kVJ3k/ArcGIS/rest/services/Westchester_County_Parcels/FeatureServer https://ecode360.com/attachment/339639/YO0144-043d%20Table%2043-4.pdf https://services.arcgis.com/XKEHpOulfycN9cGC/ArcGIS/rest/services/Zoning_ecode/FeatureServer",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 2 vs Muse 1",
-     "Muse reports multifamily is not permitted in this district"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "7c4c16e3a8b4",
+   "facts_hash": "7b3732ca6618",
    "memo": null,
-   "checked_utc": "2026-11-23T19:26:48.111628+00:00"
+   "checked_utc": "2026-11-23T20:56:24.040806+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -7945,6 +8608,32 @@
     "scenarios_units": {
      "standard": "85 to 113"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "nyc-4004110018",
+     "address": "21 STREET",
+     "town": "Astoria / LIC",
+     "state": "NY",
+     "asking_price": "",
+     "units": "85",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "MIH area (Option 3 per PLUTO 26v2) + qualifying affordable FAR 12.00 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Astoria blended rent from market.csv Astoria Cove (studio 3287/1BR 3846/2BR 4995) discounted; labeled estimate",
+     "hard_cost_psf": "550",
+     "total_dev_cost": "53013125",
+     "noi_conv": "2704700",
+     "yield_on_cost_pct": "5.1",
+     "supportable_loan_conv": "28958825",
+     "max_land_value": "-11402356",
+     "max_land_per_unit": "-134145",
+     "notes": "Better track: conventional. NOI conv $2,704,700 (85u at $3800/mo); opex $11500/u/yr incl taxes ~$4200/u (est). Max land conv $-11,402,356; max land aff $-31,041,871 on 102 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "21 STREET",
@@ -7971,35 +8660,11 @@
      "sources": "https://zr.planning.nyc.gov/index.php/node/88 https://zr.planning.nyc.gov/node/18085 https://zr.planning.nyc.gov/index.php/node/22764 https://zr.planning.nyc.gov/sites/default/files/article/144/chapters/Chapter%203.pdf https://zoningresolution.planning.nyc.gov/print/pdf/node/17540 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/l/lot/4/411/18 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=4004110018 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 113 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "26e946d5d8da",
-   "memo": {
-    "verdict": "An as-of-right residential project of 85 to 102 units is achievable, but deal viability cannot be assessed because no asking price is provided.",
-    "as_of_right": "M1-6A/R10 zoning under ZR 123-62 and ZR 23-22 allows a standard residential FAR of 10.00, permitting 77,110 sf of floor area or approximately 85 units. Qualifying affordable housing increases FAR to 12.00 under UAP rules, permitting 92,532 sf or approximately 102 units. Lot coverage is capped at 80 percent under ZR 23-362 on the 7,711 sf lot.",
-    "approval_path": "As-of-right. Development requires standard DOB plan review without discretionary approvals, resulting in lower entitlement risk and a faster timeline.",
-    "legal_issues": [
-     "Mandatory Inclusionary Housing set-aside obligations under ZR Appendix I.",
-     "Environmental Designation E-848 requiring OER clearance prior to building permit issuance.",
-     "Requirement of an HPD or HDC regulatory agreement to utilize the 12.00 UAP affordable FAR tier."
-    ],
-    "test_fit": "Max footprint is 6,169 sf based on 80 percent lot coverage on an 88.64 ft by 107.32 ft lot. Building height is capped at 355 ft with a base height of 60 to 155 ft under ZR 123-652. Unit capacity ranges from 85 to 102 units, though parcel data notes up to 113 units. Density is limited first by FAR cap. No parking is required in the LIC Inner Transit Zone under ZR 25-21.",
-    "value": "Land cost per buildable unit cannot be calculated because the asking price is not provided in FACTS.",
-    "diligence": [
-     "Resolve unit count calculation conflict between independent check (85 standard to 102 UAP units) and parcel dataset (up to 113 units).",
-     "Obtain Phase I ESA and NYC OER reports regarding Environmental Designation E-848 requirements.",
-     "Perform full title search to confirm ownership by A&C International Management Group, LLC and verify encumbrances.",
-     "Order boundary survey to confirm 88.64 ft frontage and 107.32 ft lot depth.",
-     "Confirm mandatory MIH option requirements and UAP affordable set-aside terms with HPD."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) increases FAR from 10.00 to 12.00 for qualifying affordable housing. Mandatory Inclusionary Housing (MIH) overlay applies.",
-    "highest_and_best_use": "Not enough data.",
-    "letter_angle": "Contact owner A&C International Management Group, LLC directly to express interest in acquiring the off-market parcel for an as-of-right development.",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T19:26:48.988178+00:00"
+   "facts_hash": "47900f79ecbc",
+   "memo": null,
+   "checked_utc": "2026-11-23T20:57:55.547721+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -8148,6 +8813,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "nyc-2023490080",
+     "address": "GERARD AVENUE",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "79",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 7.20 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "550",
+     "total_dev_cost": "48990562",
+     "noi_conv": "1782240",
+     "yield_on_cost_pct": "3.64",
+     "supportable_loan_conv": "19082182",
+     "max_land_value": "-21571486",
+     "max_land_per_unit": "-273057",
+     "notes": "Better track: conventional. NOI conv $1,782,240 (79u at $2900/mo); opex $10500/u/yr incl taxes ~$4500/u (est). Max land conv $-21,571,486; max land aff $-28,021,281 on 94 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "GERARD AVENUE",
@@ -8174,13 +8865,11 @@
      "sources": "https://zr.planning.nyc.gov/index.php/node/88 https://zr.planning.nyc.gov/node/18085 https://zr.planning.nyc.gov/index.php/node/22764 https://zr.planning.nyc.gov/sites/default/files/article/144/chapters/Chapter%203.pdf https://zoningresolution.planning.nyc.gov/print/pdf/node/17540 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/l/lot/2/2349/80 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=2023490080 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 104 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "ac9f9bc23121",
+   "facts_hash": "ab8b872fef6f",
    "memo": null,
-   "checked_utc": "2026-11-23T19:28:20.022267+00:00"
+   "checked_utc": "2026-11-23T20:59:26.667835+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -8329,6 +9018,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "nyc-2023200066",
+     "address": "250 EAST 138 STREET",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "63",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 6.00 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "550",
+     "total_dev_cost": "39531250",
+     "noi_conv": "1421280",
+     "yield_on_cost_pct": "3.6",
+     "supportable_loan_conv": "15217436",
+     "max_land_value": "-17665404",
+     "max_land_per_unit": "-280403",
+     "notes": "Better track: conventional. NOI conv $1,421,280 (63u at $2900/mo); opex $10500/u/yr incl taxes ~$4500/u (est). Max land conv $-17,665,404; max land aff $-22,706,970 on 76 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "250 EAST 138 STREET",
@@ -8355,13 +9070,11 @@
      "sources": "https://zr.planning.nyc.gov/index.php/node/88 https://zr.planning.nyc.gov/node/18085 https://zr.planning.nyc.gov/index.php/node/22764 https://zr.planning.nyc.gov/sites/default/files/article/144/chapters/Chapter%203.pdf https://zoningresolution.planning.nyc.gov/print/pdf/node/17540 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 84 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "25072a9ac0b1",
+   "facts_hash": "761acc8cd110",
    "memo": null,
-   "checked_utc": "2026-11-23T19:29:51.409117+00:00"
+   "checked_utc": "2026-11-23T21:00:58.019147+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -8510,6 +9223,32 @@
       }
      ]
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "nyc-2030550047",
+     "address": "4632 3 AVENUE",
+     "town": "Bronx",
+     "state": "NY",
+     "asking_price": "",
+     "units": "60",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 5.01 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Bronx blended rent from market.csv Bronx Vibe (studio 2580/1BR 2895/2BR 3300); Zumper Bronx Nov 2026 (1BR 2600/2BR 3100)",
+     "hard_cost_psf": "500",
+     "total_dev_cost": "33780000",
+     "noi_conv": "1353600",
+     "yield_on_cost_pct": "4.01",
+     "supportable_loan_conv": "14492796",
+     "max_land_value": "-12955385",
+     "max_land_per_unit": "-215923",
+     "notes": "Better track: conventional. NOI conv $1,353,600 (60u at $2900/mo); opex $10500/u/yr incl taxes ~$4500/u (est). Max land conv $-12,955,385; max land aff $-18,843,129 on 75 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "4632 3 AVENUE",
@@ -8536,13 +9275,11 @@
      "sources": "https://zr.planning.nyc.gov/index.php/node/88 https://zr.planning.nyc.gov/node/18085 https://zr.planning.nyc.gov/index.php/node/22764 https://zr.planning.nyc.gov/sites/default/files/article/144/chapters/Chapter%203.pdf https://zoningresolution.planning.nyc.gov/print/pdf/node/17540 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 79 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "4da98a2c04ee",
+   "facts_hash": "4cede9dd0451",
    "memo": null,
-   "checked_utc": "2026-11-23T19:31:22.774560+00:00"
+   "checked_utc": "2026-11-23T21:02:29.130608+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -8589,6 +9326,32 @@
     "scenarios_units": {
      "standard": "60 to 79"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "nyc-3025650060",
+     "address": "WEST STREET",
+     "town": "Williamsburg / Greenpoint",
+     "state": "NY",
+     "asking_price": "",
+     "units": "60",
+     "zoning_confidence": "medium",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP (ZR Ch 27) + qualifying affordable FAR 3.90 (HPD/HDC); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Williamsburg blended rent from market.csv One Domino Square (studio 3701); 2BR 9895 luxury outlier excluded; labeled estimate",
+     "hard_cost_psf": "500",
+     "total_dev_cost": "33984375",
+     "noi_conv": "2182800",
+     "yield_on_cost_pct": "6.42",
+     "supportable_loan_conv": "23370919",
+     "max_land_value": "-402837",
+     "max_land_per_unit": "-6714",
+     "notes": "Better track: conventional. NOI conv $2,182,800 (60u at $4200/mo); opex $11500/u/yr incl taxes ~$4200/u (est). Max land conv $-402,837; max land aff $-20,203,211 on 78 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Closest queue site: 6.42% yield on cost at zero land vs 6.5% hurdle (conventional standard 60 units); Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-21",
      "address": "WEST STREET",
@@ -8614,13 +9377,11 @@
      "sources": "https://zr.planning.nyc.gov/index.php/node/88 https://zr.planning.nyc.gov/node/18085 https://zr.planning.nyc.gov/index.php/node/22764 https://zr.planning.nyc.gov/sites/default/files/article/144/chapters/Chapter%203.pdf https://zoningresolution.planning.nyc.gov/print/pdf/node/17540 https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/lot/3/2565/60 https://propertyinformationportal.nyc.gov/parcels/parcel/3025650060",
      "confidence": "medium"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 79 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "d58250bf27d3",
+   "facts_hash": "e499d8d18095",
    "memo": null,
-   "checked_utc": "2026-11-23T19:32:54.233253+00:00"
+   "checked_utc": "2026-11-23T21:04:00.310337+00:00"
   },
   {
    "id": "nyc-3024820009",
@@ -8667,6 +9428,32 @@
     "scenarios_units": {
      "standard": "53 to 70"
     },
+    "underwriting_muse": {
+     "date": "2026-11-22",
+     "site_id": "nyc-3024820009",
+     "address": "19 CLAY STREET",
+     "town": "Williamsburg / Greenpoint",
+     "state": "NY",
+     "asking_price": "",
+     "units": "48",
+     "zoning_confidence": "high",
+     "conv_verdict": "FAILS",
+     "aff_programs": "UAP qualifying tier FAR 3.90 (ZR Ch 27; floor area above 2.20 base permanently affordable); 485-x; 4% LIHTC",
+     "aff_verdict": "FAILS",
+     "combined_verdict": "CEILING-ONLY",
+     "offer_price": "0",
+     "cut_pct_needed": "",
+     "rent_basis": "Williamsburg blended rent from market.csv One Domino Square (studio 3701); 2BR 9895 luxury outlier excluded; labeled estimate",
+     "hard_cost_psf": "500",
+     "total_dev_cost": "27151875",
+     "noi_conv": "1746240",
+     "yield_on_cost_pct": "6.43",
+     "supportable_loan_conv": "18696735",
+     "max_land_value": "-286644",
+     "max_land_per_unit": "-5972",
+     "notes": "Better track: conventional. NOI conv $1,746,240 (48u at $4200/mo); opex $11500/u/yr incl taxes ~$4200/u (est). Max land conv $-286,644; max land aff $-22,006,944 on 85 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Near hurdle at zero land on conventional standard 48 units; UAP 85-unit affordable structure modeled and still negative at first-pass subsidy depth; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
+     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
+    },
     "independent_check": {
      "date": "2026-11-22",
      "address": "19 CLAY STREET",
@@ -8693,36 +9480,11 @@
      "sources": "https://zr.planning.nyc.gov/article-xii/chapter-3 https://zr.planning.nyc.gov/article-ii/chapter-3 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=3024820009 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/l/lot/3/2482/9",
      "confidence": "high"
     },
-    "conflicts_with_independent_check": [
-     "Units: BOUNTY up to 70 vs Muse 1"
-    ]
+    "conflicts_with_independent_check": []
    },
-   "facts_hash": "f3e6c3b41d4d",
-   "memo": {
-    "verdict": "As-of-right multifamily redevelopment allows approximately 48 to 70 standard units or up to 85 UAP units, but financial feasibility cannot be judged because no asking price or rent comps are provided.",
-    "as_of_right": "M1-2/R6 in Special Mixed Use District MX-8 permits residential development as-of-right. Standard residential FAR is 2.20 under ZR 23-22 text on a 19,747 sf lot, allowing 43,443 sf of floor area or about 48 units. PLUTO legacy data lists FAR 2.43, allowing 47,985 sf or 53 to 70 units. Maximum lot coverage is 80 percent.",
-    "approval_path": "As-of-right path requires no discretionary board approvals, keeping land-use entitlement risk low and timeline standard.",
-    "legal_issues": [
-     "Conflict between PLUTO legacy FAR of 2.43 and current ZR 23-22 standard FAR of 2.20.",
-     "Affordability covenant requirement under HPD/HDC if using the UAP tier (60 percent AMI weighted average for floor area above 2.20).",
-     "Mandatory 35 dB(A) window-wall noise attenuation requirements under ZR 123-32 for new residential units in MX districts.",
-     "Irregular lot geometry with 105 ft frontage by 151.54 ft depth requiring boundary confirmation."
-    ],
-    "test_fit": "The maximum base height is 65 ft with a maximum building height of 125 ft (up to 11 stories). The 80 percent lot coverage footprint is 15,798 sf. No residential parking is required in the Inner Transit Zone. FAR caps density first on both tiers. Likely unit count ranges from 48 to 70 standard units or up to 85 UAP units.",
-    "value": "Land cost per buildable unit cannot be computed because the ask price is null in FACTS.",
-    "diligence": [
-     "Resolve the FAR conflict between PLUTO standard FAR 2.43 (53 to 70 units) and ZR 23-22 text standard FAR 2.20 (48 units).",
-     "Obtain a certified boundary survey to confirm lot geometry and actual square footage.",
-     "Obtain asking price and local market rent and sales comps to run a full financial underwriting.",
-     "Verify HPD regulatory requirements for the UAP tier if pursuing 3.90 FAR.",
-     "Perform a full-lot flood study to supplement the centroid FEMA point query."
-    ],
-    "enablers": "Universal Affordability Preference (UAP) under ZR Chapter 27 increases residential FAR from 2.20 to 3.90 for qualifying affordable housing.",
-    "highest_and_best_use": "not enough data",
-    "letter_angle": "Approach CLAY PROPERTIES LLC directly to inquire if they are open to an offer for 19 Clay Street based on an as-of-right residential development program.",
-    "_model": "gemini-3.6-flash"
-   },
-   "checked_utc": "2026-11-23T19:32:54.744045+00:00"
+   "facts_hash": "2bc027620713",
+   "memo": null,
+   "checked_utc": "2026-11-23T21:05:31.517363+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
