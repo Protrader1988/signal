@@ -1,29 +1,29 @@
 {
- "generated_utc": "2026-11-21T04:57:41.875013+00:00",
+ "generated_utc": "2026-11-23T19:19:44.966129+00:00",
  "method": "NYC upzoned-and-underbuilt scan (BOUNTY).\n\nFinds private lots in the Bronx, Astoria/LIC (QN CD1), Williamsburg/Greenpoint\n(BK CD1) and DUMBO/Downtown Brooklyn (BK CD2) where the zoning allows apartments\nat medium or high density but the lot is vacant, parking, industrial, a\nutility/transport use or a small commercial building using under 30% of the\nresidential floor area allowed.\n\nTags:\n  REZONED INDUSTRIAL  an industrial use on a lot now mapped residential, or a\n                      lot in a mixed M/R (MX) district\n  UAP                 residential FAR of 2.4 or more (R6-equivalent or denser),\n                      where City of Yes' Universal Affordability Preference adds\n                      floor area for permanently affordable units\n  TRANSIT             within half a mile of a subway station\n\nSource: NYC MapPLUTO (DCP) and MTA subway stations (data.ny.gov). Units are a\nrange: 900 gross sf per apartment (low) to the 680 sf dwelling unit factor\n(high). Check DOB NOW for an active new-building permit before outreach:\nPLUTO lags construction.",
  "counts": {
   "Astoria / LIC": {
-   "lots": 113,
-   "rezoned_industrial": 49,
-   "transit": 92
+   "lots": 114,
+   "rezoned_industrial": 51,
+   "transit": 93
   },
   "Bronx": {
-   "lots": 1557,
-   "rezoned_industrial": 157,
-   "transit": 1302
+   "lots": 1568,
+   "rezoned_industrial": 158,
+   "transit": 1310
   },
   "Williamsburg / Greenpoint": {
-   "lots": 91,
-   "rezoned_industrial": 34,
-   "transit": 87
+   "lots": 94,
+   "rezoned_industrial": 35,
+   "transit": 90
   },
   "DUMBO / Downtown Brooklyn": {
-   "lots": 63,
+   "lots": 58,
    "rezoned_industrial": 6,
-   "transit": 63
+   "transit": 58
   }
  },
- "total": 1824,
+ "total": 1834,
  "rows": [
   {
    "area": "Astoria / LIC",
@@ -101,6 +101,32 @@
    "station": "138 St-Grand Concourse",
    "station_mi": 0.21,
    "owner": "PUBLIC STORAGE",
+   "check": ""
+  },
+  {
+   "area": "Astoria / LIC",
+   "muni": "Astoria / LIC",
+   "est_units": "66-88",
+   "bbl": "4003810005",
+   "address": "38-11 32ND STREET",
+   "zone": "M1-3/R7X",
+   "special": "LIC",
+   "use": "vacant",
+   "lot_sf": 12008,
+   "bldg_sf": 0,
+   "far": 5,
+   "floor_area": 60040,
+   "units_lo": 66,
+   "units_hi": 88,
+   "units": 88,
+   "tags": [
+    "REZONED INDUSTRIAL",
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "39 Av-Dutch Kills",
+   "station_mi": 0.07,
+   "owner": "LIC BLDG 32 LLC",
    "check": ""
   },
   {
@@ -386,7 +412,33 @@
    ],
    "station": "39 Av-Dutch Kills",
    "station_mi": 0.04,
-   "owner": "32ND STREET REALTY ASSOCIATES LLC",
+   "owner": "PROSPERITY NATION DEVELOPMENT GROUP LLC",
+   "check": ""
+  },
+  {
+   "area": "Astoria / LIC",
+   "muni": "Astoria / LIC",
+   "est_units": "37-49",
+   "bbl": "4003810016",
+   "address": "32-16 38TH AVENUE",
+   "zone": "M1-2/R6A",
+   "special": "LIC",
+   "use": "vacant",
+   "lot_sf": 11155,
+   "bldg_sf": 0,
+   "far": 3,
+   "floor_area": 33465,
+   "units_lo": 37,
+   "units_hi": 49,
+   "units": 49,
+   "tags": [
+    "REZONED INDUSTRIAL",
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "39 Av-Dutch Kills",
+   "station_mi": 0.1,
+   "owner": "LIC BLDG 32 LLC",
    "check": ""
   },
   {
@@ -438,7 +490,7 @@
    ],
    "station": "Bedford Av",
    "station_mi": 0.41,
-   "owner": "AG REALTY, LLC",
+   "owner": "60 NORTH 1ST LLC",
    "check": ""
   },
   {
@@ -1192,7 +1244,7 @@
    ],
    "station": "Fordham Rd",
    "station_mi": 0.5,
-   "owner": "INTERNATIONAL TRANS.HLDG",
+   "owner": "PENN SOUTH HOLDINGS, LLC",
    "check": ""
   },
   {
@@ -1268,8 +1320,8 @@
    ],
    "station": "170 St",
    "station_mi": 0.47,
-   "owner": "EML TIC LLC",
-   "check": ""
+   "owner": "UNDERCLIFF HOUSING DEVELOPMENT FUND CORP ORATION",
+   "check": "Owner name suggests a project may already be underway"
   },
   {
    "area": "Bronx",
@@ -1397,31 +1449,6 @@
    "station_mi": 0.28,
    "owner": "20 BRUCKNER, LLC",
    "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "105-139",
-   "bbl": "2024100014",
-   "address": "272 EAST 151 STREET",
-   "zone": "R7A/C1-4",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 23680,
-   "bldg_sf": 0,
-   "far": 4,
-   "floor_area": 94720,
-   "units_lo": 105,
-   "units_hi": 139,
-   "units": 139,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "3 Av-149 St",
-   "station_mi": 0.25,
-   "owner": "MORRIS COURTLANDT HOUSING DEVELOPMENT FU ND",
-   "check": "Owner name suggests a project may already be underway"
   },
   {
    "area": "Bronx",
@@ -2058,6 +2085,31 @@
   {
    "area": "Bronx",
    "muni": "Bronx",
+   "est_units": "74-99",
+   "bbl": "2057590634",
+   "address": "GREYSTONE AVENUE",
+   "zone": "R6",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 27709,
+   "bldg_sf": 0,
+   "far": 2.43,
+   "floor_area": 67333,
+   "units_lo": 74,
+   "units_hi": 99,
+   "units": 99,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "238 St",
+   "station_mi": 0.25,
+   "owner": "NATHAN HALE GARDENS LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
    "est_units": "74-98",
    "bbl": "2029180034",
    "address": "1869 BATHGATE AVENUE",
@@ -2080,31 +2132,6 @@
    "station_mi": 0.49,
    "owner": "1869 BATHGATE AVENUE LLC",
    "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "74-98",
-   "bbl": "2031420088",
-   "address": "WEBSTER AVENUE",
-   "zone": "R7-1/C2-4",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 19398,
-   "bldg_sf": 0,
-   "far": 3.44,
-   "floor_area": 66729,
-   "units_lo": 74,
-   "units_hi": 98,
-   "units": 98,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Tremont Av",
-   "station_mi": 0.26,
-   "owner": "BRONX PARK PHASE II HOUSING COMPANY, INC .",
-   "check": "Owner name suggests a project may already be underway"
   },
   {
    "area": "Bronx",
@@ -2205,31 +2232,6 @@
    "station": "Steinway St",
    "station_mi": 0.22,
    "owner": "DOMAIN 41ST STREET SITE B LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "72-96",
-   "bbl": "2031190037",
-   "address": "2136 CROTONA PARKWAY",
-   "zone": "R7-1",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 19040,
-   "bldg_sf": 0,
-   "far": 3.44,
-   "floor_area": 65498,
-   "units_lo": 72,
-   "units_hi": 96,
-   "units": 96,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "West Farms Sq-E Tremont Av",
-   "station_mi": 0.47,
-   "owner": "2136 CROTONA PKY HSNG/ET",
    "check": ""
   },
   {
@@ -2510,6 +2512,31 @@
    "check": ""
   },
   {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "66-88",
+   "bbl": "2033170030",
+   "address": "2748 JEROME AVENUE",
+   "zone": "R8/C2-3",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 10000,
+   "bldg_sf": 0,
+   "far": 6.02,
+   "floor_area": 60200,
+   "units_lo": 66,
+   "units_hi": 88,
+   "units": 88,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Kingsbridge Rd",
+   "station_mi": 0.1,
+   "owner": "2748 JEROME LLC",
+   "check": ""
+  },
+  {
    "area": "DUMBO / Downtown Brooklyn",
    "muni": "DUMBO / Downtown Brooklyn",
    "est_units": "67-88",
@@ -2635,81 +2662,6 @@
    "station": "174 St",
    "station_mi": 0.28,
    "owner": "1779 WEST FARMS LLC",
-   "check": ""
-  },
-  {
-   "area": "DUMBO / Downtown Brooklyn",
-   "muni": "DUMBO / Downtown Brooklyn",
-   "est_units": "65-86",
-   "bbl": "3003880019",
-   "address": "270 BERGEN STREET",
-   "zone": "R7A",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 14750,
-   "bldg_sf": 0,
-   "far": 4,
-   "floor_area": 59000,
-   "units_lo": 65,
-   "units_hi": 86,
-   "units": 86,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Atlantic Av-Barclays Ctr",
-   "station_mi": 0.24,
-   "owner": "BERGEN ST EQUITY LLC",
-   "check": ""
-  },
-  {
-   "area": "DUMBO / Downtown Brooklyn",
-   "muni": "DUMBO / Downtown Brooklyn",
-   "est_units": "65-86",
-   "bbl": "3003880021",
-   "address": "290 BERGEN STREET",
-   "zone": "R7A/C2-4",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 14740,
-   "bldg_sf": 0,
-   "far": 4,
-   "floor_area": 58960,
-   "units_lo": 65,
-   "units_hi": 86,
-   "units": 86,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Atlantic Av-Barclays Ctr",
-   "station_mi": 0.2,
-   "owner": "BERGEN ST EQUITY LLC",
-   "check": ""
-  },
-  {
-   "area": "DUMBO / Downtown Brooklyn",
-   "muni": "DUMBO / Downtown Brooklyn",
-   "est_units": "64-85",
-   "bbl": "3003880020",
-   "address": "280 BERGEN STREET",
-   "zone": "R7A",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 14515,
-   "bldg_sf": 0,
-   "far": 4,
-   "floor_area": 58060,
-   "units_lo": 64,
-   "units_hi": 85,
-   "units": 85,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Atlantic Av-Barclays Ctr",
-   "station_mi": 0.22,
-   "owner": "BERGEN ST EQUITY LLC",
    "check": ""
   },
   {
@@ -3626,6 +3578,32 @@
    "check": ""
   },
   {
+   "area": "Williamsburg / Greenpoint",
+   "muni": "Williamsburg / Greenpoint",
+   "est_units": "52-69",
+   "bbl": "3024030015",
+   "address": "34 SOUTH 1 STREET",
+   "zone": "M1-3A/R7X",
+   "special": "MX-8",
+   "use": "industrial",
+   "lot_sf": 9500,
+   "bldg_sf": 9500,
+   "far": 5,
+   "floor_area": 47500,
+   "units_lo": 52,
+   "units_hi": 69,
+   "units": 69,
+   "tags": [
+    "REZONED INDUSTRIAL",
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Bedford Av",
+   "station_mi": 0.49,
+   "owner": "34 SOUTH 1 LLC",
+   "check": ""
+  },
+  {
    "area": "Bronx",
    "muni": "Bronx",
    "est_units": "51-68",
@@ -4434,6 +4412,31 @@
    "check": ""
   },
   {
+   "area": "Williamsburg / Greenpoint",
+   "muni": "Williamsburg / Greenpoint",
+   "est_units": "45-60",
+   "bbl": "3030620012",
+   "address": "172 MONTROSE AVENUE",
+   "zone": "R6",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 17000,
+   "bldg_sf": 0,
+   "far": 2.43,
+   "floor_area": 41310,
+   "units_lo": 45,
+   "units_hi": 60,
+   "units": 60,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Montrose Av",
+   "station_mi": 0.13,
+   "owner": "MONTROSE MESEROLE HOUSING DEVELOPMENT",
+   "check": "Owner name suggests a project may already be underway"
+  },
+  {
    "area": "Astoria / LIC",
    "muni": "Astoria / LIC",
    "est_units": "45-60",
@@ -4837,18 +4840,18 @@
    "check": ""
   },
   {
-   "area": "Williamsburg / Greenpoint",
-   "muni": "Williamsburg / Greenpoint",
+   "area": "Bronx",
+   "muni": "Bronx",
    "est_units": "42-56",
-   "bbl": "3022720049",
-   "address": "667 FLUSHING AVENUE",
+   "bbl": "2046510067",
+   "address": "3743 WHITE PLAINS ROAD",
    "zone": "R7A/C2-4",
    "special": "",
    "use": "vacant",
-   "lot_sf": 9580,
+   "lot_sf": 9579,
    "bldg_sf": 0,
    "far": 4,
-   "floor_area": 38320,
+   "floor_area": 38316,
    "units_lo": 42,
    "units_hi": 56,
    "units": 56,
@@ -4856,10 +4859,10 @@
     "UAP",
     "TRANSIT"
    ],
-   "station": "Flushing Av",
-   "station_mi": 0.19,
-   "owner": "BARTLETT CROSSING HOUSING DEVELOPMENT FU ND COMPANY",
-   "check": "Owner name suggests a project may already be underway"
+   "station": "219 St",
+   "station_mi": 0.1,
+   "owner": "MAAMIN DEVELOPMENT GROUP LLC",
+   "check": ""
   },
   {
    "area": "Williamsburg / Greenpoint",
@@ -5799,6 +5802,31 @@
   {
    "area": "Bronx",
    "muni": "Bronx",
+   "est_units": "36-48",
+   "bbl": "2031420088",
+   "address": "WEBSTER AVENUE",
+   "zone": "R7-1/C2-4",
+   "special": "",
+   "use": "parking",
+   "lot_sf": 9563,
+   "bldg_sf": 0,
+   "far": 3.44,
+   "floor_area": 32897,
+   "units_lo": 36,
+   "units_hi": 48,
+   "units": 48,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Tremont Av",
+   "station_mi": 0.27,
+   "owner": "BRONX PARK PHASE II HOUSING COMPANY, INC .",
+   "check": "Owner name suggests a project may already be underway"
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
    "est_units": "35-47",
    "bbl": "2023450012",
    "address": "WALTON AVENUE",
@@ -6097,31 +6125,6 @@
    "station": "Marble Hill-225 St",
    "station_mi": 0.4,
    "owner": "VAJA KINGSBRIDGE LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "34-45",
-   "bbl": "2043400010",
-   "address": "2282 BRONX PARK EAST",
-   "zone": "R7-1",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 9013,
-   "bldg_sf": 0,
-   "far": 3.44,
-   "floor_area": 31005,
-   "units_lo": 34,
-   "units_hi": 45,
-   "units": 45,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Pelham Pkwy",
-   "station_mi": 0.22,
-   "owner": "BPE REALTY LLC",
    "check": ""
   },
   {
@@ -6584,6 +6587,31 @@
    "area": "Astoria / LIC",
    "muni": "Astoria / LIC",
    "est_units": "33-44",
+   "bbl": "4005980048",
+   "address": "25-60 31ST STREET",
+   "zone": "C4-3",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 12520,
+   "bldg_sf": 0,
+   "far": 2.43,
+   "floor_area": 30424,
+   "units_lo": 33,
+   "units_hi": 44,
+   "units": 44,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Astoria Blvd",
+   "station_mi": 0.11,
+   "owner": "ANISKA31 REALTY, LLC",
+   "check": ""
+  },
+  {
+   "area": "Astoria / LIC",
+   "muni": "Astoria / LIC",
+   "est_units": "33-44",
    "bbl": "4006700027",
    "address": "35-22 42 STREET",
    "zone": "M1-4/R7-3",
@@ -6787,6 +6815,31 @@
   {
    "area": "Bronx",
    "muni": "Bronx",
+   "est_units": "33-43",
+   "bbl": "2031210025",
+   "address": "1975 HONEYWELL AVENUE",
+   "zone": "R7-1",
+   "special": "",
+   "use": "parking",
+   "lot_sf": 8676,
+   "bldg_sf": 0,
+   "far": 3.44,
+   "floor_area": 29845,
+   "units_lo": 33,
+   "units_hi": 43,
+   "units": 43,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "West Farms Sq-E Tremont Av",
+   "station_mi": 0.3,
+   "owner": "GS HONEYWELL BX LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
    "est_units": "32-42",
    "bbl": "2024210026",
    "address": "308 EAST 162 STREET",
@@ -6984,6 +7037,31 @@
    "station": "Bedford Park Blvd",
    "station_mi": 0.17,
    "owner": "CONQUEST REALTY LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "31-42",
+   "bbl": "2033180073",
+   "address": "2758 MORRIS AVENUE",
+   "zone": "R8",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 4763,
+   "bldg_sf": 0,
+   "far": 6.02,
+   "floor_area": 28673,
+   "units_lo": 31,
+   "units_hi": 42,
+   "units": 42,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Kingsbridge Rd",
+   "station_mi": 0.15,
+   "owner": "MOYA MORRIS AVE LLC",
    "check": ""
   },
   {
@@ -7388,6 +7466,31 @@
    "check": ""
   },
   {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "30-40",
+   "bbl": "2057590570",
+   "address": "3401 IRWIN AVENUE",
+   "zone": "R6",
+   "special": "",
+   "use": "parking",
+   "lot_sf": 11215,
+   "bldg_sf": 0,
+   "far": 2.43,
+   "floor_area": 27252,
+   "units_lo": 30,
+   "units_hi": 40,
+   "units": 40,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "238 St",
+   "station_mi": 0.3,
+   "owner": "NATHAN HALE GARDENS LLC",
+   "check": ""
+  },
+  {
    "area": "Astoria / LIC",
    "muni": "Astoria / LIC",
    "est_units": "30-40",
@@ -7741,6 +7844,31 @@
    "check": ""
   },
   {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "29-38",
+   "bbl": "2032460069",
+   "address": "3862 SEDGWICK AVENUE",
+   "zone": "R6A/C2-3",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 8750,
+   "bldg_sf": 0,
+   "far": 3,
+   "floor_area": 26250,
+   "units_lo": 29,
+   "units_hi": 38,
+   "units": 38,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "238 St",
+   "station_mi": 0.36,
+   "owner": "3862 SEDGWICK LLC",
+   "check": ""
+  },
+  {
    "area": "Astoria / LIC",
    "muni": "Astoria / LIC",
    "est_units": "28-38",
@@ -7889,6 +8017,31 @@
    "station": "Freeman St",
    "station_mi": 0.21,
    "owner": "CASTILLO 3 WEST LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "28-37",
+   "bbl": "2031980012",
+   "address": "NORTH STREET",
+   "zone": "R7-1",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 7500,
+   "bldg_sf": 0,
+   "far": 3.44,
+   "floor_area": 25800,
+   "units_lo": 28,
+   "units_hi": 37,
+   "units": 37,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "183 St",
+   "station_mi": 0.14,
+   "owner": "BSD 41 NORTH LLC",
    "check": ""
   },
   {
@@ -8270,31 +8423,6 @@
    "check": ""
   },
   {
-   "area": "DUMBO / Downtown Brooklyn",
-   "muni": "DUMBO / Downtown Brooklyn",
-   "est_units": "27-35",
-   "bbl": "3019090001",
-   "address": "161 EMERSON PLACE",
-   "zone": "R6",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 10000,
-   "bldg_sf": 0,
-   "far": 2.43,
-   "floor_area": 24300,
-   "units_lo": 27,
-   "units_hi": 35,
-   "units": 35,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Classon Av",
-   "station_mi": 0.28,
-   "owner": "ICL EMERSON PLACE HOUSING DEVELOPMENT FU ND CORP",
-   "check": "Owner name suggests a project may already be underway"
-  },
-  {
    "area": "Williamsburg / Greenpoint",
    "muni": "Williamsburg / Greenpoint",
    "est_units": "27-35",
@@ -8520,7 +8648,7 @@
    ],
    "station": "Steinway St",
    "station_mi": 0.25,
-   "owner": "KAUFMAN BEDROCK ASTORIA I LLC",
+   "owner": "35-30 38TH STREET OWNER LLC",
    "check": ""
   },
   {
@@ -8721,6 +8849,56 @@
    "station": "Wakefield-241 St",
    "station_mi": 0.05,
    "owner": "RS PROPERTIES NYC LLC",
+   "check": ""
+  },
+  {
+   "area": "Williamsburg / Greenpoint",
+   "muni": "Williamsburg / Greenpoint",
+   "est_units": "24-32",
+   "bbl": "3027610022",
+   "address": "558 METROPOLITAN AVENUE",
+   "zone": "R7A/C2-4",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 5489,
+   "bldg_sf": 0,
+   "far": 4,
+   "floor_area": 21956,
+   "units_lo": 24,
+   "units_hi": 32,
+   "units": 32,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Lorimer St",
+   "station_mi": 0.02,
+   "owner": "554 METRO SPE LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "23-31",
+   "bbl": "2023880057",
+   "address": "1115 WASHINGTON AVENUE",
+   "zone": "M1-1/R7-2",
+   "special": "MX-7",
+   "use": "parking",
+   "lot_sf": 6154,
+   "bldg_sf": 0,
+   "far": 3.44,
+   "floor_area": 21170,
+   "units_lo": 23,
+   "units_hi": 31,
+   "units": 31,
+   "tags": [
+    "REZONED INDUSTRIAL",
+    "UAP"
+   ],
+   "station": "",
+   "station_mi": 0.62,
+   "owner": "SHAFI, IQBAL A",
    "check": ""
   },
   {
@@ -9000,28 +9178,28 @@
    "check": ""
   },
   {
-   "area": "Astoria / LIC",
-   "muni": "Astoria / LIC",
-   "est_units": "23-30",
-   "bbl": "4008380001",
-   "address": "29-04 HOYT AVENUE SOUTH",
-   "zone": "C4-3",
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "22-29",
+   "bbl": "2025080005",
+   "address": "1008 WOODYCREST AVENUE",
+   "zone": "R7-1",
    "special": "",
-   "use": "parking",
-   "lot_sf": 8593,
+   "use": "vacant",
+   "lot_sf": 5900,
    "bldg_sf": 0,
-   "far": 2.43,
-   "floor_area": 20881,
-   "units_lo": 23,
-   "units_hi": 30,
-   "units": 30,
+   "far": 3.44,
+   "floor_area": 20296,
+   "units_lo": 22,
+   "units_hi": 29,
+   "units": 29,
    "tags": [
     "UAP",
     "TRANSIT"
    ],
-   "station": "Astoria Blvd",
-   "station_mi": 0.06,
-   "owner": "UNITED NU-LAND DEVELOPMENT LLC",
+   "station": "161 St-Yankee Stadium",
+   "station_mi": 0.34,
+   "owner": "1008 WOODYCREST LLC",
    "check": ""
   },
   {
@@ -9047,6 +9225,31 @@
    "station": "167 St",
    "station_mi": 0.38,
    "owner": "ELI KAFIF",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "21-29",
+   "bbl": "2025260046",
+   "address": "1066 UNIVERSITY AVENEUE",
+   "zone": "R7-1",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 5738,
+   "bldg_sf": 0,
+   "far": 3.44,
+   "floor_area": 19739,
+   "units_lo": 21,
+   "units_hi": 29,
+   "units": 29,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "167 St",
+   "station_mi": 0.44,
+   "owner": "1066 UNIVERS AVENUE LLC",
    "check": ""
   },
   {
@@ -10187,31 +10390,6 @@
    "check": ""
   },
   {
-   "area": "Astoria / LIC",
-   "muni": "Astoria / LIC",
-   "est_units": "20-26",
-   "bbl": "4005980048",
-   "address": "25-60 31ST STREET",
-   "zone": "C4-3",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 7500,
-   "bldg_sf": 0,
-   "far": 2.43,
-   "floor_area": 18225,
-   "units_lo": 20,
-   "units_hi": 26,
-   "units": 26,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Astoria Blvd",
-   "station_mi": 0.11,
-   "owner": "ANISKA31 REALTY, LLC",
-   "check": ""
-  },
-  {
    "area": "Bronx",
    "muni": "Bronx",
    "est_units": "19-25",
@@ -11086,7 +11264,7 @@
    ],
    "station": "Fordham Rd",
    "station_mi": 0.49,
-   "owner": "INTERNATIONAL TRANS.HLDG",
+   "owner": "PENN SOUTH HOLDINGS, LLC",
    "check": ""
   },
   {
@@ -11162,6 +11340,31 @@
    "station": "Gun Hill Rd",
    "station_mi": 0.23,
    "owner": "707 EAST 215TH STREET LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "18-24",
+   "bbl": "2048250048",
+   "address": "3930 CARPENTER AVENUE",
+   "zone": "R6A",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 5525,
+   "bldg_sf": 0,
+   "far": 3,
+   "floor_area": 16575,
+   "units_lo": 18,
+   "units_hi": 24,
+   "units": 24,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "225 St",
+   "station_mi": 0.18,
+   "owner": "3930 CARPENTER AVE LLC",
    "check": ""
   },
   {
@@ -11970,6 +12173,31 @@
   {
    "area": "Bronx",
    "muni": "Bronx",
+   "est_units": "17-22",
+   "bbl": "2033180075",
+   "address": "2760 MORRIS AVENUE",
+   "zone": "R8",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 2572,
+   "bldg_sf": 0,
+   "far": 6.02,
+   "floor_area": 15483,
+   "units_lo": 17,
+   "units_hi": 22,
+   "units": 22,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Kingsbridge Rd",
+   "station_mi": 0.15,
+   "owner": "MOYA MORRIS AVE LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
    "est_units": "16-22",
    "bbl": "2033180155",
    "address": "2731 CRESTON AVENUE",
@@ -12448,6 +12676,31 @@
    "area": "Bronx",
    "muni": "Bronx",
    "est_units": "16-21",
+   "bbl": "2045430029",
+   "address": "3069 BARKER AVENUE",
+   "zone": "R7-1",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 4254,
+   "bldg_sf": 0,
+   "far": 3.44,
+   "floor_area": 14634,
+   "units_lo": 16,
+   "units_hi": 21,
+   "units": 21,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Burke Av",
+   "station_mi": 0.13,
+   "owner": "3069 BARKER LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "16-21",
    "bbl": "2048460085",
    "address": "4184 BARNES AVENUE",
    "zone": "R6A",
@@ -12491,7 +12744,7 @@
    ],
    "station": "231 St",
    "station_mi": 0.11,
-   "owner": "NORTH BX ASSOCIATES LLC",
+   "owner": "220 KIMBERLY LLC",
    "check": ""
   },
   {
@@ -12892,7 +13145,7 @@
    ],
    "station": "225 St",
    "station_mi": 0.15,
-   "owner": "TENANT PROPERTY GROUP LLC",
+   "owner": "WHITE PLAINS CAPITAL LLC",
    "check": ""
   },
   {
@@ -13502,6 +13755,31 @@
   {
    "area": "Bronx",
    "muni": "Bronx",
+   "est_units": "15-19",
+   "bbl": "2046590022",
+   "address": "754 EAST 211 STREET",
+   "zone": "R6A",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 4513,
+   "bldg_sf": 0,
+   "far": 3,
+   "floor_area": 13539,
+   "units_lo": 15,
+   "units_hi": 19,
+   "units": 19,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "Gun Hill Rd",
+   "station_mi": 0.16,
+   "owner": "754 EAST 211 ST NY LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
    "est_units": "14-19",
    "bbl": "2046630031",
    "address": "732 EAST 216 STREET",
@@ -13697,7 +13975,7 @@
    ],
    "station": "Astoria Blvd",
    "station_mi": 0.49,
-   "owner": "PV OWNER LLC",
+   "owner": "42-01 28TH AVENUE LLC",
    "check": ""
   },
   {
@@ -13924,7 +14202,7 @@
    ],
    "station": "Jackson Av",
    "station_mi": 0.1,
-   "owner": "GREGG, CHARLES",
+   "owner": "BSD 633 WALES LLC",
    "check": ""
   },
   {
@@ -14858,6 +15136,31 @@
    "area": "Bronx",
    "muni": "Bronx",
    "est_units": "13-17",
+   "bbl": "2057850259",
+   "address": "3232 OXFORD AVENUE",
+   "zone": "R6",
+   "special": "",
+   "use": "vacant",
+   "lot_sf": 5000,
+   "bldg_sf": 0,
+   "far": 2.43,
+   "floor_area": 12150,
+   "units_lo": 13,
+   "units_hi": 17,
+   "units": 17,
+   "tags": [
+    "UAP",
+    "TRANSIT"
+   ],
+   "station": "238 St",
+   "station_mi": 0.42,
+   "owner": "3232 OXFORD LLC",
+   "check": ""
+  },
+  {
+   "area": "Bronx",
+   "muni": "Bronx",
+   "est_units": "13-17",
    "bbl": "2058141189",
    "address": "6159 BROADWAY",
    "zone": "R6/C2-2",
@@ -15509,18 +15812,18 @@
    "check": ""
   },
   {
-   "area": "DUMBO / Downtown Brooklyn",
-   "muni": "DUMBO / Downtown Brooklyn",
+   "area": "Williamsburg / Greenpoint",
+   "muni": "Williamsburg / Greenpoint",
    "est_units": "12-16",
-   "bbl": "3002780001",
-   "address": "92 BOERUM PLACE",
-   "zone": "R6A/C2-4",
+   "bbl": "3023050011",
+   "address": "170 NORTH 10 STREET",
+   "zone": "R6A/C1-4",
    "special": "",
    "use": "vacant",
-   "lot_sf": 3750,
+   "lot_sf": 3738,
    "bldg_sf": 0,
    "far": 3,
-   "floor_area": 11250,
+   "floor_area": 11214,
    "units_lo": 12,
    "units_hi": 16,
    "units": 16,
@@ -15528,9 +15831,9 @@
     "UAP",
     "TRANSIT"
    ],
-   "station": "Bergen St",
-   "station_mi": 0.18,
-   "owner": "235 PACIFIC LLC",
+   "station": "Bedford Av",
+   "station_mi": 0.14,
+   "owner": "168 NORTH 10 ST LLC",
    "check": ""
   },
   {
@@ -15734,31 +16037,6 @@
    "station": "161 St-Yankee Stadium",
    "station_mi": 0.38,
    "owner": "LUIS NIEVES",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "12-15",
-   "bbl": "2025260047",
-   "address": "1068 UNIVERSITY AVENUE",
-   "zone": "R7-1",
-   "special": "",
-   "use": "parking",
-   "lot_sf": 3150,
-   "bldg_sf": 0,
-   "far": 3.44,
-   "floor_area": 10836,
-   "units_lo": 12,
-   "units_hi": 15,
-   "units": 15,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "167 St",
-   "station_mi": 0.44,
-   "owner": "1066 UNIVERS AVENUE LLC",
    "check": ""
   },
   {
@@ -18199,31 +18477,6 @@
    "area": "Bronx",
    "muni": "Bronx",
    "est_units": "10-13",
-   "bbl": "2026910091",
-   "address": "1077 HALL PLACE",
-   "zone": "R7-1",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 2625,
-   "bldg_sf": 0,
-   "far": 3.44,
-   "floor_area": 9030,
-   "units_lo": 10,
-   "units_hi": 13,
-   "units": 13,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Intervale Av",
-   "station_mi": 0.25,
-   "owner": "1075 HALL PLACE LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "10-13",
    "bbl": "2027210032",
    "address": "805 SOUTHERN BOULEVARD",
    "zone": "R7-1/C1-4",
@@ -18469,31 +18722,6 @@
    "station": "Buhre Av",
    "station_mi": 0.22,
    "owner": "3013 MIDDLETOWN PROPERTY LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "10-13",
-   "bbl": "2053960054",
-   "address": "1536 GILLESPIE AVENUE",
-   "zone": "R7-1/C1-2",
-   "special": "",
-   "use": "vacant",
-   "lot_sf": 2698,
-   "bldg_sf": 0,
-   "far": 3.44,
-   "floor_area": 9281,
-   "units_lo": 10,
-   "units_hi": 13,
-   "units": 13,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Buhre Av",
-   "station_mi": 0.26,
-   "owner": "GILLESPIE AVENUE DEVELOPMENT LLC",
    "check": ""
   },
   {
@@ -19464,7 +19692,7 @@
     "TRANSIT"
    ],
    "station": "Grand St",
-   "station_mi": 0.02,
+   "station_mi": 0.03,
    "owner": "WILLIAMSBURG COURT HOUSING DEVELOPMENT F UND CORP.",
    "check": "Owner name suggests a project may already be underway"
   },
@@ -19965,230 +20193,6 @@
    "station": "Broadway",
    "station_mi": 0.05,
    "owner": "3214 THIRTY FIRST STREET",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-103",
-   "bbl": "2025210015",
-   "address": "1380 PLIMPTON AVENUE",
-   "zone": "R8A/C1-4",
-   "special": "J",
-   "use": "transport/utility",
-   "lot_sf": 11655,
-   "bldg_sf": 1679,
-   "far": 6.02,
-   "floor_area": 70163,
-   "units_lo": 77,
-   "units_hi": 103,
-   "units": 103,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "170 St",
-   "station_mi": 0.3,
-   "owner": "LEEMILTS PETROLEUM INC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "78-103",
-   "bbl": "2033600038",
-   "address": "3510 WEBSTER AVENUE",
-   "zone": "C4-4",
-   "special": "",
-   "use": "commercial",
-   "lot_sf": 20450,
-   "bldg_sf": 20450,
-   "far": 3.44,
-   "floor_area": 70348,
-   "units_lo": 78,
-   "units_hi": 103,
-   "units": 103,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Gun Hill Rd",
-   "station_mi": 0.27,
-   "owner": "AL-BON RLTY CP",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-102",
-   "bbl": "2026230191",
-   "address": "642 TRINITY AVENUE",
-   "zone": "R7-1/C2-4",
-   "special": "",
-   "use": "commercial",
-   "lot_sf": 20240,
-   "bldg_sf": 20207,
-   "far": 3.44,
-   "floor_area": 69626,
-   "units_lo": 77,
-   "units_hi": 102,
-   "units": 102,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Jackson Av",
-   "station_mi": 0.08,
-   "owner": "SLANE 642 WESTCHESTER AVENUE, LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-102",
-   "bbl": "2028430005",
-   "address": "1412 JEROME AVENUE",
-   "zone": "R7A/C2-4",
-   "special": "J",
-   "use": "commercial",
-   "lot_sf": 17500,
-   "bldg_sf": 17000,
-   "far": 4,
-   "floor_area": 70000,
-   "units_lo": 77,
-   "units_hi": 102,
-   "units": 102,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "170 St",
-   "station_mi": 0.06,
-   "owner": "KING JEROME REALTY INC.",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-102",
-   "bbl": "2031560108",
-   "address": "2102 GRAND CONCOURSE",
-   "zone": "R8/C1-4",
-   "special": "C",
-   "use": "commercial",
-   "lot_sf": 11544,
-   "bldg_sf": 12344,
-   "far": 6.02,
-   "floor_area": 69495,
-   "units_lo": 77,
-   "units_hi": 102,
-   "units": 102,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "182-183 Sts",
-   "station_mi": 0.14,
-   "owner": "NRON LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-102",
-   "bbl": "2031870018",
-   "address": "2340 JEROME AVENUE",
-   "zone": "R7A/C2-4",
-   "special": "J",
-   "use": "transport/utility",
-   "lot_sf": 17500,
-   "bldg_sf": 2100,
-   "far": 4,
-   "floor_area": 70000,
-   "units_lo": 77,
-   "units_hi": 102,
-   "units": 102,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "183 St",
-   "station_mi": 0.13,
-   "owner": "JEROME PETROL REALTY LLC",
-   "check": ""
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-102",
-   "bbl": "2033310057",
-   "address": "3087 WEBSTER AVENUE",
-   "zone": "R7D/C2-4",
-   "special": "",
-   "use": "transport/utility",
-   "lot_sf": 15000,
-   "bldg_sf": 1950,
-   "far": 4.66,
-   "floor_area": 69900,
-   "units_lo": 77,
-   "units_hi": 102,
-   "units": 102,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Norwood-205 St",
-   "station_mi": 0.28,
-   "owner": "3083 WEBSTER AVENUE HOUSING DEVELOPMENT  FUND CORP.",
-   "check": "Owner name suggests a project may already be underway"
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "77-102",
-   "bbl": "2036720040",
-   "address": "TURNBULL AVENUE",
-   "zone": "R8/C2-4",
-   "special": "",
-   "use": "parking",
-   "lot_sf": 11582,
-   "bldg_sf": 0,
-   "far": 6.02,
-   "floor_area": 69724,
-   "units_lo": 77,
-   "units_hi": 102,
-   "units": 102,
-   "tags": [
-    "UAP"
-   ],
-   "station": "",
-   "station_mi": 0.75,
-   "owner": "1920 TURNBULL SHLP HOUSING DEVELOPMENT F UND COMPANY, INC,",
-   "check": "Owner name suggests a project may already be underway"
-  },
-  {
-   "area": "Bronx",
-   "muni": "Bronx",
-   "est_units": "76-101",
-   "bbl": "2032750001",
-   "address": "2532 MARION AVENUE",
-   "zone": "C4-4",
-   "special": "",
-   "use": "commercial",
-   "lot_sf": 20000,
-   "bldg_sf": 20000,
-   "far": 3.44,
-   "floor_area": 68800,
-   "units_lo": 76,
-   "units_hi": 101,
-   "units": 101,
-   "tags": [
-    "UAP",
-    "TRANSIT"
-   ],
-   "station": "Fordham Rd",
-   "station_mi": 0.29,
-   "owner": "361 EAST REALTY ASSOCIATES LLC",
    "check": ""
   }
  ]
