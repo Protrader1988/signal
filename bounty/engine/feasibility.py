@@ -177,14 +177,24 @@ def compare(ours, theirs):
         out.append(f"Street frontage: BOUNTY {int(fr_o)} ft vs Muse {int(fr_t[0])} ft")
     z_o = (p.get("zoning") or ours.get("zone") or "").upper().replace(" ", "")
     z_t = (theirs.get("district") or "").upper().replace(" ", "")
-    if z_o and z_t and z_o.split("/")[0][:4] not in z_t and z_t[:4] not in z_o:
+    placeholder = re.search(r"PER|APPROVAL|MAP|LISTING", z_o) or len(z_o) > 25
+    if z_o and z_t and not placeholder and z_o.split("/")[0][:4] not in z_t and z_t[:4] not in z_o:
         out.append(f"District: BOUNTY {p.get('zoning') or ours.get('zone')} vs Muse {theirs.get('district')}")
     sc = ours.get("scenarios_units") or {}
+    lots_only = bool(sc) and all(k == "lots allowed" for k in sc)
     hi = max([n for v in sc.values() for n in nums(v)] or [0])
-    mu = nums(theirs.get("max_units_estimate"))
-    if hi and mu and (mu[0] > hi * 1.3 or mu[0] < hi * 0.6):
-        out.append(f"Units: BOUNTY up to {int(hi)} vs Muse {int(mu[0])}")
-    if re.search(r"\bno\b|not permitted|prohibited", theirs.get("multifamily", ""), re.I) and hi:
+    # Muse writes its math out ("Path 1 ... = 44 units"); take the unit counts it states, not the first number
+    est = theirs.get("max_units_estimate") or ""
+    head = re.search(r"headline[^:]*:\s*~?\s*(\d[\d,]*)", est, re.I)
+    if head:
+        est = head.group(1) + " units"
+    mu = [float(x.replace(",", "")) for x in re.findall(r"(\d[\d,]*)\s*(?:dwelling\s+)?(?:units?|DUs?|lots?|apartments?)\b", est, re.I)]
+    mu = [x for x in mu if 0 < x < 5000]
+    if hi and mu:
+        m = max(mu)
+        if m > hi * 1.3 or m < hi * 0.6:
+            out.append(f"Units: BOUNTY up to {int(hi)} vs Muse {int(m)}")
+    if not lots_only and hi and re.search(r"^\s*no\b|not permitted|prohibited", theirs.get("multifamily", ""), re.I):
         out.append("Muse reports multifamily is not permitted in this district")
     return out
 
@@ -266,7 +276,8 @@ Use ONLY the FACTS. FACTS may include "local_context": verified district rules f
 as-of-right math, with the code section), board precedents (what relief boards have actually granted nearby: use them
 to judge what is achievable beyond as-of-right), land comps (price per buildable sf and per unit), new-building rents
 and sale prices (use them to choose the highest and best use: rental, condo, townhouses or subdivision), and pending
-rezonings or incentives. FACTS may include "independent_check" (a second researcher's reading of the official zoning map and code,
+rezonings or incentives. FACTS may include "underwriting_muse" (a second analyst's pro forma: offer price, development
+cost, yield on cost, maximum land value); cite it as that analyst's estimate, not as fact. FACTS may include "independent_check" (a second researcher's reading of the official zoning map and code,
 with sources) and "conflicts_with_independent_check": where the two agree, say the point is confirmed; where they conflict,
 say so plainly, do not pick a side, and put the conflict first in "diligence". Do not add approvals, dates, unit counts, FARs, programs, rents or prices that are not in FACTS.
 If something a buyer needs is not in FACTS, put it in "diligence". Plain language, no em dashes, short sentences.
@@ -343,6 +354,9 @@ def main():
         ctx = local_context(s, (facts.get("parcel") or {}).get("zoning") or s.get("zone") or s.get("listing_zoning"))
         if ctx:
             facts["local_context"] = ctx
+        uw = [r for r in inbox("underwriting.csv") if r.get("site_id") == s["id"]]
+        if uw:
+            facts["underwriting_muse"] = uw[-1]
         chk = checks.get(s["id"])
         if chk:
             facts["independent_check"] = {k: v for k, v in chk.items() if v and k not in ("id",)}
