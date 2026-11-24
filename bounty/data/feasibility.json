@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-23T21:05:31.518092+00:00",
+ "generated_utc": "2026-11-24T01:14:50.312524+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -93,8 +93,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "c36ea9f762da",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:35:41.713125+00:00"
+   "memo": {
+    "verdict": "The site has an approved 15 to 16 unit mixed-use scheme through April 2027, but a second analyst estimates the project fails conventional underwriting at the $475,000 ask.",
+    "as_of_right": "CD-5 zoning allows 2 to 6 stories with 100% lot coverage and no FAR or density caps per Section 345-405. On a 2,235 sf lot, a 6-story envelope yields 13,410 gross sf. Deducting the ground floor leaves 5 residential floors totaling 11,175 sf, which fits about 16 units at 700 sf per unit.",
+    "approval_path": "Existing approval path. The Planning Commission approved the site plan in April 2022 and extended it through April 25, 2027, eliminating short-term discretionary entitlement risk.",
+    "legal_issues": [
+     "Approval documents show a conflict between 15 units in the offering memo/extension records and 16 units in the AKRF review.",
+     "Mandatory 10% AFFH affordable set-aside at 60% AMI applies under Section 345-405.U.",
+     "Total cost of required GEIS fair share mitigation and parking in-lieu fees is unknown.",
+     "Site sits in FEMA Flood Zone AE, requiring floodplain compliance and insurance."
+    ],
+    "test_fit": "The envelope uses 100% lot coverage across 6 stories on a 2,235 sf lot. It yields 691 sf of ground retail and 15 to 16 units across 11,175 gross residential sf. Density is limited by the 6-story height cap and the small lot size. Zero parking is provided on-site.",
+    "value": "At the $475,000 ask, the land cost is $31,667 per approved unit for 15 units. A second analyst's pro forma estimates maximum supportable land value at negative $2,618,510 with a 4.24% yield on cost.",
+    "diligence": [
+     "Verify whether the site plan approval covers 15 or 16 units in the official Village records.",
+     "Obtain written confirmation of the approval extension to April 25, 2027.",
+     "Calculate exact parking in-lieu buyout fees and GEIS fair share mitigation costs.",
+     "Reconcile property boundary survey against the listing size of 2,151 sf and assessor size of 2,235 sf.",
+     "Review FEMA Flood Zone AE construction requirements and insurance rates."
+    ],
+    "enablers": "CD-5 district permits mixed-use redevelopment as of right, and Section 345-405.N allows lots under 12,000 sf to buy out 100% of required parking at $30,000 per space.",
+    "highest_and_best_use": "Not enough data. FACTS lack local rent comps, sale prices, and land comps to establish highest and best use.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:39:19.226446+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -188,8 +211,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "7fcf7dbf3257",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:37:12.222875+00:00"
+   "memo": {
+    "verdict": "The site has an approved coastal site plan for a 5-story, 74-unit building, but high development costs relative to market yields make it unviable at the $1,480,000 ask.",
+    "as_of_right": "The RX2 district allows General Building residential as-of-right with no FAR limits, no density caps, and no off-street parking minimums. Based on an 85% lot coverage cap (11,108 sf on a 13,068 sf lot) reduced by setbacks to a ~10,275 sf footprint across 5.5 maximum stories, zoning permits up to ~56,500 gross square feet or approximately 70 units at 800 square feet per unit.",
+    "approval_path": "Existing approval. The Bridgeport Planning & Zoning Commission approved a coastal site plan (Case 25-10) on April 28, 2025, for 74 apartments and 900 square feet of commercial space, eliminating entitlement risk if conditions are met.",
+    "legal_issues": [
+     "The official PZC decision letter and approval conditions for Case 25-10 are not available in public records.",
+     "Listing material references obsolete IHI zoning instead of the current RX2 district.",
+     "Bridgeport is exempt from CT 8-30g appeals, making this a standard market-rate entitlement.",
+     "Coastal Area Management review applies due to proximity to the Pequonnock River coastal boundary."
+    ],
+    "test_fit": "The 13,068 sf parcel allows a ~10,275 sf footprint after applying side (3 ft) and rear (20 ft) setbacks. At 5.5 stories, gross floor area reaches ~56,500 sf, yielding a test-fit range of 70 to 74 units. Setbacks and height limit density first.",
+    "value": "At the $1,480,000 asking price, land cost is $20,000 per approved unit across 74 units. A second analyst's estimate indicates a maximum supportable land value of -$10,298,221 based on a 3.97% projected yield on cost at $375 per square foot hard costs.",
+    "diligence": [
+     "Resolve lot dimension conflicts between the assessor card (13,068 sf, 0 ft frontage) and city GIS layers (16,651 sf) using a certified boundary survey.",
+     "Obtain the official Bridgeport PZC decision letter for Case 25-10 to confirm approval conditions and expiration dates.",
+     "Inspect approved site improvement plans to verify parking layout, garage design, and utility connections.",
+     "Confirm final terms of the approved Coastal Area Management plan.",
+     "Verify market rents and land comps to substantiate financial performance."
+    ],
+    "enablers": "RX2 zoning permits General Building multifamily as-of-right without density caps or parking minimums, and the site lies in a federal Opportunity Zone.",
+    "highest_and_best_use": "Not enough data in FACTS regarding market rents, sales prices, or comps to select the highest and best use, though the approved 74-unit rental program uses the available RX2 envelope.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:39:40.240646+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -307,7 +353,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T19:38:51.444683+00:00"
+   "checked_utc": "2026-11-23T23:39:40.242288+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -427,7 +473,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T19:39:28.029512+00:00"
+   "checked_utc": "2026-11-23T23:39:40.243261+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -546,7 +592,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T19:39:49.427060+00:00"
+   "checked_utc": "2026-11-23T23:39:40.244179+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -638,8 +684,31 @@
     ]
    },
    "facts_hash": "206900e443ac",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:43:04.762106+00:00"
+   "memo": {
+    "verdict": "The site is not worth pursuing at the $1,350,000 asking price because active construction began in February 2025 and base zoning limits new development to 6 units.",
+    "as_of_right": "In the RMF-4 district, base density allows 1 unit per 4,000 sf of lot area (Sec 4.B.3.a). For a 27,443 sf lot, 27,443 divided by 4,000 equals 6.86, which allows 6 units as of right.",
+    "approval_path": "Existing approval path: The Danbury Planning Department approved 24 units on January 15, 2025, and site clearing began in February 2025. As-of-right path: A 6-unit scheme requires site plan review. Special exception path: A 9-unit scheme requires special exception approval under the Housing Incentive Option.",
+    "legal_issues": [
+     "Approval validity and record gap: Official searched records show only a 2018 referral for 54, 56, and 58 Town Hill Avenue without a final P&Z approval document for 24 units on this single lot.",
+     "Availability and title: Site clearing started in February 2025, indicating the property is likely off-market.",
+     "Frontage compliance: Minimum lot width of 125 feet for an apartment house cannot be verified without an assessor card or survey.",
+     "Flood risk: Site is in FEMA Zone X, but local sources note chronic flooding from East Ditch in the Town Hill Avenue area."
+    ],
+    "test_fit": "Density is the primary limit on site capacity. Maximum building coverage of 30% allows an 8,233 sf footprint and a 4-story / 45-foot height limit yields a gross envelope of 32,932 sf. As-of-right density caps the site at 6 units, while the Housing Incentive Option caps it at 9 units. For parking, developments under 17 units outside Conservation and Traffic Mitigation districts have no minimum requirement under amended Sec 8.C.4.f, whereas the approved 24-unit project includes 39 spaces.",
+    "value": "At the $1,350,000 asking price, land cost is $56,250 per unit for the approved 24-unit scenario, $150,000 per unit for a 9-unit Housing Incentive scenario, and $225,000 per unit for a 6-unit as-of-right scenario. A second analyst estimates maximum supportable land value at -$191,769 (-$31,962 per unit) for a 6-unit conventional scheme.",
+    "diligence": [
+     "Conflict: The approval record indicates 24 units approved and under construction, whereas the independent zoning check caps lawful density at 9 units and found no final approval in searched municipal records.",
+     "Danbury assessor card, tax map, or property survey to confirm parcel ID, exact lot area, and frontage against the 125-foot minimum.",
+     "Official Planning Department approval resolution, stamped plans, and permit files for the 24-unit project.",
+     "Title search and owner confirmation regarding contract status and active construction contracts.",
+     "FIRM flood map panel verification to confirm East Ditch flood risks."
+    ],
+    "enablers": "Density can be increased to 9 units via the Housing Incentive Option special exception (Sec 4.B.7.c) by restricting at least 3 units at or below 80% AMI for 40 years, or through a CGS 8-30g set-aside application.",
+    "highest_and_best_use": "Not enough data because FACTS lack land comps, sale prices, and verified market rents.",
+    "letter_angle": "Inquire whether the owner seeks a joint venture or buyout given that site clearing started in February 2025.",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:40:43.702655+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -856,7 +925,7 @@
    },
    "facts_hash": "45ba6466a9da",
    "memo": null,
-   "checked_utc": "2026-11-23T19:44:59.713974+00:00"
+   "checked_utc": "2026-11-23T23:42:21.038258+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -1069,8 +1138,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "d07f43a65fd9",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:46:31.705664+00:00"
+   "memo": {
+    "verdict": "An 11-unit standard market-rate or 13-to-16-unit affordable multifamily building can be developed as of right, but the site is not worth pursuing at the $999,000 ask because high construction costs produce a negative land value in analyst underwriting.",
+    "as_of_right": "The independent check confirms that R7-1 zoning on this 2,800 sf lot allows a standard residential FAR of 3.44 under ZR 23-22, providing 9,632 gross sf (~11 units) as of right. Universal Affordability Preference (UAP under ZR Ch 27) increases FAR to 4.13 for 11,558 sf (~13 units), and qualifying affordable housing permits FAR 5.01 for 14,028 sf (~16 units).",
+    "approval_path": "As-of-right. Standard market-rate and UAP projects require only DOB plan review, carrying low procedural risk and fast timelines. The qualifying affordable tier (FAR 5.01) requires an HPD/HDC regulatory agreement.",
+    "legal_issues": [
+     "Existing 1-family vacant structure built in 1920 requires DOB demolition approvals.",
+     "Qualifying affordable tier requires negotiating an HPD/HDC regulatory agreement and recording permanent affordability covenants.",
+     "Broker survey must be verified against title to confirm boundaries and easements on the irregular 30 ft by 99.5 ft lot."
+    ],
+    "test_fit": "The 2,800 sf lot allows 80% coverage (2,240 sf), but the 30 ft rear yard requirement caps the footprint at 1,900 sf. Standard height allows up to 75 ft (7 stories), while UAP and qualifying affordable tiers allow up to 105 ft (10 stories). Density is capped first by FAR, yielding ~11 standard units, ~13 UAP units, or ~16 qualifying affordable units. Zero parking spaces are required per ZR 25-232.",
+    "value": "At the $999,000 ask, land cost is $71,357 to $99,900 per unit for standard development (~11 units) and $49,950 to $66,600 per unit under UAP (~15-20 units). Nearby land comps sell for $127 to $168 per buildable sf, but the underwriting analyst estimates supportable land value at $0 due to high hard costs ($400/sf).",
+    "diligence": [
+     "Review broker survey against title report to confirm site boundaries.",
+     "Verify HPD/HDC regulatory agreement terms and 485-x tax exemption requirements for affordable tiers.",
+     "Perform a Phase I environmental site assessment.",
+     "Confirm DOB demolition requirements for the existing single-family home."
+    ],
+    "enablers": "Universal Affordability Preference (UAP) increases FAR to 4.13 (~13 units), while HPD/HDC qualifying affordable housing programs allow FAR 5.01 (~16 units).",
+    "highest_and_best_use": "Multifamily rental is the highest and best use based on market rents ($2,580 studio to $3,300 2BR at The Bronx Vibe). However, financial feasibility depends on a severe price drop or public subsidies, as the underwriting analyst estimates negative land value at current costs.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:42:39.236950+00:00"
   },
   {
    "id": "bx-927-home",
@@ -1282,8 +1372,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "da88cf3180a1",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:48:04.485684+00:00"
+   "memo": {
+    "verdict": "An 11 to 16 unit residential building can be built as of right, but the project is not worth pursuing at the $1,100,000 asking price because analyst pro forma estimates show negative land value.",
+    "as_of_right": "In an R7-1 zone, multifamily development is permitted as of right under ZR 23-12 and ZR 23-22. On a 2,920 sf lot, the standard 3.44 FAR permits 10,045 sf of floor area or approximately 11 units. The UAP bonus at 4.13 FAR permits 12,054 sf or approximately 13 units. The qualifying affordable housing tier at 5.01 FAR permits 14,629 sf or approximately 16 units. Zero parking spaces are required under ZR 25-232.",
+    "approval_path": "As-of-right. The site requires standard building plan review and permits from the NYC Department of Buildings without discretionary zoning board approvals. The higher FAR tier of 5.01 requires an HPD or HDC regulatory agreement.",
+    "legal_issues": [
+     "Requirement for an HPD or HDC regulatory agreement if utilizing UAP or qualifying affordable FAR tiers.",
+     "Verification of occupancy status and tenant legal protections for the existing 1,188 sf residential building prior to demolition.",
+     "Compliance verification with narrow-street envelope rules under ZR 23-432 for Home Street."
+    ],
+    "test_fit": "The 2,920 sf lot measures 27.76 ft wide by 107.48 ft deep. With zero required front or side yards and a 30 ft rear yard, the footprint envelope is 2,151 sf. Heights allow 7 floors (75 ft) standard or 10 floors (105 ft) for UAP/affordable tiers. Zero parking spaces are required. FAR is the primary limit on density.",
+    "value": "At the $1,100,000 ask, land cost is $78,571 to $100,000 per unit for standard development and $52,381 to $68,750 per unit under UAP. Nearby Bronx land comps range from $127 to $168 per buildable sf. The underwriting analyst estimates maximum supportable land value at $0 due to high development costs.",
+    "diligence": [
+     "Title search to confirm clear title and absence of unrecorded easements.",
+     "Phase I Environmental Site Assessment.",
+     "Tenant lease review and occupancy check for the existing residential structure.",
+     "Boundary and topographical land survey by a licensed surveyor.",
+     "Review of HPD/HDC regulatory agreement terms for affordable housing compliance."
+    ],
+    "enablers": "Universal Affordability Preference (UAP, ZR Ch 27), qualifying affordable housing FAR 5.01 (ZR 23-22), FRESH Zone overlay, and Outer Transit Zone parking waivers (ZR 25-232).",
+    "highest_and_best_use": "Multifamily rental development of 11 to 16 units maximizes density under R7-1 zoning. Feasibility depends on reducing the land purchase price to near zero or securing public subsidies, as current market rents do not support $400 per sf hard construction costs.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:43:01.664516+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -1498,7 +1610,7 @@
    },
    "facts_hash": "91656d04c7a6",
    "memo": null,
-   "checked_utc": "2026-11-23T19:49:35.668225+00:00"
+   "checked_utc": "2026-11-23T23:44:32.976490+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1712,8 +1824,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "d0ac0f64cf67",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:51:06.818808+00:00"
+   "memo": {
+    "verdict": "The site permits an as-of-right multifamily building of up to 14 units under MIH or 11 units standard, but it is not worth pursuing at the $1,150,000 asking price because pro forma underwriting estimates negative supportable land value.",
+    "as_of_right": "Under R6-1 zoning (ZR 23-22), the 2,500 sf lot allows a standard FAR of 3.00 (7,500 sf) for 8 to 11 units, or a qualifying affordable/MIH FAR of 3.90 (9,750 sf) for 10 to 14 units based on the 680 DU factor (ZR 23-52). Lot coverage is 80% (2,000 sf max footprint) with a 1,750 sf yard envelope (25 ft frontage by 70 ft depth after a 30 ft rear yard per ZR 23-342). Max height is 75 ft standard (~7 stories) or 95 ft for qualifying affordable (~9 stories) per ZR 23-432, with 0 parking spaces required due to Outer Transit Zone waivers (ZR 25-222 / 25-232).",
+    "approval_path": "Multifamily redevelopment is as-of-right, but reaching the 3.90 FAR tier requires compliance with Mandatory Inclusionary Housing (MIH Option 2), which adds administrative processing time for affordability covenants rather than discretionary zoning board risk.",
+    "legal_issues": [
+     "Occupied 2-family structure from 1910 requiring tenant relocation or lease termination prior to demolition.",
+     "Mandatory Inclusionary Housing (MIH) Option 2 compliance required to unlock the 3.90 FAR tier.",
+     "Execution of permanent affordable housing regulatory covenants with NYC HPD."
+    ],
+    "test_fit": "The lot footprint is 25 ft by 100 ft (2,500 sf), yielding a 1,750 sf building envelope after deducting a 30 ft rear yard. Height permits ~7 floors standard (75 ft) or ~9 floors qualifying affordable (95 ft). Density is bound first by FAR via the DU factor (8-11 units standard, 10-14 units MIH affordable). Parking is fully waived and does not limit density.",
+    "value": "At the $1,150,000 asking price, land cost is $104,545 to $143,750 per unit standard and $82,143 to $115,000 per unit under the MIH affordable bonus. Local land comps show $127/bsf at 2302 Andrews Ave N, $130/bsf at 4057 White Plains Rd, and $168/bsf at 1077 Intervale Ave. A second analyst's underwriting muse estimates maximum supportable land value at -$186,000 for conventional rental and -$497,523 for affordable rental, with a 6.18% yield on cost assuming zero land cost.",
+    "diligence": [
+     "Tenant lease agreements and occupancy status records for the existing 2-family building.",
+     "Title search to confirm absence of liens, easements, or deed restrictions on Block 4062 Lot 23.",
+     "Phase I Environmental Site Assessment and pre-demolition structural survey.",
+     "HPD / HDC program term sheet review for 485-x tax exemption and MIH Option 2 compliance costs.",
+     "Utility connection availability and street access confirmation along Poplar Street."
+    ],
+    "enablers": "Mandatory Inclusionary Housing (MIH Option 2) area mapping, qualifying affordable housing FAR bonus (3.90 FAR), FRESH Zone overlay, and Outer Transit Zone parking waivers.",
+    "highest_and_best_use": "A 14-unit multifamily rental building utilizing the MIH Option 2 bonus maximizes total floor area at 9,750 sf. Nearby new-construction rental comps at The Bronx Vibe show studios at $2,580, 1BRs at $2,895, and 2BRs at $3,300 per month. Feasibility depends on a major price reduction from the seller or securing public subsidy programs.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:45:39.205228+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -1954,7 +2088,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T19:51:42.677997+00:00"
+   "checked_utc": "2026-11-23T23:45:39.759071+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -2196,7 +2330,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T19:52:24.217015+00:00"
+   "checked_utc": "2026-11-23T23:45:40.379562+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -2405,7 +2539,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T19:53:46.263299+00:00"
+   "checked_utc": "2026-11-23T23:45:40.970791+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -2594,7 +2728,7 @@
    },
    "facts_hash": "2da9a7768ed9",
    "memo": null,
-   "checked_utc": "2026-11-23T19:55:17.718028+00:00"
+   "checked_utc": "2026-11-23T23:47:12.326783+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -2781,8 +2915,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "c3512ca1503c",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:56:49.235019+00:00"
+   "memo": {
+    "verdict": "A 4-unit market-rate multifamily building can be developed as of right, but the acquisition is not financially viable at the $399,000 asking price.",
+    "as_of_right": "Under R5 zoning, standard residential FAR is 1.50 (ZR 23-21), producing 2,687 buildable square feet on the 1,791 square foot lot. The dwelling unit factor of 680 for multiple dwellings (ZR 23-52) allows 3.95 units, which rounds to 4 lawful dwelling units. Multiple dwellings require a minimum lot width of 18 feet and lot area of 1,700 square feet (ZR 23-11), which this 25.17-foot by 71.17-foot parcel satisfies. Under ZR 25-232, parking requirements outside the Greater Transit Zone total 2 spaces for 4 units, which are fully waived because the requirement is 5 spaces or fewer.",
+    "approval_path": "As-of-right Department of Buildings permit path. This ministerial review route requires standard architectural filing and plan approvals with low discretionary land-use risk.",
+    "legal_issues": [
+     "Seller disclaimer explicitly states that sellers make no representations that this is a buildable lot.",
+     "Lot width of 25.17 feet falls below the 30-foot minimum required for detached single- or two-family homes under ZR 23-11, legally restricting development to attached, semi-detached, or multiple dwelling forms.",
+     "MapPLUTO returned an error finding the lot, requiring formal verification of tax lot lines and borough block lot registration."
+    ],
+    "test_fit": "The site envelope supports an interior footprint of roughly 1,036 square feet after applying a 10-foot front yard (ZR 23-321) and a 20-foot rear yard (ZR 23-342). The building can rise up to 45 feet in height with a 35-foot base height (ZR 23-422), accommodating up to 4 stories. FAR caps total development at 2,687 square feet, limiting the project to 4 units before height or coverage limits apply. Zero parking spaces are required due to the parking waiver.",
+    "value": "At the $399,000 ask, the land cost is $99,750 per unit for a 4-unit scheme and $148.50 per buildable square foot. If built as the listing headline suggests at 3 units, the land cost rises to $133,000 per unit. A second analyst estimates maximum supportable land value at $173,637 ($43,409 per unit), concluding the site fails underwriting at the asking price. Nearby Bronx land sales traded at $127 to $168 per buildable square foot.",
+    "diligence": [
+     "Verify buildable status and title encumbrances given the seller disclaimer of no representations.",
+     "Confirm official tax parcel records and lot status with the Department of Finance for Block 3369, Lot 32.",
+     "Obtain an architectural boundary and topographical survey to confirm the 25.17-foot frontage and 71.17-foot depth.",
+     "Conduct an environmental Phase I review and inspect street utility connections on East 233rd Street."
+    ],
+    "enablers": "None. The parcel is under 5,000 square feet and does not qualify for the 2.00 FAR qualifying residential site bonus under ZR 12-10, nor does it have an MIH overlay or pending rezoning.",
+    "highest_and_best_use": "A 4-unit market-rate rental building is the highest and best use because detached single-family use is barred by lot width rules and 2024 Bronx rental comps show studios, 1BRs, and 2BRs renting from $2,580 to $3,300 per month. Feasibility depends entirely on obtaining a major price reduction.",
+    "letter_angle": "",
+    "_model": "gemini-flash-latest"
+   },
+   "checked_utc": "2026-11-23T23:49:07.325423+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -2864,7 +3019,7 @@
    },
    "facts_hash": "0ff5f4458efa",
    "memo": null,
-   "checked_utc": "2026-11-23T19:58:19.729607+00:00"
+   "checked_utc": "2026-11-23T23:51:02.128658+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -2945,8 +3100,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "1d4f856dd2c1",
-   "memo": null,
-   "checked_utc": "2026-11-23T19:59:51.391677+00:00"
+   "memo": {
+    "verdict": "The site realistically allows up to 7 units as of right, but the project is not worth pursuing at the $750,000 asking price based on analyst cost estimates.",
+    "as_of_right": "Bridgeport NX2 zoning uses building types rather than FAR or units-per-acre caps. House A allows 4 principal units plus 1 backyard cottage (5 units total) on a 35-foot minimum lot width (Sec 3.90.9). Double House A allows 6 principal units plus 1 backyard cottage (7 units total) as of right on a 50-foot minimum lot width (Sec 3.80.9).",
+    "approval_path": "As-of-right site plan review applies for up to 7 units under Double House A, carrying low entitlement risk and standard processing time. Expanding to 8 principal units requires special permit approval from the Planning and Zoning Commission.",
+    "legal_issues": [
+     "Listing labels district as RC, but official municipal records confirm NX2 zoning.",
+     "Property tax assessor records lack documented frontage measurements.",
+     "Lack of verified municipal zoning approvals or certificates of occupancy for existing 3-family structure."
+    ],
+    "test_fit": "Double House A allows 2.5 stories max (Sec 3.80.6) and 90% lot coverage (Sec 3.80.4). Envelope gross floor area is roughly 6,098 sq ft based on coverage. Building-type unit limits cap density first. Off-street parking minimums are zero (Sec 8.20.1), so parking does not cap density.",
+    "value": "At the $750,000 ask, land cost is $150,000 per buildable unit for a 5-unit scenario and $107,143 per unit for a 7-unit scenario. The analyst underwriting muse estimates maximum land value at negative $761,827 based on a 3.26% yield on cost.",
+    "diligence": [
+     "Bridgeport assessor tax map or recorded plat to resolve the lot area discrepancy between 3,049 sq ft (assessor) and 4,205 sq ft (GIS polygon).",
+     "Certified boundary survey to confirm lot frontage meets the 50-foot minimum for Double House A.",
+     "Municipal certificates of occupancy for the current 3-family building.",
+     "FEMA Flood Map confirmation verifying Zone X status.",
+     "Phase I Environmental Site Assessment."
+    ],
+    "enablers": "Double House A building type rules allow up to 7 total units as of right on lots with at least 50 feet of lot width.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-23T23:51:24.416916+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -3028,7 +3205,7 @@
    },
    "facts_hash": "876af90a48f6",
    "memo": null,
-   "checked_utc": "2026-11-23T20:01:21.960827+00:00"
+   "checked_utc": "2026-11-23T23:52:55.367976+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -3133,7 +3310,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:02:40.087609+00:00"
+   "checked_utc": "2026-11-23T23:52:55.369105+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -3250,7 +3427,7 @@
    },
    "facts_hash": "07e5b8014b5d",
    "memo": null,
-   "checked_utc": "2026-11-23T20:04:10.658406+00:00"
+   "checked_utc": "2026-11-23T23:54:26.092192+00:00"
   },
   {
    "id": "hunt-145-beverly-rd-white-plains",
@@ -3302,7 +3479,7 @@
    },
    "facts_hash": "bdc000e5cc6e",
    "memo": null,
-   "checked_utc": "2026-11-23T20:05:43.214059+00:00"
+   "checked_utc": "2026-11-23T23:55:56.812424+00:00"
   },
   {
    "id": "hunt-89-neptune-ave-jersey-city",
@@ -3399,7 +3576,7 @@
    },
    "facts_hash": "4c0e9ddd32eb",
    "memo": null,
-   "checked_utc": "2026-11-23T20:07:13.760298+00:00"
+   "checked_utc": "2026-11-23T23:57:27.583957+00:00"
   },
   {
    "id": "hunt-753-den-rd-stamford",
@@ -3474,7 +3651,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:07:13.761185+00:00"
+   "checked_utc": "2026-11-23T23:57:27.585126+00:00"
   },
   {
    "id": "hunt-3729-paulding-ave-bronx",
@@ -3666,7 +3843,7 @@
    },
    "facts_hash": "b00881a9191d",
    "memo": null,
-   "checked_utc": "2026-11-23T20:08:44.883890+00:00"
+   "checked_utc": "2026-11-23T23:59:00.118618+00:00"
   },
   {
    "id": "hunt-182184-lincoln-ave-yonkers",
@@ -3818,7 +3995,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:09:45.901265+00:00"
+   "checked_utc": "2026-11-23T23:59:00.119828+00:00"
   },
   {
    "id": "hunt-1001-summit-ave-bronx",
@@ -4013,7 +4190,7 @@
    },
    "facts_hash": "60494dd4f894",
    "memo": null,
-   "checked_utc": "2026-11-23T20:11:18.124094+00:00"
+   "checked_utc": "2026-11-24T00:00:31.636886+00:00"
   },
   {
    "id": "hunt-1730-hunt-ave-bronx",
@@ -4207,7 +4384,7 @@
    },
    "facts_hash": "5e6a22c1120b",
    "memo": null,
-   "checked_utc": "2026-11-23T20:12:49.699920+00:00"
+   "checked_utc": "2026-11-24T00:02:08.017897+00:00"
   },
   {
    "id": "hunt-1074-university-ave-bronx",
@@ -4403,7 +4580,7 @@
    },
    "facts_hash": "dd1cbe466cac",
    "memo": null,
-   "checked_utc": "2026-11-23T20:14:21.042914+00:00"
+   "checked_utc": "2026-11-24T00:03:39.595867+00:00"
   },
   {
    "id": "hunt-4165-laconia-ave-bronx",
@@ -4591,7 +4768,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:14:21.731779+00:00"
+   "checked_utc": "2026-11-24T00:03:40.396958+00:00"
   },
   {
    "id": "hunt-1148-e-211th-st-bronx",
@@ -4727,7 +4904,7 @@
    },
    "facts_hash": "c8ecb1c842a7",
    "memo": null,
-   "checked_utc": "2026-11-23T20:15:52.857128+00:00"
+   "checked_utc": "2026-11-24T00:05:11.900577+00:00"
   },
   {
    "id": "hunt-113-old-bay-st-peekskill",
@@ -4779,7 +4956,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:15:52.857999+00:00"
+   "checked_utc": "2026-11-24T00:05:11.901628+00:00"
   },
   {
    "id": "hunt-120-smith-st-peekskill",
@@ -4830,7 +5007,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:15:52.858665+00:00"
+   "checked_utc": "2026-11-24T00:05:11.902471+00:00"
   },
   {
    "id": "hunt-931-2nd-st-peekskill",
@@ -4880,7 +5057,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:15:52.859300+00:00"
+   "checked_utc": "2026-11-24T00:05:11.903295+00:00"
   },
   {
    "id": "hunt-298-bleloch-ave-peekskill",
@@ -4910,7 +5087,7 @@
    },
    "facts_hash": "6136c204a331",
    "memo": null,
-   "checked_utc": "2026-11-23T20:17:23.400912+00:00"
+   "checked_utc": "2026-11-24T00:06:42.639845+00:00"
   },
   {
    "id": "hunt-806-bay-st-peekskill",
@@ -4940,7 +5117,7 @@
    },
    "facts_hash": "f5c3130afb01",
    "memo": null,
-   "checked_utc": "2026-11-23T20:18:54.274231+00:00"
+   "checked_utc": "2026-11-24T00:08:13.346728+00:00"
   },
   {
    "id": "hunt-527-union-ave-peekskill",
@@ -4991,7 +5168,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:18:54.275070+00:00"
+   "checked_utc": "2026-11-24T00:08:13.347763+00:00"
   },
   {
    "id": "hunt-26-pratt-st-new-rochelle",
@@ -5082,7 +5259,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:18:54.275758+00:00"
+   "checked_utc": "2026-11-24T00:08:13.348640+00:00"
   },
   {
    "id": "hunt-83-horton-ave-new-rochelle",
@@ -5174,7 +5351,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:18:54.276423+00:00"
+   "checked_utc": "2026-11-24T00:08:13.349511+00:00"
   },
   {
    "id": "hunt-1-bayview-ave-new-rochelle",
@@ -5244,7 +5421,7 @@
    },
    "facts_hash": "9716ac88231c",
    "memo": null,
-   "checked_utc": "2026-11-23T20:20:24.860762+00:00"
+   "checked_utc": "2026-11-24T00:09:44.079864+00:00"
   },
   {
    "id": "hunt-17-3rd-st-new-rochelle",
@@ -5314,7 +5491,7 @@
    },
    "facts_hash": "4298c4db7b03",
    "memo": null,
-   "checked_utc": "2026-11-23T20:21:55.662008+00:00"
+   "checked_utc": "2026-11-24T00:11:14.867103+00:00"
   },
   {
    "id": "hunt-59-crescent-ave-new-rochelle",
@@ -5384,7 +5561,7 @@
    },
    "facts_hash": "61a5dd193e15",
    "memo": null,
-   "checked_utc": "2026-11-23T20:23:26.217573+00:00"
+   "checked_utc": "2026-11-24T00:12:45.607326+00:00"
   },
   {
    "id": "hunt-1-lemke-pl-new-rochelle",
@@ -5454,7 +5631,7 @@
    },
    "facts_hash": "96745b093589",
    "memo": null,
-   "checked_utc": "2026-11-23T20:24:56.740521+00:00"
+   "checked_utc": "2026-11-24T00:14:16.412035+00:00"
   },
   {
    "id": "hunt-292-5th-ave-new-rochelle",
@@ -5524,7 +5701,7 @@
    },
    "facts_hash": "f8993bf962e2",
    "memo": null,
-   "checked_utc": "2026-11-23T20:26:27.225282+00:00"
+   "checked_utc": "2026-11-24T00:15:47.157253+00:00"
   },
   {
    "id": "hunt-27-high-st-crotononhudson",
@@ -5554,7 +5731,7 @@
    },
    "facts_hash": "81b605bf786d",
    "memo": null,
-   "checked_utc": "2026-11-23T20:27:58.236150+00:00"
+   "checked_utc": "2026-11-24T00:17:17.980472+00:00"
   },
   {
    "id": "hunt-73-melrose-ave-crotononhudson",
@@ -5605,7 +5782,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:27:58.237000+00:00"
+   "checked_utc": "2026-11-24T00:17:17.981521+00:00"
   },
   {
    "id": "hunt-6029-huxley-ave-bronx",
@@ -5755,7 +5932,7 @@
    },
    "facts_hash": "5dcba187b50f",
    "memo": null,
-   "checked_utc": "2026-11-23T20:29:29.319379+00:00"
+   "checked_utc": "2026-11-24T00:18:49.321148+00:00"
   },
   {
    "id": "hunt-2808-palisade-ave-weehawken",
@@ -5785,7 +5962,7 @@
    },
    "facts_hash": "7a367bc69429",
    "memo": null,
-   "checked_utc": "2026-11-23T20:31:03.960091+00:00"
+   "checked_utc": "2026-11-24T00:20:23.323342+00:00"
   },
   {
    "id": "hunt-528-undercliff-ave-edgewater",
@@ -5837,7 +6014,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:31:35.971292+00:00"
+   "checked_utc": "2026-11-24T00:20:23.324424+00:00"
   },
   {
    "id": "hunt-107-old-palisade-rd-fort-lee",
@@ -5867,7 +6044,7 @@
    },
    "facts_hash": "80cac4eab99e",
    "memo": null,
-   "checked_utc": "2026-11-23T20:33:06.418305+00:00"
+   "checked_utc": "2026-11-24T00:21:54.081143+00:00"
   },
   {
    "id": "hunt-13311343-intervale-ave-bronx",
@@ -6024,7 +6201,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:33:36.521123+00:00"
+   "checked_utc": "2026-11-24T00:21:54.655643+00:00"
   },
   {
    "id": "hunt-408-e-154th-st-bronx",
@@ -6183,7 +6360,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:33:45.287549+00:00"
+   "checked_utc": "2026-11-24T00:21:55.249818+00:00"
   },
   {
    "id": "hunt-757-warburton-ave-yonkers",
@@ -6301,7 +6478,7 @@
    },
    "facts_hash": "16bc8357cd33",
    "memo": null,
-   "checked_utc": "2026-11-23T20:35:15.886280+00:00"
+   "checked_utc": "2026-11-24T00:23:26.006151+00:00"
   },
   {
    "id": "hunt-143-oliver-ave-yonkers",
@@ -6419,7 +6596,7 @@
    },
    "facts_hash": "0cfe5918ac67",
    "memo": null,
-   "checked_utc": "2026-11-23T20:36:46.388477+00:00"
+   "checked_utc": "2026-11-24T00:24:56.779448+00:00"
   },
   {
    "id": "hunt-127-downing-st-yonkers",
@@ -6537,7 +6714,7 @@
    },
    "facts_hash": "9b10454495b8",
    "memo": null,
-   "checked_utc": "2026-11-23T20:38:16.829760+00:00"
+   "checked_utc": "2026-11-24T00:26:27.650216+00:00"
   },
   {
    "id": "hunt-2889-zulette-ave-bronx",
@@ -6704,7 +6881,7 @@
    },
    "facts_hash": "4d0d6a462290",
    "memo": null,
-   "checked_utc": "2026-11-23T20:39:48.112860+00:00"
+   "checked_utc": "2026-11-24T00:27:58.990465+00:00"
   },
   {
    "id": "hunt-1865-barnes-ave-bronx",
@@ -6871,7 +7048,7 @@
    },
    "facts_hash": "d758f6cd5cd8",
    "memo": null,
-   "checked_utc": "2026-11-23T20:41:20.286453+00:00"
+   "checked_utc": "2026-11-24T00:29:30.257631+00:00"
   },
   {
    "id": "hunt-2819-roebling-ave-bronx",
@@ -7038,7 +7215,7 @@
    },
    "facts_hash": "da414619e853",
    "memo": null,
-   "checked_utc": "2026-11-23T20:42:55.296304+00:00"
+   "checked_utc": "2026-11-24T00:31:01.600873+00:00"
   },
   {
    "id": "hunt-127-park-ave-yonkers",
@@ -7156,7 +7333,7 @@
    },
    "facts_hash": "c47f57dbac01",
    "memo": null,
-   "checked_utc": "2026-11-23T20:44:25.825444+00:00"
+   "checked_utc": "2026-11-24T00:32:32.481176+00:00"
   },
   {
    "id": "hunt-526-n-terrace-ave-mount-vernon",
@@ -7209,7 +7386,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:44:25.826281+00:00"
+   "checked_utc": "2026-11-24T00:32:32.482245+00:00"
   },
   {
    "id": "hunt-32-terrace-ave-ossining",
@@ -7239,7 +7416,7 @@
    },
    "facts_hash": "b4dabbd306fa",
    "memo": null,
-   "checked_utc": "2026-11-23T20:45:56.563287+00:00"
+   "checked_utc": "2026-11-24T00:34:03.506111+00:00"
   },
   {
    "id": "hunt-187-old-mamaroneck-rd-white-plains",
@@ -7269,7 +7446,7 @@
    },
    "facts_hash": "69612f27a9b2",
    "memo": null,
-   "checked_utc": "2026-11-23T20:47:27.081645+00:00"
+   "checked_utc": "2026-11-24T00:35:34.248805+00:00"
   },
   {
    "id": "hunt-13471351-intervale-ave-3lot-package-1347-1349-1351-bronx",
@@ -7440,7 +7617,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:47:46.316806+00:00"
+   "checked_utc": "2026-11-24T00:35:34.844109+00:00"
   },
   {
    "id": "hunt-1720-boone-ave-bronx",
@@ -7640,7 +7817,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-23T20:48:05.981606+00:00"
+   "checked_utc": "2026-11-24T00:35:35.509132+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -7824,7 +8001,7 @@
    },
    "facts_hash": "2d8df0472d0f",
    "memo": null,
-   "checked_utc": "2026-11-23T20:49:41.046967+00:00"
+   "checked_utc": "2026-11-24T00:37:16.935317+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -8009,7 +8186,7 @@
    },
    "facts_hash": "487ee7cb7617",
    "memo": null,
-   "checked_utc": "2026-11-23T20:51:17.033860+00:00"
+   "checked_utc": "2026-11-24T00:38:58.617519+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -8193,7 +8370,7 @@
    },
    "facts_hash": "717dbd0d8021",
    "memo": null,
-   "checked_utc": "2026-11-23T20:52:52.988993+00:00"
+   "checked_utc": "2026-11-24T00:40:45.060317+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -8378,7 +8555,7 @@
    },
    "facts_hash": "eaa8cda1896a",
    "memo": null,
-   "checked_utc": "2026-11-23T20:54:47.587727+00:00"
+   "checked_utc": "2026-11-24T00:42:53.154542+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -8561,7 +8738,7 @@
    },
    "facts_hash": "7b3732ca6618",
    "memo": null,
-   "checked_utc": "2026-11-23T20:56:24.040806+00:00"
+   "checked_utc": "2026-11-24T01:05:41.779696+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -8664,7 +8841,7 @@
    },
    "facts_hash": "47900f79ecbc",
    "memo": null,
-   "checked_utc": "2026-11-23T20:57:55.547721+00:00"
+   "checked_utc": "2026-11-24T01:07:13.163696+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -8869,7 +9046,57 @@
    },
    "facts_hash": "ab8b872fef6f",
    "memo": null,
-   "checked_utc": "2026-11-23T20:59:26.667835+00:00"
+   "checked_utc": "2026-11-24T01:08:44.508458+00:00"
+  },
+  {
+   "id": "nyc-4003810005",
+   "address": "38-11 32ND STREET",
+   "muni": "Astoria / LIC",
+   "state": "NY",
+   "status": "Off market",
+   "ask": null,
+   "facts": {
+    "address": "38-11 32ND STREET",
+    "muni": "Astoria / LIC",
+    "state": "NY",
+    "jurisdiction": "NYC",
+    "borough": "QN",
+    "bbl": "4003810005",
+    "status": "Off market",
+    "ask": null,
+    "issues": [],
+    "parcel": {
+     "source": "NYC MapPLUTO (DCP)",
+     "bbl": "4003810005",
+     "zoning": "M1-3/R7X",
+     "commercial_overlay": null,
+     "special_district": "LIC",
+     "historic_district": null,
+     "landmark": null,
+     "lot_sf": 12008,
+     "frontage_ft": 99.28,
+     "depth_ft": 99.59,
+     "corner_lot": false,
+     "existing_bldg_sf": 0,
+     "existing_units": 0,
+     "year_built": 0,
+     "owner": "LIC BLDG 32 LLC",
+     "far_rule": "ZR 23-22: M1-3/R7X standard FAR 5",
+     "standard_floor_area": 60040,
+     "uap_floor_area": null,
+     "units_standard": [
+      66,
+      88
+     ],
+     "units_uap": null
+    },
+    "scenarios_units": {
+     "standard": "66 to 88"
+    }
+   },
+   "facts_hash": "69929250e2f6",
+   "memo": null,
+   "checked_utc": "2026-11-24T01:10:15.949230+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -9074,7 +9301,7 @@
    },
    "facts_hash": "761acc8cd110",
    "memo": null,
-   "checked_utc": "2026-11-23T21:00:58.019147+00:00"
+   "checked_utc": "2026-11-24T01:11:47.487667+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -9279,7 +9506,7 @@
    },
    "facts_hash": "4cede9dd0451",
    "memo": null,
-   "checked_utc": "2026-11-23T21:02:29.130608+00:00"
+   "checked_utc": "2026-11-24T01:13:18.866526+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -9381,110 +9608,7 @@
    },
    "facts_hash": "e499d8d18095",
    "memo": null,
-   "checked_utc": "2026-11-23T21:04:00.310337+00:00"
-  },
-  {
-   "id": "nyc-3024820009",
-   "address": "19 CLAY STREET",
-   "muni": "Williamsburg / Greenpoint",
-   "state": "NY",
-   "status": "Off market",
-   "ask": null,
-   "facts": {
-    "address": "19 CLAY STREET",
-    "muni": "Williamsburg / Greenpoint",
-    "state": "NY",
-    "jurisdiction": "NYC",
-    "borough": "BK",
-    "bbl": "3024820009",
-    "status": "Off market",
-    "ask": null,
-    "issues": [],
-    "parcel": {
-     "source": "NYC MapPLUTO (DCP)",
-     "bbl": "3024820009",
-     "zoning": "M1-2/R6",
-     "commercial_overlay": null,
-     "special_district": "MX-8",
-     "historic_district": null,
-     "landmark": null,
-     "lot_sf": 19747,
-     "frontage_ft": 105,
-     "depth_ft": 151.54,
-     "corner_lot": false,
-     "existing_bldg_sf": 0,
-     "existing_units": 0,
-     "year_built": 0,
-     "owner": "CLAY PROPERTIES LLC",
-     "far_rule": "ZR 23-22: M1-2/R6 standard FAR 2.43",
-     "standard_floor_area": 47985,
-     "uap_floor_area": null,
-     "units_standard": [
-      53,
-      70
-     ],
-     "units_uap": null
-    },
-    "scenarios_units": {
-     "standard": "53 to 70"
-    },
-    "underwriting_muse": {
-     "date": "2026-11-22",
-     "site_id": "nyc-3024820009",
-     "address": "19 CLAY STREET",
-     "town": "Williamsburg / Greenpoint",
-     "state": "NY",
-     "asking_price": "",
-     "units": "48",
-     "zoning_confidence": "high",
-     "conv_verdict": "FAILS",
-     "aff_programs": "UAP qualifying tier FAR 3.90 (ZR Ch 27; floor area above 2.20 base permanently affordable); 485-x; 4% LIHTC",
-     "aff_verdict": "FAILS",
-     "combined_verdict": "CEILING-ONLY",
-     "offer_price": "0",
-     "cut_pct_needed": "",
-     "rent_basis": "Williamsburg blended rent from market.csv One Domino Square (studio 3701); 2BR 9895 luxury outlier excluded; labeled estimate",
-     "hard_cost_psf": "500",
-     "total_dev_cost": "27151875",
-     "noi_conv": "1746240",
-     "yield_on_cost_pct": "6.43",
-     "supportable_loan_conv": "18696735",
-     "max_land_value": "-286644",
-     "max_land_per_unit": "-5972",
-     "notes": "Better track: conventional. NOI conv $1,746,240 (48u at $4200/mo); opex $11500/u/yr incl taxes ~$4200/u (est). Max land conv $-286,644; max land aff $-22,006,944 on 85 aff units (rent $1800/mo ~60% AMI; debt 5.75%/30yr/1.20x; 4% equity $0.90/credit on 85% non-land basis; soft $50000/u; hard +15% prevailing wage - labeled assumptions; gap solved to $0); Near hurdle at zero land on conventional standard 48 units; UAP 85-unit affordable structure modeled and still negative at first-pass subsidy depth; Unpriced queue site - offer_price = max supportable land value on better track; yield_on_cost_pct at zero land",
-     "sources": "Perm 6.75%/30yr/1.20x DSCR standing basis (CommercialLoanDirect conv 6.14-9.17%; Fannie 10-yr 6.09-6.69% Multi-Family USA Nov 2026); soft 20% + contingency 5% of hard; vacancy 5% (standing assumptions); hard psf: LOD Construction NYC guide 2026 (wood 250-400; steel/concrete 4-8st 350-550; mixed-use 350-500; high-rise 500-800+); CT/suburban cross-checked Gordian RSMeans Q3 2026 NY 221-356"
-    },
-    "independent_check": {
-     "date": "2026-11-22",
-     "address": "19 CLAY STREET",
-     "town": "Williamsburg / Greenpoint",
-     "parcel_id": "3024820009",
-     "lot_sf": "19747",
-     "frontage_ft": "105",
-     "district": "M1-2/R6",
-     "overlays": "Special Mixed Use District MX-8 (PLUTO spdist1; ZoLa special district MX-8); ZoLa intersecting map layers (reaudit 2026-11-22): Inclusionary Housing Zone, Coastal Zone, Appendix I; NOT a Mandatory Inclusionary Housing Area per ZoLa; no Limited Height District, Historic District or Landmark on ZoLa or PLUTO",
-     "multifamily": "as of right",
-     "far": "Residential (paired R6, ZR 23-22 as amended Dec 5 2024, applied in MX via ZR 123-62/123-622): 2.20 standard; 3.90 qualifying affordable housing or qualifying senior housing (UAP). M1-2 manufacturing/commercial FAR 1.00 (ZR 43-12) applies separately to non-residential floor area",
-     "density_rule": "No units-per-lot-area density rule in R6; units capped by FAR, height and lot coverage; min lot area 1700 sf and min lot width 18 ft for other residences (ZR 23-12)",
-     "max_height": "MX height table for R6 (ZR 123-652(b)): min base 40 ft, max base 65 ft, max building 125 ft; the max building height may be increased 25% where the gross area of the top story is no more than 90% of the story below",
-     "lot_coverage": "80% interior/through lots, 100% corner lots for multiple dwellings (ZR 23-362; applied to residential-only zoning lots in MX per ZR 123-64)",
-     "min_lot_area": "1700",
-     "min_lot_width": "18",
-     "parking": "No minimum for residences - PLUTO places the lot in the Inner Transit Zone and ZR 25-20 to 25-23 as amended Dec 5 2024 require no residential parking in the Inner Transit Zone; MX parking follows the paired R district (ZR 123-72). Parking does not cap the count",
-     "affordable_rule": "No mandatory set-aside on the standard path - reaudit 2026-11-22 verified on ZoLa that this lot is NOT in a Mandatory Inclusionary Housing Area (ZoLa lists an Inclusionary Housing Zone, a different designation); UAP (ZR Ch 27 / HPD): floor area above the 2.20 base taken under the 3.90 qualifying tier must be permanently affordable at a weighted average of 60% AMI or less under an HPD/HDC regulatory agreement",
-     "flood_zone": "X (area of minimal flood hazard) - FEMA NFHL flood hazard zones layer point query at the PLUTO lot centroid (40.73664, -73.95702), DFIRM 360497, SFHA = F",
-     "constraints": "Setbacks/yards in MX (ZR 123-63): no front yard and no side yard required (any side open area at least 5 ft); rear yard 20 ft (ZR 23-342) at the level of the lowest story containing dwelling units, and a setback above the max base height (ZR 123-652 / 23-433), trim the envelope but FAR caps first. New dwelling units in MX require 35 dB(A) window-wall attenuation (ZR 123-32). Lot is irregular (PLUTO irrlotcode = Y): 105 ft frontage x 151.54 ft depth does not multiply to the 19747 sf lot area, so the rear of the lot is wider than the frontage implies - a survey is needed for exact geometry. CONFLICT: PLUTO's legacy residfar field still shows 2.43 while the current ZR 23-22 text (as amended Dec 5 2024) sets the R6 standard FAR at 2.20 - this review follows the code text; at 2.43 the standard tier would be ~53 units instead of ~48. Reaudit 2026-11-22 (live ZoLa lot page for BBL 3024820009): MIH area status resolved - NOT an MIH Area; wide/narrow resolved - ZoLa map labels Clay Street 60 ft wide, a narrow street under ZR 12-10 (under 75 ft), and the R6 MX height table in ZR 123-652(b) used here does not vary by street width, so neither check changes the FAR or unit math; ZoLa also confirms lot area 19747 sf, frontage 105 ft and depth 151.54 ft, matching PLUTO. No input blocking a high rating remains. The FEMA result is a point query at the lot centroid, not a full-lot flood study. market.csv has no rows for this town, so no exit rent/price range is stated",
-     "approvals_found": "None found in official sources searched (no BSA, CPC or HPD approval for this lot located)",
-     "enablers": "12+ units: yes - the standard market-rate tier alone reaches ~48 units and the qualifying affordable tier ~85; winning path: multifamily redevelopment as of right in M1-2/R6 (Special Mixed Use District MX-8, ZR 123-20); market-rate: no affordability mandate applies on the standard path - reaudit verified the lot is outside any MIH Area - conventional product is ~48 units at FAR 2.20 with no required parking in the Inner Transit Zone; affordable upside: the UAP qualifying tier is as-of-right and raises FAR from 2.20 to 3.90 (~85 units) with the floor area above base permanently affordable - program family NYC HPD/HDC, NY HCR, federal LIHTC, 485-x; rezoning plausible - evidence: the lot sits in the Greenpoint/Williamsburg waterfront area the City rezoned in 2005 (creating MX-8) and has repeatedly upzoned since, with higher-density waterfront districts nearby - no pending site-specific rezoning application was found, so this is area evidence only and no rezoning units are counted; deal type: either - market-rate works at the standard tier, affordable-program candidate at the qualifying tier",
-     "max_units_estimate": "Path 1 multifamily/mixed-use redevelopment: footprint = 80% x 19747 = 15798 sf (rear yard and base-height setback trim ground/upper floors but do not bind); up to ~11 floors fit within the 125 ft max building height; gross = LOWER of FAR x lot and footprint x floors - FAR caps: standard 2.20 x 19747 = 43443 sf / ~900 sf gross per unit arithmetic = ~48 units; with UAP qualifying affordable housing: 3.90 x 19747 = 77013 sf = ~85 units - FAR, not height, coverage or parking, is the binding cap on both tiers. Path 2 subdivision: min lot 1700 sf / 18 ft allows up to 11 zoning lots by area (19747/1700) and 5 by frontage (105/18), but aggregate FAR is unchanged, so no unit gain over Path 1. Path 3 second home/added unit: 0 standalone - no separate ADU yield on an R6 multifamily zoning lot; added units come only via Path 1. Headline lawful max without rezoning: ~85 units (UAP qualifying affordable tier); ~48 units standard market-rate. Rezoning scenario: not quantified - no specific higher-density district or plan provision for this lot was retrieved from an official source",
-     "sources": "https://zr.planning.nyc.gov/article-xii/chapter-3 https://zr.planning.nyc.gov/article-ii/chapter-3 https://data.cityofnewyork.us/resource/64uk-42ks.json?bbl=3024820009 https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query https://www.nyc.gov/assets/hpd/downloads/pdfs/services/UAP-FACT-SHEET-2025.pdf https://zola.planning.nyc.gov https://zola.planning.nyc.gov/l/lot/3/2482/9",
-     "confidence": "high"
-    },
-    "conflicts_with_independent_check": []
-   },
-   "facts_hash": "2bc027620713",
-   "memo": null,
-   "checked_utc": "2026-11-23T21:05:31.517363+00:00"
+   "checked_utc": "2026-11-24T01:14:50.311753+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
