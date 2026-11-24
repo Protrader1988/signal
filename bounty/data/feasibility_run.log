@@ -29,45 +29,22 @@ hunt-1730-hunt-ave-bronx ok
 hunt-1074-university-ave-bronx ok
 hunt-4165-laconia-ave-bronx ok
 hunt-1148-e-211th-st-bronx ok
-gemini-3.6-flash: HTTP 503
-gemini-3.6-flash: HTTP 503
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 503
-memo failed hunt-113-old-bay-st-peekskill HTTP Error 503: Service Unavailable
-hunt-113-old-bay-st-peekskill facts only
-gemini-3.6-flash: The read operation timed out
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 503
-memo failed hunt-120-smith-st-peekskill HTTP Error 503: Service Unavailable
-hunt-120-smith-st-peekskill facts only
-gemini-3.6-flash: HTTP 503
-gemini-3.6-flash: HTTP 503
-gemini-flash-latest: HTTP 429
-gemini-flash-latest: HTTP 503
-memo failed hunt-931-2nd-st-peekskill HTTP Error 503: Service Unavailable
-hunt-931-2nd-st-peekskill facts only
-gemini-3.6-flash: HTTP 503
-gemini-3.6-flash: HTTP 503
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 503
-memo failed hunt-298-bleloch-ave-peekskill HTTP Error 503: Service Unavailable
-hunt-298-bleloch-ave-peekskill facts only
+hunt-113-old-bay-st-peekskill ok
+hunt-120-smith-st-peekskill ok
+gemini-3.6-flash: HTTP 429
+hunt-931-2nd-st-peekskill ok
+gemini-3.6-flash: HTTP 429
+hunt-298-bleloch-ave-peekskill ok
 hunt-806-bay-st-peekskill ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 503
-memo failed hunt-527-union-ave-peekskill HTTP Error 503: Service Unavailable
+gemini-flash-latest: The read operation timed out
+memo failed hunt-527-union-ave-peekskill The read operation timed out
 hunt-527-union-ave-peekskill facts only
-gemini-3.6-flash: HTTP 503
-gemini-3.6-flash: HTTP 503
-gemini-flash-latest: HTTP 429
+hunt-26-pratt-st-new-rochelle ok
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 503
-memo failed hunt-26-pratt-st-new-rochelle HTTP Error 503: Service Unavailable
-hunt-26-pratt-st-new-rochelle facts only
-gemini-3.6-flash: HTTP 429
-gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed hunt-83-horton-ave-new-rochelle HTTP Error 429: Too Many Requests
 hunt-83-horton-ave-new-rochelle facts only
@@ -91,16 +68,15 @@ hunt-2889-zulette-ave-bronx ok
 hunt-1865-barnes-ave-bronx ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 429
-gemini-flash-latest: HTTP 429
-memo failed hunt-2819-roebling-ave-bronx HTTP Error 429: Too Many Requests
+gemini-flash-latest: HTTP 503
+gemini-flash-latest: HTTP 503
+memo failed hunt-2819-roebling-ave-bronx HTTP Error 503: Service Unavailable
 hunt-2819-roebling-ave-bronx facts only
-gemini-3.6-flash: HTTP 429
 hunt-127-park-ave-yonkers ok
 hunt-526-n-terrace-ave-mount-vernon ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
+gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed hunt-32-terrace-ave-ossining HTTP Error 429: Too Many Requests
 hunt-32-terrace-ave-ossining facts only
@@ -115,21 +91,19 @@ hunt-1720-boone-ave-bronx ok
 hunt-4638-white-plains-rd-bronx ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
 gemini-flash-latest: HTTP 429
-memo failed hunt-675-east-223rd-st-bronx HTTP Error 429: Too Many Requests
-hunt-675-east-223rd-st-bronx facts only
+hunt-675-east-223rd-st-bronx ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed hunt-2769-reservoir-ave-bronx HTTP Error 429: Too Many Requests
 hunt-2769-reservoir-ave-bronx facts only
-gemini-3.6-flash: HTTP 503
+gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 429
-gemini-flash-latest: HTTP 429
-memo failed hunt-742-east-214th-st-bronx HTTP Error 429: Too Many Requests
+gemini-flash-latest: HTTP 503
+memo failed hunt-742-east-214th-st-bronx HTTP Error 503: Service Unavailable
 hunt-742-east-214th-st-bronx facts only
 hunt-east-tremont-bronx-development-site-25x145-lot-r71-east-trem ok
 yon-1.-445-10 ok
@@ -140,18 +114,27 @@ gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed yon-1.-211-66 HTTP Error 429: Too Many Requests
 yon-1.-211-66 facts only
-yon-4.-4652-56 ok
 gemini-3.6-flash: HTTP 429
-yon-4.-4651-86 ok
 gemini-3.6-flash: HTTP 429
-gemini-3.6-flash: HTTP 503
+gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 429
+memo failed yon-4.-4652-56 HTTP Error 429: Too Many Requests
+yon-4.-4652-56 facts only
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
+gemini-flash-latest: HTTP 429
+gemini-flash-latest: HTTP 429
+memo failed yon-4.-4651-86 HTTP Error 429: Too Many Requests
+yon-4.-4651-86 facts only
+gemini-3.6-flash: HTTP 429
+gemini-3.6-flash: HTTP 429
 gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed nyc-4004110018 HTTP Error 429: Too Many Requests
 nyc-4004110018 facts only
 gemini-3.6-flash: HTTP 429
-gemini-3.6-flash: HTTP 503
-gemini-flash-latest: HTTP 503
+gemini-3.6-flash: HTTP 429
+gemini-flash-latest: HTTP 429
 gemini-flash-latest: HTTP 429
 memo failed nyc-2023490080 HTTP Error 429: Too Many Requests
 nyc-2023490080 facts only
@@ -164,13 +147,5 @@ nyc-4003810005 facts only
 nyc-2023200066 ok
 gemini-3.6-flash: HTTP 429
 gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 503
-gemini-flash-latest: HTTP 429
-memo failed nyc-2030550047 HTTP Error 429: Too Many Requests
-nyc-2030550047 facts only
-gemini-3.6-flash: HTTP 429
-gemini-3.6-flash: HTTP 429
-gemini-flash-latest: HTTP 429
-gemini-flash-latest: HTTP 429
-memo failed nyc-3025650060 HTTP Error 429: Too Many Requests
-nyc-3025650060 facts only
+nyc-2030550047 ok
+nyc-3025650060 ok
