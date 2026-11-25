@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-25T16:38:36.339839+00:00",
+ "generated_utc": "2026-11-25T16:50:49.410734+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -145,7 +145,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:32.812120+00:00"
+   "checked_utc": "2026-11-25T16:44:50.138743+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -183,6 +183,28 @@
     },
     "ask_per_unit": {
      "approved": "$20,000"
+    },
+    "local_context": {
+     "town_districts_on_file": [
+      "DX1",
+      "DX2",
+      "MX1",
+      "MX2",
+      "MXN",
+      "RX1",
+      "RX2",
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "NX1",
+      "NX2",
+      "NX3",
+      "NX4",
+      "P3",
+      "PDD",
+      "MU-W"
+     ]
     },
     "underwriting_muse": {
      "date": "2026-11-22",
@@ -238,31 +260,32 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "7fcf7dbf3257",
+   "facts_hash": "bbd39450090d",
    "memo": {
-    "verdict": "A 74-unit mixed-use development is approved on the site, but the deal is not worth pursuing at the $1,480,000 ask because a second analyst's underwriting estimates a 3.97% yield on cost and a negative land value.",
-    "as_of_right": "Under RX2 zoning, General Building standard permits no unit density limit, no FAR cap, and no off-street parking minimums under Section 8.20.1. Height is capped at 5.5 stories under Section 3.50.6 and lot coverage at 85%. On a 13,068 sf lot, the setback footprint is about 10,275 sf, creating a gross building envelope of about 56,500 sf or approximately 70 units at 800 sf per unit.",
-    "approval_path": "Existing approval / coastal site plan review. The site has an approved coastal site plan from Bridgeport PZC (Case 25-10, April 28, 2025) for 74 apartments and 900 sf commercial. Coastal boundary review applies due to closeness to the Pequonnock River.",
+    "verdict": "A 74-unit mixed-use building is approved on site, but at the $1,480,000 ask price, a second analyst's pro forma indicates the project is not financially viable as a conventional market-rate deal.",
+    "as_of_right": "Under RX2 zoning (Sec 3.50), there are no FAR or density caps. Max coverage is 85 percent (11,108 sf on a 13,068 sf lot) and the setback footprint is 10,275 sf. At 5.5 stories max height, total gross area is roughly 56,500 sf, yielding about 70 units at 800 sf per unit with zero off-street parking required (Sec 8.20.1).",
+    "approval_path": "Existing approval. The site has an approved PZC coastal site plan (case 25-10, April 28, 2025) for 74 units and 900 sf commercial, which minimizes entitlement risk and timeline.",
     "legal_issues": [
-     "Discrepancy between listing zoning (IHI) and official zoning map (RX2).",
-     "PZC decision letter for the 74-unit approval was not located in searched official records.",
-     "Lot area conflict between 16,651 sf GIS polygon and 13,068 sf assessor card.",
-     "Bridgeport is listed as exempt from CT 8-30g appeals."
+     "Verification of the missing PZC decision letter for case 25-10 to confirm binding approval conditions.",
+     "Discrepancy between the 13,068 sf assessor lot size and the 16,650 sf GIS polygon boundary.",
+     "Exemption of Bridgeport from CT 8-30g affordable housing appeals leverage.",
+     "Compliance with CAM coastal boundary review requirements."
     ],
-    "test_fit": "The setback envelope creates a 10,275 sf footprint. Building height caps density first at 5.5 stories, allowing about 56,500 gross sf and a range of 70 to 74 units. Code requires no off-street parking, but garage design details are not public.",
-    "value": "At the $1,480,000 ask, land cost is $20,000 per approved unit for 74 units. A second analyst's underwriting muse estimates maximum supportable land value at -$10,298,221 based on a 3.97% yield on cost and $26,484,375 total development cost.",
+    "test_fit": "The setback envelope restricts the footprint to roughly 10,275 sf, which is below the 85 percent coverage cap of 11,108 sf. Building height of 5.5 stories limits total density first, providing approximately 56,500 gross sf for 70 to 74 units. Zoning requires zero motor vehicle parking spaces and 1 bicycle space per 2 units.",
+    "value": "At the $1,480,000 ask, land cost is $20,000 per unit for the 74-unit approved plan, or $21,143 per unit for a 70-unit as-of-right build. A second analyst's pro forma estimates a negative maximum supportable land value of -$147,117 per unit under conventional financing.",
     "diligence": [
-     "Reconcile the lot size conflict between the 16,651 sf GIS polygon and the 13,068 sf assessor record using an A-2 survey.",
-     "Obtain the official Bridgeport PZC decision letter for Case 25-10 to confirm approval conditions.",
-     "Obtain full building plans to review parking layout and garage design.",
-     "Verify current year status on CT DOH 8-30g exempt list."
+     "Commission a boundary survey to resolve the conflict between the 13,068 sf assessor area and the 16,650 sf GIS polygon.",
+     "Obtain the official PZC decision letter for Case 25-10 to verify approval terms and expiration dates.",
+     "Inspect the filed November 2024 site improvement plans to review garage and parking layouts.",
+     "Confirm coastal site plan (CAM) approval conditions with local authorities.",
+     "Perform standard title and environmental reviews."
     ],
-    "enablers": "RX2 zoning allows General Building standard as-of-right with no FAR limits, no unit density caps, and no off-street parking minimums. Property is in a federal Opportunity Zone.",
-    "highest_and_best_use": "not enough data",
+    "enablers": "RX2 zoning allows General Building development as-of-right with no FAR limit, no unit density cap, and no off-street parking minimums. The site is located in a federal Opportunity Zone and is eligible for CHFA LIHTC and CT DOH funding programs.",
+    "highest_and_best_use": "The approved 74-unit rental apartment building with 900 sf commercial is the highest density use allowable under RX2. However, achieving financial feasibility depends on securing public subsidies like LIHTC or negotiating a significant price reduction, as a second analyst's pro forma shows conventional market-rate development yields negative land value.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:32.813666+00:00"
+   "checked_utc": "2026-11-25T16:45:16.473853+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -380,7 +403,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:32.814610+00:00"
+   "checked_utc": "2026-11-25T16:45:16.475062+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -500,7 +523,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:32.815502+00:00"
+   "checked_utc": "2026-11-25T16:45:16.475826+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -619,7 +642,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:32.816379+00:00"
+   "checked_utc": "2026-11-25T16:45:16.476560+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -734,7 +757,7 @@
     "letter_angle": "Approach the owner with an inquiry on co-development or acquisition options given ongoing site clearing and approved plans for the 24-unit building.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:32.817751+00:00"
+   "checked_utc": "2026-11-25T16:45:16.477280+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -972,7 +995,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:33.502541+00:00"
+   "checked_utc": "2026-11-25T16:45:17.117365+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -1208,7 +1231,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:34.124196+00:00"
+   "checked_utc": "2026-11-25T16:45:17.764637+00:00"
   },
   {
    "id": "bx-927-home",
@@ -1443,7 +1466,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:34.742213+00:00"
+   "checked_utc": "2026-11-25T16:45:18.415409+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -1680,7 +1703,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:35.388012+00:00"
+   "checked_utc": "2026-11-25T16:45:19.079002+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -1916,7 +1939,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:36.050839+00:00"
+   "checked_utc": "2026-11-25T16:45:19.712921+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -2157,7 +2180,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:36.618665+00:00"
+   "checked_utc": "2026-11-25T16:45:20.340141+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -2399,7 +2422,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:37.231930+00:00"
+   "checked_utc": "2026-11-25T16:45:20.969320+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -2608,7 +2631,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:38.013646+00:00"
+   "checked_utc": "2026-11-25T16:45:21.553012+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -2819,7 +2842,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:38.627347+00:00"
+   "checked_utc": "2026-11-25T16:45:22.179736+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -3028,7 +3051,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T16:37:39.237966+00:00"
+   "checked_utc": "2026-11-25T16:45:22.812071+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -3132,7 +3155,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.238857+00:00"
+   "checked_utc": "2026-11-25T16:45:22.812822+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -3159,6 +3182,28 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "town_districts_on_file": [
+      "DX1",
+      "DX2",
+      "MX1",
+      "MX2",
+      "MXN",
+      "RX1",
+      "RX2",
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "NX1",
+      "NX2",
+      "NX3",
+      "NX4",
+      "P3",
+      "PDD",
+      "MU-W"
+     ]
+    },
     "underwriting_muse": {
      "date": "2026-11-22",
      "site_id": "hunt-652654-noble-ave-bridgeport",
@@ -3212,32 +3257,30 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "1d4f856dd2c1",
+   "facts_hash": "aa41a10bcccb",
    "memo": {
-    "verdict": "Redevelopment up to 7 units is allowed as-of-right under NX2 zoning, but the site is unviable at the $750,000 asking price based on analyst underwriting.",
-    "as_of_right": "Under Bridgeport NX2 zoning, House A allows up to 4 principal units plus 1 backyard cottage on a 35 ft minimum width lot (Sec 3.90.9) with 80% max coverage (Sec 3.90.4) and 2.5 stories (Sec 3.90.6). With 60 ft of resolved frontage, Double House A allows up to 6 principal units plus 1 cottage on a 50 ft minimum width lot (Sec 3.80.9) with 90% max coverage (Sec 3.80.4) for ~7 units total. Row buildings allow up to 8 units on a 60 ft minimum width lot (Sec 3.70.4/3.70.9) with 80% coverage and 2.5 stories (Sec 3.70.6). No FAR caps apply in NX2.",
-    "approval_path": "As-of-right site plan approval for up to 7 units using standard building types, carrying low timeline and process risk. Special permit approval is required to expand Double House A or Small General types to 8 principal units, which adds discretionary board review and public hearing time.",
+    "verdict": "Redevelopment up to 7 units is permitted as of right under NX2 zoning, but financial underwriting fails at the $750,000 asking price.",
+    "as_of_right": "Bridgeport NX2 zoning sets density by building type rather than FAR or units-per-acre. At approximately 60 ft of frontage, the Double House A type allows up to 6 principal units plus 1 backyard cottage unit as of right, capped at 90 percent lot coverage and 2.5 stories.",
+    "approval_path": "As-of-right for up to 7 units under Double House A, requiring standard site plan approval. Seeking an 8th principal unit requires a special permit.",
     "legal_issues": [
-     "Lot area discrepancy between Vision assessor records (3,049 sf) and GIS parcel polygon (4,205.64 sf).",
-     "Frontage is unverified on the assessor card despite GIS polygon measuring 60.13 ft.",
-     "Listing misidentifies zoning as a superseded RC district rather than verified NX2.",
-     "Special permit required to expand beyond 6 principal units in Double House A or Small General building types."
+     "Listing labels site as RC, which is a superseded district name, while GIS reconfirms NX2.",
+     "A 38 to 48 percent lot area discrepancy exists between assessor records (3,049 sf) and GIS polygon measurements (4,205 sf).",
+     "No prior Planning and Zoning Commission or Zoning Board of Appeals approvals were located in official city records for this lot."
     ],
-    "test_fit": "Building envelope permits 80% to 90% coverage across 2.5 to 3 stories with no FAR limitation. On 3,049 sf, 80% coverage yields a 2,439 sf footprint and ~6,098 gross sf envelope over 2.5 stories. Unit range is 3 existing units up to 7 units as-of-right, or 8 units via special permit. Bridgeport Sec 8.20.1 sets no minimum off-street parking requirements, so building-type unit caps limit density first.",
-    "value": "At the $750,000 ask, land cost is $250,000 per unit for 3 existing units, $150,000 per unit for 5 units (House A), $107,143 per unit for 7 units (Double House A), and $93,750 per unit for an 8-unit special permit scenario. A second analyst's pro forma estimates max land value at -$761,827 and yield on cost at 3.26% for a 7-unit conventional build, failing underwriting at the ask.",
+    "test_fit": "Density is limited first by building type unit caps. Double House A allows 2.5 stories max and 90 percent lot coverage. Off-street parking minimums do not limit density because Section 8.20.1 imposes no minimum residential parking requirements. Max envelope yields 6 principal units plus 1 cottage unit.",
+    "value": "At the $750,000 asking price, land cost is $107,143 per buildable unit for a 7-unit concept and $150,000 per unit for a 5-unit concept. A second analyst's pro forma estimates maximum supportable land value at negative $761,827 based on a 3.26 percent yield on cost.",
     "diligence": [
-     "Resolve the lot area discrepancy between the assessor record (3,049 sf) and GIS polygon (4,205.64 sf) using a recorded plat or boundary survey.",
-     "Verify exact lot frontage to confirm eligibility for 50 ft and 60 ft building types.",
-     "Obtain the official Bridgeport tax map for PID 14165.",
-     "Review existing 3-family structural conditions and current lease agreements.",
-     "Confirm FEMA flood zone X status on final property boundaries."
+     "Obtain a certified boundary survey or recorded plat to resolve the lot area discrepancy between the tax assessor card (3,049 sf) and GIS polygon (4,205 sf).",
+     "Confirm official district designation as NX2 with Bridgeport Zoning.",
+     "Verify exact street frontage to confirm eligibility for Double House A or Row building types.",
+     "Confirm listing details, property status, existing leases, and occupancy of the renovated 3-family structure with the listing broker."
     ],
-    "enablers": "Density above 5 units is enabled as-of-right if lot width meets 50 ft for Double House A (6 units + 1 cottage) or 60 ft for Row Building (8 units). Special permit approval enables up to 8 principal units under Double House A and Small General building types.",
-    "highest_and_best_use": "Not enough data. FACTS lack land comps, sale prices, and complete market rent data to determine highest and best use.",
+    "enablers": "NX2 building type rules allow Double House A structures as of right on lots with at least 50 ft frontage. Section 8.20.1 waives off-street residential parking minimums.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack sale prices, condo comps, or subdivision comps.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.239730+00:00"
+   "checked_utc": "2026-11-25T16:45:46.981001+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -3264,6 +3307,28 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "town_districts_on_file": [
+      "DX1",
+      "DX2",
+      "MX1",
+      "MX2",
+      "MXN",
+      "RX1",
+      "RX2",
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "NX1",
+      "NX2",
+      "NX3",
+      "NX4",
+      "P3",
+      "PDD",
+      "MU-W"
+     ]
+    },
     "underwriting_muse": {
      "date": "2026-11-22",
      "site_id": "hunt-111-calhoun-pl-bridgeport",
@@ -3317,31 +3382,31 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "876af90a48f6",
+   "facts_hash": "6ee2180f943c",
    "memo": {
-    "verdict": "Redeveloping the site into a 5-unit residential building is contingent on confirming lot width, but the project fails financially at the $600,000 asking price based on analyst underwriting.",
-    "as_of_right": "Under Bridgeport NX2 zoning (Secs 3.60, 3.80, 3.90, 8.20.1), density is governed by building type rather than FAR or units-per-acre caps. For the House A type, 80 percent site coverage on a 2,614 sf lot allows a 2,091 sf footprint. At 2.5 stories max, the gross building envelope is approximately 5,228 sf, allowing up to 4 principal units in the house plus 1 backyard cottage unit.",
-    "approval_path": "As-of-right site plan review if survey confirms the lot meets the 35 ft minimum width for House A. If frontage is confirmed at 34 ft, a variance from the Zoning Board of Appeals is required, adding time and approval risk.",
+    "verdict": "Redevelopment to a 5-unit residential build is financially unviable at the $600,000 asking price and legally blocked unless a property survey confirms at least 35 feet of lot frontage.",
+    "as_of_right": "Under Bridgeport NX2 zoning (Secs 3.60, 3.70, 3.80, 3.90), density is governed by building type without FAR limits or residential parking minimums (Sec 8.20.1). On a 2,614 square foot lot with 80 percent maximum site coverage (2,091 square feet) and up to 2.5 stories (Sec 3.90.6), the House A building type permits up to 4 principal units in the house plus 1 backyard cottage unit, totaling 5 units (Sec 3.90.9). However, House A requires a minimum lot width of 35 feet, whereas GIS parcel mapping measures frontage at 33.97 feet.",
+    "approval_path": "Site plan review as-of-right if a boundary survey proves 35 feet of lot width, or a zoning variance if frontage is confirmed under 35 feet, which adds public hearing risk and extended timelines.",
     "legal_issues": [
-     "Frontage deficiency: GIS shows 34 ft frontage, which is 1 ft below the 35 ft House A minimum.",
-     "Variance risk: Zoning Board of Appeals relief is required if actual frontage is under 35 ft.",
-     "Historic Overlay status: Verification is needed on whether Historic Overlay (OH) restrictions apply to the parcel.",
-     "Existing tenant occupancy: Leases and tenant rights for the current 3-family dwelling must be audited."
+     "GIS measurements show lot frontage at approximately 34 feet, which is 1 foot below the 35-foot minimum width required for the House A building type.",
+     "Historic Overlay (OH) status was not verified in available records and requires confirmation to avoid design restrictions.",
+     "The property listing references superseded RB zoning, though municipal zoning GIS layers confirm the site is currently zoned NX2."
     ],
-    "test_fit": "The envelope supports an 80 percent coverage footprint (2,091 sf) and up to 2.5 stories (approx 5,228 sf total). Likely unit count ranges from the 3 existing units up to 5 units (4 main units plus 1 cottage). Sec 8.20.1 requires no off-street parking, so parking does not cap density. Minimum lot width limits density first.",
-    "value": "At the $600,000 asking price, land cost is $120,000 per unit for a 5-unit program and $200,000 per unit for the existing 3 units. An underwriting analyst estimates a yield on cost of 2.77 percent and a maximum supportable land value of -$871,269 (-$174,254 per unit).",
+    "test_fit": "An 80 percent maximum lot coverage produces a 2,091 square foot building footprint. A 2.5-story height limit creates a gross envelope of approximately 5,228 square feet. Unit count caps at 4 principal units plus 1 accessory cottage unit. Residential parking minimums are zero and do not limit density. Lot width is the primary constraint limiting density.",
+    "value": "At the $600,000 ask, land cost is $120,000 per unit for a 5-unit build and $200,000 per unit for the existing 3 units. A second analyst's pro forma estimates maximum supportable land value at -$871,269 (-$174,254 per unit) with a 2.77 percent yield on cost, failing underwriting requirements.",
     "diligence": [
-     "Commission a certified boundary survey to verify exact frontage against the 35 ft House A threshold.",
-     "Check official Bridgeport zoning maps for Historic Overlay (OH) district status.",
-     "Review existing tenant leases and estoppel certificates for the 3-family property.",
-     "Order a title search to inspect covenants, easements, and property boundaries."
+     "Bridgeport tax map and professional land survey for PID 7402 to verify exact lot frontage against the 35-foot requirement.",
+     "Bridgeport zoning map historic overlay layer to verify if Historic Overlay (OH) restrictions apply.",
+     "Current lease contracts, income records, and certificates of occupancy for the existing 3-family property.",
+     "Title search to confirm easements, rights of way, and encumbrances.",
+     "Phase I Environmental Site Assessment."
     ],
-    "enablers": "House A building type allows up to 4 principal units plus 1 backyard cottage as-of-right on 35 ft wide lots. Double House A and Small General types allow up to 6 units as-of-right (or 8 by special permit) on 50 ft wide lots. CT Sec 8-30g provides a state-level land use appeals procedure.",
-    "highest_and_best_use": "Not enough data to determine highest and best use because sales comps and land comps are missing from FACTS.",
+    "enablers": "The NX2 House A building type permits up to 4 principal units plus 1 backyard cottage, and Bridgeport zoning code Sec 8.20.1 removes off-street parking minimums for residential uses.",
+    "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.240614+00:00"
+   "checked_utc": "2026-11-25T16:46:08.441492+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -3368,6 +3433,28 @@
     ],
     "scenarios_units": {},
     "ask_per_unit": {},
+    "local_context": {
+     "town_districts_on_file": [
+      "DX1",
+      "DX2",
+      "MX1",
+      "MX2",
+      "MXN",
+      "RX1",
+      "RX2",
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "NX1",
+      "NX2",
+      "NX3",
+      "NX4",
+      "P3",
+      "PDD",
+      "MU-W"
+     ]
+    },
     "underwriting_muse": {
      "date": "2026-11-22",
      "site_id": "hunt-203205-lenox-ave-bridgeport",
@@ -3421,32 +3508,31 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "9d2f6b11f000",
+   "facts_hash": "7fa93edc7006",
    "memo": {
-    "verdict": "A 5-unit residential development is achievable as-of-right under NX2 zoning, but the project is not financially viable at the $575,000 asking price based on the underwriting muse analyst's estimate.",
-    "as_of_right": "Under Bridgeport NX2 zoning (Sec 3.90), House A permits up to 4 principal units plus 1 backyard cottage as-of-right, yielding 5 units total. The lot allows 80% maximum coverage on 3,920 sf (3,136 sf footprint) across 2.5 stories (max 20 ft eave height), yielding a gross envelope of approximately 7,840 sf. No minimum lot area or FAR applies.",
-    "approval_path": "As-of-right approval for the House A building type. This minimizes entitlement risk and avoids discretionary board reviews, special permits, or variances.",
+    "verdict": "A 5-unit residential project can realistically be built as of right, but the deal fails financially at the $575,000 asking price.",
+    "as_of_right": "Under NX2 zoning (Sec 3.90), the House A building type allows up to 4 principal units plus 1 backyard cottage unit (~5 units total). Maximum lot coverage is 80%, yielding a 3,136 sf footprint on the 3,920 sf lot. Maximum height is 2.5 stories, allowing a gross envelope of approx 7,840 sf. No FAR applies. No off-street parking is required (Sec 8.20.1).",
+    "approval_path": "As-of-right site plan review. This path requires no discretionary zoning relief, minimizing time and municipal approval risk.",
     "legal_issues": [
-     "District discrepancy: Assessor card records Zone I (Industrial) while official City GIS zoning map confirms NX2 (Neighborhood Mix 2).",
-     "Listing zoning label references superseded pre-2022 RB zoning code.",
-     "Lot width of 40 ft excludes higher-density building types (Double House A and Small General require 50 ft; Row requires 60 ft).",
-     "Existing multi-family occupancy and lease terms must be reviewed prior to contract execution."
+     "Assessor card records stale Zone I classification, while official GIS map confirms NX2.",
+     "Listing uses superseded pre-2022 RB zoning label.",
+     "Existing 3-unit / 2-family structure requires verification of tenant leases and occupancy status."
     ],
-    "test_fit": "The envelope allows a 3,136 sf footprint (80% lot coverage) across 2.5 stories, totaling ~7,840 gross sf. Max density is capped at 5 units (4 principal units + 1 backyard cottage). Off-street parking minimums are zero under Sec 8.20.1, so parking does not restrict density. Density is limited first by lot width and building-type unit caps.",
-    "value": "At the $575,000 ask, land cost is $115,000 per buildable unit for the 5-unit scenario. The underwriting muse analyst estimates a yield on cost of 2.68% and a maximum land value of -$973,269 (-$194,654 per unit), indicating the asking price is unsupportable.",
+    "test_fit": "Architect envelope allows an 80% footprint (3,136 sf) up to 2.5 stories (~7,840 gross sf). Unit count range is capped at 5 units (4 principal + 1 cottage). Off-street parking minimum is 0 spaces. Building-type unit rules and the 40 ft lot width limit density first, blocking 50 ft and 60 ft building types.",
+    "value": "At the $575,000 ask, land cost is $115,000 per buildable unit for a 5-unit scenario. A second analyst's pro forma estimate indicates a maximum land value of -$973,269 (-$194,654 per unit) with a 2.68% yield on cost, concluding the site fails underwriting at ask.",
     "diligence": [
-     "Obtain written zoning verification from the Zoning Administrator confirming NX2 classification over Assessor Zone I.",
-     "Order a certified boundary survey to confirm exact frontage and parcel area.",
-     "Review current lease agreements and tenant occupancy status for the existing building.",
-     "Verify FEMA flood zone designation (currently indicated as Zone X).",
-     "Confirm utility capacity and connection requirements for 5 residential units."
+     "Zoning confirmation letter from the Zoning Administrator confirming NX2 designation over assessor Zone I record.",
+     "Certified boundary survey confirming exact 40 ft lot frontage and parcel area.",
+     "Phase I Environmental Site Assessment due to the adjoining Industrial district immediately west.",
+     "Lease audit and legal occupancy check for existing residential units.",
+     "FEMA flood zone confirmation to verify Zone X status."
     ],
-    "enablers": "None. Higher density building types are blocked by lot width requirements, and no local density bonuses or overlays apply in FACTS.",
+    "enablers": "None. Higher-density building types (Double House A, Small General, Row) require 50 ft or 60 ft minimum lot widths, which this 40 ft lot cannot meet.",
     "highest_and_best_use": "not enough data",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.241517+00:00"
+   "checked_utc": "2026-11-25T16:46:29.430875+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -3585,7 +3671,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.242389+00:00"
+   "checked_utc": "2026-11-25T16:46:29.432035+00:00"
   },
   {
    "id": "hunt-145-beverly-rd-white-plains",
@@ -3658,7 +3744,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.243286+00:00"
+   "checked_utc": "2026-11-25T16:46:29.432744+00:00"
   },
   {
    "id": "hunt-89-neptune-ave-jersey-city",
@@ -3777,7 +3863,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.244150+00:00"
+   "checked_utc": "2026-11-25T16:46:29.433454+00:00"
   },
   {
    "id": "hunt-753-den-rd-stamford",
@@ -3852,7 +3938,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.244982+00:00"
+   "checked_utc": "2026-11-25T16:46:29.434131+00:00"
   },
   {
    "id": "hunt-3729-paulding-ave-bronx",
@@ -4066,7 +4152,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.891695+00:00"
+   "checked_utc": "2026-11-25T16:46:30.065499+00:00"
   },
   {
    "id": "hunt-182184-lincoln-ave-yonkers",
@@ -4218,7 +4304,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:39.892617+00:00"
+   "checked_utc": "2026-11-25T16:46:30.066260+00:00"
   },
   {
    "id": "hunt-1001-summit-ave-bronx",
@@ -4435,7 +4521,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:40.541646+00:00"
+   "checked_utc": "2026-11-25T16:46:30.876327+00:00"
   },
   {
    "id": "hunt-1730-hunt-ave-bronx",
@@ -4651,7 +4737,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:41.166290+00:00"
+   "checked_utc": "2026-11-25T16:46:31.777884+00:00"
   },
   {
    "id": "hunt-1074-university-ave-bronx",
@@ -4870,7 +4956,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:41.790571+00:00"
+   "checked_utc": "2026-11-25T16:46:32.549589+00:00"
   },
   {
    "id": "hunt-4165-laconia-ave-bronx",
@@ -5086,7 +5172,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:42.417582+00:00"
+   "checked_utc": "2026-11-25T16:46:33.212583+00:00"
   },
   {
    "id": "hunt-1148-e-211th-st-bronx",
@@ -5267,7 +5353,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.047717+00:00"
+   "checked_utc": "2026-11-25T16:46:33.923380+00:00"
   },
   {
    "id": "hunt-113-old-bay-st-peekskill",
@@ -5345,7 +5431,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.048603+00:00"
+   "checked_utc": "2026-11-25T16:46:33.924120+00:00"
   },
   {
    "id": "hunt-120-smith-st-peekskill",
@@ -5422,7 +5508,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.049460+00:00"
+   "checked_utc": "2026-11-25T16:46:33.924815+00:00"
   },
   {
    "id": "hunt-931-2nd-st-peekskill",
@@ -5500,7 +5586,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.050287+00:00"
+   "checked_utc": "2026-11-25T16:46:33.925502+00:00"
   },
   {
    "id": "hunt-298-bleloch-ave-peekskill",
@@ -5577,7 +5663,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.051168+00:00"
+   "checked_utc": "2026-11-25T16:46:33.926223+00:00"
   },
   {
    "id": "hunt-806-bay-st-peekskill",
@@ -5656,7 +5742,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.052055+00:00"
+   "checked_utc": "2026-11-25T16:46:33.926927+00:00"
   },
   {
    "id": "hunt-527-union-ave-peekskill",
@@ -5733,7 +5819,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.052927+00:00"
+   "checked_utc": "2026-11-25T16:46:33.927643+00:00"
   },
   {
    "id": "hunt-26-pratt-st-new-rochelle",
@@ -5852,7 +5938,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.053826+00:00"
+   "checked_utc": "2026-11-25T16:46:33.928359+00:00"
   },
   {
    "id": "hunt-83-horton-ave-new-rochelle",
@@ -5971,7 +6057,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.054780+00:00"
+   "checked_utc": "2026-11-25T16:46:33.929077+00:00"
   },
   {
    "id": "hunt-1-bayview-ave-new-rochelle",
@@ -6063,7 +6149,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.055610+00:00"
+   "checked_utc": "2026-11-25T16:46:33.929745+00:00"
   },
   {
    "id": "hunt-17-3rd-st-new-rochelle",
@@ -6154,7 +6240,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.056433+00:00"
+   "checked_utc": "2026-11-25T16:46:33.930412+00:00"
   },
   {
    "id": "hunt-59-crescent-ave-new-rochelle",
@@ -6245,7 +6331,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.057238+00:00"
+   "checked_utc": "2026-11-25T16:46:33.931062+00:00"
   },
   {
    "id": "hunt-1-lemke-pl-new-rochelle",
@@ -6336,7 +6422,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.058167+00:00"
+   "checked_utc": "2026-11-25T16:46:33.932833+00:00"
   },
   {
    "id": "hunt-292-5th-ave-new-rochelle",
@@ -6428,7 +6514,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.058984+00:00"
+   "checked_utc": "2026-11-25T16:46:33.933653+00:00"
   },
   {
    "id": "hunt-27-high-st-crotononhudson",
@@ -6480,7 +6566,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.059783+00:00"
+   "checked_utc": "2026-11-25T16:46:33.934463+00:00"
   },
   {
    "id": "hunt-73-melrose-ave-crotononhudson",
@@ -6531,7 +6617,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.060577+00:00"
+   "checked_utc": "2026-11-25T16:46:33.935143+00:00"
   },
   {
    "id": "hunt-6029-huxley-ave-bronx",
@@ -6702,7 +6788,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T16:37:43.909170+00:00"
+   "checked_utc": "2026-11-25T16:46:34.578313+00:00"
   },
   {
    "id": "hunt-2808-palisade-ave-weehawken",
@@ -6753,7 +6839,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.910018+00:00"
+   "checked_utc": "2026-11-25T16:46:34.579014+00:00"
   },
   {
    "id": "hunt-528-undercliff-ave-edgewater",
@@ -6805,7 +6891,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.910829+00:00"
+   "checked_utc": "2026-11-25T16:46:34.579681+00:00"
   },
   {
    "id": "hunt-107-old-palisade-rd-fort-lee",
@@ -6856,7 +6942,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:43.911638+00:00"
+   "checked_utc": "2026-11-25T16:46:34.580336+00:00"
   },
   {
    "id": "hunt-13311343-intervale-ave-bronx",
@@ -7013,7 +7099,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:44.637431+00:00"
+   "checked_utc": "2026-11-25T16:46:35.161522+00:00"
   },
   {
    "id": "hunt-408-e-154th-st-bronx",
@@ -7172,7 +7258,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:45.286109+00:00"
+   "checked_utc": "2026-11-25T16:46:35.784893+00:00"
   },
   {
    "id": "hunt-757-warburton-ave-yonkers",
@@ -7312,7 +7398,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T16:37:45.287079+00:00"
+   "checked_utc": "2026-11-25T16:46:35.785662+00:00"
   },
   {
    "id": "hunt-143-oliver-ave-yonkers",
@@ -7452,7 +7538,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:45.287907+00:00"
+   "checked_utc": "2026-11-25T16:46:35.786357+00:00"
   },
   {
    "id": "hunt-127-downing-st-yonkers",
@@ -7591,7 +7677,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:45.288719+00:00"
+   "checked_utc": "2026-11-25T16:46:35.787022+00:00"
   },
   {
    "id": "hunt-2889-zulette-ave-bronx",
@@ -7781,7 +7867,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:45.866217+00:00"
+   "checked_utc": "2026-11-25T16:46:36.432969+00:00"
   },
   {
    "id": "hunt-1865-barnes-ave-bronx",
@@ -7970,7 +8056,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:46.503395+00:00"
+   "checked_utc": "2026-11-25T16:46:37.012809+00:00"
   },
   {
    "id": "hunt-2819-roebling-ave-bronx",
@@ -8160,7 +8246,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:47.134550+00:00"
+   "checked_utc": "2026-11-25T16:46:37.598913+00:00"
   },
   {
    "id": "hunt-127-park-ave-yonkers",
@@ -8300,7 +8386,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:47.135445+00:00"
+   "checked_utc": "2026-11-25T16:46:37.599639+00:00"
   },
   {
    "id": "hunt-526-n-terrace-ave-mount-vernon",
@@ -8353,7 +8439,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:47.136251+00:00"
+   "checked_utc": "2026-11-25T16:46:37.600422+00:00"
   },
   {
    "id": "hunt-32-terrace-ave-ossining",
@@ -8402,7 +8488,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:47.137054+00:00"
+   "checked_utc": "2026-11-25T16:46:37.601111+00:00"
   },
   {
    "id": "hunt-187-old-mamaroneck-rd-white-plains",
@@ -8454,7 +8540,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:47.137860+00:00"
+   "checked_utc": "2026-11-25T16:46:37.601769+00:00"
   },
   {
    "id": "hunt-13471351-intervale-ave-3lot-package-1347-1349-1351-bronx",
@@ -8625,7 +8711,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:47.827761+00:00"
+   "checked_utc": "2026-11-25T16:46:38.193324+00:00"
   },
   {
    "id": "hunt-1720-boone-ave-bronx",
@@ -8825,7 +8911,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:48.473570+00:00"
+   "checked_utc": "2026-11-25T16:46:38.808013+00:00"
   },
   {
    "id": "hunt-4638-white-plains-rd-bronx",
@@ -8983,7 +9069,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:49.087867+00:00"
+   "checked_utc": "2026-11-25T16:46:39.451585+00:00"
   },
   {
    "id": "hunt-675-east-223rd-st-bronx",
@@ -9142,7 +9228,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T16:37:49.776462+00:00"
+   "checked_utc": "2026-11-25T16:46:40.056852+00:00"
   },
   {
    "id": "hunt-2769-reservoir-ave-bronx",
@@ -9331,7 +9417,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:50.423415+00:00"
+   "checked_utc": "2026-11-25T16:46:40.660136+00:00"
   },
   {
    "id": "hunt-742-east-214th-st-bronx",
@@ -9489,7 +9575,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:51.016689+00:00"
+   "checked_utc": "2026-11-25T16:46:41.282978+00:00"
   },
   {
    "id": "hunt-east-tremont-bronx-development-site-25x145-lot-r71-east-trem",
@@ -9646,7 +9732,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:51.600591+00:00"
+   "checked_utc": "2026-11-25T16:46:41.982556+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -9852,7 +9938,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:37:58.254642+00:00"
+   "checked_utc": "2026-11-25T16:46:48.073942+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -10058,7 +10144,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:04.028403+00:00"
+   "checked_utc": "2026-11-25T16:46:54.001230+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -10264,7 +10350,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:10.960021+00:00"
+   "checked_utc": "2026-11-25T16:47:00.788149+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -10470,7 +10556,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:29.860230+00:00"
+   "checked_utc": "2026-11-25T16:47:23.903241+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -10492,24 +10578,10 @@
      "2 lots: ~168 ft frontage, 17,096 sf. ~50 ft grade change."
     ],
     "parcel": {
-     "source": "Westchester County tax parcels; Yonkers Code Ch. 43, Table 43-3 (thru Ord. 4-2025); parking Table 43-4",
-     "printkey": "4.-4651-86",
-     "zoning": "S-75",
-     "lot_sf": 17096,
-     "street_frontage_ft": 167,
-     "property_class": "210",
-     "owner": "Rodrigues, Jose",
-     "rule": "S-75: 7,500 sf and 75 ft of width at the street line per lot; every lot must front a mapped street",
-     "lots_by_area": 2,
-     "lots_by_frontage": 2,
-     "lots_allowed": 2
+     "error": "<urlopen error timed out>"
     },
-    "scenarios_units": {
-     "lots allowed": "2"
-    },
-    "ask_per_unit": {
-     "lots allowed": "$595,000"
-    },
+    "scenarios_units": {},
+    "ask_per_unit": {},
     "local_context": {
      "market_rents_and_prices": [
       {
@@ -10651,32 +10723,32 @@
     },
     "conflicts_with_independent_check": []
    },
-   "facts_hash": "7b3732ca6618",
+   "facts_hash": "519364720e48",
    "memo": {
-    "verdict": "The site realistically supports a two-lot subdivision for two single-family homes, but it is not worth pursuing at the $1,190,000 asking price.",
-    "as_of_right": "Zone S-75 permits single-family detached homes with a minimum lot area of 7,500 sf and minimum lot width of 75 ft (Table 43-3). The 17,096 sf site divided by 7,500 sf permits 2 lots by area. The 167 ft frontage divided by 75 ft permits 2 lots by frontage. Base FAR is 0.60, max height is 2.5 stories or 35 ft, and lot coverage is capped at 35%. Multifamily, two-family, and townhouse uses are prohibited (Table 43-1).",
-    "approval_path": "Subdivision path requiring Planning Board approval to divide 1 lot into 2 conforming lots, which introduces discretionary review risk and processing time.",
+    "verdict": "The site realistically supports a 2-lot single-family subdivision yielding 2 detached homes, but it is not worth pursuing at the $1,190,000 asking price.",
+    "as_of_right": "S-75 zoning permits single-family detached homes only (Table 43-1). The 17,096 sf lot with 167 ft of frontage supports a maximum of 2 conforming lots under Table 43-3 (7,500 sf minimum lot area and 75 ft minimum lot width per family). Development is limited to 2.5 stories / 35 ft height, 35% lot coverage, 0.60 base FAR, and 2 parking spaces per home (Table 43-4).",
+    "approval_path": "Subdivision. Creating 2 conforming lots requires Planning Board subdivision approval. While conforming on paper, the process requires public review and engineering approval, which adds time and risk.",
     "legal_issues": [
-     "Unverified street frontage requiring an official tax map or survey to confirm 167 ft.",
-     "Significant topography issue with approximately 50 ft of grade change across the lot.",
-     "Discretionary Planning Board approval required for subdivision.",
-     "Strict S-75 zoning prohibition against two-family, townhouse, or multifamily developments."
+     "Planning Board subdivision approval is required to divide the single parcel into 2 lots.",
+     "A ~50 ft grade change creates major site engineering and construction access challenges.",
+     "The 167 ft lot frontage is unverified on official tax map records and requires survey confirmation.",
+     "S-75 zoning strictly prohibits two-family homes, townhouses, and multifamily buildings."
     ],
-    "test_fit": "Subdividing into two ~8,548 sf lots allows a 2,992 sf footprint per lot based on 35% coverage. Envelope setbacks are 25 ft front, 25 ft rear, 11 ft single side, and 23 ft total side yards. Height limit is 2.5 stories or 35 ft. Required parking is 2 spaces per home (Table 43-4). Single-family zoning rules limit density first.",
-    "value": "Land cost at the ask is $595,000 per buildable lot ($1,190,000 total for 2 lots). The underwriting muse analyst estimates maximum supportable land value is -$1,087,231 (-$543,615 per unit) for a rental hold model, indicating the asking price fails conventional underwriting.",
+    "test_fit": "The site divides into two ~8,548 sf lots. Each lot allows a footprint of up to 2,992 sf (35% coverage) and up to ~5,129 sf gross floor area under base FAR. Max height is 2.5 stories / 35 ft. Each home requires 2 parking spaces. Single-family zoning and the 7,500 sf minimum lot size cap density at 2 units.",
+    "value": "At the $1,190,000 asking price, land cost is $595,000 per buildable unit for 2 single-family lots. A second analyst's pro forma estimates maximum supportable land value at negative $1,087,231 based on a 2-unit rental model yielding 2.88% on cost.",
     "diligence": [
-     "Obtain an official City of Yonkers tax map or boundary survey to confirm 167 ft of street frontage.",
-     "Obtain a topographic survey to assess engineering and civil costs for the 50 ft grade change.",
-     "Review title report for existing easements, covenants, or deed restrictions.",
-     "Confirm utility connection details and Planning Board subdivision submission requirements.",
-     "Perform geotechnical and environmental site evaluations."
+     "Obtain a certified property survey or City tax map to confirm the 167 ft frontage and exact lot dimensions.",
+     "Commission a topographical survey and engineering assessment to address the ~50 ft grade change.",
+     "Review Yonkers Planning Board subdivision submittal requirements and procedural timeline.",
+     "Gather local single-family home sales comps to evaluate for-sale exit prices.",
+     "Review title report for existing deed restrictions, covenants, or utility easements."
     ],
-    "enablers": "None. S-75 zoning offers no density bonuses, overlays, or affordable housing incentives.",
-    "highest_and_best_use": "Not enough data. Zoning restricts the site to two single-family home lots, but FACTS lacks single-family home sales comps to determine financial feasibility.",
+    "enablers": "None. S-75 zoning offers no density bonuses, overlay districts, TOD incentives, or affordability bonuses for single-family subdivisions.",
+    "highest_and_best_use": "Not enough data. FACTS provide multifamily apartment rents (Hudson Piers, Hudson 44) but lack single-family home sales prices, land comps, or for-sale exit data necessary to analyze single-family development economics.",
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:35.681751+00:00"
+   "checked_utc": "2026-11-25T16:50:48.606122+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -10800,7 +10872,7 @@
     "letter_angle": "Approach the off-market owner directly to assess interest in a potential sale or joint-venture development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:35.869530+00:00"
+   "checked_utc": "2026-11-25T16:50:48.826338+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -11028,7 +11100,7 @@
     "letter_angle": "Approach Public Storage with an off-market offer focused on a clean, as-of-right acquisition while highlighting construction cost headwinds in the borough.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:36.014670+00:00"
+   "checked_utc": "2026-11-25T16:50:48.923986+00:00"
   },
   {
    "id": "nyc-4003810005",
@@ -11099,7 +11171,7 @@
     "letter_angle": "Contact the owner, LIC BLDG 32 LLC, to express interest in acquiring the off-market 32nd Street site for residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:36.096475+00:00"
+   "checked_utc": "2026-11-25T16:50:49.054757+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -11325,7 +11397,7 @@
     "letter_angle": "Inquire whether the owner is open to selling the site for an all-cash, as-of-right residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:36.172022+00:00"
+   "checked_utc": "2026-11-25T16:50:49.178665+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -11551,7 +11623,7 @@
     "letter_angle": "Approach Baktidy Associates with an all-cash direct inquiry highlighting an ability to clear environmental liabilities associated with E-Designation E-255 on an off-market basis.",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T16:38:36.249296+00:00"
+   "checked_utc": "2026-11-25T16:50:49.305756+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -11676,7 +11748,7 @@
     "letter_angle": "Approach owner Seventy West Realty LLC directly to explore an off-market acquisition or partnership around the MX-8 zoning potential.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T16:38:36.339197+00:00"
+   "checked_utc": "2026-11-25T16:50:49.409987+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
