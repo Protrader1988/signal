@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-25T21:42:50.858378+00:00",
+ "generated_utc": "2026-11-25T23:26:03.955463+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -161,7 +161,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:14:24.400500+00:00"
+   "checked_utc": "2026-11-25T21:57:19.867342+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -315,7 +315,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:14:24.401819+00:00"
+   "checked_utc": "2026-11-25T21:57:19.868340+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -433,7 +433,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:14:24.403110+00:00"
+   "checked_utc": "2026-11-25T21:57:19.869283+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -553,7 +553,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:14:24.404363+00:00"
+   "checked_utc": "2026-11-25T21:57:19.870213+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -672,7 +672,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:14:24.405630+00:00"
+   "checked_utc": "2026-11-25T21:57:19.871092+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -787,7 +787,7 @@
     "letter_angle": "Approach the owner with an inquiry on co-development or acquisition options given ongoing site clearing and approved plans for the 24-unit building.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:14:24.406866+00:00"
+   "checked_utc": "2026-11-25T21:57:19.871969+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -1064,7 +1064,7 @@
    },
    "facts_hash": "0b9a0534e689",
    "memo": null,
-   "checked_utc": "2026-11-25T20:15:57.405466+00:00"
+   "checked_utc": "2026-11-25T22:00:36.719520+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -1337,8 +1337,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "094b3aa256bf",
-   "memo": null,
-   "checked_utc": "2026-11-25T20:17:28.674888+00:00"
+   "memo": {
+    "verdict": "An 11 to 16-unit multifamily building can be developed as of right, but the deal is not worth pursuing at the $999,000 asking price because the second analyst pro forma estimates a negative land value under current construction costs.",
+    "as_of_right": "In an R7-1 district on a 2,800 sf lot, standard zoning allows multifamily development as of right at 3.44 FAR for 9,632 gross sf (~11 units). The Universal Affordability Preference (UAP) allows 4.13 FAR for 11,558 gross sf (~13 units). Qualifying 100% affordable housing allows 5.01 FAR for 14,028 gross sf (~16 units).",
+    "approval_path": "As-of-right development requires standard Department of Buildings permit issuance, which carries low approval risk and fast timeline. Pursuing UAP or the 5.01 FAR affordable tier requires an HPD/HDC regulatory agreement.",
+    "legal_issues": [
+     "Verification of vacant status and legal demolition requirements for the existing 2,329 sf single-family home.",
+     "Execution of an HPD/HDC regulatory agreement if using UAP or qualifying affordable FAR bonuses above 3.44.",
+     "Title and boundary confirmation based on the broker-offered survey for the irregular 30 ft by 99.5 ft lot."
+    ],
+    "test_fit": "The setback and rear-yard rules yield a max footprint of 1,900 sf based on a 30 ft rear yard (ZR 23-342) and 80% lot coverage (ZR 23-362). Envelope allows ~7 floors (75 ft height) for standard ~11 units or ~10 floors (105 ft height) for ~16 qualifying affordable units. Zero parking spaces are required per ZR 25-232. Density is limited first by FAR caps.",
+    "value": "The $999,000 asking price equals $71,357 to $99,900 per unit for standard development and $49,950 to $66,600 per unit with the UAP bonus. Nearby land comps range from $89 to $168 per buildable sf, such as 2449 Grand Avenue at $89 per buildable sf ($60,417 per unit).",
+    "diligence": [
+     "Obtain and review the broker-offered property survey.",
+     "Perform a Phase I Environmental Site Assessment and physical inspection of the existing structure.",
+     "Verify HPD regulatory agreement terms for UAP or FAR 5.01 affordable bonuses.",
+     "Order a title report to check for existing liens, easements, or encumbrances.",
+     "Confirm utility connection capacity and street tree requirements with DOB."
+    ],
+    "enablers": "Universal Affordability Preference (UAP under ZR Ch 27), qualifying affordable housing bonus (ZR 23-22), and Greater Transit Zone parking waiver (ZR 25-232).",
+    "highest_and_best_use": "Market-rate rental development of 11 units at standard 3.44 FAR is the highest and best use based on market rents ($2,580 for studios to $3,300 for 2BRs at The Bronx Vibe). Feasibility depends on securing a substantial price reduction from the seller.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-25T22:02:55.081015+00:00"
   },
   {
    "id": "bx-927-home",
@@ -1611,7 +1633,7 @@
    },
    "facts_hash": "c46e8cab6616",
    "memo": null,
-   "checked_utc": "2026-11-25T20:19:00.215996+00:00"
+   "checked_utc": "2026-11-25T22:04:26.357263+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -1886,7 +1908,7 @@
    },
    "facts_hash": "e8d40581c939",
    "memo": null,
-   "checked_utc": "2026-11-25T20:20:31.445022+00:00"
+   "checked_utc": "2026-11-25T22:05:57.656523+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -2161,7 +2183,7 @@
    },
    "facts_hash": "b2ced03e5cea",
    "memo": null,
-   "checked_utc": "2026-11-25T20:22:02.614871+00:00"
+   "checked_utc": "2026-11-25T22:07:30.239969+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -2441,7 +2463,7 @@
    },
    "facts_hash": "da1198cbbb9a",
    "memo": null,
-   "checked_utc": "2026-11-25T20:23:33.712595+00:00"
+   "checked_utc": "2026-11-25T22:09:01.309168+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -2744,7 +2766,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:25:19.004307+00:00"
+   "checked_utc": "2026-11-25T22:09:02.246404+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -2992,7 +3014,7 @@
    },
    "facts_hash": "60509d4f8718",
    "memo": null,
-   "checked_utc": "2026-11-25T20:26:50.099604+00:00"
+   "checked_utc": "2026-11-25T22:10:33.434877+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -3241,7 +3263,7 @@
    },
    "facts_hash": "300dfc003864",
    "memo": null,
-   "checked_utc": "2026-11-25T20:28:21.261032+00:00"
+   "checked_utc": "2026-11-25T22:12:04.581981+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -3489,7 +3511,7 @@
    },
    "facts_hash": "1a7c78e7510a",
    "memo": null,
-   "checked_utc": "2026-11-25T20:29:52.665945+00:00"
+   "checked_utc": "2026-11-25T22:13:35.781788+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -3593,7 +3615,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:29:52.667404+00:00"
+   "checked_utc": "2026-11-25T22:13:35.782955+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -3712,7 +3734,7 @@
    },
    "facts_hash": "cdc0e593cf05",
    "memo": null,
-   "checked_utc": "2026-11-25T20:31:23.071901+00:00"
+   "checked_utc": "2026-11-25T22:15:06.197107+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -3831,7 +3853,7 @@
    },
    "facts_hash": "ea947668661e",
    "memo": null,
-   "checked_utc": "2026-11-25T20:32:53.545422+00:00"
+   "checked_utc": "2026-11-25T22:16:36.642528+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -3950,7 +3972,7 @@
    },
    "facts_hash": "97f1cb77dacc",
    "memo": null,
-   "checked_utc": "2026-11-25T20:34:23.989376+00:00"
+   "checked_utc": "2026-11-25T22:18:07.075951+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -4156,7 +4178,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:34:23.990890+00:00"
+   "checked_utc": "2026-11-25T22:18:07.077105+00:00"
   },
   {
    "id": "hunt-145-beverly-rd-white-plains",
@@ -4260,7 +4282,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:34:23.992107+00:00"
+   "checked_utc": "2026-11-25T22:18:07.078027+00:00"
   },
   {
    "id": "hunt-89-neptune-ave-jersey-city",
@@ -4446,7 +4468,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T20:34:23.993368+00:00"
+   "checked_utc": "2026-11-25T22:18:07.078954+00:00"
   },
   {
    "id": "hunt-753-den-rd-stamford",
@@ -4551,7 +4573,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-25T20:34:23.994577+00:00"
+   "checked_utc": "2026-11-25T22:18:07.079861+00:00"
   },
   {
    "id": "hunt-3729-paulding-ave-bronx",
@@ -4803,7 +4825,7 @@
    },
    "facts_hash": "94647f220eb5",
    "memo": null,
-   "checked_utc": "2026-11-25T20:35:55.073010+00:00"
+   "checked_utc": "2026-11-25T22:19:38.311880+00:00"
   },
   {
    "id": "hunt-182184-lincoln-ave-yonkers",
@@ -4961,7 +4983,7 @@
    },
    "facts_hash": "1c5f954b2635",
    "memo": null,
-   "checked_utc": "2026-11-25T20:37:25.482787+00:00"
+   "checked_utc": "2026-11-25T22:21:08.728195+00:00"
   },
   {
    "id": "hunt-1001-summit-ave-bronx",
@@ -5216,7 +5238,7 @@
    },
    "facts_hash": "df60497c0691",
    "memo": null,
-   "checked_utc": "2026-11-25T20:38:56.585723+00:00"
+   "checked_utc": "2026-11-25T22:22:42.854802+00:00"
   },
   {
    "id": "hunt-1730-hunt-ave-bronx",
@@ -5491,7 +5513,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:40:09.351519+00:00"
+   "checked_utc": "2026-11-25T22:22:43.655065+00:00"
   },
   {
    "id": "hunt-1074-university-ave-bronx",
@@ -5747,7 +5769,7 @@
    },
    "facts_hash": "4c544d62edaf",
    "memo": null,
-   "checked_utc": "2026-11-25T20:41:40.491126+00:00"
+   "checked_utc": "2026-11-25T22:24:14.848088+00:00"
   },
   {
    "id": "hunt-4165-laconia-ave-bronx",
@@ -6001,7 +6023,7 @@
    },
    "facts_hash": "f6c845755d24",
    "memo": null,
-   "checked_utc": "2026-11-25T20:43:12.118978+00:00"
+   "checked_utc": "2026-11-25T22:25:46.090699+00:00"
   },
   {
    "id": "hunt-1148-e-211th-st-bronx",
@@ -6221,7 +6243,7 @@
    },
    "facts_hash": "5972570a4acc",
    "memo": null,
-   "checked_utc": "2026-11-25T20:44:43.218019+00:00"
+   "checked_utc": "2026-11-25T22:27:17.293027+00:00"
   },
   {
    "id": "hunt-113-old-bay-st-peekskill",
@@ -6319,7 +6341,7 @@
    },
    "facts_hash": "0303e695dc24",
    "memo": null,
-   "checked_utc": "2026-11-25T20:46:13.618363+00:00"
+   "checked_utc": "2026-11-25T22:28:47.698439+00:00"
   },
   {
    "id": "hunt-120-smith-st-peekskill",
@@ -6417,7 +6439,7 @@
    },
    "facts_hash": "a03d42540173",
    "memo": null,
-   "checked_utc": "2026-11-25T20:47:44.022002+00:00"
+   "checked_utc": "2026-11-25T22:30:18.064859+00:00"
   },
   {
    "id": "hunt-931-2nd-st-peekskill",
@@ -6515,7 +6537,7 @@
    },
    "facts_hash": "56f63ff8beab",
    "memo": null,
-   "checked_utc": "2026-11-25T20:49:14.410256+00:00"
+   "checked_utc": "2026-11-25T22:31:48.489456+00:00"
   },
   {
    "id": "hunt-298-bleloch-ave-peekskill",
@@ -6614,7 +6636,7 @@
    },
    "facts_hash": "c5db3fb14055",
    "memo": null,
-   "checked_utc": "2026-11-25T20:50:44.800133+00:00"
+   "checked_utc": "2026-11-25T22:33:18.880056+00:00"
   },
   {
    "id": "hunt-806-bay-st-peekskill",
@@ -6734,7 +6756,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T20:50:44.801648+00:00"
+   "checked_utc": "2026-11-25T22:33:18.881223+00:00"
   },
   {
    "id": "hunt-527-union-ave-peekskill",
@@ -6833,7 +6855,7 @@
    },
    "facts_hash": "35d7e0bd4c6e",
    "memo": null,
-   "checked_utc": "2026-11-25T20:52:15.225902+00:00"
+   "checked_utc": "2026-11-25T22:34:49.264920+00:00"
   },
   {
    "id": "hunt-26-pratt-st-new-rochelle",
@@ -6944,7 +6966,7 @@
    },
    "facts_hash": "a89704d30d41",
    "memo": null,
-   "checked_utc": "2026-11-25T20:53:45.615445+00:00"
+   "checked_utc": "2026-11-25T22:36:19.663022+00:00"
   },
   {
    "id": "hunt-83-horton-ave-new-rochelle",
@@ -7055,7 +7077,7 @@
    },
    "facts_hash": "b1ddab3021d6",
    "memo": null,
-   "checked_utc": "2026-11-25T20:55:16.050404+00:00"
+   "checked_utc": "2026-11-25T22:37:50.047810+00:00"
   },
   {
    "id": "hunt-1-bayview-ave-new-rochelle",
@@ -7166,7 +7188,7 @@
    },
    "facts_hash": "ac52156d5454",
    "memo": null,
-   "checked_utc": "2026-11-25T20:56:46.444610+00:00"
+   "checked_utc": "2026-11-25T22:39:20.448579+00:00"
   },
   {
    "id": "hunt-17-3rd-st-new-rochelle",
@@ -7277,7 +7299,7 @@
    },
    "facts_hash": "a3d75f385d6c",
    "memo": null,
-   "checked_utc": "2026-11-25T20:58:16.830864+00:00"
+   "checked_utc": "2026-11-25T22:40:50.825159+00:00"
   },
   {
    "id": "hunt-59-crescent-ave-new-rochelle",
@@ -7388,7 +7410,7 @@
    },
    "facts_hash": "54a805955bfb",
    "memo": null,
-   "checked_utc": "2026-11-25T20:59:47.234750+00:00"
+   "checked_utc": "2026-11-25T22:42:21.209980+00:00"
   },
   {
    "id": "hunt-1-lemke-pl-new-rochelle",
@@ -7499,7 +7521,7 @@
    },
    "facts_hash": "b2925d30c055",
    "memo": null,
-   "checked_utc": "2026-11-25T21:01:17.624586+00:00"
+   "checked_utc": "2026-11-25T22:43:51.598954+00:00"
   },
   {
    "id": "hunt-292-5th-ave-new-rochelle",
@@ -7610,7 +7632,7 @@
    },
    "facts_hash": "361d50c905db",
    "memo": null,
-   "checked_utc": "2026-11-25T21:02:48.058429+00:00"
+   "checked_utc": "2026-11-25T22:45:21.993628+00:00"
   },
   {
    "id": "hunt-27-high-st-crotononhudson",
@@ -7662,7 +7684,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:02:48.059838+00:00"
+   "checked_utc": "2026-11-25T22:45:21.994760+00:00"
   },
   {
    "id": "hunt-73-melrose-ave-crotononhudson",
@@ -7713,7 +7735,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:02:48.060995+00:00"
+   "checked_utc": "2026-11-25T22:45:21.995627+00:00"
   },
   {
    "id": "hunt-6029-huxley-ave-bronx",
@@ -7923,7 +7945,7 @@
    },
    "facts_hash": "1b5830e9d576",
    "memo": null,
-   "checked_utc": "2026-11-25T21:04:19.205935+00:00"
+   "checked_utc": "2026-11-25T22:46:53.038714+00:00"
   },
   {
    "id": "hunt-2808-palisade-ave-weehawken",
@@ -7974,7 +7996,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:04:19.207358+00:00"
+   "checked_utc": "2026-11-25T22:46:53.039799+00:00"
   },
   {
    "id": "hunt-528-undercliff-ave-edgewater",
@@ -8026,7 +8048,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:04:19.208525+00:00"
+   "checked_utc": "2026-11-25T22:46:53.040646+00:00"
   },
   {
    "id": "hunt-107-old-palisade-rd-fort-lee",
@@ -8077,7 +8099,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:04:19.209671+00:00"
+   "checked_utc": "2026-11-25T22:46:53.041485+00:00"
   },
   {
    "id": "hunt-13311343-intervale-ave-bronx",
@@ -8273,7 +8295,7 @@
    },
    "facts_hash": "cf01c2b54de7",
    "memo": null,
-   "checked_utc": "2026-11-25T21:05:50.309100+00:00"
+   "checked_utc": "2026-11-25T22:48:24.200478+00:00"
   },
   {
    "id": "hunt-408-e-154th-st-bronx",
@@ -8469,7 +8491,7 @@
    },
    "facts_hash": "bc40ae61de89",
    "memo": null,
-   "checked_utc": "2026-11-25T21:07:32.913879+00:00"
+   "checked_utc": "2026-11-25T22:49:55.870984+00:00"
   },
   {
    "id": "hunt-757-warburton-ave-yonkers",
@@ -8615,7 +8637,7 @@
    },
    "facts_hash": "b7b0b22d6519",
    "memo": null,
-   "checked_utc": "2026-11-25T21:09:03.351795+00:00"
+   "checked_utc": "2026-11-25T22:51:26.233991+00:00"
   },
   {
    "id": "hunt-143-oliver-ave-yonkers",
@@ -8761,7 +8783,7 @@
    },
    "facts_hash": "13228e467829",
    "memo": null,
-   "checked_utc": "2026-11-25T21:10:33.753645+00:00"
+   "checked_utc": "2026-11-25T22:52:56.612014+00:00"
   },
   {
    "id": "hunt-127-downing-st-yonkers",
@@ -8907,7 +8929,7 @@
    },
    "facts_hash": "26671ed7ede3",
    "memo": null,
-   "checked_utc": "2026-11-25T21:12:04.130851+00:00"
+   "checked_utc": "2026-11-25T22:54:26.988753+00:00"
   },
   {
    "id": "hunt-2889-zulette-ave-bronx",
@@ -9134,7 +9156,7 @@
    },
    "facts_hash": "aa1832378c15",
    "memo": null,
-   "checked_utc": "2026-11-25T21:13:35.244257+00:00"
+   "checked_utc": "2026-11-25T22:55:58.135033+00:00"
   },
   {
    "id": "hunt-1865-barnes-ave-bronx",
@@ -9361,7 +9383,7 @@
    },
    "facts_hash": "ad41d513a678",
    "memo": null,
-   "checked_utc": "2026-11-25T21:15:06.379596+00:00"
+   "checked_utc": "2026-11-25T22:57:29.314824+00:00"
   },
   {
    "id": "hunt-2819-roebling-ave-bronx",
@@ -9588,7 +9610,7 @@
    },
    "facts_hash": "6d574aede335",
    "memo": null,
-   "checked_utc": "2026-11-25T21:16:38.426901+00:00"
+   "checked_utc": "2026-11-25T22:59:00.463980+00:00"
   },
   {
    "id": "hunt-127-park-ave-yonkers",
@@ -9734,7 +9756,7 @@
    },
    "facts_hash": "ecc838f67054",
    "memo": null,
-   "checked_utc": "2026-11-25T21:18:08.812884+00:00"
+   "checked_utc": "2026-11-25T23:00:30.864026+00:00"
   },
   {
    "id": "hunt-526-n-terrace-ave-mount-vernon",
@@ -9787,7 +9809,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:18:08.814290+00:00"
+   "checked_utc": "2026-11-25T23:00:30.865137+00:00"
   },
   {
    "id": "hunt-32-terrace-ave-ossining",
@@ -9836,7 +9858,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:18:08.815427+00:00"
+   "checked_utc": "2026-11-25T23:00:30.866021+00:00"
   },
   {
    "id": "hunt-187-old-mamaroneck-rd-white-plains",
@@ -9896,7 +9918,7 @@
    },
    "facts_hash": "cf8e38a7a67b",
    "memo": null,
-   "checked_utc": "2026-11-25T21:19:39.215554+00:00"
+   "checked_utc": "2026-11-25T23:02:01.252132+00:00"
   },
   {
    "id": "hunt-13471351-intervale-ave-3lot-package-1347-1349-1351-bronx",
@@ -10106,7 +10128,7 @@
    },
    "facts_hash": "fe15636ee549",
    "memo": null,
-   "checked_utc": "2026-11-25T21:21:13.640951+00:00"
+   "checked_utc": "2026-11-25T23:03:32.438072+00:00"
   },
   {
    "id": "hunt-1720-boone-ave-bronx",
@@ -10345,7 +10367,7 @@
    },
    "facts_hash": "7a85570aed47",
    "memo": null,
-   "checked_utc": "2026-11-25T21:22:44.846349+00:00"
+   "checked_utc": "2026-11-25T23:05:03.671888+00:00"
   },
   {
    "id": "hunt-4638-white-plains-rd-bronx",
@@ -10541,7 +10563,7 @@
    },
    "facts_hash": "c095b64b659a",
    "memo": null,
-   "checked_utc": "2026-11-25T21:24:16.211094+00:00"
+   "checked_utc": "2026-11-25T23:06:34.890556+00:00"
   },
   {
    "id": "hunt-675-east-223rd-st-bronx",
@@ -10737,7 +10759,7 @@
    },
    "facts_hash": "0b14dafc9fe6",
    "memo": null,
-   "checked_utc": "2026-11-25T21:25:47.256768+00:00"
+   "checked_utc": "2026-11-25T23:08:06.180866+00:00"
   },
   {
    "id": "hunt-2769-reservoir-ave-bronx",
@@ -10964,7 +10986,7 @@
    },
    "facts_hash": "8da727efed77",
    "memo": null,
-   "checked_utc": "2026-11-25T21:27:18.443639+00:00"
+   "checked_utc": "2026-11-25T23:09:37.301776+00:00"
   },
   {
    "id": "hunt-742-east-214th-st-bronx",
@@ -11160,7 +11182,7 @@
    },
    "facts_hash": "bba75947b789",
    "memo": null,
-   "checked_utc": "2026-11-25T21:28:49.551485+00:00"
+   "checked_utc": "2026-11-25T23:11:08.460218+00:00"
   },
   {
    "id": "hunt-east-tremont-bronx-development-site-25x145-lot-r71-east-trem",
@@ -11356,7 +11378,7 @@
    },
    "facts_hash": "2d70467bc368",
    "memo": null,
-   "checked_utc": "2026-11-25T21:30:20.610069+00:00"
+   "checked_utc": "2026-11-25T23:12:39.628451+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -11568,7 +11590,7 @@
    },
    "facts_hash": "11cc4cd9aa45",
    "memo": null,
-   "checked_utc": "2026-11-25T21:31:54.472475+00:00"
+   "checked_utc": "2026-11-25T23:14:18.643445+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -11781,7 +11803,7 @@
    },
    "facts_hash": "80290698b231",
    "memo": null,
-   "checked_utc": "2026-11-25T21:33:28.331453+00:00"
+   "checked_utc": "2026-11-25T23:15:59.104492+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -11993,7 +12015,7 @@
    },
    "facts_hash": "73ef1082e569",
    "memo": null,
-   "checked_utc": "2026-11-25T21:35:02.590921+00:00"
+   "checked_utc": "2026-11-25T23:17:42.577898+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -12206,7 +12228,7 @@
    },
    "facts_hash": "450cc3693426",
    "memo": null,
-   "checked_utc": "2026-11-25T21:36:44.538242+00:00"
+   "checked_utc": "2026-11-25T23:19:49.850662+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -12417,7 +12439,7 @@
    },
    "facts_hash": "5f323ad22862",
    "memo": null,
-   "checked_utc": "2026-11-25T21:38:18.100779+00:00"
+   "checked_utc": "2026-11-25T23:21:31.427659+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -12541,7 +12563,7 @@
     "letter_angle": "Approach the off-market owner directly to assess interest in a potential sale or joint-venture development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:38:18.221736+00:00"
+   "checked_utc": "2026-11-25T23:21:31.735049+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -12806,7 +12828,7 @@
    },
    "facts_hash": "4a733de7c5f4",
    "memo": null,
-   "checked_utc": "2026-11-25T21:39:48.777804+00:00"
+   "checked_utc": "2026-11-25T23:23:02.292745+00:00"
   },
   {
    "id": "nyc-4003810005",
@@ -12877,7 +12899,7 @@
     "letter_angle": "Contact the owner, LIC BLDG 32 LLC, to express interest in acquiring the off-market 32nd Street site for residential development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:39:48.965502+00:00"
+   "checked_utc": "2026-11-25T23:23:02.546072+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -13142,7 +13164,7 @@
    },
    "facts_hash": "44e44f4887e1",
    "memo": null,
-   "checked_utc": "2026-11-25T21:41:19.939782+00:00"
+   "checked_utc": "2026-11-25T23:24:33.078294+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -13407,7 +13429,7 @@
    },
    "facts_hash": "460c01db5830",
    "memo": null,
-   "checked_utc": "2026-11-25T21:42:50.562279+00:00"
+   "checked_utc": "2026-11-25T23:26:03.697521+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -13532,7 +13554,7 @@
     "letter_angle": "Approach owner Seventy West Realty LLC directly to explore an off-market acquisition or partnership around the MX-8 zoning potential.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-25T21:42:50.857691+00:00"
+   "checked_utc": "2026-11-25T23:26:03.954941+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
