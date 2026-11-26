@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-25T04:40:26.725695+00:00",
+  "updated_utc": "2026-11-26T03:50:34.760829+00:00",
   "mode": "paper",
   "broker": "Alpaca (paper account)",
   "started": "2026-10-05",
@@ -89,6 +89,16 @@
       "qty": 17.0,
       "entry": 159.63,
       "since": "2026-11-19"
+    },
+    "XLE": {
+      "qty": 52.0,
+      "entry": 60.0815,
+      "since": "2026-11-26"
+    },
+    "EOG": {
+      "qty": 21.0,
+      "entry": 147.3271,
+      "since": "2026-11-26"
     }
   },
   "realized": -7274.76,
@@ -287,11 +297,11 @@
   "first_fill": "2026-10-05",
   "spy_start": 769.72,
   "signal": {
-    "unrealized": -1765.47,
+    "unrealized": -2155.54,
     "realized": -7274.76,
-    "total_pl": -9040.23,
-    "return_pct": -9.02,
-    "spy_return_pct": -6.77,
+    "total_pl": -9430.3,
+    "return_pct": -9.41,
+    "spy_return_pct": -6.89,
     "closed_trades": 19,
     "wins": 6,
     "basis": "Profit and loss on positions Signal opened, as a share of the starting account. Other holdings in the account are excluded."
@@ -308,181 +318,180 @@
     "TSLA"
   ],
   "account": {
-    "equity": 89936.16,
-    "cash": 25102.07,
-    "invested": 55633.93,
-    "other_holdings_value": 9200.16,
-    "return_since_start_pct": -10.24
+    "equity": 89589.42,
+    "cash": 18883.92,
+    "invested": 61461.97,
+    "other_holdings_value": 9243.53,
+    "return_since_start_pct": -10.58
   },
   "sizing": {
-    "exposure": 0.67,
+    "exposure": 0.71,
     "names": 17,
-    "dollars_per_name": 3190.09,
+    "dollars_per_name": 3367.51,
     "stock_share": 0.9,
     "btc_share": 0.1
   },
   "btc_rule": {
     "on": false,
-    "price": 59000.36,
-    "sma_150": 72892.82
+    "price": 60852.14,
+    "sma_150": 72906.6
   },
   "positions": [
     {
       "symbol": "TGT",
       "qty": 45.0,
       "avg_entry": 156.0,
-      "price": 176.0,
-      "value": 7920.0,
-      "pl": 899.85,
-      "pl_pct": 12.82
+      "price": 172.22,
+      "value": 7749.9,
+      "pl": 729.75,
+      "pl_pct": 10.39
     },
     {
       "symbol": "MRK",
       "qty": 49.0,
       "avg_entry": 142.84,
-      "price": 141.85,
-      "value": 6950.65,
-      "pl": -48.51,
-      "pl_pct": -0.69
+      "price": 140.29,
+      "value": 6874.21,
+      "pl": -124.95,
+      "pl_pct": -1.79
     },
     {
       "symbol": "PSX",
       "qty": 26.0,
       "avg_entry": 265.55,
-      "price": 236.95,
-      "value": 6160.7,
-      "pl": -743.55,
-      "pl_pct": -10.77
+      "price": 236.08,
+      "value": 6138.08,
+      "pl": -766.17,
+      "pl_pct": -11.1
     },
     {
       "symbol": "VLO",
       "qty": 17.0,
       "avg_entry": 407.27,
-      "price": 324.67,
-      "value": 5519.39,
-      "pl": -1404.2,
-      "pl_pct": -20.28
+      "price": 323.0,
+      "value": 5491.0,
+      "pl": -1432.59,
+      "pl_pct": -20.69
     },
     {
       "symbol": "ABBV",
       "qty": 15.0,
       "avg_entry": 293.91,
-      "price": 300.21,
-      "value": 4503.15,
-      "pl": 94.5,
-      "pl_pct": 2.14
+      "price": 294.48,
+      "value": 4417.2,
+      "pl": 8.55,
+      "pl_pct": 0.19
     },
     {
       "symbol": "AMGN",
       "qty": 9.0,
       "avg_entry": 469.42,
-      "price": 474.0,
-      "value": 4266.0,
-      "pl": 41.22,
-      "pl_pct": 0.98
+      "price": 469.24,
+      "value": 4223.16,
+      "pl": -1.62,
+      "pl_pct": -0.04
     },
     {
       "symbol": "TMO",
       "qty": 6.0,
       "avg_entry": 707.96,
-      "price": 695.62,
-      "value": 4173.72,
-      "pl": -74.03,
-      "pl_pct": -1.74
+      "price": 685.52,
+      "value": 4113.12,
+      "pl": -134.63,
+      "pl_pct": -3.17
     },
     {
       "symbol": "COP",
       "qty": 25.0,
       "avg_entry": 151.28,
-      "price": 134.64,
-      "value": 3366.0,
-      "pl": -416.0,
-      "pl_pct": -11.0
+      "price": 135.02,
+      "value": 3375.5,
+      "pl": -406.5,
+      "pl_pct": -10.75
     },
     {
       "symbol": "CVX",
       "qty": 16.0,
       "avg_entry": 211.42,
-      "price": 208.1,
-      "value": 3329.6,
-      "pl": -53.12,
-      "pl_pct": -1.57
+      "price": 210.95,
+      "value": 3375.2,
+      "pl": -7.52,
+      "pl_pct": -0.22
+    },
+    {
+      "symbol": "XLE",
+      "qty": 52.0,
+      "avg_entry": 60.08,
+      "price": 60.9,
+      "value": 3166.8,
+      "pl": 42.56,
+      "pl_pct": 1.36
+    },
+    {
+      "symbol": "EOG",
+      "qty": 21.0,
+      "avg_entry": 147.33,
+      "price": 148.31,
+      "value": 3114.51,
+      "pl": 20.64,
+      "pl_pct": 0.67
     },
     {
       "symbol": "XOM",
       "qty": 19.0,
       "avg_entry": 163.04,
-      "price": 158.32,
-      "value": 3008.08,
-      "pl": -89.7,
-      "pl_pct": -2.9
-    },
-    {
-      "symbol": "GILD",
-      "qty": 15.0,
-      "avg_entry": 171.4,
-      "price": 178.0,
-      "value": 2670.0,
-      "pl": 99.0,
-      "pl_pct": 3.85
+      "price": 158.08,
+      "value": 3003.52,
+      "pl": -94.26,
+      "pl_pct": -3.04
     },
     {
       "symbol": "EMR",
       "qty": 17.0,
       "avg_entry": 159.63,
-      "price": 156.4,
-      "value": 2658.8,
-      "pl": -54.91,
-      "pl_pct": -2.02
+      "price": 157.23,
+      "value": 2672.91,
+      "pl": -40.8,
+      "pl_pct": -1.5
+    },
+    {
+      "symbol": "GILD",
+      "qty": 15.0,
+      "avg_entry": 171.4,
+      "price": 176.74,
+      "value": 2651.1,
+      "pl": 80.1,
+      "pl_pct": 3.12
     },
     {
       "symbol": "JNJ",
       "qty": 4.0,
       "avg_entry": 280.96,
-      "price": 276.96,
-      "value": 1107.84,
-      "pl": -16.02,
-      "pl_pct": -1.43
+      "price": 273.94,
+      "value": 1095.76,
+      "pl": -28.1,
+      "pl_pct": -2.5
     }
   ],
-  "orders_this_run": [
-    {
-      "symbol": "XLE",
-      "side": "buy",
-      "qty": 52,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 3143.4,
-      "error": null
-    },
-    {
-      "symbol": "EOG",
-      "side": "buy",
-      "qty": 21,
-      "ok": true,
-      "reason": "new in ledger",
-      "est_dollars": 3078.39,
-      "error": null
-    }
-  ],
+  "orders_this_run": [],
   "recent_orders": [
-    {
-      "symbol": "EOG",
-      "side": "buy",
-      "qty": 21.0,
-      "status": "accepted",
-      "submitted": "2026-11-25",
-      "filled_qty": 0.0,
-      "fill_price": null
-    },
     {
       "symbol": "XLE",
       "side": "buy",
       "qty": 52.0,
-      "status": "accepted",
+      "status": "filled",
       "submitted": "2026-11-25",
-      "filled_qty": 0.0,
-      "fill_price": null
+      "filled_qty": 52.0,
+      "fill_price": 60.08
+    },
+    {
+      "symbol": "EOG",
+      "side": "buy",
+      "qty": 21.0,
+      "status": "filled",
+      "submitted": "2026-11-25",
+      "filled_qty": 21.0,
+      "fill_price": 147.33
     },
     {
       "symbol": "DE",
@@ -1245,6 +1254,10 @@
     {
       "date": "2026-11-24",
       "equity": 89019.15
+    },
+    {
+      "date": "2026-11-25",
+      "equity": 90071.48
     }
   ],
   "note": "Real fills in an Alpaca PAPER account (simulated money). The account mirrors the ledger's open position book; orders are placed after the close and fill at the next open."
