@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-26T23:07:29.497526+00:00",
+ "generated_utc": "2026-11-27T15:33:59.299950+00:00",
  "memos": [
   {
    "id": "pch-15-n-main",
@@ -161,7 +161,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:52:42.823902+00:00"
+   "checked_utc": "2026-11-27T14:33:17.959505+00:00"
   },
   {
    "id": "bpt-439-e-main",
@@ -315,7 +315,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:52:42.825317+00:00"
+   "checked_utc": "2026-11-27T14:33:17.961342+00:00"
   },
   {
    "id": "str-225-lordship",
@@ -433,7 +433,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:52:42.826675+00:00"
+   "checked_utc": "2026-11-27T14:33:17.963177+00:00"
   },
   {
    "id": "str-382-ferry",
@@ -553,7 +553,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:52:42.827991+00:00"
+   "checked_utc": "2026-11-27T14:33:17.964874+00:00"
   },
   {
    "id": "ffd-467-tunxis",
@@ -672,7 +672,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:52:42.829284+00:00"
+   "checked_utc": "2026-11-27T14:33:17.966577+00:00"
   },
   {
    "id": "dbr-56-town-hill",
@@ -787,7 +787,7 @@
     "letter_angle": "Approach the owner with an inquiry on co-development or acquisition options given ongoing site clearing and approved plans for the 24-unit building.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:52:42.830567+00:00"
+   "checked_utc": "2026-11-27T14:33:17.968283+00:00"
   },
   {
    "id": "bx-3848-bailey",
@@ -1075,8 +1075,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "b3774168bee5",
-   "memo": null,
-   "checked_utc": "2026-11-26T21:54:14.105429+00:00"
+   "memo": {
+    "verdict": "A standard market-rate or UAP multifamily building of 24 to 35 units can be built as of right, but the site is not worth pursuing at the $1,150,000 ask because a second analyst's underwriting estimates a negative land value and an unviable yield on cost.",
+    "as_of_right": "In an R7-1 district on a 6,268 sf lot, zoning permits multifamily residential development as of right at a base FAR of 3.44 (21,562 sf max floor area, yielding ~24 units) or 4.00 within 100 ft of a wide street. Under the Universal Affordability Preference (UAP, ZR Ch 27), the FAR increases to 4.13 (25,874 sf, ~29 units) with permanently affordable units, while qualifying 100% affordable housing achieves an FAR of 5.01 (31,403 sf, ~35 units). No parking is required under ZR 25-232 because the calculated requirement is 10 spaces or fewer.",
+    "approval_path": "As-of-right. Development requires standard Department of Buildings plan filing without discretionary zoning board approvals, minimizing approval timeline and legal land-use risk.",
+    "legal_issues": [
+     "Discrepancy between the 6,268 sf tax lot size in city records and the 3,134 sf lot size reported in the Crexi listing.",
+     "Requirement for an HPD/HDC regulatory agreement if pursuing UAP (FAR 4.13) or qualifying affordable housing (FAR 5.01) floor area bonuses.",
+     "Verification of title, property boundaries, and absence of encumbrances on the vacant site."
+    ],
+    "test_fit": "The 54.75 ft by 115 ft lot allows an 80% lot coverage footprint of 5,014 sf with a 20 ft rear yard and no required front or side yards. FAR limits density first, controlling over height, lot coverage, or parking. The envelope permits a 7-story building (75 ft max height) for standard market-rate (~24 units) or up to a 10-story building (105 ft max height) under UAP or qualifying affordable tiers (29 to 35 units). Parking requirement is 0 spaces.",
+    "value": "At the $1,150,000 asking price, land cost equals $37,097 to $50,000 per buildable unit for standard market-rate (~24 units) and $25,000 to $33,824 per unit under UAP bonus scenarios (~29 to 35 units). Recent Bronx land comps range from $89 to $168 per buildable sf, including 2449 Grand Avenue at $89/bsf ($60,417/unit). However, a second analyst's underwriting estimates a maximum supportable land value of -$3,798,779 for market-rate and -$7,146,884 for affordable, yielding 4.46% on cost at zero land value.",
+    "diligence": [
+     "Clarify with the seller whether the offering includes the entire 6,268 sf tax lot or only 3,134 sf as listed.",
+     "Order a title search and boundary survey to confirm lot dimensions and title status.",
+     "Review DOB permits and site plans for the adjacent 32-unit development completed in 2025 at 3846 Bailey Avenue.",
+     "Confirm Bailey Avenue street width on official city maps to verify eligibility for the 4.00 wide-street FAR tier.",
+     "Review HPD/HDC regulatory guidelines and 485-x tax exemption terms if evaluating affordable housing bonus paths."
+    ],
+    "enablers": "Universal Affordability Preference (UAP under ZR Ch 27) and qualifying affordable housing provisions (ZR 23-22) allow density to expand from FAR 3.44 to FAR 4.13 or FAR 5.01.",
+    "highest_and_best_use": "Market-rate rental development of ~24 units maximizes revenue potential based on 2024 Bronx rental comps ($2,580 studio, $2,895 1BR, $3,300 2BR at The Bronx Vibe), though feasibility depends on acquiring the site at a substantial discount given that a second analyst's underwriting projects negative land value.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:33:36.033510+00:00"
   },
   {
    "id": "bx-1901-harrison",
@@ -1383,7 +1405,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-26T21:54:15.275120+00:00"
+   "checked_utc": "2026-11-27T14:33:36.665331+00:00"
   },
   {
    "id": "bx-927-home",
@@ -1690,7 +1712,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:54:15.948707+00:00"
+   "checked_utc": "2026-11-27T14:33:37.241374+00:00"
   },
   {
    "id": "bx-1185-grant",
@@ -1976,8 +1998,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "b9d117fcaaa4",
-   "memo": null,
-   "checked_utc": "2026-11-26T21:55:47.128384+00:00"
+   "memo": {
+    "verdict": "A 10 to 14 unit multifamily building can be developed as-of-right in R7-1, but the site is not worth pursuing at the $1,000,000 ask because another analyst estimates a negative land value.",
+    "as_of_right": "In R7-1 on a 2,500 sf lot (ZR 23-12), standard FAR 3.44 allows 8,600 sf gross (~10 units) up to a 75 ft height cap (ZR 23-22, ZR 23-432). Universal Affordability Preference (UAP, ZR Ch 27) permits FAR 4.13 for 10,320 sf (~11 units) up to 105 ft. Qualifying affordable housing allows FAR 5.01 for 12,525 sf (~14 units) with an HPD/HDC regulatory agreement. Zero parking spaces are required because the calculated requirement is under 10 spaces (ZR 25-232).",
+    "approval_path": "The standard 10-unit market-rate path and 11-unit UAP path are as-of-right with no discretionary planning board approvals. Achieving the 14-unit maximum via FAR 5.01 requires an HPD/HDC regulatory agreement for qualifying affordable housing, which introduces agency processing time and administrative risk.",
+    "legal_issues": [
+     "Tenant vacating and buyout agreements for the occupied 3-family building.",
+     "Execution of an HPD/HDC regulatory agreement to access the 5.01 FAR affordable housing tier.",
+     "Permanent affordability covenant compliance under UAP rules (weighted average <=60% AMI)."
+    ],
+    "test_fit": "The footprint is capped at 1,750 sf due to the required 30 ft rear yard (ZR 23-342) on the 100 ft deep lot. A standard building reaches ~7 stories (75 ft max height), while UAP or qualifying affordable reaches ~10 stories (105 ft max height). The envelope yields 9 to 12 standard units or 13 to 18 UAP/affordable units. FAR is the binding constraint that limits density first.",
+    "value": "At the $1,000,000 ask, land cost is $83,333 to $111,111 per unit under standard zoning and $55,556 to $76,923 per unit under UAP. Nearby land comps range from $89 to $168 per buildable sf. A second analyst's pro forma estimates maximum supportable land value at negative $1,060,000 for conventional market-rate and negative $2,212,291 for affordable housing.",
+    "diligence": [
+     "Verify existing tenant leases, occupancy status, and buyout costs for the 3-family building.",
+     "Obtain a title report to confirm clean title for BBL 2024520066.",
+     "Order a Phase I Environmental Site Assessment.",
+     "Confirm HPD and HDC regulatory agreement terms and 485-x tax exemption eligibility."
+    ],
+    "enablers": "Density is enabled by UAP under ZR Ch 27 (FAR 4.13), qualifying affordable housing under ZR 23-22 (FAR 5.01), and a full parking waiver under ZR 25-232.",
+    "highest_and_best_use": "Multifamily rental is the highest and best use, supported by local new-construction rents at The Bronx Vibe ($2,580 studio to $3,300 2BR). Achieving financial viability depends on negotiating a substantial price reduction below the current $1,000,000 ask.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:34:37.332368+00:00"
   },
   {
    "id": "bx-2411-poplar",
@@ -2285,7 +2328,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:55:47.735125+00:00"
+   "checked_utc": "2026-11-27T14:34:38.014024+00:00"
   },
   {
    "id": "hunt-1815-schieffelin-ave-bronx",
@@ -2598,7 +2641,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-26T21:55:48.383804+00:00"
+   "checked_utc": "2026-11-27T14:34:38.685019+00:00"
   },
   {
    "id": "hunt-1716-barnes-ave-bronx",
@@ -2912,7 +2955,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:55:49.093537+00:00"
+   "checked_utc": "2026-11-27T14:34:39.268321+00:00"
   },
   {
    "id": "hunt-1831-paulding-ave-bronx",
@@ -3193,7 +3236,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:55:49.696561+00:00"
+   "checked_utc": "2026-11-27T14:34:39.926136+00:00"
   },
   {
    "id": "hunt-2468-st-raymonds-ave-bronx",
@@ -3475,7 +3518,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:55:50.443712+00:00"
+   "checked_utc": "2026-11-27T14:34:40.581926+00:00"
   },
   {
    "id": "hunt-129-e-233rd-st-bronx",
@@ -3734,8 +3777,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "0a59ba2e68d2",
-   "memo": null,
-   "checked_utc": "2026-11-26T21:57:21.777553+00:00"
+   "memo": {
+    "verdict": "A 4-unit residential building can be developed as-of-right, but the project is financially unfeasible at the $399,000 asking price.",
+    "as_of_right": "In an R5 district, an attached multiple-dwelling project allows a standard FAR of 1.50 (ZR 23-21) on the 1,791 sf lot, yielding 2,687 buildable sf. The 680 dwelling unit factor (ZR 23-52) allows up to 4 units (2,687 / 680 = 3.95). The 25.17 ft lot width and 1,791 sf lot area satisfy the 18 ft width and 1,700 sf area minimums for other-residence forms under ZR 23-11. Independent check confirms these zoning parameters.",
+    "approval_path": "As-of-right site plan review through the Department of Buildings, which minimizes entitlement risk and processing time because no discretionary land use approvals are required.",
+    "legal_issues": [
+     "The seller explicitly makes no representations that the lot is buildable, creating legal risk regarding title and site constraints.",
+     "The lot width of 25.17 ft is below the 30 ft minimum for detached single or two-family homes under ZR 23-11, restricting development to an attached or multiple-dwelling format.",
+     "The 2.00 qualifying residential site FAR bonus is unavailable because the lot area is under the 5,000 sf transit-oriented site threshold under ZR 12-10."
+    ],
+    "test_fit": "The site envelope is governed by a 10 ft front yard (ZR 23-321) and a 20 ft rear yard (ZR 23-342), establishing a buildable footprint of approximately 1,036 sf on the 71.17 ft deep lot. A 4-story building is achievable within the 45 ft maximum height limit (ZR 23-422). Density is constrained first by the 1.50 FAR cap. Under ZR 25-232, 2 parking spaces are calculated for 4 units, but parking is fully waived because the requirement is 5 spaces or fewer.",
+    "value": "At the $399,000 asking price, land cost is $99,750 per unit ($148.50 per buildable sf). Nearby land comps sold between $89 and $168 per buildable sf. A second analyst's pro forma (underwriting_muse) estimates maximum supportable land value at $173,637 ($43,409 per unit), indicating the site requires a 56.5 percent price reduction to break even.",
+    "diligence": [
+     "Verify property title, easements, and buildability status given the seller's lack of representations.",
+     "Obtain an official boundary and topographical survey to confirm exact lot dimensions and yard setbacks.",
+     "Perform a subsurface geotechnical investigation to verify soil conditions for structural foundations.",
+     "Confirm utility connection locations and DOB street tree requirements."
+    ],
+    "enablers": "None available as-of-right; the site does not qualify for MIH, transit-oriented lot bonuses, or special permits on the evidence found.",
+    "highest_and_best_use": "A 4-unit market-rate rental building maximizing the 1.50 FAR (2,687 gross sf). Local new-construction rental comps like The Bronx Vibe achieve rents from $2,580 for studios to $3,300 for 2-bedroom units, but achieving feasibility depends entirely on negotiating a lower purchase price.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:35:02.248904+00:00"
   },
   {
    "id": "hunt-524-n-terrace-ave-mount-vernon",
@@ -3839,7 +3903,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T21:57:21.779051+00:00"
+   "checked_utc": "2026-11-27T14:35:02.251280+00:00"
   },
   {
    "id": "hunt-652654-noble-ave-bridgeport",
@@ -3957,8 +4021,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "cdc0e593cf05",
-   "memo": null,
-   "checked_utc": "2026-11-26T21:58:52.371237+00:00"
+   "memo": {
+    "verdict": "A 7-unit residential redevelopment is realistically achievable as of right, but the site is not worth pursuing at the $750,000 asking price due to a negative supportable land value.",
+    "as_of_right": "Zoning district NX2 allows up to 7 units as of right using the Double House A building type (6 principal units plus 1 backyard cottage) because the lot has ~60 ft of frontage against a 50 ft minimum. Under the House A building type (35 ft minimum width), up to 5 units are allowed (4 principal units plus 1 cottage). Bulk is set by coverage (80% for House A, 90% for Double House A) and height (2.5 stories max) rather than FAR. On the assessor lot size of 3,049 sf, 80% coverage yields a 2,439 sf footprint and a 6,098 sf gross envelope.",
+    "approval_path": "As-of-right for up to 7 units (Double House A), which minimizes entitlement risk and timeline. Expanding to an 8th principal unit requires a special permit from the Planning & Zoning Commission, which adds discretionary review risk and public hearing timelines.",
+    "legal_issues": [
+     "Discrepancy between assessor land area (3,049 sf) and GIS polygon area (4,205 sf) directly affects allowable building coverage.",
+     "Frontage width is unverified on the official assessor card and requires survey confirmation to secure higher-density building types.",
+     "Listing marketing uses superseded RC zoning instead of current NX2 code rules.",
+     "Existing 3-family occupancy requires review of tenant leases and legal status prior to acquisition."
+    ],
+    "test_fit": "Building-type unit caps limit density first. Residential parking does not limit density because Bridgeport code sets no minimum off-street parking requirements. Likely unit count ranges from 5 units (House A) to 7 units (Double House A). Building envelope under House A allows a 2,439 sf footprint across 2.5 stories (~6,098 sf gross).",
+    "value": "At the $750,000 ask, land cost is $150,000 per unit for a 5-unit scenario and $107,143 per unit for a 7-unit scenario. A second analyst's pro forma estimates maximum supportable land value at negative $761,827 based on a 3.26% yield on cost, failing feasibility at asking price under both scenarios.",
+    "diligence": [
+     "Commission property boundary survey to resolve lot area discrepancy (3,049 sf vs 4,205 sf) and verify 60 ft frontage.",
+     "Obtain zoning verification letter from the City of Bridgeport confirming NX2 district rules and building type eligibility.",
+     "Verify FEMA MSC flood map determination to confirm Zone X designation.",
+     "Review existing tenant leases, income, and occupancy status for the 3-family home.",
+     "Order full title search to confirm absence of unrecorded easements or covenants."
+    ],
+    "enablers": "Lot frontage of ~60 ft enables Double House A (up to 7 units as of right) and Row Building types. A special permit can enable up to 8 principal units under Double House A or Small General types.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:36:10.581113+00:00"
   },
   {
    "id": "hunt-111-calhoun-pl-bridgeport",
@@ -4076,8 +4163,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "ea947668661e",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:00:22.906111+00:00"
+   "memo": {
+    "verdict": "A 5-unit residential redevelopment is contingent on verifying a 35-foot lot width, but the site is not worth pursuing at the $600,000 asking price.",
+    "as_of_right": "Under NX2 zoning, the House A building type allows up to 4 principal units plus 1 backyard cottage unit (Sec 3.90.9). Max site coverage is 80 percent (2,091 sq ft footprint) across 2.5 stories, producing an envelope of roughly 5,228 sq ft with no FAR cap (Sec 3.90.4). No off-street parking is required for residential uses (Sec 8.20.1). This outcome requires a minimum lot width of 35 feet.",
+    "approval_path": "As-of-right site plan review if the lot width meets 35 feet. If actual frontage is 34 feet, it requires a variance for lot width, adding significant timeline delay and municipal approval risk.",
+    "legal_issues": [
+     "GIS-measured frontage of 34 feet is 1 foot below the 35-foot minimum width for the House A building type.",
+     "Unverified Historic Overlay (OH) status on the local zoning map.",
+     "Listing details reference superseded RB zoning rather than current NX2 rules."
+    ],
+    "test_fit": "Max site coverage of 80 percent allows a 2,091 sq ft footprint up to 2.5 stories (eaves 20 ft max). Density is capped at 4 principal units in the main house plus 1 cottage unit. Density is limited first by lot width, which blocks Double House A or Small General types that require 50 to 60 feet of frontage. No parking spaces are required by code.",
+    "value": "Land cost is $120,000 per buildable unit at the $600,000 ask for a 5-unit build. A second analyst's pro forma estimates maximum supportable land value at -$871,269 based on a 2.77 percent yield on cost and $300 per sq ft hard costs.",
+    "diligence": [
+     "Certified property survey or Bridgeport tax map to verify exact lot frontage against the 35-foot requirement.",
+     "Bridgeport zoning map historic overlay layer review to confirm OH status.",
+     "Title search and assessor card audit to confirm current 3-family legal use status.",
+     "Official FEMA MSC query to confirm Zone X designation."
+    ],
+    "enablers": "Special permits can increase unit caps to 8 units for Double House A or Small General types if minimum lot widths (50 feet) are met. State Sec 8-30g provides a judicial appeals procedure for qualifying affordable housing.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:37:16.833471+00:00"
   },
   {
    "id": "hunt-203205-lenox-ave-bridgeport",
@@ -4195,8 +4303,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "97f1cb77dacc",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:01:53.411153+00:00"
+   "memo": {
+    "verdict": "The site realistically allows a 5-unit residential redevelopment as of right, but the deal fails underwriting at the $575,000 ask.",
+    "as_of_right": "Under NX2 zoning Sec 3.90, a 40 ft lot width allows only the House A building type. House A permits 80 percent maximum lot coverage (3,136 sf footprint on 3,920 sf) up to 2.5 stories (7,840 sf envelope). Density is capped at 4 principal units plus 1 backyard cottage unit, yielding 5 total units as of right.",
+    "approval_path": "As-of-right building permit process for 5 units, carrying minimal entitlement risk and a short timeline.",
+    "legal_issues": [
+     "Discrepancy between assessor card listing Zone I and official GIS zoning map confirming NX2",
+     "Listing uses superseded pre-2022 RB zoning district label",
+     "Unverified tenant lease status and existing building occupancy",
+     "C.G.S. Sec 8-30g provides an appeals override but no as-of-right density bonus"
+    ],
+    "test_fit": "Envelope allows a 3,136 sf footprint up to 2.5 stories for approx 7,840 sf gross area. Unit yield caps at 5 units (4 main house units plus 1 backyard cottage). Off-street parking is not required by Sec 8.20.1 and does not limit density. Lot width of 40 ft limits density first by ruling out 50 ft building types.",
+    "value": "Land cost is $115,000 per buildable unit at the $575,000 ask for a 5-unit scheme. Underwriting muse estimates maximum supportable land value at negative $973,269 based on a 2.68 percent yield on cost.",
+    "diligence": [
+     "Verify district designation with the Zoning Administrator to resolve the assessor card Zone I conflict against the NX2 zoning map",
+     "Obtain a certified boundary survey confirming the 40 ft lot width and parcel lines",
+     "Verify FEMA Flood Map on MSC to confirm Zone X status",
+     "Review title report for deed restrictions, easements, or encumbrances",
+     "Inspect existing multi-family building to verify tenant leases and structural condition"
+    ],
+    "enablers": "NX2 House A building type allowing 4 principal units plus 1 accessory backyard cottage unit",
+    "highest_and_best_use": "Conventional 5-unit rental redevelopment using a 4-unit main house and 1 backyard cottage, which maximizes as-of-right density, though it depends on a deep price cut to achieve feasibility.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:37:44.167848+00:00"
   },
   {
    "id": "hunt-556-westside-ave-jersey-city",
@@ -4402,7 +4533,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:01:53.412714+00:00"
+   "checked_utc": "2026-11-27T14:37:44.170386+00:00"
   },
   {
    "id": "hunt-145-beverly-rd-white-plains",
@@ -4495,8 +4626,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "6969b3dc21e9",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:03:23.919934+00:00"
+   "memo": {
+    "verdict": "The site realistically supports one single-family home as-of-right, but pursuing it at the $325,000 ask requires verifying site constraints and parcel data.",
+    "as_of_right": "Under White Plains Zoning Ordinance Sec 5.3, the R1-5 district requires a minimum lot area of 5,000 sf per dwelling unit, allowing 1 single-family home. On a 7,618 sf lot, an FAR of 0.55 permits up to 4,190 gross sf. Main building coverage of 25% allows a 1,905 sf footprint within 2.5 stories or 30 feet, and Sec 8.3 requires 2 parking spaces.",
+    "approval_path": "As-of-right for a single-family home, though potential Planning Board review for front yard rock removal could add time and procedural risk.",
+    "legal_issues": [
+     "Unverified Planning Board approval status for rock outcropping removal.",
+     "Unverified lot frontage width against the 50 ft minimum requirement under Sec 5.3.",
+     "Zoning district is not yet confirmed on the official city GIS map."
+    ],
+    "test_fit": "The envelope allows a main footprint of 1,905 sf and up to 4,190 gross sf over 2.5 stories, yielding 1 single-family home with 2 parking spaces. Min lot area rules limit density first, as subdivision requires at least 10,000 sf.",
+    "value": "Land cost is $325,000 per buildable unit at the ask, which equals $77.57 per buildable sf based on a maximum 4,190 sf home.",
+    "diligence": [
+     "Resolve lot area discrepancy (7,500 sf vs 7,618 sf vs 7,623 sf) using Westchester County tax parcel records.",
+     "Confirm R1-5 district zoning on the official White Plains zoning map.",
+     "Verify lot frontage width against the 50 ft minimum standard.",
+     "Perform FEMA MSC FIRMette query to confirm flood zone status.",
+     "Review Planning Board and Building Department records for rock removal approvals."
+    ],
+    "enablers": "None. The R1-5 zoning district does not permit two-family uses, multifamily uses, ADUs, or affordable housing density bonuses.",
+    "highest_and_best_use": "Not enough data. FACTS lack local market rents, completed home sale prices, and land comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:38:26.551927+00:00"
   },
   {
    "id": "hunt-89-neptune-ave-jersey-city",
@@ -4682,7 +4835,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-26T22:03:23.921479+00:00"
+   "checked_utc": "2026-11-27T14:38:26.554381+00:00"
   },
   {
    "id": "hunt-753-den-rd-stamford",
@@ -4787,7 +4940,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-26T22:03:23.922755+00:00"
+   "checked_utc": "2026-11-27T14:38:26.556077+00:00"
   },
   {
    "id": "hunt-3729-paulding-ave-bronx",
@@ -5073,7 +5226,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:03:24.622888+00:00"
+   "checked_utc": "2026-11-27T14:38:27.254416+00:00"
   },
   {
    "id": "hunt-182184-lincoln-ave-yonkers",
@@ -5254,7 +5407,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:03:24.624215+00:00"
+   "checked_utc": "2026-11-27T14:38:27.256138+00:00"
   },
   {
    "id": "hunt-1001-summit-ave-bronx",
@@ -5544,7 +5697,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:03:25.261128+00:00"
+   "checked_utc": "2026-11-27T14:38:27.866114+00:00"
   },
   {
    "id": "hunt-1730-hunt-ave-bronx",
@@ -5833,7 +5986,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:03:25.882307+00:00"
+   "checked_utc": "2026-11-27T14:38:28.532279+00:00"
   },
   {
    "id": "hunt-1074-university-ave-bronx",
@@ -6100,8 +6253,33 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "f876b977800f",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:07:26.934351+00:00"
+   "memo": {
+    "verdict": "A 19-unit standard market-rate or up to 28-unit affordable multifamily building can be developed as of right, making the site worth pursuing at the $999,000 ask.",
+    "as_of_right": "Under R7-1 zoning on a 5,000 square foot lot, ZR 23-22 permits a standard residential FAR of 3.44, allowing 17,200 buildable square feet (~19 units). Under UAP, FAR increases to 4.13, yielding 20,650 square feet (~23 units) with required affordable space. A qualifying affordable development under an HPD regulatory agreement allows an FAR of 5.01, yielding 25,050 square feet (~28 units).",
+    "approval_path": "As-of-right. Standard market-rate and UAP multifamily developments require no discretionary land use approvals, keeping entitlement risk low and timelines short.",
+    "legal_issues": [
+     "Existing two-family house is fully occupied, requiring tenant relocation and vacant possession before demolition.",
+     "Discrepancy between listing lot area (2,500 sf) and tax lot data (5,000 sf) requires title and survey verification.",
+     "Qualifying affordable path requires execution of a binding HPD or HDC regulatory agreement for permanent affordability."
+    ],
+    "test_fit": "The 50 by 100 foot lot yields a maximum 3,500 square foot footprint after subtracting the required 30-foot rear yard. Height caps at 75 feet (7 stories) standard or 105 feet (10 stories) under qualifying affordable rules. FAR is the binding cap on density. Zero parking spaces are required because calculated demand is 6 spaces, which is below the 10-space waiver threshold under ZR 25-232.",
+    "value": "At the $999,000 asking price, land cost equals $52,579 per unit ($58 per buildable square foot) for a standard 19-unit program. Under UAP and affordable tiers, land cost drops to between $27,750 and $37,000 per unit ($40 per buildable square foot at 25,050 square feet). This compares favorably to Bronx land comps ranging from $89 to $168 per buildable square foot.",
+    "diligence": [
+     "Order a boundary and topographical survey to verify the 5,000 square foot lot area against the listing claim of 2,500 square feet.",
+     "Inspect current residential leases and evaluate legal tenant relocation protocols and costs.",
+     "Review HPD and HDC regulatory agreement requirements for UAP and 5.01 FAR qualifying affordable programs.",
+     "Confirm wide-street proximity under ZR 23-22 with an architect for potential base FAR adjustments."
+    ],
+    "enablers": [
+     "Universal Affordability Preference (UAP) under ZR Chapter 27 providing a 20 percent floor area bonus.",
+     "Qualifying affordable housing provisions allowing up to 5.01 FAR with an HPD/HDC regulatory agreement.",
+     "Small-lot parking waiver under ZR 25-232 eliminating off-street parking requirements."
+    ],
+    "highest_and_best_use": "Multifamily rental construction utilizing UAP or qualifying affordable FAR bonuses is the highest and best use. Nearby new construction at The Bronx Vibe achieves rents of $2,580 for studios, $2,895 for 1BRs, and $3,300 for 2BRs. Feasibility depends on tenant clearance and securing tax exemptions like 485-x or LIHTC funding.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:41:41.841070+00:00"
   },
   {
    "id": "hunt-4165-laconia-ave-bronx",
@@ -6388,7 +6566,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:07:27.663843+00:00"
+   "checked_utc": "2026-11-27T14:41:42.467792+00:00"
   },
   {
    "id": "hunt-1148-e-211th-st-bronx",
@@ -6643,7 +6821,7 @@
     "letter_angle": "",
     "_model": "gemini-flash-latest"
    },
-   "checked_utc": "2026-11-26T22:07:28.298534+00:00"
+   "checked_utc": "2026-11-27T14:41:44.134928+00:00"
   },
   {
    "id": "hunt-113-old-bay-st-peekskill",
@@ -6740,8 +6918,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "0303e695dc24",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:10:43.714462+00:00"
+   "memo": {
+    "verdict": "The site realistically allows only one single-family home subject to variance or nonconforming lot relief, making redevelopment not worth pursuing at the $650,000 ask.",
+    "as_of_right": "Peekskill Code 575-22A limits the R-1C district to one single-family dwelling per lot. The lot has 3,341 square feet of area and 30 feet of frontage, which fail the district minimums of 5,000 square feet and 50 feet. Yard requirements of 25 feet front, 15 feet aggregate side, and 30 feet rear restrict the building footprint to 675 square feet. At 2.5 stories max height, as-of-right gross building area is approximately 1,688 square feet for one dwelling unit.",
+    "approval_path": "Variance or ZBA nonconforming lot approval is required for any new construction because the lot is substandard in area and width, creating significant risk and extended processing time.",
+    "legal_issues": [
+     "Substandard lot area of 3,341 square feet versus 5,000 required and frontage of 30 feet versus 50 required under R-1C rules.",
+     "Existing two-family structure operates as a nonconforming use in an R-1C single-family zone.",
+     "Dual purchase options ($625,000 fully occupied versus $650,000 with second floor vacant and delayed closing) create tenant and timing risks."
+    ],
+    "test_fit": "Side yard setbacks of 15 feet aggregate limit buildable width to 15 feet on the 30-foot lot. Front setback of 25 feet and rear setback of 30 feet limit depth to 45 feet on the 100-foot lot. Maximum coverage of 40 percent permits 1,336 square feet, but yard setbacks bind density first to a 675 square foot footprint. The building envelope allows 2.5 stories and approximately 1,688 gross square feet for 1 single-family home, requiring 2 parking spaces.",
+    "value": "At the $650,000 asking price, land cost is $650,000 per buildable unit for a 1-unit single-family redevelopment, or $325,000 per unit for the existing 2-family building.",
+    "diligence": [
+     "City of Peekskill Planning Department parcel zoning confirmation for R-1C status.",
+     "Peekskill Code Article VIII nonconforming-lot provisions review to determine buildability.",
+     "Verification of legal nonconforming use status for the existing two-family structure.",
+     "Review of existing leases, occupancy status, and terms for the second floor vacancy.",
+     "Boundary survey to reconcile 3,341 square foot GIS calculation with 3,000 square foot tax dimensions."
+    ],
+    "enablers": "Zoning Board of Appeals area variances or nonconforming-lot relief under Peekskill Code Article VIII.",
+    "highest_and_best_use": "Not enough data, as FACTS lack market rents, sale prices, and land comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:42:11.656735+00:00"
   },
   {
    "id": "hunt-120-smith-st-peekskill",
@@ -6838,8 +7038,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "a03d42540173",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:12:14.200777+00:00"
+   "memo": {
+    "verdict": "Standalone redevelopment on this 6,421 square foot lot is blocked by zoning parcel minimums, so the property is only worth pursuing as an existing cash-flowing triplex or as an assemblage play.",
+    "as_of_right": "Base R-6 zoning allows ~1 single-family unit as-of-right via the R-4 to R-1A use chain, while multifamily redevelopment is blocked because section 575-27D(1) requires a minimum development parcel of 20,000 square feet despite the district density rule of 2,000 square feet per unit (3.2 units) and FAR of 1.5 (9,632 gross square feet).",
+    "approval_path": "Variance or assemblage. Redeveloping this standalone lot for multifamily or a 3-unit townhouse requires major lot area and parcel size variances from the Zoning Board of Appeals, which carries high risk and long timelines; preserving the existing triplex or assembling neighboring lots to reach 20,000 square feet avoids variance risk.",
+    "legal_issues": [
+     "Section 575-27D(1) requires a 20,000 square foot minimum development parcel, which blocks standalone multifamily redevelopment on this 6,421 square foot site.",
+     "Special permits for two-family or three-family additions require 7,500 to 10,000 square feet of lot area and 75 to 100 feet of width, failing this lot's dimensions.",
+     "Discrepancy in lot size across records (6,421 sq ft GIS vs 6,760 sq ft assessor vs 6,952 sq ft listing) must be clarified.",
+     "Verification of legal non-conforming status and tenant lease agreements for the existing brick triplex is required."
+    ],
+    "test_fit": "Density is limited first by the 20,000 square foot minimum development parcel requirement. On this 6,421 square foot lot alone, lot coverage caps the footprint at 25% (1,605 square feet), FAR 1.5 caps gross floor area at 9,632 square feet, and height is allowed up to 100 feet or 10 stories, but unit density is capped at ~1 single-family home; parking rules require 1.5 to 2 spaces per unit plus 0.5 guest spaces per unit for 4+ unit builds.",
+    "value": "At the $795,000 ask price, land cost is $265,000 per unit for the existing 3 units, $795,000 per unit for a standalone single-family build, or $79,500 per unit if assembled into a 20,000 square foot site yielding 10 units.",
+    "diligence": [
+     "Obtain written interpretation from the City of Peekskill Planning Department on whether section 575-27D(1) allows a single-family build on this lot.",
+     "Commission a boundary survey to resolve lot area conflicts between GIS (6,421 sq ft), tax assessor (6,760 sq ft), and listing (6,952 sq ft).",
+     "Review existing triplex certificates of occupancy, leases, tenant utility arrangements, and income history.",
+     "Confirm title history, easements, and property boundaries.",
+     "Evaluate acquisition terms for adjacent parcels to form a 20,000+ square foot assemblage."
+    ],
+    "enablers": "Assembling the site with adjacent lots to achieve a 20,000+ square foot parcel enables 10 multifamily units as-of-right under R-6 density rules; assembling to 25,000 square feet within 250 feet of public housing and the Central Commercial District unlocks the 575-27B(1)(h) affordable townhouse special-permit bonus.",
+    "highest_and_best_use": "Not enough data because FACTS lack market rents, condo sale prices, and land comps to compare product returns.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:42:31.390753+00:00"
   },
   {
    "id": "hunt-931-2nd-st-peekskill",
@@ -6936,8 +7159,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "56f63ff8beab",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:13:44.609063+00:00"
+   "memo": {
+    "verdict": "The site realistically supports only a single-family home of approximately 2,625 gross square feet, making it unsuitable for multi-unit development at the $699,000 ask.",
+    "as_of_right": "Zoning allows one single-family home in the R-2 district per Section 575-23E. Applying yard requirements (25 ft front, 15 ft aggregate side, 30 ft rear) yields a 1,050 square foot footprint on the 4,194 square foot lot. At 2.5 stories maximum height (35 ft per Section 575-22D(3)), as-of-right gross floor area caps at approximately 2,625 square feet. Multi-family is not permitted, and two-family use by special permit requires 7,500 square feet and 75 feet width under Section 575-23B(1), which this lot fails.",
+    "approval_path": "Approval path is variance or nonconforming lot relief because the 4,194 square foot area and 30-foot width fail the R-1B standards (6,000 square feet and 60 feet width) imported by Section 575-23E. This path involves Zoning Board of Appeals review, creating schedule delays and discretionary approval risk.",
+    "legal_issues": [
+     "Substandard lot width of 30 feet and area of 4,194 square feet fail district minimums and require ZBA nonconforming lot determination.",
+     "A two-family special permit requires 7,500 square feet and 75 feet of frontage under Section 575-23B(1), blocking lawful two-family conversion without major use/bulk variances.",
+     "Existing nonconforming use rights for the current two-family structure must be verified with municipal records."
+    ],
+    "test_fit": "Building envelope is constrained by side yards (15 ft aggregate) and rear yard (30 ft), leaving a buildable width of 15 feet and depth of 70 feet. The 1,050 square foot footprint controls over the 40% lot coverage cap (1,678 sq ft). Max envelope supports 1 unit at 2.5 stories (~2,625 sq ft). Two parking spaces are required (Section 575-22E). Lot width limits density first.",
+    "value": "Land cost is $699,000 per buildable unit at the ask for a 1-unit scenario. No secondary buildable unit scenario is achievable as of right.",
+    "diligence": [
+     "Resolve coverage conflict: code text Section 575-22D(5)(b) grants 40% maximum coverage, whereas the Westchester County GIS zoning layer states 30% for R-2.",
+     "Obtain City of Peekskill Planning Department parcel confirmation and Peekskill Code Article VIII nonconforming lot rules.",
+     "Commission a boundary survey to resolve lot area discrepancies (4,194 sq ft GIS vs 4,186 sq ft listing vs 3,750 sq ft assessor nominal).",
+     "Inspect existing building records and Certificate of Occupancy to verify legal status of the current two-family use.",
+     "Confirm listing details and tenant status for the vacant first floor with the listing broker."
+    ],
+    "enablers": "Area and bulk variances granted by the Zoning Board of Appeals represent the only path to additional density or envelope relief, supported by local ZBA precedents on nearby sites.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack market rents, end-unit sale prices, and land comps.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:42:54.132404+00:00"
   },
   {
    "id": "hunt-298-bleloch-ave-peekskill",
@@ -7035,8 +7280,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "c5db3fb14055",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:15:15.093284+00:00"
+   "memo": {
+    "verdict": "Realistically, only one single-family home of up to 3,600 gross square feet can be built on this substandard lot, making the project unfeasible at the $565,000 asking price.",
+    "as_of_right": "Peekskill Code 575-22 R-1B zoning allows one single-family dwelling per lot. Minimum lot area is 6,000 sf and minimum lot width is 60 ft. The subject lot is 4,326 sf with 44 ft frontage. Max lot coverage of 40% allows 1,730 sf. Setbacks of 25 ft front, 6 ft side, and 30 ft rear cap the footprint at 32 ft by 45 ft (1,440 sf). Height limit of 35 ft and 2.5 stories yields up to 3,600 gross sf. Parking requires 2 spaces.",
+    "approval_path": "Variance / nonconforming lot relief is required because the lot fails minimum area (4,326 sf vs 6,000 sf) and width (44 ft vs 60 ft) rules, introducing approval risk and timeline delays.",
+    "legal_issues": [
+     "Substandard lot status under Code 575-22D requires variance relief for lot area and width.",
+     "Pre-existing nonconforming two-family use rights must be verified before demolition or alteration.",
+     "R-1B zoning strictly prohibits multifamily, townhouses, and subdivision."
+    ],
+    "test_fit": "Building footprint is governed by setbacks to 1,440 sf (32 ft x 45 ft), allowing 3,600 gross sf over 2.5 stories. Zoning single-family limits and substandard lot size restrict density first to 1 unit. Parking for 2 vehicles fits on site.",
+    "value": "At the $565,000 asking price, land cost is $565,000 per buildable unit for a single-family home, or $282,500 per unit if preserving the existing 2-unit structure.",
+    "diligence": [
+     "Confirm pre-existing nonconforming two-family status and rebuild rights with Peekskill Building Department.",
+     "Verify Zoning Board of Appeals variance requirements for substandard lot area (4,326 sf) and width (44 ft) under Code 575-22D.",
+     "Obtain accurate boundary survey confirming parcel dimensions and setbacks.",
+     "Verify listing terms and property conditions with listing broker.",
+     "Obtain market comps for single-family sales and multi-family rents in Peekskill."
+    ],
+    "enablers": "None. R-1B zoning restricts the site to one-family dwellings and no density overlay or affordable bonus applies.",
+    "highest_and_best_use": "Not enough data to determine highest and best use because FACTS lack rent, sale price, and comp data.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:43:25.765013+00:00"
   },
   {
    "id": "hunt-806-bay-st-peekskill",
@@ -7156,7 +7423,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:15:15.094834+00:00"
+   "checked_utc": "2026-11-27T14:43:25.767540+00:00"
   },
   {
    "id": "hunt-527-union-ave-peekskill",
@@ -7254,8 +7521,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "35d7e0bd4c6e",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:16:45.557702+00:00"
+   "memo": {
+    "verdict": "A single 4-bedroom single-family home can realistically be built under the October 15, 2026 site plan approval, making it worth pursuing at the $199,222 ask if approval terms are verified.",
+    "as_of_right": "Section 575-22 permits one-family dwellings only, capped at 1 unit per lot. The lot is 7,507 sq ft with 50 ft frontage, which is under the 60 ft minimum width required by Section 575-22D. Maximum lot coverage is 40% (3,003 sq ft footprint) and max height is 35 ft / 2.5 stories, yielding up to 7,508 gross sq ft for 1 home. Subdivision yields 0 added units because lot width is below 60 ft.",
+    "approval_path": "Existing approval / site plan. The Peekskill Planning Commission granted final site plan approval on October 15, 2026 for a single-family home. This path presents low time and entitlement risk if the approval remains valid and includes necessary lot width relief.",
+    "legal_issues": [
+     "Substandard 50 ft lot width versus 60 ft requirement under 575-22D requires confirmation of whether a width variance was formally granted.",
+     "Verification of expiration dates and conditions attached to the October 15, 2026 final site plan approval.",
+     "Potential access, buffering, or boundary issues arising from the property abutting Depew Park."
+    ],
+    "test_fit": "Max lot coverage of 40% limits footprint to 3,003 sq ft. Setbacks (25 ft front, 6 ft / 15 ft aggregate side, 30 ft rear) allow a 38 ft by 95 ft envelope (3,610 sq ft), so coverage governs footprint. At 2.5 stories, max bulk supports 7,508 gross sq ft for a single 4-bedroom home. Required 2 parking spaces fit easily on site. Substandard lot width limits density first.",
+    "value": "Land cost is $199,222 per buildable unit for 1 single-family home at the ask price. FACTS provide no alternative scenarios or comps for comparison.",
+    "diligence": [
+     "Obtain official October 15, 2026 Peekskill Planning Commission approval resolution and staff report.",
+     "Review property survey and sample building plans referenced in the listing.",
+     "Confirm approval expiration terms and variance status with Peekskill Planning Department.",
+     "Perform title search to verify boundaries and encumbrances along Depew Park."
+    ],
+    "enablers": "None. R-1B permits only single-family dwellings, offers no as-of-right affordability density bonuses, and the 50 ft lot width prevents subdivision or rezoning density gains.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:43:42.972862+00:00"
   },
   {
    "id": "hunt-26-pratt-st-new-rochelle",
@@ -7365,8 +7653,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "a89704d30d41",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:18:17.046080+00:00"
+   "memo": {
+    "verdict": "Ground-up redevelopment yields at most an 874 square foot single-family home as-of-right, making the site unviable for new construction at the $959,000 asking price compared to maintaining the existing gut-renovated two-family rental.",
+    "as_of_right": "Under R2-7.0 code sections 331-36 and 331-29B, single- and two-family dwellings are permitted, but the 2,186 square foot lot allows 0 units as-of-right under standard 3,500 square foot per unit rules. Section 331-13C permits 1 single-family home on a substandard lot of record. With a 0.40 FAR, total permitted floor area is 874 square feet, and 30 percent coverage limits the footprint to 656 square feet.",
+    "approval_path": "As-of-right for a 1-unit single-family home under 331-13C, though side-yard area variances are required to build wider than 5 feet. Developing a new 2-family building requires Zoning Board of Appeals area variances for lot area, lot width, and per-unit density, which adds significant time and legal risk.",
+    "legal_issues": [
+     "Verification of 331-13C grandfathering conditions including historic deed date, single ownership status, yard setbacks, and filed plat",
+     "Confirmation of legal nonconforming use status and Certificate of Occupancy for the existing gut-renovated two-family structure",
+     "Severe side-yard setback requirements leaving only a 5-foot buildable envelope width on a 21-foot wide lot",
+     "Need for multiple area variances for lot area (2,186 sq ft vs 7,000 sq ft required) and lot width (21 ft vs 70 ft required) if redeveloped"
+    ],
+    "test_fit": "Yard setbacks of 8 feet on each side, 20 feet in front, and 30 feet in rear reduce the buildable footprint to 5 feet by 55 feet (275 square feet). Total building size is capped at 874 square feet by FAR across up to 3 stories (35 feet). Density is limited first by lot width (21 feet) and lot area per unit (3,500 square feet). Two parking spaces per unit fit on site.",
+    "value": "At the $959,000 asking price, land cost is $959,000 per unit for a 1-unit as-of-right single-family build, or $479,500 per unit based on the existing 2-family configuration.",
+    "diligence": [
+     "Title search and survey to verify 21-foot frontage, 2,186 square foot lot area, and historic deed record date for 331-13C compliance",
+     "Municipal records check for Certificate of Occupancy and legal nonconforming status of the existing two-family building",
+     "Review of existing tenant leases to confirm the reported $5,500 per month gross income",
+     "Verification of zoning schedule dimensions with the New Rochelle Building Department"
+    ],
+    "enablers": "Section 331-152 affordable housing floor area bonuses do not lift the district cap or the 3,500 square foot per unit density requirement.",
+    "highest_and_best_use": "Retaining the existing gut-renovated two-family home generating $5,500 per month gross rent is the highest and best use. Ground-up construction is capped at an 874 square foot single-family home unless broad variances are granted, and market rents such as those at The Alary ($3,000 for 1BR, $4,400 for 2BR) do not support a $959,000 land cost for ground-up redevelopment.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:44:01.990628+00:00"
   },
   {
    "id": "hunt-83-horton-ave-new-rochelle",
@@ -7476,8 +7786,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "b1ddab3021d6",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:19:47.541290+00:00"
+   "memo": {
+    "verdict": "As-of-right redevelopment allows only one single-family home on this lot, making the $760,000 asking price unfeasible unless you renovate the existing legal nonconforming 3-family building or secure a variance or rezoning.",
+    "as_of_right": "Under RMF-0.4 (Code Sections 331-29B and 331-38), maximum FAR is 0.40 on a 6,772 square foot lot, allowing 2,709 square feet of gross floor area. The code requires 3,500 square feet of lot area per dwelling unit, limiting density to 1 unit as-of-right (6,772 divided by 3,500 equals 1.93). A single-family home relies on Section 331-13C because the lot falls below the 7,000 square foot minimum area and 70-foot minimum width.",
+    "approval_path": "As-of-right path for a single-family home carries low risk and short timing, but developing 2 to 4 units requires area and width variances from the Zoning Board of Appeals or a rezoning, which increases timing and risk.",
+    "legal_issues": [
+     "Verification of Section 331-13C criteria (deed date, yard setbacks, single ownership, filed plat) for building on a substandard lot.",
+     "Legal nonconforming status and rights to repair or rebuild the existing 3-family structure versus treating the site as vacant land.",
+     "Required lot area and lot width variances under Sections 331-29B and 331-38 for any multi-unit project.",
+     "Section 331-152 affordable housing mandate (10 percent set-aside at 70 percent AMI) if relief permits 3 or more units."
+    ],
+    "test_fit": "Density is limited first by the 3,500 square feet per unit lot area requirement, capping the site at 1 unit as-of-right. Maximum building envelope is 2,709 square feet of gross floor area under the 0.40 FAR cap. The 30 percent coverage rule permits a 2,032 square foot footprint up to 3 stories (35 feet). Parking requires 1.25 spaces per unit plus 0.25 per bedroom (about 2 spaces for a 3BR unit), which easily fits on site.",
+    "value": "At the $760,000 ask, land cost is $760,000 per buildable unit ($280.55 per buildable square foot) for a 1-unit as-of-right home. If a rezoning or variance allows 4 units, land cost drops to $190,000 per buildable unit.",
+    "diligence": [
+     "Verify lot dimensions (6,772 sf area and 35 ft frontage) and Section 331-13C compliance with title history.",
+     "Confirm legal nonconforming status and rebuilding rights for the existing 3-family home with the Building Department.",
+     "Verify listing details, physical condition, and current tenancy or occupancy status.",
+     "Confirm CPA1 parking overlay status under Section 331-126."
+    ],
+    "enablers": "Area variances for lot size and width or a rezoning to an adjacent district such as RMF-1.0 could enable up to 4 units. Section 331-152 provides a 150 percent floor area bonus of affordable area for developments with 3 or more units.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:44:22.493666+00:00"
   },
   {
    "id": "hunt-1-bayview-ave-new-rochelle",
@@ -7587,8 +7919,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "ac52156d5454",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:21:18.067493+00:00"
+   "memo": {
+    "verdict": "As-of-right redevelopment yields at most one small single-family home requiring variance relief, making ground-up construction unviable at the $900,000 ask compared to retaining the existing turnkey two-family.",
+    "as_of_right": "Under Section 331-36 and Section 331-29B for the R2-7.0 district, minimum lot size is 7,000 square feet and minimum lot area per unit is 3,500 square feet. Redevelopment yields 0 units as-of-right. Section 331-13C allows one single-family home on a substandard lot of record. Maximum FAR of 0.40 on the 2,884 square foot lot limits total building size to 1,154 gross square feet. Maximum lot coverage is 30 percent, or 865 square feet.",
+    "approval_path": "Variance and site plan. A new single-family building requires side-yard variance relief because the clear buildable width is 11 feet, carrying moderate time and entitlement risk.",
+    "legal_issues": [
+     "Substandard lot area of 2,884 square feet and width of 27 feet fall short of the 7,000 square foot area and 70-foot width standard in Section 331-29B.",
+     "Section 331-13C single-family eligibility depends on unverified historical deed dates, yard setbacks, single ownership, and filed plat status.",
+     "Side-yard setbacks leave an 11-foot envelope, requiring area variance relief.",
+     "Existing turnkey two-family building is fully occupied, creating tenant lease and possession issues."
+    ],
+    "test_fit": "After applying 8-foot side yards, 20-foot front yard, and 30-foot rear yard setbacks, the buildable footprint is 11 feet by 50 feet (550 square feet). Maximum footprint by coverage is 865 square feet. Height is capped at 35 feet and 3 stories. Floor area ratio caps total size at 1,154 gross square feet. Lot width and lot area limit density first. Required parking is 2 spaces per unit.",
+    "value": "Land cost at the $900,000 ask is $900,000 per buildable unit for a single-family home scenario, or $450,000 per unit for the existing two-family structure.",
+    "diligence": [
+     "Resolve the lot size conflict between the listing header (2,614 square feet), listing body (2,881 square feet), and GIS data (2,884 square feet).",
+     "Verify the four Section 331-13C requirements for single-family construction on a substandard lot.",
+     "Obtain historic title records and a boundary survey to confirm frontage and lot history.",
+     "Inspect existing tenant leases, income, and occupancy status for the turnkey two-family building."
+    ],
+    "enablers": "Section 331-13C enables a single-family home on a substandard lot of record. Section 331-152 bonus floor area does not lift the R2-7.0 single-family or two-family density caps.",
+    "highest_and_best_use": "Not enough data. FACTS lack land comps and single-family or townhouse sales prices to evaluate a ground-up project against retaining the existing turnkey rental two-family.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:44:38.817565+00:00"
   },
   {
    "id": "hunt-17-3rd-st-new-rochelle",
@@ -7698,8 +8052,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "a3d75f385d6c",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:22:48.516594+00:00"
+   "memo": {
+    "verdict": "Realistically, only a single 1,021 square foot one-family home can be built as of right, making the property not worth pursuing at the $899,000 asking price.",
+    "as_of_right": "Zoning caps density at 1 unit as of right under Section 331-13C for substandard lots. The RMF-0.4 district requires 3,500 square feet of lot area per unit. The 2,553 square foot lot yields 0.73 units, capping development at 1 unit. A 0.40 FAR caps building size at 1,021 square feet (0.40 x 2,553 sf). Building coverage is capped at 30 percent, or 766 square feet.",
+    "approval_path": "Building 1 unit follows an as-of-right path if Section 331-13C criteria are met. Building 2 to 4 units requires area and lot width variances because the parcel is 2,553 square feet with 25 feet of frontage versus the required 7,000 square feet and 70 feet of width. Seeking variances involves high risk and long review timelines.",
+    "legal_issues": [
+     "Substandard lot status under Section 331-13C requires verifying historic deed dates, continuous ownership, setbacks, and filed plat records.",
+     "Multifamily redevelopment requires area and width variances from the 7,000 square foot minimum lot area and 70 foot width requirements.",
+     "Side yard setbacks of 8 feet shrink the buildable footprint width to 9 feet, requiring variance relief for a functional envelope.",
+     "Schedule footnote 11 requires a 30 foot side or rear setback if a new multifamily dwelling includes exterior exits, balconies, decks, or porches."
+    ],
+    "test_fit": "The setback envelope is 9 feet wide by 50 feet deep (450 square feet). A 3-story building at 35 feet max height yields 1,350 gross square feet, but the 0.40 FAR limits total floor area to 1,021 square feet. Density is limited first by the 3,500 square foot per unit lot area rule. Required parking is 1.25 spaces per unit plus 0.25 spaces per bedroom.",
+    "value": "At the $899,000 asking price, land cost is $899,000 per buildable unit for a 1-unit as-of-right project. If a variance allowed 2 units, land cost would be $449,500 per unit.",
+    "diligence": [
+     "Verify Section 331-13C compliance including deed dates, continuous ownership, setbacks, and filed plat records.",
+     "Obtain a certified boundary survey to confirm lot area, property boundaries, and the 25-foot frontage.",
+     "Confirm parcel CPA1 status to verify applicable parking rates under Section 331-126.",
+     "Verify listing details and current property status with the broker.",
+     "Perform a full title search to identify any existing covenants, easements, or encumbrances."
+    ],
+    "enablers": "None found in FACTS; Section 331-152 affordable housing bonus floor area does not lift the 3,500 square foot per unit density cap.",
+    "highest_and_best_use": "Not enough data; FACTS contain rental benchmarks ($2,548 studio to $4,400 2BR at The Alary) but lack sales comps and land comps required to select product type and size.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:45:03.533131+00:00"
   },
   {
    "id": "hunt-59-crescent-ave-new-rochelle",
@@ -7809,8 +8186,31 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "54a805955bfb",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:24:18.984662+00:00"
+   "memo": {
+    "verdict": "New building construction is limited as-of-right to one single-family home of 919 square feet and requires variance relief, making ground-up development unfeasible at the $470,400 ask unless the existing legal three-family structure can be preserved.",
+    "as_of_right": "Under Section 331-38 in the RMF-0.4 district, density is capped at 3,500 sq ft of lot area per unit, yielding 0.66 units on this 2,297 sq ft lot (2297 / 3500), which caps as-of-right development at 1 unit. Section 331-29B limits FAR to 0.40, allowing a maximum gross floor area of 919 sq ft (0.40 x 2297). Building coverage is capped at 30% (689 sq ft) and height is capped at 35 ft or 3 stories.",
+    "approval_path": "Variance path is required for multi-family development or side-yard relief; single-family redevelopment relies on substandard lot rule 331-13C, which presents moderate risk and time delay to verify prior deed and setback requirements.",
+    "legal_issues": [
+     "Verification of Section 331-13C four conditions (deed date, yard setbacks, ownership, and filed plat) to confirm single-family building rights on a substandard lot.",
+     "Severe lot width deficit (24 ft actual vs 70 ft required) and lot area deficit (2,297 sq ft actual vs 7,000 sq ft required) under Section 331-29B.",
+     "Side-yard setback constraints reducing the building width to 8 ft (24 ft minus two 8 ft side yards), with Schedule footnote 11 requiring a 30 ft setback for multi-family exits or decks.",
+     "Verification of the legal non-conforming status and rebuild rights of the existing 3-family structure."
+    ],
+    "test_fit": "The building envelope is restricted by setbacks to an 8 by 42 ft footprint (336 sq ft per floor across up to 3 stories). Gross floor area is governed by the 0.40 FAR cap at 919 sq ft. Density rules limit the lot to 1 unit first. Required parking of about 2 spaces (1.25 per unit plus 0.25 per bedroom under Section 331-126) fits on site.",
+    "value": "At the $470,400 ask, land cost is $470,400 per buildable unit ($511.86 per buildable sq ft) for a 1-unit as-of-right project. If the existing legal 3-family density is retained, land cost equals $156,800 per unit.",
+    "diligence": [
+     "Deed chain and filed plat to verify Section 331-13C substandard lot eligibility.",
+     "Zoning verification letter confirming the legal non-conforming 3-family status.",
+     "Current boundary survey confirming lot dimensions, 24 ft frontage, and setback lines.",
+     "Title search to confirm ownership history and potential encumbrances.",
+     "Property inspection and broker verification of occupancy and listing details."
+    ],
+    "enablers": "Area and dimensional variances, or a rezoning leveraging proximity to the adjacent RMF-SC district (FAR 4.0).",
+    "highest_and_best_use": "Not enough data, as sales price comps and land comps are missing from FACTS.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:45:25.345729+00:00"
   },
   {
    "id": "hunt-1-lemke-pl-new-rochelle",
@@ -7920,8 +8320,29 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "b2925d30c055",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:25:49.484300+00:00"
+   "memo": {
+    "verdict": "The site realistically allows one single-family home of up to 1,875 buildable square feet, and it is worth pursuing at the $199,000 asking price if a single home build fits your budget.",
+    "as_of_right": "Under RMF-0.5 zoning, Section 331-39 requires a 7,000 square foot minimum lot area and 3,500 square feet of lot area per dwelling unit. On a 3,749 square foot lot, 3,749 divided by 3,500 allows 1 unit as of right under Section 331-13C for substandard lots of record. The 0.50 FAR cap allows up to 1,875 gross square feet.",
+    "approval_path": "Building one unit requires standard site plan or building permit review relying on Section 331-13C provisions for substandard lots. Building two or more units requires lot area and lot width variances from the Zoning Board of Appeals, which carries high risk and longer timeline delays.",
+    "legal_issues": [
+     "The 3,749 square foot lot is substandard compared to the 7,000 square foot minimum lot size in Section 331-29B.",
+     "One-family construction depends on satisfying all four historic conditions under Section 331-13C regarding deed date, setbacks, common ownership, and filed plat status.",
+     "Frontage is recorded as 0 in GIS data and needs physical survey confirmation against the 70-foot minimum requirement."
+    ],
+    "test_fit": "The 30 percent coverage cap allows a maximum footprint of 1,125 square feet. While height permits 3 stories or 35 feet, the 0.50 FAR strictly limits total size to 1,875 square feet. Density limits the site to 1 unit first. Parking requires about 2 off-street spaces, which fit on site.",
+    "value": "At the $199,000 asking price, the land cost is $199,000 per buildable unit for a 1-unit home, or $106.13 per buildable square foot based on the 1,875 square foot maximum gross floor area.",
+    "diligence": [
+     "Resolve the lot size conflict between the listing statement of 3,920 square feet and the GIS calculated area of 3,749 square feet.",
+     "Order a boundary survey to establish exact square footage, parcel dimensions, setback lines, and actual street frontage.",
+     "Verify historical title records to confirm the lot meets all four conditions under Section 331-13C for building on a substandard lot.",
+     "Confirm parcel listing status, active details, and transaction terms directly with the listing broker."
+    ],
+    "enablers": "No enablers exist to increase density as of right because the Section 331-152 affordable housing bonus does not override the 3,500 square foot per unit lot area requirement.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:45:41.479183+00:00"
   },
   {
    "id": "hunt-292-5th-ave-new-rochelle",
@@ -8032,7 +8453,7 @@
    },
    "facts_hash": "361d50c905db",
    "memo": null,
-   "checked_utc": "2026-11-26T22:27:20.059849+00:00"
+   "checked_utc": "2026-11-27T14:48:48.117743+00:00"
   },
   {
    "id": "hunt-27-high-st-crotononhudson",
@@ -8084,7 +8505,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:27:20.061316+00:00"
+   "checked_utc": "2026-11-27T14:48:48.119903+00:00"
   },
   {
    "id": "hunt-73-melrose-ave-crotononhudson",
@@ -8135,7 +8556,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:27:20.062529+00:00"
+   "checked_utc": "2026-11-27T14:48:48.121584+00:00"
   },
   {
    "id": "hunt-6029-huxley-ave-bronx",
@@ -8356,8 +8777,29 @@
     }
    },
    "facts_hash": "f70338a86903",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:28:51.314236+00:00"
+   "memo": {
+    "verdict": "The site is listed as an approved 2-family development, but unverified approvals and missing city parcel data require diligence before pursuing the $499,999 ask.",
+    "as_of_right": "As-of-right math cannot be calculated because the parcel was not found in MapPLUTO and listing zoning is null in FACTS.",
+    "approval_path": "Existing approval claimed by listing, with a new building permit filed on 6/24/2026 per Marketproof. This path presents lower timeline risk if the approval resolution is verified.",
+    "legal_issues": [
+     "Approval status is claimed by the listing and remains unverified.",
+     "Parcel is not found in MapPLUTO records.",
+     "Listing details and zoning must be confirmed directly with the broker."
+    ],
+    "test_fit": "Listing describes a 2-unit program featuring a 2-family home with basement, attic, and a 2-car driveway on a 5,662 SF lot. Zoning envelope limits cannot be calculated without verified zoning code data.",
+    "value": "At the $499,999 ask, land cost is $250,000 per unit for the 2-unit scenario. Bronx land comps range from $89 to $168 per buildable SF, with 2449 Grand Avenue priced at $60,417 per unit.",
+    "diligence": [
+     "Obtain the official approval resolution and DOB permit filings from 6/24/2026.",
+     "Verify the lot tax parcel status and address DOB MapPLUTO records.",
+     "Confirm zoning district, lot area, and boundaries with the listing broker.",
+     "Perform a full title search to confirm ownership and easements."
+    ],
+    "enablers": "The adopted Bronx Metro-North Station Area Plan (2024-08-15) allows approximately 7,000 homes around four new Metro-North stations in the Bronx.",
+    "highest_and_best_use": "A 2-family residential build is the current proposed use, though maximizing value depends on verifying the underlying zoning code and allowed density.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:49:09.558735+00:00"
   },
   {
    "id": "hunt-2808-palisade-ave-weehawken",
@@ -8408,7 +8850,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:28:51.315701+00:00"
+   "checked_utc": "2026-11-27T14:49:09.562985+00:00"
   },
   {
    "id": "hunt-528-undercliff-ave-edgewater",
@@ -8460,7 +8902,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:28:51.316910+00:00"
+   "checked_utc": "2026-11-27T14:49:09.564650+00:00"
   },
   {
    "id": "hunt-107-old-palisade-rd-fort-lee",
@@ -8511,7 +8953,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:28:51.318116+00:00"
+   "checked_utc": "2026-11-27T14:49:09.566251+00:00"
   },
   {
    "id": "hunt-13311343-intervale-ave-bronx",
@@ -8718,8 +9160,29 @@
     }
    },
    "facts_hash": "c591ff0f40a1",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:30:22.529643+00:00"
+   "memo": {
+    "verdict": "A multi-family development of up to 53 to 64 units on this R7-1 wide street site is highly attractive and worth pursuing at the $1,135,000 ask price.",
+    "as_of_right": "R7-1 zoning on a wide street allows a 3.44 FAR. Across the 13,217 square foot lot, this permits approximately 45,466 buildable square feet and roughly 53 units.",
+    "approval_path": "The project follows an as-of-right approval path through standard Department of Buildings filing. This avoids discretionary board reviews and reduces entitlement timeline and risk.",
+    "legal_issues": [
+     "Parcel identification error in MapPLUTO requires direct tax map verification.",
+     "Tenancy and occupancy status of the seven existing single-family homes must be verified.",
+     "Assembly and title review across all seven individual parcels must be confirmed prior to purchase."
+    ],
+    "test_fit": "Density is limited by R7-1 bulk regulations on a wide street. The site supports ~53 units as-of-right, scaling to ~64 units with UAP, matching the broker range of 45,000 to 52,000 buildable square feet.",
+    "value": "At the $1,135,000 ask, land cost is $21,415 per unit for 53 units, or $17,734 per unit for 64 units. At ~45,466 buildable square feet, land cost is about $25 per buildable square foot, which compares favorably to local land comps ranging from $89 to $168 per buildable square foot.",
+    "diligence": [
+     "Verify lot boundaries, zoning, and street width status with the broker.",
+     "Obtain tax maps and title commitments for all seven lots to resolve MapPLUTO lookup errors.",
+     "Inspect the seven existing 1-family structures for tenant lease status and vacant possession.",
+     "Commission a Phase I Environmental Site Assessment."
+    ],
+    "enablers": "Density can be expanded from ~53 units up to ~64 units using the Universal Affordability Preference (UAP). Additionally, the adopted Bronx Metro-North Station Area Plan supports regional housing growth.",
+    "highest_and_best_use": "A multi-family rental building of 53 to 64 units is the highest and best use. New local rental comps such as The Bronx Vibe achieve rents up to $3,300 per month for 2BR units, supporting new residential development.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:49:47.031920+00:00"
   },
   {
    "id": "hunt-408-e-154th-st-bronx",
@@ -8926,8 +9389,31 @@
     }
    },
    "facts_hash": "582d5637c37e",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:31:53.718181+00:00"
+   "memo": {
+    "verdict": "The site is realistic for a 16 to 22 unit residential development with ground floor commercial space and is worth pursuing if terms for the seller retained commercial space are acceptable.",
+    "as_of_right": "On a 5,000 square foot lot in an R6 zone, base zoning allows approximately 13,400 buildable square feet. This translates to about 16 residential units assuming an 850 square foot average unit size.",
+    "approval_path": "As-of-right development through standard Department of Buildings plan review. This path carries low entitlement risk and standard processing time.",
+    "legal_issues": [
+     "Seller condition requiring retention of the commercial space in the new building.",
+     "MapPLUTO system error where parcel lot was not found.",
+     "Verification of C1-4 commercial overlay and R6 zoning claims from the broker.",
+     "Confirmation of vacant delivery for the existing two-family structure."
+    ],
+    "test_fit": "The 50 by 100 foot lot allows a base buildable envelope of approximately 13,400 square feet (~16 units). With UAP, the envelope expands to approximately 19,500 square feet (~22 units). Ground floor commercial space is required to satisfy the seller retention structure.",
+    "value": "At the $1,500,000 base ask, land cost is about $112 per buildable square foot or $93,750 per unit across 16 units. At the $1,777,500 UAP ask option, land cost is about $91 per buildable square foot or $80,795 per unit across 22 units.",
+    "diligence": [
+     "Resolve the MapPLUTO lot search error and confirm official lot boundaries.",
+     "Verify official zoning designation, C1-4 overlay, and UAP eligibility with NYC Planning.",
+     "Review draft legal agreements regarding seller commercial space retention.",
+     "Obtain written confirmation of vacant delivery for the existing two-family dwelling.",
+     "Conduct title search and environmental due diligence."
+    ],
+    "enablers": "Universal Affordability Preference (UAP) allows increased density up to ~19,500 buildable square feet, and the C1-4 overlay permits commercial use.",
+    "highest_and_best_use": "Mixed-use rental development with ground floor commercial space maximizes value. Local rental comps show strong rates ($2,580 studio, $2,895 1BR, $3,300 2BR at The Bronx Vibe), and land comps range from $89 to $168 per buildable square foot. Feasibility depends on finalizing acceptable terms for the seller commercial space.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:50:24.898335+00:00"
   },
   {
    "id": "hunt-757-warburton-ave-yonkers",
@@ -9072,8 +9558,29 @@
     }
    },
    "facts_hash": "b7b0b22d6519",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:33:24.341044+00:00"
+   "memo": {
+    "verdict": "New multifamily development is not allowed as-of-right on this lot alone because the site fails the minimum 10,000 square foot requirement, making the purchase at $879,900 risky without a variance or assemblage.",
+    "as_of_right": "The site is in District M (Apartment Houses Medium Density). FAR of 1.25 allows approximately 8 units by floor area on a 6,044 square foot lot. However, Yonkers Table 43-3 requires a minimum lot area of 10,000 square feet for multifamily buildings. As-of-right multifamily construction is zero units on this single lot.",
+    "approval_path": "Variance / site plan. Achieving multifamily density requires an area variance for minimum lot size from the Zoning Board of Appeals followed by Planning Board approval. This path adds significant legal risk, cost, and time.",
+    "legal_issues": [
+     "Minimum lot area non-conformity under Yonkers Table 43-3 (6,044 sq ft existing versus 10,000 sq ft required).",
+     "Listing details and zoning status require formal confirmation with municipal records and the broker.",
+     "Zoning Board of Appeals discretionary variance risk for lot area relief."
+    ],
+    "test_fit": "The site envelope allows a 65-foot building height and 1.25 FAR, yielding around 8 units by FAR. The primary limit on density is the 10,000 square foot minimum lot area standard.",
+    "value": "At the $879,900 ask price, land cost is $439,950 per unit for the existing 2-family structure, or $109,988 per buildable unit if an 8-unit variance scenario is approved.",
+    "diligence": [
+     "Confirm lot dimensions, zoning district status, and listing details with the broker and Yonkers Building Department.",
+     "Obtain official Yonkers zoning verification letter for District M rules and lot size non-conformity.",
+     "Review title report for existing 1963 structure covenants, easements, or encumbrances.",
+     "Evaluate neighbor parcels for potential land assemblage to reach 10,000 square feet."
+    ],
+    "enablers": "Variance approval from the Zoning Board of Appeals or land assemblage with adjacent lots.",
+    "highest_and_best_use": "Multifamily rental product is supported by strong market rents (such as 1-bedroom units renting for $2,467 at Hudson Piers and $2,750 at Hudson 44), but highest and best use depends on securing variance relief or assembling land to meet the 10,000 square foot minimum lot threshold.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:51:43.024768+00:00"
   },
   {
    "id": "hunt-143-oliver-ave-yonkers",
@@ -9218,8 +9725,31 @@
     }
    },
    "facts_hash": "13228e467829",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:34:54.879626+00:00"
+   "memo": {
+    "verdict": "The site is listed for $599,000, but the subject lot falls short of the M district 10,000 sf minimum lot gate for multifamily, making redevelopment uncertain without lot combination or variance relief.",
+    "as_of_right": "FAR math alone allows approximately 6 units. However, the M zoning district requires a 10,000 sf minimum lot area gate for multifamily development, while the listed lot is only 4,356 sf (listing) or 4,656 sf (county GIS).",
+    "approval_path": "Variance or site plan. A multifamily project on this parcel requires an area variance from the Zoning Board of Appeals for lot size unless combined with 35 William St, followed by Planning Board site plan review, adding entitlement risk and time.",
+    "legal_issues": [
+     "Zoning gate compliance: M district requires 10,000 sf minimum lot area for multifamily development.",
+     "Parcel size conflict: Listing indicates 4,356 sf while county GIS calculates 4,656 sf.",
+     "Unconfirmed secondary parcel: The size, zoning, and legal status of included parcel 35 William St are unstated.",
+     "Existing structure: The parcel contains an existing single-family residence built in 1904."
+    ],
+    "test_fit": "Density is limited first by the 10,000 sf minimum lot area gate for multifamily. While pure FAR math suggests around 6 units, site footprint, parking, and setbacks will restrict actual layout until 35 William St lot area is integrated.",
+    "value": "At the $599,000 asking price, land cost is $99,833 per unit assuming the theoretical 6-unit FAR yield. Value across other scenarios cannot be determined until total acreage and allowed unit counts are verified.",
+    "diligence": [
+     "Verify lot size discrepancy between listing (4,356 sf) and county GIS (4,656 sf).",
+     "Obtain tax map, title report, and survey for 35 William St to determine parcel size and legal status.",
+     "Confirm zoning classification and 10,000 sf multifamily lot gate with Yonkers Building Department.",
+     "Confirm listing details and inclusion of 35 William St with the listing broker.",
+     "Inspect existing 1904 single-family structure for demolition or environmental requirements."
+    ],
+    "enablers": "Variance relief from the Zoning Board of Appeals or combining the parcel with 35 William St to satisfy lot area thresholds.",
+    "highest_and_best_use": "Not enough data. While local new-construction rents exist (Hudson Piers rents from $2,333 for studios to $4,792 for 3BRs; Hudson 44 rents from $2,400 for studios to $3,450 for 2BRs), land comps and full site acreage are missing.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:52:48.652404+00:00"
   },
   {
    "id": "hunt-127-downing-st-yonkers",
@@ -9364,8 +9894,29 @@
     }
    },
    "facts_hash": "26671ed7ede3",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:36:25.380585+00:00"
+   "memo": {
+    "verdict": "The site is listed for $1,600,000 in District A where an FAR of 3.00 allows around 53 units on a 16,117 square foot lot, making it worth pursuing subject to zoning verification.",
+    "as_of_right": "District A (Elevator Apartment High Density) allows an FAR of 3.00. On a 16,117 square foot lot, 16,117 multiplied by 3.00 equals 48,351 buildable square feet, yielding approximately 53 units.",
+    "approval_path": "Site plan approval by the Planning Board is required for high-density multi-family development. This process introduces municipal discretionary review, public meetings, and timeline risk.",
+    "legal_issues": [
+     "Listing details must be verified directly with the broker and Yonkers city records.",
+     "Status of the parcel in the city zoning queue needs formal confirmation.",
+     "Potential mandatory inclusionary or affordable housing requirements based on recent local board precedents."
+    ],
+    "test_fit": "The 16,117 square foot site permits roughly 48,351 gross square feet under an FAR of 3.00. Yield is estimated at 50 to 53 units. Density is limited first by allowable FAR, lot square footage, and unstated parking rules.",
+    "value": "At the $1,600,000 ask, land cost is $30,189 per unit for a 53-unit scenario and $32,000 per unit for a 50-unit scenario.",
+    "diligence": [
+     "Confirm lot size, boundary map, zoning district, and queue status with Yonkers planning officials.",
+     "Review District A code details for height limits, setbacks, lot coverage, and required parking ratios.",
+     "Obtain title search to check for covenants, easements, or encumbrances.",
+     "Gather local land sale comps to benchmark land value per buildable unit."
+    ],
+    "enablers": "District A High Density Elevator Apartment zoning. Local Planning Board precedents also show approvals for high-density projects with variances and affordable housing provisions.",
+    "highest_and_best_use": "High-density multi-family rentals maximize site utilization, supported by local new-construction rents ranging from $2,333 for studios to $4,792 for 3-bedroom units. Final confirmation depends on complete land comps and construction cost estimates.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T14:53:49.424219+00:00"
   },
   {
    "id": "hunt-2889-zulette-ave-bronx",
@@ -9627,7 +10178,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:36:26.448872+00:00"
+   "checked_utc": "2026-11-27T14:53:50.023449+00:00"
   },
   {
    "id": "hunt-1865-barnes-ave-bronx",
@@ -9866,7 +10417,7 @@
    },
    "facts_hash": "6765bb318b8f",
    "memo": null,
-   "checked_utc": "2026-11-26T22:37:57.824539+00:00"
+   "checked_utc": "2026-11-27T14:55:55.504949+00:00"
   },
   {
    "id": "hunt-2819-roebling-ave-bronx",
@@ -10105,7 +10656,7 @@
    },
    "facts_hash": "72a0c63fbe75",
    "memo": null,
-   "checked_utc": "2026-11-26T22:39:28.987165+00:00"
+   "checked_utc": "2026-11-27T14:57:30.953366+00:00"
   },
   {
    "id": "hunt-127-park-ave-yonkers",
@@ -10251,7 +10802,7 @@
    },
    "facts_hash": "ecc838f67054",
    "memo": null,
-   "checked_utc": "2026-11-26T22:40:59.492182+00:00"
+   "checked_utc": "2026-11-27T14:59:15.959276+00:00"
   },
   {
    "id": "hunt-526-n-terrace-ave-mount-vernon",
@@ -10304,7 +10855,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:40:59.493651+00:00"
+   "checked_utc": "2026-11-27T14:59:15.961307+00:00"
   },
   {
    "id": "hunt-32-terrace-ave-ossining",
@@ -10353,7 +10904,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:40:59.494882+00:00"
+   "checked_utc": "2026-11-27T14:59:15.962957+00:00"
   },
   {
    "id": "hunt-187-old-mamaroneck-rd-white-plains",
@@ -10424,8 +10975,29 @@
     }
    },
    "facts_hash": "2731eb20e40e",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:42:29.995167+00:00"
+   "memo": {
+    "verdict": "Given the lack of confirmed zoning and development rights for this 6,170 square foot single-family lot, the site is not worth pursuing as a redevelopment project at the $899,999 asking price.",
+    "as_of_right": "FACTS do not state the zoning district, maximum floor area ratio, setbacks, or permitted uses for this 6,170 square foot lot. The existing use is an updated single-family raised ranch.",
+    "approval_path": "An as-of-right path is limited to single-family residential use until zoning is confirmed. Pursuing multifamily or mixed-use development would require discretionary approvals or rezonings, presenting high entitlement risk and extended timelines.",
+    "legal_issues": [
+     "Unconfirmed zoning classification and lack of verified development allowances.",
+     "Listing details originate solely from a listing page without municipal confirmation.",
+     "Potential non-conforming lot width or area constraints on a 55 by 113 foot parcel."
+    ],
+    "test_fit": "The lot measures 55 feet by 113 feet for a total of 6,170 square feet. It currently hosts an updated single-family raised ranch. FACTS provide no bulk standards, building envelope limits, or parking minimums to calculate higher density.",
+    "value": "At an asking price of $899,999, the land cost is $899,999 per unit for the existing single-family residence. FACTS contain no other unit counts, buildable square footage, or land comps to evaluate additional scenarios.",
+    "diligence": [
+     "Obtain official White Plains zoning map and zoning code verification for 187 Old Mamaroneck Road.",
+     "Order a boundary and topographic survey to confirm the 55 by 113 foot (6,170 square foot) lot dimensions.",
+     "Confirm listing details and active property status with the listing broker.",
+     "Review the One White Plains Comprehensive Plan for any future land-use designations affecting this corridor."
+    ],
+    "enablers": "The One White Plains Comprehensive Plan was adopted on June 12, 2024, addressing citywide housing, land use, and zoning.",
+    "highest_and_best_use": "not enough data",
+    "letter_angle": "",
+    "_model": "gemini-flash-latest"
+   },
+   "checked_utc": "2026-11-27T15:01:37.426081+00:00"
   },
   {
    "id": "hunt-13471351-intervale-ave-3lot-package-1347-1349-1351-bronx",
@@ -10647,7 +11219,7 @@
    },
    "facts_hash": "f2be155e8844",
    "memo": null,
-   "checked_utc": "2026-11-26T22:44:01.438074+00:00"
+   "checked_utc": "2026-11-27T15:05:17.488002+00:00"
   },
   {
    "id": "hunt-1720-boone-ave-bronx",
@@ -10925,7 +11497,7 @@
    },
    "facts_hash": "9bf0649886e9",
    "memo": null,
-   "checked_utc": "2026-11-26T22:45:32.691444+00:00"
+   "checked_utc": "2026-11-27T15:08:35.517679+00:00"
   },
   {
    "id": "hunt-4638-white-plains-rd-bronx",
@@ -11133,7 +11705,7 @@
    },
    "facts_hash": "141314c0f4a7",
    "memo": null,
-   "checked_utc": "2026-11-26T22:47:03.837327+00:00"
+   "checked_utc": "2026-11-27T15:11:51.413235+00:00"
   },
   {
    "id": "hunt-675-east-223rd-st-bronx",
@@ -11341,7 +11913,7 @@
    },
    "facts_hash": "39deddd811cc",
    "memo": null,
-   "checked_utc": "2026-11-26T22:48:35.019985+00:00"
+   "checked_utc": "2026-11-27T15:13:27.932301+00:00"
   },
   {
    "id": "hunt-2769-reservoir-ave-bronx",
@@ -11607,7 +12179,7 @@
    },
    "facts_hash": "5ce05bc0d954",
    "memo": null,
-   "checked_utc": "2026-11-26T22:50:06.510470+00:00"
+   "checked_utc": "2026-11-27T15:17:34.531834+00:00"
   },
   {
    "id": "hunt-742-east-214th-st-bronx",
@@ -11814,8 +12386,30 @@
     }
    },
    "facts_hash": "f84d8a593eb8",
-   "memo": null,
-   "checked_utc": "2026-11-26T22:51:38.520606+00:00"
+   "memo": {
+    "verdict": "A 12 to 15 unit residential building can realistically be built as-of-right, making the project worth pursuing at the $980,000 ask price.",
+    "as_of_right": "Under R7A zoning on a 2,500 SF lot (25 x 100), the standard residential FAR of 4.00 allows 10,000 buildable SF, which equals approximately 12 units at an average size of 795 SF.",
+    "approval_path": "As-of-right, which requires routine Department of Buildings plan approval and permitting with no discretionary board approvals, resulting in low entitlement risk and faster timing.",
+    "legal_issues": [
+     "MapPLUTO search returned a parcel lookup error, requiring confirmation of tax lot status.",
+     "Listing details originate from a broker deck and require verification against official records.",
+     "Vacant delivery of the existing 1,652 SF two-family building (built 1901) must be confirmed via title and lease checks."
+    ],
+    "test_fit": "The building envelope supports 10,000 SF (~12 units) standard or 12,525 SF (~15 units) under UAP. The 25-foot lot width limits design efficiency and layout options first.",
+    "value": "At the $980,000 ask, land cost is $98.00/BSF under standard R7A (10,000 SF) and $78.24/BSF under the UAP tier (12,525 SF). This pricing falls below nearby Bronx land comps ranging from $89 to $168 per buildable SF.",
+    "diligence": [
+     "Verify tax lot existence and zoning map classification to resolve the MapPLUTO parcel error.",
+     "Confirm eligibility and specific rules for the UAP tier (5.01 FAR) on this site.",
+     "Obtain a title report and survey to confirm the 25 x 100 lot dimensions and vacant possession.",
+     "Review the Landair offering deck and historical IPRG offering memorandum.",
+     "Inspect the existing 1901 structure for demolition requirements."
+    ],
+    "enablers": "Universal Affordability Preference (UAP) raises allowable residential FAR from 4.00 to 5.01.",
+    "highest_and_best_use": "Multi-family rental building of 12 to 15 units. Nearby 2024 rental comps at The Bronx Vibe achieve rents of $2,580 for studios, $2,895 for 1BRs, and $3,300 for 2BRs, supporting strong rental cash flow subject to construction cost feasibility on a 25-foot lot.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T15:18:56.783907+00:00"
   },
   {
    "id": "hunt-east-tremont-bronx-development-site-25x145-lot-r71-east-trem",
@@ -12023,7 +12617,7 @@
    },
    "facts_hash": "e018ab71bb01",
    "memo": null,
-   "checked_utc": "2026-11-26T22:53:09.923208+00:00"
+   "checked_utc": "2026-11-27T15:20:38.090191+00:00"
   },
   {
    "id": "hunt-4352-wilder-ave-bronx",
@@ -12254,7 +12848,7 @@
     "letter_angle": "",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T22:54:35.578828+00:00"
+   "checked_utc": "2026-11-27T15:20:38.806332+00:00"
   },
   {
    "id": "yon-1.-445-10",
@@ -12466,7 +13060,7 @@
    },
    "facts_hash": "11cc4cd9aa45",
    "memo": null,
-   "checked_utc": "2026-11-26T22:56:11.421243+00:00"
+   "checked_utc": "2026-11-27T15:22:19.413906+00:00"
   },
   {
    "id": "yon-1.-176-29",
@@ -12679,7 +13273,7 @@
    },
    "facts_hash": "80290698b231",
    "memo": null,
-   "checked_utc": "2026-11-26T22:57:49.978481+00:00"
+   "checked_utc": "2026-11-27T15:23:52.503027+00:00"
   },
   {
    "id": "yon-1.-211-66",
@@ -12891,7 +13485,7 @@
    },
    "facts_hash": "73ef1082e569",
    "memo": null,
-   "checked_utc": "2026-11-26T22:59:27.825149+00:00"
+   "checked_utc": "2026-11-27T15:26:00.145419+00:00"
   },
   {
    "id": "yon-4.-4652-56",
@@ -13104,7 +13698,7 @@
    },
    "facts_hash": "450cc3693426",
    "memo": null,
-   "checked_utc": "2026-11-26T23:01:19.885045+00:00"
+   "checked_utc": "2026-11-27T15:27:38.966811+00:00"
   },
   {
    "id": "yon-4.-4651-86",
@@ -13314,8 +13908,30 @@
     "conflicts_with_independent_check": []
    },
    "facts_hash": "5f323ad22862",
-   "memo": null,
-   "checked_utc": "2026-11-26T23:02:56.983861+00:00"
+   "memo": {
+    "verdict": "The site realistically allows a 2-lot single-family subdivision, but it is not worth pursuing at the $1,190,000 asking price.",
+    "as_of_right": "S-75 zoning permits single-family detached homes only. The 17,096 sf lot with 167 ft of frontage supports 2 conforming lots based on the 7,500 sf minimum lot area (17,096 / 7,500 = 2 lots) and 75 ft minimum lot width (167 / 75 = 2 lots). Base FAR is 0.60, maximum lot coverage is 35%, and maximum height is 2.5 stories or 35 ft. Required setbacks are 25 ft front, 25 ft rear, 11 ft single side, and 23 ft total side yards. Parking requires 2 spaces per home.",
+    "approval_path": "As-of-right subdivision subject to Planning Board subdivision approval. This carries low entitlement risk but requires standard site plan review and engineering oversight for grading.",
+    "legal_issues": [
+     "Yonkers Planning Board subdivision approval is required to divide the parcel into 2 lots.",
+     "A ~50 ft grade change creates physical construction and slope stability challenges.",
+     "Street frontage of 167 ft is based on county parcel bounds and lacks official city tax map annotation.",
+     "S-75 zoning strictly prohibits two-family, townhouse, and multifamily structures."
+    ],
+    "test_fit": "Subdivision yields two ~8,548 sf lots. Each lot permits a maximum footprint of 2,992 sf (35% coverage cap) and up to ~5,129 sf gross floor area under 0.60 FAR across 2.5 stories. Setback limits are 25 ft front/rear and 11 ft/23 ft side. The maximum unit count is 2 single-family homes requiring 4 total parking spaces. Permitted use and lot size limit density first.",
+    "value": "Land cost is $595,000 per buildable lot at the $1,190,000 ask. A second analyst's pro forma estimates maximum supportable land value at -$1,087,231 (-$543,615 per unit) based on a 2.88% yield on cost under a rental hold model with $1,950,000 total development cost.",
+    "diligence": [
+     "Obtain an official City of Yonkers tax map or survey to verify the 167 ft frontage.",
+     "Commission a topographic and geotechnical study to evaluate the ~50 ft grade change.",
+     "Review Yonkers Planning Board subdivision requirements and utility connection paths.",
+     "Gather single-family home sale comps to test a for-sale exit strategy."
+    ],
+    "enablers": "None. FACTS show no rezoning precedents, overlay districts, TOD incentives, or affordable density bonuses for single-family S-75 lots.",
+    "highest_and_best_use": "Not enough data. FACTS contain multifamily rental comps for Hudson Piers and Hudson 44, but lack single-family sales comps required to evaluate the for-sale exit value of the permitted 2-lot subdivision.",
+    "letter_angle": "",
+    "_model": "gemini-3.6-flash"
+   },
+   "checked_utc": "2026-11-27T15:29:26.406870+00:00"
   },
   {
    "id": "nyc-4004110018",
@@ -13439,7 +14055,7 @@
     "letter_angle": "Approach the off-market owner directly to assess interest in a potential sale or joint-venture development.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T23:02:57.239386+00:00"
+   "checked_utc": "2026-11-27T15:29:26.633786+00:00"
   },
   {
    "id": "nyc-2023490080",
@@ -13716,7 +14332,7 @@
    },
    "facts_hash": "a2a26445809f",
    "memo": null,
-   "checked_utc": "2026-11-26T23:04:27.876503+00:00"
+   "checked_utc": "2026-11-27T15:30:57.099520+00:00"
   },
   {
    "id": "nyc-4003810005",
@@ -13795,7 +14411,7 @@
    },
    "facts_hash": "3cc2575e2a12",
    "memo": null,
-   "checked_utc": "2026-11-26T23:05:58.575135+00:00"
+   "checked_utc": "2026-11-27T15:32:28.393463+00:00"
   },
   {
    "id": "nyc-2023200066",
@@ -14093,7 +14709,7 @@
     "letter_angle": "Directly approach owner Mott Haven Holdings, LLC with an off-market inquiry focusing on a joint venture or favorable terms.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T23:05:58.703958+00:00"
+   "checked_utc": "2026-11-27T15:32:28.518176+00:00"
   },
   {
    "id": "nyc-2030550047",
@@ -14370,7 +14986,7 @@
    },
    "facts_hash": "5b3bc1f922c5",
    "memo": null,
-   "checked_utc": "2026-11-26T23:07:29.358305+00:00"
+   "checked_utc": "2026-11-27T15:33:59.141975+00:00"
   },
   {
    "id": "nyc-3025650060",
@@ -14495,7 +15111,7 @@
     "letter_angle": "Approach owner Seventy West Realty LLC directly to explore an off-market acquisition or partnership around the MX-8 zoning potential.",
     "_model": "gemini-3.6-flash"
    },
-   "checked_utc": "2026-11-26T23:07:29.496789+00:00"
+   "checked_utc": "2026-11-27T15:33:59.299233+00:00"
   }
  ],
  "method": "BOUNTY feasibility memos: land-use attorney + architect review for every listed site\nand the strongest off-market targets.\n\nTwo layers, kept separate on purpose:\n  1. FACTS AND MATH (deterministic): parcel data from the official GIS (NYC MapPLUTO,\n     Westchester County parcels), street frontage measured edge by edge, the zoning\n     district's floor area (NYC ZR 23-22 standard and UAP), verified municipal rules\n     (Yonkers Table 43-3 / 43-4: FAR, lot area per unit, coverage, parking), approvals\n     with their public sources (bounty/data/feasibility_sites.json).\n  2. MEMO (Gemini, free tier, no web access): writes the attorney/architect memo from\n     those facts only. It may not add approvals, dates, numbers or programs that are not\n     in the facts; anything missing is listed as a diligence item.\n\nOutput: bounty/data/feasibility.json"
