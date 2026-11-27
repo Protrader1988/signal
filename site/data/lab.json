@@ -149,11 +149,11 @@
           "ret": -0.006219,
           "spread": -0.008225,
           "ic": -0.2383,
-          "cost": 0.0001
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.2,
+      "turnover": 0.0,
       "stats": {
         "days": 19,
         "cum_pct": -23.33,
@@ -367,11 +367,11 @@
           "ret": -0.008862,
           "spread": -0.010868,
           "ic": -0.2691,
-          "cost": 0.0001
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.2,
+      "turnover": 0.0,
       "stats": {
         "days": 26,
         "cum_pct": -24.35,
@@ -630,11 +630,11 @@
           "ret": 0.005872,
           "spread": 0.004166,
           "ic": 0.0118,
-          "cost": 0.0004
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.8,
+      "turnover": 0.0,
       "stats": {
         "days": 32,
         "cum_pct": -14.68,
@@ -851,11 +851,11 @@
           "ret": 0.002052,
           "spread": 4.6e-05,
           "ic": -0.0059,
-          "cost": 0.0001
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.2,
+      "turnover": 0.0,
       "stats": {
         "days": 25,
         "cum_pct": 0.64,
@@ -1004,20 +1004,15 @@
           "ret": -0.015489,
           "spread": 0.00155,
           "ic": 0.0824,
-          "cost": 0.0005
-        },
-        {
-          "date": "2026-11-25",
-          "ret": 0.0,
           "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0,
       "stats": {
-        "days": 17,
+        "days": 16,
         "cum_pct": -16.94,
-        "needs_days": 3,
+        "needs_days": 4,
         "too_early": true
       },
       "signal": {
@@ -1185,11 +1180,11 @@
           "ret": -0.006219,
           "spread": -0.008225,
           "ic": -0.2383,
-          "cost": 0.0001
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.2,
+      "turnover": 0.0,
       "stats": {
         "days": 19,
         "cum_pct": -23.33,
@@ -1302,20 +1297,15 @@
           "ret": -0.032776,
           "spread": -0.018126,
           "ic": -0.2544,
-          "cost": 0.0005
-        },
-        {
-          "date": "2026-11-25",
-          "ret": 0.0,
           "cost": 0.0
         }
       ],
       "retired_reason": null,
       "turnover": 0,
       "stats": {
-        "days": 14,
+        "days": 13,
         "cum_pct": -16.02,
-        "needs_days": 6,
+        "needs_days": 7,
         "too_early": true
       },
       "signal": {
@@ -1555,11 +1545,11 @@
           "ret": 0.005486,
           "spread": 0.00368,
           "ic": 0.0,
-          "cost": 0.0003
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.6,
+      "turnover": 0.0,
       "stats": {
         "days": 31,
         "cum_pct": -16.49,
@@ -1806,11 +1796,11 @@
           "ret": -0.00309,
           "spread": -0.004996,
           "ic": -0.1559,
-          "cost": 0.0002
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.4,
+      "turnover": 0.0,
       "stats": {
         "days": 30,
         "cum_pct": -3.86,
@@ -2069,11 +2059,11 @@
           "ret": -0.004729,
           "spread": -0.006675,
           "ic": -0.2369,
-          "cost": 0.00016
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.32,
+      "turnover": 0.0,
       "stats": {
         "days": 32,
         "cum_pct": -17.38,
@@ -2260,11 +2250,11 @@
           "ret": -0.006207,
           "spread": -0.008218,
           "ic": -0.2389,
-          "cost": 9.5e-05
+          "cost": 0.0
         }
       ],
       "retired_reason": null,
-      "turnover": 0.191,
+      "turnover": 0.0,
       "stats": {
         "days": 20,
         "cum_pct": -25.0,
@@ -2443,17 +2433,11 @@
       "status": "warming up",
       "positions": {},
       "as_of": "2026-11-25",
-      "live": [
-        {
-          "date": "2026-11-25",
-          "ret": 0.0,
-          "cost": 0.0
-        }
-      ],
+      "live": [],
       "retired_reason": null,
       "turnover": 0,
       "stats": {
-        "days": 1
+        "days": 0
       },
       "signal": {
         "days": 0,
@@ -2561,6 +2545,6 @@
   },
   "phantom_purge": {
     "removed": 3,
-    "on": "2026-11-26"
+    "on": "2026-11-27"
   }
 }

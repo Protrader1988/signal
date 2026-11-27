@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-26T03:54:37.381081+00:00",
+  "generated_utc": "2026-11-27T03:57:44.469215+00:00",
   "method": "Market model event study. Alpha and beta are fitted by OLS on the 250 sessions ending 21 before each announcement; abnormal return is the stock's return minus what that fitted market sensitivity predicts. Window figures are buy-and-hold abnormal returns \u2014 compounded, the way a holder experiences them \u2014 while the event-time chart shows the cumulative daily path. Day 0 is the announcement session, which is mostly gapped and therefore mostly unbuyable; every other window starts at the day-0 close, the first price a retail account could actually pay. Deals with under 60 estimation observations fall back to a plain market adjustment and are labelled.",
   "limits": "Read the sample sizes before the medians. 34 events across 8 structures, with 6 of those structures large enough to report a median at all, is a small sample: the bootstrap intervals and sign-test p-values are printed so that stays visible rather than hidden, and a median whose interval straddles zero is not evidence. Nothing here is a backtest, none of it is advice, and the forward ledger below is the only part that will ever be genuinely out of sample.",
   "coverage": {
@@ -3359,7 +3359,7 @@
         "28": -9.09,
         "29": -5.94,
         "30": -7.87,
-        "31": -8.16,
+        "31": -8.17,
         "32": -7.0,
         "33": -7.66,
         "34": -6.07,
@@ -6018,9 +6018,9 @@
       "thesis": null,
       "recipient": "LOCKHEED MARTIN",
       "federal": {
-        "total": 48324865306.0,
+        "total": 48251994285.0,
         "count": 300,
-        "last_action": "2026-11-23",
+        "last_action": "2026-11-24",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6035,7 +6035,7 @@
       "thesis": null,
       "recipient": "RTX",
       "federal": {
-        "total": 16970908408.0,
+        "total": 16970423551.0,
         "count": 300,
         "last_action": "2026-11-13",
         "top_agency": "Department of Defense",
@@ -6052,9 +6052,9 @@
       "thesis": null,
       "recipient": "GENERAL DYNAMICS",
       "federal": {
-        "total": 9537325529.0,
+        "total": 9556154533.0,
         "count": 300,
-        "last_action": "2026-11-23",
+        "last_action": "2026-11-24",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6069,9 +6069,9 @@
       "thesis": null,
       "recipient": "HUNTINGTON INGALLS",
       "federal": {
-        "total": 7997829918.0,
+        "total": 7997028282.0,
         "count": 300,
-        "last_action": "2026-11-19",
+        "last_action": "2026-11-24",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6103,9 +6103,9 @@
       "thesis": null,
       "recipient": "L3HARRIS",
       "federal": {
-        "total": 2738871893.0,
+        "total": 2718295275.0,
         "count": 300,
-        "last_action": "2026-11-23",
+        "last_action": "2026-11-24",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6120,9 +6120,9 @@
       "thesis": null,
       "recipient": "INTERNATIONAL BUSINESS MACHINES",
       "federal": {
-        "total": 1691542486.0,
+        "total": 1571518486.0,
         "count": 300,
-        "last_action": "2026-11-20",
+        "last_action": "2026-11-24",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6190,7 +6190,7 @@
       "federal": {
         "total": 138492736.0,
         "count": 300,
-        "last_action": "2026-11-23",
+        "last_action": "2026-11-24",
         "top_agency": "Department of Defense",
         "truncated": false,
         "basis": "aggregated by recipient",
@@ -6635,7 +6635,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 151792177.77
+          "amount": 151781677.77
         },
         {
           "period": "FY2025 Q2",
@@ -6713,14 +6713,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 600611678.61
+          "amount": 600689363.55
         },
         {
           "period": "FY2027 Q1",
           "amount": 4488149.26
         }
       ],
-      "last4": 3229747139.9000006,
+      "last4": 3229824824.84,
       "prior4": 2861502128.58,
       "yoy_pct": 12.9,
       "link": "https://www.usaspending.gov/search?keywords=unmanned%20aircraft"
@@ -6763,14 +6763,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 195783282.28
+          "amount": 195794095.06
         },
         {
           "period": "FY2027 Q1",
-          "amount": 959386.38
+          "amount": 1014033.41
         }
       ],
-      "last4": 1813118620.48,
+      "last4": 1813184080.29,
       "prior4": 2385424841.84,
       "yoy_pct": -24.0,
       "link": "https://www.usaspending.gov/search?keywords=nuclear%20reactor"
@@ -6785,7 +6785,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 82498146.22
+          "amount": 82461167.44
         },
         {
           "period": "FY2025 Q2",
@@ -6813,14 +6813,14 @@
         },
         {
           "period": "FY2026 Q4",
-          "amount": 148266720.15
+          "amount": 148295570.15
         },
         {
           "period": "FY2027 Q1",
-          "amount": 713131.74
+          "amount": 748131.74
         }
       ],
-      "last4": 891156264.33,
+      "last4": 891220114.33,
       "prior4": 1374853744.2,
       "yoy_pct": -35.2,
       "link": "https://www.usaspending.gov/search?keywords=semiconductor"
@@ -6837,7 +6837,7 @@
       "series": [
         {
           "period": "FY2025 Q1",
-          "amount": 1216148.92
+          "amount": 1215961.08
         },
         {
           "period": "FY2025 Q2",
@@ -7033,6 +7033,38 @@
   },
   "detection": [
     {
+      "company": "UCHICAGO ARGONNE, LLC",
+      "amount": 17752289339.85,
+      "date": "2026-11-24",
+      "agency": "Department of Energy",
+      "desc": "PERFORMANCE-BASED CONTRACT FOR MANAGEMENT AND OPERATION OF ARGONNE NATIONAL LABORATORY",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
+      "company": "PANTEXAS DETERRENCE, LLC",
+      "amount": 3875509200.38,
+      "date": "2026-11-24",
+      "agency": "Department of Energy",
+      "desc": "CONTRACT 89233224CNA000004 FOR THE MANAGEMENT AND OPERATION OF THE PANTEX PLANT",
+      "source": "USAspending",
+      "matched": "award >= $50M",
+      "form": "award",
+      "link": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-",
+      "ticker": null,
+      "quality": "award record",
+      "named": [],
+      "candidates": [],
+      "status": "unverified"
+    },
+    {
       "company": "BECHTEL NATIONAL, INC.",
       "amount": 17956041439.14,
       "date": "2026-11-23",
@@ -7081,22 +7113,6 @@
       "matched": "unmanned",
       "ticker": null,
       "quality": "agency release",
-      "named": [],
-      "candidates": [],
-      "status": "unverified"
-    },
-    {
-      "company": "PANTEXAS DETERRENCE, LLC",
-      "amount": 3865509200.38,
-      "date": "2026-11-19",
-      "agency": "Department of Energy",
-      "desc": "CONTRACT 89233224CNA000004 FOR THE MANAGEMENT AND OPERATION OF THE PANTEX PLANT",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
       "named": [],
       "candidates": [],
       "status": "unverified"
@@ -7181,22 +7197,6 @@
       "candidates": [
         "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC"
       ],
-      "status": "unverified"
-    },
-    {
-      "company": "UCHICAGO ARGONNE, LLC",
-      "amount": 17738629471.77,
-      "date": "2026-11-17",
-      "agency": "Department of Energy",
-      "desc": "PERFORMANCE-BASED CONTRACT FOR MANAGEMENT AND OPERATION OF ARGONNE NATIONAL LABORATORY",
-      "source": "USAspending",
-      "matched": "award >= $50M",
-      "form": "award",
-      "link": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-",
-      "ticker": null,
-      "quality": "award record",
-      "named": [],
-      "candidates": [],
       "status": "unverified"
     },
     {
@@ -7417,9 +7417,32 @@
       "quality": "award record",
       "named": [],
       "status": "unverified"
+    },
+    {
+      "company": "Australia\u2013US critical minerals pact turns one: Five investor takeaways - Australian Resources & Investment",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOM3pJSWdFQnhQN1BPNV91NUxNOWN1Skhnd0tDZFZ4b2dVTzRuc2dRcUxuSHRzcmZjOGd4VHNQNkt3a0NjYWF3dXFVNDdvUHp1bXl0dnNOMU9DMXh0WnAwRnRUcm9zWElrQ1gweEJMUHpBLTdvcFllVE9ESmNtZjctWEJjSGM0cnIyQ1dFbnA0eVpySzlPbDdzMTNLOUhyYTliczRwNU9tRzRaRmJXN0N6VGF6TFdYc1BscHJTUlJfMA?oc=5",
+      "date": "2026-10-20",
+      "source": "Australian Resources & Investment",
+      "matched": "offtake",
+      "form": "headline",
+      "ticker": null,
+      "quality": "headline",
+      "named": [],
+      "candidates": [
+        "Australian Resources"
+      ],
+      "status": "unverified"
     }
   ],
   "documents": [
+    {
+      "title": "Extending Deadlines for Submissions by Importers of Automobiles Qualifying for Preferential Tariff Treatment Under the USMCA To Determine U.S. Content",
+      "link": "https://www.federalregister.gov/documents/2026/11/27/2026-24076/extending-deadlines-for-submissions-by-importers-of-automobiles-qualifying-for-preferential-tariff",
+      "date": "2026-11-27",
+      "source": "Commerce Department, International Trade Administration",
+      "kind": "Notice",
+      "matched": "tariff"
+    },
     {
       "title": "Contracts for Nov. 25, 2026",
       "company": "Contracts for Nov. 25, 2026",
@@ -7429,14 +7452,6 @@
       "kind": "contracts digest",
       "matched": "daily contracts",
       "form": "contract"
-    },
-    {
-      "title": "Southern Nuclear Operating Company; Vogtle Electric Generating Plant, Units 3 and 4; Exemptions",
-      "link": "https://www.federalregister.gov/documents/2026/11/24/2026-23887/southern-nuclear-operating-company-vogtle-electric-generating-plant-units-3-and-4-exemptions",
-      "date": "2026-11-24",
-      "source": "Nuclear Regulatory Commission",
-      "kind": "Notice",
-      "matched": "nuclear"
     },
     {
       "title": "Contracts for Nov. 24, 2026",
@@ -7514,7 +7529,7 @@
         "backfilled": false,
         "return_since_seen_pct": -25.9,
         "last_price": 17.02,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "TMQ:2026-09-11",
@@ -7526,7 +7541,7 @@
         "backfilled": true,
         "return_since_seen_pct": -57.1,
         "last_price": 1.4,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "RGTI:2026-09-08",
@@ -7538,7 +7553,7 @@
         "backfilled": true,
         "return_since_seen_pct": -50.2,
         "last_price": 7.85,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "QBTS:2026-09-08",
@@ -7550,7 +7565,7 @@
         "backfilled": true,
         "return_since_seen_pct": -59.1,
         "last_price": 7.0,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "AA:2026-08-31",
@@ -7562,7 +7577,7 @@
         "backfilled": true,
         "return_since_seen_pct": -21.1,
         "last_price": 35.07,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "KTOS:2026-08-14",
@@ -7574,7 +7589,7 @@
         "backfilled": true,
         "return_since_seen_pct": -39.0,
         "last_price": 28.95,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "AVAV:2026-08-14",
@@ -7586,7 +7601,7 @@
         "backfilled": true,
         "return_since_seen_pct": -42.9,
         "last_price": 91.37,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "RCAT:2026-08-14",
@@ -7598,7 +7613,7 @@
         "backfilled": true,
         "return_since_seen_pct": -73.9,
         "last_price": 1.76,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "ONDS:2026-08-14",
@@ -7610,7 +7625,7 @@
         "backfilled": true,
         "return_since_seen_pct": -47.2,
         "last_price": 3.9,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "GFS:2026-07-29",
@@ -7622,7 +7637,7 @@
         "backfilled": true,
         "return_since_seen_pct": -24.3,
         "last_price": 36.2,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "IBM:2026-06-22",
@@ -7634,7 +7649,7 @@
         "backfilled": true,
         "return_since_seen_pct": 6.1,
         "last_price": 243.47,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       },
       {
         "key": "QBTS:2026-06-22",
@@ -7646,7 +7661,7 @@
         "backfilled": true,
         "return_since_seen_pct": -59.1,
         "last_price": 7.0,
-        "last_update": "2026-11-26"
+        "last_update": "2026-11-27"
       }
     ]
   },
@@ -7654,69 +7669,69 @@
     "sector_flow": {
       "ok": true,
       "note": "8 of 8 sectors returned quarterly data",
-      "checked_utc": "2026-11-26T03:51:21+00:00"
+      "checked_utc": "2026-11-27T03:53:02+00:00"
     },
     "sec_tickers": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden",
-      "checked_utc": "2026-11-26T03:51:31+00:00"
+      "checked_utc": "2026-11-27T03:53:11+00:00"
     },
     "whitehouse": {
       "ok": true,
       "note": "2 of 30 posts cleared the evidence bar (24 bodies read)",
-      "checked_utc": "2026-11-26T03:51:50+00:00"
+      "checked_utc": "2026-11-27T03:53:28+00:00"
     },
     "dow_rss": {
       "ok": true,
       "note": "14 releases",
-      "checked_utc": "2026-11-26T03:51:50+00:00"
+      "checked_utc": "2026-11-27T03:53:28+00:00"
     },
     "sec_edgar": {
       "ok": false,
       "note": "HTTP Error 403: Forbidden \u2014 detection continues on the award and news feeds",
-      "checked_utc": "2026-11-26T03:52:22+00:00"
+      "checked_utc": "2026-11-27T03:54:00+00:00"
     },
     "usaspending_recent": {
       "ok": true,
       "note": "14 of 80 awards over $50M kept (14 facility operators dropped)",
-      "checked_utc": "2026-11-26T03:52:24+00:00"
+      "checked_utc": "2026-11-27T03:54:02+00:00"
     },
     "news_detect": {
       "ok": true,
       "note": "15 headlines",
-      "checked_utc": "2026-11-26T03:52:26+00:00"
+      "checked_utc": "2026-11-27T03:54:03+00:00"
     },
     "federal_register": {
       "ok": true,
       "note": "2 documents",
-      "checked_utc": "2026-11-26T03:52:28+00:00"
+      "checked_utc": "2026-11-27T03:54:06+00:00"
     },
     "dow_contracts": {
       "ok": true,
       "note": "6 daily digests",
-      "checked_utc": "2026-11-26T03:52:28+00:00"
+      "checked_utc": "2026-11-27T03:54:06+00:00"
     },
     "reading": {
       "ok": false,
       "note": "extraction failed: gemini-2.5-flash: HTTP 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash ",
-      "checked_utc": "2026-11-26T03:52:28+00:00"
+      "checked_utc": "2026-11-27T03:55:36+00:00"
     },
     "usaspending_agg": {
       "ok": false,
       "note": "no recipient match in aggregate response",
-      "checked_utc": "2026-11-26T03:54:37+00:00"
+      "checked_utc": "2026-11-27T03:57:44+00:00"
     },
     "usaspending": {
       "ok": true,
       "note": "queried [no rows]",
-      "checked_utc": "2026-11-26T03:54:37+00:00"
+      "checked_utc": "2026-11-27T03:57:44+00:00"
     }
   },
   "counts": {
     "events": 34,
     "testable": 34,
     "radar": 9,
-    "detection": 22,
+    "detection": 23,
     "documents": 8,
     "pipeline": 0,
     "flow": 8

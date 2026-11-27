@@ -1,6 +1,6 @@
 {
   "as_of_equity": "2026-11-25",
-  "as_of_crypto": "2026-11-26",
+  "as_of_crypto": "2026-11-27",
   "conditions": {
     "available": true,
     "as_of": "2026-11-25",
@@ -178,16 +178,16 @@
     "btc_trend": {
       "available": true,
       "on": false,
-      "price": 60852.14,
-      "sma_150": 72906.6,
-      "gap_pct": -16.5,
+      "price": 61441.38,
+      "sma_150": 72912.13,
+      "gap_pct": -15.7,
       "since": "2026-11-12",
-      "as_of": "2026-11-26",
+      "as_of": "2026-11-27",
       "rule": "Hold Bitcoin while its price is above its 150-day average; otherwise hold cash.",
       "evidence": "2015 to 2026 backtest: 76% a year vs 66% for holding, worst drop -62% vs -83%. Since mid-2022 (data it was not fitted to): 35% a year vs 40%, worst drop -28% vs -53%."
     },
     "label": "RISK-MANAGED BETA \u2014 not a signal edge. High risk (historical drawdowns ~-59% even vol-targeted).",
-    "as_of": "2026-11-26"
+    "as_of": "2026-11-27"
   },
   "disclaimer": "Educational signals from a validated momentum model. Not investment advice. Execute in your own brokerage at your discretion."
 }

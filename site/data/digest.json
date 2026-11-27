@@ -1,4 +1,34 @@
 {
-  "available": false,
-  "note": "AI digest temporarily unavailable (RuntimeError). The real headlines below are unaffected."
+  "available": true,
+  "generated_utc": "2026-11-27T03:59:07.143165+00:00",
+  "model": "gemini-3.6-flash",
+  "market": {
+    "lean": "leaning bullish",
+    "confidence": "medium",
+    "summary": "U.S. equities are rebounding into Black Friday trading, fueled by a tech/AI bounce, strong jobs data (+165,000 in Oct), and a recovery from recent sell-offs. However, hawkish Fed commentary signaling potential rate hikes due to persistent inflation threatens to limit upside momentum.",
+    "bull": "Stock futures are ticking higher, the Dow erased a dramatic 1,100-point loss, tech/AI is rebounding, and solid jobs data highlights underlying economic resilience.",
+    "bear": "Fed officials like John Williams are signaling higher interest rates ahead, with inflation worsening and a potential December rate hike looming to damp risk appetite.",
+    "watch": "Fed rate expectations ahead of the December meeting and incoming Black Friday retail holiday spending metrics."
+  },
+  "takes": [
+    {
+      "topic": "Federal Reserve & Interest Rates",
+      "lean": "leaning bearish",
+      "confidence": "high",
+      "note": "Headline reports and Fed official John Williams indicate rates are likely rising in December and over time to combat worsening inflation, pressuring broader market valuation multiples."
+    },
+    {
+      "topic": "U.S. Equity Momentum",
+      "lean": "leaning bullish",
+      "confidence": "medium",
+      "note": "Futures and major indexes are clawing back severe losses, buoyed by a rebound in AI trades and positive labor data showing 165,000 jobs added in October."
+    },
+    {
+      "topic": "Energy & Refining Sector",
+      "lean": "leaning bearish",
+      "confidence": "medium",
+      "note": "Refiners like Valero (VLO) and Phillips 66 (PSX) are suffering severe downward momentum with 8 straight red days, despite valuation bargain calls on mega-caps like ExxonMobil and ConocoPhillips."
+    }
+  ],
+  "disclaimer": "AI interpretation of real public headlines. Not a forecast, not investment advice \u2014 markets can move against any read. Confidence levels reflect genuine uncertainty."
 }
