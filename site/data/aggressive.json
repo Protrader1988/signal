@@ -177,6 +177,11 @@
       "date": "2026-11-25",
       "value": 77129.14,
       "spy": 93121.46
+    },
+    {
+      "date": "2026-11-27",
+      "value": 78274.52,
+      "spy": 94631.26
     }
   ],
   "trades": [
@@ -216,64 +221,64 @@
   ],
   "spy_start": 769.6400146484375,
   "start_value": 100000.0,
-  "updated": "2026-11-25",
-  "value": 77129.14,
-  "return_pct": -22.87,
-  "spy_return_pct": -6.88,
+  "updated": "2026-11-27",
+  "value": 78274.52,
+  "return_pct": -21.73,
+  "spy_return_pct": -5.37,
   "max_drawdown_pct": -22.76,
-  "days_tracked": 33,
+  "days_tracked": 34,
   "holdings": [
     {
       "ticker": "TGT",
       "shares": 53.6026,
-      "price": 172.22,
-      "value": 9231.43,
-      "weight_pct": 12.0
+      "price": 171.97,
+      "value": 9218.03,
+      "weight_pct": 11.8
     },
     {
       "ticker": "TMO",
       "shares": 12.4362,
-      "price": 685.52,
-      "value": 8525.26,
-      "weight_pct": 11.1
+      "price": 683.04,
+      "value": 8494.42,
+      "weight_pct": 10.9
     },
     {
       "ticker": "MRK",
       "shares": 57.2228,
-      "price": 140.29,
-      "value": 8027.78,
-      "weight_pct": 10.4
+      "price": 141.32,
+      "value": 8086.72,
+      "weight_pct": 10.3
     },
     {
       "ticker": "AMD",
       "shares": 18.1852,
-      "price": 406.03,
-      "value": 7383.73,
-      "weight_pct": 9.6
+      "price": 424.54,
+      "value": 7720.34,
+      "weight_pct": 9.9
     },
     {
       "ticker": "PSX",
       "shares": 30.8667,
-      "price": 236.08,
-      "value": 7287.01,
-      "weight_pct": 9.4
+      "price": 242.12,
+      "value": 7473.44,
+      "weight_pct": 9.5
     },
     {
       "ticker": "VLO",
       "shares": 22.2555,
-      "price": 323.0,
-      "value": 7188.52,
-      "weight_pct": 9.3
+      "price": 329.39,
+      "value": 7330.73,
+      "weight_pct": 9.4
     },
     {
       "ticker": "MU",
       "shares": 10.1843,
-      "price": 601.25,
-      "value": 6123.34,
-      "weight_pct": 7.9
+      "price": 646.95,
+      "value": 6588.77,
+      "weight_pct": 8.4
     }
   ],
-  "cash_pct": 30.3,
+  "cash_pct": 29.8,
   "label": "TRACKED, NOT TRADED. A calculation on real closing prices with trading costs charged; no orders are placed.",
   "rule": "70% in the top 10% of momentum stocks, 30% in Bitcoin while it is above its 150-day average (cash otherwise). Rebalanced monthly.",
   "backtest": "2018 to 2026 backtest: 41% a year, worst drop -31%, more than two years underwater at one point; lost 14% in 2018. Treat as an upper bound: the stock list was picked with hindsight."
